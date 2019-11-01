@@ -16,6 +16,7 @@ const password_reset_controller_1 = require("./password-reset.controller");
 const config_service_1 = require("../config/config.service");
 const auth_mail_service_1 = require("./auth-mail.service");
 const password_reset_service_1 = require("./password-reset.service");
+const consts_1 = require("../consts");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
@@ -26,9 +27,9 @@ AuthModule = __decorate([
             jwt_1.JwtModule.registerAsync({
                 inject: [config_service_1.ConfigService],
                 useFactory: (configService) => {
-                    const secret = configService.get('JWT_SECRET');
+                    const secret = configService.get(consts_1.JWT_SECRET);
                     if (!secret) {
-                        new common_1.Logger().error('JWT_SECRET NOT DEFINED');
+                        new common_1.Logger().error('JWT_SECRET not defined');
                         throw new common_1.InternalServerErrorException();
                     }
                     return { secret, signOptions: { expiresIn: '10 days' } };

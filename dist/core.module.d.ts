@@ -4,7 +4,7 @@ import { AcOptions } from './access-control/access-control.module';
 import { StorageOptions } from './storage/storage.module';
 import { DbOptions } from './db/db.module';
 declare type AvailableModules = 'Mail' | 'Config' | 'AccessControl' | 'Auth' | 'Log' | 'Storage' | 'Notification' | 'Cron';
-interface ForRootParams {
+export interface CoreModuleParams {
     ignore: AvailableModules[];
     config?: ConfigOptions;
     storage: StorageOptions;
@@ -12,6 +12,6 @@ interface ForRootParams {
     accessControl?: AcOptions;
 }
 export declare class CoreModule {
-    static forRoot(params: ForRootParams): DynamicModule;
+    static forRoot(params: CoreModuleParams): DynamicModule;
 }
 export {};

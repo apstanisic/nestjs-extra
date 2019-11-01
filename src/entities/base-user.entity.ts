@@ -70,13 +70,13 @@ export class BaseUser extends BaseEntity implements IUser {
   }
 
   /** Call this method after token is used */
-  disableSecureToken(): void {
+  removeSecureToken(): void {
     this.secureToken = undefined;
     this.tokenCreatedAt = undefined;
   }
 
   /** Check if provided token is valid */
-  compareToken(token: string): boolean {
+  validToken(token: string): boolean {
     if (!this.secureToken) return false;
     if (!this.tokenCreatedAt) return false;
     if (this.secureToken !== token) return false;

@@ -11,12 +11,14 @@ const common_1 = require("@nestjs/common");
 const storage_service_1 = require("./storage.service");
 const storage_images_service_1 = require("./storage-images.service");
 const consts_1 = require("../consts");
+const storage_images_default_config_1 = require("./storage-images-default-config");
 let StorageModule = StorageModule_1 = class StorageModule {
-    static forRoot(options) {
+    static forRoot({ imageSizes }) {
+        const sizes = imageSizes || storage_images_default_config_1.defaultStorageImagesSizes;
         return {
             module: StorageModule_1,
             providers: [
-                { provide: consts_1.STORAGE_IMAGE_SIZES, useValue: options.imageSizes },
+                { provide: consts_1.STORAGE_IMAGE_SIZES, useValue: sizes },
                 storage_service_1.StorageService,
                 storage_images_service_1.StorageImagesService,
             ],

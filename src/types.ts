@@ -15,6 +15,7 @@ export interface ParsedOrmWhere<T = any> {
 
 /** Regular string, just to make it more clear what type of string it is  */
 export type UUID = string;
+export type Email = string;
 
 /** Provided object must have Id and can have any other fields */
 export interface WithId {

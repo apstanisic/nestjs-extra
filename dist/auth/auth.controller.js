@@ -59,7 +59,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "register", null);
 __decorate([
-    common_1.Put('confirm-account/:email/:token'),
+    common_1.Get('confirm-account/:email/:token'),
     __param(0, common_1.Param('email')),
     __param(1, common_1.Param('token')),
     __metadata("design:type", Function),

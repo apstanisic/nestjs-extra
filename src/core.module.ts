@@ -25,7 +25,7 @@ type AvailableModules =
   | 'Cron';
 
 /** Params for dynamic module */
-interface ForRootParams {
+export interface CoreModuleParams {
   // UserModule: DynamicModule;
   ignore: AvailableModules[];
   config?: ConfigOptions;
@@ -41,7 +41,7 @@ interface ForRootParams {
  */
 @Module({})
 export class CoreModule {
-  static forRoot(params: ForRootParams): DynamicModule {
+  static forRoot(params: CoreModuleParams): DynamicModule {
     const imports = [];
     const ignore = params ? params.ignore : [];
     // Shorthand for checking if module should be included

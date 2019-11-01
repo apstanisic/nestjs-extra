@@ -11,22 +11,20 @@ import { AuthController } from './auth.controller';
 import { JwtStrategy } from './jwt.strategy';
 import { PasswordResetController } from './password-reset.controller';
 import { ConfigService } from '../config/config.service';
-// import { UserModule } from "../../user/user.module";
 import { AuthMailService } from './auth-mail.service';
 import { PasswordResetService } from './password-reset.service';
+import { JWT_SECRET } from '../consts';
 
-/** Auth module depends on user module and mail module and config module */
 @Global()
 @Module({
   imports: [
-    // UserModule,
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.registerAsync({
       inject: [ConfigService],
       useFactory: (configService: ConfigService): JwtModuleOptions => {
-        const secret = configService.get('JWT_SECRET');
+        const secret = configService.get(JWT_SECRET);
         if (!secret) {
-          new Logger().error('JWT_SECRET NOT DEFINED');
+          new Logger().error('JWT_SECRET not defined');
           throw new InternalServerErrorException();
         }
         return { secret, signOptions: { expiresIn: '10 days' } };

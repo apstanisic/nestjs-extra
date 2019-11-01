@@ -27,11 +27,11 @@ let BaseUser = class BaseUser extends base_entity_1.BaseEntity {
         this.tokenCreatedAt = new Date();
         return this.secureToken;
     }
-    disableSecureToken() {
+    removeSecureToken() {
         this.secureToken = undefined;
         this.tokenCreatedAt = undefined;
     }
-    compareToken(token) {
+    validToken(token) {
         if (!this.secureToken)
             return false;
         if (!this.tokenCreatedAt)

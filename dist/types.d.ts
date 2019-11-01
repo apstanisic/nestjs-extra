@@ -4,6 +4,7 @@ export interface ParsedOrmWhere<T = any> {
     [key: string]: FindOperator<T>;
 }
 export declare type UUID = string;
+export declare type Email = string;
 export interface WithId {
     id: string;
     [key: string]: any;

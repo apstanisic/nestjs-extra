@@ -25,10 +25,10 @@ const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
 const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
-const user_interface_1 = require("../entities/user.interface");
-const auth_mail_service_1 = require("./auth-mail.service");
 const base_service_1 = require("../base.service");
 const consts_1 = require("../consts");
+const user_interface_1 = require("../entities/user.interface");
+const auth_mail_service_1 = require("./auth-mail.service");
 let AuthService = class AuthService {
     constructor(usersService, jwtService, authMailService) {
         this.usersService = usersService;
@@ -48,7 +48,8 @@ let AuthService = class AuthService {
             if (!payload || !this.validator.isEmail(payload.email)) {
                 throw new common_1.BadRequestException();
             }
-            return this.usersService.findOne({ email: payload.email }, { relations: ['roles'] });
+            const { email } = payload;
+            return this.usersService.findOne({ email }, { relations: ['roles'] });
         });
     }
     createJwt(email) {
@@ -67,15 +68,14 @@ let AuthService = class AuthService {
     confirmAccount(email, token) {
         return __awaiter(this, void 0, void 0, function* () {
             const user = yield this.usersService.findOne({ email });
-            if (user.secureToken !== token)
+            if (!user.validToken(token))
                 throw new common_1.BadRequestException();
             user.confirmed = true;
-            user.secureToken = undefined;
-            user.tokenCreatedAt = undefined;
+            user.removeSecureToken();
             yield this.usersService.mutate(user, {
                 user,
                 domain: user.id,
-                reason: 'Confirm account.',
+                reason: 'Email address confirmed.',
             });
             return class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, user);
         });
@@ -83,9 +83,8 @@ let AuthService = class AuthService {
     findForLogin(email, password) {
         return __awaiter(this, void 0, void 0, function* () {
             const user = yield this.usersService.findOne({ email });
-            if (!user)
-                throw new common_1.NotFoundException();
-            if (!(yield user.checkPassword(password))) {
+            const validPassword = yield user.checkPassword(password);
+            if (!validPassword) {
                 throw new common_1.BadRequestException('Invalid parameters.');
             }
             return user;

@@ -1,4 +1,4 @@
-import { Body, Controller, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Param, Post, Put, Get } from '@nestjs/common';
 import { BasicUserInfo } from '../entities/user.interface';
 import { LoginUserDto, RegisterUserDto, SignInResponse } from './auth.dto';
 import { AuthService } from './auth.service';
@@ -19,8 +19,8 @@ export class AuthController {
     return this.authService.registerNewUser(data);
   }
 
-  /* Confirm user account */
-  @Put('confirm-account/:email/:token')
+  /* Confirm user account. Click on link in email */
+  @Get('confirm-account/:email/:token')
   async confirmAccout(
     @Param('email') email: string,
     @Param('token') token: string,

@@ -10,6 +10,7 @@ import { ConfigService } from '../config/config.service';
 /**
  * Simple mail service. Wrapper around nodemailer.
  * Default values are Ethereal test data and config.
+ * @TODO Replace default values
  */
 @Injectable()
 export class MailService {

@@ -11,9 +11,12 @@ import {
   REDIS_HOST,
   REDIS_PORT,
 } from '../consts';
+import { Notification } from '../notification/notification.entity';
+import { Role } from '../access-control/role/roles.entity';
 
 export interface DbOptions {
   entities: any[];
+  usingAccessControl: boolean;
 }
 
 @Module({})
@@ -28,9 +31,12 @@ export class DbModule {
             const envs = config.getAll();
             const shouldCache = envs[REDIS_HOST] !== undefined;
             const isProduction = envs[NODE_ENV] === 'production';
+            const entities = [...params.entities, Notification];
+            if (params.usingAccessControl) entities.push(Role);
             // const type =
 
             const options: TypeOrmModuleOptions = {
+              entities,
               type: 'postgres',
               host: envs[DB_HOST],
               database: envs[DB_DATABASE],
@@ -40,7 +46,6 @@ export class DbModule {
               maxQueryExecutionTime: 3000,
               synchronize: false,
               logging: isProduction ? ['error'] : 'all',
-              entities: params.entities,
               cache: shouldCache && {
                 type: 'redis',
                 options: {

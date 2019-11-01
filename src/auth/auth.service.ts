@@ -1,30 +1,27 @@
 import {
   BadRequestException,
-  Injectable,
   ForbiddenException,
   Inject,
-  NotFoundException,
+  Injectable,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { classToClass, plainToClass } from 'class-transformer';
 import { Validator } from 'class-validator';
-// import { User } from '../../user/user.entity';
-// import { UsersService } from '../../user/user.service';
-import { BasicUserInfo } from '../entities/user.interface';
-import { SignInResponse, RegisterUserDto } from './auth.dto';
-import { JwtPayload } from './jwt.strategy';
-import { AuthMailService } from './auth-mail.service';
 import { BaseService } from '../base.service';
-import { BaseUser } from '../entities/base-user.entity';
 import { USER_SERVICE } from '../consts';
+import { BaseUser } from '../entities/base-user.entity';
+import { BasicUserInfo } from '../entities/user.interface';
+import { AuthMailService } from './auth-mail.service';
+import { RegisterUserDto, SignInResponse } from './auth.dto';
+import { JwtPayload } from './jwt.strategy';
 
 @Injectable()
-export class AuthService {
+export class AuthService<User extends BaseUser = BaseUser> {
   private validator = new Validator();
 
   constructor(
     // private readonly usersService: UsersService,
-    @Inject(USER_SERVICE) private usersService: BaseService<BaseUser>,
+    @Inject(USER_SERVICE) private usersService: BaseService<User>,
     private readonly jwtService: JwtService,
     private readonly authMailService: AuthMailService,
   ) {}
@@ -36,15 +33,15 @@ export class AuthService {
     return { token, user: classToClass(user) };
   }
 
-  /** Validate token on every request. From docs */
+  /** Validate token on every request. From docs
+   * @TODO Check what to do with relations: ['roles']
+   */
   async validateJwt(payload: JwtPayload): Promise<BaseUser> {
     if (!payload || !this.validator.isEmail(payload.email)) {
       throw new BadRequestException();
     }
-    return this.usersService.findOne(
-      { email: payload.email },
-      { relations: ['roles'] },
-    );
+    const { email } = payload;
+    return this.usersService.findOne({ email }, { relations: ['roles'] });
   }
 
   /** Generate new token when user logs in */
@@ -52,8 +49,11 @@ export class AuthService {
     return this.jwtService.sign({ email });
   }
 
-  /** Register new user, and return him and login token */
+  /** Register new user, and return him and login token.
+   * @TODO fix this // @ts-ignore
+   */
   async registerNewUser(data: RegisterUserDto): Promise<SignInResponse> {
+    // @ts-ignore
     const user = await this.usersService.create(data);
     const token = this.createJwt(data.email);
 
@@ -67,28 +67,27 @@ export class AuthService {
     return { token, user: classToClass(user) };
   }
 
+  /** Confirm user's email address */
   async confirmAccount(email: string, token: string): Promise<BasicUserInfo> {
     const user = await this.usersService.findOne({ email });
-    if (user.secureToken !== token) throw new BadRequestException();
+    if (!user.validToken(token)) throw new BadRequestException();
+
     user.confirmed = true;
-    user.secureToken = undefined;
-    user.tokenCreatedAt = undefined;
+    user.removeSecureToken();
     await this.usersService.mutate(user, {
       user,
       domain: user.id,
-      reason: 'Confirm account.',
+      reason: 'Email address confirmed.',
     });
     return plainToClass(BasicUserInfo, user);
   }
 
-  private async findForLogin(
-    email: string,
-    password: string,
-  ): Promise<BaseUser> {
+  /** Find user with provided email and password */
+  private async findForLogin(email: string, password: string): Promise<User> {
     const user = await this.usersService.findOne({ email });
-    if (!user) throw new NotFoundException();
+    const validPassword = await user.checkPassword(password);
 
-    if (!(await user.checkPassword(password))) {
+    if (!validPassword) {
       throw new BadRequestException('Invalid parameters.');
     }
     return user;

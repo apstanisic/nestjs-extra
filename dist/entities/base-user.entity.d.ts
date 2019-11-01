@@ -12,6 +12,6 @@ export declare class BaseUser extends BaseEntity implements IUser {
     password: string;
     checkPassword(enteredPassword: string): Promise<boolean>;
     generateSecureToken(): string;
-    disableSecureToken(): void;
-    compareToken(token: string): boolean;
+    removeSecureToken(): void;
+    validToken(token: string): boolean;
 }

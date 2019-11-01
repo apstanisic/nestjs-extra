@@ -31,16 +31,16 @@ let PasswordResetService = class PasswordResetService {
     }
     resetPassword(user, token, password) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (!user.compareToken(token))
+            if (!user.validToken(token))
                 throw new common_1.ForbiddenException();
             const expired = moment(user.tokenCreatedAt)
                 .add(2, 'hours')
                 .isBefore(moment());
             if (expired) {
-                throw new common_1.BadRequestException('Link is not valid. Link is valid for 2 hours');
+                throw new common_1.BadRequestException('Invalid link. Link is valid for 2 hours.');
             }
             user.password = password;
-            user.disableSecureToken();
+            user.removeSecureToken();
             user = yield this.usersService.mutate(user, {
                 user,
                 reason: 'Password reset',

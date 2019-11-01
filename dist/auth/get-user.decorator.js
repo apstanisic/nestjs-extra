@@ -6,5 +6,4 @@ exports.GetUser = common_1.createParamDecorator((data, req) => {
         throw new common_1.UnauthorizedException();
     return req.user;
 });
-exports.GqlUser = common_1.createParamDecorator((data, [root, args, ctx, info]) => ctx.req.user);
 //# sourceMappingURL=get-user.decorator.js.map

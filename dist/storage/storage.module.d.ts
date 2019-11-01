@@ -7,8 +7,8 @@ export interface ImageSizeOptions {
     quality?: number;
 }
 export interface StorageOptions {
-    imageSizes: ImageSizeOptions[];
+    imageSizes?: ImageSizeOptions[];
 }
 export declare class StorageModule {
-    static forRoot(options: StorageOptions): DynamicModule;
+    static forRoot({ imageSizes }: StorageOptions): DynamicModule;
 }

@@ -1,39 +1,35 @@
 import {
   BadRequestException,
   ForbiddenException,
-  Injectable,
   Inject,
+  Injectable,
 } from '@nestjs/common';
 import * as moment from 'moment';
-// import { UsersService } from "../../user/user.service";
-import { BaseUser } from '../entities/base-user.entity';
 import { BaseService } from '../base.service';
 import { USER_SERVICE } from '../consts';
+import { BaseUser } from '../entities/base-user.entity';
 
 @Injectable()
-export class PasswordResetService {
-  // constructor(private readonly usersService: UsersService) {}
-  constructor(@Inject(USER_SERVICE) private usersService: BaseService) {}
+export class PasswordResetService<User extends BaseUser = BaseUser> {
+  constructor(@Inject(USER_SERVICE) private usersService: BaseService<User>) {}
 
-  async resetPassword<User extends BaseUser = BaseUser>(
+  async resetPassword(
     user: User,
     token: string,
     password: string,
   ): Promise<User> {
-    if (!user.compareToken(token)) throw new ForbiddenException();
+    if (!user.validToken(token)) throw new ForbiddenException();
 
     const expired = moment(user.tokenCreatedAt)
       .add(2, 'hours')
       .isBefore(moment());
 
     if (expired) {
-      throw new BadRequestException(
-        'Link is not valid. Link is valid for 2 hours',
-      );
+      throw new BadRequestException('Invalid link. Link is valid for 2 hours.');
     }
 
     user.password = password;
-    user.disableSecureToken();
+    user.removeSecureToken();
     user = await this.usersService.mutate(user, {
       user,
       reason: 'Password reset',

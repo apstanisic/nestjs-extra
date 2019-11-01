@@ -22,11 +22,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const base_service_1 = require("../base.service");
 const validate_email_pipe_1 = require("../validate-email.pipe");
 const auth_mail_service_1 = require("./auth-mail.service");
 const auth_dto_1 = require("./auth.dto");
 const password_reset_service_1 = require("./password-reset.service");
-const base_service_1 = require("../base.service");
+const consts_1 = require("../consts");
 let PasswordResetController = class PasswordResetController {
     constructor(authMailService, passwordResetService, usersService) {
         this.authMailService = authMailService;
@@ -36,7 +37,7 @@ let PasswordResetController = class PasswordResetController {
     sendPasswordRecoveryMail(email) {
         return __awaiter(this, void 0, void 0, function* () {
             this.authMailService.sendResetPasswordEmail(email);
-            return { message: 'Password reset email is sent. ' };
+            return { success: true, message: 'Password reset email is sent.' };
         });
     }
     resetPassword(email, { password, token }) {
@@ -63,7 +64,7 @@ __decorate([
 ], PasswordResetController.prototype, "resetPassword", null);
 PasswordResetController = __decorate([
     common_1.Controller('auth'),
-    __param(2, common_1.Inject('USER_SERVICE')),
+    __param(2, common_1.Inject(consts_1.USER_SERVICE)),
     __metadata("design:paramtypes", [auth_mail_service_1.AuthMailService,
         password_reset_service_1.PasswordResetService,
         base_service_1.BaseService])

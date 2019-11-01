@@ -1,11 +1,13 @@
 import { Global, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { LOG_DB_DATABASE, LOG_DB_HOST, LOG_DB_PORT } from '..';
 import { ConfigService } from '../config/config.service';
 import { DbLoggerService } from './db-logger.service';
 import { Log } from './log.entity';
+import { LOG_DB_HOST, LOG_DB_DATABASE, LOG_DB_PORT } from '../consts';
 
-/** This module uses NoSql db for efficient storing. */
+/** This module uses NoSql db for efficient storing.
+ * @Todo fix username and password
+ */
 @Global()
 @Module({
   imports: [
@@ -17,7 +19,7 @@ import { Log } from './log.entity';
         type: 'mongodb',
         host: config.get(LOG_DB_HOST),
         database: config.get(LOG_DB_DATABASE),
-        port: Number(config.get(LOG_DB_PORT)),
+        port: parseInt(config.get(LOG_DB_PORT) || '27017', 10),
         entities: [Log],
         useNewUrlParser: true,
         useUnifiedTopology: true,

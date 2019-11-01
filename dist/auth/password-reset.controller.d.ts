@@ -1,15 +1,17 @@
+import { BaseService } from '../base.service';
+import { BaseUser } from '../entities/base-user.entity';
 import { AuthMailService } from './auth-mail.service';
 import { ResetPasswordDto } from './auth.dto';
 import { PasswordResetService } from './password-reset.service';
-import { BaseService } from '../base.service';
-import { BaseUser } from '../entities/base-user.entity';
+import { Email } from '../types';
 export declare class PasswordResetController {
     private readonly authMailService;
     private readonly passwordResetService;
-    private usersService;
+    private readonly usersService;
     constructor(authMailService: AuthMailService, passwordResetService: PasswordResetService, usersService: BaseService<BaseUser>);
-    sendPasswordRecoveryMail(email: string): Promise<{
+    sendPasswordRecoveryMail(email: Email): Promise<{
         message: string;
+        success: true;
     }>;
-    resetPassword(email: string, { password, token }: ResetPasswordDto): Promise<BaseUser>;
+    resetPassword(email: Email, { password, token }: ResetPasswordDto): Promise<BaseUser>;
 }

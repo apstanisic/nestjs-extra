@@ -15,7 +15,7 @@ export class CronService {
    * @example
    *  this.startJob('* 1 * * *', () => console.log('It works'));
    */
-  startJob(time: string, fn: () => void): CronJob {
+  startJob(time: string | Date, fn: () => void): CronJob {
     try {
       const job = new CronJob(time, fn);
       job.start();

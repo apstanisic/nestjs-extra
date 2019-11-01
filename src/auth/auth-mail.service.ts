@@ -126,7 +126,6 @@ export class AuthMailService {
    */
   private storeTemplatesInMemory(): void {
     this.templates.accountConfirm = Handlebars.compile(accountConfirmTemplate);
-
     this.templates.passwordReset = Handlebars.compile(passwordResetTemplate);
   }
 }

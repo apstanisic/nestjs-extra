@@ -1,7 +1,7 @@
 {
   "name": "nestjs-extra",
-  "version": "0.0.1",
-  "description": "NestJS base modules",
+  "version": "0.0.2",
+  "description": "NestJS extra modules to speed up development",
   "author": "aleksandar@tuta.io",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,6 +13,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint --fix src --ext .js,.ts",
     "build": "rimraf dist && tsc",
+    "dev": "rimraf dist && tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -39,6 +40,7 @@
     "passport-jwt": "^4.0.0",
     "pg": "^7.12.1",
     "query-string": "^6.8.3",
+    "redis": "^2.8.0",
     "sharp": "^0.23.2",
     "sqlstring": "^2.3.1"
   },
