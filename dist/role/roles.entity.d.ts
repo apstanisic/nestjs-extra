@@ -1,7 +1,5 @@
-import { BaseUserWithRoles } from '../entities/base-user-with-roles.entity';
 import { BaseEntity } from '../entities/base.entity';
-export declare class Role<RoleType extends string = string> extends BaseEntity {
-    user: BaseUserWithRoles;
+export declare class Role extends BaseEntity {
     userId: string;
     name: string;
     domain: string;

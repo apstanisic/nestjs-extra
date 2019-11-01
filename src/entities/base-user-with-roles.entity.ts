@@ -6,7 +6,7 @@ import { Role } from '../role/roles.entity';
 /** In cases where roles are needed use this */
 export class BaseUserWithRoles extends BaseUser {
   /** All roles user have */
-  @OneToMany(type => Role, role => role.user, { eager: true })
+  @OneToMany(type => Role, role => role.userId)
   @Exclude()
   roles: Role[];
 }

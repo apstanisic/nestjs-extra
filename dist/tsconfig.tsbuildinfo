@@ -2486,11 +2486,11 @@
         "signature": "7efea584e88939aa87a0f4f99db68f287c0cff8c84224a95d023fbdeae2166bb"
       },
       "../src/role/roles.entity.ts": {
-        "version": "67af720f3ad438a28a72f04c0a99b2b49d8412f07744b1a854bdd2f0d4549172",
-        "signature": "e6d59f1f193c27425f01f4fff9ab8a932c0318c9b4fc224ed4d4a319eae56149"
+        "version": "b84adc0ad3217ce504224538ee70d7c221a93e8bc3eb00afac3d7744a5c8fc45",
+        "signature": "4fd62322d1458fc4a703b2e18f341b10240839b157dffa224cdfa6f7688bae76"
       },
       "../src/entities/base-user-with-roles.entity.ts": {
-        "version": "aa15fa63e657684e9380294a4eab2791f34ef9930ccf660e1ca63e64d623c95b",
+        "version": "27f9c42d13b6c953fd8173931eb2a32e90aaa860178563b7a1f4f71744d82fcd",
         "signature": "dc4d92c9458ad46e21542a4e88c1549260daeacbf32fcea98effc14cd3ee1dc2"
       },
       "../node_modules/casbin/lib/rbac/roleManager.d.ts": {
@@ -9948,7 +9948,6 @@
         "../src/role/roles.entity.ts"
       ],
       "../src/role/roles.entity.ts": [
-        "../src/entities/base-user-with-roles.entity.ts",
         "../src/entities/base.entity.ts"
       ],
       "../src/role/role.factory.ts": [

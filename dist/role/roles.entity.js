@@ -11,14 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const class_validator_1 = require("class-validator");
 const typeorm_1 = require("typeorm");
-const base_user_with_roles_entity_1 = require("../entities/base-user-with-roles.entity");
 const base_entity_1 = require("../entities/base.entity");
 let Role = class Role extends base_entity_1.BaseEntity {
 };
-__decorate([
-    typeorm_1.ManyToOne(type => base_user_with_roles_entity_1.BaseUserWithRoles, user => user.roles),
-    __metadata("design:type", base_user_with_roles_entity_1.BaseUserWithRoles)
-], Role.prototype, "user", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)

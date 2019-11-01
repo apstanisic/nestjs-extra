@@ -15,10 +15,10 @@ import { BaseEntity } from '../entities/base.entity';
  * repo.save(role);
  */
 @Entity()
-export class Role<RoleType extends string = string> extends BaseEntity {
+export class Role extends BaseEntity {
   /** User that have this role */
-  @ManyToOne(type => BaseUserWithRoles, user => user.roles)
-  user: BaseUserWithRoles;
+  // @ManyToOne(type => BaseUserWithRoles, user => user.roles)
+  // user: BaseUserWithRoles;
 
   /** User's id */
   @Column()
