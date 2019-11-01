@@ -32,7 +32,7 @@ export function wait(time: number): Promise<void> {
  * Always returns new object
  */
 export function convertToObject<T = any>(
-  query: Struct<T> | string | null | undefined
+  query: Struct<T> | string | null | undefined,
 ): Struct {
   if (typeof query === 'object') return { ...query };
   if (query === null || query === undefined) return {};
@@ -91,10 +91,14 @@ export function parseNumber(value?: any): number | undefined {
   // swit
 }
 
-export function getIntFromObject(obj: any, key: string) {
+/**
+ * Get number from object with given key
+ * I am still not sold on usefulnes of this method
+ */
+export function getIntFromObject(obj: any, key: string): number | undefined {
   if (obj && typeof obj === 'object') {
     const initValue = obj[key];
-    const parsedValue: number = parseInt(initValue);
+    const parsedValue: number = parseInt(initValue, 10);
     if (Number.isNaN(parsedValue)) return undefined;
     return parsedValue;
   }

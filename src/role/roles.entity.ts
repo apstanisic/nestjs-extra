@@ -1,8 +1,8 @@
-import { IsOptional, IsString, Length } from "class-validator";
-import { Column, Entity, ManyToOne } from "typeorm";
-import { BaseUserWithRoles } from "../entities/base-user-with-roles.entity";
+import { IsOptional, IsString, Length } from 'class-validator';
+import { Column, Entity, ManyToOne } from 'typeorm';
+import { BaseUserWithRoles } from '../entities/base-user-with-roles.entity';
 // import { User } from "../../user/user.entity";
-import { BaseEntity } from "../entities/base.entity";
+import { BaseEntity } from '../entities/base.entity';
 
 /**
  * To add admin for company f32 to user
@@ -36,7 +36,7 @@ export class Role<RoleType extends string = string> extends BaseEntity {
    * In other domain can be city, or store. Domain limit the reach of user.
    * Keep domain as string so it can be portable and not app specific.
    */
-  @Column({ default: "/*" })
+  @Column({ default: '/*' })
   @IsString()
   domain: string;
 
@@ -44,7 +44,7 @@ export class Role<RoleType extends string = string> extends BaseEntity {
    * Description for this specific role to this user.
    * For example, owner can leave reason why admin have this role
    */
-  @Column({ type: "text", nullable: true })
+  @Column({ type: 'text', nullable: true })
   @IsOptional()
   @IsString()
   @Length(2, 2000)

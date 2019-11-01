@@ -2,24 +2,24 @@ import {
   Inject,
   Injectable,
   InternalServerErrorException,
-  Logger
-} from "@nestjs/common";
-import * as dotenv from "dotenv";
-import { readFileSync } from "fs";
-import { Struct } from "../types";
-import { ConfigOptions, CONFIG_OPTIONS } from "./config.module";
+  Logger,
+} from '@nestjs/common';
+import * as dotenv from 'dotenv';
+import { readFileSync } from 'fs';
+import { Struct } from '../types';
+import { ConfigOptions, CONFIG_OPTIONS } from './config.module';
 
 @Injectable()
 export class ConfigService {
   /** Logger */
-  private logger = new Logger("ConfigModule");
+  private logger = new Logger('ConfigModule');
 
   /** Don't access this property. Use data getter */
   private readonly configData?: Struct<string>;
 
   private get data(): Struct<string> {
     if (this.configData === undefined) {
-      this.logger.error("Module does not have valid properties");
+      this.logger.error('Module does not have valid properties');
       throw new InternalServerErrorException();
     }
     return this.configData;
@@ -29,13 +29,13 @@ export class ConfigService {
   constructor(@Inject(CONFIG_OPTIONS) options: ConfigOptions) {
     try {
       if (options.configData === undefined) {
-        const file = readFileSync(".env");
+        const file = readFileSync('.env');
         this.configData = dotenv.parse(file);
       } else {
         this.configData = dotenv.parse(options.configData);
       }
     } catch (error) {
-      this.logger.log("ConfigService was not initialized.");
+      this.logger.log('ConfigService was not initialized.');
       // Ignore error if we can't init module.
       // Throw error only when module is used.
       // This is good because when we start project, we might not need

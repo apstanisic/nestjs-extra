@@ -3,19 +3,14 @@
   "version": "0.0.1",
   "description": "NestJS base modules",
   "author": "aleksandar@tuta.io",
+  "main": "dist/core.module.js",
   "license": "MIT",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint --fix src --ext .js,.ts",
     "build": "rimraf dist && tsc",
-    "start": "ts-node  dist/main.js",
+    "start": "ts-node dist/main.js",
     "dev": "nodemon",
-    "debug": "node --inspect-brk dist/server.js",
-    "sync-schema": "ts-node ./node_modules/.bin/typeorm schema:sync",
-    "test-data": "ts-node ./node_modules/.bin/typeorm migration:run",
-    "typeorm": "ts-node ./node_modules/.bin/typeorm",
-    "dev-hmr": "ts-node dist/main.js",
-    "webpack": "webpack --config webpack.config.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -27,6 +22,7 @@
     "@nestjs/core": "^6.8.5",
     "@nestjs/jwt": "^6.1.1",
     "@nestjs/passport": "^6.1.0",
+    "@nestjs/testing": "^6.8.5",
     "@nestjs/typeorm": "^6.2.0",
     "bcryptjs": "^2.4.3",
     "casbin": "^3.0.5",
@@ -36,6 +32,7 @@
     "deep-diff": "^1.0.2",
     "dotenv": "^8.2.0",
     "faker": "^4.1.0",
+    "handlebars": "^4.5.1",
     "minio": "^7.0.12",
     "moment": "^2.24.0",
     "nodemailer": "^6.3.1",
@@ -46,7 +43,6 @@
     "typeorm": "^0.2.20"
   },
   "devDependencies": {
-    "@nestjs/testing": "^6.8.5",
     "@types/bcryptjs": "^2.4.2",
     "@types/cron": "^1.7.1",
     "@types/deep-diff": "^1.0.0",
@@ -58,6 +54,15 @@
     "@types/passport-jwt": "^3.0.2",
     "@types/sharp": "^0.23.0",
     "@types/sqlstring": "^2.2.1",
-    "jest": "^24.9.0"
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.4"
   }
 }

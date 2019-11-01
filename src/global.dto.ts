@@ -2,7 +2,7 @@ import {
   IsString,
   MinLength,
   IsOptional,
-  IsNumberString
+  IsNumberString,
 } from 'class-validator';
 
 export class IdParam {

@@ -13,11 +13,7 @@ import { UUID } from './types';
 export class IdArrayDto {
   @Transform(value => {
     if (typeof value !== 'string') throw new BadRequestException();
-    console.log(value);
-
-    const transformed = value.split(',');
-    console.log(transformed);
-    return transformed;
+    return value.split(',');
   })
   @IsArray()
   @ArrayNotEmpty()

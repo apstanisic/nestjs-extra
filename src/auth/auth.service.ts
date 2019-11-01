@@ -3,20 +3,20 @@ import {
   Injectable,
   ForbiddenException,
   Inject,
-  NotFoundException
-} from "@nestjs/common";
-import { JwtService } from "@nestjs/jwt";
-import { classToClass, plainToClass } from "class-transformer";
-import { Validator } from "class-validator";
+  NotFoundException,
+} from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
+import { classToClass, plainToClass } from 'class-transformer';
+import { Validator } from 'class-validator';
 // import { User } from '../../user/user.entity';
 // import { UsersService } from '../../user/user.service';
-import { BasicUserInfo } from "../entities/user.interface";
-import { SignInResponse, RegisterUserDto } from "./auth.dto";
-import { JwtPayload } from "./jwt.strategy";
-import { AuthMailService } from "./auth-mail.service";
-import { BaseService } from "../base.service";
-import { BaseUser } from "../entities/base-user.entity";
-import { USER_SERVICE } from "../consts";
+import { BasicUserInfo } from '../entities/user.interface';
+import { SignInResponse, RegisterUserDto } from './auth.dto';
+import { JwtPayload } from './jwt.strategy';
+import { AuthMailService } from './auth-mail.service';
+import { BaseService } from '../base.service';
+import { BaseUser } from '../entities/base-user.entity';
+import { USER_SERVICE } from '../consts';
 
 @Injectable()
 export class AuthService {
@@ -26,7 +26,7 @@ export class AuthService {
     // private readonly usersService: UsersService,
     @Inject(USER_SERVICE) private usersService: BaseService<BaseUser>,
     private readonly jwtService: JwtService,
-    private readonly authMailService: AuthMailService
+    private readonly authMailService: AuthMailService,
   ) {}
 
   /** Try to sign in user */
@@ -43,7 +43,7 @@ export class AuthService {
     }
     return this.usersService.findOne(
       { email: payload.email },
-      { relations: ["roles"] }
+      { relations: ['roles'] },
     );
   }
 
@@ -60,7 +60,7 @@ export class AuthService {
     if (!user.secureToken) throw new ForbiddenException();
     await this.authMailService.sendConfirmationEmail(
       user.email,
-      user.secureToken
+      user.secureToken,
     );
 
     // For some reason user is not transformed without class to class
@@ -76,20 +76,20 @@ export class AuthService {
     await this.usersService.mutate(user, {
       user,
       domain: user.id,
-      reason: "Confirm account."
+      reason: 'Confirm account.',
     });
     return plainToClass(BasicUserInfo, user);
   }
 
   private async findForLogin(
     email: string,
-    password: string
+    password: string,
   ): Promise<BaseUser> {
     const user = await this.usersService.findOne({ email });
     if (!user) throw new NotFoundException();
 
     if (!(await user.checkPassword(password))) {
-      throw new BadRequestException("Invalid parameters.");
+      throw new BadRequestException('Invalid parameters.');
     }
     return user;
   }

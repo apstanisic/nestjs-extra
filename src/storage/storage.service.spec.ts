@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { removeObject } from '../../__mocks__/minio';
+import { removeObject } from '../__mocks__/minio';
 import { ConfigService } from '../config/config.service';
 import { StorageService } from './storage.service';
 

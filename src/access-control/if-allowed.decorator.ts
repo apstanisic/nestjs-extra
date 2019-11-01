@@ -1,6 +1,6 @@
-import { SetMetadata } from "@nestjs/common";
+import { SetMetadata } from '@nestjs/common';
 
-type Action = "read" | "write";
+type Action = 'read' | 'write';
 
 /**
  * @example
@@ -12,8 +12,8 @@ type Action = "read" | "write";
  *  method() {}
  */
 export function IfAllowed(
-  action: Action = "write",
-  resourcePath?: string
+  action: Action = 'write',
+  resourcePath?: string,
 ): any {
-  return SetMetadata("access_control", [true, action, resourcePath]);
+  return SetMetadata('access_control', [true, action, resourcePath]);
 }

@@ -44,8 +44,6 @@ export class ParseCursor<T extends WithId = any> {
     // Split cursor so we can get id, column and value, and maybe type
     // Type is not currently used.
     const [id, columnName, columnValue, direction] = decodedCursor.split(';');
-    console.log('usaoooo');
-    console.log(decodedCursor);
 
     if (this.validator.isEmpty(columnValue)) {
       throw new BadRequestException('Invalid column');
@@ -97,7 +95,6 @@ export class ParseCursor<T extends WithId = any> {
         const query = `( ${valueIsDiff(alias)} OR ( ${valueIsEqual(
           alias,
         )} AND id ${sign} ${e(this.id)}) )`;
-        console.log(query);
 
         return query;
       }),

@@ -3,20 +3,20 @@ import {
   CreateDateColumn,
   Entity,
   ManyToOne,
-  PrimaryGeneratedColumn
-} from "typeorm";
-import { UUID } from "../types";
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { UUID } from '../types';
 // import { User } from '../../user/user.entity';
 
 @Entity()
 export class Notification {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
   title: string;
 
-  @Column({ type: "text", nullable: true })
+  @Column({ type: 'text', nullable: true })
   body?: string;
 
   // @ManyToOne(type => User)

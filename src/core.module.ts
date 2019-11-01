@@ -1,4 +1,5 @@
 import { Module, DynamicModule } from '@nestjs/common';
+import { BaseEntity } from 'typeorm';
 import { MailModule } from './mail/mail.module';
 import { ConfigModule, ConfigOptions } from './config/config.module';
 import { AccessControlModule } from './access-control/access-control.module';
@@ -7,7 +8,6 @@ import { LoggerModule } from './logger/logger.module';
 import { StorageModule, StorageOptions } from './storage/storage.module';
 import { CronModule } from './cron/cron.module';
 import { NotificationModule } from './notification/notification.module';
-import { BaseEntity } from 'typeorm';
 
 /** Available modules */
 type AvailableModules =

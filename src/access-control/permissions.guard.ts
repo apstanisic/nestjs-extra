@@ -1,7 +1,7 @@
-import { CanActivate, ExecutionContext, Injectable } from "@nestjs/common";
-import { Reflector } from "@nestjs/core";
-import { BaseUserWithRoles } from "../entities/base-user-with-roles.entity";
-import { AccessControlService } from "./access-control.service";
+import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
+import { Reflector } from '@nestjs/core';
+import { BaseUserWithRoles } from '../entities/base-user-with-roles.entity';
+import { AccessControlService } from './access-control.service';
 
 /**
  * @returns permissions list that user need to have to access resource
@@ -22,15 +22,15 @@ type Metadata = [boolean?, string?, string?];
 @Injectable()
 export class PermissionsGuard implements CanActivate {
   constructor(
+    private readonly acService: AccessControlService,
     private readonly reflector: Reflector = new Reflector(),
-    private readonly acService: AccessControlService
   ) {}
 
   /** Check if user can execute function */
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const data = this.reflector.get<Metadata>(
-      "access_control",
-      context.getHandler()
+      'access_control',
+      context.getHandler(),
     );
     if (!data) return true;
     const [execute, action, resourcePath] = data;
@@ -45,7 +45,7 @@ export class PermissionsGuard implements CanActivate {
     const allowed = await this.acService.isAllowed(
       user.roles,
       resourcePath || request.path,
-      action || "write"
+      action || 'write',
     );
 
     return allowed;

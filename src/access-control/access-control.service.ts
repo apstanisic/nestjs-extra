@@ -1,10 +1,8 @@
-import { Injectable, Inject } from "@nestjs/common";
-import { Enforcer, newEnforcer, StringAdapter, newModel } from "casbin";
-import { casbinValidDomain } from "./casbin-valid-domain";
-// import { casbinPolicies } from "./casbin/casbin-policies";
-// import { casbinModel } from "./casbin/casbin-model";
-import { AC_MODEL, AC_POLICIES } from "../consts";
-import { Role } from "../role/roles.entity";
+import { Injectable, Inject } from '@nestjs/common';
+import { Enforcer, newEnforcer, StringAdapter, newModel } from 'casbin';
+import { casbinValidDomain } from './casbin-valid-domain';
+import { AC_MODEL, AC_POLICIES } from '../consts';
+import { Role } from '../role/roles.entity';
 
 @Injectable()
 export class AccessControlService {
@@ -12,7 +10,7 @@ export class AccessControlService {
 
   constructor(
     @Inject(AC_MODEL) casbinModelText: string,
-    @Inject(AC_POLICIES) casbinPolicies: string
+    @Inject(AC_POLICIES) casbinPolicies: string,
   ) {
     const casbinModel = newModel();
     casbinModel.loadModelFromText(casbinModelText);
@@ -21,7 +19,7 @@ export class AccessControlService {
 
     newEnforcer(casbinModel, stringAdapter).then(enforcer => {
       this.enforcer = enforcer;
-      this.enforcer.addFunction("validDomain", casbinValidDomain);
+      this.enforcer.addFunction('validDomain', casbinValidDomain);
     });
   }
 
@@ -36,12 +34,12 @@ export class AccessControlService {
     // user: User,
     roles: Role[],
     resourcePath: string,
-    action: string = "write"
+    action: string = 'write',
   ): Promise<boolean> {
     const checks: Promise<boolean>[] = [];
     roles.forEach(role => {
       checks.push(
-        this.enforcer.enforce(role.name, role.domain, resourcePath, action)
+        this.enforcer.enforce(role.name, role.domain, resourcePath, action),
       );
     });
     const responses = await Promise.all(checks);

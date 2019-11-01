@@ -1,14 +1,14 @@
 import {
   Injectable,
   Logger,
-  InternalServerErrorException
-} from "@nestjs/common";
-import { CronJob } from "cron";
+  InternalServerErrorException,
+} from '@nestjs/common';
+import { CronJob } from 'cron';
 
 @Injectable()
 export class CronService {
   /** Logger */
-  private logger = new Logger("CronModule");
+  private logger = new Logger('CronModule');
 
   /**
    * Simple helper for cron job
@@ -21,7 +21,7 @@ export class CronService {
       job.start();
       return job;
     } catch (error) {
-      this.logger.error("Cron error", error);
+      this.logger.error('Cron error', error);
       throw new InternalServerErrorException();
     }
   }

@@ -4,15 +4,15 @@ import {
   ObjectID,
   ObjectIdColumn,
   BeforeInsert,
-  BeforeUpdate
-} from "typeorm";
-import { classToClass, plainToClass, Exclude } from "class-transformer";
-import { diff } from "deep-diff";
-import * as Faker from "faker";
-import { UUID, WithId } from "../types";
-import { IUser, BasicUserInfo } from "../entities/user.interface";
-import { Interface } from "readline";
-import { InternalServerErrorException } from "@nestjs/common";
+  BeforeUpdate,
+} from 'typeorm';
+import { classToClass, plainToClass, Exclude } from 'class-transformer';
+import { diff } from 'deep-diff';
+import * as Faker from 'faker';
+import { Interface } from 'readline';
+import { InternalServerErrorException } from '@nestjs/common';
+import { UUID, WithId } from '../types';
+import { IUser, BasicUserInfo } from '../entities/user.interface';
 
 /**
  * This entity is using MongoDb. TypeOrm currently supports only this NoSql db.
@@ -27,12 +27,12 @@ export class Log<T extends WithId = any> {
   _id: ObjectID;
 
   /** Id for public use */
-  @Column({ default: Faker.random.uuid(), type: "string" })
+  @Column({ default: Faker.random.uuid(), type: 'string' })
   id: UUID;
 
   /** What action was executed (delete, update, custom-action) */
-  @Column({ type: "string", default: "update" })
-  action: "update" | "delete" | "create" | string;
+  @Column({ type: 'string', default: 'update' })
+  action: 'update' | 'delete' | 'create' | string;
 
   /** Why is this action executed. */
   @Column({ nullable: true })
@@ -42,7 +42,7 @@ export class Log<T extends WithId = any> {
   @Column(type => BasicUserInfo)
   executedBy: BasicUserInfo | IUser;
 
-  @Column("string")
+  @Column('string')
   executedById: string;
 
   /** At what time was this action executed. */
@@ -63,7 +63,7 @@ export class Log<T extends WithId = any> {
    * It can be filtered directly on entity, but this way it's
    * easier to migrate no Sql db or log to file.
    */
-  @Column("string")
+  @Column('string')
   entityId: UUID;
 
   /**
@@ -71,7 +71,7 @@ export class Log<T extends WithId = any> {
    * It can be company, web store, school, group.
    * Useful for finding many logs. Example: all changes in this store.
    */
-  @Column({ type: "string", nullable: true })
+  @Column({ type: 'string', nullable: true })
   domainId?: UUID;
 
   /** Temp value only used for getting id if there is not old value. */

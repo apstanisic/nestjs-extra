@@ -1,4 +1,4 @@
-import { ImageSizes } from "../types";
+import { ImageSizes } from '../types';
 
 /** User must always have this fields */
 export interface IUser extends BasicUserInfo {

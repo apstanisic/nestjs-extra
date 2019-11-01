@@ -1,5 +1,5 @@
 import { Exclude, classToClass } from 'class-transformer';
-import { BadRequestException } from '@nestjs/common';
+import { BadRequestException, Logger } from '@nestjs/common';
 import { validate } from 'class-validator';
 import {
   PrimaryGeneratedColumn,
@@ -7,7 +7,7 @@ import {
   UpdateDateColumn,
   BeforeInsert,
   BeforeUpdate,
-  Index
+  Index,
 } from 'typeorm';
 
 /**
@@ -50,11 +50,11 @@ export abstract class BaseEntity {
     if (errors.length > 0) {
       errors = errors.map(({ target, ...other }) => ({
         ...other,
-        target: classToClass(target)
+        target: classToClass(target),
       }));
-      if (process.env.NODE_ENV !== 'production') {
-        console.log(errors);
-      }
+      // if (process.env.NODE_ENV !== 'production') {
+      //   new Logger().error('Error when trying to insert ',errors);
+      // }
 
       throw new BadRequestException(errors);
     }

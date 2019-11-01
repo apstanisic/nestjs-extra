@@ -1,5 +1,5 @@
 /** Molter options */
-export function validJpeg(sizeInMb: number = 1) {
+export function validJpeg(sizeInMb: number = 1): any {
   return {
     limits: { fileSize: 1024 * 1024 * sizeInMb }, // 0.4 mb
     fileFilter: (req: any, file: any, done: any): void => {
@@ -8,6 +8,6 @@ export function validJpeg(sizeInMb: number = 1) {
       } else {
         done(null, true);
       }
-    }
+    },
   };
 }

@@ -7,7 +7,7 @@ import {
   Equal,
   Like,
   In,
-  FindOperator
+  FindOperator,
 } from 'typeorm';
 import { convertToObject } from '../helpers';
 import { ParsedOrmWhere, Struct } from '../types';
@@ -19,7 +19,7 @@ import { ParsedOrmWhere, Struct } from '../types';
  * If no key is provided it will assume equal
  */
 export function parseQuery<T = any>(
-  query: Struct | string | null | undefined
+  query: Struct | string | null | undefined,
 ): ParsedOrmWhere<T> {
   // Query might be stringified json, or null. Convert to object first.
   const queryObject = convertToObject(query);

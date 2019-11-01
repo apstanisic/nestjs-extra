@@ -1,12 +1,12 @@
 import { join as pathJoin } from 'path';
 import { Injectable, Inject } from '@nestjs/common';
 import * as moment from 'moment';
+import { random } from 'faker';
 import { StorageService } from './storage.service';
 import { ImageSizes, Image, Struct } from '../types';
 import { generateAllImageSizes } from './sharp';
 import { STORAGE_IMAGE_SIZES } from '../consts';
 import { ImageSizeOptions } from './storage.module';
-import { random } from 'faker';
 
 /**
  * Storage service in charge of storing images.
