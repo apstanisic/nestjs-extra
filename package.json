@@ -20,12 +20,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs/common": "^6.8.5",
-    "@nestjs/core": "^6.8.5",
     "@nestjs/jwt": "^6.1.1",
     "@nestjs/passport": "^6.1.0",
     "@nestjs/testing": "^6.8.5",
-    "@nestjs/typeorm": "^6.2.0",
     "bcryptjs": "^2.4.3",
     "casbin": "^3.0.5",
     "class-transformer": "^0.2.3",
@@ -41,8 +38,14 @@
     "passport-jwt": "^4.0.0",
     "query-string": "^6.8.3",
     "sharp": "^0.23.2",
-    "sqlstring": "^2.3.1",
-    "typeorm": "^0.2.20"
+    "sqlstring": "^2.3.1"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "6.x",
+    "@nestjs/core": "6.x",
+    "@nestjs/typeorm": "6.x",
+    "typeorm": "0.x",
+    "typescript": "3.x"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
