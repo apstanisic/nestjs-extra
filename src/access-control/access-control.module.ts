@@ -4,8 +4,8 @@ import { AccessControlService } from './access-control.service';
 import { AC_ROLES_LIST, AC_MODEL, AC_POLICIES } from '../consts';
 import { RoleModule } from '../role/role.module';
 
-interface AcOptions {
-  roles: string[];
+export interface AcOptions {
+  availableRoles: string[];
   matcher: string;
   policies: string;
 }
@@ -23,7 +23,7 @@ export class AccessControlModule {
       module: AccessControlModule,
       imports: [RoleModule],
       providers: [
-        { provide: AC_ROLES_LIST, useValue: options.roles },
+        { provide: AC_ROLES_LIST, useValue: options.availableRoles },
         { provide: AC_MODEL, useValue: options.matcher },
         { provide: AC_POLICIES, useValue: options.policies },
         AccessControlService,

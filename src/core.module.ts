@@ -2,7 +2,10 @@ import { Module, DynamicModule } from '@nestjs/common';
 import { BaseEntity } from 'typeorm';
 import { MailModule } from './mail/mail.module';
 import { ConfigModule, ConfigOptions } from './config/config.module';
-import { AccessControlModule } from './access-control/access-control.module';
+import {
+  AccessControlModule,
+  AcOptions,
+} from './access-control/access-control.module';
 import { AuthModule } from './auth/auth.module';
 import { LoggerModule } from './logger/logger.module';
 import { StorageModule, StorageOptions } from './storage/storage.module';
@@ -28,6 +31,7 @@ interface ForRootParams {
   config?: ConfigOptions;
   storage: StorageOptions;
   db: DbOptions;
+  accessControl?: AcOptions;
 }
 
 /**
@@ -46,7 +50,9 @@ export class CoreModule {
 
     imports.push(DbModule.forRoot(params.db));
     if (shouldInclude('Mail')) imports.push(MailModule);
-    if (shouldInclude('AccessControl')) imports.push(AccessControlModule);
+    if (params.accessControl) {
+      imports.push(AccessControlModule.forRoot(params.accessControl));
+    }
     if (shouldInclude('Auth')) imports.push(AuthModule);
     if (shouldInclude('Config'))
       imports.push(ConfigModule.forRoot(params.config));

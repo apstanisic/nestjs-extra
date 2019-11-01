@@ -1,5 +1,5 @@
 import { DynamicModule } from '@nestjs/common';
-interface AcOptions {
+export interface AcOptions {
     roles: string[];
     matcher: string;
     policies: string;
@@ -7,4 +7,3 @@ interface AcOptions {
 export declare class AccessControlModule {
     static forRoot(options: AcOptions): DynamicModule;
 }
-export {};

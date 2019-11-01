@@ -2638,8 +2638,8 @@
         "signature": "917746f451b9febce5f684d7e8c86df5f7486ad7e87e4c1aed4a48f4f0c83650"
       },
       "../src/access-control/access-control.module.ts": {
-        "version": "1ee3b206ff319ec09f55becf194d8f4cff7ac058029e914fde763ce827812b1e",
-        "signature": "09159391b3a41dd4b8f6ed79d75318379767837f80625e45f4a4b3c024fbf1fd"
+        "version": "e1963c6488ac5ee5ecd5a408489c4de14c24760bcc5655ff065a65096dfffc71",
+        "signature": "823d8dac876402f3ee67041684d1d940f45a738615126c724970cac47ccbde47"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
         "version": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
@@ -2866,8 +2866,8 @@
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/core.module.ts": {
-        "version": "e473bcc4495b3eb25d97a0b5bd2171ebce149961b505012c1990583c6a7304be",
-        "signature": "5c046ad0b92ed767770deed1417dbf347240d2c47a066e3e162c438fd5b62977"
+        "version": "30459927b46ef87996ece2150009383c0fdd6dd2f82fa260be3dd25b615c46f2",
+        "signature": "d5b9c0dc85fea40ef8ae9361c8d5d6ce791ce5e8a01474c89d79c210dc481898"
       },
       "../src/example-consts.ts": {
         "version": "37f1cf6d0e3e55325f9b1d7fa536888921e84fc8fd1a6ae71fd8586b7192e6d7",
@@ -9721,7 +9721,8 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/config/config.module.ts",
         "../src/storage/storage.module.ts",
-        "../src/db/db.module.ts"
+        "../src/db/db.module.ts",
+        "../src/access-control/access-control.module.ts"
       ],
       "../node_modules/@types/cron/index.d.ts": [
         "../node_modules/moment/moment.d.ts",
