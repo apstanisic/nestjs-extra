@@ -4,7 +4,7 @@ import {
   Logger,
   Global,
 } from '@nestjs/common';
-import { PassportModule } from '@nestjs/passport';
+import { PassportModule, AuthGuard } from '@nestjs/passport';
 import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
@@ -14,6 +14,8 @@ import { ConfigService } from '../config/config.service';
 import { AuthMailService } from './auth-mail.service';
 import { PasswordResetService } from './password-reset.service';
 import { JWT_SECRET } from '../consts';
+
+export { AuthGuard } from '@nestjs/passport';
 
 @Global()
 @Module({

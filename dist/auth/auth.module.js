@@ -17,6 +17,8 @@ const config_service_1 = require("../config/config.service");
 const auth_mail_service_1 = require("./auth-mail.service");
 const password_reset_service_1 = require("./password-reset.service");
 const consts_1 = require("../consts");
+var passport_2 = require("@nestjs/passport");
+exports.AuthGuard = passport_2.AuthGuard;
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([

@@ -2798,8 +2798,8 @@
         "signature": "2b1492ccced436efb4a03a7d7a3d67faf115764ac8f5b76b61e0916acf89335b"
       },
       "../src/auth/auth.module.ts": {
-        "version": "438d6cebdc3eeb5b56fd6861826c93df0303fcd665d3964ac3a9fcff4e83dff2",
-        "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1"
+        "version": "e64366037b626c93d3a33f2a8b419f84672eaeb4ed5c2ce51118ccf2d2526ba8",
+        "signature": "640133db3771892c359b1ed1992dae2cb86f49079858f0b35ea5b534ddd63141"
       },
       "../src/logger/logger.module.ts": {
         "version": "293bd2f96d5b055546616dabeedb7e99febb04c4092d44265e041a27966a6f29",
@@ -15163,6 +15163,9 @@
         "../src/types.ts",
         "../src/auth/auth.dto.ts"
       ],
+      "../src/auth/auth.module.ts": [
+        "../node_modules/@nestjs/passport/index.d.ts"
+      ],
       "../node_modules/@types/minio/index.d.ts": [
         "../node_modules/@types/node/stream.d.ts",
         "../node_modules/@types/node/https.d.ts",
@@ -16175,6 +16178,8 @@
       "../node_modules/@types/sharp/index.d.ts",
       "../src/storage/sharp.ts",
       "../src/storage/storage-images.service.ts",
+      "../src/storage/storage-images-default-config.ts",
+      "../src/storage/storage.module.ts",
       "../node_modules/@types/cron/index.d.ts",
       "../src/cron/cron.service.ts",
       "../src/cron/cron.module.ts",
@@ -16218,9 +16223,7 @@
       "../node_modules/@types/json-schema/index.d.ts",
       "../node_modules/@types/stack-utils/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
-      "../node_modules/@types/yargs/index.d.ts",
-      "../src/storage/storage-images-default-config.ts",
-      "../src/storage/storage.module.ts"
+      "../node_modules/@types/yargs/index.d.ts"
     ]
   },
   "version": "3.6.4"
