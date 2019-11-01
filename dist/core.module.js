@@ -16,11 +16,13 @@ const logger_module_1 = require("./logger/logger.module");
 const storage_module_1 = require("./storage/storage.module");
 const cron_module_1 = require("./cron/cron.module");
 const notification_module_1 = require("./notification/notification.module");
+const db_module_1 = require("./db/db.module");
 let CoreModule = CoreModule_1 = class CoreModule {
     static forRoot(params) {
         const imports = [];
         const ignore = params ? params.ignore : [];
         const shouldInclude = (module) => !ignore.includes(module);
+        imports.push(db_module_1.DbModule.forRoot(params.db));
         if (shouldInclude('Mail'))
             imports.push(mail_module_1.MailModule);
         if (shouldInclude('AccessControl'))

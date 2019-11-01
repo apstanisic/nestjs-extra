@@ -2278,8 +2278,8 @@
         "signature": "feaed97d87f0a89d2c75bb1ce18c6da05e0f441ebace05d8f6d52a3ee340237d"
       },
       "../src/consts.ts": {
-        "version": "8fb1a4a3652380c9561097b3cf92926ddc859933e9026b3398c5ed5c0a52a79d",
-        "signature": "467ac0c2df46a9ce5c056d4a2013fbb385058b70b95ea72d9a85f0e003765aa4"
+        "version": "bc12bade643bcf663c5a4eabbeac90f235091e0df8fce502b04adb9fede36578",
+        "signature": "7459a88491c26e9a15ea3fd3d70962d84394ac8e7f6fe910b98523b4aa529cbc"
       },
       "../node_modules/@types/nodemailer/lib/dkim/index.d.ts": {
         "version": "971b6006a4610efd734e051f5d1421f87bc0c73bfc3cd205819236d497cba1e4",
@@ -2346,8 +2346,8 @@
         "signature": "5fc23e9aadbeafa06aad55ad1b0e0614c94662b373d47adf185a4ab215c170da"
       },
       "../src/config/config.service.ts": {
-        "version": "367c40791d3dc0591475396373c7bdbc525d308ea8a9951860f72b01f0fd82d8",
-        "signature": "8139967cc3ee9a2c6967fbadaa631129b83fe69e250e885500c6d81241bcd6d7"
+        "version": "28c8e0d35e1b91b53dd7a8ff346844afc624b9afcb86f1e4157e4bdb9fc33c61",
+        "signature": "222887c9245dc215614ccca33f1f0df8f7ed802f8d5527c312ed1b1528c91fcb"
       },
       "../src/mail/mail.service.ts": {
         "version": "1c6194c936d1bf8a8802f51a29ae6d1a7617d19e842579bfba43079e48d3e2eb",
@@ -2861,9 +2861,13 @@
         "version": "ea7dac912cd55b8845b5a7aa63934e0000eb4a798e66382b84570c3d692ca976",
         "signature": "0a9137fd1f6cc95a03dc750636d3c795b2a8f1c060aec6c4bd1eb1a55dce802e"
       },
+      "../src/db/db.module.ts": {
+        "version": "d1b37426a1858adf3b4e20ff7390f02b80d6d70ed1d684eaeed8b339f174a0ab",
+        "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
+      },
       "../src/core.module.ts": {
-        "version": "40aff712d0ade86e3f75de068a7e57ebb619650aef5d71dfec7d9d4fc530287e",
-        "signature": "07e6992a990b6e34c59077e2e9dc601ad27c1e4c6cfa8a37adb38eca0724db34"
+        "version": "e473bcc4495b3eb25d97a0b5bd2171ebce149961b505012c1990583c6a7304be",
+        "signature": "5c046ad0b92ed767770deed1417dbf347240d2c47a066e3e162c438fd5b62977"
       },
       "../src/example-consts.ts": {
         "version": "37f1cf6d0e3e55325f9b1d7fa536888921e84fc8fd1a6ae71fd8586b7192e6d7",
@@ -2920,6 +2924,10 @@
       "../src/index.ts": {
         "version": "3377671a8498319c062e93b29d77952bd029997af99697880d1617de418990d0",
         "signature": "3377671a8498319c062e93b29d77952bd029997af99697880d1617de418990d0"
+      },
+      "../src/db/db.service.ts": {
+        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
         "version": "e8c8045d31df75a2031be9d0e96274b26a394f48e6eac6a7cbb1b778d16d74ac",
@@ -9122,6 +9130,16 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/db/db.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/config/config.service.ts",
+        "../src/consts.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/core.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
@@ -9133,6 +9151,7 @@
         "../src/storage/storage.module.ts",
         "../src/cron/cron.module.ts",
         "../src/notification/notification.module.ts",
+        "../src/db/db.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -9316,6 +9335,12 @@
         "../src/types.ts",
         "../src/uuid.pipe.ts",
         "../src/validate-email.pipe.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/db/db.service.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -9695,7 +9720,8 @@
       "../src/core.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/config/config.module.ts",
-        "../src/storage/storage.module.ts"
+        "../src/storage/storage.module.ts",
+        "../src/db/db.module.ts"
       ],
       "../node_modules/@types/cron/index.d.ts": [
         "../node_modules/moment/moment.d.ts",
@@ -9794,6 +9820,9 @@
       ],
       "../src/id-array.dto.ts": [
         "../src/types.ts"
+      ],
+      "../src/db/db.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/notification/notification.controller.ts": [
         "../src/notification/notification.service.ts",
@@ -16095,6 +16124,7 @@
       "../src/auth/get-user.decorator.ts",
       "../src/notification/notification.controller.ts",
       "../src/notification/notification.module.ts",
+      "../src/db/db.module.ts",
       "../src/core.module.ts",
       "../src/example-consts.ts",
       "../src/global.dto.ts",
@@ -16110,6 +16140,7 @@
       "../src/storage/valid-jpeg-image.ts",
       "../src/typeorm/orm-query.pipe.ts",
       "../src/index.ts",
+      "../src/db/db.service.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
       "../node_modules/@types/babel__traverse/index.d.ts",

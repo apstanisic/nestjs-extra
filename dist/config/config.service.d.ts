@@ -6,5 +6,5 @@ export declare class ConfigService {
     private readonly data;
     constructor(options?: ConfigOptions);
     get(key: string): string | undefined;
-    getAll(): Struct<String>;
+    getAll(): Struct<string>;
 }

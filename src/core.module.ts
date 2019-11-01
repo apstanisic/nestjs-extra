@@ -8,6 +8,7 @@ import { LoggerModule } from './logger/logger.module';
 import { StorageModule, StorageOptions } from './storage/storage.module';
 import { CronModule } from './cron/cron.module';
 import { NotificationModule } from './notification/notification.module';
+import { DbModule, DbOptions } from './db/db.module';
 
 /** Available modules */
 type AvailableModules =
@@ -26,6 +27,7 @@ interface ForRootParams {
   ignore: AvailableModules[];
   config?: ConfigOptions;
   storage: StorageOptions;
+  db: DbOptions;
 }
 
 /**
@@ -42,6 +44,7 @@ export class CoreModule {
     const shouldInclude = (module: AvailableModules): boolean =>
       !ignore.includes(module);
 
+    imports.push(DbModule.forRoot(params.db));
     if (shouldInclude('Mail')) imports.push(MailModule);
     if (shouldInclude('AccessControl')) imports.push(AccessControlModule);
     if (shouldInclude('Auth')) imports.push(AuthModule);

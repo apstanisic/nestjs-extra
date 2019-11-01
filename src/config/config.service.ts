@@ -57,7 +57,7 @@ export class ConfigService {
   }
 
   /** Get all values from config */
-  getAll(): Struct<String> {
+  getAll(): Struct<string> {
     return this.data;
   }
 }
