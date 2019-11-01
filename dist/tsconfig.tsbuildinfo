@@ -2862,7 +2862,7 @@
         "signature": "0a9137fd1f6cc95a03dc750636d3c795b2a8f1c060aec6c4bd1eb1a55dce802e"
       },
       "../src/db/db.module.ts": {
-        "version": "d1b37426a1858adf3b4e20ff7390f02b80d6d70ed1d684eaeed8b339f174a0ab",
+        "version": "f276492a69d81077ccc3862090915fa008d91280fccba5c7fedeb6ad2947750f",
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/core.module.ts": {

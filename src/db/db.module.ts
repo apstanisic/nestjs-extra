@@ -2,11 +2,11 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigService } from '../config/config.service';
 import {
+  DB_DATABASE,
   DB_HOST,
   DB_PASSWORD,
+  DB_PORT,
   DB_USER,
-  LOG_DB_DATABASE,
-  LOG_DB_PORT,
   NODE_ENV,
   REDIS_HOST,
   REDIS_PORT,
@@ -33,10 +33,10 @@ export class DbModule {
             const options: TypeOrmModuleOptions = {
               type: 'postgres',
               host: envs[DB_HOST],
-              database: envs[LOG_DB_DATABASE],
+              database: envs[DB_DATABASE],
               username: envs[DB_USER],
               password: envs[DB_PASSWORD],
-              port: parseInt(envs[LOG_DB_PORT], 10),
+              port: parseInt(envs[DB_PORT], 10),
               maxQueryExecutionTime: 3000,
               synchronize: false,
               logging: isProduction ? ['error'] : 'all',

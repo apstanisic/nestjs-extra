@@ -25,10 +25,10 @@ let DbModule = DbModule_1 = class DbModule {
                         const options = {
                             type: 'postgres',
                             host: envs[consts_1.DB_HOST],
-                            database: envs[consts_1.LOG_DB_DATABASE],
+                            database: envs[consts_1.DB_DATABASE],
                             username: envs[consts_1.DB_USER],
                             password: envs[consts_1.DB_PASSWORD],
-                            port: parseInt(envs[consts_1.LOG_DB_PORT], 10),
+                            port: parseInt(envs[consts_1.DB_PORT], 10),
                             maxQueryExecutionTime: 3000,
                             synchronize: false,
                             logging: isProduction ? ['error'] : 'all',
