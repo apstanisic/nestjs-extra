@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "NestJS base modules",
   "author": "aleksandar@tuta.io",
-  "main": "dist/core.module.js",
+  "main": "dist/main.js",
+  "typings": "dist/main.d.ts",
   "license": "MIT",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
