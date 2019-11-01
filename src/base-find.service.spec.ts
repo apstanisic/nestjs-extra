@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { Equal } from 'typeorm';
 import { BaseFindService } from './base-find.service';
-import { IBasicUserInfo } from './entities/user.interface';
+import { BasicUserInfo } from './entities/user.interface';
 import { PaginationParams } from './pagination/pagination-options';
 
 const LogUser: IBasicUserInfo = {

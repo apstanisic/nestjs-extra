@@ -21,4 +21,4 @@ export class BasicUserInfo {
   avatar?: string | ImageSizes;
 }
 
-// export interface IBasicUserInfo extends BasicUserInfo {}
+export interface IBasicUserInfo extends BasicUserInfo {}

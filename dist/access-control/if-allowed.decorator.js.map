@@ -1,0 +1,1 @@
+{"version":3,"file":"if-allowed.decorator.js","sourceRoot":"","sources":["../../src/access-control/if-allowed.decorator.ts"],"names":[],"mappings":";;AAAA,2CAA6C;AAa7C,SAAgB,SAAS,CACvB,SAAiB,OAAO,EACxB,YAAqB;IAErB,OAAO,oBAAW,CAAC,gBAAgB,EAAE,CAAC,IAAI,EAAE,MAAM,EAAE,YAAY,CAAC,CAAC,CAAC;AACrE,CAAC;AALD,8BAKC"}
