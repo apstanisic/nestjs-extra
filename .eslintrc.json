@@ -1,0 +1,60 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["airbnb-base", "prettier"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "import/prefer-default-export": "off", // NestJs prefers
+    "no-unused-vars": "off", // Sometimes import is used only for typedef
+    "no-useless-constructor": "off", // Can be used for DI
+    "no-empty-function": "off", // Can be used for DI
+    "class-methods-use-this": "off", // Not every method needs this.
+    "arrow-parens": "off", // Code is more concise
+    "max-classes-per-file": "off", // Many dto classes are simply small
+    "no-underscore-dangle": "off", // Allow for _private field in typeorm entity
+    "object-curly-newline": "off", // Stupid rule
+    "consistent-return": "off", // Have ts, no need for this
+    "implicit-arrow-linebreak": "off", // causes problems
+    "no-console": "warn", // It just makes it harder to debug
+    "no-empty": "off", // Sometimes I don't care about errors
+    "@typescript-eslint/explicit-function-return-type": "error", // force return type for security
+    "lines-between-class-members": "off", // Some classes are small, and don't need space
+    "no-param-reassign": "off" // Need to mutate entities
+    // "import/no-unresolved": "off",
+    // "import/prefer-default-export": "off",
+    // "no-useless-constructor": "off",
+    // "@typescript-eslint/indent": ["off", 2],
+    // "quotes": ["warn", "single"],
+    // "require-atomic-updates": "off",
+    // "@typescript-eslint/explicit-member-accessibility": "off",
+    // "@typescript-eslint/no-parameter-properties": "off",
+    // "@typescript-eslint/no-explicit-any": "off",
+    // "@typescript-eslint/no-unused-vars": "off",
+    // "no-console": "warn",
+    // "@typescript-eslint/explicit-function-return-type": "off",
+    // "no-unreachable": "warn",
+    // "no-return-await": "error",
+    // "@typescript-eslint/no-empty-interface": "off",
+    // "@typescript-eslint/no-inferrable-types": "off"
+  }
+}
