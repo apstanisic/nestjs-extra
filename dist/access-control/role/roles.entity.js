@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const class_validator_1 = require("class-validator");
 const typeorm_1 = require("typeorm");
-const base_entity_1 = require("../entities/base.entity");
+const base_entity_1 = require("../../entities/base.entity");
 let Role = class Role extends base_entity_1.BaseEntity {
 };
 __decorate([

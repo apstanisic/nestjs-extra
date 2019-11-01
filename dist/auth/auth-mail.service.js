@@ -22,13 +22,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const fs_1 = require("fs");
 const Handlebars = require("handlebars");
-const path = require("path");
 const base_service_1 = require("../base.service");
 const config_service_1 = require("../config/config.service");
 const consts_1 = require("../consts");
 const mail_service_1 = require("../mail/mail.service");
+const account_confirm_handlebars_1 = require("./templates/account-confirm.handlebars");
+const password_reset_handlebars_1 = require("./templates/password-reset.handlebars");
 let AuthMailService = class AuthMailService {
     constructor(usersService, mailService, configService) {
         this.usersService = usersService;
@@ -92,22 +92,8 @@ let AuthMailService = class AuthMailService {
         };
     }
     storeTemplatesInMemory() {
-        const accountConfirmTemplate = path.join(__dirname, 'templates/account-confirm.handlebars');
-        fs_1.readFile(accountConfirmTemplate, { encoding: 'utf8' }, (err, data) => {
-            if (err) {
-                this.logger.error(err);
-                throw new common_1.InternalServerErrorException();
-            }
-            this.templates.accountConfirm = Handlebars.compile(data);
-        });
-        const passwordResetTemplate = path.join(__dirname, 'templates/password-reset.handlebars');
-        fs_1.readFile(passwordResetTemplate, { encoding: 'utf8' }, (err, data) => {
-            if (err) {
-                this.logger.error(err);
-                throw new common_1.InternalServerErrorException();
-            }
-            this.templates.passwordReset = Handlebars.compile(data);
-        });
+        this.templates.accountConfirm = Handlebars.compile(account_confirm_handlebars_1.accountConfirmTemplate);
+        this.templates.passwordReset = Handlebars.compile(password_reset_handlebars_1.passwordResetTemplate);
     }
 };
 AuthMailService = __decorate([

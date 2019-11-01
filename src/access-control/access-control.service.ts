@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@nestjs/common';
 import { Enforcer, newEnforcer, StringAdapter, newModel } from 'casbin';
 import { casbinValidDomain } from './casbin-valid-domain';
 import { AC_MODEL, AC_POLICIES } from '../consts';
-import { Role } from '../role/roles.entity';
+import { Role } from './role/roles.entity';
 
 @Injectable()
 export class AccessControlService {

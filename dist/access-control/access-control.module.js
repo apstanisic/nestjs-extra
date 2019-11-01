@@ -8,18 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var AccessControlModule_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const permissions_guard_1 = require("./permissions.guard");
-const access_control_service_1 = require("./access-control.service");
 const consts_1 = require("../consts");
-const role_module_1 = require("../role/role.module");
+const access_control_service_1 = require("./access-control.service");
+const permissions_guard_1 = require("./permissions.guard");
+const role_module_1 = require("./role/role.module");
 let AccessControlModule = AccessControlModule_1 = class AccessControlModule {
     static forRoot(options) {
         return {
             module: AccessControlModule_1,
             imports: [role_module_1.RoleModule],
             providers: [
-                { provide: consts_1.AC_ROLES_LIST, useValue: options.roles },
-                { provide: consts_1.AC_MODEL, useValue: options.matcher },
+                { provide: consts_1.AC_ROLES_LIST, useValue: options.availableRoles },
+                { provide: consts_1.AC_MODEL, useValue: options.model },
                 { provide: consts_1.AC_POLICIES, useValue: options.policies },
                 access_control_service_1.AccessControlService,
                 permissions_guard_1.PermissionsGuard,

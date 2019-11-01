@@ -13,6 +13,8 @@ import { ConfigService } from '../config/config.service';
 import { USER_SERVICE } from '../consts';
 import { BaseUser } from '../entities/base-user.entity';
 import { MailService } from '../mail/mail.service';
+import { accountConfirmTemplate } from './templates/account-confirm.handlebars';
+import { passwordResetTemplate } from './templates/password-reset.handlebars';
 
 interface CommonHandlebars {
   contactAddress?: string;
@@ -123,29 +125,8 @@ export class AuthMailService {
    * It will later be compiled with Handlebars.
    */
   private storeTemplatesInMemory(): void {
-    const accountConfirmTemplate = path.join(
-      __dirname,
-      'templates/account-confirm.handlebars',
-    );
-    readFile(accountConfirmTemplate, { encoding: 'utf8' }, (err, data) => {
-      if (err) {
-        this.logger.error(err);
-        throw new InternalServerErrorException();
-      }
-      this.templates.accountConfirm = Handlebars.compile(data);
-    });
+    this.templates.accountConfirm = Handlebars.compile(accountConfirmTemplate);
 
-    /**  */
-    const passwordResetTemplate = path.join(
-      __dirname,
-      'templates/password-reset.handlebars',
-    );
-    readFile(passwordResetTemplate, { encoding: 'utf8' }, (err, data) => {
-      if (err) {
-        this.logger.error(err);
-        throw new InternalServerErrorException();
-      }
-      this.templates.passwordReset = Handlebars.compile(data);
-    });
+    this.templates.passwordReset = Handlebars.compile(passwordResetTemplate);
   }
 }

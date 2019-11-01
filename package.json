@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-base-modules",
+  "name": "nestjs-extra",
   "version": "0.0.1",
   "description": "NestJS base modules",
   "author": "aleksandar@tuta.io",
@@ -34,6 +34,7 @@
     "handlebars": "^4.5.1",
     "minio": "^7.0.12",
     "moment": "^2.24.0",
+    "mongodb": "^3.3.3",
     "nodemailer": "^6.3.1",
     "passport-jwt": "^4.0.0",
     "pg": "^7.12.1",
@@ -42,13 +43,15 @@
     "sqlstring": "^2.3.1"
   },
   "peerDependencies": {
+    "@nestjs/common": "^6.8.5",
+    "@nestjs/core": "^6.8.5",
+    "@nestjs/typeorm": "^6.2.0",
+    "typeorm": "^0.2.20"
+  },
+  "devDependencies": {
     "@nestjs/common": "6.x",
     "@nestjs/core": "6.x",
     "@nestjs/typeorm": "6.x",
-    "typeorm": "0.x",
-    "typescript": "3.x"
-  },
-  "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/cron": "^1.7.1",
     "@types/deep-diff": "^1.0.0",
@@ -69,6 +72,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
+    "typeorm": "0.x",
     "typescript": "^3.6.4"
   }
 }

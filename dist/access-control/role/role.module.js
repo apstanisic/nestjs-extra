@@ -13,6 +13,7 @@ const roles_entity_1 = require("./roles.entity");
 let RoleModule = class RoleModule {
 };
 RoleModule = __decorate([
+    common_1.Global(),
     common_1.Module({
         imports: [typeorm_1.TypeOrmModule.forFeature([roles_entity_1.Role])],
         providers: [role_service_1.RoleService],

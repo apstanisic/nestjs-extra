@@ -1,6 +1,6 @@
 import * as Faker from 'faker';
-import { BaseUserWithRoles } from '../entities/base-user-with-roles.entity';
-import { UUID } from '../types';
+import { BaseUserWithRoles } from '../../entities/base-user-with-roles.entity';
+import { UUID } from '../../types';
 import { Role } from './roles.entity';
 
 const random = Faker.random.arrayElement;

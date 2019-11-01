@@ -1,5 +1,5 @@
 import { IsOptional, IsString, IsUUID } from 'class-validator';
-import { UUID } from '../types';
+import { UUID } from '../../types';
 
 /** Domain is provided trough url param. */
 /** @TODO Do validation for role name */

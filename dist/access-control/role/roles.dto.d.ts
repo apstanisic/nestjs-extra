@@ -1,4 +1,4 @@
-import { UUID } from '../types';
+import { UUID } from '../../types';
 export declare class RoleDto {
     userId?: UUID;
     name?: string;

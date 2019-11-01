@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
+const __1 = require("..");
+const config_service_1 = require("../config/config.service");
 const db_logger_service_1 = require("./db-logger.service");
 const log_entity_1 = require("./log.entity");
-const config_service_1 = require("../config/config.service");
 let LoggerModule = class LoggerModule {
 };
 LoggerModule = __decorate([
@@ -22,9 +23,9 @@ LoggerModule = __decorate([
                 name: 'log_db',
                 useFactory: (config) => ({
                     type: 'mongodb',
-                    host: config.get('LOG_DB_HOST'),
-                    database: config.get('LOG_DB_DATABASE'),
-                    port: Number(config.get('LOG_DB_PORT')),
+                    host: config.get(__1.LOG_DB_HOST),
+                    database: config.get(__1.LOG_DB_DATABASE),
+                    port: Number(config.get(__1.LOG_DB_PORT)),
                     entities: [log_entity_1.Log],
                     useNewUrlParser: true,
                     useUnifiedTopology: true,

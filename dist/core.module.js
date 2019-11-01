@@ -25,7 +25,7 @@ let CoreModule = CoreModule_1 = class CoreModule {
         imports.push(db_module_1.DbModule.forRoot(params.db));
         if (shouldInclude('Mail'))
             imports.push(mail_module_1.MailModule);
-        if (params.accessControl) {
+        if (params.accessControl !== undefined) {
             imports.push(access_control_module_1.AccessControlModule.forRoot(params.accessControl));
         }
         if (shouldInclude('Auth'))

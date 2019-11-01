@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_transformer_1 = require("class-transformer");
 const base_user_entity_1 = require("./base-user.entity");
-const roles_entity_1 = require("../role/roles.entity");
+const roles_entity_1 = require("../access-control/role/roles.entity");
 class BaseUserWithRoles extends base_user_entity_1.BaseUser {
 }
 __decorate([

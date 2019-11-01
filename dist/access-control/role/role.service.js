@@ -16,7 +16,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const roles_entity_1 = require("./roles.entity");
-const base_service_1 = require("../base.service");
+const base_service_1 = require("../../base.service");
 let RoleService = class RoleService extends base_service_1.BaseService {
     constructor(repository) {
         super(repository);

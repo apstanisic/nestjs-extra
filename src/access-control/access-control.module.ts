@@ -1,12 +1,12 @@
-import { Module, Global, DynamicModule } from '@nestjs/common';
-import { PermissionsGuard } from './permissions.guard';
+import { DynamicModule, Global, Module } from '@nestjs/common';
+import { AC_MODEL, AC_POLICIES, AC_ROLES_LIST } from '../consts';
 import { AccessControlService } from './access-control.service';
-import { AC_ROLES_LIST, AC_MODEL, AC_POLICIES } from '../consts';
-import { RoleModule } from '../role/role.module';
+import { PermissionsGuard } from './permissions.guard';
+import { RoleModule } from './role/role.module';
 
 export interface AcOptions {
   availableRoles: string[];
-  matcher: string;
+  model: string;
   policies: string;
 }
 
@@ -24,7 +24,7 @@ export class AccessControlModule {
       imports: [RoleModule],
       providers: [
         { provide: AC_ROLES_LIST, useValue: options.availableRoles },
-        { provide: AC_MODEL, useValue: options.matcher },
+        { provide: AC_MODEL, useValue: options.model },
         { provide: AC_POLICIES, useValue: options.policies },
         AccessControlService,
         PermissionsGuard,

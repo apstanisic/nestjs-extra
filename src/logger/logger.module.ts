@@ -1,8 +1,9 @@
-import { Module, Global } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { LOG_DB_DATABASE, LOG_DB_HOST, LOG_DB_PORT } from '..';
+import { ConfigService } from '../config/config.service';
 import { DbLoggerService } from './db-logger.service';
 import { Log } from './log.entity';
-import { ConfigService } from '../config/config.service';
 
 /** This module uses NoSql db for efficient storing. */
 @Global()
@@ -14,9 +15,9 @@ import { ConfigService } from '../config/config.service';
       name: 'log_db',
       useFactory: (config: ConfigService) => ({
         type: 'mongodb',
-        host: config.get('LOG_DB_HOST'),
-        database: config.get('LOG_DB_DATABASE'),
-        port: Number(config.get('LOG_DB_PORT')),
+        host: config.get(LOG_DB_HOST),
+        database: config.get(LOG_DB_DATABASE),
+        port: Number(config.get(LOG_DB_PORT)),
         entities: [Log],
         useNewUrlParser: true,
         useUnifiedTopology: true,

@@ -50,7 +50,7 @@ export class CoreModule {
 
     imports.push(DbModule.forRoot(params.db));
     if (shouldInclude('Mail')) imports.push(MailModule);
-    if (params.accessControl) {
+    if (params.accessControl !== undefined) {
       imports.push(AccessControlModule.forRoot(params.accessControl));
     }
     if (shouldInclude('Auth')) imports.push(AuthModule);
