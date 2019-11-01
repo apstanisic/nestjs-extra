@@ -4,7 +4,7 @@
   "description": "NestJS base modules",
   "author": "aleksandar@tuta.io",
   "main": "dist/index.js",
-  "typs": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "files": [
     "dist"
