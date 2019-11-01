@@ -3,6 +3,7 @@ import {
   Injectable,
   InternalServerErrorException,
   Logger,
+  Optional,
 } from '@nestjs/common';
 import * as dotenv from 'dotenv';
 import { readFileSync } from 'fs';
@@ -26,13 +27,19 @@ export class ConfigService {
   }
 
   /** Use .env file if config not provided */
-  constructor(@Inject(CONFIG_OPTIONS) options: ConfigOptions) {
+  constructor(@Optional() @Inject(CONFIG_OPTIONS) options?: ConfigOptions) {
     try {
-      if (options.configData === undefined) {
+      if (options) {
+        const { configs } = options;
+        // if (typeof options.configs === 'object')
+        if (Buffer.isBuffer(configs) || typeof configs === 'string') {
+          this.configData = dotenv.parse(configs);
+        } else {
+          this.configData = { ...configs };
+        }
+      } else {
         const file = readFileSync('.env');
         this.configData = dotenv.parse(file);
-      } else {
-        this.configData = dotenv.parse(options.configData);
       }
     } catch (error) {
       this.logger.log('ConfigService was not initialized.');

@@ -1,10 +1,11 @@
 import { Module, Global, DynamicModule } from '@nestjs/common';
 import { ConfigService } from './config.service';
+import { Struct } from '../types';
 
 export const CONFIG_OPTIONS = 'CONFIG_OPTIONS';
 
 export interface ConfigOptions {
-  configData?: string | Buffer;
+  configs: string | Buffer | Struct<string>;
 }
 
 @Global()
