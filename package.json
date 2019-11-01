@@ -44,6 +44,7 @@
     "@nestjs/common": "6.x",
     "@nestjs/core": "6.x",
     "@nestjs/typeorm": "6.x",
+    "pg": "7.x",
     "typeorm": "0.x",
     "typescript": "3.x"
   },
