@@ -20,12 +20,18 @@ let ConfigService = class ConfigService {
     constructor(options) {
         this.logger = new common_1.Logger('ConfigModule');
         try {
-            if (options.configData === undefined) {
-                const file = fs_1.readFileSync('.env');
-                this.configData = dotenv.parse(file);
+            if (options) {
+                const { configs } = options;
+                if (Buffer.isBuffer(configs) || typeof configs === 'string') {
+                    this.configData = dotenv.parse(configs);
+                }
+                else {
+                    this.configData = Object.assign({}, configs);
+                }
             }
             else {
-                this.configData = dotenv.parse(options.configData);
+                const file = fs_1.readFileSync('.env');
+                this.configData = dotenv.parse(file);
             }
         }
         catch (error) {
@@ -48,7 +54,7 @@ let ConfigService = class ConfigService {
 };
 ConfigService = __decorate([
     common_1.Injectable(),
-    __param(0, common_1.Inject(config_module_1.CONFIG_OPTIONS)),
+    __param(0, common_1.Optional()), __param(0, common_1.Inject(config_module_1.CONFIG_OPTIONS)),
     __metadata("design:paramtypes", [Object])
 ], ConfigService);
 exports.ConfigService = ConfigService;
