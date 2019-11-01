@@ -70,4 +70,4 @@ __export(require("./typeorm/orm-query.pipe"));
 __export(require("./typeorm/parse-to-orm-query"));
 __export(require("./uuid.pipe"));
 __export(require("./validate-email.pipe"));
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=index.js.map

@@ -3,15 +3,16 @@
   "version": "0.0.1",
   "description": "NestJS base modules",
   "author": "aleksandar@tuta.io",
-  "main": "dist/main.js",
-  "typings": "dist/main.d.ts",
+  "main": "dist/index.js",
+  "typs": "dist/index.d.ts",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint --fix src --ext .js,.ts",
     "build": "rimraf dist && tsc",
-    "start": "ts-node dist/main.js",
-    "dev": "nodemon",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
