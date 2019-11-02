@@ -22,16 +22,13 @@ let CoreModule = CoreModule_1 = class CoreModule {
         const imports = [];
         const ignore = params ? params.ignore : [];
         const shouldInclude = (module) => !ignore.includes(module);
+        imports.push(config_module_1.ConfigModule.forRoot(params.config));
         imports.push(db_module_1.DbModule.forRoot(params.db));
-        if (shouldInclude('Mail'))
-            imports.push(mail_module_1.MailModule);
+        imports.push(auth_module_1.AuthModule);
+        imports.push(mail_module_1.MailModule);
         if (params.accessControl !== undefined) {
             imports.push(access_control_module_1.AccessControlModule.forRoot(params.accessControl));
         }
-        if (shouldInclude('Auth'))
-            imports.push(auth_module_1.AuthModule);
-        if (shouldInclude('Config'))
-            imports.push(config_module_1.ConfigModule.forRoot(params.config));
         if (shouldInclude('Log'))
             imports.push(logger_module_1.LoggerModule);
         if (shouldInclude('Storage'))

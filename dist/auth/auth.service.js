@@ -46,10 +46,19 @@ let AuthService = class AuthService {
     validateJwt(payload) {
         return __awaiter(this, void 0, void 0, function* () {
             if (!payload || !this.validator.isEmail(payload.email)) {
+                console.log('bad request exception');
                 throw new common_1.BadRequestException();
             }
             const { email } = payload;
-            return this.usersService.findOne({ email }, { relations: ['roles'] });
+            try {
+                const user = yield this.usersService.findOne({ email });
+                console.log('user', user);
+                return user;
+            }
+            catch (error) {
+                console.log('zadnji deo greska', JSON.stringify(error));
+                throw new Error();
+            }
         });
     }
     createJwt(email) {

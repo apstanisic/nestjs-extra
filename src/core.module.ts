@@ -48,14 +48,14 @@ export class CoreModule {
     const shouldInclude = (module: AvailableModules): boolean =>
       !ignore.includes(module);
 
+    imports.push(ConfigModule.forRoot(params.config));
     imports.push(DbModule.forRoot(params.db));
-    if (shouldInclude('Mail')) imports.push(MailModule);
+    imports.push(AuthModule);
+    imports.push(MailModule);
+
     if (params.accessControl !== undefined) {
       imports.push(AccessControlModule.forRoot(params.accessControl));
     }
-    if (shouldInclude('Auth')) imports.push(AuthModule);
-    if (shouldInclude('Config'))
-      imports.push(ConfigModule.forRoot(params.config));
     if (shouldInclude('Log')) imports.push(LoggerModule);
     if (shouldInclude('Storage'))
       imports.push(StorageModule.forRoot(params.storage));

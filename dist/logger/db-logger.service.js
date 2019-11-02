@@ -20,6 +20,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
@@ -53,7 +54,7 @@ let DbLoggerService = class DbLoggerService extends base_find_service_1.BaseFind
 DbLoggerService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(log_entity_1.Log, 'log_db')),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __metadata("design:paramtypes", [typeof (_a = typeof typeorm_2.Repository !== "undefined" && typeorm_2.Repository) === "function" ? _a : Object])
 ], DbLoggerService);
 exports.DbLoggerService = DbLoggerService;
 //# sourceMappingURL=db-logger.service.js.map

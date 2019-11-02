@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const class_transformer_1 = require("class-transformer");
@@ -37,7 +38,7 @@ let Log = class Log {
 __decorate([
     typeorm_1.ObjectIdColumn(),
     class_transformer_1.Exclude(),
-    __metadata("design:type", typeorm_1.ObjectID)
+    __metadata("design:type", typeof (_a = typeof typeorm_1.ObjectID !== "undefined" && typeorm_1.ObjectID) === "function" ? _a : Object)
 ], Log.prototype, "_id", void 0);
 __decorate([
     typeorm_1.Column({ default: Faker.random.uuid(), type: 'string' }),

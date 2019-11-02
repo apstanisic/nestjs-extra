@@ -38,10 +38,23 @@ export class AuthService<User extends BaseUser = BaseUser> {
    */
   async validateJwt(payload: JwtPayload): Promise<BaseUser> {
     if (!payload || !this.validator.isEmail(payload.email)) {
+      console.log('bad request exception');
+
       throw new BadRequestException();
     }
     const { email } = payload;
-    return this.usersService.findOne({ email }, { relations: ['roles'] });
+    try {
+      const user = await this.usersService.findOne(
+        { email },
+        // { relations: ['roles'] },
+      );
+      console.log('user', user);
+
+      return user;
+    } catch (error) {
+      console.log('zadnji deo greska', JSON.stringify(error));
+      throw new Error();
+    }
   }
 
   /** Generate new token when user logs in */

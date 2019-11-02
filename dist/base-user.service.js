@@ -17,6 +17,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("typeorm");
@@ -124,7 +125,7 @@ __decorate([
 ], BaseUserService.prototype, "roleService", void 0);
 BaseUserService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [typeorm_1.Repository, Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof typeorm_1.Repository !== "undefined" && typeorm_1.Repository) === "function" ? _a : Object, Object])
 ], BaseUserService);
 exports.BaseUserService = BaseUserService;
 //# sourceMappingURL=base-user.service.js.map

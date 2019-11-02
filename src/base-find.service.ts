@@ -44,7 +44,10 @@ export class BaseFindService<T extends WithId = any> {
 
     try {
       entity = await this.repository.findOne({ ...options, where });
+      console.log('entity', entity);
     } catch (error) {
+      console.log('error in entity', error);
+
       throw this.internalError(error);
     }
 
@@ -125,7 +128,9 @@ export class BaseFindService<T extends WithId = any> {
   }
 
   protected internalError(error: any): InternalServerErrorException {
-    this.logger.error(error);
+    console.log('Nema greske', JSON.stringify(error));
+
+    this.logger.error('BaseServiceError', error);
     return new InternalServerErrorException();
   }
 }

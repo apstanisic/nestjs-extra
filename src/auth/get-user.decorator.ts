@@ -6,6 +6,8 @@ import { createParamDecorator, UnauthorizedException } from '@nestjs/common';
  *  someMethod(@GetUser() user: User) {}
  */
 export const GetUser = createParamDecorator((data: string, req) => {
-  if (!req.user) throw new UnauthorizedException();
+  // if (!req.user) throw new UnauthorizedException();
+  console.log('usao');
+
   return req.user;
 });

@@ -17,6 +17,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const core_1 = require("@nestjs/core");
@@ -41,8 +42,7 @@ let PermissionsGuard = class PermissionsGuard {
 };
 PermissionsGuard = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [access_control_service_1.AccessControlService,
-        core_1.Reflector])
+    __metadata("design:paramtypes", [access_control_service_1.AccessControlService, typeof (_a = typeof core_1.Reflector !== "undefined" && core_1.Reflector) === "function" ? _a : Object])
 ], PermissionsGuard);
 exports.PermissionsGuard = PermissionsGuard;
 //# sourceMappingURL=permissions.guard.js.map

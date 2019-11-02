@@ -28,8 +28,10 @@ class BaseFindService {
             where = parse_to_orm_query_1.parseQuery(where);
             try {
                 entity = yield this.repository.findOne(Object.assign(Object.assign({}, options), { where }));
+                console.log('entity', entity);
             }
             catch (error) {
+                console.log('error in entity', error);
                 throw this.internalError(error);
             }
             if (!entity)
@@ -87,7 +89,8 @@ class BaseFindService {
         });
     }
     internalError(error) {
-        this.logger.error(error);
+        console.log('Nema greske', JSON.stringify(error));
+        this.logger.error('BaseServiceError', error);
         return new common_1.InternalServerErrorException();
     }
 }

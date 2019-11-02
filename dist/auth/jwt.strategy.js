@@ -23,11 +23,12 @@ const passport_1 = require("@nestjs/passport");
 const passport_jwt_1 = require("passport-jwt");
 const config_service_1 = require("../config/config.service");
 const auth_service_1 = require("./auth.service");
+const consts_1 = require("../consts");
 let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport_jwt_1.Strategy) {
     constructor(authService, configService) {
         super({
             jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
-            secretOrKey: configService.get('JWT_SECRET'),
+            secretOrKey: configService.get(consts_1.JWT_SECRET),
         });
         this.authService = authService;
         this.configService = configService;
@@ -36,9 +37,12 @@ let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const user = yield this.authService.validateJwt(payload);
+                console.log(user);
                 return user;
             }
             catch (error) {
+                console.log('doslo je do greske');
+                console.log(JSON.stringify(error));
                 throw new common_1.UnauthorizedException();
             }
         });

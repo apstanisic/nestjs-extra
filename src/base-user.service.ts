@@ -23,7 +23,7 @@ interface BaseUserServiceOptions {
 export class BaseUserService<User extends BaseUser> extends BaseService<User> {
   constructor(
     repository: Repository<User>,
-    options?: Partial<BaseUserServiceOptions>, // @Optional() private readonly storageImagesService?: StorageImagesService, // @Optional() private readonly roleService?: RoleService,
+    options?: Partial<BaseUserServiceOptions>,
   ) {
     super(repository);
     if (options) {
