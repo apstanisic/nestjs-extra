@@ -2350,8 +2350,8 @@
         "signature": "a76d77784f7ca93f14813fa841dc72ff383484d1c011b6954cc845c9e6ed42df"
       },
       "../src/base-user.service.ts": {
-        "version": "46121d6f60ff91f3bb5304e1dd3a41c8bed956bab704ed623f3335abe1796bf2",
-        "signature": "bc2ea1e60683dd075002451cb52ce689d6864d65cfb0df49cda7431fcc53bd56"
+        "version": "5ade9f6f213a79da7c6dbc22c1f4dc2f0278f0e1ca376241dcc34290cecb43a5",
+        "signature": "55c8a1a5fcba40486c22774a818f069a9d65ca9c5414b7ae3b83d0660e779241"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
         "version": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
@@ -2494,8 +2494,8 @@
         "signature": "4135a64cbcbe945b9089f3a28fdc901f491628a3fb7019278328a97701573879"
       },
       "../src/auth/auth-mail.service.ts": {
-        "version": "ae31ac1e3430f197bad416f489f34df72f8dd3c8540d4ba1d1835bd0a1989d27",
-        "signature": "bfb1965b8c82e85e8c672d425096f1bf780f313b481b0465f51f55ae4d759099"
+        "version": "7110c37af2426586ffd3fa18173fbd722371727a8ac4896a4c0c11f11f9a65f5",
+        "signature": "3e9ae00a26833bdb7feb2b309be2813e383d6c1ecc8b2c164d77d3b0b1237d01"
       },
       "../node_modules/@types/range-parser/index.d.ts": {
         "version": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
@@ -2886,7 +2886,7 @@
         "signature": "17a0e2d1de2e88bf67bbd70a87fb4899b47f0d864370bbd114f78f6c4a43cb8d"
       },
       "../src/core.module.ts": {
-        "version": "94ac6b0bd1a08424ed49db033d28b7a33485b65a5ebf53c968966230927e0579",
+        "version": "32964a303eecb8fe6acc679bba30d648edd3363a1c50c8bf094bc4b5ba36319e",
         "signature": "6034445387a5207534fa715c48afaa40790be9cf7f205bcd8623a7d8733c933e"
       },
       "../src/example-consts.ts": {
@@ -8336,6 +8336,7 @@
         "../src/mail/mail.service.ts",
         "../src/auth/templates/account-confirm.handlebars.ts",
         "../src/auth/templates/password-reset.handlebars.ts",
+        "../src/base-user.service.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
@@ -14592,8 +14593,7 @@
         "../node_modules/@types/nodemailer/index.d.ts"
       ],
       "../src/auth/auth-mail.service.ts": [
-        "../src/base.service.ts",
-        "../src/entities/base-user.entity.ts",
+        "../src/base-user.service.ts",
         "../src/mail/mail.service.ts",
         "../src/config/config.service.ts"
       ],
@@ -16134,7 +16134,6 @@
       "../src/mail/mail.service.ts",
       "../src/auth/templates/account-confirm.handlebars.ts",
       "../src/auth/templates/password-reset.handlebars.ts",
-      "../src/auth/auth-mail.service.ts",
       "../node_modules/@types/range-parser/index.d.ts",
       "../node_modules/@types/express-serve-static-core/index.d.ts",
       "../node_modules/@types/mime/index.d.ts",
@@ -16146,17 +16145,13 @@
       "../node_modules/@types/passport-strategy/index.d.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@types/passport-jwt/index.d.ts",
-      "../src/auth/jwt.strategy.ts",
-      "../src/auth/auth.service.ts",
-      "../src/auth/auth.controller.ts",
       "../src/validate-email.pipe.ts",
       "../src/auth/password-reset.service.ts",
-      "../src/auth/password-reset.controller.ts",
-      "../src/auth/auth.module.ts",
       "../node_modules/@types/cron/index.d.ts",
       "../src/cron/cron.service.ts",
       "../src/cron/cron.module.ts",
       "../src/notification/notification.entity.ts",
+      "../src/db/db.module.ts",
       "../src/logger/db-logger.module.ts",
       "../src/mail/mail.module.ts",
       "../src/notification/notification.service.ts",
@@ -16261,9 +16256,14 @@
       "../node_modules/@types/stack-utils/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/db/db.module.ts",
-      "../src/core.module.ts",
-      "../src/index.ts"
+      "../src/auth/auth-mail.service.ts",
+      "../src/index.ts",
+      "../src/auth/auth.module.ts",
+      "../src/auth/password-reset.controller.ts",
+      "../src/auth/auth.service.ts",
+      "../src/auth/jwt.strategy.ts",
+      "../src/auth/auth.controller.ts",
+      "../src/core.module.ts"
     ]
   },
   "version": "3.6.4"

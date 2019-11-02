@@ -15,6 +15,7 @@ import { BaseUser } from '../entities/base-user.entity';
 import { MailService } from '../mail/mail.service';
 import { accountConfirmTemplate } from './templates/account-confirm.handlebars';
 import { passwordResetTemplate } from './templates/password-reset.handlebars';
+import { BaseUserService } from '../base-user.service';
 
 interface CommonHandlebars {
   contactAddress?: string;
@@ -48,7 +49,7 @@ export class AuthMailService {
   constructor(
     // private readonly usersService: UsersService,
 
-    @Inject(USER_SERVICE) private usersService: BaseService<BaseUser>,
+    @Inject(USER_SERVICE) private usersService: BaseUserService,
     private readonly mailService: MailService,
     private readonly configService: ConfigService,
   ) {

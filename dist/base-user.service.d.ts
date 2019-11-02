@@ -7,7 +7,7 @@ interface BaseUserServiceOptions {
     useRoles: boolean;
     useAvatar: boolean;
 }
-export declare class BaseUserService<User extends BaseUser> extends BaseService<User> {
+export declare class BaseUserService<User extends BaseUser = BaseUser> extends BaseService<User> {
     constructor(repository: Repository<User>, options?: Partial<BaseUserServiceOptions>);
     private options;
     private readonly storageImagesService;

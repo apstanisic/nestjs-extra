@@ -32,20 +32,18 @@ export interface CoreModuleParams {
 @Module({})
 export class CoreModule {
   static forRoot(params: CoreModuleParams): DynamicModule {
-    const modules = [];
+    const { entities } = params.db;
 
-    if (params.notifications) {
-      params.db.entities.push(Notification);
-    }
-    if (params.accessControl) {
-      params.db.entities.push(Role);
-    }
+    if (params.notifications) entities.push(Notification);
+    if (params.accessControl) entities.push(Role);
 
-    modules.push(ConfigModule.forRoot(params.config));
-    modules.push(DbModule.forRoot(params.db));
-    modules.push(MailModule);
-    modules.push(CronModule);
-    modules.push(AuthModule);
+    const modules = [
+      ConfigModule.forRoot(params.config),
+      DbModule.forRoot(params.db),
+      MailModule,
+      CronModule,
+      AuthModule,
+    ];
 
     if (params.accessControl) {
       modules.push(AccessControlModule.forRoot(params.accessControl));

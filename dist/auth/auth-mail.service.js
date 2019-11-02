@@ -23,12 +23,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const Handlebars = require("handlebars");
-const base_service_1 = require("../base.service");
 const config_service_1 = require("../config/config.service");
 const consts_1 = require("../consts");
 const mail_service_1 = require("../mail/mail.service");
 const account_confirm_handlebars_1 = require("./templates/account-confirm.handlebars");
 const password_reset_handlebars_1 = require("./templates/password-reset.handlebars");
+const base_user_service_1 = require("../base-user.service");
 let AuthMailService = class AuthMailService {
     constructor(usersService, mailService, configService) {
         this.usersService = usersService;
@@ -99,7 +99,7 @@ let AuthMailService = class AuthMailService {
 AuthMailService = __decorate([
     common_1.Injectable(),
     __param(0, common_1.Inject(consts_1.USER_SERVICE)),
-    __metadata("design:paramtypes", [base_service_1.BaseService,
+    __metadata("design:paramtypes", [base_user_service_1.BaseUserService,
         mail_service_1.MailService,
         config_service_1.ConfigService])
 ], AuthMailService);

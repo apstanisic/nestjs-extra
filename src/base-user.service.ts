@@ -20,7 +20,9 @@ interface BaseUserServiceOptions {
 }
 
 @Injectable()
-export class BaseUserService<User extends BaseUser> extends BaseService<User> {
+export class BaseUserService<
+  User extends BaseUser = BaseUser
+> extends BaseService<User> {
   constructor(
     repository: Repository<User>,
     options?: Partial<BaseUserServiceOptions>,
