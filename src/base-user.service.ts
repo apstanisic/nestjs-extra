@@ -11,8 +11,13 @@ import { BaseService } from './base.service';
 import { BaseUser } from './entities/base-user.entity';
 import { StorageImagesService } from './storage/storage-images.service';
 import { RoleService } from './access-control/role/role.service';
-import { RegisterUserDto } from './auth/auth.dto';
+import {
+  RegisterUserDto,
+  UpdatePasswordDto,
+  LoginUserDto,
+} from './auth/auth.dto';
 import { Role } from './access-control/role/roles.entity';
+import { Email } from './types';
 
 interface BaseUserServiceOptions {
   useRoles: boolean;
@@ -85,6 +90,24 @@ export class BaseUserService<
       throw new BadRequestException('Invalid parameters.');
     }
     return user;
+  }
+
+  async changePassword(data: UpdatePasswordDto): Promise<User> {
+    const { email, oldPassword, newPassword } = data;
+
+    const user = await this.findForLogin(email, oldPassword);
+    user.password = newPassword;
+    return this.mutate(user, {
+      user,
+      domain: user.id,
+      reason: 'Change password.',
+    });
+  }
+
+  /** @Todo what about deleting roles... */
+  async deleteAccount({ email, password }: LoginUserDto): Promise<any> {
+    const user = await this.findForLogin(email, password);
+    return this.delete(user, { user });
   }
 
   /** Add avatar to user entity and to storage. Delete old avatar if exists. */

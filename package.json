@@ -48,12 +48,14 @@
   "peerDependencies": {
     "@nestjs/common": "^6.8.5",
     "@nestjs/core": "^6.8.5",
+    "@nestjs/platform-express": "^6.8.5",
     "@nestjs/typeorm": "^6.2.0",
     "typeorm": "^0.2.20"
   },
   "devDependencies": {
     "@nestjs/common": "^6.8.5",
     "@nestjs/core": "^6.8.5",
+    "@nestjs/platform-express": "^6.8.5",
     "@nestjs/typeorm": "^6.2.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/cron": "^1.7.1",

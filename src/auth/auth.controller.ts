@@ -1,11 +1,42 @@
-import { Body, Controller, Param, Post, Put, Get } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  ForbiddenException,
+  Get,
+  Inject,
+  NotFoundException,
+  Param,
+  Post,
+  Put,
+  UseGuards,
+  UseInterceptors,
+  UploadedFile,
+} from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { AuthGuard } from '@nestjs/passport';
+import { PermissionsGuard } from '../access-control/permissions.guard';
+import { Role } from '../access-control/role/roles.entity';
+import { BaseUserService } from '../base-user.service';
+import { USER_SERVICE } from '../consts';
+import { BaseUser } from '../entities/base-user.entity';
 import { BasicUserInfo } from '../entities/user.interface';
-import { LoginUserDto, RegisterUserDto, SignInResponse } from './auth.dto';
+import {
+  LoginUserDto,
+  RegisterUserDto,
+  SignInResponse,
+  UpdatePasswordDto,
+} from './auth.dto';
 import { AuthService } from './auth.service';
+import { GetUser } from './get-user.decorator';
+import { validJpeg } from '../storage/valid-jpeg-image';
 
 @Controller('auth')
-export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+export class AuthController<User extends BaseUser = BaseUser> {
+  constructor(
+    @Inject(USER_SERVICE) private readonly userService: BaseUserService<User>,
+    private readonly authService: AuthService,
+  ) {}
 
   /** Attempt to login user */
   @Post('login')
@@ -19,6 +50,37 @@ export class AuthController {
     return this.authService.registerNewUser(data);
   }
 
+  /** Update user password */
+  @UseGuards(AuthGuard('jwt'))
+  @Put('password')
+  async changePassword(
+    @Body() data: UpdatePasswordDto,
+    @GetUser() user: User,
+  ): Promise<User> {
+    if (user.email !== data.email) throw new ForbiddenException();
+    return this.userService.changePassword(data);
+  }
+
+  /** Delete user */
+  @UseGuards(AuthGuard('jwt'))
+  @Delete('account')
+  async deleteUser(
+    @GetUser() loggedUser: User,
+    @Body() data: LoginUserDto,
+  ): Promise<User> {
+    if (loggedUser.email !== data.email) throw new ForbiddenException();
+    return this.userService.deleteAccount(data);
+  }
+
+  @Get('account/roles')
+  @UseGuards(AuthGuard('jwt'), PermissionsGuard)
+  getUsersRoles(@GetUser() user: User): Role[] {
+    if (!(user as any).roles === undefined) {
+      throw new NotFoundException();
+    }
+    return (user as any).roles;
+  }
+
   /* Confirm user account. Click on link in email */
   @Get('confirm-account/:email/:token')
   async confirmAccout(
@@ -26,5 +88,27 @@ export class AuthController {
     @Param('token') token: string,
   ): Promise<BasicUserInfo> {
     return this.authService.confirmAccount(email, token);
+  }
+
+  /** Remove user avatar */
+  @Delete('avatar')
+  async removeProfilePicture(@GetUser() user: User): Promise<User> {
+    return this.userService.removeAvatar(user);
+  }
+
+  /** Update user avatar */
+  @UseInterceptors(FileInterceptor('file', validJpeg(0.5)))
+  @Put('avatar')
+  async addProfilePicture(
+    @UploadedFile() file: any,
+    @GetUser() user: User,
+  ): Promise<User> {
+    return this.userService.changeAvatar(user, file);
+  }
+
+  /** Get logged user info */
+  @Get('account')
+  getAccount(@GetUser() user: User): User {
+    return user;
   }
 }

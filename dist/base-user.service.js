@@ -75,6 +75,24 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
             return user;
         });
     }
+    changePassword(data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { email, oldPassword, newPassword } = data;
+            const user = yield this.findForLogin(email, oldPassword);
+            user.password = newPassword;
+            return this.mutate(user, {
+                user,
+                domain: user.id,
+                reason: 'Change password.',
+            });
+        });
+    }
+    deleteAccount({ email, password }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const user = yield this.findForLogin(email, password);
+            return this.delete(user, { user });
+        });
+    }
     changeAvatar(user, newAvatar) {
         return __awaiter(this, void 0, void 0, function* () {
             if (!this.options.useAvatar) {
