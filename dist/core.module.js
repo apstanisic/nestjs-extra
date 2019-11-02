@@ -17,9 +17,17 @@ const mail_module_1 = require("./mail/mail.module");
 const notification_module_1 = require("./notification/notification.module");
 const storage_module_1 = require("./storage/storage.module");
 const access_control_module_1 = require("./access-control/access-control.module");
+const notification_entity_1 = require("./notification/notification.entity");
+const roles_entity_1 = require("./access-control/role/roles.entity");
 let CoreModule = CoreModule_1 = class CoreModule {
     static forRoot(params) {
         const modules = [];
+        if (params.notifications) {
+            params.db.entities.push(notification_entity_1.Notification);
+        }
+        if (params.accessControl) {
+            params.db.entities.push(roles_entity_1.Role);
+        }
         modules.push(config_module_1.ConfigModule.forRoot(params.config));
         modules.push(db_module_1.DbModule.forRoot(params.db));
         modules.push(mail_module_1.MailModule);

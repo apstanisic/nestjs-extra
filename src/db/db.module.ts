@@ -16,7 +16,6 @@ import { Role } from '../access-control/role/roles.entity';
 
 export interface DbOptions {
   entities: any[];
-  usingAccessControl: boolean;
 }
 
 @Module({})
@@ -31,12 +30,9 @@ export class DbModule {
             const envs = config.getAll();
             const shouldCache = envs[REDIS_HOST] !== undefined;
             const isProduction = envs[NODE_ENV] === 'production';
-            const entities = [...params.entities, Notification];
-            if (params.usingAccessControl) entities.push(Role);
-            // const type =
 
             const options: TypeOrmModuleOptions = {
-              entities,
+              entities: params.entities,
               type: 'postgres',
               host: envs[DB_HOST],
               database: envs[DB_DATABASE],

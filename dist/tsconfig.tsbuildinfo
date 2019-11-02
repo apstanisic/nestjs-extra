@@ -2586,8 +2586,8 @@
         "signature": "b782d2f33af80188a4f25d7b6bd365d2f5d40f2d4d017872dbc0fa8978ff5158"
       },
       "../src/db/db.module.ts": {
-        "version": "578dba2d4c96c89b736c30dd5b8e5ae4e848ca84f68f5b7996971177e72ed78b",
-        "signature": "69ec12f30b4b080f03d7be98e603977394ae09ee93b0b4f4f9cc2e3da144d7e5"
+        "version": "7f08ab0fd104cc7711daf4b627f636ff8c5ae599ee72b84619760e2abaa93e5e",
+        "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/logger/db-logger.module.ts": {
         "version": "6825ce86c8c154b872f79282b680e06693f70e1cb8ddab032c7e137a5ea56d79",
@@ -2886,7 +2886,7 @@
         "signature": "17a0e2d1de2e88bf67bbd70a87fb4899b47f0d864370bbd114f78f6c4a43cb8d"
       },
       "../src/core.module.ts": {
-        "version": "f18c6f45559a61b316c62385cbf597d749b9afbda90a7994666ee8cfe04c5e7b",
+        "version": "94ac6b0bd1a08424ed49db033d28b7a33485b65a5ebf53c968966230927e0579",
         "signature": "6034445387a5207534fa715c48afaa40790be9cf7f205bcd8623a7d8733c933e"
       },
       "../src/example-consts.ts": {
@@ -9216,6 +9216,8 @@
         "../src/notification/notification.module.ts",
         "../src/storage/storage.module.ts",
         "../src/access-control/access-control.module.ts",
+        "../src/notification/notification.entity.ts",
+        "../src/access-control/role/roles.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -16155,7 +16157,6 @@
       "../src/cron/cron.service.ts",
       "../src/cron/cron.module.ts",
       "../src/notification/notification.entity.ts",
-      "../src/db/db.module.ts",
       "../src/logger/db-logger.module.ts",
       "../src/mail/mail.module.ts",
       "../src/notification/notification.service.ts",
@@ -16260,6 +16261,7 @@
       "../node_modules/@types/stack-utils/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
+      "../src/db/db.module.ts",
       "../src/core.module.ts",
       "../src/index.ts"
     ]

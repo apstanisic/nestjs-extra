@@ -11,6 +11,8 @@ import {
   AccessControlModule,
   AcOptions,
 } from './access-control/access-control.module';
+import { Notification } from './notification/notification.entity';
+import { Role } from './access-control/role/roles.entity';
 
 /** Params for dynamic module */
 export interface CoreModuleParams {
@@ -31,6 +33,13 @@ export interface CoreModuleParams {
 export class CoreModule {
   static forRoot(params: CoreModuleParams): DynamicModule {
     const modules = [];
+
+    if (params.notifications) {
+      params.db.entities.push(Notification);
+    }
+    if (params.accessControl) {
+      params.db.entities.push(Role);
+    }
 
     modules.push(ConfigModule.forRoot(params.config));
     modules.push(DbModule.forRoot(params.db));

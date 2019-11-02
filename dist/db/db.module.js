@@ -11,8 +11,6 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const config_service_1 = require("../config/config.service");
 const consts_1 = require("../consts");
-const notification_entity_1 = require("../notification/notification.entity");
-const roles_entity_1 = require("../access-control/role/roles.entity");
 let DbModule = DbModule_1 = class DbModule {
     static forRoot(params) {
         return {
@@ -24,11 +22,8 @@ let DbModule = DbModule_1 = class DbModule {
                         const envs = config.getAll();
                         const shouldCache = envs[consts_1.REDIS_HOST] !== undefined;
                         const isProduction = envs[consts_1.NODE_ENV] === 'production';
-                        const entities = [...params.entities, notification_entity_1.Notification];
-                        if (params.usingAccessControl)
-                            entities.push(roles_entity_1.Role);
                         const options = {
-                            entities,
+                            entities: params.entities,
                             type: 'postgres',
                             host: envs[consts_1.DB_HOST],
                             database: envs[consts_1.DB_DATABASE],
