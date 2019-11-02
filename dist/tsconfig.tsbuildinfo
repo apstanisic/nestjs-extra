@@ -2870,7 +2870,7 @@
         "signature": "6b33bad58910c92b4a04075f928117980316119ea9200b4ac3e4ee413394ae3c"
       },
       "../src/auth/get-user.decorator.ts": {
-        "version": "4ab066dd6ca58f5ffe12cdf5e9ff125bda1c28ba1c424baeb58da1a4577a0d32",
+        "version": "b25124898804fe0052a0f511b05a142d82806f1bc3b5d2b09890685c035a8053",
         "signature": "2edbd67ef5c8b5f94d7abaea90ab48657ff66e5277a1409c425ff253daa65751"
       },
       "../src/storage/valid-jpeg-image.ts": {
@@ -16565,7 +16565,6 @@
       "../src/access-control/access-control.service.ts",
       "../src/access-control/set-required-access.decorator.ts",
       "../src/access-control/permissions.guard.ts",
-      "../src/auth/get-user.decorator.ts",
       "../src/storage/valid-jpeg-image.ts",
       "../src/auth/auth.controller.ts",
       "../src/validate-email.pipe.ts",
@@ -16616,7 +16615,8 @@
       "../node_modules/@types/json-schema/index.d.ts",
       "../node_modules/@types/stack-utils/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
-      "../node_modules/@types/yargs/index.d.ts"
+      "../node_modules/@types/yargs/index.d.ts",
+      "../src/auth/get-user.decorator.ts"
     ]
   },
   "version": "3.6.4"
