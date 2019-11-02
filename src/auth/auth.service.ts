@@ -7,7 +7,7 @@ import {
 import { JwtService } from '@nestjs/jwt';
 import { classToClass, plainToClass } from 'class-transformer';
 import { Validator } from 'class-validator';
-import { BaseService } from '../base.service';
+import { BaseUserService } from '../base-user.service';
 import { USER_SERVICE } from '../consts';
 import { BaseUser } from '../entities/base-user.entity';
 import { BasicUserInfo } from '../entities/user.interface';
@@ -21,7 +21,7 @@ export class AuthService<User extends BaseUser = BaseUser> {
 
   constructor(
     // private readonly usersService: UsersService,
-    @Inject(USER_SERVICE) private usersService: BaseService<User>,
+    @Inject(USER_SERVICE) private usersService: BaseUserService<User>,
     private readonly jwtService: JwtService,
     private readonly authMailService: AuthMailService,
   ) {}
@@ -54,8 +54,7 @@ export class AuthService<User extends BaseUser = BaseUser> {
    * @TODO fix this // @ts-ignore
    */
   async registerNewUser(data: RegisterUserDto): Promise<SignInResponse> {
-    // @ts-ignore
-    const user = await this.usersService.create(data);
+    const user = await this.usersService.createUser(data);
     const token = this.createJwt(data.email);
 
     if (!user.secureToken) throw new ForbiddenException();

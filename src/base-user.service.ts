@@ -49,7 +49,6 @@ export class BaseUserService<User extends BaseUser> extends BaseService<User> {
    * @todo Delete should remove personal info for GDPR
    */
   async createUser({ email, password, name }: RegisterUserDto): Promise<User> {
-    // const userExist = await this.repository.findOne({ email });
     const userExist = await this.repository.findOne({ where: { email } });
     if (userExist) throw new BadRequestException('User exists');
 

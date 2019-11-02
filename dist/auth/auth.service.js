@@ -25,7 +25,7 @@ const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
 const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
-const base_service_1 = require("../base.service");
+const base_user_service_1 = require("../base-user.service");
 const consts_1 = require("../consts");
 const user_interface_1 = require("../entities/user.interface");
 const auth_mail_service_1 = require("./auth-mail.service");
@@ -57,7 +57,7 @@ let AuthService = class AuthService {
     }
     registerNewUser(data) {
         return __awaiter(this, void 0, void 0, function* () {
-            const user = yield this.usersService.create(data);
+            const user = yield this.usersService.createUser(data);
             const token = this.createJwt(data.email);
             if (!user.secureToken)
                 throw new common_1.ForbiddenException();
@@ -94,7 +94,7 @@ let AuthService = class AuthService {
 AuthService = __decorate([
     common_1.Injectable(),
     __param(0, common_1.Inject(consts_1.USER_SERVICE)),
-    __metadata("design:paramtypes", [base_service_1.BaseService,
+    __metadata("design:paramtypes", [base_user_service_1.BaseUserService,
         jwt_1.JwtService,
         auth_mail_service_1.AuthMailService])
 ], AuthService);
