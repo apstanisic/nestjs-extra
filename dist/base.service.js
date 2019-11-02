@@ -8,9 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -23,13 +20,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const class_validator_1 = require("class-validator");
-const typeorm_1 = require("typeorm");
 const base_find_service_1 = require("./base-find.service");
 const db_logger_service_1 = require("./logger/db-logger.service");
-let BaseService = class BaseService extends base_find_service_1.BaseFindService {
-    constructor(repository, dbLoggerService) {
+const consts_1 = require("./consts");
+class BaseService extends base_find_service_1.BaseFindService {
+    constructor(repository) {
         super(repository);
-        this.dbLoggerService = dbLoggerService;
         this.logger = new common_1.Logger();
         this.validator = new class_validator_1.Validator();
     }
@@ -127,11 +123,11 @@ let BaseService = class BaseService extends base_find_service_1.BaseFindService 
         this.logger.error(error);
         return new common_1.InternalServerErrorException();
     }
-};
-BaseService = __decorate([
-    __param(1, common_1.Optional()),
-    __metadata("design:paramtypes", [typeorm_1.Repository,
-        db_logger_service_1.DbLoggerService])
-], BaseService);
+}
+__decorate([
+    common_1.Optional(),
+    common_1.Inject(consts_1.DB_LOGGER_SERVICE),
+    __metadata("design:type", db_logger_service_1.DbLoggerService)
+], BaseService.prototype, "dbLoggerService", void 0);
 exports.BaseService = BaseService;
 //# sourceMappingURL=base.service.js.map

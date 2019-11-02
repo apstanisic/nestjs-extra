@@ -15,8 +15,8 @@ type Metadata = [boolean?, string?, string?];
  * This is little hacky because we can't have DI here.
  * If there is and this is global then this is exec before AuthGuard
  * @example
- *  @RequiredPremissions(['can_delete', 'can_update'], 'resource_id)
- *  @UseGuard(PremissionGuard)
+ *  @RequiredPermissions(['can_delete', 'can_update'], 'resource_id)
+ *  @UseGuard(PermissionGuard)
  *  method() {}
  */
 @Injectable()

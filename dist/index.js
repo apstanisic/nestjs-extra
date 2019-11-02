@@ -21,6 +21,7 @@ __export(require("./auth/password-reset.controller"));
 __export(require("./auth/password-reset.service"));
 __export(require("./BaseException"));
 __export(require("./base-find.service"));
+__export(require("./base-user.service"));
 __export(require("./base.service"));
 __export(require("./config/config.module"));
 __export(require("./config/config.service"));

@@ -1,16 +1,28 @@
-import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+import {
+  CanActivate,
+  ExecutionContext,
+  Injectable,
+  NotImplementedException,
+} from '@nestjs/common';
+import { ConfigService } from './config/config.service';
+import { SIMPLE_ADMIN_MAILS } from './consts';
 
-/*
-  Simplest admin guard, with only 1 admin.
-  Improve in the future if site gets bigger
- */
+/** Simplest admin guard, accepts admins provided in config service */
 @Injectable()
 export class SimpleAdminGuard implements CanActivate {
-  canActivate(context: ExecutionContext): boolean | Promise<boolean> {
-    // return true;
-    const req = context.switchToHttp().getRequest();
-    const adminMail = process.env.ADMIN_EMAIL;
+  constructor(private readonly configService: ConfigService) {}
 
-    return req.user && req.user.email === adminMail;
+  // should be stored as mail1@gmail.com;mail2@yahoo.com;
+  canActivate(context: ExecutionContext): boolean | Promise<boolean> {
+    const mailsString = this.configService.get(SIMPLE_ADMIN_MAILS);
+    let mails: string[];
+    if (mailsString) {
+      mails = mailsString.split(';').map(mail => mail.trim());
+    } else {
+      throw new NotImplementedException();
+    }
+    const req = context.switchToHttp().getRequest();
+
+    return req.user && mails.some(mail => mail === req.user.email);
   }
 }

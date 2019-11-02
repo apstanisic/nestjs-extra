@@ -9,6 +9,7 @@ import {
   BeforeUpdate,
   Index,
 } from 'typeorm';
+import { WithId } from '../types';
 
 /**
  * All entities should extend this class. It has basic properties
@@ -16,7 +17,7 @@ import {
  * It has combined index for createdAt and id to improve pagination
  */
 @Index(['createdAt', 'id'])
-export abstract class BaseEntity {
+export abstract class BaseEntity implements WithId {
   /** Id can only be set in constructor */
   constructor(id?: string) {
     if (id) this.id = id;

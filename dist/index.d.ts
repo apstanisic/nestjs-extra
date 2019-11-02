@@ -16,6 +16,7 @@ export * from './auth/password-reset.controller';
 export * from './auth/password-reset.service';
 export * from './BaseException';
 export * from './base-find.service';
+export * from './base-user.service';
 export * from './base.service';
 export * from './config/config.module';
 export * from './config/config.service';

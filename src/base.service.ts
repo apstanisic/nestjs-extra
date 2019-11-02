@@ -3,6 +3,7 @@ import {
   InternalServerErrorException,
   Logger,
   Optional,
+  Inject,
 } from '@nestjs/common';
 import { Validator } from 'class-validator';
 import {
@@ -16,6 +17,7 @@ import { DbLoggerService } from './logger/db-logger.service';
 import { LogMetadata } from './logger/log-metadata';
 import { Log } from './logger/log.entity';
 import { WithId } from './types';
+import { DB_LOGGER_SERVICE } from './consts';
 
 export type FindOneParams<T> = Omit<FindOneOptions<T>, 'where'>;
 export type FindManyParams<T> = Omit<FindManyOptions<T>, 'where'>;
@@ -36,12 +38,13 @@ export type FindManyParams<T> = Omit<FindManyOptions<T>, 'where'>;
  */
 export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   /** Accepts repository for accessing data, and loger service for logging */
-  constructor(
-    repository: Repository<T>,
-    @Optional() protected readonly dbLoggerService?: DbLoggerService<T>,
-  ) {
+  constructor(repository: Repository<T>) {
     super(repository);
   }
+
+  @Optional()
+  @Inject(DB_LOGGER_SERVICE)
+  protected readonly dbLoggerService?: DbLoggerService<T>;
 
   /** Terminal logger. All extending classes can use it */
   protected logger = new Logger();

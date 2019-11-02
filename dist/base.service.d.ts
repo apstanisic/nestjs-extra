@@ -8,8 +8,8 @@ import { WithId } from './types';
 export declare type FindOneParams<T> = Omit<FindOneOptions<T>, 'where'>;
 export declare type FindManyParams<T> = Omit<FindManyOptions<T>, 'where'>;
 export declare class BaseService<T extends WithId = any> extends BaseFindService<T> {
-    protected readonly dbLoggerService?: DbLoggerService<T> | undefined;
-    constructor(repository: Repository<T>, dbLoggerService?: DbLoggerService<T> | undefined);
+    constructor(repository: Repository<T>);
+    protected readonly dbLoggerService?: DbLoggerService<T>;
     protected logger: Logger;
     protected validator: Validator;
     create(data: Partial<T>, meta?: LogMetadata): Promise<T>;

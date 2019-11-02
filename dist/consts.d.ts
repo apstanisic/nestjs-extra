@@ -1,8 +1,10 @@
 export declare const USER_SERVICE = "USER_SERVICE";
+export declare const DB_LOGGER_SERVICE = "DB_LOGGER_SERVICE";
 export declare const AC_ROLES_LIST = "AC_ROLES_LIST";
 export declare const AC_MODEL = "AC_MODEL";
 export declare const AC_POLICIES = "AC_POLICIES";
 export declare const STORAGE_IMAGE_SIZES = "STORAGE_IMAGE_SIZES";
+export declare const SIMPLE_ADMIN_MAILS = "SIMPLE_ADMIN_MAILS";
 export declare const NODE_ENV = "NODE_ENV";
 export declare const DB_TYPE = "DB_TYPE";
 export declare const DB_HOST = "DB_HOST";
