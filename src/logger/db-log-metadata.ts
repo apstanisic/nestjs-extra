@@ -5,7 +5,7 @@ import { IUser, BasicUserInfo } from '../entities/user.interface';
  * Info that should be passed to LogService.
  * It contains info that is important for logging.
  */
-export interface LogMetadata {
+export interface DbLogMetadata {
   user: BasicUserInfo | IUser;
   reason?: string;
   domain?: WithId | UUID;

@@ -20,7 +20,7 @@ import { IUser, BasicUserInfo } from '../entities/user.interface';
  * it does not have primary field.
  */
 @Entity()
-export class Log<T extends WithId = any> {
+export class DbLog<T extends WithId = any> {
   /** Default mongo id */
   @ObjectIdColumn()
   @Exclude()

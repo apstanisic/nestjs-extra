@@ -14,8 +14,8 @@ import {
 } from 'typeorm';
 import { BaseFindService } from './base-find.service';
 import { DbLoggerService } from './logger/db-logger.service';
-import { LogMetadata } from './logger/log-metadata';
-import { Log } from './logger/log.entity';
+import { DbLogMetadata } from './logger/db-log-metadata';
+import { DbLog } from './logger/db-log.entity';
 import { WithId } from './types';
 import { DB_LOGGER_SERVICE } from './consts';
 
@@ -53,7 +53,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   protected validator = new Validator();
 
   /** Create new entity */
-  async create(data: Partial<T>, meta?: LogMetadata): Promise<T> {
+  async create(data: Partial<T>, meta?: DbLogMetadata): Promise<T> {
     try {
       const entity = this.repository.create(data);
       const savedEntity = await this.repository.save(entity);
@@ -73,11 +73,11 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   async update(
     entityOrId: T | string,
     updatedData: Partial<T> = {},
-    meta?: LogMetadata,
+    meta?: DbLogMetadata,
   ): Promise<T> {
     try {
       const entity = await this.findOne(entityOrId);
-      let log: Log | undefined;
+      let log: DbLog | undefined;
 
       if (this.dbLoggerService && meta) {
         log = this.dbLoggerService.generateLog({ meta, oldValue: entity });
@@ -101,9 +101,9 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
    * Accepts mutated entity, instead of original entity and changes.
    * Used when entities have special setters.
    */
-  async mutate(entity: T, meta?: LogMetadata): Promise<T> {
+  async mutate(entity: T, meta?: DbLogMetadata): Promise<T> {
     try {
-      let log: Log | undefined;
+      let log: DbLog | undefined;
 
       if (this.dbLoggerService && meta) {
         const oldValue = await this.findOne(entity.id);
@@ -125,7 +125,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   async updateWhere(
     where: FindConditions<T>,
     data: Partial<T>,
-    meta?: LogMetadata,
+    meta?: DbLogMetadata,
   ): Promise<T> {
     const entity = await this.findOne(where);
     const updated = await this.update(entity, data, meta);
@@ -133,10 +133,10 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   }
 
   /** Remove entity. */
-  async delete(entityOrId: T | string, meta?: LogMetadata): Promise<T> {
+  async delete(entityOrId: T | string, meta?: DbLogMetadata): Promise<T> {
     try {
       const entity = await this.findOne(entityOrId);
-      let log: Log | undefined;
+      let log: DbLog | undefined;
 
       if (this.dbLoggerService && meta) {
         log = this.dbLoggerService.generateLog({ oldValue: entity, meta });
@@ -163,7 +163,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
    */
   async deleteWhere(
     where: FindConditions<T>,
-    logMetadata?: LogMetadata,
+    logMetadata?: DbLogMetadata,
   ): Promise<T> {
     const entity = await this.findOne(where);
     const deleted = await this.delete(entity, logMetadata);

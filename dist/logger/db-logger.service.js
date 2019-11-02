@@ -25,14 +25,14 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const base_find_service_1 = require("../base-find.service");
-const log_entity_1 = require("./log.entity");
+const db_log_entity_1 = require("./db-log.entity");
 let DbLoggerService = class DbLoggerService extends base_find_service_1.BaseFindService {
     constructor(repository) {
         super(repository);
     }
-    generateLog({ oldValue, meta }) {
+    generateLog({ oldValue, meta, }) {
         const { domain, user: by, reason } = meta;
-        const log = new log_entity_1.Log();
+        const log = new db_log_entity_1.DbLog();
         log.domainId = typeof domain === 'object' ? domain.id : domain;
         log.executedBy = by;
         log.reason = reason;
@@ -52,7 +52,7 @@ let DbLoggerService = class DbLoggerService extends base_find_service_1.BaseFind
 };
 DbLoggerService = __decorate([
     common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(log_entity_1.Log, 'log_db')),
+    __param(0, typeorm_1.InjectRepository(db_log_entity_1.DbLog, 'log_db')),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], DbLoggerService);
 exports.DbLoggerService = DbLoggerService;

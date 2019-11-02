@@ -1,37 +1,25 @@
-import { Module, DynamicModule } from '@nestjs/common';
-import { BaseEntity } from 'typeorm';
-import { MailModule } from './mail/mail.module';
+import { DynamicModule, Module } from '@nestjs/common';
+import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigOptions } from './config/config.module';
+import { CronModule } from './cron/cron.module';
+import { DbModule, DbOptions } from './db/db.module';
+import { DbLoggerModule } from './logger/db-logger.module';
+import { MailModule } from './mail/mail.module';
+import { NotificationModule } from './notification/notification.module';
+import { StorageModule, StorageOptions } from './storage/storage.module';
 import {
   AccessControlModule,
   AcOptions,
 } from './access-control/access-control.module';
-import { AuthModule } from './auth/auth.module';
-import { LoggerModule } from './logger/logger.module';
-import { StorageModule, StorageOptions } from './storage/storage.module';
-import { CronModule } from './cron/cron.module';
-import { NotificationModule } from './notification/notification.module';
-import { DbModule, DbOptions } from './db/db.module';
-
-/** Available modules */
-type AvailableModules =
-  | 'Mail'
-  | 'Config'
-  | 'AccessControl'
-  | 'Auth'
-  | 'Log'
-  | 'Storage'
-  | 'Notification'
-  | 'Cron';
 
 /** Params for dynamic module */
 export interface CoreModuleParams {
-  // UserModule: DynamicModule;
-  ignore: AvailableModules[];
   config?: ConfigOptions;
-  storage: StorageOptions;
+  storage?: StorageOptions;
   db: DbOptions;
   accessControl?: AcOptions;
+  dbLog: boolean;
+  notifications: boolean;
 }
 
 /**
@@ -42,28 +30,23 @@ export interface CoreModuleParams {
 @Module({})
 export class CoreModule {
   static forRoot(params: CoreModuleParams): DynamicModule {
-    const imports = [];
-    const ignore = params ? params.ignore : [];
-    // Shorthand for checking if module should be included
-    const shouldInclude = (module: AvailableModules): boolean =>
-      !ignore.includes(module);
+    const modules = [];
 
-    imports.push(ConfigModule.forRoot(params.config));
-    imports.push(DbModule.forRoot(params.db));
-    imports.push(AuthModule);
-    imports.push(MailModule);
+    modules.push(ConfigModule.forRoot(params.config));
+    modules.push(DbModule.forRoot(params.db));
+    modules.push(MailModule);
+    modules.push(CronModule);
+    modules.push(AuthModule);
 
-    if (params.accessControl !== undefined) {
-      imports.push(AccessControlModule.forRoot(params.accessControl));
+    if (params.accessControl) {
+      modules.push(AccessControlModule.forRoot(params.accessControl));
     }
-    if (shouldInclude('Log')) imports.push(LoggerModule);
-    if (shouldInclude('Storage'))
-      imports.push(StorageModule.forRoot(params.storage));
-    if (shouldInclude('Cron')) imports.push(CronModule);
-    if (shouldInclude('Notification')) imports.push(NotificationModule);
+    if (params.storage) modules.push(StorageModule.forRoot(params.storage));
+    if (params.dbLog) modules.push(DbLoggerModule);
+    if (params.notifications) modules.push(NotificationModule);
 
     return {
-      imports,
+      imports: modules,
       module: CoreModule,
     };
   }

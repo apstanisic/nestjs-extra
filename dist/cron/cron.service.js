@@ -19,7 +19,7 @@ let CronService = class CronService {
             return job;
         }
         catch (error) {
-            this.logger.error('Cron error', error);
+            this.logger.error('Cron error', error, 'CronModule');
             throw new common_1.InternalServerErrorException();
         }
     }

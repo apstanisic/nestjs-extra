@@ -3,15 +3,17 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BaseFindService } from '../base-find.service';
 import { WithId } from '../types';
-import { LogMetadata } from './log-metadata';
-import { Log } from './log.entity';
+import { DbLogMetadata } from './db-log-metadata';
+import { DbLog } from './db-log.entity';
 
 // @Injectable({ scope: Scope.REQUEST })
 @Injectable()
 export class DbLoggerService<T extends WithId = any> extends BaseFindService<
-  Log
+  DbLog
 > {
-  constructor(@InjectRepository(Log, 'log_db') repository: Repository<Log>) {
+  constructor(
+    @InjectRepository(DbLog, 'log_db') repository: Repository<DbLog>,
+  ) {
     super(repository);
   }
 
@@ -19,9 +21,15 @@ export class DbLoggerService<T extends WithId = any> extends BaseFindService<
    * Initialize log. This will create log entity, and fill some fields.
    * @warning This will not save log in database. You must use store.
    */
-  generateLog({ oldValue, meta }: { oldValue?: T; meta: LogMetadata }): Log<T> {
+  generateLog({
+    oldValue,
+    meta,
+  }: {
+    oldValue?: T;
+    meta: DbLogMetadata;
+  }): DbLog<T> {
     const { domain, user: by, reason } = meta;
-    const log = new Log<T>();
+    const log = new DbLog<T>();
     log.domainId = typeof domain === 'object' ? domain.id : domain;
     log.executedBy = by;
     log.reason = reason;
@@ -34,7 +42,7 @@ export class DbLoggerService<T extends WithId = any> extends BaseFindService<
   }
 
   /** Store provided log to database */
-  async store(log: Log, action: string, newValue?: T): Promise<Log> {
+  async store(log: DbLog, action: string, newValue?: T): Promise<DbLog> {
     log.action = action;
     log.newValue = newValue;
     return this.repository.save(log);

@@ -95,4 +95,4 @@ DbLog = __decorate([
     typeorm_1.Entity()
 ], DbLog);
 exports.DbLog = DbLog;
-//# sourceMappingURL=log.entity.js.map
+//# sourceMappingURL=db-log.entity.js.map

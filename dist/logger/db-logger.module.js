@@ -10,7 +10,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const config_service_1 = require("../config/config.service");
 const db_logger_service_1 = require("./db-logger.service");
-const log_entity_1 = require("./log.entity");
+const db_log_entity_1 = require("./db-log.entity");
 const consts_1 = require("../consts");
 let DbLoggerModule = class DbLoggerModule {
 };
@@ -26,16 +26,16 @@ DbLoggerModule = __decorate([
                     host: config.get(consts_1.LOG_DB_HOST),
                     database: config.get(consts_1.LOG_DB_DATABASE),
                     port: parseInt(config.get(consts_1.LOG_DB_PORT) || '27017', 10),
-                    entities: [log_entity_1.Log],
+                    entities: [db_log_entity_1.DbLog],
                     useNewUrlParser: true,
                     useUnifiedTopology: true,
                 }),
             }),
-            typeorm_1.TypeOrmModule.forFeature([log_entity_1.Log], 'log_db'),
+            typeorm_1.TypeOrmModule.forFeature([db_log_entity_1.DbLog], 'log_db'),
         ],
         providers: [db_logger_service_1.DbLoggerService],
         exports: [db_logger_service_1.DbLoggerService],
     })
 ], DbLoggerModule);
 exports.DbLoggerModule = DbLoggerModule;
-//# sourceMappingURL=logger.module.js.map
+//# sourceMappingURL=db-logger.module.js.map
