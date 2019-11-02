@@ -1,4 +1,4 @@
-import { InternalServerErrorException } from '@nestjs/common';
+import { InternalServerErrorException, Logger } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { FindManyParams, FindOneParams } from './base.service';
 import { PaginationParams } from './pagination/pagination-options';
@@ -7,7 +7,7 @@ import { OrmWhere, WithId } from './types';
 export declare class BaseFindService<T extends WithId = any> {
     protected readonly repository: Repository<T>;
     constructor(repository: Repository<T>);
-    protected logger: any;
+    protected logger: Logger;
     findOne(filter: OrmWhere<T> | number, options?: FindOneParams<T>): Promise<T>;
     findByIds(ids: (string | number)[], searchOptions?: FindManyParams<T>): Promise<T[]>;
     find(filter?: OrmWhere<T>, searchOptions?: FindManyParams<T>): Promise<T[]>;

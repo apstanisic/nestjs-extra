@@ -1,4 +1,4 @@
-import { InternalServerErrorException } from '@nestjs/common';
+import { InternalServerErrorException, Logger } from '@nestjs/common';
 import { Validator } from 'class-validator';
 import { FindConditions, FindManyOptions, FindOneOptions, Repository } from 'typeorm';
 import { BaseFindService } from './base-find.service';
@@ -10,7 +10,7 @@ export declare type FindManyParams<T> = Omit<FindManyOptions<T>, 'where'>;
 export declare class BaseService<T extends WithId = any> extends BaseFindService<T> {
     constructor(repository: Repository<T>);
     protected readonly dbLoggerService?: DbLoggerService<T>;
-    protected logger: any;
+    protected logger: Logger;
     protected validator: Validator;
     create(data: Partial<T>, meta?: LogMetadata): Promise<T>;
     update(entityOrId: T | string, updatedData?: Partial<T>, meta?: LogMetadata): Promise<T>;

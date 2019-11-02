@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./access-control/access-control.module"));
 __export(require("./access-control/access-control.service"));
 __export(require("./access-control/casbin-valid-domain"));
-__export(require("./access-control/if-allowed.decorator"));
+__export(require("./access-control/set-required-access.decorator"));
 __export(require("./access-control/permissions.guard"));
 __export(require("./access-control/valid-role.pipe"));
 __export(require("./add-duration"));

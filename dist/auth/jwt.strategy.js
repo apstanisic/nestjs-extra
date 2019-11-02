@@ -36,13 +36,9 @@ let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport
     validate(payload) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const user = yield this.authService.validateJwt(payload);
-                console.log(user);
-                return user;
+                return this.authService.validateJwt(payload);
             }
             catch (error) {
-                console.log('doslo je do greske');
-                console.log(JSON.stringify(error));
                 throw new common_1.UnauthorizedException();
             }
         });

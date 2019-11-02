@@ -1,7 +1,15 @@
-import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
+import {
+  CanActivate,
+  ExecutionContext,
+  Injectable,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
+// import { Request } from 'express';
 import { BaseUserWithRoles } from '../entities/base-user-with-roles.entity';
 import { AccessControlService } from './access-control.service';
+import { RoleService } from './role/role.service';
+import { AccessOptions } from './set-required-access.decorator';
 
 /**
  * @returns permissions list that user need to have to access resource
@@ -23,30 +31,34 @@ type Metadata = [boolean?, string?, string?];
 export class PermissionsGuard implements CanActivate {
   constructor(
     private readonly acService: AccessControlService,
+    private readonly roleService: RoleService,
     private readonly reflector: Reflector = new Reflector(),
   ) {}
 
   /** Check if user can execute function */
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    const data = this.reflector.get<Metadata>(
+    const accessOptions = this.reflector.get<AccessOptions | undefined>(
       'access_control',
       context.getHandler(),
     );
-    if (!data) return true;
-    const [execute, action, resourcePath] = data;
-
-    // const requiredPermissions = stringsToPermissions(metadataPermissions);
     const request = context.switchToHttp().getRequest();
-    // Get Id from req object
-    // const resourceId: string = request.params[targetName as any];
 
-    const { user } = request as { user: BaseUserWithRoles };
-    // return user.allowedTo(requiredPermissions, resourceId);
-    const allowed = await this.acService.isAllowed(
-      user.roles,
-      resourcePath || request.path,
-      action || 'write',
-    );
+    const { method } = request;
+    const { user } = request.user as { user?: BaseUserWithRoles };
+    // In case AuthGuard wasn't called
+    if (!user) throw new InternalServerErrorException();
+
+    const defaultAction = method === 'GET' ? 'read' : 'write';
+    const action = accessOptions ? accessOptions.action : defaultAction;
+
+    const resource =
+      accessOptions && accessOptions.resource
+        ? accessOptions.resource
+        : request.path;
+
+    const roles = await this.roleService.find({ userId: user.id });
+    user.roles = roles;
+    const allowed = await this.acService.isAllowed(roles, resource, action);
 
     return allowed;
   }

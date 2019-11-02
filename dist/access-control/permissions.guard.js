@@ -17,32 +17,42 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const core_1 = require("@nestjs/core");
 const access_control_service_1 = require("./access-control.service");
+const role_service_1 = require("./role/role.service");
 let PermissionsGuard = class PermissionsGuard {
-    constructor(acService, reflector = new core_1.Reflector()) {
+    constructor(acService, roleService, reflector = new core_1.Reflector()) {
         this.acService = acService;
+        this.roleService = roleService;
         this.reflector = reflector;
     }
     canActivate(context) {
         return __awaiter(this, void 0, void 0, function* () {
-            const data = this.reflector.get('access_control', context.getHandler());
-            if (!data)
-                return true;
-            const [execute, action, resourcePath] = data;
+            const accessOptions = this.reflector.get('access_control', context.getHandler());
             const request = context.switchToHttp().getRequest();
-            const { user } = request;
-            const allowed = yield this.acService.isAllowed(user.roles, resourcePath || request.path, action || 'write');
+            const { method } = request;
+            const { user } = request.user;
+            if (!user)
+                throw new common_1.InternalServerErrorException();
+            const defaultAction = method === 'GET' ? 'read' : 'write';
+            const action = accessOptions ? accessOptions.action : defaultAction;
+            const resource = accessOptions && accessOptions.resource
+                ? accessOptions.resource
+                : request.path;
+            const roles = yield this.roleService.find({ userId: user.id });
+            user.roles = roles;
+            const allowed = yield this.acService.isAllowed(roles, resource, action);
             return allowed;
         });
     }
 };
 PermissionsGuard = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [access_control_service_1.AccessControlService, typeof (_a = typeof core_1.Reflector !== "undefined" && core_1.Reflector) === "function" ? _a : Object])
+    __metadata("design:paramtypes", [access_control_service_1.AccessControlService,
+        role_service_1.RoleService,
+        core_1.Reflector])
 ], PermissionsGuard);
 exports.PermissionsGuard = PermissionsGuard;
 //# sourceMappingURL=permissions.guard.js.map

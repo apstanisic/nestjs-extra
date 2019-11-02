@@ -1,2 +1,2 @@
-export declare const GetPagination: any;
-export declare const GqlPagination: any;
+export declare const GetPagination: (...dataOrPipes: any[]) => ParameterDecorator;
+export declare const GqlPagination: (...dataOrPipes: any[]) => ParameterDecorator;

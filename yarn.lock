@@ -286,7 +286,7 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@nestjs/common@6.x":
+"@nestjs/common@^6.8.5":
   version "6.8.5"
   resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-6.8.5.tgz#5ee5cd68c3e0bfca6c6ae8069026dae15438f0bd"
   integrity sha512-9rp+K74ztNsovR9uSwOtkJNV6SyFoH58ut/DOFnCzY0NvG/63ldpVOeX4Lhdi7kNwb6yFtXJTRnociNw4uKSBg==
@@ -295,7 +295,7 @@
     cli-color "2.0.0"
     uuid "3.3.3"
 
-"@nestjs/core@6.x":
+"@nestjs/core@^6.8.5":
   version "6.8.5"
   resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-6.8.5.tgz#38e6700f0e954f15892758688748969b3dab24af"
   integrity sha512-NxRHb+O8g37BmWkK8hxTYJvZljyPpDJY32OyAMNcMIPuXq/LKbF1Itxr5FyNJzFQOJzDXq/Ct1SnZX4KA63fTw==
@@ -326,7 +326,7 @@
   dependencies:
     optional "0.1.4"
 
-"@nestjs/typeorm@6.x":
+"@nestjs/typeorm@^6.2.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@nestjs/typeorm/-/typeorm-6.2.0.tgz#6b8e3d80e3fbd9dc5e0a9d1ebf3028f7adb1ace9"
   integrity sha512-CRDYV3oxTUa6mTDJfdW+RPLtVUpGx0RpigQdLlvMFLM56v+bYnrTuuy4vurKDgLNFC+AttL9JLZOgRhW8fGdgQ==
@@ -5138,7 +5138,7 @@ type@^2.0.0:
   resolved "https://registry.yarnpkg.com/type/-/type-2.0.0.tgz#5f16ff6ef2eb44f260494dae271033b29c09a9c3"
   integrity sha512-KBt58xCHry4Cejnc2ISQAF7QY+ORngsWfxezO68+12hKV6lQY8P/psIkcbjeHWn7MqcgciWJyCCevFMJdIXpow==
 
-typeorm@0.x:
+typeorm@^0.2.20:
   version "0.2.20"
   resolved "https://registry.yarnpkg.com/typeorm/-/typeorm-0.2.20.tgz#efb60f2e55a7d08fc365f281ec2a71c87a9ebba5"
   integrity sha512-VxB+9qH8D+PM19MIx18Zs3Fqv/ZINnnQvUGmBEiLYDrB9etdSdamgSTCIhWdFNndeJ6ldH4jbD0Z6HWsepMPlA==
