@@ -20,7 +20,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
@@ -43,7 +42,7 @@ let NotificationService = class NotificationService extends base_service_1.BaseS
 NotificationService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(notification_entity_1.Notification)),
-    __metadata("design:paramtypes", [typeof (_a = typeof typeorm_2.Repository !== "undefined" && typeorm_2.Repository) === "function" ? _a : Object])
+    __metadata("design:paramtypes", [typeorm_2.Repository])
 ], NotificationService);
 exports.NotificationService = NotificationService;
 //# sourceMappingURL=notification.service.js.map
