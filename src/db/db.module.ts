@@ -11,8 +11,6 @@ import {
   REDIS_HOST,
   REDIS_PORT,
 } from '../consts';
-import { Notification } from '../notification/notification.entity';
-import { Role } from '../access-control/role/roles.entity';
 
 export interface DbOptions {
   entities: any[];
