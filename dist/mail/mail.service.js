@@ -13,15 +13,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const nodemailer = require("nodemailer");
 const config_service_1 = require("../config/config.service");
+const consts_1 = require("../consts");
 let MailService = MailService_1 = class MailService {
     constructor(configService) {
         this.configService = configService;
         this.port = 587;
         this.logger = new common_1.Logger(MailService_1.name);
-        this.host = this.getConfig('EMAIL_HOST');
-        this.user = this.getConfig('EMAIL_USER');
-        this.password = this.getConfig('EMAIL_PASSWORD');
-        this.port = Number(this.configService.get('EMAIL_PORT') || 587);
+        this.host = this.getConfig(consts_1.EMAIL_HOST);
+        this.user = this.getConfig(consts_1.EMAIL_USER);
+        this.password = this.getConfig(consts_1.EMAIL_PASSWORD);
+        this.port = Number(this.configService.get(consts_1.EMAIL_PORT) || 587);
         this.createTransport();
     }
     send(data) {
@@ -37,6 +38,7 @@ let MailService = MailService_1 = class MailService {
         this.transporter = nodemailer.createTransport({
             host: this.host,
             port: this.port,
+            secure: false,
             auth: {
                 user: this.user,
                 pass: this.password,

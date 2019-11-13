@@ -2490,7 +2490,7 @@
         "signature": "e260b23510a804494b51bcc0a50c3453c78c1f8e1cf153b5f039ff021a54e8d9"
       },
       "../src/mail/mail.service.ts": {
-        "version": "6a0ec298c0b8626df8ae1b0e791c7d624cc29f61c333409ea4ae194325690412",
+        "version": "c4f944c9e36e2165a41c1645505ca64cc257713d513bd600bbe442d91524d3db",
         "signature": "70d39088aadaa0ffd68ab1e42d3f636f5988abe931b6feb0fdc54218186ab288"
       },
       "../src/auth/templates/account-confirm.handlebars.ts": {
@@ -2918,7 +2918,7 @@
         "signature": "acf2fe2d3b5df92a6a0c12528050dc767be3af49c91167e6febd04c914102bda"
       },
       "../src/db/db.module.ts": {
-        "version": "ec3f5bb52dbe95de2cee6742169b8738d9627ba0d8d5a829b0d124ae9df561d8",
+        "version": "9cbf3bfac298ca0b63e0ec89f82f5c926c761a64ca97bdf27d9950f8547580b9",
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/logger/db-logger.module.ts": {
@@ -8389,6 +8389,7 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/nodemailer/index.d.ts",
         "../src/config/config.service.ts",
+        "../src/consts.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",

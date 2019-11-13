@@ -36,12 +36,13 @@ let DbModule = DbModule_1 = class DbModule {
                             cache: shouldCache && {
                                 type: 'redis',
                                 options: {
-                                    port: envs[consts_1.REDIS_PORT],
                                     host: envs[consts_1.REDIS_HOST],
+                                    port: envs[consts_1.REDIS_PORT],
                                 },
                                 duration: 30000,
                             },
                         };
+                        console.log(options);
                         return options;
                     },
                 }),

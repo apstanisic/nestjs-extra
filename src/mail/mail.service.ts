@@ -5,6 +5,7 @@ import {
 } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
 import { ConfigService } from '../config/config.service';
+import { EMAIL_HOST, EMAIL_USER, EMAIL_PASSWORD, EMAIL_PORT } from '../consts';
 
 /**
  * Simple mail service. Wrapper around nodemailer.
@@ -33,10 +34,10 @@ export class MailService {
   private logger = new Logger(MailService.name);
 
   constructor(private readonly configService: ConfigService) {
-    this.host = this.getConfig('EMAIL_HOST');
-    this.user = this.getConfig('EMAIL_USER');
-    this.password = this.getConfig('EMAIL_PASSWORD');
-    this.port = Number(this.configService.get('EMAIL_PORT') || 587);
+    this.host = this.getConfig(EMAIL_HOST);
+    this.user = this.getConfig(EMAIL_USER);
+    this.password = this.getConfig(EMAIL_PASSWORD);
+    this.port = Number(this.configService.get(EMAIL_PORT) || 587);
 
     this.createTransport();
   }
@@ -57,6 +58,7 @@ export class MailService {
       {
         host: this.host,
         port: this.port,
+        secure: false,
         auth: {
           user: this.user,
           pass: this.password,

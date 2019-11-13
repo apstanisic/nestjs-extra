@@ -43,12 +43,14 @@ export class DbModule {
               cache: shouldCache && {
                 type: 'redis',
                 options: {
-                  port: envs[REDIS_PORT],
                   host: envs[REDIS_HOST],
+                  port: envs[REDIS_PORT],
                 },
                 duration: 30000,
               },
             };
+            console.log(options);
+
             return options;
           },
         }),
