@@ -36,7 +36,7 @@ export class DbModule {
               database: envs[DB_DATABASE],
               username: envs[DB_USER],
               password: envs[DB_PASSWORD],
-              port: parseInt(envs[DB_PORT], 10),
+              port: parseInt(envs[DB_PORT] ?? '5432', 10),
               maxQueryExecutionTime: 3000,
               synchronize: false,
               logging: isProduction ? ['error'] : 'all',
@@ -44,12 +44,11 @@ export class DbModule {
                 type: 'redis',
                 options: {
                   host: envs[REDIS_HOST],
-                  port: envs[REDIS_PORT],
+                  port: envs[REDIS_PORT] ?? '6379',
                 },
                 duration: 30000,
               },
             };
-            console.log(options);
 
             return options;
           },

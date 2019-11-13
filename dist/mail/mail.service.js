@@ -16,13 +16,14 @@ const config_service_1 = require("../config/config.service");
 const consts_1 = require("../consts");
 let MailService = MailService_1 = class MailService {
     constructor(configService) {
+        var _a;
         this.configService = configService;
         this.port = 587;
         this.logger = new common_1.Logger(MailService_1.name);
         this.host = this.getConfig(consts_1.EMAIL_HOST);
         this.user = this.getConfig(consts_1.EMAIL_USER);
         this.password = this.getConfig(consts_1.EMAIL_PASSWORD);
-        this.port = Number(this.configService.get(consts_1.EMAIL_PORT) || 587);
+        this.port = parseInt((_a = this.configService.get(consts_1.EMAIL_PORT), (_a !== null && _a !== void 0 ? _a : '587')));
         this.createTransport();
     }
     send(data) {

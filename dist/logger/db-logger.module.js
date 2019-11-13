@@ -21,15 +21,18 @@ DbLoggerModule = __decorate([
             typeorm_1.TypeOrmModule.forRootAsync({
                 inject: [config_service_1.ConfigService],
                 name: 'log_db',
-                useFactory: (config) => ({
-                    type: 'mongodb',
-                    host: config.get(consts_1.LOG_DB_HOST),
-                    database: config.get(consts_1.LOG_DB_DATABASE),
-                    port: parseInt(config.get(consts_1.LOG_DB_PORT) || '27017', 10),
-                    entities: [db_log_entity_1.DbLog],
-                    useNewUrlParser: true,
-                    useUnifiedTopology: true,
-                }),
+                useFactory: (config) => {
+                    var _a;
+                    return ({
+                        type: 'mongodb',
+                        host: config.get(consts_1.LOG_DB_HOST),
+                        database: config.get(consts_1.LOG_DB_DATABASE),
+                        port: parseInt((_a = config.get(consts_1.LOG_DB_PORT), (_a !== null && _a !== void 0 ? _a : '27017'))),
+                        entities: [db_log_entity_1.DbLog],
+                        useNewUrlParser: true,
+                        useUnifiedTopology: true,
+                    });
+                },
             }),
             typeorm_1.TypeOrmModule.forFeature([db_log_entity_1.DbLog], 'log_db'),
         ],

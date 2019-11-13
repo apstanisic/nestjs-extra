@@ -37,7 +37,8 @@ export class MailService {
     this.host = this.getConfig(EMAIL_HOST);
     this.user = this.getConfig(EMAIL_USER);
     this.password = this.getConfig(EMAIL_PASSWORD);
-    this.port = Number(this.configService.get(EMAIL_PORT) || 587);
+    // this.port = Number(this.configService.get(EMAIL_PORT) || 587);
+    this.port = parseInt(this.configService.get(EMAIL_PORT) ?? '587');
 
     this.createTransport();
   }

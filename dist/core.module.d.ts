@@ -5,7 +5,7 @@ import { StorageOptions } from './storage/storage.module';
 import { AcOptions } from './access-control/access-control.module';
 export interface CoreModuleParams {
     config?: ConfigOptions;
-    storage?: StorageOptions | false;
+    storage: StorageOptions | false;
     db: DbOptions;
     accessControl?: AcOptions;
     dbLog: boolean;

@@ -19,7 +19,7 @@ import { LOG_DB_HOST, LOG_DB_DATABASE, LOG_DB_PORT } from '../consts';
         type: 'mongodb',
         host: config.get(LOG_DB_HOST),
         database: config.get(LOG_DB_DATABASE),
-        port: parseInt(config.get(LOG_DB_PORT) || '27017', 10),
+        port: parseInt(config.get(LOG_DB_PORT) ?? '27017'),
         entities: [DbLog],
         useNewUrlParser: true,
         useUnifiedTopology: true,

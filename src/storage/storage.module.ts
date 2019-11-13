@@ -20,8 +20,8 @@ export interface StorageOptions {
 @Global()
 @Module({})
 export class StorageModule {
-  static forRoot({ imageSizes }: StorageOptions): DynamicModule {
-    const sizes = imageSizes || defaultStorageImagesSizes;
+  static forRoot(options: StorageOptions): DynamicModule {
+    const sizes = options.imageSizes ?? defaultStorageImagesSizes;
     return {
       module: StorageModule,
       providers: [

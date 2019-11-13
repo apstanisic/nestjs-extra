@@ -10,5 +10,5 @@ export interface StorageOptions {
     imageSizes?: ImageSizeOptions[];
 }
 export declare class StorageModule {
-    static forRoot({ imageSizes }: StorageOptions): DynamicModule;
+    static forRoot(options: StorageOptions): DynamicModule;
 }

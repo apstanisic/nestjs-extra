@@ -2330,8 +2330,8 @@
         "signature": "a5796310ed63d73e43966944ee4515c1a5b3fdd2a9dc230407c6f61963f94f75"
       },
       "../src/storage/storage.module.ts": {
-        "version": "b4d7b4071201f131acbe818cf98f9b01798d91f828f6267209166e7b587bf432",
-        "signature": "8ae42d21f390aa2b85f8952ca4440fbb9a9ba8fccb6097d868738049e94ad6da"
+        "version": "7067455ed4567561ccaa36575071ad8c7a84ee9093d83ee9801480b1df9fd5c3",
+        "signature": "9fc4cb77445c11bebfa6fb647919389397eed271a0b2a370fe1d626360295538"
       },
       "../src/storage/sharp.ts": {
         "version": "b2ff24781249a7037c579b3c498e0903c5ccff54d85e3bd28844b55a84182502",
@@ -2490,7 +2490,7 @@
         "signature": "e260b23510a804494b51bcc0a50c3453c78c1f8e1cf153b5f039ff021a54e8d9"
       },
       "../src/mail/mail.service.ts": {
-        "version": "c4f944c9e36e2165a41c1645505ca64cc257713d513bd600bbe442d91524d3db",
+        "version": "e343543248c5f8e94a8c1d54474ea8f670cf5d231aa52a7025773cf5f398a58e",
         "signature": "70d39088aadaa0ffd68ab1e42d3f636f5988abe931b6feb0fdc54218186ab288"
       },
       "../src/auth/templates/account-confirm.handlebars.ts": {
@@ -2918,11 +2918,11 @@
         "signature": "acf2fe2d3b5df92a6a0c12528050dc767be3af49c91167e6febd04c914102bda"
       },
       "../src/db/db.module.ts": {
-        "version": "9cbf3bfac298ca0b63e0ec89f82f5c926c761a64ca97bdf27d9950f8547580b9",
+        "version": "70a8a9a6e4bc096955846137463331e33b5fa4b54d32794193d99cc19ca9349a",
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/logger/db-logger.module.ts": {
-        "version": "6825ce86c8c154b872f79282b680e06693f70e1cb8ddab032c7e137a5ea56d79",
+        "version": "ab7b9eb6f7bbe7727201b5ead46c8fd9c41481607155995ce5b042f4476f2d25",
         "signature": "e1790bcd4aa3fec95c14d80218af113b1843010e3381e2ab9933acc5235f83ec"
       },
       "../src/mail/mail.module.ts": {
@@ -2962,8 +2962,8 @@
         "signature": "17a0e2d1de2e88bf67bbd70a87fb4899b47f0d864370bbd114f78f6c4a43cb8d"
       },
       "../src/core.module.ts": {
-        "version": "db7f1177ee44728d8d8477ba7daa8a355793b33212a54a3bd42476c1606c429f",
-        "signature": "0495b11de92f4cac94f17c4d1087bcda0e5d0e1c21e040939e9eb59ddd01b110"
+        "version": "4f4f12ad3585aaa3336997b07c5e803b4d8cb51ecf21045d11cc9816ddab54d5",
+        "signature": "663372a08fbbfae5cd7dd114e3e594b35b5b81397c5d1dbd89829c40484b1180"
       },
       "../src/example-consts.ts": {
         "version": "37f1cf6d0e3e55325f9b1d7fa536888921e84fc8fd1a6ae71fd8586b7192e6d7",

@@ -13,8 +13,9 @@ const storage_images_service_1 = require("./storage-images.service");
 const consts_1 = require("../consts");
 const storage_images_default_config_1 = require("./storage-images-default-config");
 let StorageModule = StorageModule_1 = class StorageModule {
-    static forRoot({ imageSizes }) {
-        const sizes = imageSizes || storage_images_default_config_1.defaultStorageImagesSizes;
+    static forRoot(options) {
+        var _a;
+        const sizes = (_a = options.imageSizes, (_a !== null && _a !== void 0 ? _a : storage_images_default_config_1.defaultStorageImagesSizes));
         return {
             module: StorageModule_1,
             providers: [

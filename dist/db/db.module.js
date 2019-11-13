@@ -19,6 +19,7 @@ let DbModule = DbModule_1 = class DbModule {
                 typeorm_1.TypeOrmModule.forRootAsync({
                     inject: [config_service_1.ConfigService],
                     useFactory: (config) => {
+                        var _a, _b;
                         const envs = config.getAll();
                         const shouldCache = envs[consts_1.REDIS_HOST] !== undefined;
                         const isProduction = envs[consts_1.NODE_ENV] === 'production';
@@ -29,7 +30,7 @@ let DbModule = DbModule_1 = class DbModule {
                             database: envs[consts_1.DB_DATABASE],
                             username: envs[consts_1.DB_USER],
                             password: envs[consts_1.DB_PASSWORD],
-                            port: parseInt(envs[consts_1.DB_PORT], 10),
+                            port: parseInt((_a = envs[consts_1.DB_PORT], (_a !== null && _a !== void 0 ? _a : '5432')), 10),
                             maxQueryExecutionTime: 3000,
                             synchronize: false,
                             logging: isProduction ? ['error'] : 'all',
@@ -37,12 +38,11 @@ let DbModule = DbModule_1 = class DbModule {
                                 type: 'redis',
                                 options: {
                                     host: envs[consts_1.REDIS_HOST],
-                                    port: envs[consts_1.REDIS_PORT],
+                                    port: (_b = envs[consts_1.REDIS_PORT], (_b !== null && _b !== void 0 ? _b : '6379')),
                                 },
                                 duration: 30000,
                             },
                         };
-                        console.log(options);
                         return options;
                     },
                 }),

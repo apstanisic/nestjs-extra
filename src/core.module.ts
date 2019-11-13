@@ -17,7 +17,7 @@ import { Role } from './access-control/role/roles.entity';
 /** Params for dynamic module */
 export interface CoreModuleParams {
   config?: ConfigOptions;
-  storage?: StorageOptions | false;
+  storage: StorageOptions | false;
   db: DbOptions;
   accessControl?: AcOptions;
   dbLog: boolean;
