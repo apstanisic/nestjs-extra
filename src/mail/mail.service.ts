@@ -1,10 +1,9 @@
 import {
   Injectable,
-  Logger,
   InternalServerErrorException,
+  Logger,
 } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
-import { Validator } from 'class-validator';
 import { ConfigService } from '../config/config.service';
 
 /**
@@ -33,14 +32,11 @@ export class MailService {
   /** Logger */
   private logger = new Logger(MailService.name);
 
-  /** Validator */
-  private validator = new Validator();
-
   constructor(private readonly configService: ConfigService) {
     this.host = this.getConfig('EMAIL_HOST');
-    this.port = Number(this.configService.get('EMAIL_PORT') || 587);
     this.user = this.getConfig('EMAIL_USER');
     this.password = this.getConfig('EMAIL_PASSWORD');
+    this.port = Number(this.configService.get('EMAIL_PORT') || 587);
 
     this.createTransport();
   }

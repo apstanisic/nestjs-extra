@@ -7,13 +7,16 @@ import { MailService } from './mail.service';
  * dependecies. I don't want Pug or Handlebars without reason.
  */
 @Global()
-@Module({})
+@Module({
+  providers: [MailService],
+  exports: [MailService],
+})
 export class MailModule {
-  static forRoot(): DynamicModule {
-    return {
-      module: MailModule,
-      providers: [MailService],
-      exports: [MailService],
-    };
-  }
+  // static forRoot(): DynamicModule {
+  //   return {
+  //     module: MailModule,
+  //     providers: [MailService],
+  //     exports: [MailService],
+  //   };
+  // }
 }

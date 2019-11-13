@@ -8,7 +8,7 @@ import { CronJob } from 'cron';
 @Injectable()
 export class CronService {
   /** Logger */
-  private logger = new Logger('CronModule');
+  private logger = new Logger(CronService.name);
 
   /**
    * Simple helper for cron job

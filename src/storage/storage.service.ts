@@ -5,6 +5,12 @@ import {
 } from '@nestjs/common';
 import { Client } from 'minio';
 import { ConfigService } from '../config/config.service';
+import {
+  STORAGE_ACCESS_KEY,
+  STORAGE_BUCKET_NAME,
+  STORAGE_GATEWAY,
+  STORAGE_SECRET_KEY,
+} from '../consts';
 import { wait } from '../helpers';
 
 /**
@@ -25,10 +31,11 @@ export class StorageService {
   private logger = new Logger();
 
   constructor(private readonly config: ConfigService) {
-    const endPoint = this.config.get('STORAGE_HOST');
-    const accessKey = this.config.get('STORAGE_ACCESS_KEY');
-    const secretKey = this.config.get('STORAGE_SECRET_KEY');
-    const bucket = this.config.get('STORAGE_BUCKET_NAME');
+    // const endPoint = this.config.get('STORAGE_HOST');
+    const endPoint = this.config.get(STORAGE_GATEWAY);
+    const accessKey = this.config.get(STORAGE_ACCESS_KEY);
+    const secretKey = this.config.get(STORAGE_SECRET_KEY);
+    const bucket = this.config.get(STORAGE_BUCKET_NAME);
 
     if (!bucket || !endPoint || !accessKey || !secretKey) {
       this.logger.error('Storage mounted, but storage keys are undefined.');

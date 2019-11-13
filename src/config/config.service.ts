@@ -13,7 +13,7 @@ import { ConfigOptions, CONFIG_OPTIONS } from './config.module';
 @Injectable()
 export class ConfigService {
   /** Logger */
-  private logger = new Logger('ConfigModule');
+  private logger = new Logger(ConfigService.name);
 
   /** Don't access this property. Use data getter */
   private readonly configData?: Struct<string>;

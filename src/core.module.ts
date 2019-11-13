@@ -41,11 +41,11 @@ export class CoreModule {
     const modules = [
       ConfigModule.forRoot(params.config),
       DbModule.forRoot(params.db),
-      CronModule,
       AuthModule,
+      CronModule,
     ];
 
-    if (params.mail) modules.push(MailModule.forRoot());
+    if (params.mail) modules.push(MailModule);
     if (params.storage) modules.push(StorageModule.forRoot(params.storage));
     if (params.dbLog) modules.push(DbLoggerModule);
     if (params.notifications) modules.push(NotificationModule);

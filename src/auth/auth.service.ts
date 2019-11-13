@@ -50,9 +50,7 @@ export class AuthService<User extends BaseUser = BaseUser> {
     return this.jwtService.sign({ email });
   }
 
-  /** Register new user, and return him and login token.
-   * @TODO fix this // @ts-ignore
-   */
+  /** Register new user, and return him and login token. */
   async registerNewUser(data: RegisterUserDto): Promise<SignInResponse> {
     const user = await this.usersService.createUser(data);
     const token = this.createJwt(data.email);
