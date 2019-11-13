@@ -21,15 +21,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const minio_1 = require("minio");
 const config_service_1 = require("../config/config.service");
+const consts_1 = require("../consts");
 const helpers_1 = require("../helpers");
 let StorageService = class StorageService {
     constructor(config) {
         this.config = config;
         this.logger = new common_1.Logger();
-        const endPoint = this.config.get('STORAGE_HOST');
-        const accessKey = this.config.get('STORAGE_ACCESS_KEY');
-        const secretKey = this.config.get('STORAGE_SECRET_KEY');
-        const bucket = this.config.get('STORAGE_BUCKET_NAME');
+        const endPoint = this.config.get(consts_1.STORAGE_GATEWAY);
+        const accessKey = this.config.get(consts_1.STORAGE_ACCESS_KEY);
+        const secretKey = this.config.get(consts_1.STORAGE_SECRET_KEY);
+        const bucket = this.config.get(consts_1.STORAGE_BUCKET_NAME);
         if (!bucket || !endPoint || !accessKey || !secretKey) {
             this.logger.error('Storage mounted, but storage keys are undefined.');
             throw new common_1.InternalServerErrorException();

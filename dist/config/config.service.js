@@ -11,22 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var ConfigService_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const dotenv = require("dotenv");
 const fs_1 = require("fs");
 const config_module_1 = require("./config.module");
-let ConfigService = class ConfigService {
+let ConfigService = ConfigService_1 = class ConfigService {
     constructor(options) {
-        this.logger = new common_1.Logger('ConfigModule');
+        this.logger = new common_1.Logger(ConfigService_1.name);
         try {
             if (options) {
-                const { configs } = options;
-                if (Buffer.isBuffer(configs) || typeof configs === 'string') {
-                    this.configData = dotenv.parse(configs);
+                const { data } = options;
+                if (Buffer.isBuffer(data) || typeof data === 'string') {
+                    this.configData = dotenv.parse(data);
                 }
                 else {
-                    this.configData = Object.assign({}, configs);
+                    this.configData = Object.assign({}, data);
                 }
             }
             else {
@@ -52,7 +53,7 @@ let ConfigService = class ConfigService {
         return this.data;
     }
 };
-ConfigService = __decorate([
+ConfigService = ConfigService_1 = __decorate([
     common_1.Injectable(),
     __param(0, common_1.Optional()), __param(0, common_1.Inject(config_module_1.CONFIG_OPTIONS)),
     __metadata("design:paramtypes", [Object])

@@ -5,12 +5,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var CronService_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const cron_1 = require("cron");
-let CronService = class CronService {
+let CronService = CronService_1 = class CronService {
     constructor() {
-        this.logger = new common_1.Logger('CronModule');
+        this.logger = new common_1.Logger(CronService_1.name);
     }
     startJob(time, fn) {
         try {
@@ -24,7 +25,7 @@ let CronService = class CronService {
         }
     }
 };
-CronService = __decorate([
+CronService = CronService_1 = __decorate([
     common_1.Injectable()
 ], CronService);
 exports.CronService = CronService;

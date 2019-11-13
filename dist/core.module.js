@@ -29,19 +29,20 @@ let CoreModule = CoreModule_1 = class CoreModule {
         const modules = [
             config_module_1.ConfigModule.forRoot(params.config),
             db_module_1.DbModule.forRoot(params.db),
-            mail_module_1.MailModule,
-            cron_module_1.CronModule,
             auth_module_1.AuthModule,
+            cron_module_1.CronModule,
         ];
-        if (params.accessControl) {
-            modules.push(access_control_module_1.AccessControlModule.forRoot(params.accessControl));
-        }
+        if (params.mail)
+            modules.push(mail_module_1.MailModule);
         if (params.storage)
             modules.push(storage_module_1.StorageModule.forRoot(params.storage));
         if (params.dbLog)
             modules.push(db_logger_module_1.DbLoggerModule);
         if (params.notifications)
             modules.push(notification_module_1.NotificationModule);
+        if (params.accessControl) {
+            modules.push(access_control_module_1.AccessControlModule.forRoot(params.accessControl));
+        }
         return {
             imports: modules,
             module: CoreModule_1,

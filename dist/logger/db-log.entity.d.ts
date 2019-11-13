@@ -14,7 +14,7 @@ export declare class DbLog<T extends WithId = any> {
     entityId: UUID;
     domainId?: UUID;
     private _newValue?;
-    newValue: T | undefined;
+    set newValue(value: T | undefined);
     _prepare(): void;
     throwError(): void;
 }

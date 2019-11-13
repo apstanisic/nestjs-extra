@@ -12,30 +12,16 @@ var MailService_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const nodemailer = require("nodemailer");
-const class_validator_1 = require("class-validator");
 const config_service_1 = require("../config/config.service");
 let MailService = MailService_1 = class MailService {
     constructor(configService) {
         this.configService = configService;
-        this.user = 'toby.leffler@ethereal.email';
-        this.password = 'tXC6AxGXHYWBmXrtyq';
-        this.senderName = 'Toby Leffler';
-        this.host = 'smtp.ethereal.email';
         this.port = 587;
-        this.secure = false;
         this.logger = new common_1.Logger(MailService_1.name);
-        this.validator = new class_validator_1.Validator();
-        if (configService.get('NODE_ENV') === 'production') {
-            const host = this.valueOrThrowIfEmpty(this.configService.get('EMAIL_HOST'));
-            this.host = host;
-            const port = Number(this.valueOrThrowIfEmpty(this.configService.get('EMAIL_PORT')));
-            this.port = port;
-            const user = this.valueOrThrowIfEmpty(this.configService.get('EMAIL_USER'));
-            this.user = user;
-            const password = this.valueOrThrowIfEmpty(this.configService.get('EMAIL_PASSWORD'));
-            this.password = password;
-            this.secure = Boolean(this.configService.get('EMAIL_SECURE')) || false;
-        }
+        this.host = this.getConfig('EMAIL_HOST');
+        this.user = this.getConfig('EMAIL_USER');
+        this.password = this.getConfig('EMAIL_PASSWORD');
+        this.port = Number(this.configService.get('EMAIL_PORT') || 587);
         this.createTransport();
     }
     send(data) {
@@ -51,7 +37,6 @@ let MailService = MailService_1 = class MailService {
         this.transporter = nodemailer.createTransport({
             host: this.host,
             port: this.port,
-            secure: this.secure,
             auth: {
                 user: this.user,
                 pass: this.password,
@@ -62,9 +47,9 @@ let MailService = MailService_1 = class MailService {
             .then(() => this.logger.log('MailService is working correctly.'))
             .catch(e => this.logger.error('Mail is not working', e));
     }
-    valueOrThrowIfEmpty(value) {
-        const { isEmpty } = this.validator;
-        if (isEmpty(value)) {
+    getConfig(key) {
+        const value = this.configService.get(key);
+        if (value === undefined) {
             throw new common_1.InternalServerErrorException('Mail config invalid.');
         }
         return value;

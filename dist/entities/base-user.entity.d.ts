@@ -9,7 +9,7 @@ export declare class BaseUser extends BaseEntity implements IUser {
     confirmed: boolean;
     secureToken?: string;
     tokenCreatedAt?: Date;
-    password: string;
+    set password(newPassword: string);
     checkPassword(enteredPassword: string): Promise<boolean>;
     generateSecureToken(): string;
     removeSecureToken(): void;

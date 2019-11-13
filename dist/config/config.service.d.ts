@@ -3,7 +3,7 @@ import { ConfigOptions } from './config.module';
 export declare class ConfigService {
     private logger;
     private readonly configData?;
-    private readonly data;
+    private get data();
     constructor(options?: ConfigOptions);
     get(key: string): string | undefined;
     getAll(): Struct<string>;
