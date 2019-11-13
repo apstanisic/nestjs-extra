@@ -4,8 +4,9 @@ import { Struct } from '../types';
 
 export const CONFIG_OPTIONS = 'CONFIG_OPTIONS';
 
+// String is file path. Buffer is file. Struct is already parsed file
 export interface ConfigOptions {
-  configs: string | Buffer | Struct<string>;
+  data: string | Buffer | Struct<string>;
 }
 
 @Global()

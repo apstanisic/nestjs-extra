@@ -1,4 +1,4 @@
-import { Module, Global } from '@nestjs/common';
+import { Module, Global, DynamicModule } from '@nestjs/common';
 import { MailService } from './mail.service';
 
 /**
@@ -7,8 +7,13 @@ import { MailService } from './mail.service';
  * dependecies. I don't want Pug or Handlebars without reason.
  */
 @Global()
-@Module({
-  providers: [MailService],
-  exports: [MailService],
-})
-export class MailModule {}
+@Module({})
+export class MailModule {
+  static forRoot(): DynamicModule {
+    return {
+      module: MailModule,
+      providers: [MailService],
+      exports: [MailService],
+    };
+  }
+}

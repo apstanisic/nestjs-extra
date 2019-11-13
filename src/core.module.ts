@@ -17,11 +17,12 @@ import { Role } from './access-control/role/roles.entity';
 /** Params for dynamic module */
 export interface CoreModuleParams {
   config?: ConfigOptions;
-  storage?: StorageOptions;
+  storage?: StorageOptions | false;
   db: DbOptions;
   accessControl?: AcOptions;
   dbLog: boolean;
   notifications: boolean;
+  mail: boolean;
 }
 
 /**
@@ -40,17 +41,17 @@ export class CoreModule {
     const modules = [
       ConfigModule.forRoot(params.config),
       DbModule.forRoot(params.db),
-      MailModule,
       CronModule,
       AuthModule,
     ];
 
-    if (params.accessControl) {
-      modules.push(AccessControlModule.forRoot(params.accessControl));
-    }
+    if (params.mail) modules.push(MailModule.forRoot());
     if (params.storage) modules.push(StorageModule.forRoot(params.storage));
     if (params.dbLog) modules.push(DbLoggerModule);
     if (params.notifications) modules.push(NotificationModule);
+    if (params.accessControl) {
+      modules.push(AccessControlModule.forRoot(params.accessControl));
+    }
 
     return {
       imports: modules,

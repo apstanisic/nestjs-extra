@@ -30,12 +30,12 @@ export class ConfigService {
   constructor(@Optional() @Inject(CONFIG_OPTIONS) options?: ConfigOptions) {
     try {
       if (options) {
-        const { configs } = options;
+        const { data } = options;
         // if (typeof options.configs === 'object')
-        if (Buffer.isBuffer(configs) || typeof configs === 'string') {
-          this.configData = dotenv.parse(configs);
+        if (Buffer.isBuffer(data) || typeof data === 'string') {
+          this.configData = dotenv.parse(data);
         } else {
-          this.configData = { ...configs };
+          this.configData = { ...data };
         }
       } else {
         const file = readFileSync('.env');
