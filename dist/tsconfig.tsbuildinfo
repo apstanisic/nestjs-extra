@@ -2886,8 +2886,8 @@
         "signature": "8918d9ef7252ecc06613db922a3f0e40ec8c2c8c82faf537b74e2156fe4d002f"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "fdf09382c64ae8cf66a3aea0bbd830576cccb062f11e78b15ff7db9d19c5d64b",
-        "signature": "dbad3d914aac03316399d7599dc79fee45858fba5977d49f2ef966cb0fa51acb"
+        "version": "e35e8ed6f7a404c0b457e1d2e90ab8ed9b4b9b8895f3b6b88cab3eb29dfac42d",
+        "signature": "c59acb735661123a1a0bdb8f3d3787ef7f928511fb30e8bd71b200baa275ba07"
       },
       "../src/validate-email.pipe.ts": {
         "version": "5fe7971e88a73299ec59a90e37f813afb823ca0b32047ec2d8f2608348b653a5",
@@ -9236,6 +9236,7 @@
         "../src/auth/auth.service.ts",
         "../src/auth/get-user.decorator.ts",
         "../src/storage/valid-jpeg-image.ts",
+        "../src/access-control/role/role.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -10037,6 +10038,7 @@
         "../src/entities/base-user.entity.ts",
         "../src/base-user.service.ts",
         "../src/auth/auth.service.ts",
+        "../src/access-control/role/role.service.ts",
         "../src/auth/auth.dto.ts",
         "../src/access-control/role/roles.entity.ts",
         "../src/entities/user.interface.ts"

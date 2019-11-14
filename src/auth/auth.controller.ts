@@ -12,6 +12,7 @@ import {
   UseGuards,
   UseInterceptors,
   UploadedFile,
+  Optional,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { AuthGuard } from '@nestjs/passport';
@@ -30,12 +31,14 @@ import {
 import { AuthService } from './auth.service';
 import { GetUser } from './get-user.decorator';
 import { validJpeg } from '../storage/valid-jpeg-image';
+import { RoleService } from '../access-control/role/role.service';
 
 @Controller('auth')
 export class AuthController<User extends BaseUser = BaseUser> {
   constructor(
     @Inject(USER_SERVICE) private readonly userService: BaseUserService<User>,
     private readonly authService: AuthService,
+    @Optional() @Inject() private readonly roleService?: RoleService,
   ) {}
 
   /** Attempt to login user */
@@ -73,13 +76,13 @@ export class AuthController<User extends BaseUser = BaseUser> {
   }
 
   @Get('account/roles')
-  @UseGuards(AuthGuard('jwt'), PermissionsGuard)
-  getUsersRoles(@GetUser() user: User): Role[] {
-    // If user does not have role property, that means there aren't ABAC
-    if (!(user as any).roles === undefined) {
+  @UseGuards(AuthGuard('jwt'))
+  getUsersRoles(@GetUser() user: User): Promise<Role[]> {
+    // If this service is not available the is not AC
+    if (!this.roleService) {
       throw new NotFoundException();
     }
-    return (user as any).roles;
+    return this.roleService.find({ userId: user.id });
   }
 
   /* Confirm user account. Click on link in email */

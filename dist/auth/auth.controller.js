@@ -24,17 +24,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const platform_express_1 = require("@nestjs/platform-express");
 const passport_1 = require("@nestjs/passport");
-const permissions_guard_1 = require("../access-control/permissions.guard");
 const base_user_service_1 = require("../base-user.service");
 const consts_1 = require("../consts");
 const auth_dto_1 = require("./auth.dto");
 const auth_service_1 = require("./auth.service");
 const get_user_decorator_1 = require("./get-user.decorator");
 const valid_jpeg_image_1 = require("../storage/valid-jpeg-image");
+const role_service_1 = require("../access-control/role/role.service");
 let AuthController = class AuthController {
-    constructor(userService, authService) {
+    constructor(userService, authService, roleService) {
         this.userService = userService;
         this.authService = authService;
+        this.roleService = roleService;
     }
     login(params) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -61,10 +62,10 @@ let AuthController = class AuthController {
         });
     }
     getUsersRoles(user) {
-        if (!user.roles === undefined) {
+        if (!this.roleService) {
             throw new common_1.NotFoundException();
         }
-        return user.roles;
+        return this.roleService.find({ userId: user.id });
     }
     confirmAccout(email, token) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -119,11 +120,11 @@ __decorate([
 ], AuthController.prototype, "deleteUser", null);
 __decorate([
     common_1.Get('account/roles'),
-    common_1.UseGuards(passport_1.AuthGuard('jwt'), permissions_guard_1.PermissionsGuard),
+    common_1.UseGuards(passport_1.AuthGuard('jwt')),
     __param(0, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Array)
+    __metadata("design:returntype", Promise)
 ], AuthController.prototype, "getUsersRoles", null);
 __decorate([
     common_1.Get('confirm-account/:email/:token'),
@@ -159,8 +160,10 @@ __decorate([
 AuthController = __decorate([
     common_1.Controller('auth'),
     __param(0, common_1.Inject(consts_1.USER_SERVICE)),
+    __param(2, common_1.Optional()), __param(2, common_1.Inject()),
     __metadata("design:paramtypes", [base_user_service_1.BaseUserService,
-        auth_service_1.AuthService])
+        auth_service_1.AuthService,
+        role_service_1.RoleService])
 ], AuthController);
 exports.AuthController = AuthController;
 //# sourceMappingURL=auth.controller.js.map
