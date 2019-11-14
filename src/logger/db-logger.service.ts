@@ -6,7 +6,6 @@ import { WithId } from '../types';
 import { DbLogMetadata } from './db-log-metadata';
 import { DbLog } from './db-log.entity';
 
-// @Injectable({ scope: Scope.REQUEST })
 @Injectable()
 export class DbLoggerService<T extends WithId = any> extends BaseFindService<
   DbLog

@@ -44,10 +44,7 @@ export class BaseFindService<T extends WithId = any> {
 
     try {
       entity = await this.repository.findOne({ ...options, where });
-      console.log('entity', entity);
     } catch (error) {
-      console.log('error in entity', error);
-
       throw this.internalError(error);
     }
 

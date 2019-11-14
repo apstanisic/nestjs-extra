@@ -38,7 +38,7 @@ export class DbModule {
               password: envs[DB_PASSWORD],
               port: parseInt(envs[DB_PORT] ?? '5432', 10),
               maxQueryExecutionTime: 3000,
-              synchronize: false,
+              synchronize: !isProduction,
               logging: isProduction ? ['error'] : 'all',
               cache: shouldCache && {
                 type: 'redis',

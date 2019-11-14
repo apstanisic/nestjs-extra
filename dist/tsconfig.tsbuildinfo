@@ -2230,7 +2230,7 @@
         "signature": "3c194d3f6724a818ef1bf362e12e8ed30e2e20610bf20343adf2f02dc22370ff"
       },
       "../src/logger/db-logger.service.ts": {
-        "version": "ca1bbcebef23a01fb0dea67a22bed9404140bfd8c69a9536010d2b526a0af0de",
+        "version": "4de54803a28ab69d0c929b2873c92a2411253d50539afd557788f991ab612f2b",
         "signature": "eef06b0457b0e8480c271ff0c5032c578375398ed9d7d9657232720609817435"
       },
       "../src/consts.ts": {
@@ -2286,7 +2286,7 @@
         "signature": "dba7030620268aa2629e3557de2663d2f1fe9feffa18175cd0ddbe03fc9f637d"
       },
       "../src/base-find.service.ts": {
-        "version": "9c470798612dbcc370ab0e971cc858854a1b7ae3fb53de092f8f822e3dc632b3",
+        "version": "c844f495e8b14782cd621fad563c6e93970d3842e28239e4b7f45c469d3d50ab",
         "signature": "feaed97d87f0a89d2c75bb1ce18c6da05e0f441ebace05d8f6d52a3ee340237d"
       },
       "../node_modules/@types/bcryptjs/index.d.ts": {
@@ -2918,7 +2918,7 @@
         "signature": "acf2fe2d3b5df92a6a0c12528050dc767be3af49c91167e6febd04c914102bda"
       },
       "../src/db/db.module.ts": {
-        "version": "70a8a9a6e4bc096955846137463331e33b5fa4b54d32794193d99cc19ca9349a",
+        "version": "902e8f4c966d746add35997dacc99de348f86cc97ee37981aa84ecb87727d8e2",
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/logger/db-logger.module.ts": {
