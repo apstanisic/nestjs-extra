@@ -44,9 +44,9 @@ export class PermissionsGuard implements CanActivate {
     const request = context.switchToHttp().getRequest();
 
     const { method } = request;
-    const { user } = request.user as { user?: BaseUserWithRoles };
+    const { user } = request as { user?: BaseUserWithRoles };
     // In case AuthGuard wasn't called
-    if (!user) throw new InternalServerErrorException();
+    if (!user) throw new InternalServerErrorException('Must be logged in');
 
     const defaultAction = method === 'GET' ? 'read' : 'write';
     const action = accessOptions ? accessOptions.action : defaultAction;

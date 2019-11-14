@@ -75,6 +75,7 @@ export class AuthController<User extends BaseUser = BaseUser> {
   @Get('account/roles')
   @UseGuards(AuthGuard('jwt'), PermissionsGuard)
   getUsersRoles(@GetUser() user: User): Role[] {
+    // If user does not have role property, that means there aren't ABAC
     if (!(user as any).roles === undefined) {
       throw new NotFoundException();
     }

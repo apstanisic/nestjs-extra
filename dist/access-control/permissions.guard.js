@@ -33,9 +33,9 @@ let PermissionsGuard = class PermissionsGuard {
             const accessOptions = this.reflector.get('access_control', context.getHandler());
             const request = context.switchToHttp().getRequest();
             const { method } = request;
-            const { user } = request.user;
+            const { user } = request;
             if (!user)
-                throw new common_1.InternalServerErrorException();
+                throw new common_1.InternalServerErrorException('Must be logged in');
             const defaultAction = method === 'GET' ? 'read' : 'write';
             const action = accessOptions ? accessOptions.action : defaultAction;
             const resource = accessOptions && accessOptions.resource

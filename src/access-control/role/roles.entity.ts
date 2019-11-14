@@ -14,7 +14,7 @@ import { BaseEntity } from '../../entities/base.entity';
  * role.description = 'You are admin in company f32. Happy b-day';
  * repo.save(role);
  */
-@Entity()
+@Entity('roles')
 export class Role extends BaseEntity {
   /** User that have this role */
   // @ManyToOne(type => BaseUserWithRoles, user => user.roles)

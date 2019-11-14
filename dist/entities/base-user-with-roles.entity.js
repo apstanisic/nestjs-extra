@@ -16,8 +16,8 @@ const base_user_entity_1 = require("./base-user.entity");
 class BaseUserWithRoles extends base_user_entity_1.BaseUser {
 }
 __decorate([
-    typeorm_1.OneToMany(type => roles_entity_1.Role, role => role.userId),
     class_transformer_1.Exclude(),
+    typeorm_1.OneToMany(type => roles_entity_1.Role, role => role.userId),
     __metadata("design:type", Array)
 ], BaseUserWithRoles.prototype, "roles", void 0);
 exports.BaseUserWithRoles = BaseUserWithRoles;

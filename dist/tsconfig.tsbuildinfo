@@ -2342,11 +2342,11 @@
         "signature": "2b071301d6d1fae8c3c266d16d965ec84d7ff639ae949bfba2fb1691d8810121"
       },
       "../src/entities/base-user-with-roles.entity.ts": {
-        "version": "c1f14f9e8fdff6010ec10f1ab8f591e153ae0a17263f51f6266cb35baa681754",
+        "version": "2e75e83c267fbd2bac3016df6ca421496d934d9cb9e8906604ac175ce812d6cc",
         "signature": "91e0108a0dee06bfb397a6b893632809333e19670620ed8a6ce29d77a1659310"
       },
       "../src/access-control/role/roles.entity.ts": {
-        "version": "d578c92368d8a23317dc512b378f7dc350937a2dea8b1fd27dcfabf379e27278",
+        "version": "c0e9b32d35b7771e831829ad99b7bf290fe84b45088877a8873e538a954bd3ce",
         "signature": "c659b19ba30eb3cb9d3086f6dce6d8d43040afc2fc87b86af2adc60a0bf29380"
       },
       "../src/access-control/role/role.service.ts": {
@@ -2874,7 +2874,7 @@
         "signature": "583016969b6437b33d6883c9df1f74972365207344c8527fc86dc5d383b2ad7e"
       },
       "../src/access-control/permissions.guard.ts": {
-        "version": "223386bb0008a780536710fda4f2827a531ebede90bd0957764ba5e03df0c0d9",
+        "version": "15855fb51d1963190ae7a781bed2ee2046365a1dc890467a1780b1d735526e87",
         "signature": "6b33bad58910c92b4a04075f928117980316119ea9200b4ac3e4ee413394ae3c"
       },
       "../src/auth/get-user.decorator.ts": {
@@ -2886,7 +2886,7 @@
         "signature": "8918d9ef7252ecc06613db922a3f0e40ec8c2c8c82faf537b74e2156fe4d002f"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "20de1a2ef2c8e1f3ebc06cb3b214263eaf3140c2ed5eaa82980dcfa7761355df",
+        "version": "fdf09382c64ae8cf66a3aea0bbd830576cccb062f11e78b15ff7db9d19c5d64b",
         "signature": "dbad3d914aac03316399d7599dc79fee45858fba5977d49f2ef966cb0fa51acb"
       },
       "../src/validate-email.pipe.ts": {
