@@ -62,6 +62,8 @@ let AuthController = class AuthController {
         });
     }
     getUsersRoles(user) {
+        console.log(user);
+        console.log(this.roleService !== undefined);
         if (!this.roleService) {
             throw new common_1.NotFoundException();
         }

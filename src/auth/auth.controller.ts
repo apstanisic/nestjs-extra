@@ -13,6 +13,7 @@ import {
   UseInterceptors,
   UploadedFile,
   Optional,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { AuthGuard } from '@nestjs/passport';
@@ -78,6 +79,8 @@ export class AuthController<User extends BaseUser = BaseUser> {
   @Get('account/roles')
   @UseGuards(AuthGuard('jwt'))
   getUsersRoles(@GetUser() user: User): Promise<Role[]> {
+    console.log(user);
+    console.log(this.roleService !== undefined);
     // If this service is not available the is not AC
     if (!this.roleService) {
       throw new NotFoundException();
