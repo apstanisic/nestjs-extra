@@ -2958,7 +2958,7 @@
         "signature": "0a9137fd1f6cc95a03dc750636d3c795b2a8f1c060aec6c4bd1eb1a55dce802e"
       },
       "../src/access-control/access-control.module.ts": {
-        "version": "29a027d667ec55681f6a45492a304575b024b34b3a2bbc09cc231175d921caf4",
+        "version": "5ba31788889b7e796931970567fdd37d23d647af811ee0df9b5ff9209035a594",
         "signature": "17a0e2d1de2e88bf67bbd70a87fb4899b47f0d864370bbd114f78f6c4a43cb8d"
       },
       "../src/core.module.ts": {
@@ -9429,6 +9429,7 @@
         "../src/access-control/access-control.service.ts",
         "../src/access-control/permissions.guard.ts",
         "../src/access-control/role/role.module.ts",
+        "../src/access-control/role/role.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
