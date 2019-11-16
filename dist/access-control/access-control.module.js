@@ -12,7 +12,6 @@ const consts_1 = require("../consts");
 const access_control_service_1 = require("./access-control.service");
 const permissions_guard_1 = require("./permissions.guard");
 const role_module_1 = require("./role/role.module");
-const role_service_1 = require("./role/role.service");
 let AccessControlModule = AccessControlModule_1 = class AccessControlModule {
     static forRoot(options) {
         return {
@@ -25,7 +24,7 @@ let AccessControlModule = AccessControlModule_1 = class AccessControlModule {
                 access_control_service_1.AccessControlService,
                 permissions_guard_1.PermissionsGuard,
             ],
-            exports: [access_control_service_1.AccessControlService, permissions_guard_1.PermissionsGuard, role_service_1.RoleService],
+            exports: [access_control_service_1.AccessControlService, permissions_guard_1.PermissionsGuard],
         };
     }
 };

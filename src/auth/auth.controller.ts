@@ -20,7 +20,7 @@ import { AuthGuard } from '@nestjs/passport';
 import { PermissionsGuard } from '../access-control/permissions.guard';
 import { Role } from '../access-control/role/roles.entity';
 import { BaseUserService } from '../base-user.service';
-import { USER_SERVICE } from '../consts';
+import { USER_SERVICE, ROLE_SERVICE } from '../consts';
 import { BaseUser } from '../entities/base-user.entity';
 import { BasicUserInfo } from '../entities/user.interface';
 import {
@@ -39,7 +39,9 @@ export class AuthController<User extends BaseUser = BaseUser> {
   constructor(
     @Inject(USER_SERVICE) private readonly userService: BaseUserService<User>,
     private readonly authService: AuthService,
-    @Optional() @Inject() private readonly roleService?: RoleService,
+    @Optional()
+    @Inject(ROLE_SERVICE)
+    private readonly roleService?: RoleService,
   ) {}
 
   /** Attempt to login user */

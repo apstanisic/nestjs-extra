@@ -10,14 +10,15 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const role_service_1 = require("./role.service");
 const roles_entity_1 = require("./roles.entity");
+const consts_1 = require("../../consts");
 let RoleModule = class RoleModule {
 };
 RoleModule = __decorate([
     common_1.Global(),
     common_1.Module({
         imports: [typeorm_1.TypeOrmModule.forFeature([roles_entity_1.Role])],
-        providers: [role_service_1.RoleService],
-        exports: [role_service_1.RoleService],
+        providers: [role_service_1.RoleService, { provide: consts_1.ROLE_SERVICE, useClass: role_service_1.RoleService }],
+        exports: [role_service_1.RoleService, { provide: consts_1.ROLE_SERVICE, useClass: role_service_1.RoleService }],
     })
 ], RoleModule);
 exports.RoleModule = RoleModule;

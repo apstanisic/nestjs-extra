@@ -162,7 +162,8 @@ __decorate([
 AuthController = __decorate([
     common_1.Controller('auth'),
     __param(0, common_1.Inject(consts_1.USER_SERVICE)),
-    __param(2, common_1.Optional()), __param(2, common_1.Inject()),
+    __param(2, common_1.Optional()),
+    __param(2, common_1.Inject(consts_1.ROLE_SERVICE)),
     __metadata("design:paramtypes", [base_user_service_1.BaseUserService,
         auth_service_1.AuthService,
         role_service_1.RoleService])

@@ -2234,8 +2234,8 @@
         "signature": "eef06b0457b0e8480c271ff0c5032c578375398ed9d7d9657232720609817435"
       },
       "../src/consts.ts": {
-        "version": "1e2ededdafcd0fac9827b9589e1d22ad5f7a9730b2e5ad033fefdce06f881ad7",
-        "signature": "f8b29af2851003d938bb65e5748e77a0835c585255fc5e0b3f7b40ff82da321a"
+        "version": "81ac7cdb6967b3f9fbaab5df37322a4a0318de3bf64c166cde08f7d3a5f78102",
+        "signature": "1961890ed092e3eb28acb4a06659984226844dd96591df56b1da6b9da2f21913"
       },
       "../src/base.service.ts": {
         "version": "83203e4722037509186e4c3a3983ca63bc67f7c6b2c51dbe17165926ecfa6111",
@@ -2886,7 +2886,7 @@
         "signature": "8918d9ef7252ecc06613db922a3f0e40ec8c2c8c82faf537b74e2156fe4d002f"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "61a21f8262f5e0bb7206536a23fdc3178c97282243bad83a1261c8bfb7734e09",
+        "version": "fdf39fef0cd03edd2f8cf961f21761d5c31973e25c85b0ea61b032bde1a134e4",
         "signature": "c59acb735661123a1a0bdb8f3d3787ef7f928511fb30e8bd71b200baa275ba07"
       },
       "../src/validate-email.pipe.ts": {
@@ -2901,12 +2901,8 @@
         "version": "3989892401b905a4125f0719359fa3c22607789e2fb05f47f4ddca10b16d45a7",
         "signature": "2b1492ccced436efb4a03a7d7a3d67faf115764ac8f5b76b61e0916acf89335b"
       },
-      "../src/access-control/role/role.module.ts": {
-        "version": "abec5422ff81456e55dc8ea9e0eeff84439cd1366ff0aa27ff59355ef8ad38f8",
-        "signature": "917746f451b9febce5f684d7e8c86df5f7486ad7e87e4c1aed4a48f4f0c83650"
-      },
       "../src/auth/auth.module.ts": {
-        "version": "aa56b7cd67b9b66dfda9e73f5787fb0764009b733ab373ce7770566b071fb604",
+        "version": "e64366037b626c93d3a33f2a8b419f84672eaeb4ed5c2ce51118ccf2d2526ba8",
         "signature": "640133db3771892c359b1ed1992dae2cb86f49079858f0b35ea5b534ddd63141"
       },
       "../node_modules/@types/cron/index.d.ts": {
@@ -2957,8 +2953,12 @@
         "version": "ea7dac912cd55b8845b5a7aa63934e0000eb4a798e66382b84570c3d692ca976",
         "signature": "0a9137fd1f6cc95a03dc750636d3c795b2a8f1c060aec6c4bd1eb1a55dce802e"
       },
+      "../src/access-control/role/role.module.ts": {
+        "version": "4f06ec04b3830d1db202cf15f8ec1b6b7a0ae3f4651057741a9e89c4953e5574",
+        "signature": "917746f451b9febce5f684d7e8c86df5f7486ad7e87e4c1aed4a48f4f0c83650"
+      },
       "../src/access-control/access-control.module.ts": {
-        "version": "5ba31788889b7e796931970567fdd37d23d647af811ee0df9b5ff9209035a594",
+        "version": "29a027d667ec55681f6a45492a304575b024b34b3a2bbc09cc231175d921caf4",
         "signature": "17a0e2d1de2e88bf67bbd70a87fb4899b47f0d864370bbd114f78f6c4a43cb8d"
       },
       "../src/core.module.ts": {
@@ -9276,16 +9276,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/access-control/role/role.module.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/typeorm/index.d.ts",
-        "../src/access-control/role/role.service.ts",
-        "../src/access-control/role/roles.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/auth/auth.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
@@ -9298,7 +9288,6 @@
         "../src/auth/auth-mail.service.ts",
         "../src/auth/password-reset.service.ts",
         "../src/consts.ts",
-        "../src/access-control/role/role.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -9423,13 +9412,23 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/access-control/role/role.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/access-control/role/role.service.ts",
+        "../src/access-control/role/roles.entity.ts",
+        "../src/consts.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/access-control/access-control.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/consts.ts",
         "../src/access-control/access-control.service.ts",
         "../src/access-control/permissions.guard.ts",
         "../src/access-control/role/role.module.ts",
-        "../src/access-control/role/role.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -16566,7 +16565,6 @@
       "../src/validate-email.pipe.ts",
       "../src/auth/password-reset.service.ts",
       "../src/auth/password-reset.controller.ts",
-      "../src/access-control/role/role.module.ts",
       "../src/auth/auth.module.ts",
       "../node_modules/@types/cron/index.d.ts",
       "../src/cron/cron.service.ts",
@@ -16580,6 +16578,7 @@
       "../src/uuid.pipe.ts",
       "../src/notification/notification.controller.ts",
       "../src/notification/notification.module.ts",
+      "../src/access-control/role/role.module.ts",
       "../src/access-control/access-control.module.ts",
       "../src/core.module.ts",
       "../src/example-consts.ts",

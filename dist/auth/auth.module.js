@@ -17,7 +17,6 @@ const config_service_1 = require("../config/config.service");
 const auth_mail_service_1 = require("./auth-mail.service");
 const password_reset_service_1 = require("./password-reset.service");
 const consts_1 = require("../consts");
-const role_module_1 = require("../access-control/role/role.module");
 var passport_2 = require("@nestjs/passport");
 exports.AuthGuard = passport_2.AuthGuard;
 let AuthModule = class AuthModule {
@@ -38,7 +37,6 @@ AuthModule = __decorate([
                     return { secret, signOptions: { expiresIn: '10 days' } };
                 },
             }),
-            role_module_1.RoleModule,
         ],
         providers: [auth_service_1.AuthService, auth_mail_service_1.AuthMailService, password_reset_service_1.PasswordResetService, jwt_strategy_1.JwtStrategy],
         controllers: [auth_controller_1.AuthController, password_reset_controller_1.PasswordResetController],

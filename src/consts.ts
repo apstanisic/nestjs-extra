@@ -1,5 +1,6 @@
 export const USER_SERVICE = 'USER_SERVICE';
 export const DB_LOGGER_SERVICE = 'DB_LOGGER_SERVICE';
+export const ROLE_SERVICE = 'ROLE_SERVICE';
 
 export const AC_ROLES_LIST = 'AC_ROLES_LIST';
 export const AC_MODEL = 'AC_MODEL';

@@ -3,7 +3,6 @@ import { AC_MODEL, AC_POLICIES, AC_ROLES_LIST } from '../consts';
 import { AccessControlService } from './access-control.service';
 import { PermissionsGuard } from './permissions.guard';
 import { RoleModule } from './role/role.module';
-import { RoleService } from './role/role.service';
 
 export interface AcOptions {
   availableRoles: string[];
@@ -30,7 +29,7 @@ export class AccessControlModule {
         AccessControlService,
         PermissionsGuard,
       ],
-      exports: [AccessControlService, PermissionsGuard, RoleService],
+      exports: [AccessControlService, PermissionsGuard],
     };
   }
 }

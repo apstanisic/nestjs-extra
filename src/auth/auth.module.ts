@@ -14,7 +14,6 @@ import { ConfigService } from '../config/config.service';
 import { AuthMailService } from './auth-mail.service';
 import { PasswordResetService } from './password-reset.service';
 import { JWT_SECRET } from '../consts';
-import { RoleModule } from '../access-control/role/role.module';
 
 export { AuthGuard } from '@nestjs/passport';
 
@@ -33,7 +32,6 @@ export { AuthGuard } from '@nestjs/passport';
         return { secret, signOptions: { expiresIn: '10 days' } };
       },
     }),
-    RoleModule,
   ],
   providers: [AuthService, AuthMailService, PasswordResetService, JwtStrategy],
   controllers: [AuthController, PasswordResetController],
