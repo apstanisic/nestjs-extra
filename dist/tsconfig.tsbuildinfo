@@ -2250,8 +2250,8 @@
         "signature": "fb672977808c85131a708eb4ffb670181aef9481e072a04e8a7e6e2cb8eb0287"
       },
       "../src/pagination/pagination.types.ts": {
-        "version": "0539cf67d29ac38b44dd33b7dc537321d77b9a18e16288b99fde5d6cbaff89ed",
-        "signature": "7ce0c0f5723c8cf348828d1729aab658b24ec918fff16f28184d4e8124ade871"
+        "version": "8471b66ca2e1a9675549890b7acb89a0d50b7c4fa3aba1f243831c5142e23230",
+        "signature": "6d5af49115189b181cd5ca1dcd668ac1276d882506b6887e836ab8fcc29c72d2"
       },
       "../src/pagination/pagination-options.ts": {
         "version": "299220cc8ed06c7c450a878a694656582165906ad5546fe87f691366ec8e3353",
@@ -2274,7 +2274,7 @@
         "signature": "173e2bb1420f0956f27d5b1949cbe07bb738715a9f07c1331c005fa4288692de"
       },
       "../src/pagination/_paginator.ts": {
-        "version": "6a017af74507e6b6400ac089bd7ca11c70f27bb135a3502a107f545589d639d8",
+        "version": "2394c7fb6929dee8a4b7975f20567b47a1878c981d24d4c2b81f63cbdacc413e",
         "signature": "7eda2c6299138e51d48ecf722bae2e2aa4a5f45e75a7ba4eeea17625efedb010"
       },
       "../src/pagination/_paginate.helper.ts": {
@@ -2886,7 +2886,7 @@
         "signature": "8918d9ef7252ecc06613db922a3f0e40ec8c2c8c82faf537b74e2156fe4d002f"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "fdf39fef0cd03edd2f8cf961f21761d5c31973e25c85b0ea61b032bde1a134e4",
+        "version": "3fed122ea25a32ec8ffb4f3998d316a3b53a00a566e9c8ffb7cd7d262d3e6b3f",
         "signature": "c59acb735661123a1a0bdb8f3d3787ef7f928511fb30e8bd71b200baa275ba07"
       },
       "../src/validate-email.pipe.ts": {

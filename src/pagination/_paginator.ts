@@ -116,6 +116,8 @@ export class Paginator<T extends WithId> {
     let previous;
     let nextUrl;
     let previousUrl;
+    let lastUrl;
+    let firstUrl;
 
     // If end is reaced, set isLastPage or isFirstPage, depending on direction.
     // If not remove last item from result that was used for checking.
@@ -154,10 +156,17 @@ export class Paginator<T extends WithId> {
       query[cursorField] = previous;
       previousUrl = `${url}?${queryString.stringify(query)}`;
     }
+    if (this.currentUrl) {
+      const url = queryString.parseUrl(this.currentUrl);
+      delete url.query[cursorField];
+      firstUrl = `${url.url}?${queryString.stringify(url.query)}`;
+    }
 
     /* return response */
     response.pagination = {
+      lastUrl,
       isLastPage,
+      firstUrl,
       isFirstPage,
       previous,
       next,

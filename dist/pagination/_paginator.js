@@ -76,6 +76,8 @@ class Paginator {
         let previous;
         let nextUrl;
         let previousUrl;
+        let lastUrl;
+        let firstUrl;
         if (endReached) {
             if (this.direction === 'next') {
                 isLastPage = true;
@@ -105,8 +107,15 @@ class Paginator {
             query[pagination_types_1.cursorField] = previous;
             previousUrl = `${url}?${queryString.stringify(query)}`;
         }
+        if (this.currentUrl) {
+            const url = queryString.parseUrl(this.currentUrl);
+            delete url.query[pagination_types_1.cursorField];
+            firstUrl = `${url.url}?${queryString.stringify(url.query)}`;
+        }
         response.pagination = {
+            lastUrl,
             isLastPage,
+            firstUrl,
             isFirstPage,
             previous,
             next,

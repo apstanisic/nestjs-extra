@@ -17,8 +17,10 @@ export class PaginatorResponse<T = any> {
   pagination: {
     amount: number;
     perPage: number;
-    isLastPage: boolean;
     isFirstPage?: boolean;
+    firstUrl?: string;
+    isLastPage: boolean;
+    lastUrl?: string;
     next?: string;
     previous?: string;
     nextUrl?: string;
