@@ -128,7 +128,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
     meta?: DbLogMetadata,
   ): Promise<T> {
     const entity = await this.findOne(where);
-    const updated = await this.update(entity, data, meta);
+    const updated = await this.update(entity.id, data, meta);
     return updated;
   }
 
@@ -166,7 +166,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
     logMetadata?: DbLogMetadata,
   ): Promise<T> {
     const entity = await this.findOne(where);
-    const deleted = await this.delete(entity, logMetadata);
+    const deleted = await this.delete(entity.id, logMetadata);
     return deleted;
   }
 

@@ -125,8 +125,6 @@ export class BaseFindService<T extends WithId = any> {
   }
 
   protected internalError(error: any): InternalServerErrorException {
-    console.log('Nema greske', JSON.stringify(error));
-
     this.logger.error('BaseServiceError', error);
     return new InternalServerErrorException();
   }
