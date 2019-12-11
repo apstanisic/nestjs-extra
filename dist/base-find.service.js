@@ -87,7 +87,6 @@ class BaseFindService {
         });
     }
     internalError(error) {
-        console.log('Nema greske', JSON.stringify(error));
         this.logger.error('BaseServiceError', error);
         return new common_1.InternalServerErrorException();
     }

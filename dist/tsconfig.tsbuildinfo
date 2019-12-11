@@ -2238,8 +2238,8 @@
         "signature": "1961890ed092e3eb28acb4a06659984226844dd96591df56b1da6b9da2f21913"
       },
       "../src/base.service.ts": {
-        "version": "83203e4722037509186e4c3a3983ca63bc67f7c6b2c51dbe17165926ecfa6111",
-        "signature": "b7b2fc40b442c5afcc6c35737e9c5e1ce5ac4eafa374f69a69e593c4e6e442f1"
+        "version": "30f03f4abf528e6520a5de44bcae68a1dee8ae8bead0d54f3571ef4eca9b70ed",
+        "signature": "de2eb3de56d5c17a347955fffc54d7c7416ddcd422622314240a4ee2fcd4a15d"
       },
       "../src/helpers.ts": {
         "version": "ff97b4dd3a93290ca12c577e038f037ead23904a96194f51f7fe7a58b76ba41f",
@@ -2286,8 +2286,8 @@
         "signature": "dba7030620268aa2629e3557de2663d2f1fe9feffa18175cd0ddbe03fc9f637d"
       },
       "../src/base-find.service.ts": {
-        "version": "c844f495e8b14782cd621fad563c6e93970d3842e28239e4b7f45c469d3d50ab",
-        "signature": "feaed97d87f0a89d2c75bb1ce18c6da05e0f441ebace05d8f6d52a3ee340237d"
+        "version": "bd1de74c06beff78a14584bee5c64b19a779ee8c34d3cc337d7492898f26e580",
+        "signature": "c55c732fc794776e85d0bce3c404ad5bb75dae6d3bbc542147d719562bb35ed0"
       },
       "../node_modules/@types/bcryptjs/index.d.ts": {
         "version": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f",
@@ -2298,7 +2298,7 @@
         "signature": "14bd440d5896011a025ae0be754c9e05600b03241bb83162edd87c21bbed75f7"
       },
       "../src/entities/base-user.entity.ts": {
-        "version": "7605f957a515b8b6decf03033d1b4155a8f56fae27bd382ea7bc10e6d0cf55a6",
+        "version": "027d168f4dee565ec60b12cacfcdb8b658dcafc1828ac7be3357bafc7c992c88",
         "signature": "1170b8d37b37feb6564814776fd1bfc9f43bb2b6baaad707ba571d4f84bb2a19"
       },
       "../node_modules/@types/minio/index.d.ts": {
@@ -2354,7 +2354,7 @@
         "signature": "d48a7862633a8ee5d3cb31252e92fb8cec5cc5802d385c187367b6ff078904e9"
       },
       "../src/auth/auth.dto.ts": {
-        "version": "b108298baf5c0d5e97e83a12357d22f71147ea5b868c399ea252780e626996fb",
+        "version": "81c08ab474e96ee92852c5da712b0f777f9fdf0e359df466176966b93b09b49d",
         "signature": "a76d77784f7ca93f14813fa841dc72ff383484d1c011b6954cc845c9e6ed42df"
       },
       "../src/base-user.service.ts": {

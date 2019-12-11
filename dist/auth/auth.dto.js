@@ -19,7 +19,7 @@ __decorate([
 ], LoginUserDto.prototype, "email", void 0);
 __decorate([
     class_validator_1.IsNotEmpty(),
-    class_validator_1.Length(2, 200),
+    class_validator_1.Length(8, 50),
     __metadata("design:type", String)
 ], LoginUserDto.prototype, "password", void 0);
 exports.LoginUserDto = LoginUserDto;
@@ -27,14 +27,14 @@ class OnlyPasswordDto {
 }
 __decorate([
     class_validator_1.IsNotEmpty(),
-    class_validator_1.Length(8, 200),
+    class_validator_1.Length(8, 50),
     __metadata("design:type", String)
 ], OnlyPasswordDto.prototype, "password", void 0);
 exports.OnlyPasswordDto = OnlyPasswordDto;
 class ResetPasswordDto {
 }
 __decorate([
-    class_validator_1.Length(8, 200),
+    class_validator_1.Length(8, 50),
     __metadata("design:type", String)
 ], ResetPasswordDto.prototype, "password", void 0);
 __decorate([
@@ -60,7 +60,7 @@ __decorate([
     __metadata("design:type", String)
 ], UpdatePasswordDto.prototype, "oldPassword", void 0);
 __decorate([
-    class_validator_1.Length(8, 200),
+    class_validator_1.Length(8, 50),
     __metadata("design:type", String)
 ], UpdatePasswordDto.prototype, "newPassword", void 0);
 exports.UpdatePasswordDto = UpdatePasswordDto;

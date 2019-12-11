@@ -13,10 +13,10 @@ export declare class BaseService<T extends WithId = any> extends BaseFindService
     protected logger: Logger;
     protected validator: Validator;
     create(data: Partial<T>, meta?: DbLogMetadata): Promise<T>;
-    update(entityOrId: T | string, updatedData?: Partial<T>, meta?: DbLogMetadata): Promise<T>;
+    update(entityOrId: T | string, updatedData?: Partial<T>, meta?: DbLogMetadata, usePassedEntity?: boolean): Promise<T>;
     mutate(entity: T, meta?: DbLogMetadata): Promise<T>;
     updateWhere(where: FindConditions<T>, data: Partial<T>, meta?: DbLogMetadata): Promise<T>;
-    delete(entityOrId: T | string, meta?: DbLogMetadata): Promise<T>;
+    delete(entityOrId: T | string, meta?: DbLogMetadata, usePassedEntity?: boolean): Promise<T>;
     deleteWhere(where: FindConditions<T>, logMetadata?: DbLogMetadata): Promise<T>;
     protected internalError(error: any): InternalServerErrorException;
 }

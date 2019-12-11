@@ -3,7 +3,7 @@ import {
   Logger,
   NotFoundException,
 } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { Repository, FindManyOptions } from 'typeorm';
 import { FindManyParams, FindOneParams } from './base.service';
 import { PaginationParams } from './pagination/pagination-options';
 import { PgResult } from './pagination/pagination.types';
@@ -55,7 +55,7 @@ export class BaseFindService<T extends WithId = any> {
   /** Find entities by multiple ids */
   async findByIds(
     ids: (string | number)[],
-    searchOptions: FindManyParams<T> = {},
+    searchOptions: FindManyOptions<T> = {},
   ): Promise<T[]> {
     try {
       const entities = await this.repository.findByIds(ids, searchOptions);

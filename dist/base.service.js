@@ -45,10 +45,22 @@ class BaseService extends base_find_service_1.BaseFindService {
             }
         });
     }
-    update(entityOrId, updatedData = {}, meta) {
+    update(entityOrId, updatedData = {}, meta, usePassedEntity = false) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const entity = yield this.findOne(entityOrId);
+                let entity;
+                if (usePassedEntity) {
+                    if (typeof entityOrId === 'string') {
+                        throw new common_1.InternalServerErrorException();
+                    }
+                    entity = entityOrId;
+                }
+                else if (typeof entityOrId === 'string') {
+                    entity = yield this.findOne(entityOrId);
+                }
+                else {
+                    entity = yield this.findOne(entityOrId.id);
+                }
                 let log;
                 if (this.dbLoggerService && meta) {
                     log = this.dbLoggerService.generateLog({ meta, oldValue: entity });
@@ -89,14 +101,26 @@ class BaseService extends base_find_service_1.BaseFindService {
     updateWhere(where, data, meta) {
         return __awaiter(this, void 0, void 0, function* () {
             const entity = yield this.findOne(where);
-            const updated = yield this.update(entity, data, meta);
+            const updated = yield this.update(entity.id, data, meta, true);
             return updated;
         });
     }
-    delete(entityOrId, meta) {
+    delete(entityOrId, meta, usePassedEntity = false) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const entity = yield this.findOne(entityOrId);
+                let entity;
+                if (usePassedEntity) {
+                    if (typeof entityOrId === 'string') {
+                        throw new common_1.InternalServerErrorException();
+                    }
+                    entity = entityOrId;
+                }
+                else if (typeof entityOrId === 'string') {
+                    entity = yield this.findOne(entityOrId);
+                }
+                else {
+                    entity = yield this.findOne(entityOrId.id);
+                }
                 let log;
                 if (this.dbLoggerService && meta) {
                     log = this.dbLoggerService.generateLog({ oldValue: entity, meta });
@@ -115,7 +139,7 @@ class BaseService extends base_find_service_1.BaseFindService {
     deleteWhere(where, logMetadata) {
         return __awaiter(this, void 0, void 0, function* () {
             const entity = yield this.findOne(where);
-            const deleted = yield this.delete(entity, logMetadata);
+            const deleted = yield this.delete(entity.id, logMetadata, true);
             return deleted;
         });
     }

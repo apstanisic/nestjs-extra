@@ -74,9 +74,22 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
     entityOrId: T | string,
     updatedData: Partial<T> = {},
     meta?: DbLogMetadata,
+    usePassedEntity: boolean = false,
   ): Promise<T> {
     try {
-      const entity = await this.findOne(entityOrId);
+      // if entity is passed just update it, if id, find and update
+      let entity: T;
+      if (usePassedEntity) {
+        if (typeof entityOrId === 'string') {
+          throw new InternalServerErrorException();
+        }
+        entity = entityOrId;
+      } else if (typeof entityOrId === 'string') {
+        entity = await this.findOne(entityOrId);
+      } else {
+        entity = await this.findOne(entityOrId.id);
+      }
+
       let log: DbLog | undefined;
 
       if (this.dbLoggerService && meta) {
@@ -128,14 +141,30 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
     meta?: DbLogMetadata,
   ): Promise<T> {
     const entity = await this.findOne(where);
-    const updated = await this.update(entity.id, data, meta);
+    const updated = await this.update(entity.id, data, meta, true);
     return updated;
   }
 
   /** Remove entity. */
-  async delete(entityOrId: T | string, meta?: DbLogMetadata): Promise<T> {
+  async delete(
+    entityOrId: T | string,
+    meta?: DbLogMetadata,
+    usePassedEntity: boolean = false,
+  ): Promise<T> {
     try {
-      const entity = await this.findOne(entityOrId);
+      // if entity is passed just update it, if id, find and update
+      let entity: T;
+      if (usePassedEntity) {
+        if (typeof entityOrId === 'string') {
+          throw new InternalServerErrorException();
+        }
+        entity = entityOrId;
+      } else if (typeof entityOrId === 'string') {
+        entity = await this.findOne(entityOrId);
+      } else {
+        entity = await this.findOne(entityOrId.id);
+      }
+
       let log: DbLog | undefined;
 
       if (this.dbLoggerService && meta) {
@@ -166,7 +195,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
     logMetadata?: DbLogMetadata,
   ): Promise<T> {
     const entity = await this.findOne(where);
-    const deleted = await this.delete(entity.id, logMetadata);
+    const deleted = await this.delete(entity.id, logMetadata, true);
     return deleted;
   }
 

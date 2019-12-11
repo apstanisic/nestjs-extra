@@ -22,7 +22,7 @@ export class BaseUser extends BaseEntity implements IUser {
   /** Users password */
   @Column({ name: 'password' })
   @IsString()
-  @Length(6, 200)
+  @Length(6, 50)
   @Exclude()
   _password: string;
 

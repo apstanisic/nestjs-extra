@@ -8,19 +8,19 @@ export class LoginUserDto {
   email: string;
 
   @IsNotEmpty()
-  @Length(2, 200)
+  @Length(8, 50)
   password: string;
 }
 
 /** When reseting password, only new password is needed */
 export class OnlyPasswordDto {
   @IsNotEmpty()
-  @Length(8, 200)
+  @Length(8, 50)
   password: string;
 }
 
 export class ResetPasswordDto {
-  @Length(8, 200)
+  @Length(8, 50)
   password: string;
 
   @IsUUID()
@@ -40,7 +40,7 @@ export class UpdatePasswordDto {
   @IsNotEmpty()
   oldPassword: string;
 
-  @Length(8, 200)
+  @Length(8, 50)
   newPassword: string;
 }
 

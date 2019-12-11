@@ -50,7 +50,7 @@ __decorate([
 __decorate([
     typeorm_1.Column({ name: 'password' }),
     class_validator_1.IsString(),
-    class_validator_1.Length(6, 200),
+    class_validator_1.Length(6, 50),
     class_transformer_1.Exclude(),
     __metadata("design:type", String)
 ], BaseUser.prototype, "_password", void 0);
