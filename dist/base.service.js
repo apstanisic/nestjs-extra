@@ -101,7 +101,7 @@ class BaseService extends base_find_service_1.BaseFindService {
     updateWhere(where, data, meta) {
         return __awaiter(this, void 0, void 0, function* () {
             const entity = yield this.findOne(where);
-            const updated = yield this.update(entity.id, data, meta, true);
+            const updated = yield this.update(entity, data, meta, true);
             return updated;
         });
     }
@@ -139,7 +139,7 @@ class BaseService extends base_find_service_1.BaseFindService {
     deleteWhere(where, logMetadata) {
         return __awaiter(this, void 0, void 0, function* () {
             const entity = yield this.findOne(where);
-            const deleted = yield this.delete(entity.id, logMetadata, true);
+            const deleted = yield this.delete(entity, logMetadata, true);
             return deleted;
         });
     }

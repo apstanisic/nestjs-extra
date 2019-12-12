@@ -2238,7 +2238,7 @@
         "signature": "1961890ed092e3eb28acb4a06659984226844dd96591df56b1da6b9da2f21913"
       },
       "../src/base.service.ts": {
-        "version": "30f03f4abf528e6520a5de44bcae68a1dee8ae8bead0d54f3571ef4eca9b70ed",
+        "version": "661fce93349527c9e4d42115089b06ef34b21c5ce1a9792faa97bed9cbea1ed6",
         "signature": "de2eb3de56d5c17a347955fffc54d7c7416ddcd422622314240a4ee2fcd4a15d"
       },
       "../src/helpers.ts": {
