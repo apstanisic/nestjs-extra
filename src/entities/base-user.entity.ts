@@ -1,3 +1,4 @@
+import { BadRequestException } from '@nestjs/common';
 import { Column, Index, Unique } from 'typeorm';
 import * as bcrypt from 'bcryptjs';
 import { Exclude } from 'class-transformer';
@@ -22,7 +23,7 @@ export class BaseUser extends BaseEntity implements IUser {
   /** Users password */
   @Column({ name: 'password' })
   @IsString()
-  @Length(6, 50)
+  // @Length(6, 50)
   @Exclude()
   _password: string;
 
@@ -54,6 +55,9 @@ export class BaseUser extends BaseEntity implements IUser {
 
   /** Set new password and hash it automatically */
   set password(newPassword: string) {
+    if (newPassword.length > 50) {
+      throw new BadRequestException('Password is to long');
+    }
     this._password = bcrypt.hashSync(newPassword);
   }
 
