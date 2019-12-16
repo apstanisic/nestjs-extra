@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const common_1 = require("@nestjs/common");
 const typeorm_1 = require("typeorm");
 const bcrypt = require("bcryptjs");
 const class_transformer_1 = require("class-transformer");
@@ -17,6 +18,9 @@ const faker_1 = require("faker");
 const base_entity_1 = require("./base.entity");
 let BaseUser = class BaseUser extends base_entity_1.BaseEntity {
     set password(newPassword) {
+        if (newPassword.length > 50) {
+            throw new common_1.BadRequestException('Password is to long');
+        }
         this._password = bcrypt.hashSync(newPassword);
     }
     checkPassword(enteredPassword) {
@@ -50,7 +54,6 @@ __decorate([
 __decorate([
     typeorm_1.Column({ name: 'password' }),
     class_validator_1.IsString(),
-    class_validator_1.Length(6, 50),
     class_transformer_1.Exclude(),
     __metadata("design:type", String)
 ], BaseUser.prototype, "_password", void 0);

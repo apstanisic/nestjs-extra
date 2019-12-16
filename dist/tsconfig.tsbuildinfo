@@ -2298,7 +2298,7 @@
         "signature": "14bd440d5896011a025ae0be754c9e05600b03241bb83162edd87c21bbed75f7"
       },
       "../src/entities/base-user.entity.ts": {
-        "version": "027d168f4dee565ec60b12cacfcdb8b658dcafc1828ac7be3357bafc7c992c88",
+        "version": "67e7c450468b2a0b407791bcebe2cc0de266b390f65d6c07fb7757b58dddfefe",
         "signature": "1170b8d37b37feb6564814776fd1bfc9f43bb2b6baaad707ba571d4f84bb2a19"
       },
       "../node_modules/@types/minio/index.d.ts": {
@@ -7910,6 +7910,7 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/entities/base-user.entity.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../node_modules/@types/bcryptjs/index.d.ts",
         "../node_modules/class-transformer/index.d.ts",
@@ -10596,21 +10597,6 @@
         "../src/types.ts",
         "../node_modules/@nestjs/common/index.d.ts"
       ],
-      "../src/entities/base.entity.ts": [
-        "../src/types.ts"
-      ],
-      "../src/access-control/role/roles.entity.ts": [
-        "../src/entities/base.entity.ts"
-      ],
-      "../src/access-control/role/role.factory.ts": [
-        "../src/entities/base-user-with-roles.entity.ts",
-        "../src/types.ts",
-        "../src/access-control/role/roles.entity.ts"
-      ],
-      "../src/entities/base-user-with-roles.entity.ts": [
-        "../src/access-control/role/roles.entity.ts",
-        "../src/entities/base-user.entity.ts"
-      ],
       "../src/entities/base-user.entity.ts": [
         "../src/types.ts",
         "../src/entities/base.entity.ts",
@@ -10618,6 +10604,21 @@
       ],
       "../src/auth/auth.dto.ts": [
         "../src/entities/base-user.entity.ts"
+      ],
+      "../src/entities/base-user-with-roles.entity.ts": [
+        "../src/access-control/role/roles.entity.ts",
+        "../src/entities/base-user.entity.ts"
+      ],
+      "../src/access-control/role/role.factory.ts": [
+        "../src/entities/base-user-with-roles.entity.ts",
+        "../src/types.ts",
+        "../src/access-control/role/roles.entity.ts"
+      ],
+      "../src/access-control/role/roles.entity.ts": [
+        "../src/entities/base.entity.ts"
+      ],
+      "../src/entities/base.entity.ts": [
+        "../src/types.ts"
       ],
       "../src/base-find.service.ts": [
         "../src/types.ts",
