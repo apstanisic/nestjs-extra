@@ -2317,8 +2317,12 @@
         "version": "f76ae6515ab0b801515b896d1e50f2e600dfeb972073074ee033cd202776e586",
         "signature": "dba2e95632e108ce4a54fde56585bde0dfab7a069534c673209395b14a564ce3"
       },
+      "../src/storage/publicReadPolicy.ts": {
+        "version": "b807db98c0046ebb8d459e7fc9a64bb3dc01c5de20681b1eee159ab851408dc9",
+        "signature": "97735f509b02b8ef2eb5807d3a910a08574112618297f83c9ee7e3d4b513d493"
+      },
       "../src/storage/storage.service.ts": {
-        "version": "d4d2e115a75238cdaeed19ab78b9d1138eb47cea5b9f4d8309f6f7aa8f9149da",
+        "version": "1a38177a9867ce5d8db93f9366a3414a739ae7439cacddbd2e69ee8bdd5693a1",
         "signature": "576269f90e9c4c70d0f08921b7696f2f3019bc69c5ecf6543bbfd0fafe2bfa51"
       },
       "../node_modules/@types/sharp/index.d.ts": {
@@ -7959,12 +7963,19 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/storage/publicReadPolicy.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/storage/storage.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/minio/index.d.ts",
         "../src/config/config.service.ts",
         "../src/consts.ts",
         "../src/helpers.ts",
+        "../src/storage/publicReadPolicy.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -16420,6 +16431,7 @@
       "../node_modules/dotenv/types/index.d.ts",
       "../src/config/config.module.ts",
       "../src/config/config.service.ts",
+      "../src/storage/publicReadPolicy.ts",
       "../src/storage/storage.service.ts",
       "../node_modules/@types/sharp/index.d.ts",
       "../src/storage/storage-images-default-config.ts",

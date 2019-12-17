@@ -12,6 +12,7 @@ import {
   STORAGE_SECRET_KEY,
 } from '../consts';
 import { wait } from '../helpers';
+import { allowReadPolicy } from './publicReadPolicy';
 
 /**
  * This service is wrapper around minio client.
@@ -49,6 +50,39 @@ export class StorageService {
       secretKey,
       port: 9000,
       useSSL: false,
+    });
+
+    this.client.setBucketPolicy(
+      this.bucket,
+      allowReadPolicy(this.bucket),
+      err2 => {
+        if (err2 !== null)
+          throw new InternalServerErrorException(
+            `Bucket policy problem: ${err2}`,
+          );
+      },
+    );
+    this.client.bucketExists(this.bucket, (err, exist) => {
+      if (err !== null)
+        throw new InternalServerErrorException(`Storage problem: ${err}`);
+
+      if (!exist) {
+        this.client.makeBucket(this.bucket, 'us-east-1', err1 => {
+          if (err !== null) {
+            throw new InternalServerErrorException(`Storage problem: ${err1}`);
+          }
+          this.client.setBucketPolicy(
+            this.bucket,
+            allowReadPolicy(this.bucket),
+            err2 => {
+              if (err2 !== null)
+                throw new InternalServerErrorException(
+                  `Bucket policy problem: ${err2}`,
+                );
+            },
+          );
+        });
+      }
     });
   }
 
