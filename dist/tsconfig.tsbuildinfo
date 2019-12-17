@@ -2322,7 +2322,7 @@
         "signature": "97735f509b02b8ef2eb5807d3a910a08574112618297f83c9ee7e3d4b513d493"
       },
       "../src/storage/storage.service.ts": {
-        "version": "1a38177a9867ce5d8db93f9366a3414a739ae7439cacddbd2e69ee8bdd5693a1",
+        "version": "98c84e60e488dd2aa27873599ee65d36e89000bf9e25efb4e3b742eb649c5aec",
         "signature": "576269f90e9c4c70d0f08921b7696f2f3019bc69c5ecf6543bbfd0fafe2bfa51"
       },
       "../node_modules/@types/sharp/index.d.ts": {

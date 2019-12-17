@@ -23,7 +23,6 @@ const minio_1 = require("minio");
 const config_service_1 = require("../config/config.service");
 const consts_1 = require("../consts");
 const helpers_1 = require("../helpers");
-const publicReadPolicy_1 = require("./publicReadPolicy");
 let StorageService = class StorageService {
     constructor(config) {
         this.config = config;
@@ -43,25 +42,6 @@ let StorageService = class StorageService {
             secretKey,
             port: 9000,
             useSSL: false,
-        });
-        this.client.setBucketPolicy(this.bucket, publicReadPolicy_1.allowReadPolicy(this.bucket), err2 => {
-            if (err2 !== null)
-                throw new common_1.InternalServerErrorException(`Bucket policy problem: ${err2}`);
-        });
-        this.client.bucketExists(this.bucket, (err, exist) => {
-            if (err !== null)
-                throw new common_1.InternalServerErrorException(`Storage problem: ${err}`);
-            if (!exist) {
-                this.client.makeBucket(this.bucket, 'us-east-1', err1 => {
-                    if (err !== null) {
-                        throw new common_1.InternalServerErrorException(`Storage problem: ${err1}`);
-                    }
-                    this.client.setBucketPolicy(this.bucket, publicReadPolicy_1.allowReadPolicy(this.bucket), err2 => {
-                        if (err2 !== null)
-                            throw new common_1.InternalServerErrorException(`Bucket policy problem: ${err2}`);
-                    });
-                });
-            }
         });
     }
     put(file, name, size, _retries = 3) {
