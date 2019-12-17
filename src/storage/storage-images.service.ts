@@ -20,8 +20,9 @@ export class StorageImagesService {
   ) {}
 
   /** Add new image. Name is quasi random number by default. */
-  async addImage(image: Buffer): Promise<[ImageSizes, string]> {
-    const basePath = `${moment().format('YYYY/MM/DD')}/image_${random.uuid()}`;
+  async addImage(image: Buffer): Promise<[ImageSizes, string, string]> {
+    const uuid = random.uuid();
+    const basePath = `${moment().format(`YYYY/MM/DD/${uuid}`)}/image_${uuid}`;
     const buffersAndSizes = await generateAllImageSizes(image, this.sizes);
     // const toStore = [];
     const toStore = buffersAndSizes.map(img =>
@@ -39,7 +40,7 @@ export class StorageImagesService {
       imageSizes[size] = filename;
     });
 
-    return [imageSizes, basePath];
+    return [imageSizes, basePath, uuid];
   }
 
   /** Give object where every key is image size for deleting */

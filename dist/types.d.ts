@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { FindConditions, ObjectLiteral, FindOperator } from 'typeorm';
 export declare type OrmWhere<T = any> = FindConditions<T>[] | FindConditions<T> | ObjectLiteral | string | undefined;
 export interface ParsedOrmWhere<T = any> {
@@ -22,4 +23,7 @@ export interface ImageSizes {
     md?: string;
     lg?: string;
     xl?: string;
+}
+export interface WithBuffer {
+    buffer: Buffer;
 }

@@ -14,7 +14,7 @@ function generateAllImageSizes(image, sizes) {
     return __awaiter(this, void 0, void 0, function* () {
         const base = sharp(image);
         const toWait = sizes.map(size => base
-            .jpeg({ quality: size.quality || 75 })
+            .jpeg({ quality: size.quality || 80 })
             .clone()
             .resize(size.width, size.height, { fit: size.fit })
             .toBuffer());

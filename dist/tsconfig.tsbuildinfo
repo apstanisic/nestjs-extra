@@ -2178,8 +2178,8 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
       "../src/types.ts": {
-        "version": "ad977ef5b36f81dd19e319eeb13fbe3c55ac212cc728588bda134d803f6fdf0b",
-        "signature": "9d163d0f2217568bafd09678e4b83339a1d86f208c41bd6e1ed680a628a6ea56"
+        "version": "287137232fe49519a4419aec412abc6403578d79d9dc7124a61ad89cf3060955",
+        "signature": "488863c58bb249788c626960bec543583e6b9bc975370354b9526302e1fafda6"
       },
       "../src/entities/user.interface.ts": {
         "version": "5982aac11861fd288e7e526e51678b9bc825e5d759b18e978d707fde9490f983",
@@ -2334,12 +2334,12 @@
         "signature": "9fc4cb77445c11bebfa6fb647919389397eed271a0b2a370fe1d626360295538"
       },
       "../src/storage/sharp.ts": {
-        "version": "b2ff24781249a7037c579b3c498e0903c5ccff54d85e3bd28844b55a84182502",
+        "version": "ee78853a4fafbce4045539e6b5473c5bda23e01a3fe989f8361bf0f57dc78cdd",
         "signature": "84236729539b05413658d61ed1d3a0f2f4c4e8726ca60c0bd843f0a05938b2c8"
       },
       "../src/storage/storage-images.service.ts": {
-        "version": "a5b6e5ad5fc62f7f7bb20acc301194cb38b8674a967bf7b4f898b6d4e241a083",
-        "signature": "2b071301d6d1fae8c3c266d16d965ec84d7ff639ae949bfba2fb1691d8810121"
+        "version": "e950d31a384513f3e2648120a31f4bf19989ff91ed35c432bcc919890b719920",
+        "signature": "c05f742e4b0314dafb5bc740c573d0a6554eac6e63727f712de718abe1076771"
       },
       "../src/entities/base-user-with-roles.entity.ts": {
         "version": "2e75e83c267fbd2bac3016df6ca421496d934d9cb9e8906604ac175ce812d6cc",

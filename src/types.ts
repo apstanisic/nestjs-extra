@@ -50,3 +50,7 @@ export interface ImageSizes {
   lg?: string; // 1280px
   xl?: string; // not used in most apps
 }
+
+export interface WithBuffer {
+  buffer: Buffer;
+}

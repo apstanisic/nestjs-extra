@@ -19,7 +19,7 @@ export async function generateAllImageSizes(
   // .jpeg({ quality: 70 });
   const toWait = sizes.map(size =>
     base
-      .jpeg({ quality: size.quality || 75 })
+      .jpeg({ quality: size.quality || 80 })
       .clone()
       .resize(size.width, size.height, { fit: size.fit })
       .toBuffer(),
