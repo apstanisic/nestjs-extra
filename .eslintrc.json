@@ -37,7 +37,10 @@
     "implicit-arrow-linebreak": "off", // causes problems
     "no-console": "warn", // It just makes it harder to debug
     "no-empty": "off", // Sometimes I don't care about errors
-    "@typescript-eslint/explicit-function-return-type": "error", // force return type for security
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      { "allowExpressions": true }
+    ], // force return type for security
     "lines-between-class-members": "off", // Some classes are small, and don't need space
     "import/no-extraneous-dependencies": "off",
     "no-param-reassign": "off", // Need to mutate entities

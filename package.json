@@ -24,6 +24,7 @@
     "@nestjs/jwt": "^6.1.1",
     "@nestjs/passport": "^6.1.0",
     "@nestjs/testing": "^6.10.1",
+    "aws-sdk": "^2.592.0",
     "bcryptjs": "^2.4.3",
     "casbin": "^3.0.7",
     "class-transformer": "^0.2.3",
@@ -42,11 +43,17 @@
     "pg": "^7.14.0",
     "query-string": "^6.9.0",
     "redis": "^2.8.0",
+    "reflect-metadata": "^0.1.13",
     "sharp": "^0.23.3",
-    "sqlstring": "^2.3.1"
+    "sqlstring": "^2.3.1",
+    "@nestjs/common": "^6.10.11",
+    "@nestjs/core": "^6.9.0",
+    "@nestjs/platform-express": "^6.9.0",
+    "@nestjs/typeorm": "^6.2.0",
+    "typeorm": "^0.2.20"
   },
   "peerDependencies": {
-    "@nestjs/common": "^6.9.0",
+    "@nestjs/common": "^6.10.11",
     "@nestjs/core": "^6.9.0",
     "@nestjs/platform-express": "^6.9.0",
     "@nestjs/typeorm": "^6.2.0",

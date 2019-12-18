@@ -20,14 +20,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const minio_1 = require("minio");
+const AWS = require("aws-sdk");
 const config_service_1 = require("../config/config.service");
 const consts_1 = require("../consts");
-const helpers_1 = require("../helpers");
 let StorageService = class StorageService {
     constructor(config) {
         this.config = config;
         this.logger = new common_1.Logger();
-        const endPoint = this.config.get(consts_1.STORAGE_GATEWAY);
+        const endPoint = this.config.get(consts_1.STORAGE_ENDPOINT);
         const accessKey = this.config.get(consts_1.STORAGE_ACCESS_KEY);
         const secretKey = this.config.get(consts_1.STORAGE_SECRET_KEY);
         const bucket = this.config.get(consts_1.STORAGE_BUCKET_NAME);
@@ -35,6 +35,12 @@ let StorageService = class StorageService {
             this.logger.error('Storage mounted, but storage keys are undefined.');
             throw new common_1.InternalServerErrorException();
         }
+        this.s3 = new AWS.S3({
+            apiVersion: '2006-03-01',
+            accessKeyId: accessKey,
+            secretAccessKey: secretKey,
+            endpoint: endPoint,
+        });
         this.bucket = bucket;
         this.client = new minio_1.Client({
             endPoint,
@@ -47,58 +53,43 @@ let StorageService = class StorageService {
     put(file, name, size, _retries = 3) {
         return __awaiter(this, void 0, void 0, function* () {
             const filename = `/${this.bucket}/${name}`;
-            return new Promise((res, rej) => {
-                this.client.putObject(this.bucket, name, file, (error) => {
-                    if (error === null)
-                        return res([filename, size]);
-                    if (!error.code.includes('InternalError') ||
-                        _retries === 0) {
-                        this.logger.error('B2 non fixable error ');
-                        return rej(error);
-                    }
-                    this.logger.warn('B2 returned error, try again. File name:', name);
-                    helpers_1.wait(100).then(() => {
-                        this.put(file, name, size, _retries - 1)
-                            .then(() => res([filename, size]))
-                            .catch(rej);
-                    });
-                });
-            });
+            return this.s3
+                .putObject({
+                Bucket: this.bucket,
+                Key: name,
+                Body: file,
+                ACL: 'public-read',
+            })
+                .promise()
+                .then(data => [filename, size]);
         });
     }
     delete(file) {
         return __awaiter(this, void 0, void 0, function* () {
-            return new Promise((res, rej) => {
-                this.client.removeObject(this.bucket, file, err => {
-                    if (err === null)
-                        res();
-                    if (err !== null)
-                        rej(err);
-                });
-            });
+            return this.s3.deleteObject({ Bucket: this.bucket, Key: file }).promise();
         });
     }
     deleteWherePrefix(prefix) {
         return __awaiter(this, void 0, void 0, function* () {
-            const filenames = yield this.listFiles(prefix);
-            return new Promise((res, rej) => {
-                this.client.removeObjects(this.bucket, filenames, err => {
-                    if (err === null)
-                        res(filenames);
-                    if (err !== null)
-                        rej();
-                });
-            });
+            const filenames = (yield this.listFiles(prefix)).map(Key => ({ Key }));
+            return this.s3
+                .deleteObjects({
+                Bucket: this.bucket,
+                Delete: { Objects: [] },
+            })
+                .promise()
+                .then(data => filenames);
         });
     }
     listFiles(prefix) {
         return __awaiter(this, void 0, void 0, function* () {
-            return new Promise((res, rej) => {
-                const filenames = [];
-                const filesStream = this.client.listObjectsV2(this.bucket, prefix);
-                filesStream.on('data', filename => filenames.push(filename.name));
-                filesStream.on('error', rej);
-                filesStream.on('end', () => res(filenames));
+            return this.s3
+                .listObjectsV2({ Bucket: this.bucket, Prefix: prefix })
+                .promise()
+                .then(data => {
+                var _a, _b;
+                const allKeys = (_b = (_a = data.Contents) === null || _a === void 0 ? void 0 : _a.map(con => { var _a; return (_a = con) === null || _a === void 0 ? void 0 : _a.Key; }), (_b !== null && _b !== void 0 ? _b : []));
+                return allKeys.filter(key => key !== undefined);
             });
         });
     }

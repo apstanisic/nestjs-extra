@@ -5,9 +5,10 @@ export declare class StorageService {
     private client;
     private bucket;
     private logger;
+    private s3;
     constructor(config: ConfigService);
     put(file: Buffer, name: string, size: string, _retries?: number): Promise<[string, string]>;
-    delete(file: string): Promise<void>;
-    deleteWherePrefix(prefix: string): Promise<string[]>;
+    delete(file: string): Promise<any>;
+    deleteWherePrefix(prefix: string): Promise<string[] | any>;
     private listFiles;
 }
