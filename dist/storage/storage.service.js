@@ -19,7 +19,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const minio_1 = require("minio");
 const AWS = require("aws-sdk");
 const config_service_1 = require("../config/config.service");
 const consts_1 = require("../consts");
@@ -42,17 +41,10 @@ let StorageService = class StorageService {
             endpoint: endPoint,
         });
         this.bucket = bucket;
-        this.client = new minio_1.Client({
-            endPoint,
-            accessKey,
-            secretKey,
-            port: 9000,
-            useSSL: false,
-        });
     }
     put(file, name, size, _retries = 3) {
         return __awaiter(this, void 0, void 0, function* () {
-            const filename = `/${this.bucket}/${name}`;
+            const filename = name.startsWith('/') ? name : `/${name}`;
             return this.s3
                 .putObject({
                 Bucket: this.bucket,

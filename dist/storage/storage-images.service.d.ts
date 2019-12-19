@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { StorageService } from './storage.service';
-import { ImageSizes, Image } from '../types';
+import { ImageSizes, Image, UUID } from '../types';
 import { ImageSizeOptions } from './storage.module';
 export declare class StorageImagesService {
     private readonly storageService;
@@ -9,4 +9,5 @@ export declare class StorageImagesService {
     addImage(image: Buffer): Promise<[ImageSizes, string, string]>;
     removeImageBySizes(image: ImageSizes): Promise<void>;
     removeImageByPrefix(image: Image): Promise<string[]>;
+    removeImageById(id: UUID, allImages: Image[]): Promise<Image[]>;
 }

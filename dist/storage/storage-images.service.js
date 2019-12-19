@@ -35,7 +35,8 @@ let StorageImagesService = class StorageImagesService {
     addImage(image) {
         return __awaiter(this, void 0, void 0, function* () {
             const uuid = faker_1.random.uuid();
-            const basePath = `${moment().format(`YYYY/MM/DD/${uuid}`)}/image_${uuid}`;
+            const now = moment().format('YYYY/MM/DD');
+            const basePath = `/${now}/${uuid}/image_${uuid}`;
             const buffersAndSizes = yield sharp_1.generateAllImageSizes(image, this.sizes);
             const toStore = buffersAndSizes.map(img => this.storageService.put(img.image, `${basePath}_${img.size}.jpeg`, img.size));
             const imageSizes = {};
@@ -58,6 +59,20 @@ let StorageImagesService = class StorageImagesService {
     removeImageByPrefix(image) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.storageService.deleteWherePrefix(image.prefix);
+        });
+    }
+    removeImageById(id, allImages) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const image = allImages.find(img => img.id === id);
+            if (!image)
+                return allImages;
+            yield this.removeImageByPrefix(image);
+            return allImages
+                .filter(img => img.id !== id)
+                .map((img, i) => {
+                img.position = i;
+                return img;
+            });
         });
     }
 };

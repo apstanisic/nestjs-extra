@@ -2305,10 +2305,6 @@
         "version": "67e7c450468b2a0b407791bcebe2cc0de266b390f65d6c07fb7757b58dddfefe",
         "signature": "1170b8d37b37feb6564814776fd1bfc9f43bb2b6baaad707ba571d4f84bb2a19"
       },
-      "../node_modules/@types/minio/index.d.ts": {
-        "version": "59f40bef89522639be9d5d9b448dabf5514ffc663f91f34d8bd1ce8e28b450de",
-        "signature": "59f40bef89522639be9d5d9b448dabf5514ffc663f91f34d8bd1ce8e28b450de"
-      },
       "../node_modules/aws-sdk/lib/error.d.ts": {
         "version": "7f342dd49c8f5d894018ca14c1ec820991bbb3a25daa78c924961e2a61775c85",
         "signature": "7f342dd49c8f5d894018ca14c1ec820991bbb3a25daa78c924961e2a61775c85"
@@ -3357,6 +3353,10 @@
         "version": "1b8e2370aa2872687e7ab84dcf4c565ad5515b28c098b11d68a2d67d5e51095f",
         "signature": "1b8e2370aa2872687e7ab84dcf4c565ad5515b28c098b11d68a2d67d5e51095f"
       },
+      "../node_modules/@types/minio/index.d.ts": {
+        "version": "59f40bef89522639be9d5d9b448dabf5514ffc663f91f34d8bd1ce8e28b450de",
+        "signature": "59f40bef89522639be9d5d9b448dabf5514ffc663f91f34d8bd1ce8e28b450de"
+      },
       "../node_modules/dotenv/types/index.d.ts": {
         "version": "c9ae0b351a07b52f29a28e869d8c7c8d29743bbb5eeddc7c0b5b2a69a2450528",
         "signature": "c9ae0b351a07b52f29a28e869d8c7c8d29743bbb5eeddc7c0b5b2a69a2450528"
@@ -3370,7 +3370,7 @@
         "signature": "dba2e95632e108ce4a54fde56585bde0dfab7a069534c673209395b14a564ce3"
       },
       "../src/storage/storage.service.ts": {
-        "version": "e1ec5599259ff1613207e93f96a3fffe67c85e191004bc2b56edd6b1cdbc4713",
+        "version": "fb50f72a542da94488121c51e317494d608d5eaa8ad699a39cc3c6b4d512efd4",
         "signature": "cbc06ed7ab49b3f24a889a060b16a8872618b53bc29e946d921eb49f406f70af"
       },
       "../node_modules/@types/sharp/index.d.ts": {
@@ -3390,8 +3390,8 @@
         "signature": "84236729539b05413658d61ed1d3a0f2f4c4e8726ca60c0bd843f0a05938b2c8"
       },
       "../src/storage/storage-images.service.ts": {
-        "version": "e950d31a384513f3e2648120a31f4bf19989ff91ed35c432bcc919890b719920",
-        "signature": "c05f742e4b0314dafb5bc740c573d0a6554eac6e63727f712de718abe1076771"
+        "version": "ad16e9c6f1265b04f1c39b296e2c76714672ae2922fe6e95ac09647fa57690fa",
+        "signature": "9c0d1a61f2431ea073b167dbcdf1eddbbb79be2c5d7d70f3df27f3f1a66c3d33"
       },
       "../src/entities/base-user-with-roles.entity.ts": {
         "version": "2e75e83c267fbd2bac3016df6ca421496d934d9cb9e8906604ac175ce812d6cc",
@@ -9019,15 +9019,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/minio/index.d.ts": [
-        "../node_modules/@types/node/stream.d.ts",
-        "../node_modules/@types/node/https.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../node_modules/aws-sdk/lib/error.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -12038,6 +12029,15 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@types/minio/index.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/https.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/dotenv/types/index.d.ts": [
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -12066,11 +12066,10 @@
       ],
       "../src/storage/storage.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/minio/index.d.ts",
         "../node_modules/aws-sdk/index.d.ts",
+        "../node_modules/@types/minio/index.d.ts",
         "../src/config/config.service.ts",
         "../src/consts.ts",
-        "../src/helpers.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -23660,7 +23659,6 @@
       "../node_modules/@types/bcryptjs/index.d.ts",
       "../src/entities/base.entity.ts",
       "../src/entities/base-user.entity.ts",
-      "../node_modules/@types/minio/index.d.ts",
       "../node_modules/aws-sdk/lib/error.d.ts",
       "../node_modules/aws-sdk/lib/credentials.d.ts",
       "../node_modules/aws-sdk/lib/credentials/credential_provider_chain.d.ts",
@@ -23923,6 +23921,7 @@
       "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts",
       "../node_modules/aws-sdk/lib/core.d.ts",
       "../node_modules/aws-sdk/index.d.ts",
+      "../node_modules/@types/minio/index.d.ts",
       "../node_modules/dotenv/types/index.d.ts",
       "../src/config/config.module.ts",
       "../src/config/config.service.ts",
