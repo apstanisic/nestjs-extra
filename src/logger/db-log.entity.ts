@@ -19,7 +19,7 @@ import { IUser, BasicUserInfo } from '../entities/user.interface';
  * It's better then to store in Sql. This class can't extend BaseEntity because
  * it does not have primary field.
  */
-@Entity()
+@Entity('logs')
 export class DbLog<T extends WithId = any> {
   /** Default mongo id */
   @ObjectIdColumn()

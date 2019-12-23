@@ -27,6 +27,7 @@ export * from './cron/cron.service';
 export * from './entities/base.entity';
 export * from './entities/base-user.entity';
 export * from './entities/base-user-with-roles.entity';
+export * from './entities/image.entity';
 export * from './entities/user.interface';
 export * from './example-consts';
 export * from './global.dto';

@@ -1,12 +1,12 @@
 import { BadRequestException } from '@nestjs/common';
-import { Column, Index, Unique } from 'typeorm';
 import * as bcrypt from 'bcryptjs';
 import { Exclude } from 'class-transformer';
-import { IsEmail, IsString, Length, IsOptional } from 'class-validator';
+import { IsEmail, IsOptional, IsString, Length } from 'class-validator';
 import { random } from 'faker';
+import { Column, Index, Unique } from 'typeorm';
 import { BaseEntity } from './base.entity';
+import { Image } from './image.entity';
 import { IUser } from './user.interface';
-import { ImageSizes } from '../types';
 
 /**
  * This should be general user that can be extracted in seperate module.
@@ -36,7 +36,7 @@ export class BaseUser extends BaseEntity implements IUser {
   /** User's profile picture */
   @Column({ nullable: true, type: 'simple-json' })
   @IsOptional()
-  avatar?: ImageSizes;
+  avatar?: Image;
 
   /** Did user confirm his account */
   @Column({ default: false })

@@ -10,34 +10,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-let Notification = class Notification {
-};
+const base_entity_1 = require("./base.entity");
+class Image extends base_entity_1.BaseEntity {
+}
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn('uuid'),
-    __metadata("design:type", String)
-], Notification.prototype, "id", void 0);
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", String)
-], Notification.prototype, "title", void 0);
-__decorate([
-    typeorm_1.Column({ type: 'text', nullable: true }),
-    __metadata("design:type", String)
-], Notification.prototype, "body", void 0);
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", Number)
+], Image.prototype, "position", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Notification.prototype, "userId", void 0);
+], Image.prototype, "prefix", void 0);
 __decorate([
-    typeorm_1.Column({ precision: 3 }),
-    __metadata("design:type", Date)
-], Notification.prototype, "seenAt", void 0);
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], Image.prototype, "xs", void 0);
 __decorate([
-    typeorm_1.CreateDateColumn({ precision: 3 }),
-    __metadata("design:type", Date)
-], Notification.prototype, "createdAt", void 0);
-Notification = __decorate([
-    typeorm_1.Entity('notifications')
-], Notification);
-exports.Notification = Notification;
-//# sourceMappingURL=notification.entity.js.map
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Image.prototype, "sm", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Image.prototype, "md", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Image.prototype, "lg", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Image.prototype, "xl", void 0);
+exports.Image = Image;
+//# sourceMappingURL=image.entity.js.map

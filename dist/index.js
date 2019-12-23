@@ -32,6 +32,7 @@ __export(require("./cron/cron.service"));
 __export(require("./entities/base.entity"));
 __export(require("./entities/base-user.entity"));
 __export(require("./entities/base-user-with-roles.entity"));
+__export(require("./entities/image.entity"));
 __export(require("./entities/user.interface"));
 __export(require("./global.dto"));
 __export(require("./helpers"));

@@ -11,12 +11,6 @@ export interface WithId {
     [key: string]: any;
 }
 export declare type Struct<T = any> = Record<string, T>;
-export interface Image {
-    id: string;
-    position: number;
-    sizes: ImageSizes;
-    prefix: string;
-}
 export interface ImageSizes {
     xs?: string;
     sm?: string;

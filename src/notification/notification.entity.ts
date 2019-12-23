@@ -8,7 +8,7 @@ import {
 import { UUID } from '../types';
 // import { User } from '../../user/user.entity';
 
-@Entity()
+@Entity('notifications')
 export class Notification {
   @PrimaryGeneratedColumn('uuid')
   id: string;

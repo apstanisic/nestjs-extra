@@ -28,6 +28,7 @@ export declare const REDIS_PORT = "REDIS_PORT";
 export declare const STORAGE_HOST = "STORAGE_HOST";
 export declare const STORAGE_GATEWAY = "STORAGE_GATEWAY";
 export declare const STORAGE_ENDPOINT = "STORAGE_ENDPOINT";
+export declare const STORAGE_REGION = "STORAGE_REGION";
 export declare const STORAGE_BUCKET_NAME = "STORAGE_BUCKET_NAME";
 export declare const STORAGE_ACCESS_KEY = "STORAGE_ACCESS_KEY";
 export declare const STORAGE_SECRET_KEY = "STORAGE_SECRET_KEY";

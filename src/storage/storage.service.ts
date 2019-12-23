@@ -4,13 +4,14 @@ import {
   Logger,
 } from '@nestjs/common';
 import * as AWS from 'aws-sdk';
-import { Client } from 'minio';
+// import { Client } from 'minio';
 import { ConfigService } from '../config/config.service';
 import {
   STORAGE_ACCESS_KEY,
   STORAGE_BUCKET_NAME,
   STORAGE_ENDPOINT,
   STORAGE_SECRET_KEY,
+  STORAGE_REGION,
 } from '../consts';
 
 /**
@@ -22,7 +23,7 @@ import {
 @Injectable()
 export class StorageService {
   /** Client that stores files */
-  private client: Client;
+  // private client: Client;
 
   /** Bucket name */
   private bucket: string;
@@ -34,37 +35,28 @@ export class StorageService {
   constructor(private readonly config: ConfigService) {
     // const endPoint = this.config.get('STORAGE_HOST');
     const endPoint = this.config.get(STORAGE_ENDPOINT);
+    const region = this.config.get(STORAGE_REGION);
     const accessKey = this.config.get(STORAGE_ACCESS_KEY);
     const secretKey = this.config.get(STORAGE_SECRET_KEY);
     const bucket = this.config.get(STORAGE_BUCKET_NAME);
 
-    if (!bucket || !endPoint || !accessKey || !secretKey) {
+    if (!bucket || !endPoint || !accessKey || !secretKey || !region) {
       this.logger.error('Storage mounted, but storage keys are undefined.');
       throw new InternalServerErrorException();
     }
 
+    this.bucket = bucket;
     this.s3 = new AWS.S3({
-      apiVersion: '2006-03-01',
+      // apiVersion: '2006-03-01',
+      region,
       accessKeyId: accessKey,
       secretAccessKey: secretKey,
       endpoint: endPoint,
     });
-
-    this.bucket = bucket;
-    // this.client = new Client({
-    //   endPoint,
-    //   accessKey,
-    //   secretKey,
-    //   port: 9000,
-    //   useSSL: false,
-    // });
   }
 
   /**
-   * Put file to storage, returns file path.
-   * Old minio code is designed for B2, so it has problems with retries
-   * If it returns 500, you should attempt to upload again.
-   * S3 compatible storage does not have that problem
+   * Upload file to s3 compatible storage
    */
   async put(
     file: Buffer,
@@ -72,11 +64,13 @@ export class StorageService {
     size: string,
     _retries = 3,
   ): Promise<[string, string]> {
-    const filename = name.startsWith('/') ? name : `/${name}`;
+    // Path can't start with /. It should be folder1/folder2/name.ext
+    const filename = name.startsWith('/') ? name.substr(1) : name;
+
     return this.s3
       .putObject({
         Bucket: this.bucket,
-        Key: name,
+        Key: filename,
         Body: file,
         ACL: 'public-read',
       })
@@ -95,7 +89,7 @@ export class StorageService {
    * If all images sizes are 2019/05/22/qwer12.xs.jpeg,
    * @param prefix for them is 2019/05/22/qwer12.
    */
-  async deleteWherePrefix(prefix: string): Promise<string[] | any> {
+  async deleteWherePrefix(prefix: string): Promise<string[]> {
     // aws sdk
     const filenames = (await this.listFiles(prefix)).map(Key => ({ Key }));
     return this.s3
@@ -104,7 +98,7 @@ export class StorageService {
         Delete: { Objects: [] },
       })
       .promise()
-      .then(data => filenames);
+      .then(data => filenames.map(f => f.Key));
   }
 
   /** Lists all files with given path (prefix) */

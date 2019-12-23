@@ -1,11 +1,11 @@
 import { BaseEntity } from './base.entity';
+import { Image } from './image.entity';
 import { IUser } from './user.interface';
-import { ImageSizes } from '../types';
 export declare class BaseUser extends BaseEntity implements IUser {
     email: string;
     _password: string;
     name: string;
-    avatar?: ImageSizes;
+    avatar?: Image;
     confirmed: boolean;
     secureToken?: string;
     tokenCreatedAt?: Date;

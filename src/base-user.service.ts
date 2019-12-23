@@ -120,10 +120,10 @@ export class BaseUserService<
       await this.removeAvatar(user);
     }
 
-    const name = `avatars/${user.id}`;
-    const [sizes, prefix] = await this.storageImagesService.addImage(newAvatar);
+    // const name = `avatars/${user.id}`;
+    const avatar = await this.storageImagesService.storeImage(newAvatar);
+    user.avatar = avatar;
 
-    user.avatar = sizes;
     const updatedUser = await this.mutate(user, {
       user,
       reason: 'Add avatar',
@@ -140,7 +140,7 @@ export class BaseUserService<
       throw new InternalServerErrorException();
     }
     if (!user.avatar) return user;
-    await this.storageImagesService.removeImageBySizes(user.avatar);
+    await this.storageImagesService.removeImage(user.avatar);
 
     delete user.avatar;
     const updatedUser = await this.mutate(user, {

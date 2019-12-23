@@ -10,12 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const typeorm_1 = require("typeorm");
 const bcrypt = require("bcryptjs");
 const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
 const faker_1 = require("faker");
+const typeorm_1 = require("typeorm");
 const base_entity_1 = require("./base.entity");
+const image_entity_1 = require("./image.entity");
 let BaseUser = class BaseUser extends base_entity_1.BaseEntity {
     set password(newPassword) {
         if (newPassword.length > 50) {
@@ -66,7 +67,7 @@ __decorate([
 __decorate([
     typeorm_1.Column({ nullable: true, type: 'simple-json' }),
     class_validator_1.IsOptional(),
-    __metadata("design:type", Object)
+    __metadata("design:type", image_entity_1.Image)
 ], BaseUser.prototype, "avatar", void 0);
 __decorate([
     typeorm_1.Column({ default: false }),

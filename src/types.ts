@@ -31,12 +31,12 @@ export type Struct<T = any> = Record<string, T>;
  * In case there is only big image, save as lg.
  * Thumbnail is always xs.
  */
-export interface Image {
-  id: string; // uuid
-  position: number; // In case of storing image in array. Zero index
-  sizes: ImageSizes;
-  prefix: string; // Part of images path that are common for all sizes
-}
+// export interface Image {
+//   id: string; // uuid
+//   position: number; // In case of storing image in array. Zero index
+//   sizes: ImageSizes;
+//   prefix: string; // Part of images path that are common for all sizes
+// }
 
 /**
  * When entity accepts only one image, use this

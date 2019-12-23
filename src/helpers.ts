@@ -109,3 +109,16 @@ export function getIntFromObject(obj: any, key: string): number | undefined {
 export function now(): Date {
   return new Date();
 }
+
+export async function times(n: number, fn: Function): Promise<void> {
+  let success = false;
+  let i = 0;
+  while (!success && i < n) {
+    i += 1;
+    // eslint-disable-next-line no-await-in-loop
+    await fn();
+    try {
+      success = true;
+    } catch (error) {}
+  }
+}

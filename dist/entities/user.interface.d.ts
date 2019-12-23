@@ -1,9 +1,6 @@
 import { ImageSizes } from '../types';
+import { Image } from './image.entity';
 export interface IUser extends BasicUserInfo {
-    id: string;
-    email: string;
-    name: string;
-    avatar?: string | ImageSizes;
     confirmed: boolean;
     secureToken?: string;
     tokenCreatedAt?: Date;
@@ -14,7 +11,7 @@ export declare class BasicUserInfo {
     id: string;
     name: string;
     email: string;
-    avatar?: string | ImageSizes;
+    avatar?: string | ImageSizes | Image;
 }
 export interface IBasicUserInfo extends BasicUserInfo {
 }

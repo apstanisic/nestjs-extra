@@ -92,7 +92,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], DbLog.prototype, "throwError", null);
 DbLog = __decorate([
-    typeorm_1.Entity()
+    typeorm_1.Entity('logs')
 ], DbLog);
 exports.DbLog = DbLog;
 //# sourceMappingURL=db-log.entity.js.map

@@ -22,57 +22,87 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const moment = require("moment");
 const faker_1 = require("faker");
-const storage_service_1 = require("./storage.service");
-const sharp_1 = require("./sharp");
+const moment = require("moment");
+const class_transformer_1 = require("class-transformer");
 const consts_1 = require("../consts");
+const sharp_1 = require("./sharp");
+const storage_service_1 = require("./storage.service");
+const image_entity_1 = require("../entities/image.entity");
 let StorageImagesService = class StorageImagesService {
     constructor(storageService, sizes) {
         this.storageService = storageService;
         this.sizes = sizes;
     }
-    addImage(image) {
+    storeImage(image) {
         return __awaiter(this, void 0, void 0, function* () {
-            const uuid = faker_1.random.uuid();
+            const id = faker_1.random.uuid();
             const now = moment().format('YYYY/MM/DD');
-            const basePath = `/${now}/${uuid}/image_${uuid}`;
+            const folder = `${now}/${id}`;
+            const filePrefix = `${folder}/image_${id}`;
             const buffersAndSizes = yield sharp_1.generateAllImageSizes(image, this.sizes);
-            const toStore = buffersAndSizes.map(img => this.storageService.put(img.image, `${basePath}_${img.size}.jpeg`, img.size));
-            const imageSizes = {};
+            const toStore = buffersAndSizes.map(img => this.storageService.put(img.image, `${filePrefix}_${img.size}.jpeg`, img.size));
+            const sizes = {};
             const allSizesArray = yield Promise.all(toStore);
             allSizesArray.forEach(item => {
                 const [filename, size] = item;
-                imageSizes[size] = filename;
+                sizes[size] = filename;
             });
-            return [imageSizes, basePath, uuid];
+            const imageObject = Object.assign(Object.assign({}, sizes), { id, prefix: folder, position: 0 });
+            return class_transformer_1.plainToClass(image_entity_1.Image, imageObject);
         });
     }
-    removeImageBySizes(image) {
+    addImage(image, reorder) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (!image)
-                return Promise.resolve();
-            const deleting = Object.keys(image).map(this.storageService.delete);
-            yield Promise.all(deleting);
+            const orderedImagesArray = reorder.images.sort((img1, img2) => { var _a, _b; return (_a = img1.position, (_a !== null && _a !== void 0 ? _a : -1)) < (_b = img2.position, (_b !== null && _b !== void 0 ? _b : 0)) ? -1 : 1; });
+            orderedImagesArray.forEach((img, i) => {
+                img.position = i;
+            });
+            const storedImage = yield this.storeImage(image);
+            if (reorder.position === undefined) {
+                storedImage.position = reorder.images.length + 1;
+            }
+            else {
+            }
+            return reorder.images;
         });
     }
-    removeImageByPrefix(image) {
+    removeImage(image, allImages) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.storageService.deleteWherePrefix(image.prefix);
+            const deleted = yield this.storageService.deleteWherePrefix(image.prefix);
+            if (allImages === undefined)
+                return undefined;
+            return this.removeImageFromArray(image, allImages);
         });
     }
     removeImageById(id, allImages) {
         return __awaiter(this, void 0, void 0, function* () {
             const image = allImages.find(img => img.id === id);
             if (!image)
-                return allImages;
-            yield this.removeImageByPrefix(image);
-            return allImages
-                .filter(img => img.id !== id)
-                .map((img, i) => {
-                img.position = i;
-                return img;
+                throw new common_1.NotFoundException();
+            yield this.removeImage(image);
+            return this.removeImageFromArray(image, allImages);
+        });
+    }
+    removeImageFromArray(image, allImages) {
+        return allImages
+            .filter(img => img.id !== image.id)
+            .map((img, i) => {
+            img.position = i;
+            return img;
+        });
+    }
+    reorderImages(images, newOrder) {
+        return __awaiter(this, void 0, void 0, function* () {
+            images.forEach(img => {
+                img.position = newOrder.indexOf(img.id);
             });
+            images
+                .filter(img => img.position === -1 || img.position === undefined)
+                .forEach((img, i) => {
+                img.position = newOrder.length + i;
+            });
+            return images;
         });
     }
 };

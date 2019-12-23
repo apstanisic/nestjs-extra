@@ -102,9 +102,8 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
             if (user.avatar) {
                 yield this.removeAvatar(user);
             }
-            const name = `avatars/${user.id}`;
-            const [sizes, prefix] = yield this.storageImagesService.addImage(newAvatar);
-            user.avatar = sizes;
+            const avatar = yield this.storageImagesService.storeImage(newAvatar);
+            user.avatar = avatar;
             const updatedUser = yield this.mutate(user, {
                 user,
                 reason: 'Add avatar',
@@ -121,7 +120,7 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
             }
             if (!user.avatar)
                 return user;
-            yield this.storageImagesService.removeImageBySizes(user.avatar);
+            yield this.storageImagesService.removeImage(user.avatar);
             delete user.avatar;
             const updatedUser = yield this.mutate(user, {
                 user,

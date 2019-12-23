@@ -27,28 +27,29 @@ let StorageService = class StorageService {
         this.config = config;
         this.logger = new common_1.Logger();
         const endPoint = this.config.get(consts_1.STORAGE_ENDPOINT);
+        const region = this.config.get(consts_1.STORAGE_REGION);
         const accessKey = this.config.get(consts_1.STORAGE_ACCESS_KEY);
         const secretKey = this.config.get(consts_1.STORAGE_SECRET_KEY);
         const bucket = this.config.get(consts_1.STORAGE_BUCKET_NAME);
-        if (!bucket || !endPoint || !accessKey || !secretKey) {
+        if (!bucket || !endPoint || !accessKey || !secretKey || !region) {
             this.logger.error('Storage mounted, but storage keys are undefined.');
             throw new common_1.InternalServerErrorException();
         }
+        this.bucket = bucket;
         this.s3 = new AWS.S3({
-            apiVersion: '2006-03-01',
+            region,
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
             endpoint: endPoint,
         });
-        this.bucket = bucket;
     }
     put(file, name, size, _retries = 3) {
         return __awaiter(this, void 0, void 0, function* () {
-            const filename = name.startsWith('/') ? name : `/${name}`;
+            const filename = name.startsWith('/') ? name.substr(1) : name;
             return this.s3
                 .putObject({
                 Bucket: this.bucket,
-                Key: name,
+                Key: filename,
                 Body: file,
                 ACL: 'public-read',
             })
@@ -70,7 +71,7 @@ let StorageService = class StorageService {
                 Delete: { Objects: [] },
             })
                 .promise()
-                .then(data => filenames);
+                .then(data => filenames.map(f => f.Key));
         });
     }
     listFiles(prefix) {
