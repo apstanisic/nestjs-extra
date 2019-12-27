@@ -3390,8 +3390,8 @@
         "signature": "84236729539b05413658d61ed1d3a0f2f4c4e8726ca60c0bd843f0a05938b2c8"
       },
       "../src/storage/storage-images.service.ts": {
-        "version": "0b4b0f83ad06e26002b61f9585707a2d51eefc6ad0e0e1f036a8d1be8cd57882",
-        "signature": "3ea92f98f49fbe13a0dccb8d4fe820e257e6bdb6b38a337baf2a493a0d6341db"
+        "version": "309d7d307bda3a1ec63fbfe72bee2c9760d3a55abaf61db84805a6278840a5b0",
+        "signature": "582e1a47f4de46cbe4404a9e80d3dc2bd7f390ce1ef3686b1bc7fad03acd110c"
       },
       "../src/entities/base-user-with-roles.entity.ts": {
         "version": "2e75e83c267fbd2bac3016df6ca421496d934d9cb9e8906604ac175ce812d6cc",
@@ -3950,7 +3950,7 @@
         "signature": "583016969b6437b33d6883c9df1f74972365207344c8527fc86dc5d383b2ad7e"
       },
       "../src/access-control/permissions.guard.ts": {
-        "version": "15855fb51d1963190ae7a781bed2ee2046365a1dc890467a1780b1d735526e87",
+        "version": "909e4fc8480c0a0399c88042cacf6f87d0ce1395d675859fc6839db09b8782aa",
         "signature": "6b33bad58910c92b4a04075f928117980316119ea9200b4ac3e4ee413394ae3c"
       },
       "../src/auth/get-user.decorator.ts": {
@@ -3994,7 +3994,7 @@
         "signature": "acf2fe2d3b5df92a6a0c12528050dc767be3af49c91167e6febd04c914102bda"
       },
       "../src/db/db.module.ts": {
-        "version": "902e8f4c966d746add35997dacc99de348f86cc97ee37981aa84ecb87727d8e2",
+        "version": "26006d23dfad4295da46f6a181a58cef8ba843652bea8af14595a075adfe9563",
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/logger/db-logger.module.ts": {

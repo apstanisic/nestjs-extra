@@ -57,37 +57,37 @@ export class StorageImagesService {
     return plainToClass(Image, imageObject);
   }
 
-  /** Store image, and put in right position in array */
-  async addImage(image: Buffer, reorder: Reorder): Promise<Image[]> {
-    // const images = await new ImageController(image).compress();
-    // const images = reorder.images.sort((img1, img2) => img1.position > img)
-    const orderedImagesArray = reorder.images.sort((img1, img2) =>
-      (img1.position ?? -1) < (img2.position ?? 0) ? -1 : 1,
-    );
-    orderedImagesArray.forEach((img, i) => {
-      img.position = i;
-    });
-    const storedImage = await this.storeImage(image);
-    if (reorder.position === undefined) {
-      // Store at last positioin
-      storedImage.position = reorder.images.length + 1;
-      // reorder.images.push({
-      //   ...storedImage,
-      //   position: reorder.images.length,
-      // });
-    } else {
-      // orderedImagesArray.splice(reorder.position, 0, )
-      // orderedImagesArray.splice(reorder?.position, 0, {
-      // ...storedImage,
-      //   position: reorder.position,
-      // });
-      // reorder.images.splice(reorder?.position, 0, {
-      //   ...storedImage,
-      //   position: reorder.position,
-      // });
-    }
-    return reorder.images;
-  }
+  // /** Store image, and put in right position in array */
+  // async addImage(image: Buffer, reorder: Reorder): Promise<Image[]> {
+  //   // const images = await new ImageController(image).compress();
+  //   // const images = reorder.images.sort((img1, img2) => img1.position > img)
+  //   const orderedImagesArray = reorder.images.sort((img1, img2) =>
+  //     (img1.position ?? -1) < (img2.position ?? 0) ? -1 : 1,
+  //   );
+  //   orderedImagesArray.forEach((img, i) => {
+  //     img.position = i;
+  //   });
+  //   const storedImage = await this.storeImage(image);
+  //   if (reorder.position === undefined) {
+  //     // Store at last positioin
+  //     storedImage.position = reorder.images.length + 1;
+  //     // reorder.images.push({
+  //     //   ...storedImage,
+  //     //   position: reorder.images.length,
+  //     // });
+  //   } else {
+  //     // orderedImagesArray.splice(reorder.position, 0, )
+  //     // orderedImagesArray.splice(reorder?.position, 0, {
+  //     // ...storedImage,
+  //     //   position: reorder.position,
+  //     // });
+  //     // reorder.images.splice(reorder?.position, 0, {
+  //     //   ...storedImage,
+  //     //   position: reorder.position,
+  //     // });
+  //   }
+  //   return reorder.images;
+  // }
 
   /**
    * Give common prefix for deleting images. Generics are not very helpfull.
@@ -106,13 +106,13 @@ export class StorageImagesService {
   }
 
   /** Delete image by id, and reorder images array */
-  async removeImageById(id: UUID, allImages: Image[]): Promise<Image[]> {
-    const image = allImages.find(img => img.id === id);
+  async removeImageById(id: UUID, images: Image[]): Promise<Image[]> {
+    const image = images.find(img => img.id === id);
     if (!image) throw new NotFoundException();
 
     await this.removeImage(image);
 
-    return this.removeImageFromArray(image, allImages);
+    return this.removeImageFromArray(image, images);
   }
 
   /** Remove provided image from array */

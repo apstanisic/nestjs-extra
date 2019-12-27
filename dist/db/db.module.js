@@ -40,7 +40,7 @@ let DbModule = DbModule_1 = class DbModule {
                                     host: envs[consts_1.REDIS_HOST],
                                     port: (_b = envs[consts_1.REDIS_PORT], (_b !== null && _b !== void 0 ? _b : '6379')),
                                 },
-                                duration: 30000,
+                                duration: 10000,
                             },
                         };
                         return options;

@@ -46,7 +46,7 @@ export class DbModule {
                   host: envs[REDIS_HOST],
                   port: envs[REDIS_PORT] ?? '6379',
                 },
-                duration: 30000,
+                duration: 10000,
               },
             };
 

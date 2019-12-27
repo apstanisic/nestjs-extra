@@ -52,21 +52,6 @@ let StorageImagesService = class StorageImagesService {
             return class_transformer_1.plainToClass(image_entity_1.Image, imageObject);
         });
     }
-    addImage(image, reorder) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const orderedImagesArray = reorder.images.sort((img1, img2) => { var _a, _b; return (_a = img1.position, (_a !== null && _a !== void 0 ? _a : -1)) < (_b = img2.position, (_b !== null && _b !== void 0 ? _b : 0)) ? -1 : 1; });
-            orderedImagesArray.forEach((img, i) => {
-                img.position = i;
-            });
-            const storedImage = yield this.storeImage(image);
-            if (reorder.position === undefined) {
-                storedImage.position = reorder.images.length + 1;
-            }
-            else {
-            }
-            return reorder.images;
-        });
-    }
     removeImage(image, allImages) {
         return __awaiter(this, void 0, void 0, function* () {
             const deleted = yield this.storageService.deleteWherePrefix(image.prefix);
@@ -75,13 +60,13 @@ let StorageImagesService = class StorageImagesService {
             return this.removeImageFromArray(image, allImages);
         });
     }
-    removeImageById(id, allImages) {
+    removeImageById(id, images) {
         return __awaiter(this, void 0, void 0, function* () {
-            const image = allImages.find(img => img.id === id);
+            const image = images.find(img => img.id === id);
             if (!image)
                 throw new common_1.NotFoundException();
             yield this.removeImage(image);
-            return this.removeImageFromArray(image, allImages);
+            return this.removeImageFromArray(image, images);
         });
     }
     removeImageFromArray(image, allImages) {

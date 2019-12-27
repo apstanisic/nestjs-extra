@@ -56,7 +56,10 @@ export class PermissionsGuard implements CanActivate {
         ? accessOptions.resource
         : request.path;
 
-    const roles = await this.roleService.find({ userId: user.id });
+    const roles = await this.roleService.find(
+      { userId: user.id },
+      // { cache: true },
+    );
     user.roles = roles;
     const allowed = await this.acService.isAllowed(roles, resource, action);
 
