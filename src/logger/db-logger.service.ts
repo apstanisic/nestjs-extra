@@ -10,9 +10,7 @@ import { DbLog } from './db-log.entity';
 export class DbLoggerService<T extends WithId = any> extends BaseFindService<
   DbLog
 > {
-  constructor(
-    @InjectRepository(DbLog, 'log_db') repository: Repository<DbLog>,
-  ) {
+  constructor(@InjectRepository(DbLog) repository: Repository<DbLog>) {
     super(repository);
   }
 

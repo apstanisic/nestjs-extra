@@ -52,7 +52,7 @@ let DbLoggerService = class DbLoggerService extends base_find_service_1.BaseFind
 };
 DbLoggerService = __decorate([
     common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(db_log_entity_1.DbLog, 'log_db')),
+    __param(0, typeorm_1.InjectRepository(db_log_entity_1.DbLog)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], DbLoggerService);
 exports.DbLoggerService = DbLoggerService;

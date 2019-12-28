@@ -13,6 +13,7 @@ import {
 } from './access-control/access-control.module';
 import { Notification } from './notification/notification.entity';
 import { Role } from './access-control/role/roles.entity';
+import { DbLog } from './logger/db-log.entity';
 
 /** Params for dynamic module */
 export interface CoreModuleParams {
@@ -37,6 +38,7 @@ export class CoreModule {
 
     if (params.notifications) entities.push(Notification);
     if (params.accessControl) entities.push(Role);
+    if (params.dbLog) entities.push(DbLog);
 
     const modules = [
       ConfigModule.forRoot(params.config),

@@ -35,6 +35,7 @@ export * from './helpers';
 export * from './id-array.dto';
 export * from './is-between';
 export * from './logger/db-logger.service';
+// export * from './logger/db-log.no-sql.entity';
 export * from './logger/db-log.entity';
 export * from './logger/db-logger.module';
 export * from './logger/db-log-metadata';

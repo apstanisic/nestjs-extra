@@ -1,18 +1,10 @@
-import {
-  Entity,
-  Column,
-  ObjectID,
-  ObjectIdColumn,
-  BeforeInsert,
-  BeforeUpdate,
-} from 'typeorm';
-import { classToClass, plainToClass, Exclude } from 'class-transformer';
-import { diff } from 'deep-diff';
-import * as Faker from 'faker';
-import { Interface } from 'readline';
 import { InternalServerErrorException } from '@nestjs/common';
+import { classToClass, plainToClass } from 'class-transformer';
+import { diff } from 'deep-diff';
+import { Entity, BeforeInsert, BeforeUpdate, Column, ManyToOne } from 'typeorm';
+import { BaseEntity } from '../entities/base.entity';
+import { BasicUserInfo, IUser } from '../entities/user.interface';
 import { UUID, WithId } from '../types';
-import { IUser, BasicUserInfo } from '../entities/user.interface';
 
 /**
  * This entity is using MongoDb. TypeOrm currently supports only this NoSql db.
@@ -20,18 +12,9 @@ import { IUser, BasicUserInfo } from '../entities/user.interface';
  * it does not have primary field.
  */
 @Entity('logs')
-export class DbLog<T extends WithId = any> {
-  /** Default mongo id */
-  @ObjectIdColumn()
-  @Exclude()
-  _id: ObjectID;
-
-  /** Id for public use */
-  @Column({ default: Faker.random.uuid(), type: 'string' })
-  id: UUID;
-
+export class DbLog<T extends WithId = any> extends BaseEntity {
   /** What action was executed (delete, update, custom-action) */
-  @Column({ type: 'string', default: 'update' })
+  @Column({ default: 'update' })
   action: 'update' | 'delete' | 'create' | string;
 
   /** Why is this action executed. */
@@ -39,39 +22,36 @@ export class DbLog<T extends WithId = any> {
   reason?: string;
 
   /** Who executed this action */
-  @Column(type => BasicUserInfo)
+  //   @ManyToOne(type => User)
+  //   @Column(type => BasicUserInfo)
+  @Column({ type: 'jsonb' })
   executedBy: BasicUserInfo | IUser;
 
-  @Column('string')
-  executedById: string;
-
-  /** At what time was this action executed. */
-  @Column({ precision: 3, default: new Date() })
-  readonly executedAt: Date;
+  @Column()
+  executedById: UUID;
 
   /** Value before changes. For creating it will be null. Don't set directly. */
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'jsonb' })
   initialValue?: T;
 
   /** Diff of changes. */
-  @Column()
+  @Column({ type: 'jsonb' })
   changes: any;
 
   /**
-   * entityId is used for easier filtering of results.
+   * Entity that has been changed (or created, or deleted).
    * If action is create, use id after creating.
-   * It can be filtered directly on entity, but this way it's
-   * easier to migrate no Sql db or log to file.
    */
-  @Column('string')
+  @Column()
   entityId: UUID;
 
   /**
-   * Id of domain this log belongs to.
+   * Domain of this log.
+   * Used for finding only logs that belong to specific domain.
+   * Example: Get logs only for this company.
    * It can be company, web store, school, group.
-   * Useful for finding many logs. Example: all changes in this store.
    */
-  @Column({ type: 'string', nullable: true })
+  @Column({ nullable: true })
   domainId?: UUID;
 
   /** Temp value only used for getting id if there is not old value. */
@@ -83,23 +63,24 @@ export class DbLog<T extends WithId = any> {
     this._newValue = value;
   }
 
-  /** Remove unnecesary data from user. */
+  /** Transform data */
   @BeforeInsert()
   _prepare(): void {
     this.executedBy = plainToClass(BasicUserInfo, this.executedBy);
-    // Remove excluded properties, and set entity id
+    this.executedById = this.executedBy.id;
+    // Remove sensitive properties (passwords, cc numbers...)
     this.initialValue = classToClass(this.initialValue);
     // Get entity id from provided values.
-    if (this.initialValue && this.initialValue.id) {
+    if (this.initialValue?.id) {
       this.entityId = this.initialValue.id;
-    } else if (this._newValue && this._newValue.id) {
+    } else if (this._newValue?.id) {
       this.entityId = this._newValue.id;
     }
   }
 
+  /** Logs can't be updated */
   @BeforeUpdate()
   throwError(): void {
-    // There should not be updating logs
     throw new InternalServerErrorException();
   }
 }

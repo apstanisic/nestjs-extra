@@ -2233,16 +2233,12 @@
         "version": "fb6d2d4e6b93cd3b310ba286b1044d25e2c3f665f9eaac780bc41208d6e73616",
         "signature": "fb6d2d4e6b93cd3b310ba286b1044d25e2c3f665f9eaac780bc41208d6e73616"
       },
-      "../node_modules/@types/faker/index.d.ts": {
-        "version": "8c9dc0d62727186d5f88a3aaed2c9fac5c9c50bab477bc63ce1e1558da4b7268",
-        "signature": "8c9dc0d62727186d5f88a3aaed2c9fac5c9c50bab477bc63ce1e1558da4b7268"
-      },
       "../src/logger/db-log.entity.ts": {
-        "version": "10c9998e0122f7a4bf583a3ac058bce0b22d0856ff1cf80178225ed4715d889c",
-        "signature": "3c194d3f6724a818ef1bf362e12e8ed30e2e20610bf20343adf2f02dc22370ff"
+        "version": "735dc48620212e3d963a208856c32134e454df28707fbc5d46dd770e64393600",
+        "signature": "faa8b7a88816962f44ea37c2a56fbedde2c566b1508a1b375844126edcdeb963"
       },
       "../src/logger/db-logger.service.ts": {
-        "version": "4de54803a28ab69d0c929b2873c92a2411253d50539afd557788f991ab612f2b",
+        "version": "27ee43c68233b33a44ffe685d65881d27d0688a0b33497ecdb4c97fac314c1bf",
         "signature": "eef06b0457b0e8480c271ff0c5032c578375398ed9d7d9657232720609817435"
       },
       "../src/consts.ts": {
@@ -2304,6 +2300,10 @@
       "../node_modules/@types/bcryptjs/index.d.ts": {
         "version": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f",
         "signature": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f"
+      },
+      "../node_modules/@types/faker/index.d.ts": {
+        "version": "8c9dc0d62727186d5f88a3aaed2c9fac5c9c50bab477bc63ce1e1558da4b7268",
+        "signature": "8c9dc0d62727186d5f88a3aaed2c9fac5c9c50bab477bc63ce1e1558da4b7268"
       },
       "../src/entities/base-user.entity.ts": {
         "version": "481753eeb78747b4c63fec8fd8f1b1b105512b0875181c1268c26a8d9b7d85ce",
@@ -3998,7 +3998,7 @@
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/logger/db-logger.module.ts": {
-        "version": "ab7b9eb6f7bbe7727201b5ead46c8fd9c41481607155995ce5b042f4476f2d25",
+        "version": "5db188ce5faacc7fe360ea4ea82b52ec4a1ab0ec8546d7134096592e0b4c2182",
         "signature": "e1790bcd4aa3fec95c14d80218af113b1843010e3381e2ab9933acc5235f83ec"
       },
       "../src/mail/mail.module.ts": {
@@ -4038,7 +4038,7 @@
         "signature": "17a0e2d1de2e88bf67bbd70a87fb4899b47f0d864370bbd114f78f6c4a43cb8d"
       },
       "../src/core.module.ts": {
-        "version": "4f4f12ad3585aaa3336997b07c5e803b4d8cb51ecf21045d11cc9816ddab54d5",
+        "version": "cdc24a893efe007dd4763ab2c1ce3b1c9e0a16a76907f965b9338bebc37f9e99",
         "signature": "663372a08fbbfae5cd7dd114e3e594b35b5b81397c5d1dbd89829c40484b1180"
       },
       "../src/example-consts.ts": {
@@ -4086,8 +4086,12 @@
         "signature": "0b3e1952d19a89d46294bd5e8db7876cb48aae451d9572d4eee8189d578411cb"
       },
       "../src/index.ts": {
-        "version": "601c7f77fb4fdb0268885497600a0e1b65525279aae5f1c3e337e9355aa38414",
+        "version": "8800b78bfd6b3369583c86ee53a29ae73759e02bc2dfb6e47649c52be0f0f56d",
         "signature": "601c7f77fb4fdb0268885497600a0e1b65525279aae5f1c3e337e9355aa38414"
+      },
+      "../src/logger/db-log.no-sql.entity.ts": {
+        "version": "10c9998e0122f7a4bf583a3ac058bce0b22d0856ff1cf80178225ed4715d889c",
+        "signature": "3c194d3f6724a818ef1bf362e12e8ed30e2e20610bf20343adf2f02dc22370ff"
       },
       "../src/storage/publicReadPolicy.ts": {
         "version": "b807db98c0046ebb8d459e7fc9a64bb3dc01c5de20681b1eee159ab851408dc9",
@@ -8845,21 +8849,14 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/faker/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/logger/db-log.entity.ts": [
-        "../node_modules/typeorm/index.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/class-transformer/index.d.ts",
         "../node_modules/@types/deep-diff/index.d.ts",
-        "../node_modules/@types/faker/index.d.ts",
-        "../node_modules/@types/node/readline.d.ts",
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/types.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/entities/base.entity.ts",
         "../src/entities/user.interface.ts",
+        "../src/types.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -9012,6 +9009,12 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/@types/bcryptjs/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/faker/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -13490,10 +13493,9 @@
       "../src/logger/db-logger.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
-        "../src/config/config.service.ts",
-        "../src/logger/db-logger.service.ts",
-        "../src/logger/db-log.entity.ts",
         "../src/consts.ts",
+        "../src/logger/db-log.entity.ts",
+        "../src/logger/db-logger.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -13606,6 +13608,7 @@
         "../src/access-control/access-control.module.ts",
         "../src/notification/notification.entity.ts",
         "../src/access-control/role/roles.entity.ts",
+        "../src/logger/db-log.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -13780,6 +13783,20 @@
         "../src/types.ts",
         "../src/uuid.pipe.ts",
         "../src/validate-email.pipe.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/logger/db-log.no-sql.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../node_modules/class-transformer/index.d.ts",
+        "../node_modules/@types/deep-diff/index.d.ts",
+        "../node_modules/@types/faker/index.d.ts",
+        "../node_modules/@types/node/readline.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/types.ts",
+        "../src/entities/user.interface.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -14298,6 +14315,11 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/logger/db-log.no-sql.entity.ts": [
+        "../src/types.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/entities/user.interface.ts"
       ],
       "../src/typeorm/orm-query.pipe.ts": [
         "../node_modules/typeorm/index.d.ts",
@@ -14873,8 +14895,8 @@
       ],
       "../src/logger/db-log.entity.ts": [
         "../src/types.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/entities/user.interface.ts"
+        "../src/entities/user.interface.ts",
+        "../src/entities/base.entity.ts"
       ],
       "../src/entities/base.entity.ts": [
         "../src/types.ts"
@@ -21742,6 +21764,12 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@types/faker/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@types/bcryptjs/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -21762,12 +21790,6 @@
       ],
       "../src/is-between.ts": [
         "../node_modules/class-validator/index.d.ts"
-      ],
-      "../node_modules/@types/faker/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/@types/deep-diff/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -23661,7 +23683,6 @@
       "../src/entities/user.interface.ts",
       "../src/logger/db-log-metadata.ts",
       "../node_modules/@types/deep-diff/index.d.ts",
-      "../node_modules/@types/faker/index.d.ts",
       "../src/logger/db-log.entity.ts",
       "../src/logger/db-logger.service.ts",
       "../src/consts.ts",
@@ -23679,6 +23700,7 @@
       "../src/typeorm/parse-to-orm-query.ts",
       "../src/base-find.service.ts",
       "../node_modules/@types/bcryptjs/index.d.ts",
+      "../node_modules/@types/faker/index.d.ts",
       "../src/entities/base-user.entity.ts",
       "../node_modules/@types/sharp/index.d.ts",
       "../node_modules/aws-sdk/lib/error.d.ts",
@@ -24125,6 +24147,7 @@
       "../src/simple-admin.guard.ts",
       "../src/typeorm/orm-query.pipe.ts",
       "../src/index.ts",
+      "../src/logger/db-log.no-sql.entity.ts",
       "../src/storage/publicReadPolicy.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",

@@ -9,26 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const common_1 = require("@nestjs/common");
+const typeorm_1 = require("typeorm");
 const class_transformer_1 = require("class-transformer");
 const deep_diff_1 = require("deep-diff");
-const typeorm_1 = require("typeorm");
-const base_entity_1 = require("../entities/base.entity");
+const Faker = require("faker");
+const common_1 = require("@nestjs/common");
 const user_interface_1 = require("../entities/user.interface");
-let DbLog = class DbLog extends base_entity_1.BaseEntity {
+let DbLog = class DbLog {
     set newValue(value) {
         this.changes = deep_diff_1.diff(this.initialValue, value);
         this._newValue = value;
     }
     _prepare() {
-        var _a, _b;
         this.executedBy = class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, this.executedBy);
-        this.executedById = this.executedBy.id;
         this.initialValue = class_transformer_1.classToClass(this.initialValue);
-        if ((_a = this.initialValue) === null || _a === void 0 ? void 0 : _a.id) {
+        if (this.initialValue && this.initialValue.id) {
             this.entityId = this.initialValue.id;
         }
-        else if ((_b = this._newValue) === null || _b === void 0 ? void 0 : _b.id) {
+        else if (this._newValue && this._newValue.id) {
             this.entityId = this._newValue.id;
         }
     }
@@ -36,6 +34,15 @@ let DbLog = class DbLog extends base_entity_1.BaseEntity {
         throw new common_1.InternalServerErrorException();
     }
 };
+__decorate([
+    typeorm_1.ObjectIdColumn(),
+    class_transformer_1.Exclude(),
+    __metadata("design:type", typeorm_1.ObjectID)
+], DbLog.prototype, "_id", void 0);
+__decorate([
+    typeorm_1.Column({ default: Faker.random.uuid(), type: 'string' }),
+    __metadata("design:type", String)
+], DbLog.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column({ type: 'string', default: 'update' }),
     __metadata("design:type", String)
@@ -45,27 +52,31 @@ __decorate([
     __metadata("design:type", String)
 ], DbLog.prototype, "reason", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'jsonb' }),
+    typeorm_1.Column(type => user_interface_1.BasicUserInfo),
     __metadata("design:type", Object)
 ], DbLog.prototype, "executedBy", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column('string'),
     __metadata("design:type", String)
 ], DbLog.prototype, "executedById", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true, type: 'jsonb' }),
+    typeorm_1.Column({ precision: 3, default: new Date() }),
+    __metadata("design:type", Date)
+], DbLog.prototype, "executedAt", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", Object)
 ], DbLog.prototype, "initialValue", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'jsonb' }),
+    typeorm_1.Column(),
     __metadata("design:type", Object)
 ], DbLog.prototype, "changes", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column('string'),
     __metadata("design:type", String)
 ], DbLog.prototype, "entityId", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    typeorm_1.Column({ type: 'string', nullable: true }),
     __metadata("design:type", String)
 ], DbLog.prototype, "domainId", void 0);
 __decorate([
@@ -84,4 +95,4 @@ DbLog = __decorate([
     typeorm_1.Entity('logs')
 ], DbLog);
 exports.DbLog = DbLog;
-//# sourceMappingURL=db-log.entity.js.map
+//# sourceMappingURL=db-log.no-sql.entity.js.map

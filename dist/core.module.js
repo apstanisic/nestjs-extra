@@ -19,6 +19,7 @@ const storage_module_1 = require("./storage/storage.module");
 const access_control_module_1 = require("./access-control/access-control.module");
 const notification_entity_1 = require("./notification/notification.entity");
 const roles_entity_1 = require("./access-control/role/roles.entity");
+const db_log_entity_1 = require("./logger/db-log.entity");
 let CoreModule = CoreModule_1 = class CoreModule {
     static forRoot(params) {
         const { entities } = params.db;
@@ -26,6 +27,8 @@ let CoreModule = CoreModule_1 = class CoreModule {
             entities.push(notification_entity_1.Notification);
         if (params.accessControl)
             entities.push(roles_entity_1.Role);
+        if (params.dbLog)
+            entities.push(db_log_entity_1.DbLog);
         const modules = [
             config_module_1.ConfigModule.forRoot(params.config),
             db_module_1.DbModule.forRoot(params.db),

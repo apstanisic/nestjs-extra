@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { DbLoggerService } from './db-logger.service';
-import { Log } from './log.entity';
+import { DbLog } from './db-log.entity';
 
 describe('DbLoggerService', () => {
   let service: DbLoggerService;
@@ -11,7 +11,7 @@ describe('DbLoggerService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         DbLoggerService,
-        { provide: getRepositoryToken(Log, 'log_db'), useValue: jest.fn() },
+        { provide: getRepositoryToken(DbLog), useValue: jest.fn() },
       ],
     }).compile();
 
