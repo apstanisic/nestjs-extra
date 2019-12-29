@@ -15,6 +15,10 @@ const base_entity_1 = require("../../entities/base.entity");
 let Role = class Role extends base_entity_1.BaseEntity {
 };
 __decorate([
+    typeorm_1.ManyToOne('User'),
+    __metadata("design:type", Object)
+], Role.prototype, "user", void 0);
+__decorate([
     typeorm_1.Column(),
     typeorm_1.Index(),
     __metadata("design:type", String)

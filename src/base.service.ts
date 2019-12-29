@@ -199,6 +199,16 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
     return deleted;
   }
 
+  // async deleteMany(
+  //   where: FindConditions<T>,
+  //   logMetadata?: DbLogMetadata,
+  // ): Promise<T> {
+  //   const entities = await this.find(where);
+  //   this.repository.remove(entities);
+  //   const deleted = await this.delete(entity, logMetadata, true);
+  //   return deleted;
+  // }
+
   protected internalError(error: any): InternalServerErrorException {
     this.logger.error(error);
     return new InternalServerErrorException();

@@ -17,6 +17,9 @@ class BaseFindService {
         this.repository = repository;
         this.logger = new common_1.Logger();
     }
+    getRepository() {
+        return this.repository;
+    }
     findOne(filter, options = {}) {
         return __awaiter(this, void 0, void 0, function* () {
             let entity;

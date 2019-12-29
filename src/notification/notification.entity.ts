@@ -5,11 +5,12 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { BaseUser } from '../entities/base-user.entity';
 import { UUID } from '../types';
 // import { User } from '../../user/user.entity';
 
 @Entity('notifications')
-export class Notification {
+export class Notification<User = BaseUser> {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -19,8 +20,8 @@ export class Notification {
   @Column({ type: 'text', nullable: true })
   body?: string;
 
-  // @ManyToOne(type => User)
-  // user: User;
+  @ManyToOne('User')
+  user: User;
 
   @Column()
   userId: UUID;

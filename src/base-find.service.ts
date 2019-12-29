@@ -22,6 +22,11 @@ export class BaseFindService<T extends WithId = any> {
 
   protected logger = new Logger();
 
+  /** Use only when you must */
+  getRepository(): Repository<T> {
+    return this.repository;
+  }
+
   /**
    * Find companies that match criteria
    * If filter is string or number it will search for Id

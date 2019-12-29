@@ -25,14 +25,16 @@ export class DbLog<T extends WithId = any> extends BaseEntity {
   //   @ManyToOne(type => User)
   //   @Column(type => BasicUserInfo)
   @Column({ type: 'jsonb' })
-  executedBy: BasicUserInfo | IUser;
+  executedBy: BasicUserInfo;
 
   @Column()
   executedById: UUID;
 
-  /** Value before changes. For creating it will be null. Don't set directly. */
-  @Column({ nullable: true, type: 'jsonb' })
-  initialValue?: T;
+  /** Value before changes. For creating it will be null. Don't set directly.
+   * @todo remove nullable property
+   */
+  @Column({ type: 'jsonb', default: {} })
+  initialValue: T | Record<string, any>;
 
   /** Diff of changes. */
   @Column({ type: 'jsonb' })
@@ -66,10 +68,12 @@ export class DbLog<T extends WithId = any> extends BaseEntity {
   /** Transform data */
   @BeforeInsert()
   _prepare(): void {
-    this.executedBy = plainToClass(BasicUserInfo, this.executedBy);
+    this.executedBy = plainToClass(BasicUserInfo, this.executedBy, {
+      excludeExtraneousValues: true,
+    });
     this.executedById = this.executedBy.id;
     // Remove sensitive properties (passwords, cc numbers...)
-    this.initialValue = classToClass(this.initialValue);
+    this.initialValue = classToClass(this.initialValue) ?? {};
     // Get entity id from provided values.
     if (this.initialValue?.id) {
       this.entityId = this.initialValue.id;

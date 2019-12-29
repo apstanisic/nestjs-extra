@@ -2234,7 +2234,7 @@
         "signature": "fb6d2d4e6b93cd3b310ba286b1044d25e2c3f665f9eaac780bc41208d6e73616"
       },
       "../src/logger/db-log.entity.ts": {
-        "version": "735dc48620212e3d963a208856c32134e454df28707fbc5d46dd770e64393600",
+        "version": "356a4350cf8e07ee5498b09ce8916b0f1daba1d7e6edbda08773552a06c04ece",
         "signature": "faa8b7a88816962f44ea37c2a56fbedde2c566b1508a1b375844126edcdeb963"
       },
       "../src/logger/db-logger.service.ts": {
@@ -2246,7 +2246,7 @@
         "signature": "dea9a81d5540076e2dae05b0eeb3d8e7afe34eb22f05fc3e879109e1eb1a079c"
       },
       "../src/base.service.ts": {
-        "version": "661fce93349527c9e4d42115089b06ef34b21c5ce1a9792faa97bed9cbea1ed6",
+        "version": "46799d46490c22cbcdce19749d4dc8bd578b4cc4974198af9a024b6d032c37a4",
         "signature": "de2eb3de56d5c17a347955fffc54d7c7416ddcd422622314240a4ee2fcd4a15d"
       },
       "../src/helpers.ts": {
@@ -2294,8 +2294,8 @@
         "signature": "dba7030620268aa2629e3557de2663d2f1fe9feffa18175cd0ddbe03fc9f637d"
       },
       "../src/base-find.service.ts": {
-        "version": "bd1de74c06beff78a14584bee5c64b19a779ee8c34d3cc337d7492898f26e580",
-        "signature": "c55c732fc794776e85d0bce3c404ad5bb75dae6d3bbc542147d719562bb35ed0"
+        "version": "4545a53dbfa83176b312019322fb47f663ce817ca7e2b2ee46fbb020b38aac18",
+        "signature": "aa5e80face8f40c952b04e4513685fbb1b6fa24e13b23145b8f19184dfbba843"
       },
       "../node_modules/@types/bcryptjs/index.d.ts": {
         "version": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f",
@@ -3398,8 +3398,8 @@
         "signature": "91e0108a0dee06bfb397a6b893632809333e19670620ed8a6ce29d77a1659310"
       },
       "../src/access-control/role/roles.entity.ts": {
-        "version": "c0e9b32d35b7771e831829ad99b7bf290fe84b45088877a8873e538a954bd3ce",
-        "signature": "c659b19ba30eb3cb9d3086f6dce6d8d43040afc2fc87b86af2adc60a0bf29380"
+        "version": "0d7605d595c0ed7abe54a76bf4d9764a26275eaa796b44366440b2a621ee6288",
+        "signature": "4b1d8d14ce446833e3fd0599e1336856d736eb919b54d0c633635a4e327ffba6"
       },
       "../src/access-control/role/role.service.ts": {
         "version": "f534aff71df8f41e75a78b14ec8daa496e9b7336c0511f848e2289baea0b5da0",
@@ -4006,8 +4006,8 @@
         "signature": "447b753b3e76578ef29631d0bcca78bac6ce0b377c4ca60923c08c835f09e01e"
       },
       "../src/notification/notification.entity.ts": {
-        "version": "7e24bfeeeec8d2df84eed374a65f501a01dee8c5939b1f0e1b6601cf83da1f9f",
-        "signature": "b782d2f33af80188a4f25d7b6bd365d2f5d40f2d4d017872dbc0fa8978ff5158"
+        "version": "fe5064494deb8af72c4d9d3ab876759faa58192c901fafa46d4b6f697831b880",
+        "signature": "88febaa95bc0ddf21e4dc0d27b84c8f2bd9a4b9abe94a1dca5f803dcfac9cd5b"
       },
       "../src/notification/notification.service.ts": {
         "version": "a70c8ff838d27443f6a4bca13c6a35831545c5d1d905f5593cc4284720bab9fd",
@@ -4088,10 +4088,6 @@
       "../src/index.ts": {
         "version": "8800b78bfd6b3369583c86ee53a29ae73759e02bc2dfb6e47649c52be0f0f56d",
         "signature": "601c7f77fb4fdb0268885497600a0e1b65525279aae5f1c3e337e9355aa38414"
-      },
-      "../src/logger/db-log.no-sql.entity.ts": {
-        "version": "10c9998e0122f7a4bf583a3ac058bce0b22d0856ff1cf80178225ed4715d889c",
-        "signature": "3c194d3f6724a818ef1bf362e12e8ed30e2e20610bf20343adf2f02dc22370ff"
       },
       "../src/storage/publicReadPolicy.ts": {
         "version": "b807db98c0046ebb8d459e7fc9a64bb3dc01c5de20681b1eee159ab851408dc9",
@@ -13511,6 +13507,7 @@
       ],
       "../src/notification/notification.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
+        "../src/entities/base-user.entity.ts",
         "../src/types.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -13783,20 +13780,6 @@
         "../src/types.ts",
         "../src/uuid.pipe.ts",
         "../src/validate-email.pipe.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/logger/db-log.no-sql.entity.ts": [
-        "../node_modules/typeorm/index.d.ts",
-        "../node_modules/class-transformer/index.d.ts",
-        "../node_modules/@types/deep-diff/index.d.ts",
-        "../node_modules/@types/faker/index.d.ts",
-        "../node_modules/@types/node/readline.d.ts",
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/types.ts",
-        "../src/entities/user.interface.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -14316,11 +14299,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/logger/db-log.no-sql.entity.ts": [
-        "../src/types.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/entities/user.interface.ts"
-      ],
       "../src/typeorm/orm-query.pipe.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/types.ts",
@@ -14835,6 +14813,10 @@
         "../src/entities/base.entity.ts",
         "../src/entities/user.interface.ts"
       ],
+      "../src/notification/notification.entity.ts": [
+        "../src/entities/base-user.entity.ts",
+        "../src/types.ts"
+      ],
       "../src/auth/auth.dto.ts": [
         "../src/entities/base-user.entity.ts"
       ],
@@ -14848,6 +14830,7 @@
         "../src/access-control/role/roles.entity.ts"
       ],
       "../src/access-control/role/roles.entity.ts": [
+        "../src/entities/base-user-with-roles.entity.ts",
         "../src/entities/base.entity.ts"
       ],
       "../src/base-find.service.ts": [
@@ -16873,9 +16856,6 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/notification/notification.entity.ts": [
-        "../src/types.ts"
       ],
       "../src/typeorm/parse-to-orm-query.ts": [
         "../src/types.ts"
@@ -24147,7 +24127,6 @@
       "../src/simple-admin.guard.ts",
       "../src/typeorm/orm-query.pipe.ts",
       "../src/index.ts",
-      "../src/logger/db-log.no-sql.entity.ts",
       "../src/storage/publicReadPolicy.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",

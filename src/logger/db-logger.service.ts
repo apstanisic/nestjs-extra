@@ -30,7 +30,7 @@ export class DbLoggerService<T extends WithId = any> extends BaseFindService<
     log.domainId = typeof domain === 'object' ? domain.id : domain;
     log.executedBy = by;
     log.reason = reason;
-    log.initialValue = oldValue;
+    log.initialValue = oldValue ?? {};
     if (oldValue) {
       log.entityId = oldValue.id;
     }

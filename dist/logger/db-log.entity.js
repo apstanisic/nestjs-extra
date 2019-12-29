@@ -37,7 +37,7 @@ let DbLog = class DbLog extends base_entity_1.BaseEntity {
     }
 };
 __decorate([
-    typeorm_1.Column({ type: 'string', default: 'update' }),
+    typeorm_1.Column({ default: 'update' }),
     __metadata("design:type", String)
 ], DbLog.prototype, "action", void 0);
 __decorate([

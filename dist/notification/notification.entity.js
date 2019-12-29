@@ -25,6 +25,10 @@ __decorate([
     __metadata("design:type", String)
 ], Notification.prototype, "body", void 0);
 __decorate([
+    typeorm_1.ManyToOne('User'),
+    __metadata("design:type", Object)
+], Notification.prototype, "user", void 0);
+__decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Notification.prototype, "userId", void 0);
