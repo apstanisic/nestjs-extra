@@ -30,7 +30,7 @@ let DbModule = DbModule_1 = class DbModule {
                             database: envs[consts_1.DB_DATABASE],
                             username: envs[consts_1.DB_USER],
                             password: envs[consts_1.DB_PASSWORD],
-                            port: parseInt((_a = envs[consts_1.DB_PORT], (_a !== null && _a !== void 0 ? _a : '5432')), 10),
+                            port: Number((_a = envs[consts_1.DB_PORT], (_a !== null && _a !== void 0 ? _a : 5432))),
                             maxQueryExecutionTime: 3000,
                             synchronize: !isProduction,
                             logging: isProduction ? ['error'] : 'all',

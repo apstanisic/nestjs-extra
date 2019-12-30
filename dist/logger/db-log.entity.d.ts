@@ -1,12 +1,14 @@
 import { BaseEntity } from '../entities/base.entity';
 import { BasicUserInfo } from '../entities/user.interface';
 import { UUID, WithId } from '../types';
-export declare class DbLog<T extends WithId = any> extends BaseEntity {
+import { BaseUser } from '../entities/base-user.entity';
+export declare class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> extends BaseEntity {
     action: 'update' | 'delete' | 'create' | string;
     reason?: string;
-    executedBy: BasicUserInfo;
+    executedByInfo: BasicUserInfo;
+    executedBy: User;
     executedById: UUID;
-    initialValue: T | Record<string, any>;
+    oldValue: T | Record<string, any>;
     changes: any;
     entityId: UUID;
     domainId?: UUID;

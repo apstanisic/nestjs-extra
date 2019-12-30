@@ -17,19 +17,19 @@ const base_entity_1 = require("../entities/base.entity");
 const user_interface_1 = require("../entities/user.interface");
 let DbLog = class DbLog extends base_entity_1.BaseEntity {
     set newValue(value) {
-        this.changes = deep_diff_1.diff(this.initialValue, value);
+        this.changes = deep_diff_1.diff(this.oldValue, value);
         this._newValue = value;
     }
     _prepare() {
         var _a, _b, _c;
         const user = class_transformer_1.classToPlain(this.executedBy);
-        this.executedBy = class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, user, {
+        this.executedByInfo = class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, user, {
             excludeExtraneousValues: true,
         });
         this.executedById = this.executedBy.id;
-        this.initialValue = (_a = class_transformer_1.classToClass(this.initialValue), (_a !== null && _a !== void 0 ? _a : {}));
-        if ((_b = this.initialValue) === null || _b === void 0 ? void 0 : _b.id) {
-            this.entityId = this.initialValue.id;
+        this.oldValue = (_a = class_transformer_1.classToClass(this.oldValue), (_a !== null && _a !== void 0 ? _a : {}));
+        if ((_b = this.oldValue) === null || _b === void 0 ? void 0 : _b.id) {
+            this.entityId = this.oldValue.id;
         }
         else if ((_c = this._newValue) === null || _c === void 0 ? void 0 : _c.id) {
             this.entityId = this._newValue.id;
@@ -50,6 +50,10 @@ __decorate([
 __decorate([
     typeorm_1.Column({ type: 'jsonb' }),
     __metadata("design:type", user_interface_1.BasicUserInfo)
+], DbLog.prototype, "executedByInfo", void 0);
+__decorate([
+    typeorm_1.ManyToOne('User'),
+    __metadata("design:type", Object)
 ], DbLog.prototype, "executedBy", void 0);
 __decorate([
     typeorm_1.Column(),
@@ -58,7 +62,7 @@ __decorate([
 __decorate([
     typeorm_1.Column({ type: 'jsonb', default: {} }),
     __metadata("design:type", Object)
-], DbLog.prototype, "initialValue", void 0);
+], DbLog.prototype, "oldValue", void 0);
 __decorate([
     typeorm_1.Column({ type: 'jsonb' }),
     __metadata("design:type", Object)
