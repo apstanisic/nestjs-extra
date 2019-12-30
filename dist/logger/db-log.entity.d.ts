@@ -1,17 +1,17 @@
 import { BaseEntity } from '../entities/base.entity';
-import { BasicUserInfo, IUser } from '../entities/user.interface';
+import { BasicUserInfo } from '../entities/user.interface';
 import { UUID, WithId } from '../types';
 export declare class DbLog<T extends WithId = any> extends BaseEntity {
     action: 'update' | 'delete' | 'create' | string;
     reason?: string;
-    executedBy: BasicUserInfo | IUser;
+    executedBy: BasicUserInfo;
     executedById: UUID;
-    initialValue?: T;
+    initialValue: T | Record<string, any>;
     changes: any;
     entityId: UUID;
     domainId?: UUID;
     private _newValue?;
     set newValue(value: T | undefined);
     _prepare(): void;
-    throwError(): void;
+    preventUpdate(): void;
 }

@@ -1,3 +1,4 @@
+import { Expose } from 'class-transformer';
 import { ImageSizes } from '../types';
 import { Image } from './image.entity';
 
@@ -12,9 +13,15 @@ export interface IUser extends BasicUserInfo {
 
 /** User will always have this fields when returned. Avatar is optional */
 export class BasicUserInfo {
+  @Expose()
   id: string;
+  @Expose()
   name: string;
+  @Expose()
   email: string;
+  @Expose()
+  phoneNumber?: string;
+  /** @todo See should i expose this. It takes to much space in db */
   avatar?: string | ImageSizes | Image;
 }
 

@@ -6,6 +6,11 @@ import { WithId } from '../types';
 import { DbLogMetadata } from './db-log-metadata';
 import { DbLog } from './db-log.entity';
 
+interface GenerateLogParams<T> {
+  oldValue?: T;
+  meta: DbLogMetadata;
+}
+
 @Injectable()
 export class DbLoggerService<T extends WithId = any> extends BaseFindService<
   DbLog
@@ -16,22 +21,17 @@ export class DbLoggerService<T extends WithId = any> extends BaseFindService<
 
   /**
    * Initialize log. This will create log entity, and fill some fields.
-   * @warning This will not save log in database. You must use store.
+   * @warning This will not save log in database. This only creates instance.
+   * You must use store for persisting in db.
    */
-  generateLog({
-    oldValue,
-    meta,
-  }: {
-    oldValue?: T;
-    meta: DbLogMetadata;
-  }): DbLog<T> {
-    const { domain, user: by, reason } = meta;
+  generateLog({ oldValue, meta }: GenerateLogParams<T>): DbLog<T> {
+    const { domain, user, reason } = meta;
     const log = new DbLog<T>();
     log.domainId = typeof domain === 'object' ? domain.id : domain;
-    log.executedBy = by;
+    log.executedByInfo = user;
     log.reason = reason;
-    log.initialValue = oldValue ?? {};
-    if (oldValue) {
+    log.oldValue = oldValue ?? {};
+    if (oldValue?.id) {
       log.entityId = oldValue.id;
     }
 

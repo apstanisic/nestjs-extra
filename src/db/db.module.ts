@@ -36,7 +36,7 @@ export class DbModule {
               database: envs[DB_DATABASE],
               username: envs[DB_USER],
               password: envs[DB_PASSWORD],
-              port: parseInt(envs[DB_PORT] ?? '5432', 10),
+              port: Number(envs[DB_PORT] ?? 5432),
               maxQueryExecutionTime: 3000,
               synchronize: !isProduction,
               logging: isProduction ? ['error'] : 'all',

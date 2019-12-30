@@ -21,18 +21,21 @@ let DbLog = class DbLog extends base_entity_1.BaseEntity {
         this._newValue = value;
     }
     _prepare() {
-        var _a, _b;
-        this.executedBy = class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, this.executedBy);
+        var _a, _b, _c;
+        const user = class_transformer_1.classToPlain(this.executedBy);
+        this.executedBy = class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, user, {
+            excludeExtraneousValues: true,
+        });
         this.executedById = this.executedBy.id;
-        this.initialValue = class_transformer_1.classToClass(this.initialValue);
-        if ((_a = this.initialValue) === null || _a === void 0 ? void 0 : _a.id) {
+        this.initialValue = (_a = class_transformer_1.classToClass(this.initialValue), (_a !== null && _a !== void 0 ? _a : {}));
+        if ((_b = this.initialValue) === null || _b === void 0 ? void 0 : _b.id) {
             this.entityId = this.initialValue.id;
         }
-        else if ((_b = this._newValue) === null || _b === void 0 ? void 0 : _b.id) {
+        else if ((_c = this._newValue) === null || _c === void 0 ? void 0 : _c.id) {
             this.entityId = this._newValue.id;
         }
     }
-    throwError() {
+    preventUpdate() {
         throw new common_1.InternalServerErrorException();
     }
 };
@@ -46,14 +49,14 @@ __decorate([
 ], DbLog.prototype, "reason", void 0);
 __decorate([
     typeorm_1.Column({ type: 'jsonb' }),
-    __metadata("design:type", Object)
+    __metadata("design:type", user_interface_1.BasicUserInfo)
 ], DbLog.prototype, "executedBy", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], DbLog.prototype, "executedById", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true, type: 'jsonb' }),
+    typeorm_1.Column({ type: 'jsonb', default: {} }),
     __metadata("design:type", Object)
 ], DbLog.prototype, "initialValue", void 0);
 __decorate([
@@ -79,7 +82,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], DbLog.prototype, "throwError", null);
+], DbLog.prototype, "preventUpdate", null);
 DbLog = __decorate([
     typeorm_1.Entity('logs')
 ], DbLog);

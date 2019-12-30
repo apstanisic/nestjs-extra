@@ -1,10 +1,11 @@
 import { InternalServerErrorException } from '@nestjs/common';
-import { classToClass, plainToClass } from 'class-transformer';
+import { classToClass, plainToClass, classToPlain } from 'class-transformer';
 import { diff } from 'deep-diff';
 import { Entity, BeforeInsert, BeforeUpdate, Column, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../entities/base.entity';
 import { BasicUserInfo, IUser } from '../entities/user.interface';
 import { UUID, WithId } from '../types';
+import { BaseUser } from '../entities/base-user.entity';
 
 /**
  * This entity is using MongoDb. TypeOrm currently supports only this NoSql db.
@@ -12,7 +13,10 @@ import { UUID, WithId } from '../types';
  * it does not have primary field.
  */
 @Entity('logs')
-export class DbLog<T extends WithId = any> extends BaseEntity {
+export class DbLog<
+  T extends WithId = any,
+  User extends BaseUser = BaseUser
+> extends BaseEntity {
   /** What action was executed (delete, update, custom-action) */
   @Column({ default: 'update' })
   action: 'update' | 'delete' | 'create' | string;
@@ -21,20 +25,19 @@ export class DbLog<T extends WithId = any> extends BaseEntity {
   @Column({ nullable: true })
   reason?: string;
 
-  /** Who executed this action */
-  //   @ManyToOne(type => User)
-  //   @Column(type => BasicUserInfo)
+  /** Who executed this action. Backup data in case of user deleting account */
   @Column({ type: 'jsonb' })
-  executedBy: BasicUserInfo;
+  executedByInfo: BasicUserInfo;
+
+  @ManyToOne('User')
+  executedBy: User;
 
   @Column()
   executedById: UUID;
 
-  /** Value before changes. For creating it will be null. Don't set directly.
-   * @todo remove nullable property
-   */
+  /** Value before changes. Default is {} for easier comparison. */
   @Column({ type: 'jsonb', default: {} })
-  initialValue: T | Record<string, any>;
+  oldValue: T | Record<string, any>;
 
   /** Diff of changes. */
   @Column({ type: 'jsonb' })
@@ -61,22 +64,23 @@ export class DbLog<T extends WithId = any> extends BaseEntity {
 
   /** This will generate difference between new and old values. */
   set newValue(value: T | undefined) {
-    this.changes = diff(this.initialValue, value);
+    this.changes = diff(this.oldValue, value);
     this._newValue = value;
   }
 
   /** Transform data */
   @BeforeInsert()
   _prepare(): void {
-    this.executedBy = plainToClass(BasicUserInfo, this.executedBy, {
+    const user = classToPlain(this.executedBy);
+    this.executedByInfo = plainToClass(BasicUserInfo, user, {
       excludeExtraneousValues: true,
     });
     this.executedById = this.executedBy.id;
     // Remove sensitive properties (passwords, cc numbers...)
-    this.initialValue = classToClass(this.initialValue) ?? {};
+    this.oldValue = classToClass(this.oldValue) ?? {};
     // Get entity id from provided values.
-    if (this.initialValue?.id) {
-      this.entityId = this.initialValue.id;
+    if (this.oldValue?.id) {
+      this.entityId = this.oldValue.id;
     } else if (this._newValue?.id) {
       this.entityId = this._newValue.id;
     }
@@ -84,7 +88,7 @@ export class DbLog<T extends WithId = any> extends BaseEntity {
 
   /** Logs can't be updated */
   @BeforeUpdate()
-  throwError(): void {
+  preventUpdate(): void {
     throw new InternalServerErrorException();
   }
 }

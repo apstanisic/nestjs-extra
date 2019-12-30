@@ -11,6 +11,7 @@ export declare class BasicUserInfo {
     id: string;
     name: string;
     email: string;
+    phoneNumber?: string;
     avatar?: string | ImageSizes | Image;
 }
 export interface IBasicUserInfo extends BasicUserInfo {

@@ -36,7 +36,7 @@ let DbLoggerService = class DbLoggerService extends base_find_service_1.BaseFind
         log.domainId = typeof domain === 'object' ? domain.id : domain;
         log.executedBy = by;
         log.reason = reason;
-        log.initialValue = oldValue;
+        log.initialValue = (oldValue !== null && oldValue !== void 0 ? oldValue : {});
         if (oldValue) {
             log.entityId = oldValue.id;
         }

@@ -13,19 +13,20 @@ export const SIMPLE_ADMIN_MAILS = 'SIMPLE_ADMIN_MAILS';
 export const NODE_ENV = 'NODE_ENV';
 
 // Database
-export const DB_TYPE = 'DB_TYPE';
 export const DB_HOST = 'DB_HOST';
 export const DB_USER = 'DB_USER';
 export const DB_PASSWORD = 'DB_PASSWORD';
 export const DB_DATABASE = 'DB_DATABASE';
-export const DB_PORT = 'DB_PORT';
+export const DB_PORT = 'DB_PORT'; // Defaults to 5432 (standard postgres port)
+// export const DB_TYPE = 'DB_TYPE'; // Only postgres
 
+// Not used currently. Switched to all in psql
 // Log database
-export const LOG_DB_HOST = 'LOG_DB_HOST';
-export const LOG_DB_DATABASE = 'LOG_DB_DATABASE';
-export const LOG_DB_PORT = 'LOG_DB_PORT';
-export const LOG_DB_USER = 'LOG_DB_USER';
-export const LOG_DB_PASSWORD = 'LOG_DB_PASSWORD';
+// export const LOG_DB_HOST = 'LOG_DB_HOST';
+// export const LOG_DB_DATABASE = 'LOG_DB_DATABASE';
+// export const LOG_DB_PORT = 'LOG_DB_PORT';
+// export const LOG_DB_USER = 'LOG_DB_USER';
+// export const LOG_DB_PASSWORD = 'LOG_DB_PASSWORD';
 //  Email SMTP
 export const EMAIL_HOST = 'EMAIL_HOST';
 export const EMAIL_PORT = 'EMAIL_PORT';
