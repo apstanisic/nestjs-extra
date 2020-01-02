@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const config_service_1 = require("./config/config.service");
+const config_1 = require("@nestjs/config");
 const consts_1 = require("./consts");
 let SimpleAdminGuard = class SimpleAdminGuard {
     constructor(configService) {
@@ -20,7 +20,7 @@ let SimpleAdminGuard = class SimpleAdminGuard {
         const mailsString = this.configService.get(consts_1.SIMPLE_ADMIN_MAILS);
         let mails;
         if (mailsString) {
-            mails = mailsString.split(';').map(mail => mail.trim());
+            mails = mailsString.split(';').map((mail) => mail.trim());
         }
         else {
             throw new common_1.NotImplementedException();
@@ -31,7 +31,7 @@ let SimpleAdminGuard = class SimpleAdminGuard {
 };
 SimpleAdminGuard = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [config_service_1.ConfigService])
+    __metadata("design:paramtypes", [config_1.ConfigService])
 ], SimpleAdminGuard);
 exports.SimpleAdminGuard = SimpleAdminGuard;
 //# sourceMappingURL=simple-admin.guard.js.map

@@ -1,19 +1,19 @@
 import {
-  Module,
+  Global,
   InternalServerErrorException,
   Logger,
-  Global,
+  Module,
 } from '@nestjs/common';
-import { PassportModule, AuthGuard } from '@nestjs/passport';
+import { ConfigService } from '@nestjs/config';
 import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
-import { AuthService } from './auth.service';
+import { PassportModule } from '@nestjs/passport';
+import { JWT_SECRET } from '../consts';
+import { AuthMailService } from './auth-mail.service';
 import { AuthController } from './auth.controller';
+import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
 import { PasswordResetController } from './password-reset.controller';
-import { ConfigService } from '../config/config.service';
-import { AuthMailService } from './auth-mail.service';
 import { PasswordResetService } from './password-reset.service';
-import { JWT_SECRET } from '../consts';
 
 export { AuthGuard } from '@nestjs/passport';
 

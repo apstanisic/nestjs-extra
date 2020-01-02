@@ -1,9 +1,10 @@
-import { Test } from '@nestjs/testing';
 import { UnauthorizedException } from '@nestjs/common';
-import { JwtStrategy } from './jwt.strategy';
-import { ConfigService } from '../config/config.service';
-import { AuthService } from './auth.service';
+import { ConfigService } from '@nestjs/config';
+import { Test } from '@nestjs/testing';
 import { BaseUser } from '../entities/base-user.entity';
+import { AuthService } from './auth.service';
+import { JwtStrategy } from './jwt.strategy';
+
 // import { User } from '../../user/user.entity';
 
 const configMock = jest.fn(() => ({ get: (key: any): string => key }));

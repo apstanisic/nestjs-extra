@@ -1,8 +1,12 @@
+/// <reference types="node" />
 import { DynamicModule } from '@nestjs/common';
-import { ConfigOptions } from './config/config.module';
+import { AcOptions } from './access-control/access-control.module';
 import { DbOptions } from './db/db.module';
 import { StorageOptions } from './storage/storage.module';
-import { AcOptions } from './access-control/access-control.module';
+import { Struct } from './types';
+interface ConfigOptions {
+    data: string | Buffer | Struct<string>;
+}
 export interface CoreModuleParams {
     config?: ConfigOptions;
     storage: StorageOptions | false;
@@ -15,3 +19,4 @@ export interface CoreModuleParams {
 export declare class CoreModule {
     static forRoot(params: CoreModuleParams): DynamicModule;
 }
+export {};

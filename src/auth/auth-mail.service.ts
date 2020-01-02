@@ -1,21 +1,19 @@
+// import { MailService } from '../mail/mail.service';
+import { MailerService } from '@nest-modules/mailer';
 import {
   Inject,
   Injectable,
   InternalServerErrorException,
   Logger,
 } from '@nestjs/common';
-import { readFile } from 'fs';
+import { ConfigService } from '@nestjs/config';
 import * as Handlebars from 'handlebars';
-import * as path from 'path';
-import { BaseService } from '../base.service';
+import { BaseUserService } from '../base-user.service';
 // import { UsersService } from "../../user/user.service";
-import { ConfigService } from '../config/config.service';
+// import { ConfigService } from '../config/config.service';
 import { USER_SERVICE } from '../consts';
-import { BaseUser } from '../entities/base-user.entity';
-import { MailService } from '../mail/mail.service';
 import { accountConfirmTemplate } from './templates/account-confirm.handlebars';
 import { passwordResetTemplate } from './templates/password-reset.handlebars';
-import { BaseUserService } from '../base-user.service';
 
 interface CommonHandlebars {
   contactAddress?: string;
@@ -50,7 +48,7 @@ export class AuthMailService {
     // private readonly usersService: UsersService,
 
     @Inject(USER_SERVICE) private usersService: BaseUserService,
-    private readonly mailService: MailService,
+    private readonly mailerService: MailerService,
     private readonly configService: ConfigService,
   ) {
     this.storeTemplatesInMemory();
@@ -75,7 +73,7 @@ export class AuthMailService {
         resetUrl,
       });
 
-      await this.mailService.send({
+      await this.mailerService.sendMail({
         to: user.email,
         subject: `Resetovanje lozinke - ${commonValues.firmName}`,
         html: template,
@@ -96,7 +94,7 @@ export class AuthMailService {
       confirmUrl,
     });
 
-    await this.mailService.send({
+    await this.mailerService.sendMail({
       to: email,
       subject: `Potvrda naloga - ${commonValues.firmName}`,
       html: template,

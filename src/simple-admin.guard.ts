@@ -4,7 +4,7 @@ import {
   Injectable,
   NotImplementedException,
 } from '@nestjs/common';
-import { ConfigService } from './config/config.service';
+import { ConfigService } from '@nestjs/config';
 import { SIMPLE_ADMIN_MAILS } from './consts';
 
 /** Simplest admin guard, accepts admins provided in config service */
@@ -17,7 +17,7 @@ export class SimpleAdminGuard implements CanActivate {
     const mailsString = this.configService.get(SIMPLE_ADMIN_MAILS);
     let mails: string[];
     if (mailsString) {
-      mails = mailsString.split(';').map(mail => mail.trim());
+      mails = mailsString.split(';').map((mail: string) => mail.trim());
     } else {
       throw new NotImplementedException();
     }

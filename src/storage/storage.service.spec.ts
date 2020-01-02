@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { ConfigService } from '@nestjs/config';
 import { removeObject } from '../__mocks__/minio';
-import { ConfigService } from '../config/config.service';
 import { StorageService } from './storage.service';
 
 // jest.mock('minio');

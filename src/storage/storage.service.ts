@@ -3,15 +3,15 @@ import {
   InternalServerErrorException,
   Logger,
 } from '@nestjs/common';
-import * as AWS from 'aws-sdk';
 // import { Client } from 'minio';
-import { ConfigService } from '../config/config.service';
+import { ConfigService } from '@nestjs/config';
+import * as AWS from 'aws-sdk';
 import {
   STORAGE_ACCESS_KEY,
   STORAGE_BUCKET_NAME,
   STORAGE_ENDPOINT,
-  STORAGE_SECRET_KEY,
   STORAGE_REGION,
+  STORAGE_SECRET_KEY,
 } from '../consts';
 
 /**

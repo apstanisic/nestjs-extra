@@ -19,11 +19,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
 const passport_1 = require("@nestjs/passport");
 const passport_jwt_1 = require("passport-jwt");
-const config_service_1 = require("../config/config.service");
-const auth_service_1 = require("./auth.service");
 const consts_1 = require("../consts");
+const auth_service_1 = require("./auth.service");
 let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport_jwt_1.Strategy) {
     constructor(authService, configService) {
         super({
@@ -47,7 +47,7 @@ let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport
 JwtStrategy = __decorate([
     common_1.Injectable(),
     __metadata("design:paramtypes", [auth_service_1.AuthService,
-        config_service_1.ConfigService])
+        config_1.ConfigService])
 ], JwtStrategy);
 exports.JwtStrategy = JwtStrategy;
 //# sourceMappingURL=jwt.strategy.js.map

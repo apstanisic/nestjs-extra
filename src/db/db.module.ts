@@ -1,6 +1,6 @@
 import { DynamicModule, Module } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { ConfigService } from '../config/config.service';
 import {
   DB_DATABASE,
   DB_HOST,
@@ -25,26 +25,26 @@ export class DbModule {
         TypeOrmModule.forRootAsync({
           inject: [ConfigService],
           useFactory: (config: ConfigService): TypeOrmModuleOptions => {
-            const envs = config.getAll();
-            const shouldCache = envs[REDIS_HOST] !== undefined;
-            const isProduction = envs[NODE_ENV] === 'production';
+            const envs = config.get;
+            const shouldCache = envs(REDIS_HOST) !== undefined;
+            const isProduction = envs(NODE_ENV) === 'production';
 
             const options: TypeOrmModuleOptions = {
               entities: params.entities,
               type: 'postgres',
-              host: envs[DB_HOST],
-              database: envs[DB_DATABASE],
-              username: envs[DB_USER],
-              password: envs[DB_PASSWORD],
-              port: Number(envs[DB_PORT] ?? 5432),
+              host: envs(DB_HOST),
+              database: envs(DB_DATABASE),
+              username: envs(DB_USER),
+              password: envs(DB_PASSWORD),
+              port: Number(envs(DB_PORT) ?? 5432),
               maxQueryExecutionTime: 3000,
               synchronize: !isProduction,
               logging: isProduction ? ['error'] : 'all',
               cache: shouldCache && {
                 type: 'redis',
                 options: {
-                  host: envs[REDIS_HOST],
-                  port: envs[REDIS_PORT] ?? '6379',
+                  host: envs(REDIS_HOST),
+                  port: envs(REDIS_PORT) ?? '6379',
                 },
                 duration: 10000,
               },

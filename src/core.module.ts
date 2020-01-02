@@ -1,20 +1,25 @@
+import { MailerModule } from '@nest-modules/mailer';
 import { DynamicModule, Module } from '@nestjs/common';
-import { AuthModule } from './auth/auth.module';
-import { ConfigModule, ConfigOptions } from './config/config.module';
-import { CronModule } from './cron/cron.module';
-import { DbModule, DbOptions } from './db/db.module';
-import { DbLoggerModule } from './logger/db-logger.module';
-import { MailModule } from './mail/mail.module';
-import { NotificationModule } from './notification/notification.module';
-import { StorageModule, StorageOptions } from './storage/storage.module';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ScheduleModule } from '@nestjs/schedule';
 import {
   AccessControlModule,
   AcOptions,
 } from './access-control/access-control.module';
-import { Notification } from './notification/notification.entity';
 import { Role } from './access-control/role/roles.entity';
+import { AuthModule } from './auth/auth.module';
+import { EMAIL_HOST, EMAIL_PASSWORD, EMAIL_USER } from './consts';
+import { DbModule, DbOptions } from './db/db.module';
 import { DbLog } from './logger/db-log.entity';
+import { DbLoggerModule } from './logger/db-logger.module';
+import { Notification } from './notification/notification.entity';
+import { NotificationModule } from './notification/notification.module';
+import { StorageModule, StorageOptions } from './storage/storage.module';
+import { Struct } from './types';
 
+interface ConfigOptions {
+  data: string | Buffer | Struct<string>;
+}
 /** Params for dynamic module */
 export interface CoreModuleParams {
   config?: ConfigOptions;
@@ -41,13 +46,34 @@ export class CoreModule {
     if (params.dbLog) entities.push(DbLog);
 
     const modules = [
-      ConfigModule.forRoot(params.config),
+      ConfigModule.forRoot({
+        isGlobal: true,
+        load: [() => params.config ?? {}],
+      }),
+      ScheduleModule.forRoot(),
+      // ConfigModule.forRoot(params.config),
       DbModule.forRoot(params.db),
       AuthModule,
-      CronModule,
     ];
 
-    if (params.mail) modules.push(MailModule);
+    // if (params.mail) modules.push(MailModule);
+    if (params.mail)
+      modules.push(
+        MailerModule.forRootAsync({
+          inject: [ConfigService],
+          useFactory: (configService: ConfigService) => {
+            const { get } = configService;
+            return {
+              transport: {
+                host: get(EMAIL_HOST),
+                secure: false,
+                sender: get(EMAIL_USER),
+                auth: { user: get(EMAIL_USER), pass: get(EMAIL_PASSWORD) },
+              },
+            };
+          },
+        }),
+      );
     if (params.storage) modules.push(StorageModule.forRoot(params.storage));
     if (params.dbLog) modules.push(DbLoggerModule);
     if (params.notifications) modules.push(NotificationModule);

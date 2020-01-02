@@ -1,13 +1,13 @@
-import { ConfigService } from '../config/config.service';
-import { MailService } from '../mail/mail.service';
+import { MailerService } from '@nest-modules/mailer';
+import { ConfigService } from '@nestjs/config';
 import { BaseUserService } from '../base-user.service';
 export declare class AuthMailService {
     private usersService;
-    private readonly mailService;
+    private readonly mailerService;
     private readonly configService;
     private templates;
     private logger;
-    constructor(usersService: BaseUserService, mailService: MailService, configService: ConfigService);
+    constructor(usersService: BaseUserService, mailerService: MailerService, configService: ConfigService);
     sendResetPasswordEmail(email: string): Promise<void>;
     sendConfirmationEmail(email: string, token: string): Promise<void>;
     private getCommonTemplateValues;

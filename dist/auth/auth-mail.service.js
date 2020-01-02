@@ -21,18 +21,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const mailer_1 = require("@nest-modules/mailer");
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
 const Handlebars = require("handlebars");
-const config_service_1 = require("../config/config.service");
+const base_user_service_1 = require("../base-user.service");
 const consts_1 = require("../consts");
-const mail_service_1 = require("../mail/mail.service");
 const account_confirm_handlebars_1 = require("./templates/account-confirm.handlebars");
 const password_reset_handlebars_1 = require("./templates/password-reset.handlebars");
-const base_user_service_1 = require("../base-user.service");
 let AuthMailService = class AuthMailService {
-    constructor(usersService, mailService, configService) {
+    constructor(usersService, mailerService, configService) {
         this.usersService = usersService;
-        this.mailService = mailService;
+        this.mailerService = mailerService;
         this.configService = configService;
         this.templates = {};
         this.logger = new common_1.Logger();
@@ -53,7 +53,7 @@ let AuthMailService = class AuthMailService {
                 const template = this.templates.passwordReset({
                     resetUrl,
                 });
-                yield this.mailService.send({
+                yield this.mailerService.sendMail({
                     to: user.email,
                     subject: `Resetovanje lozinke - ${commonValues.firmName}`,
                     html: template,
@@ -70,7 +70,7 @@ let AuthMailService = class AuthMailService {
             if (!this.templates.accountConfirm)
                 throw new common_1.InternalServerErrorException();
             const template = this.templates.accountConfirm(Object.assign(Object.assign({}, commonValues), { confirmUrl }));
-            yield this.mailService.send({
+            yield this.mailerService.sendMail({
                 to: email,
                 subject: `Potvrda naloga - ${commonValues.firmName}`,
                 html: template,
@@ -100,8 +100,8 @@ AuthMailService = __decorate([
     common_1.Injectable(),
     __param(0, common_1.Inject(consts_1.USER_SERVICE)),
     __metadata("design:paramtypes", [base_user_service_1.BaseUserService,
-        mail_service_1.MailService,
-        config_service_1.ConfigService])
+        mailer_1.MailerService,
+        config_1.ConfigService])
 ], AuthMailService);
 exports.AuthMailService = AuthMailService;
 //# sourceMappingURL=auth-mail.service.js.map

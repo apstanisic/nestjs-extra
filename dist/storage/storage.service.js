@@ -19,8 +19,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
 const AWS = require("aws-sdk");
-const config_service_1 = require("../config/config.service");
 const consts_1 = require("../consts");
 let StorageService = class StorageService {
     constructor(config) {
@@ -89,7 +89,7 @@ let StorageService = class StorageService {
 };
 StorageService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [config_service_1.ConfigService])
+    __metadata("design:paramtypes", [config_1.ConfigService])
 ], StorageService);
 exports.StorageService = StorageService;
 //# sourceMappingURL=storage.service.js.map
