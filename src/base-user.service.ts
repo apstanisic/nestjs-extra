@@ -107,6 +107,7 @@ export class BaseUserService<
   /** @Todo what about deleting roles... */
   async deleteAccount({ email, password }: LoginUserDto): Promise<any> {
     const user = await this.findForLogin(email, password);
+    if (user.avatar) await this.storageImagesService.removeImage(user.avatar);
     return this.delete(user, { user });
   }
 

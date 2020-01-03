@@ -17,7 +17,7 @@ import { BaseEntity } from '../../entities/base.entity';
 @Entity('roles')
 export class Role<User = BaseUserWithRoles> extends BaseEntity {
   /** User that have this role */
-  @ManyToOne('User')
+  @ManyToOne('User', { onDelete: 'CASCADE' })
   user: User;
 
   /** User's id */

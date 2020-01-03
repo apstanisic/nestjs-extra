@@ -6,7 +6,6 @@ export declare class AuthMailService {
     private readonly mailerService;
     private readonly configService;
     private templates;
-    private logger;
     constructor(usersService: BaseUserService, mailerService: MailerService, configService: ConfigService);
     sendResetPasswordEmail(email: string): Promise<void>;
     sendConfirmationEmail(email: string, token: string): Promise<void>;

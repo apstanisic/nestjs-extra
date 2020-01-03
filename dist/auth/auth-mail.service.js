@@ -35,7 +35,6 @@ let AuthMailService = class AuthMailService {
         this.mailerService = mailerService;
         this.configService = configService;
         this.templates = {};
-        this.logger = new common_1.Logger();
         this.storeTemplatesInMemory();
     }
     sendResetPasswordEmail(email) {

@@ -41,12 +41,7 @@ export class AuthMailService {
   /** Handlebars templates */
   private templates: Templates = {};
 
-  /** Cli logger */
-  private logger = new Logger();
-
   constructor(
-    // private readonly usersService: UsersService,
-
     @Inject(USER_SERVICE) private usersService: BaseUserService,
     private readonly mailerService: MailerService,
     private readonly configService: ConfigService,

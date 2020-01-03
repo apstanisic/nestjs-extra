@@ -20,7 +20,7 @@ export class Notification<User = BaseUser> {
   @Column({ type: 'text', nullable: true })
   body?: string;
 
-  @ManyToOne('User')
+  @ManyToOne('User', { onDelete: 'CASCADE' })
   user: User;
 
   @Column()

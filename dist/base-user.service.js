@@ -90,6 +90,8 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
     deleteAccount({ email, password }) {
         return __awaiter(this, void 0, void 0, function* () {
             const user = yield this.findForLogin(email, password);
+            if (user.avatar)
+                yield this.storageImagesService.removeImage(user.avatar);
             return this.delete(user, { user });
         });
     }
