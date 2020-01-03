@@ -1,6 +1,7 @@
 import { MailerModule } from '@nest-modules/mailer';
 import { DynamicModule, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModuleOptions } from '@nestjs/config/dist/interfaces';
 import { ScheduleModule } from '@nestjs/schedule';
 import {
   AccessControlModule,
@@ -22,7 +23,8 @@ interface ConfigOptions {
 }
 /** Params for dynamic module */
 export interface CoreModuleParams {
-  config?: ConfigOptions;
+  // config?: ConfigOptions;
+  config?: ConfigModuleOptions;
   storage: StorageOptions | false;
   db: DbOptions;
   accessControl?: AcOptions;
@@ -46,10 +48,7 @@ export class CoreModule {
     if (params.dbLog) entities.push(DbLog);
 
     const modules = [
-      ConfigModule.forRoot({
-        isGlobal: true,
-        load: [() => params.config ?? {}],
-      }),
+      ConfigModule.forRoot({ ...params.config, isGlobal: true }),
       ScheduleModule.forRoot(),
       // ConfigModule.forRoot(params.config),
       DbModule.forRoot(params.db),
@@ -62,13 +61,15 @@ export class CoreModule {
         MailerModule.forRootAsync({
           inject: [ConfigService],
           useFactory: (configService: ConfigService) => {
-            const { get } = configService;
             return {
               transport: {
-                host: get(EMAIL_HOST),
+                host: configService.get(EMAIL_HOST),
                 secure: false,
-                sender: get(EMAIL_USER),
-                auth: { user: get(EMAIL_USER), pass: get(EMAIL_PASSWORD) },
+                sender: configService.get(EMAIL_USER),
+                auth: {
+                  user: configService.get(EMAIL_USER),
+                  pass: configService.get(EMAIL_PASSWORD),
+                },
               },
             };
           },

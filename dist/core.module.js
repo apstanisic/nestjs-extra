@@ -31,10 +31,7 @@ let CoreModule = CoreModule_1 = class CoreModule {
         if (params.dbLog)
             entities.push(db_log_entity_1.DbLog);
         const modules = [
-            config_1.ConfigModule.forRoot({
-                isGlobal: true,
-                load: [() => { var _a; return _a = params.config, (_a !== null && _a !== void 0 ? _a : {}); }],
-            }),
+            config_1.ConfigModule.forRoot(Object.assign(Object.assign({}, params.config), { isGlobal: true })),
             schedule_1.ScheduleModule.forRoot(),
             db_module_1.DbModule.forRoot(params.db),
             auth_module_1.AuthModule,
@@ -43,13 +40,15 @@ let CoreModule = CoreModule_1 = class CoreModule {
             modules.push(mailer_1.MailerModule.forRootAsync({
                 inject: [config_1.ConfigService],
                 useFactory: (configService) => {
-                    const { get } = configService;
                     return {
                         transport: {
-                            host: get(consts_1.EMAIL_HOST),
+                            host: configService.get(consts_1.EMAIL_HOST),
                             secure: false,
-                            sender: get(consts_1.EMAIL_USER),
-                            auth: { user: get(consts_1.EMAIL_USER), pass: get(consts_1.EMAIL_PASSWORD) },
+                            sender: configService.get(consts_1.EMAIL_USER),
+                            auth: {
+                                user: configService.get(consts_1.EMAIL_USER),
+                                pass: configService.get(consts_1.EMAIL_PASSWORD),
+                            },
                         },
                     };
                 },

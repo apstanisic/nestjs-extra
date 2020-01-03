@@ -4094,7 +4094,7 @@
         "signature": "640133db3771892c359b1ed1992dae2cb86f49079858f0b35ea5b534ddd63141"
       },
       "../src/db/db.module.ts": {
-        "version": "d9599fd78f1ec24d4baeb904bf1e503874fb9570c352fb90728252be044d60d3",
+        "version": "5f12ff6c9bb1ff0d07b4e5312fc6ab7f8ec422ea48a670346d69b79f4ad412dd",
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/logger/db-logger.module.ts": {
@@ -4126,8 +4126,8 @@
         "signature": "0a9137fd1f6cc95a03dc750636d3c795b2a8f1c060aec6c4bd1eb1a55dce802e"
       },
       "../src/core.module.ts": {
-        "version": "ea5daa88220d690f36e2c523a3949f55c44a578fa97b7588dc87ae3e86dc1dca",
-        "signature": "2eddecee4fa22d4646a6cbe5fdfe69d63a88a6494c5e36e2977e89d5eaff165b"
+        "version": "d44e35edf93825b04d3b4309087721bd3edda4d4f40d3c99011799a4f05c471c",
+        "signature": "97886f5b845873995e2422350bc75039596326648e9c32fc5ba3f17246b92cb0"
       },
       "../src/example-consts.ts": {
         "version": "37f1cf6d0e3e55325f9b1d7fa536888921e84fc8fd1a6ae71fd8586b7192e6d7",
@@ -13856,6 +13856,7 @@
         "../node_modules/@nest-modules/mailer/dist/index.d.ts",
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
         "../node_modules/@nestjs/schedule/index.d.ts",
         "../src/access-control/access-control.module.ts",
         "../src/access-control/role/roles.entity.ts",
@@ -14437,11 +14438,11 @@
         "../src/notification/notification.service.ts"
       ],
       "../src/core.module.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
         "../src/storage/storage.module.ts",
         "../src/db/db.module.ts",
         "../src/access-control/access-control.module.ts",
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/types.ts"
+        "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/auth/password-reset.service.ts": [
         "../src/entities/base-user.entity.ts",
