@@ -1,9 +1,4 @@
-import {
-  PipeTransform,
-  Injectable,
-  BadRequestException,
-  Inject,
-} from '@nestjs/common';
+import { PipeTransform, Injectable, BadRequestException, Inject } from '@nestjs/common';
 import { Validator } from 'class-validator';
 import { AC_ROLES_LIST } from '../consts';
 
@@ -19,10 +14,7 @@ export class ValidRole implements PipeTransform<string, string> {
   private validator = new Validator();
 
   transform(value: string): string {
-    if (
-      !this.validator.isString(value) ||
-      !this.validator.isIn(value, this.roles)
-    ) {
+    if (!this.validator.isString(value) || !this.validator.isIn(value, this.roles)) {
       throw new BadRequestException('Role does not exist');
     }
 

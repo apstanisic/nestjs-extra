@@ -1,18 +1,16 @@
-import { MailerModule } from '@nest-modules/mailer';
+import { BullModule } from '@nestjs/bull';
 import { DynamicModule, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ConfigModuleOptions } from '@nestjs/config/dist/interfaces';
 import { ScheduleModule } from '@nestjs/schedule';
-import {
-  AccessControlModule,
-  AcOptions,
-} from './access-control/access-control.module';
+import { AccessControlModule, AcOptions } from './access-control/access-control.module';
 import { Role } from './access-control/role/roles.entity';
 import { AuthModule } from './auth/auth.module';
-import { EMAIL_HOST, EMAIL_PASSWORD, EMAIL_USER } from './consts';
+import { REDIS_HOST, REDIS_PORT } from './consts';
 import { DbModule, DbOptions } from './db/db.module';
 import { DbLog } from './logger/db-log.entity';
 import { DbLoggerModule } from './logger/db-logger.module';
+import { MailerModule } from './mailer/mailer.module';
 import { Notification } from './notification/notification.entity';
 import { NotificationModule } from './notification/notification.module';
 import { StorageModule, StorageOptions } from './storage/storage.module';
@@ -21,7 +19,10 @@ import { Struct } from './types';
 interface ConfigOptions {
   data: string | Buffer | Struct<string>;
 }
-/** Params for dynamic module */
+/**
+ * Params for dynamic module
+ * @Todo auth templates not available
+ */
 export interface CoreModuleParams {
   // config?: ConfigOptions;
   config?: ConfigModuleOptions;
@@ -31,6 +32,7 @@ export interface CoreModuleParams {
   dbLog: boolean;
   notifications: boolean;
   mail: boolean;
+  // auth?: { templates: Record<string, string> };
 }
 
 /**
@@ -49,32 +51,24 @@ export class CoreModule {
 
     const modules = [
       ConfigModule.forRoot({ ...params.config, isGlobal: true }),
+      BullModule.registerQueueAsync({
+        inject: [ConfigService],
+        useFactory: (config: ConfigService) => {
+          return {
+            name: 'app',
+            redis: {
+              host: config.get(REDIS_HOST),
+              port: config.get(REDIS_PORT),
+            },
+          };
+        },
+      }),
       ScheduleModule.forRoot(),
-      // ConfigModule.forRoot(params.config),
       DbModule.forRoot(params.db),
       AuthModule,
     ];
 
-    // if (params.mail) modules.push(MailModule);
-    if (params.mail)
-      modules.push(
-        MailerModule.forRootAsync({
-          inject: [ConfigService],
-          useFactory: (configService: ConfigService) => {
-            return {
-              transport: {
-                host: configService.get(EMAIL_HOST),
-                secure: false,
-                sender: configService.get(EMAIL_USER),
-                auth: {
-                  user: configService.get(EMAIL_USER),
-                  pass: configService.get(EMAIL_PASSWORD),
-                },
-              },
-            };
-          },
-        }),
-      );
+    if (params.mail) modules.push(MailerModule);
     if (params.storage) modules.push(StorageModule.forRoot(params.storage));
     if (params.dbLog) modules.push(DbLoggerModule);
     if (params.notifications) modules.push(NotificationModule);

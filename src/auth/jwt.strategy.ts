@@ -13,10 +13,7 @@ export interface JwtPayload {
 /** Strategy for passport. Adopted from docs */
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(
-    private readonly authService: AuthService,
-    readonly configService: ConfigService,
-  ) {
+  constructor(private readonly authService: AuthService, readonly configService: ConfigService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKey: configService.get(JWT_SECRET),

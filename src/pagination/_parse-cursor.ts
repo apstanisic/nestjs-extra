@@ -1,7 +1,4 @@
-import {
-  BadRequestException,
-  InternalServerErrorException,
-} from '@nestjs/common';
+import { BadRequestException, InternalServerErrorException } from '@nestjs/common';
 import { Validator } from 'class-validator';
 import { FindOperator, Raw } from 'typeorm';
 import { escape as e } from 'sqlstring';
@@ -79,12 +76,10 @@ export class ParseCursor<T extends WithId = any> {
       sign = sign === '>' ? '<' : '>';
     }
     // Where part in case query value is different then provided cursor value
-    const valueIsDiff = (column: string): string =>
-      `${column} ${sign} ${e(this.columnValue)}`;
+    const valueIsDiff = (column: string): string => `${column} ${sign} ${e(this.columnValue)}`;
 
     // Where part in case query value is same as provided cursor value
-    const valueIsEqual = (column: string): string =>
-      `${column} = ${e(this.columnValue)}`;
+    const valueIsEqual = (column: string): string => `${column} = ${e(this.columnValue)}`;
 
     return {
       [this.columnName]: Raw(alias => {
@@ -92,9 +87,9 @@ export class ParseCursor<T extends WithId = any> {
         if (!alias) {
           throw new InternalServerErrorException('Column name empty');
         }
-        const query = `( ${valueIsDiff(alias)} OR ( ${valueIsEqual(
-          alias,
-        )} AND id ${sign} ${e(this.id)}) )`;
+        const query = `( ${valueIsDiff(alias)} OR ( ${valueIsEqual(alias)} AND id ${sign} ${e(
+          this.id,
+        )}) )`;
 
         return query;
       }),

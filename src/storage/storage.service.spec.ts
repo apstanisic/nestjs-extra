@@ -38,14 +38,8 @@ describe('StorageService', () => {
     expect(removeObject).not.toBeCalled();
     await service.delete('someFile');
     expect(removeObject).toBeCalled();
-    expect(removeObject).toBeCalledWith(
-      expect.anything(),
-      'someFile',
-      expect.anything(),
-    );
-    await expect(service.delete('some-file-2')).rejects.toEqual(
-      'some-non-null-value',
-    );
+    expect(removeObject).toBeCalledWith(expect.anything(), 'someFile', expect.anything());
+    await expect(service.delete('some-file-2')).rejects.toEqual('some-non-null-value');
     expect(removeObject).toHaveBeenNthCalledWith(
       2,
       expect.anything(),

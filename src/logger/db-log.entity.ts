@@ -13,10 +13,7 @@ import { BaseUser } from '../entities/base-user.entity';
  * it does not have primary field.
  */
 @Entity('logs')
-export class DbLog<
-  T extends WithId = any,
-  User extends BaseUser = BaseUser
-> extends BaseEntity {
+export class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> extends BaseEntity {
   /** What action was executed (delete, update, custom-action) */
   @Column({ default: 'update' })
   action: 'update' | 'delete' | 'create' | string;

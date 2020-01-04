@@ -2,11 +2,7 @@ import * as Faker from 'faker';
 import { Paginator } from './_paginator';
 import { PaginationParams } from './pagination-options';
 import { GenerateCursor } from './_generate-cursor';
-import {
-  PaginatorResponse,
-  cursorField,
-  orderByField,
-} from './pagination.types';
+import { PaginatorResponse, cursorField, orderByField } from './pagination.types';
 
 describe('Paginator', () => {
   let paginator: Paginator<any>;

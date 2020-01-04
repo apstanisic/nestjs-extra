@@ -44,6 +44,15 @@ export class UpdatePasswordDto {
   newPassword: string;
 }
 
+/** Data that is provided when changing email */
+export class ChangeEmailDto {
+  @IsEmail()
+  newEmail: string;
+
+  @Length(8, 50)
+  password: string;
+}
+
 /** Server response for successful login */
 export class SignInResponse {
   token: string;

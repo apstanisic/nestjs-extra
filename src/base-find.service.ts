@@ -1,8 +1,4 @@
-import {
-  InternalServerErrorException,
-  Logger,
-  NotFoundException,
-} from '@nestjs/common';
+import { InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common';
 import { Repository, FindManyOptions } from 'typeorm';
 import { FindManyParams, FindOneParams } from './base.service';
 import { PaginationParams } from './pagination/pagination-options';
@@ -22,8 +18,8 @@ export class BaseFindService<T extends WithId = any> {
 
   protected logger = new Logger();
 
-  /** Use only when you must */
-  getRepository(): Repository<T> {
+  /** Use only when you must. If this method is used, that means api should be updated */
+  public _getRepository(): Repository<T> {
     return this.repository;
   }
 
@@ -33,18 +29,12 @@ export class BaseFindService<T extends WithId = any> {
    * @example Left is passed value, right is parsed
    *  ({ price__lt: 5 } => { price: LessThan(5) })
    */
-  async findOne(
-    filter: OrmWhere<T> | number,
-    options: FindOneParams<T> = {},
-  ): Promise<T> {
+  async findOne(filter: OrmWhere<T> | number, options: FindOneParams<T> = {}): Promise<T> {
     let entity: T | undefined;
     let where;
 
     // If string or number, then search by id
-    where =
-      typeof filter === 'string' || typeof filter === 'number'
-        ? { id: filter }
-        : filter;
+    where = typeof filter === 'string' || typeof filter === 'number' ? { id: filter } : filter;
     where = parseQuery(where);
 
     try {
@@ -58,10 +48,7 @@ export class BaseFindService<T extends WithId = any> {
   }
 
   /** Find entities by multiple ids */
-  async findByIds(
-    ids: (string | number)[],
-    searchOptions: FindManyOptions<T> = {},
-  ): Promise<T[]> {
+  async findByIds(ids: (string | number)[], searchOptions: FindManyOptions<T> = {}): Promise<T[]> {
     try {
       const entities = await this.repository.findByIds(ids, searchOptions);
       return entities;
@@ -71,10 +58,7 @@ export class BaseFindService<T extends WithId = any> {
   }
 
   /** Find all entities that match criteria */
-  async find(
-    filter: OrmWhere<T> = {},
-    searchOptions: FindManyParams<T> = {},
-  ): Promise<T[]> {
+  async find(filter: OrmWhere<T> = {}, searchOptions: FindManyParams<T> = {}): Promise<T[]> {
     try {
       const res = await this.repository.find({
         ...searchOptions,
@@ -92,17 +76,11 @@ export class BaseFindService<T extends WithId = any> {
    * You can pass where query in options object or as a second param.
    * It will merge both wheres, with newer where having presedance.
    */
-  async paginate(
-    options: PaginationParams<T>,
-    where?: OrmWhere<T>,
-  ): PgResult<T> {
+  async paginate(options: PaginationParams<T>, where?: OrmWhere<T>): PgResult<T> {
     const { repository } = this;
     const combinedOptions = { ...options };
 
-    if (
-      typeof combinedOptions.where === 'object' &&
-      typeof where === 'object'
-    ) {
+    if (typeof combinedOptions.where === 'object' && typeof where === 'object') {
       combinedOptions.where = { ...combinedOptions.where, ...where };
     } else if (typeof where === 'object') {
       combinedOptions.where = where;
@@ -114,10 +92,7 @@ export class BaseFindService<T extends WithId = any> {
   }
 
   /** Count result of a query */
-  async count(
-    filter: OrmWhere<T>,
-    searchOptions: FindManyParams<T> = {},
-  ): Promise<number> {
+  async count(filter: OrmWhere<T>, searchOptions: FindManyParams<T> = {}): Promise<number> {
     try {
       const count = await this.repository.count({
         ...searchOptions,

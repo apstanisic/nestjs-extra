@@ -1,9 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { JwtService } from '@nestjs/jwt';
 import { BadRequestException, NotFoundException } from '@nestjs/common';
-// import { UsersService } from "../../user/user.service";
 import { AuthService } from './auth.service';
-// import { User } from "../../user/user.entity";
 import { AuthMailService } from './auth-mail.service';
 import { BaseUser } from '../entities/base-user.entity';
 
@@ -47,25 +45,23 @@ describe('AuthService', () => {
 
   describe('validateJwt', () => {
     it('validates jwt', async () => {
-      await expect(
-        authService.validateJwt({ email: 'valid@email.com' }),
-      ).resolves.toBeInstanceOf(BaseUser);
+      await expect(authService.validateJwt({ email: 'valid@email.com' })).resolves.toBeInstanceOf(
+        BaseUser,
+      );
     });
 
     it('throws on invalid values', async () => {
-      await expect(authService.validateJwt(undefined as any)).rejects.toThrow(
+      await expect(authService.validateJwt(undefined as any)).rejects.toThrow(BadRequestException);
+      await expect(authService.validateJwt({ email: 'bad-email' })).rejects.toThrow(
         BadRequestException,
       );
-      await expect(
-        authService.validateJwt({ email: 'bad-email' }),
-      ).rejects.toThrow(BadRequestException);
     });
 
     it('passes findOne error', async () => {
       findOneMock.mockRejectedValue(new NotFoundException());
-      await expect(
-        authService.validateJwt({ email: 'test@email.com' }),
-      ).rejects.toThrow(NotFoundException);
+      await expect(authService.validateJwt({ email: 'test@email.com' })).rejects.toThrow(
+        NotFoundException,
+      );
     });
   });
 
@@ -73,9 +69,10 @@ describe('AuthService', () => {
     it('returns user jwt token', async () => {
       const token = await authService.createJwt(testUser.email);
 
-      await expect(
-        authService.attemptLogin(testUser.email, 'password'),
-      ).resolves.toEqual({ user: testUser, token });
+      await expect(authService.attemptLogin(testUser.email, 'password')).resolves.toEqual({
+        user: testUser,
+        token,
+      });
     });
   });
 });

@@ -1,11 +1,4 @@
-import {
-  IsArray,
-  IsBase64,
-  IsIn,
-  IsInt,
-  IsOptional,
-  IsString,
-} from 'class-validator';
+import { IsArray, IsBase64, IsIn, IsInt, IsOptional, IsString } from 'class-validator';
 import { parseNumber } from '../helpers';
 import { IsBetween } from '../is-between';
 import { OrmWhere, Struct } from '../types';

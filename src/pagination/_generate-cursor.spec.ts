@@ -27,12 +27,8 @@ describe('Propertly generating pagination cursor', () => {
       createdAt: new Date(),
       uuid: Faker.random.uuid(),
     };
-    expect(
-      () => new GenerateCursor(entity as any, 'next', 'createdAt'),
-    ).toThrow();
-    expect(
-      () => new GenerateCursor({ id: undefined } as any, 'next'),
-    ).toThrow();
+    expect(() => new GenerateCursor(entity as any, 'next', 'createdAt')).toThrow();
+    expect(() => new GenerateCursor({ id: undefined } as any, 'next')).toThrow();
   });
 
   it('Should throw if column not provided', () => {
@@ -44,17 +40,11 @@ describe('Propertly generating pagination cursor', () => {
   });
 
   it('Should use string without trying to convert to date', () => {
-    const { cursor } = new GenerateCursor(
-      { id: uuid, price: 41 },
-      'next',
-      'price',
-    );
+    const { cursor } = new GenerateCursor({ id: uuid, price: 41 }, 'next', 'price');
     expect(validator.isBase64(cursor)).toBe(true);
   });
 
   it('Should should throw if value undefined', () => {
-    expect(
-      () => new GenerateCursor({ id: uuid, price: undefined }, 'next', 'price'),
-    ).toThrow();
+    expect(() => new GenerateCursor({ id: uuid, price: undefined }, 'next', 'price')).toThrow();
   });
 });

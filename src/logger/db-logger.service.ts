@@ -12,9 +12,7 @@ interface GenerateLogParams<T> {
 }
 
 @Injectable()
-export class DbLoggerService<T extends WithId = any> extends BaseFindService<
-  DbLog
-> {
+export class DbLoggerService<T extends WithId = any> extends BaseFindService<DbLog> {
   constructor(@InjectRepository(DbLog) repository: Repository<DbLog>) {
     super(repository);
   }

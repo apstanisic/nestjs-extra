@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -6,42 +7,43 @@ import {
   Get,
   Inject,
   NotFoundException,
+  Optional,
   Param,
   Post,
   Put,
+  UploadedFile,
   UseGuards,
   UseInterceptors,
-  UploadedFile,
-  Optional,
-  InternalServerErrorException,
 } from '@nestjs/common';
-import { FileInterceptor } from '@nestjs/platform-express';
 import { AuthGuard } from '@nestjs/passport';
-import { PermissionsGuard } from '../access-control/permissions.guard';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { Validator } from 'class-validator';
+import { RoleService } from '../access-control/role/role.service';
 import { Role } from '../access-control/role/roles.entity';
 import { BaseUserService } from '../base-user.service';
-import { USER_SERVICE, ROLE_SERVICE } from '../consts';
+import { ROLE_SERVICE, USER_SERVICE } from '../consts';
 import { BaseUser } from '../entities/base-user.entity';
 import { BasicUserInfo } from '../entities/user.interface';
+import { validJpeg } from '../storage/valid-jpeg-image';
+import { ValidEmail } from '../validate-email.pipe';
 import {
+  ChangeEmailDto,
   LoginUserDto,
+  OnlyPasswordDto,
   RegisterUserDto,
   SignInResponse,
   UpdatePasswordDto,
 } from './auth.dto';
 import { AuthService } from './auth.service';
 import { GetUser } from './get-user.decorator';
-import { validJpeg } from '../storage/valid-jpeg-image';
-import { RoleService } from '../access-control/role/role.service';
 
 @Controller('auth')
 export class AuthController<User extends BaseUser = BaseUser> {
+  validator = new Validator();
   constructor(
-    @Inject(USER_SERVICE) private readonly userService: BaseUserService<User>,
     private readonly authService: AuthService,
-    @Optional()
-    @Inject(ROLE_SERVICE)
-    private readonly roleService?: RoleService,
+    @Inject(USER_SERVICE) private readonly userService: BaseUserService<User>,
+    @Optional() @Inject(ROLE_SERVICE) private readonly roleService?: RoleService,
   ) {}
 
   /** Attempt to login user */
@@ -59,10 +61,7 @@ export class AuthController<User extends BaseUser = BaseUser> {
   /** Update user password */
   @UseGuards(AuthGuard('jwt'))
   @Put('password')
-  async changePassword(
-    @Body() data: UpdatePasswordDto,
-    @GetUser() user: User,
-  ): Promise<User> {
+  async changePassword(@Body() data: UpdatePasswordDto, @GetUser() user: User): Promise<User> {
     if (user.email !== data.email) throw new ForbiddenException();
     return this.userService.changePassword(data);
   }
@@ -70,21 +69,15 @@ export class AuthController<User extends BaseUser = BaseUser> {
   /** Delete user */
   @UseGuards(AuthGuard('jwt'))
   @Delete('account')
-  async deleteUser(
-    @GetUser() loggedUser: User,
-    @Body() data: LoginUserDto,
-  ): Promise<User> {
-    if (loggedUser.email !== data.email) throw new ForbiddenException();
-    return this.userService.deleteAccount(data);
+  async deleteUser(@GetUser() user: User, @Body() data: OnlyPasswordDto): Promise<User> {
+    return this.userService.deleteAccount({ email: user.email, password: data.password });
   }
 
+  /** Get roles for provided user. Throw 404 if app does not have roles */
   @Get('account/roles')
   @UseGuards(AuthGuard('jwt'))
   getUsersRoles(@GetUser() user: User): Promise<Role[]> {
-    // If this service is not available the is not AC
-    if (!this.roleService) {
-      throw new NotFoundException();
-    }
+    if (!this.roleService) throw new NotFoundException();
     return this.roleService.find({ userId: user.id });
   }
 
@@ -106,10 +99,7 @@ export class AuthController<User extends BaseUser = BaseUser> {
   /** Update user avatar */
   @UseInterceptors(FileInterceptor('file', validJpeg(0.5)))
   @Put('avatar')
-  async addProfilePicture(
-    @UploadedFile() file: any,
-    @GetUser() user: User,
-  ): Promise<User> {
+  async addProfilePicture(@UploadedFile() file: any, @GetUser() user: User): Promise<User> {
     return this.userService.changeAvatar(user, file);
   }
 
@@ -117,5 +107,23 @@ export class AuthController<User extends BaseUser = BaseUser> {
   @Get('account')
   getAccount(@GetUser() user: User): User {
     return user;
+  }
+
+  /** Request change of email */
+  @Put('/email')
+  async changeEmailOld(@Body() data: ChangeEmailDto, @GetUser() user: User): Promise<any> {
+    await this.userService.requestEmailChange(user.email, data);
+    return { message: 'success' };
+  }
+
+  /** Change user email in db */
+  @Get('change-email/:token')
+  changeEmail(@Param('token') token: string, @GetUser() user: User): Promise<any> {
+    if (!user.validToken(token)) throw new BadRequestException('Invalid token');
+
+    const [email] = token.split('___');
+    if (!this.validator.isEmail(email)) throw new BadRequestException('Invalid token');
+
+    return this.userService.update(user, { email } as any);
   }
 }

@@ -1,9 +1,4 @@
-import {
-  Global,
-  InternalServerErrorException,
-  Logger,
-  Module,
-} from '@nestjs/common';
+import { Global, InternalServerErrorException, Logger, Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';

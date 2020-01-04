@@ -31,6 +31,5 @@ export const GetPagination = createParamDecorator(
 
 /** Pagination decorator for Gql */
 export const GqlPagination = createParamDecorator(
-  (data, [root, args, ctx, info]): Promise<PaginationParams> =>
-    convert(ctx.req.query),
+  (data, [root, args, ctx, info]): Promise<PaginationParams> => convert(ctx.req.query),
 );

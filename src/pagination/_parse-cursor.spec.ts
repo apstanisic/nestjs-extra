@@ -8,11 +8,8 @@ describe('Check if ParseCursor parses correctly', () => {
   const uuid = Faker.random.uuid();
 
   it('Should generate proper TypeOrm raw query', () => {
-    const generated = new GenerateCursor(
-      { id: uuid, createdAt: new Date() },
-      'next',
-      'createdAt',
-    ).cursor;
+    const generated = new GenerateCursor({ id: uuid, createdAt: new Date() }, 'next', 'createdAt')
+      .cursor;
     const parsed = new ParseCursor(generated, 'ASC');
     expect(parsed.query).toHaveProperty('createdAt');
     expect(parsed.query).not.toHaveProperty('id');

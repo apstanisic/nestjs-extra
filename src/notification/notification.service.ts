@@ -13,9 +13,7 @@ interface AddNotificationParams {
 
 @Injectable()
 export class NotificationService extends BaseService<Notification> {
-  constructor(
-    @InjectRepository(Notification) repository: Repository<Notification>,
-  ) {
+  constructor(@InjectRepository(Notification) repository: Repository<Notification>) {
     super(repository);
   }
 
@@ -25,11 +23,7 @@ export class NotificationService extends BaseService<Notification> {
   }
 
   /** Create new notification */
-  async addNotification({
-    title,
-    body,
-    userId,
-  }: AddNotificationParams): Promise<Notification> {
+  async addNotification({ title, body, userId }: AddNotificationParams): Promise<Notification> {
     return this.create({ body, title, userId });
   }
 }

@@ -39,11 +39,7 @@ export class StorageImagesService {
     const buffersAndSizes = await generateAllImageSizes(image, this.sizes);
     // const toStore = [];
     const toStore = buffersAndSizes.map(img =>
-      this.storageService.put(
-        img.image,
-        `${filePrefix}_${img.size}.jpeg`,
-        img.size,
-      ),
+      this.storageService.put(img.image, `${filePrefix}_${img.size}.jpeg`, img.size),
     );
 
     const sizes: Struct<string> = {};
@@ -94,10 +90,7 @@ export class StorageImagesService {
    * If allImages not provided return undefined, if they are provided return
    * array without deleted image
    */
-  async removeImage(
-    image: Image,
-    allImages?: Image[],
-  ): Promise<Image[] | undefined> {
+  async removeImage(image: Image, allImages?: Image[]): Promise<Image[] | undefined> {
     // async removeImage(image: Image): Promise<string[]> {
     const deleted = await this.storageService.deleteWherePrefix(image.prefix);
     if (allImages === undefined) return undefined;

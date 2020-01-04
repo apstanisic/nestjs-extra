@@ -31,9 +31,7 @@ export function wait(time: number): Promise<void> {
  * It will convert JSON string to object literal.
  * Always returns new object
  */
-export function convertToObject<T = any>(
-  query: Struct<T> | string | null | undefined,
-): Struct {
+export function convertToObject<T = any>(query: Struct<T> | string | null | undefined): Struct {
   if (typeof query === 'object') return { ...query };
   if (query === null || query === undefined) return {};
 
@@ -120,5 +118,16 @@ export async function times(n: number, fn: Function): Promise<void> {
     try {
       success = true;
     } catch (error) {}
+  }
+}
+
+export function parseIfJson(val: any): object | undefined {
+  try {
+    if (typeof val === 'string') {
+      return JSON.parse(val);
+    }
+    return val;
+  } catch (error) {
+    return undefined;
   }
 }

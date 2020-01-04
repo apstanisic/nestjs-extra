@@ -1,8 +1,4 @@
-import {
-  Injectable,
-  InternalServerErrorException,
-  Logger,
-} from '@nestjs/common';
+import { Injectable, InternalServerErrorException, Logger } from '@nestjs/common';
 // import { Client } from 'minio';
 import { ConfigService } from '@nestjs/config';
 import * as AWS from 'aws-sdk';
@@ -58,12 +54,7 @@ export class StorageService {
   /**
    * Upload file to s3 compatible storage
    */
-  async put(
-    file: Buffer,
-    name: string,
-    size: string,
-    _retries = 3,
-  ): Promise<[string, string]> {
+  async put(file: Buffer, name: string, size: string, _retries = 3): Promise<[string, string]> {
     // Path can't start with /. It should be folder1/folder2/name.ext
     const filename = name.startsWith('/') ? name.substr(1) : name;
 

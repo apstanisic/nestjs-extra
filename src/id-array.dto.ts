@@ -1,12 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
 import { Transform } from 'class-transformer';
-import {
-  ArrayMaxSize,
-  ArrayNotEmpty,
-  ArrayUnique,
-  IsArray,
-  IsUUID,
-} from 'class-validator';
+import { ArrayMaxSize, ArrayNotEmpty, ArrayUnique, IsArray, IsUUID } from 'class-validator';
 import { UUID } from './types';
 
 /** When fetching many entities with id, every id must pass this validation */

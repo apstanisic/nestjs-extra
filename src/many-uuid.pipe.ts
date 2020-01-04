@@ -4,9 +4,9 @@ import { UUID } from './types';
 
 /* */
 /**
- * Pipe to get page for pagination
+ * Pipe to get page for pagination. Value must be Json array.
  * @example
- *   method(@Query('ids', ManyUUID) ids: UUID[]) {}
+ * method(@Query('ids', ManyUUID) ids: UUID[]) {}
  */
 @Injectable()
 export class ManyUUID implements PipeTransform<string, UUID[]> {

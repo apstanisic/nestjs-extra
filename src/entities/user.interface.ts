@@ -1,9 +1,13 @@
 import { Expose } from 'class-transformer';
-import { ImageSizes } from '../types';
 import { Image } from './image.entity';
 
-/** User must always have this fields */
-export interface IUser extends BasicUserInfo {
+/** User must always have this properties */
+export interface IUser {
+  id: string;
+  name: string;
+  email: string;
+  phoneNumber?: string;
+  avatar?: Image;
   confirmed: boolean;
   secureToken?: string;
   tokenCreatedAt?: Date;
@@ -21,8 +25,4 @@ export class BasicUserInfo {
   email: string;
   @Expose()
   phoneNumber?: string;
-  /** @todo See should i expose this. It takes to much space in db */
-  avatar?: string | ImageSizes | Image;
 }
-
-export interface IBasicUserInfo extends BasicUserInfo {}

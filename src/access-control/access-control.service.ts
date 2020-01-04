@@ -38,9 +38,7 @@ export class AccessControlService {
   ): Promise<boolean> {
     const checks: Promise<boolean>[] = [];
     roles.forEach(role => {
-      checks.push(
-        this.enforcer.enforce(role.name, role.domain, resourcePath, action),
-      );
+      checks.push(this.enforcer.enforce(role.name, role.domain, resourcePath, action));
     });
     const responses = await Promise.all(checks);
 

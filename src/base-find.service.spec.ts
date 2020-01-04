@@ -1,14 +1,10 @@
-import {
-  InternalServerErrorException,
-  Logger,
-  NotFoundException,
-} from '@nestjs/common';
+import { InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common';
 import { Equal } from 'typeorm';
 import { BaseFindService } from './base-find.service';
-import { IBasicUserInfo } from './entities/user.interface';
+import { BasicUserInfo } from './entities/user.interface';
 import { PaginationParams } from './pagination/pagination-options';
 
-const LogUser: IBasicUserInfo = {
+const LogUser: BasicUserInfo = {
   email: 'test@ts.ts',
   id: 'fsd',
   name: 'Test',
@@ -157,10 +153,7 @@ describe('base-find.service', () => {
     });
 
     it('passes second param to repo', async () => {
-      const res = service.count(
-        { some: 'value' },
-        { relations: ['user'], take: 10 },
-      );
+      const res = service.count({ some: 'value' }, { relations: ['user'], take: 10 });
       await expect(res).resolves.toEqual(3);
       expect(count).toBeCalledTimes(1);
       expect(count).toBeCalledWith({

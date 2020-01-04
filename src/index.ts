@@ -41,7 +41,7 @@ export * from './logger/db-log-metadata';
 export * from './logger/valid-reason.pipe';
 export * from './many-uuid.pipe';
 export * from './notification/notification.controller';
-export * from './notification/notification-deletion.cron.service';
+export * from './notification/notifications.cron.service';
 export * from './notification/notification.entity';
 export * from './notification/notification.module';
 export * from './notification/notification.service';

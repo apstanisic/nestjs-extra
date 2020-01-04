@@ -52,9 +52,7 @@ export class PermissionsGuard implements CanActivate {
     const action = accessOptions ? accessOptions.action : defaultAction;
 
     const resource =
-      accessOptions && accessOptions.resource
-        ? accessOptions.resource
-        : request.path;
+      accessOptions && accessOptions.resource ? accessOptions.resource : request.path;
 
     const roles = await this.roleService.find(
       { userId: user.id },

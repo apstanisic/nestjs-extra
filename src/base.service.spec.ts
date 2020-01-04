@@ -1,12 +1,8 @@
-import {
-  InternalServerErrorException,
-  Logger,
-  BadRequestException,
-} from '@nestjs/common';
+import { InternalServerErrorException, Logger, BadRequestException } from '@nestjs/common';
 import { BaseService } from './base.service';
-import { IBasicUserInfo } from './entities/user.interface';
+import { BasicUserInfo } from './entities/user.interface';
 
-const LogUser: IBasicUserInfo = {
+const LogUser: BasicUserInfo = {
   email: 'test@ts.ts',
   id: 'fsd',
   name: 'Test',
@@ -190,11 +186,7 @@ describe('BaseService', () => {
       expect(service.findOne).toBeCalledTimes(1);
       expect(service.findOne).toBeCalledWith(filter);
       expect(service.update).toBeCalledTimes(1);
-      expect(service.update).toBeCalledWith(
-        exampleEntity,
-        exampleEntity,
-        undefined,
-      );
+      expect(service.update).toBeCalledWith(exampleEntity, exampleEntity, undefined);
     });
   });
 

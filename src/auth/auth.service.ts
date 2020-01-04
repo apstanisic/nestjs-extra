@@ -1,9 +1,4 @@
-import {
-  BadRequestException,
-  ForbiddenException,
-  Inject,
-  Injectable,
-} from '@nestjs/common';
+import { BadRequestException, ForbiddenException, Inject, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { classToClass, plainToClass } from 'class-transformer';
 import { Validator } from 'class-validator';
@@ -56,10 +51,7 @@ export class AuthService<User extends BaseUser = BaseUser> {
     const token = this.createJwt(data.email);
 
     if (!user.secureToken) throw new ForbiddenException();
-    await this.authMailService.sendConfirmationEmail(
-      user.email,
-      user.secureToken,
-    );
+    await this.authMailService.sendConfirmationEmail(user.email, user.secureToken);
 
     // For some reason user is not transformed without class to class
     return { token, user: classToClass(user) };

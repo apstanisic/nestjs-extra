@@ -5,14 +5,8 @@ import { LessThan } from 'typeorm';
 import { NotificationService } from './notification.service';
 
 @Injectable()
-export class NotificationCronService {
-  /** Cron job */
-
-  constructor(
-    private readonly notificationService: NotificationService, // private readonly cronService: CronService,
-  ) {
-    // this.cronService.startJob('0 5 * * *', this.deleteOldNotifications);
-  }
+export class NotificationsCronService {
+  constructor(private readonly notificationService: NotificationService) {}
 
   /** Deletes old notifications after six months. This should be done in cron */
   @Cron('0 5 * * *')

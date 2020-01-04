@@ -9,10 +9,7 @@ describe('DbLoggerService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [
-        DbLoggerService,
-        { provide: getRepositoryToken(DbLog), useValue: jest.fn() },
-      ],
+      providers: [DbLoggerService, { provide: getRepositoryToken(DbLog), useValue: jest.fn() }],
     }).compile();
 
     service = module.get<DbLoggerService>(DbLoggerService);

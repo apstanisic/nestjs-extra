@@ -10,13 +10,7 @@ import { DbLoggerService } from './db-logger.service';
 @Global()
 @Module({
   imports: [TypeOrmModule.forFeature([DbLog])],
-  providers: [
-    DbLoggerService,
-    { provide: DB_LOGGER_SERVICE, useClass: DbLoggerService },
-  ],
-  exports: [
-    DbLoggerService,
-    { provide: DB_LOGGER_SERVICE, useClass: DbLoggerService },
-  ],
+  providers: [DbLoggerService, { provide: DB_LOGGER_SERVICE, useClass: DbLoggerService }],
+  exports: [DbLoggerService, { provide: DB_LOGGER_SERVICE, useClass: DbLoggerService }],
 })
 export class DbLoggerModule {}

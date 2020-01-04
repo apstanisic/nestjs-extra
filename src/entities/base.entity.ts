@@ -41,22 +41,14 @@ export abstract class BaseEntity implements WithId {
   @Index()
   createdAt: Date;
 
-  /** All entities will be auto validated before inserting or updating. */
+  /** All entities will be auto validated before inserting or updating. Exclude private fields */
   @BeforeInsert()
   @BeforeUpdate()
   async validate(): Promise<void> {
     let errors = await validate(this);
-    // Exclude some private fields. Those fields are excluded when transformed.
 
     if (errors.length > 0) {
-      errors = errors.map(({ target, ...other }) => ({
-        ...other,
-        target: classToClass(target),
-      }));
-      // if (process.env.NODE_ENV !== 'production') {
-      //   new Logger().error('Error when trying to insert ',errors);
-      // }
-
+      errors = errors.map(({ target, ...other }) => ({ ...other, target: classToClass(target) }));
       throw new BadRequestException(errors);
     }
   }

@@ -1,23 +1,18 @@
 import {
   BadRequestException,
+  Inject,
   Injectable,
   InternalServerErrorException,
-  NotFoundException,
-  Optional,
-  Inject,
 } from '@nestjs/common';
-import { Repository, DeepPartial } from 'typeorm';
+import { Queue } from 'bull';
+import { duration } from 'moment';
+import { DeepPartial, Repository } from 'typeorm';
+import { RoleService } from './access-control/role/role.service';
+import { Role } from './access-control/role/roles.entity';
+import { ChangeEmailDto, LoginUserDto, RegisterUserDto, UpdatePasswordDto } from './auth/auth.dto';
 import { BaseService } from './base.service';
 import { BaseUser } from './entities/base-user.entity';
 import { StorageImagesService } from './storage/storage-images.service';
-import { RoleService } from './access-control/role/role.service';
-import {
-  RegisterUserDto,
-  UpdatePasswordDto,
-  LoginUserDto,
-} from './auth/auth.dto';
-import { Role } from './access-control/role/roles.entity';
-import { Email } from './types';
 
 interface BaseUserServiceOptions {
   useRoles: boolean;
@@ -25,11 +20,10 @@ interface BaseUserServiceOptions {
 }
 
 @Injectable()
-export class BaseUserService<
-  User extends BaseUser = BaseUser
-> extends BaseService<User> {
+export class BaseUserService<User extends BaseUser = BaseUser> extends BaseService<User> {
   constructor(
     repository: Repository<User>,
+    private readonly queue: Queue,
     options?: Partial<BaseUserServiceOptions>,
   ) {
     super(repository);
@@ -102,6 +96,28 @@ export class BaseUserService<
       domain: user.id,
       reason: 'Change password.',
     });
+  }
+
+  /** Send email to confirm email change */
+  async requestEmailChange(oldEmail: string, data: ChangeEmailDto): Promise<void> {
+    const user = await this.findForLogin(oldEmail, data.password);
+    const token = user.generateSecureToken(data.newEmail);
+    await this.mutate(user);
+    this.queue.add('change-email', { token, email: data.newEmail });
+  }
+
+  /**
+   * Change user's email in db. Check if token is valid, if email in token is same
+   * and set email from token as new email
+   */
+  async changeEmail(user: User, token: string): Promise<any> {
+    if (!user.validToken(token, duration(2, 'hour')))
+      throw new BadRequestException('Invalid token');
+
+    const [email] = token.split('___');
+    if (!this.validator.isEmail(email)) throw new BadRequestException('Invalid token');
+
+    return this.update(user, { email } as any);
   }
 
   /** @Todo what about deleting roles... */

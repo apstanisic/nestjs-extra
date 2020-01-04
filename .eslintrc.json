@@ -44,7 +44,9 @@
     "lines-between-class-members": "off", // Some classes are small, and don't need space
     "import/no-extraneous-dependencies": "off",
     "no-param-reassign": "off", // Need to mutate entities
-    "radix": "off"
+    "radix": "off",
+    "import/extensions": "off" // It's buggy. Wait to nestjs migrate to eslint then just use default config
+
     // "import/no-unresolved": "off",
     // "import/prefer-default-export": "off",
     // "no-useless-constructor": "off",

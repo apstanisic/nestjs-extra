@@ -15,15 +15,13 @@ removeObjects
 export const Client = jest.fn(() => ({
   putObject: jest.fn(),
 
-  listObjectsV2: jest
-    .fn()
-    .mockImplementation((bucket: string, prefix: string) => {
-      const stream = new Stream();
-      Array(5).forEach(i => {
-        stream.emit('data', 'file-name');
-      });
-      stream.emit('end');
-    }),
+  listObjectsV2: jest.fn().mockImplementation((bucket: string, prefix: string) => {
+    const stream = new Stream();
+    Array(5).forEach(i => {
+      stream.emit('data', 'file-name');
+    });
+    stream.emit('end');
+  }),
 
   removeObject,
 

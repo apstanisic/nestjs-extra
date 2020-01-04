@@ -37,9 +37,7 @@ export class GenerateCursor<T extends WithId = any> {
   private getColumnValueFromEntity(): any {
     const value = this.entity[this.column];
     if (value === undefined) {
-      throw new BadRequestException(
-        'Column either does not exist or is nullable',
-      );
+      throw new BadRequestException('Column either does not exist or is nullable');
     }
     if (value instanceof Date) {
       return value.getTime();

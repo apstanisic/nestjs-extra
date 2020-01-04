@@ -6,12 +6,7 @@ import {
   Inject,
 } from '@nestjs/common';
 import { Validator } from 'class-validator';
-import {
-  FindConditions,
-  FindManyOptions,
-  FindOneOptions,
-  Repository,
-} from 'typeorm';
+import { FindConditions, FindManyOptions, FindOneOptions, Repository } from 'typeorm';
 import { BaseFindService } from './base-find.service';
 import { DbLoggerService } from './logger/db-logger.service';
 import { DbLogMetadata } from './logger/db-log-metadata';
@@ -135,11 +130,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   }
 
   /** Update entity by providing where clause. Only one entity updated. */
-  async updateWhere(
-    where: FindConditions<T>,
-    data: Partial<T>,
-    meta?: DbLogMetadata,
-  ): Promise<T> {
+  async updateWhere(where: FindConditions<T>, data: Partial<T>, meta?: DbLogMetadata): Promise<T> {
     const entity = await this.findOne(where);
     const updated = await this.update(entity, data, meta, true);
     return updated;
@@ -190,10 +181,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
    * @example This will delete only if id match, but also parent match
    *  where = {id: someId, parentId: someParentId}
    */
-  async deleteWhere(
-    where: FindConditions<T>,
-    logMetadata?: DbLogMetadata,
-  ): Promise<T> {
+  async deleteWhere(where: FindConditions<T>, logMetadata?: DbLogMetadata): Promise<T> {
     const entity = await this.findOne(where);
     const deleted = await this.delete(entity, logMetadata, true);
     return deleted;
