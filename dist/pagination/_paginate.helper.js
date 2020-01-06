@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const _paginator_1 = require("./_paginator");
-function paginate({ repository, options, }) {
+function paginate({ repository, options }) {
     return __awaiter(this, void 0, void 0, function* () {
         const paginator = new _paginator_1.Paginator(repository);
         yield paginator.setOptions(options);

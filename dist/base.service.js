@@ -19,15 +19,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const class_validator_1 = require("class-validator");
 const base_find_service_1 = require("./base-find.service");
-const db_logger_service_1 = require("./logger/db-logger.service");
 const consts_1 = require("./consts");
+const db_logger_service_1 = require("./logger/db-logger.service");
 class BaseService extends base_find_service_1.BaseFindService {
     constructor(repository) {
         super(repository);
-        this.logger = new common_1.Logger();
-        this.validator = new class_validator_1.Validator();
+        this.logger.setContext(BaseService.name);
     }
     create(data, meta) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -45,12 +43,14 @@ class BaseService extends base_find_service_1.BaseFindService {
             }
         });
     }
-    update(entityOrId, updatedData = {}, meta, usePassedEntity = false) {
+    update(entityOrId, updatedData = {}, meta, options) {
+        var _a;
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let entity;
-                if (usePassedEntity) {
+                if ((_a = options) === null || _a === void 0 ? void 0 : _a.usePassedEntity) {
                     if (typeof entityOrId === 'string') {
+                        this.logger.error('Passed entity is string');
                         throw new common_1.InternalServerErrorException();
                     }
                     entity = entityOrId;
@@ -73,7 +73,7 @@ class BaseService extends base_find_service_1.BaseFindService {
                 return updatedEntity;
             }
             catch (error) {
-                this.logger.error(error);
+                this.logger.error('Error updating', error);
                 throw new common_1.BadRequestException();
             }
         });
@@ -93,7 +93,7 @@ class BaseService extends base_find_service_1.BaseFindService {
                 return mutatedEntity;
             }
             catch (error) {
-                this.logger.error(error);
+                this.logger.error('Error mutation', error);
                 throw new common_1.BadRequestException();
             }
         });
@@ -101,15 +101,16 @@ class BaseService extends base_find_service_1.BaseFindService {
     updateWhere(where, data, meta) {
         return __awaiter(this, void 0, void 0, function* () {
             const entity = yield this.findOne(where);
-            const updated = yield this.update(entity, data, meta, true);
+            const updated = yield this.update(entity, data, meta, { usePassedEntity: true });
             return updated;
         });
     }
-    delete(entityOrId, meta, usePassedEntity = false) {
+    delete(entityOrId, meta, options) {
+        var _a;
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let entity;
-                if (usePassedEntity) {
+                if ((_a = options) === null || _a === void 0 ? void 0 : _a.usePassedEntity) {
                     if (typeof entityOrId === 'string') {
                         throw new common_1.InternalServerErrorException();
                     }
@@ -132,20 +133,17 @@ class BaseService extends base_find_service_1.BaseFindService {
                 return deleted;
             }
             catch (error) {
-                throw this.internalError(error);
+                this.logger.error('Problem deleting', error);
+                throw new common_1.InternalServerErrorException();
             }
         });
     }
     deleteWhere(where, logMetadata) {
         return __awaiter(this, void 0, void 0, function* () {
             const entity = yield this.findOne(where);
-            const deleted = yield this.delete(entity, logMetadata, true);
+            const deleted = yield this.delete(entity, logMetadata, { usePassedEntity: true });
             return deleted;
         });
-    }
-    internalError(error) {
-        this.logger.error(error);
-        return new common_1.InternalServerErrorException();
     }
 }
 __decorate([

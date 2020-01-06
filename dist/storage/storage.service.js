@@ -20,7 +20,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
-const AWS = require("aws-sdk");
+const aws_sdk_1 = require("aws-sdk");
 const consts_1 = require("../consts");
 let StorageService = class StorageService {
     constructor(config) {
@@ -35,31 +35,31 @@ let StorageService = class StorageService {
             this.logger.error('Storage mounted, but storage keys are undefined.');
             throw new common_1.InternalServerErrorException();
         }
-        this.bucket = bucket;
-        this.s3 = new AWS.S3({
+        this.bucketName = bucket;
+        this.s3 = new aws_sdk_1.S3({
             region,
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
             endpoint: endPoint,
         });
     }
-    put(file, name, size, _retries = 3) {
+    put(file, name) {
         return __awaiter(this, void 0, void 0, function* () {
             const filename = name.startsWith('/') ? name.substr(1) : name;
             return this.s3
                 .putObject({
-                Bucket: this.bucket,
+                Bucket: this.bucketName,
                 Key: filename,
                 Body: file,
                 ACL: 'public-read',
             })
                 .promise()
-                .then(data => [filename, size]);
+                .then(res => filename);
         });
     }
     delete(file) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.s3.deleteObject({ Bucket: this.bucket, Key: file }).promise();
+            return this.s3.deleteObject({ Bucket: this.bucketName, Key: file }).promise();
         });
     }
     deleteWherePrefix(prefix) {
@@ -67,8 +67,8 @@ let StorageService = class StorageService {
             const filenames = (yield this.listFiles(prefix)).map(Key => ({ Key }));
             return this.s3
                 .deleteObjects({
-                Bucket: this.bucket,
-                Delete: { Objects: [] },
+                Bucket: this.bucketName,
+                Delete: { Objects: filenames },
             })
                 .promise()
                 .then(data => filenames.map(f => f.Key));
@@ -77,7 +77,7 @@ let StorageService = class StorageService {
     listFiles(prefix) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.s3
-                .listObjectsV2({ Bucket: this.bucket, Prefix: prefix })
+                .listObjectsV2({ Bucket: this.bucketName, Prefix: prefix })
                 .promise()
                 .then(data => {
                 var _a, _b;

@@ -1,9 +1,9 @@
-import { PipeTransform, Injectable } from '@nestjs/common';
+import { Injectable, PipeTransform } from '@nestjs/common';
 import { FindOperator } from 'typeorm';
+import { ParsedOrmWhere, Struct } from '../types';
 import { parseQuery } from './parse-to-orm-query';
-import { OrmWhere, Struct } from '../types';
 
-export type OrmQuery<T = any, U = FindOperator<T>> = Struct<U>;
+// export type OrmQuery<T = any, U = FindOperator<T>> = Struct<U>;
 
 /**
  * Wrapper around parseQuery function to be used as a pipe
@@ -11,8 +11,8 @@ export type OrmQuery<T = any, U = FindOperator<T>> = Struct<U>;
  *   method(@Body(OrmQueryPipe) user: OrmQuery) {}
  */
 @Injectable()
-export class OrmQueryPipe implements PipeTransform {
-  transform(value: any): OrmWhere {
+export class OrmQueryPipe<T = any> implements PipeTransform {
+  transform(value: any): ParsedOrmWhere<T> {
     return parseQuery(value);
   }
 }

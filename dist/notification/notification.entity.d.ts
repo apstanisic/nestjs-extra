@@ -1,11 +1,10 @@
 import { BaseUser } from '../entities/base-user.entity';
 import { UUID } from '../types';
-export declare class Notification<User = BaseUser> {
-    id: string;
+import { BaseEntity } from '../entities/base.entity';
+export declare class Notification<User = BaseUser> extends BaseEntity {
     title: string;
     body?: string;
     user: User;
     userId: UUID;
     seenAt?: Date;
-    createdAt: Date;
 }

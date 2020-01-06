@@ -10,12 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-let Notification = class Notification {
+const base_entity_1 = require("../entities/base.entity");
+let Notification = class Notification extends base_entity_1.BaseEntity {
 };
-__decorate([
-    typeorm_1.PrimaryGeneratedColumn('uuid'),
-    __metadata("design:type", String)
-], Notification.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
@@ -36,10 +33,6 @@ __decorate([
     typeorm_1.Column({ precision: 3 }),
     __metadata("design:type", Date)
 ], Notification.prototype, "seenAt", void 0);
-__decorate([
-    typeorm_1.CreateDateColumn({ precision: 3 }),
-    __metadata("design:type", Date)
-], Notification.prototype, "createdAt", void 0);
 Notification = __decorate([
     typeorm_1.Entity('notifications')
 ], Notification);

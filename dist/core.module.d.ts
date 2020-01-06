@@ -1,13 +1,13 @@
 import { DynamicModule } from '@nestjs/common';
 import { ConfigModuleOptions } from '@nestjs/config/dist/interfaces';
-import { AcOptions } from './access-control/access-control.module';
+import { AccessControlOptions } from './access-control/access-control.module';
 import { DbOptions } from './db/db.module';
 import { StorageOptions } from './storage/storage.module';
 export interface CoreModuleParams {
     config?: ConfigModuleOptions;
     storage: StorageOptions | false;
     db: DbOptions;
-    accessControl?: AcOptions;
+    accessControl?: AccessControlOptions;
     dbLog: boolean;
     notifications: boolean;
     mail: boolean;

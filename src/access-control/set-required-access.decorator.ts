@@ -1,7 +1,7 @@
 import { SetMetadata } from '@nestjs/common';
 
-export interface AccessOptions {
-  action: 'read' | 'write';
+export interface AccessResourceOptions {
+  action: 'read' | 'create' | 'update' | 'delete';
   resource?: string;
 }
 
@@ -11,6 +11,6 @@ export interface AccessOptions {
  * @example
  *  @SetRequiredAccess({action: 'write', resource: '/companies/412412'})
  */
-export function SetRequiredAccess(options: AccessOptions): any {
+export function SetRequiredAccess(options: AccessResourceOptions): any {
   return SetMetadata('access_control', options);
 }

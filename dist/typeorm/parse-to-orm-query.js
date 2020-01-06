@@ -27,32 +27,19 @@ function parseQuery(query) {
                 typeOrmQuery[name] = typeorm_1.Like(`%${value}%`);
                 break;
             case 'in':
-                try {
-                    const arr = typeof value === 'string' ? JSON.parse(value) : value;
-                    if (Array.isArray(arr)) {
-                        typeOrmQuery[name] = typeorm_1.In(value);
-                    }
-                }
-                catch (error) {
+                const arr = helpers_1.parseIfJson(value);
+                if (Array.isArray(arr)) {
+                    typeOrmQuery[name] = typeorm_1.In(value);
                 }
                 break;
             case 'btw':
-                try {
-                    const btw = typeof value === 'string' ? JSON.parse(value) : value;
-                    if (Array.isArray(btw) && btw.length === 2) {
-                        typeOrmQuery[name] = typeorm_1.Between(btw[0], btw[1]);
-                    }
-                }
-                catch (error) {
+                const btw = helpers_1.parseIfJson(value);
+                if (Array.isArray(btw) && btw.length === 2) {
+                    typeOrmQuery[name] = typeorm_1.Between(btw[0], btw[1]);
                 }
                 break;
             default:
-                if (value instanceof typeorm_1.FindOperator) {
-                    typeOrmQuery[name] = value;
-                }
-                else {
-                    typeOrmQuery[name] = typeorm_1.Equal(value);
-                }
+                typeOrmQuery[name] = value instanceof typeorm_1.FindOperator ? value : typeorm_1.Equal(value);
                 break;
         }
     });

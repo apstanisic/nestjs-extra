@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { LessThan } from 'typeorm';
 import { NotificationService } from './notification.service';
 
+/** @Todo Maybe add to bullmq to do this */
 @Injectable()
 export class NotificationsCronService {
   constructor(private readonly notificationService: NotificationService) {}

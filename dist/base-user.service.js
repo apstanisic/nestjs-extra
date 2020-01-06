@@ -19,14 +19,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const moment_1 = require("moment");
 const typeorm_1 = require("typeorm");
+const roles_service_1 = require("./access-control/role/roles.service");
+const roles_entity_1 = require("./access-control/role/roles.entity");
 const base_service_1 = require("./base.service");
 const storage_images_service_1 = require("./storage/storage-images.service");
-const role_service_1 = require("./access-control/role/role.service");
-const roles_entity_1 = require("./access-control/role/roles.entity");
 let BaseUserService = class BaseUserService extends base_service_1.BaseService {
-    constructor(repository, options) {
+    constructor(repository, queue, options) {
         super(repository);
+        this.queue = queue;
         this.options = {
             useAvatar: true,
             useRoles: true,
@@ -48,7 +50,7 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
                 const user = this.repository.create();
                 user.email = email;
                 user.name = name;
-                user.password = password;
+                yield user.setPassword(password);
                 user.generateSecureToken();
                 const savedUser = yield this.repository.save(user);
                 if (this.options.useRoles) {
@@ -79,12 +81,30 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
         return __awaiter(this, void 0, void 0, function* () {
             const { email, oldPassword, newPassword } = data;
             const user = yield this.findForLogin(email, oldPassword);
-            user.password = newPassword;
+            yield user.setPassword(newPassword);
             return this.mutate(user, {
                 user,
                 domain: user.id,
                 reason: 'Change password.',
             });
+        });
+    }
+    requestEmailChange(oldEmail, data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const user = yield this.findForLogin(oldEmail, data.password);
+            const token = user.generateSecureToken(data.newEmail);
+            yield this.mutate(user);
+            this.queue.add('change-email', { token, email: data.newEmail });
+        });
+    }
+    changeEmail(user, token) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (!user.validToken(token, moment_1.duration(2, 'hour')))
+                throw new common_1.BadRequestException('Invalid token');
+            const [email] = token.split('___');
+            if (!this.validator.isEmail(email))
+                throw new common_1.BadRequestException('Invalid token');
+            return this.update(user, { email });
         });
     }
     deleteAccount({ email, password }) {
@@ -139,11 +159,11 @@ __decorate([
 ], BaseUserService.prototype, "storageImagesService", void 0);
 __decorate([
     common_1.Inject(),
-    __metadata("design:type", role_service_1.RoleService)
+    __metadata("design:type", roles_service_1.RolesService)
 ], BaseUserService.prototype, "roleService", void 0);
 BaseUserService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [typeorm_1.Repository, Object])
+    __metadata("design:paramtypes", [typeorm_1.Repository, Object, Object])
 ], BaseUserService);
 exports.BaseUserService = BaseUserService;
 //# sourceMappingURL=base-user.service.js.map

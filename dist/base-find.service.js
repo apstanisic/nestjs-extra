@@ -10,30 +10,34 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const class_validator_1 = require("class-validator");
 const _paginate_helper_1 = require("./pagination/_paginate.helper");
 const parse_to_orm_query_1 = require("./typeorm/parse-to-orm-query");
 class BaseFindService {
     constructor(repository) {
         this.repository = repository;
         this.logger = new common_1.Logger();
+        this.validator = new class_validator_1.Validator();
     }
-    getRepository() {
+    _getRepository() {
         return this.repository;
     }
-    findOne(filter, options = {}) {
+    findOne(filter, searchOptions = {}) {
         return __awaiter(this, void 0, void 0, function* () {
             let entity;
             let where;
-            where =
-                typeof filter === 'string' || typeof filter === 'number'
-                    ? { id: filter }
-                    : filter;
-            where = parse_to_orm_query_1.parseQuery(where);
+            if (typeof filter === 'string' || typeof filter === 'number') {
+                where = { id: filter };
+            }
+            else {
+                where = filter;
+            }
+            where = this.combineWheres(where, searchOptions.where);
             try {
-                entity = yield this.repository.findOne(Object.assign(Object.assign({}, options), { where }));
+                entity = yield this.repository.findOne(Object.assign(Object.assign({}, searchOptions), { where }));
             }
             catch (error) {
-                throw this.internalError(error);
+                throw this.internalError('FindOne error', error);
             }
             if (!entity)
                 throw new common_1.NotFoundException();
@@ -47,18 +51,19 @@ class BaseFindService {
                 return entities;
             }
             catch (error) {
-                throw this.internalError(error);
+                throw this.internalError('FindbyIds error', error);
             }
         });
     }
     find(filter = {}, searchOptions = {}) {
         return __awaiter(this, void 0, void 0, function* () {
+            const where = this.combineWheres(filter, searchOptions.where);
             try {
-                const res = yield this.repository.find(Object.assign(Object.assign({}, searchOptions), { where: parse_to_orm_query_1.parseQuery(filter) }));
+                const res = yield this.repository.find(Object.assign(Object.assign({}, searchOptions), { where }));
                 return res;
             }
             catch (error) {
-                throw this.internalError(error);
+                throw this.internalError('Find error', error);
             }
         });
     }
@@ -66,32 +71,42 @@ class BaseFindService {
         return __awaiter(this, void 0, void 0, function* () {
             const { repository } = this;
             const combinedOptions = Object.assign({}, options);
-            if (typeof combinedOptions.where === 'object' &&
-                typeof where === 'object') {
-                combinedOptions.where = Object.assign(Object.assign({}, combinedOptions.where), where);
-            }
-            else if (typeof where === 'object') {
-                combinedOptions.where = where;
-            }
-            combinedOptions.where = parse_to_orm_query_1.parseQuery(combinedOptions.where);
+            combinedOptions.where = this.combineWheres(options.where, where);
             const paginated = yield _paginate_helper_1.paginate({ repository, options: combinedOptions });
             return paginated;
         });
     }
     count(filter, searchOptions = {}) {
         return __awaiter(this, void 0, void 0, function* () {
+            const where = this.combineWheres(filter, searchOptions.where);
             try {
-                const count = yield this.repository.count(Object.assign(Object.assign({}, searchOptions), { where: parse_to_orm_query_1.parseQuery(filter) }));
+                const count = yield this.repository.count(Object.assign(Object.assign({}, searchOptions), { where }));
                 return count;
             }
             catch (error) {
-                throw this.internalError(error);
+                throw this.internalError('Count error', error);
             }
         });
     }
-    internalError(error) {
-        this.logger.error('BaseServiceError', error);
+    internalError(message, error) {
+        this.logger.error(message, error);
         return new common_1.InternalServerErrorException();
+    }
+    combineWheres(where1 = {}, where2 = {}) {
+        let combined;
+        if (typeof where1 === 'object' && typeof where2 === 'object') {
+            combined = Object.assign(Object.assign({}, where1), where2);
+        }
+        else if (typeof where1 === 'object') {
+            combined = Object.assign({}, where1);
+        }
+        else if (typeof where2 === 'object') {
+            combined = Object.assign({}, where2);
+        }
+        else {
+            combined = where1;
+        }
+        return parse_to_orm_query_1.parseQuery(combined);
     }
 }
 exports.BaseFindService = BaseFindService;

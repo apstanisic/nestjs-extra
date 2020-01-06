@@ -8,18 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const role_service_1 = require("./role.service");
+const roles_service_1 = require("./roles.service");
 const roles_entity_1 = require("./roles.entity");
-const consts_1 = require("../../consts");
+const roles_controller_1 = require("./roles.controller");
 let RoleModule = class RoleModule {
 };
 RoleModule = __decorate([
     common_1.Global(),
     common_1.Module({
         imports: [typeorm_1.TypeOrmModule.forFeature([roles_entity_1.Role])],
-        providers: [role_service_1.RoleService, { provide: consts_1.ROLE_SERVICE, useClass: role_service_1.RoleService }],
-        exports: [role_service_1.RoleService, { provide: consts_1.ROLE_SERVICE, useClass: role_service_1.RoleService }],
+        controllers: [roles_controller_1.RolesController],
+        providers: [roles_service_1.RolesService],
+        exports: [roles_service_1.RolesService],
     })
 ], RoleModule);
 exports.RoleModule = RoleModule;
-//# sourceMappingURL=role.module.js.map
+//# sourceMappingURL=roles.module.js.map

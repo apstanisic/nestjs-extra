@@ -39,7 +39,7 @@ let PasswordResetService = class PasswordResetService {
             if (expired) {
                 throw new common_1.BadRequestException('Invalid link. Link is valid for 2 hours.');
             }
-            user.password = password;
+            yield user.setPassword(password);
             user.removeSecureToken();
             user = yield this.usersService.mutate(user, {
                 user,

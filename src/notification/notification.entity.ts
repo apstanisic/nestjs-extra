@@ -1,13 +1,11 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { BaseUser } from '../entities/base-user.entity';
 import { UUID } from '../types';
+import { BaseEntity } from '../entities/base.entity';
 // import { User } from '../../user/user.entity';
 
 @Entity('notifications')
-export class Notification<User = BaseUser> {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
+export class Notification<User = BaseUser> extends BaseEntity {
   @Column()
   title: string;
 
@@ -22,7 +20,4 @@ export class Notification<User = BaseUser> {
 
   @Column({ precision: 3 })
   seenAt?: Date;
-
-  @CreateDateColumn({ precision: 3 })
-  createdAt: Date;
 }

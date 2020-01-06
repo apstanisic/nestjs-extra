@@ -23,7 +23,7 @@ export class ManyUUID implements PipeTransform<string, UUID[]> {
     if (!Array.isArray(ids)) throw new BadRequestException();
 
     const valid = ids.every(id => this.validator.isUUID(id));
-    if (!valid) throw new BadRequestException();
+    if (!valid) throw new BadRequestException('Invalid ids');
 
     return ids;
   }

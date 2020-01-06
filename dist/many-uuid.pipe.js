@@ -24,7 +24,7 @@ let ManyUUID = class ManyUUID {
             throw new common_1.BadRequestException();
         const valid = ids.every(id => this.validator.isUUID(id));
         if (!valid)
-            throw new common_1.BadRequestException();
+            throw new common_1.BadRequestException('Invalid ids');
         return ids;
     }
 };

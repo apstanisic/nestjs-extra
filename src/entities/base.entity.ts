@@ -18,7 +18,7 @@ import { WithId } from '../types';
  */
 @Index(['createdAt', 'id'])
 export abstract class BaseEntity implements WithId {
-  /** Id can only be set in constructor */
+  /** Id can only be set in constructor, or by TypeOrm */
   constructor(id?: string) {
     if (id) this.id = id;
   }
@@ -27,11 +27,7 @@ export abstract class BaseEntity implements WithId {
   @PrimaryGeneratedColumn('uuid')
   readonly id: string;
 
-  /**
-   * Date when entity was last updated.
-   * 3 point precision, keep track of miliseconds.
-   * Don't need more.
-   */
+  /** Date when entity was updated */
   @UpdateDateColumn({ precision: 3 })
   @Exclude()
   updatedAt: Date;
@@ -41,7 +37,10 @@ export abstract class BaseEntity implements WithId {
   @Index()
   createdAt: Date;
 
-  /** All entities will be auto validated before inserting or updating. Exclude private fields */
+  /**
+   * All entities will be auto validated before inserting or updating.
+   * Exclude private fields when returning errors.
+   */
   @BeforeInsert()
   @BeforeUpdate()
   async validate(): Promise<void> {

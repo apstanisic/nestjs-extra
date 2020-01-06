@@ -7,9 +7,9 @@ interface GenerateLogParams<T> {
     oldValue?: T;
     meta: DbLogMetadata;
 }
-export declare class DbLoggerService<T extends WithId = any> extends BaseFindService<DbLog> {
+export declare class DbLoggerService<Entity extends WithId = any> extends BaseFindService<DbLog> {
     constructor(repository: Repository<DbLog>);
-    generateLog({ oldValue, meta }: GenerateLogParams<T>): DbLog<T>;
-    store(log: DbLog, action: string, newValue?: T): Promise<DbLog>;
+    generateLog({ oldValue, meta }: GenerateLogParams<Entity>): DbLog<Entity>;
+    store(log: DbLog, action: string, newValue?: Entity): Promise<DbLog>;
 }
 export {};

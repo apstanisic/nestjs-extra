@@ -30,7 +30,7 @@ __decorate([
     __metadata("design:type", String)
 ], Role.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column({ default: '/*' }),
+    typeorm_1.Column(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
 ], Role.prototype, "domain", void 0);
@@ -38,7 +38,7 @@ __decorate([
     typeorm_1.Column({ type: 'text', nullable: true }),
     class_validator_1.IsOptional(),
     class_validator_1.IsString(),
-    class_validator_1.Length(2, 2000),
+    class_validator_1.Length(2, 200),
     __metadata("design:type", String)
 ], Role.prototype, "description", void 0);
 Role = __decorate([

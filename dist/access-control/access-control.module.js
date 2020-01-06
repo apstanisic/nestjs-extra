@@ -11,20 +11,22 @@ const common_1 = require("@nestjs/common");
 const consts_1 = require("../consts");
 const access_control_service_1 = require("./access-control.service");
 const permissions_guard_1 = require("./permissions.guard");
-const role_module_1 = require("./role/role.module");
+const roles_module_1 = require("./role/roles.module");
+const valid_role_pipe_1 = require("./valid-role.pipe");
 let AccessControlModule = AccessControlModule_1 = class AccessControlModule {
     static forRoot(options) {
         return {
             module: AccessControlModule_1,
-            imports: [role_module_1.RoleModule],
+            imports: [roles_module_1.RoleModule],
             providers: [
                 { provide: consts_1.AC_ROLES_LIST, useValue: options.availableRoles },
                 { provide: consts_1.AC_MODEL, useValue: options.model },
                 { provide: consts_1.AC_POLICIES, useValue: options.policies },
                 access_control_service_1.AccessControlService,
                 permissions_guard_1.PermissionsGuard,
+                valid_role_pipe_1.ValidRole,
             ],
-            exports: [access_control_service_1.AccessControlService, permissions_guard_1.PermissionsGuard],
+            exports: [access_control_service_1.AccessControlService, permissions_guard_1.PermissionsGuard, valid_role_pipe_1.ValidRole],
         };
     }
 };

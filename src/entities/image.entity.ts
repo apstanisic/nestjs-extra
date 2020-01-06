@@ -2,13 +2,15 @@ import { Column } from 'typeorm';
 import { BaseEntity } from './base.entity';
 
 export class Image extends BaseEntity {
+  /** If some entity have multiple images, this is images position in array. Starts at 0 */
   @Column({ nullable: true })
-  position?: number; // In case of storing image in array. Zero index
+  position?: number;
 
+  /** Part of path all sizes have in common. Usefull for deleting. */
   @Column()
-  prefix: string; // Part of images path that are common for all sizes
+  prefix: string;
 
-  // Non nullable because it's for thumbnail
+  /** Thumbnail (non nullable) */
   @Column()
   xs: string; // 168px
 

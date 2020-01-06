@@ -21,86 +21,27 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const mailer_1 = require("@nest-modules/mailer");
+const bull_1 = require("@nestjs/bull");
 const common_1 = require("@nestjs/common");
-const config_1 = require("@nestjs/config");
-const Handlebars = require("handlebars");
-const base_user_service_1 = require("../base-user.service");
-const consts_1 = require("../consts");
-const account_confirm_handlebars_1 = require("./templates/account-confirm.handlebars");
-const password_reset_handlebars_1 = require("./templates/password-reset.handlebars");
 let AuthMailService = class AuthMailService {
-    constructor(usersService, mailerService, configService) {
-        this.usersService = usersService;
-        this.mailerService = mailerService;
-        this.configService = configService;
-        this.templates = {};
-        this.storeTemplatesInMemory();
+    constructor(queue) {
+        this.queue = queue;
     }
     sendResetPasswordEmail(email) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const user = yield this.usersService.findOne({ email });
-                const token = user.generateSecureToken();
-                yield this.usersService.mutate(user);
-                const appUrl = this.configService.get('APP_URL');
-                const resetUrl = `${appUrl}/auth/reset-password/${email}/${token}`;
-                if (!this.templates.passwordReset) {
-                    throw new common_1.InternalServerErrorException();
-                }
-                const commonValues = this.getCommonTemplateValues();
-                const template = this.templates.passwordReset({
-                    resetUrl,
-                });
-                yield this.mailerService.sendMail({
-                    to: user.email,
-                    subject: `Resetovanje lozinke - ${commonValues.firmName}`,
-                    html: template,
-                });
-            }
-            catch (error) { }
+            this.queue.add('reset-password', email, { attempts: 3 });
         });
     }
     sendConfirmationEmail(email, token) {
         return __awaiter(this, void 0, void 0, function* () {
-            const appUrl = this.configService.get('API_URL');
-            const confirmUrl = `${appUrl}/auth/confirm-account/${email}/${token}`;
-            const commonValues = this.getCommonTemplateValues();
-            if (!this.templates.accountConfirm)
-                throw new common_1.InternalServerErrorException();
-            const template = this.templates.accountConfirm(Object.assign(Object.assign({}, commonValues), { confirmUrl }));
-            yield this.mailerService.sendMail({
-                to: email,
-                subject: `Potvrda naloga - ${commonValues.firmName}`,
-                html: template,
-            });
+            this.queue.add('confirm-account', { email, token }, { attempts: 3 });
         });
-    }
-    getCommonTemplateValues() {
-        const contactAddress = this.configService.get('FIRM_ADDRESS');
-        const contactEmail = this.configService.get('FIRM_CONTACT_EMAIL');
-        const contactPhoneNumber = this.configService.get('FIRM_PHONE_NUMBER');
-        const firmUrl = this.configService.get('FIRM_URL');
-        const firmName = this.configService.get('FIRM_NAME');
-        return {
-            contactAddress,
-            contactEmail,
-            contactPhoneNumber,
-            firmName,
-            firmUrl,
-        };
-    }
-    storeTemplatesInMemory() {
-        this.templates.accountConfirm = Handlebars.compile(account_confirm_handlebars_1.accountConfirmTemplate);
-        this.templates.passwordReset = Handlebars.compile(password_reset_handlebars_1.passwordResetTemplate);
     }
 };
 AuthMailService = __decorate([
     common_1.Injectable(),
-    __param(0, common_1.Inject(consts_1.USER_SERVICE)),
-    __metadata("design:paramtypes", [base_user_service_1.BaseUserService,
-        mailer_1.MailerService,
-        config_1.ConfigService])
+    __param(0, bull_1.InjectQueue('auth-email')),
+    __metadata("design:paramtypes", [Object])
 ], AuthMailService);
 exports.AuthMailService = AuthMailService;
 //# sourceMappingURL=auth-mail.service.js.map

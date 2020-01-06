@@ -1,30 +1,25 @@
 import {
   BadRequestException,
-  InternalServerErrorException,
-  Logger,
-  Optional,
   Inject,
+  InternalServerErrorException,
+  Optional,
 } from '@nestjs/common';
-import { Validator } from 'class-validator';
-import { FindConditions, FindManyOptions, FindOneOptions, Repository } from 'typeorm';
+import { FindConditions, Repository } from 'typeorm';
 import { BaseFindService } from './base-find.service';
-import { DbLoggerService } from './logger/db-logger.service';
+import { DB_LOGGER_SERVICE } from './consts';
 import { DbLogMetadata } from './logger/db-log-metadata';
 import { DbLog } from './logger/db-log.entity';
+import { DbLoggerService } from './logger/db-logger.service';
 import { WithId } from './types';
-import { DB_LOGGER_SERVICE } from './consts';
-
-export type FindOneParams<T> = Omit<FindOneOptions<T>, 'where'>;
-export type FindManyParams<T> = Omit<FindManyOptions<T>, 'where'>;
 
 /**
  * Base service that implements some basic methods.
  * Services are in change of throwing HTTP errors.
  * There is no need for every controller to check if result
  * is null, this service will automatically check for him.
- * Methods that chanages data (update, delete create) can accept meta
+ * Methods that chanages data (update, delete create) can accept object
  * as their last parameter. It's used for logging, if logger is provided.
- * Info contains user that executes operation and reason. More info
+ * Meta contains user that executes operation, domain and reason. More info
  * can be added in the future. If meta object is provided user is required.
  * Time of execution is automaticly created. Can't be manually set.
  * @warning Don't return promise directly. If repo throw an error,
@@ -35,17 +30,14 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   /** Accepts repository for accessing data, and loger service for logging */
   constructor(repository: Repository<T>) {
     super(repository);
+    this.logger.setContext(BaseService.name);
   }
 
+  // @Inject(DbLoggerService.name)
+  /** Db logger is optional */
   @Optional()
   @Inject(DB_LOGGER_SERVICE)
   protected readonly dbLoggerService?: DbLoggerService<T>;
-
-  /** Terminal logger. All extending classes can use it */
-  protected logger = new Logger();
-
-  /** Validator */
-  protected validator = new Validator();
 
   /** Create new entity */
   async create(data: Partial<T>, meta?: DbLogMetadata): Promise<T> {
@@ -64,24 +56,32 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
     }
   }
 
-  /** Update entity */
+  /**
+   * Update entity
+   * @param usePassedEntity is used for updateWhere
+   * @Todo refactor this in the future, 4 params is to much
+   */
   async update(
     entityOrId: T | string,
     updatedData: Partial<T> = {},
     meta?: DbLogMetadata,
-    usePassedEntity: boolean = false,
+    options?: {
+      usePassedEntity: boolean;
+    },
   ): Promise<T> {
     try {
       // if entity is passed just update it, if id, find and update
       let entity: T;
-      if (usePassedEntity) {
+      if (options?.usePassedEntity) {
         if (typeof entityOrId === 'string') {
+          this.logger.error('Passed entity is string');
           throw new InternalServerErrorException();
         }
         entity = entityOrId;
       } else if (typeof entityOrId === 'string') {
         entity = await this.findOne(entityOrId);
       } else {
+        // Always find latest entity for update (log should have up to date info)
         entity = await this.findOne(entityOrId.id);
       }
 
@@ -100,7 +100,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
 
       return updatedEntity;
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error('Error updating', error);
       throw new BadRequestException();
     }
   }
@@ -124,7 +124,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
       }
       return mutatedEntity;
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error('Error mutation', error);
       throw new BadRequestException();
     }
   }
@@ -132,7 +132,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   /** Update entity by providing where clause. Only one entity updated. */
   async updateWhere(where: FindConditions<T>, data: Partial<T>, meta?: DbLogMetadata): Promise<T> {
     const entity = await this.findOne(where);
-    const updated = await this.update(entity, data, meta, true);
+    const updated = await this.update(entity, data, meta, { usePassedEntity: true });
     return updated;
   }
 
@@ -140,12 +140,14 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   async delete(
     entityOrId: T | string,
     meta?: DbLogMetadata,
-    usePassedEntity: boolean = false,
+    options?: {
+      usePassedEntity: boolean;
+    },
   ): Promise<T> {
     try {
       // if entity is passed just update it, if id, find and update
       let entity: T;
-      if (usePassedEntity) {
+      if (options?.usePassedEntity) {
         if (typeof entityOrId === 'string') {
           throw new InternalServerErrorException();
         }
@@ -170,7 +172,8 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
 
       return deleted;
     } catch (error) {
-      throw this.internalError(error);
+      this.logger.error('Problem deleting', error);
+      throw new InternalServerErrorException();
     }
   }
 
@@ -183,22 +186,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
    */
   async deleteWhere(where: FindConditions<T>, logMetadata?: DbLogMetadata): Promise<T> {
     const entity = await this.findOne(where);
-    const deleted = await this.delete(entity, logMetadata, true);
+    const deleted = await this.delete(entity, logMetadata, { usePassedEntity: true });
     return deleted;
-  }
-
-  // async deleteMany(
-  //   where: FindConditions<T>,
-  //   logMetadata?: DbLogMetadata,
-  // ): Promise<T> {
-  //   const entities = await this.find(where);
-  //   this.repository.remove(entities);
-  //   const deleted = await this.delete(entity, logMetadata, true);
-  //   return deleted;
-  // }
-
-  protected internalError(error: any): InternalServerErrorException {
-    this.logger.error(error);
-    return new InternalServerErrorException();
   }
 }

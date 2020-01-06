@@ -1,7 +1,7 @@
 import { Injectable, InternalServerErrorException, Logger } from '@nestjs/common';
 // import { Client } from 'minio';
 import { ConfigService } from '@nestjs/config';
-import * as AWS from 'aws-sdk';
+import { S3 } from 'aws-sdk';
 import {
   STORAGE_ACCESS_KEY,
   STORAGE_BUCKET_NAME,
@@ -11,22 +11,19 @@ import {
 } from '../consts';
 
 /**
- * This service is wrapper around minio client.
- * We are using cb and wrap them in promise cause AWS SDK does not contain
- * promises nativly. We should be able to replace minio with AWS without
- * changing underlying api.
+ * This service is wrapper around aws s3 or minio client.
  */
+/** Wrapper around aws s3 or minio */
 @Injectable()
 export class StorageService {
-  /** Client that stores files */
-  // private client: Client;
-
   /** Bucket name */
-  private bucket: string;
+  private bucketName: string;
 
   /** Logger */
   private logger = new Logger();
-  private s3: AWS.S3;
+
+  /** S3 bucket */
+  private s3: S3;
 
   constructor(private readonly config: ConfigService) {
     // const endPoint = this.config.get('STORAGE_HOST');
@@ -41,9 +38,8 @@ export class StorageService {
       throw new InternalServerErrorException();
     }
 
-    this.bucket = bucket;
-    this.s3 = new AWS.S3({
-      // apiVersion: '2006-03-01',
+    this.bucketName = bucket;
+    this.s3 = new S3({
       region,
       accessKeyId: accessKey,
       secretAccessKey: secretKey,
@@ -52,41 +48,39 @@ export class StorageService {
   }
 
   /**
-   * Upload file to s3 compatible storage
+   * Upload file to s3 compatible storage.
+   * Path can't begin with a /. It should be folder1/folder2/name.ext
    */
-  async put(file: Buffer, name: string, size: string, _retries = 3): Promise<[string, string]> {
-    // Path can't start with /. It should be folder1/folder2/name.ext
+  async put(file: Buffer, name: string): Promise<string> {
     const filename = name.startsWith('/') ? name.substr(1) : name;
 
     return this.s3
       .putObject({
-        Bucket: this.bucket,
+        Bucket: this.bucketName,
         Key: filename,
         Body: file,
         ACL: 'public-read',
       })
       .promise()
-      .then(data => [filename, size]);
+      .then(res => filename);
   }
 
   /** Remove one file */
   async delete(file: string): Promise<any> {
-    return this.s3.deleteObject({ Bucket: this.bucket, Key: file }).promise();
+    return this.s3.deleteObject({ Bucket: this.bucketName, Key: file }).promise();
   }
 
   /**
-   * Deletes many files.
-   * Useful when images are stored in many sizes
-   * If all images sizes are 2019/05/22/qwer12.xs.jpeg,
-   * @param prefix for them is 2019/05/22/qwer12.
+   * Deletes many files. Useful when images are stored in many sizes.
+   * If all images sizes are 2019/05/22/qwer12.xs.jpeg, prefixfor them is 2019/05/22/qwer12.
    */
   async deleteWherePrefix(prefix: string): Promise<string[]> {
-    // aws sdk
     const filenames = (await this.listFiles(prefix)).map(Key => ({ Key }));
+
     return this.s3
       .deleteObjects({
-        Bucket: this.bucket,
-        Delete: { Objects: [] },
+        Bucket: this.bucketName,
+        Delete: { Objects: filenames },
       })
       .promise()
       .then(data => filenames.map(f => f.Key));
@@ -95,7 +89,7 @@ export class StorageService {
   /** Lists all files with given path (prefix) */
   private async listFiles(prefix: string): Promise<string[]> {
     return this.s3
-      .listObjectsV2({ Bucket: this.bucket, Prefix: prefix })
+      .listObjectsV2({ Bucket: this.bucketName, Prefix: prefix })
       .promise()
       .then(data => {
         const allKeys = data.Contents?.map(con => con?.Key) ?? [];

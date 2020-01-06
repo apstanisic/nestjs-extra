@@ -12,7 +12,7 @@ interface GenerateLogParams<T> {
 }
 
 @Injectable()
-export class DbLoggerService<T extends WithId = any> extends BaseFindService<DbLog> {
+export class DbLoggerService<Entity extends WithId = any> extends BaseFindService<DbLog> {
   constructor(@InjectRepository(DbLog) repository: Repository<DbLog>) {
     super(repository);
   }
@@ -22,9 +22,9 @@ export class DbLoggerService<T extends WithId = any> extends BaseFindService<DbL
    * @warning This will not save log in database. This only creates instance.
    * You must use store for persisting in db.
    */
-  generateLog({ oldValue, meta }: GenerateLogParams<T>): DbLog<T> {
+  generateLog({ oldValue, meta }: GenerateLogParams<Entity>): DbLog<Entity> {
     const { domain, user, reason } = meta;
-    const log = new DbLog<T>();
+    const log = new DbLog<Entity>();
     log.domainId = typeof domain === 'object' ? domain.id : domain;
     log.executedByInfo = user;
     log.reason = reason;
@@ -36,8 +36,8 @@ export class DbLoggerService<T extends WithId = any> extends BaseFindService<DbL
     return log;
   }
 
-  /** Store provided log to database */
-  async store(log: DbLog, action: string, newValue?: T): Promise<DbLog> {
+  /** Save provided log to database */
+  async store(log: DbLog, action: string, newValue?: Entity): Promise<DbLog> {
     log.action = action;
     log.newValue = newValue;
     return this.repository.save(log);

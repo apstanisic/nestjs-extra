@@ -19,7 +19,7 @@ export class PasswordResetService<User extends BaseUser = BaseUser> {
       throw new BadRequestException('Invalid link. Link is valid for 2 hours.');
     }
 
-    user.password = password;
+    await user.setPassword(password);
     user.removeSecureToken();
     user = await this.usersService.mutate(user, {
       user,

@@ -5,7 +5,7 @@ import { Role } from './roles.entity';
 import { BaseService } from '../../base.service';
 
 @Injectable()
-export class RoleService extends BaseService<Role> {
+export class RolesService extends BaseService<Role> {
   constructor(@InjectRepository(Role) repository: Repository<Role>) {
     super(repository);
   }

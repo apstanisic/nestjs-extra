@@ -2,11 +2,11 @@
 import { ConfigService } from '@nestjs/config';
 export declare class StorageService {
     private readonly config;
-    private bucket;
+    private bucketName;
     private logger;
     private s3;
     constructor(config: ConfigService);
-    put(file: Buffer, name: string, size: string, _retries?: number): Promise<[string, string]>;
+    put(file: Buffer, name: string): Promise<string>;
     delete(file: string): Promise<any>;
     deleteWherePrefix(prefix: string): Promise<string[]>;
     private listFiles;

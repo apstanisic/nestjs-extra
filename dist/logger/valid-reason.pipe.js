@@ -13,11 +13,6 @@ let ValidReason = class ValidReason {
         this.validator = new class_validator_1.Validator();
     }
     transform(value) {
-        if (value === undefined)
-            return value;
-        if (!this.validator.isString(value)) {
-            throw new common_1.BadRequestException('Invalid type.');
-        }
         if (!this.validator.length(value, 3, 250)) {
             throw new common_1.BadRequestException('Must have between 3 and 250 chars.');
         }

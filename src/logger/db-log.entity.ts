@@ -16,7 +16,7 @@ import { BaseUser } from '../entities/base-user.entity';
 export class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> extends BaseEntity {
   /** What action was executed (delete, update, custom-action) */
   @Column({ default: 'update' })
-  action: 'update' | 'delete' | 'create' | string;
+  action: 'create' | 'update' | 'delete' | string;
 
   /** Why is this action executed. */
   @Column({ nullable: true })
@@ -26,7 +26,7 @@ export class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> ext
   @Column({ type: 'jsonb' })
   executedByInfo: BasicUserInfo;
 
-  @ManyToOne('User')
+  @ManyToOne('User', { onDelete: 'SET NULL' })
   executedBy: User;
 
   @Column()
@@ -68,18 +68,23 @@ export class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> ext
   /** Transform data */
   @BeforeInsert()
   _prepare(): void {
+    // Remove sensitive data from user
     const user = classToPlain(this.executedBy);
     this.executedByInfo = plainToClass(BasicUserInfo, user, {
       excludeExtraneousValues: true,
     });
     this.executedById = this.executedBy.id;
+
     // Remove sensitive properties (passwords, cc numbers...)
     this.oldValue = classToClass(this.oldValue) ?? {};
+
     // Get entity id from provided values.
     if (this.oldValue?.id) {
       this.entityId = this.oldValue.id;
     } else if (this._newValue?.id) {
       this.entityId = this._newValue.id;
+    } else {
+      throw new InternalServerErrorException();
     }
   }
 

@@ -1,17 +1,18 @@
+import * as moment from 'moment';
 import { BaseEntity } from './base.entity';
 import { Image } from './image.entity';
 import { IUser } from './user.interface';
 export declare class BaseUser extends BaseEntity implements IUser {
     email: string;
-    _password: string;
+    password: string;
     name: string;
     avatar?: Image;
     confirmed: boolean;
     secureToken?: string;
     tokenCreatedAt?: Date;
-    set password(newPassword: string);
+    setPassword(newPassword: string): Promise<void>;
     checkPassword(enteredPassword: string): Promise<boolean>;
-    generateSecureToken(): string;
+    generateSecureToken(prepend?: string): string;
     removeSecureToken(): void;
-    validToken(token: string): boolean;
+    validToken(token: string, duration?: moment.Duration): boolean;
 }

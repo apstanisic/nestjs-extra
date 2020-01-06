@@ -1,6 +1,14 @@
-import { CanActivate, ExecutionContext, Injectable, NotImplementedException } from '@nestjs/common';
+import {
+  CanActivate,
+  ExecutionContext,
+  Injectable,
+  NotImplementedException,
+  Logger,
+} from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { Validator } from 'class-validator';
 import { SIMPLE_ADMIN_MAILS } from './consts';
+import { BaseUser } from './entities/base-user.entity';
 
 /**
  * Simplest admin guard, accepts admins provided as env variable
@@ -9,14 +17,25 @@ import { SIMPLE_ADMIN_MAILS } from './consts';
  */
 @Injectable()
 export class SimpleAdminGuard implements CanActivate {
+  private logger = new Logger(SimpleAdminGuard.name);
+  private validator = new Validator();
+
   constructor(private readonly configService: ConfigService) {}
 
   canActivate(context: ExecutionContext): boolean | Promise<boolean> {
-    const mailsString = this.configService.get(SIMPLE_ADMIN_MAILS);
-    if (!mailsString) throw new NotImplementedException();
-    const mails: string[] = mailsString.split(';').map((mail: string) => mail.trim());
-    const req = context.switchToHttp().getRequest();
+    const combinedMails = this.configService.get<string>(SIMPLE_ADMIN_MAILS);
+    if (!combinedMails) {
+      this.logger.error('Not implemented.');
+      throw new NotImplementedException();
+    }
+    const mails: string[] = combinedMails
+      .split(';')
+      .map(mail => mail.trim())
+      .filter(email => this.validator.isEmail(email));
 
-    return req.user && mails.some(mail => mail === req.user.email);
+    const req = context.switchToHttp().getRequest();
+    const userEmail = (req.user as BaseUser)?.email;
+
+    return mails.some(mail => mail === userEmail);
   }
 }

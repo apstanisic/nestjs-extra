@@ -34,6 +34,9 @@ let DbLog = class DbLog extends base_entity_1.BaseEntity {
         else if ((_c = this._newValue) === null || _c === void 0 ? void 0 : _c.id) {
             this.entityId = this._newValue.id;
         }
+        else {
+            throw new common_1.InternalServerErrorException();
+        }
     }
     preventUpdate() {
         throw new common_1.InternalServerErrorException();
@@ -52,7 +55,7 @@ __decorate([
     __metadata("design:type", user_interface_1.BasicUserInfo)
 ], DbLog.prototype, "executedByInfo", void 0);
 __decorate([
-    typeorm_1.ManyToOne('User'),
+    typeorm_1.ManyToOne('User', { onDelete: 'SET NULL' }),
     __metadata("design:type", Object)
 ], DbLog.prototype, "executedBy", void 0);
 __decorate([

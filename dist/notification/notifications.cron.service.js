@@ -23,7 +23,7 @@ const schedule_1 = require("@nestjs/schedule");
 const moment = require("moment");
 const typeorm_1 = require("typeorm");
 const notification_service_1 = require("./notification.service");
-let NotificationCronService = class NotificationCronService {
+let NotificationsCronService = class NotificationsCronService {
     constructor(notificationService) {
         this.notificationService = notificationService;
     }
@@ -43,10 +43,10 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], NotificationCronService.prototype, "deleteOldNotifications", null);
-NotificationCronService = __decorate([
+], NotificationsCronService.prototype, "deleteOldNotifications", null);
+NotificationsCronService = __decorate([
     common_1.Injectable(),
     __metadata("design:paramtypes", [notification_service_1.NotificationService])
-], NotificationCronService);
-exports.NotificationCronService = NotificationCronService;
-//# sourceMappingURL=notification-deletion.cron.service.js.map
+], NotificationsCronService);
+exports.NotificationsCronService = NotificationsCronService;
+//# sourceMappingURL=notifications.cron.service.js.map

@@ -1,5 +1,5 @@
-export interface AccessOptions {
-    action: 'read' | 'write';
+export interface AccessResourceOptions {
+    action: 'read' | 'create' | 'update' | 'delete';
     resource?: string;
 }
-export declare function SetRequiredAccess(options: AccessOptions): any;
+export declare function SetRequiredAccess(options: AccessResourceOptions): any;

@@ -10,6 +10,6 @@ interface AddNotificationParams {
 export declare class NotificationService extends BaseService<Notification> {
     constructor(repository: Repository<Notification>);
     deleteMany(criteria: FindConditions<Notification>): Promise<DeleteResult>;
-    addNotification({ title, body, userId, }: AddNotificationParams): Promise<Notification>;
+    addNotification({ title, body, userId }: AddNotificationParams): Promise<Notification>;
 }
 export {};

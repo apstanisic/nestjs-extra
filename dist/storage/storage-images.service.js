@@ -41,53 +41,19 @@ let StorageImagesService = class StorageImagesService {
             const folder = `${now}/${id}`;
             const filePrefix = `${folder}/image_${id}`;
             const buffersAndSizes = yield sharp_1.generateAllImageSizes(image, this.sizes);
-            const toStore = buffersAndSizes.map(img => this.storageService.put(img.image, `${filePrefix}_${img.size}.jpeg`, img.size));
-            const sizes = {};
-            const allSizesArray = yield Promise.all(toStore);
-            allSizesArray.forEach(item => {
-                const [filename, size] = item;
-                sizes[size] = filename;
+            const toStore = buffersAndSizes.map(img => this.storageService.put(img.image, `${filePrefix}_${img.size}.jpeg`));
+            const storedImagesArray = yield Promise.all(toStore);
+            const storedImages = {};
+            storedImagesArray.forEach((filename, i) => {
+                storedImages[buffersAndSizes[i].size] = filename;
             });
-            const imageObject = Object.assign(Object.assign({}, sizes), { id, prefix: folder, position: 0 });
+            const imageObject = Object.assign(Object.assign({}, storedImages), { id, prefix: folder, position: 0 });
             return class_transformer_1.plainToClass(image_entity_1.Image, imageObject);
         });
     }
-    removeImage(image, allImages) {
+    removeImage(image) {
         return __awaiter(this, void 0, void 0, function* () {
-            const deleted = yield this.storageService.deleteWherePrefix(image.prefix);
-            if (allImages === undefined)
-                return undefined;
-            return this.removeImageFromArray(image, allImages);
-        });
-    }
-    removeImageById(id, images) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const image = images.find(img => img.id === id);
-            if (!image)
-                throw new common_1.NotFoundException();
-            yield this.removeImage(image);
-            return this.removeImageFromArray(image, images);
-        });
-    }
-    removeImageFromArray(image, allImages) {
-        return allImages
-            .filter(img => img.id !== image.id)
-            .map((img, i) => {
-            img.position = i;
-            return img;
-        });
-    }
-    reorderImages(images, newOrder) {
-        return __awaiter(this, void 0, void 0, function* () {
-            images.forEach(img => {
-                img.position = newOrder.indexOf(img.id);
-            });
-            images
-                .filter(img => img.position === -1 || img.position === undefined)
-                .forEach((img, i) => {
-                img.position = newOrder.length + i;
-            });
-            return images;
+            return this.storageService.deleteWherePrefix(image.prefix);
         });
     }
 };

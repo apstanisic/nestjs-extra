@@ -5,7 +5,7 @@ import { AuthService } from './auth.service';
 export interface JwtPayload {
     email: string;
 }
-declare const JwtStrategy_base: new (...args: any[]) => typeof Strategy;
+declare const JwtStrategy_base: new (...args: any[]) => Strategy;
 export declare class JwtStrategy extends JwtStrategy_base {
     private readonly authService;
     readonly configService: ConfigService;

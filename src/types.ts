@@ -1,5 +1,7 @@
 import { FindConditions, ObjectLiteral, FindOperator } from 'typeorm';
 
+/** @Todo see which types are never used and delete them */
+
 /** Types that can be passed as TypeOrm where param */
 export type OrmWhere<T = any> =
   | FindConditions<T>[]

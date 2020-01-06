@@ -1,6 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const class_validator_1 = require("class-validator");
+function checkIsBetween(value, min, max) {
+    if (typeof value !== 'number')
+        return false;
+    if (value < min || value > max)
+        return false;
+    return true;
+}
 function IsBetween(min, max, validationOptions) {
     return function (object, propertyName) {
         class_validator_1.registerDecorator({
@@ -20,11 +27,4 @@ function IsBetween(min, max, validationOptions) {
     };
 }
 exports.IsBetween = IsBetween;
-function checkIsBetween(value, min, max) {
-    if (typeof value !== 'number')
-        return false;
-    if (value < min || value > max)
-        return false;
-    return true;
-}
 //# sourceMappingURL=is-between.js.map

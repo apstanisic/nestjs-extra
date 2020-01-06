@@ -13,11 +13,14 @@ const sharp = require("sharp");
 function generateAllImageSizes(image, sizes) {
     return __awaiter(this, void 0, void 0, function* () {
         const base = sharp(image);
-        const toWait = sizes.map(size => base
-            .jpeg({ quality: size.quality || 80 })
-            .clone()
-            .resize(size.width, size.height, { fit: size.fit })
-            .toBuffer());
+        const toWait = sizes.map(size => {
+            var _a;
+            return base
+                .jpeg({ quality: (_a = size.quality, (_a !== null && _a !== void 0 ? _a : 80)) })
+                .clone()
+                .resize(size.width, size.height, { fit: size.fit })
+                .toBuffer();
+        });
         const images = yield Promise.all(toWait);
         return sizes.map((size, i) => ({ size: size.name, image: images[i] }));
     });

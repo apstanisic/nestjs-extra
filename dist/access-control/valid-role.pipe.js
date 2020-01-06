@@ -13,17 +13,14 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const class_validator_1 = require("class-validator");
 const consts_1 = require("../consts");
 let ValidRole = class ValidRole {
     constructor(roles) {
         this.roles = roles;
-        this.validator = new class_validator_1.Validator();
     }
     transform(value) {
-        if (!this.validator.isString(value) ||
-            !this.validator.isIn(value, this.roles)) {
-            throw new common_1.BadRequestException('Role does not exist');
+        if (!this.roles.includes(value)) {
+            throw new common_1.BadRequestException('Invalid role');
         }
         return value;
     }

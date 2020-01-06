@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const notification_deletion_cron_service_1 = require("./notification-deletion.cron.service");
+const notifications_cron_service_1 = require("./notifications.cron.service");
 const notification_controller_1 = require("./notification.controller");
 const notification_service_1 = require("./notification.service");
 const notification_entity_1 = require("./notification.entity");
@@ -18,7 +18,7 @@ NotificationModule = __decorate([
     common_1.Global(),
     common_1.Module({
         imports: [typeorm_1.TypeOrmModule.forFeature([notification_entity_1.Notification])],
-        providers: [notification_service_1.NotificationService, notification_deletion_cron_service_1.NotificationCronService],
+        providers: [notification_service_1.NotificationService, notifications_cron_service_1.NotificationsCronService],
         controllers: [notification_controller_1.NotificationController],
         exports: [notification_service_1.NotificationService],
     })

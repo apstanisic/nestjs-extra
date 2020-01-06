@@ -6,8 +6,6 @@ import {
   ForbiddenException,
   Get,
   Inject,
-  NotFoundException,
-  Optional,
   Param,
   Post,
   Put,
@@ -18,14 +16,11 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Validator } from 'class-validator';
-import { RoleService } from '../access-control/role/role.service';
-import { Role } from '../access-control/role/roles.entity';
 import { BaseUserService } from '../base-user.service';
-import { ROLE_SERVICE, USER_SERVICE } from '../consts';
+import { USER_SERVICE } from '../consts';
 import { BaseUser } from '../entities/base-user.entity';
 import { BasicUserInfo } from '../entities/user.interface';
 import { validJpeg } from '../storage/valid-jpeg-image';
-import { ValidEmail } from '../validate-email.pipe';
 import {
   ChangeEmailDto,
   LoginUserDto,
@@ -43,7 +38,6 @@ export class AuthController<User extends BaseUser = BaseUser> {
   constructor(
     private readonly authService: AuthService,
     @Inject(USER_SERVICE) private readonly userService: BaseUserService<User>,
-    @Optional() @Inject(ROLE_SERVICE) private readonly roleService?: RoleService,
   ) {}
 
   /** Attempt to login user */
@@ -71,14 +65,6 @@ export class AuthController<User extends BaseUser = BaseUser> {
   @Delete('account')
   async deleteUser(@GetUser() user: User, @Body() data: OnlyPasswordDto): Promise<User> {
     return this.userService.deleteAccount({ email: user.email, password: data.password });
-  }
-
-  /** Get roles for provided user. Throw 404 if app does not have roles */
-  @Get('account/roles')
-  @UseGuards(AuthGuard('jwt'))
-  getUsersRoles(@GetUser() user: User): Promise<Role[]> {
-    if (!this.roleService) throw new NotFoundException();
-    return this.roleService.find({ userId: user.id });
   }
 
   /* Confirm user account. Click on link in email */

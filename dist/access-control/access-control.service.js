@@ -23,8 +23,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const casbin_1 = require("casbin");
-const casbin_valid_domain_1 = require("./casbin-valid-domain");
 const consts_1 = require("../consts");
+const casbin_valid_domain_1 = require("./casbin-valid-domain");
 let AccessControlService = class AccessControlService {
     constructor(casbinModelText, casbinPolicies) {
         const casbinModel = casbin_1.newModel();
@@ -37,12 +37,9 @@ let AccessControlService = class AccessControlService {
     }
     isAllowed(roles, resourcePath, action = 'write') {
         return __awaiter(this, void 0, void 0, function* () {
-            const checks = [];
-            roles.forEach(role => {
-                checks.push(this.enforcer.enforce(role.name, role.domain, resourcePath, action));
-            });
-            const responses = yield Promise.all(checks);
-            return responses.some(response => response);
+            const isAllowedPromises = roles.map(role => this.enforcer.enforce(role.name, role.domain, resourcePath, action));
+            const rolesResponses = yield Promise.all(isAllowedPromises);
+            return rolesResponses.some(isAllowed => isAllowed);
         });
     }
 };

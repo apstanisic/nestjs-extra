@@ -8,3 +8,4 @@ export declare function parseNumber(value?: any): number | undefined;
 export declare function getIntFromObject(obj: any, key: string): number | undefined;
 export declare function now(): Date;
 export declare function times(n: number, fn: Function): Promise<void>;
+export declare function parseIfJson(val: any): object | undefined;

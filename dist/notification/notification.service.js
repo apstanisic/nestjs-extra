@@ -33,7 +33,7 @@ let NotificationService = class NotificationService extends base_service_1.BaseS
     deleteMany(criteria) {
         return this.repository.delete(criteria);
     }
-    addNotification({ title, body, userId, }) {
+    addNotification({ title, body, userId }) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.create({ body, title, userId });
         });

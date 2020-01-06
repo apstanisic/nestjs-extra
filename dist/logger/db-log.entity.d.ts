@@ -3,7 +3,7 @@ import { BasicUserInfo } from '../entities/user.interface';
 import { UUID, WithId } from '../types';
 import { BaseUser } from '../entities/base-user.entity';
 export declare class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> extends BaseEntity {
-    action: 'update' | 'delete' | 'create' | string;
+    action: 'create' | 'update' | 'delete' | string;
     reason?: string;
     executedByInfo: BasicUserInfo;
     executedBy: User;

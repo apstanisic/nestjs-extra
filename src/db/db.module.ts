@@ -25,7 +25,7 @@ export class DbModule {
         TypeOrmModule.forRootAsync({
           inject: [ConfigService],
           useFactory: (config: ConfigService): TypeOrmModuleOptions => {
-            const shouldCache = config.get(REDIS_HOST) !== undefined;
+            const shouldCache = config.get<boolean>(REDIS_HOST) !== undefined;
             const isProduction = config.get(NODE_ENV) === 'production';
 
             const options: TypeOrmModuleOptions = {

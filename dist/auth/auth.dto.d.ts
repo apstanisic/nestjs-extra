@@ -18,6 +18,10 @@ export declare class UpdatePasswordDto {
     oldPassword: string;
     newPassword: string;
 }
+export declare class ChangeEmailDto {
+    newEmail: string;
+    password: string;
+}
 export declare class SignInResponse {
     token: string;
     user: BaseUser;

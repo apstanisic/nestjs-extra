@@ -64,6 +64,17 @@ __decorate([
     __metadata("design:type", String)
 ], UpdatePasswordDto.prototype, "newPassword", void 0);
 exports.UpdatePasswordDto = UpdatePasswordDto;
+class ChangeEmailDto {
+}
+__decorate([
+    class_validator_1.IsEmail(),
+    __metadata("design:type", String)
+], ChangeEmailDto.prototype, "newEmail", void 0);
+__decorate([
+    class_validator_1.Length(8, 50),
+    __metadata("design:type", String)
+], ChangeEmailDto.prototype, "password", void 0);
+exports.ChangeEmailDto = ChangeEmailDto;
 class SignInResponse {
 }
 exports.SignInResponse = SignInResponse;

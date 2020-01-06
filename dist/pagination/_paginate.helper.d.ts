@@ -6,5 +6,5 @@ interface Params<T> {
     repository: Repository<T>;
     options: PaginationParams<T>;
 }
-export declare function paginate<T extends WithId>({ repository, options, }: Params<T>): PgResult<T>;
+export declare function paginate<T extends WithId>({ repository, options }: Params<T>): PgResult<T>;
 export {};

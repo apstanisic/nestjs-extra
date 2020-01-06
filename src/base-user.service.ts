@@ -7,7 +7,7 @@ import {
 import { Queue } from 'bull';
 import { duration } from 'moment';
 import { DeepPartial, Repository } from 'typeorm';
-import { RoleService } from './access-control/role/role.service';
+import { RolesService } from './access-control/role/roles.service';
 import { Role } from './access-control/role/roles.entity';
 import { ChangeEmailDto, LoginUserDto, RegisterUserDto, UpdatePasswordDto } from './auth/auth.dto';
 import { BaseService } from './base.service';
@@ -43,7 +43,7 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
   private readonly storageImagesService: StorageImagesService;
 
   @Inject()
-  private readonly roleService: RoleService;
+  private readonly roleService: RolesService;
 
   /**
    * Create user and gives him basic roles.
@@ -57,7 +57,7 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
       const user = this.repository.create();
       user.email = email;
       user.name = name;
-      user.password = password;
+      await user.setPassword(password);
       user.generateSecureToken();
       const savedUser = await this.repository.save(user as DeepPartial<User>);
 
@@ -90,7 +90,7 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
     const { email, oldPassword, newPassword } = data;
 
     const user = await this.findForLogin(email, oldPassword);
-    user.password = newPassword;
+    await user.setPassword(newPassword);
     return this.mutate(user, {
       user,
       domain: user.id,

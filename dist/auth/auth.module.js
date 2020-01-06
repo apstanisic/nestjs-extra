@@ -17,8 +17,6 @@ const auth_service_1 = require("./auth.service");
 const jwt_strategy_1 = require("./jwt.strategy");
 const password_reset_controller_1 = require("./password-reset.controller");
 const password_reset_service_1 = require("./password-reset.service");
-var passport_2 = require("@nestjs/passport");
-exports.AuthGuard = passport_2.AuthGuard;
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
@@ -31,16 +29,18 @@ AuthModule = __decorate([
                 useFactory: (configService) => {
                     const secret = configService.get(consts_1.JWT_SECRET);
                     if (!secret) {
-                        new common_1.Logger().error('JWT_SECRET not defined');
+                        new common_1.Logger(jwt_1.JwtModule.name).error('JWT_SECRET not defined');
                         throw new common_1.InternalServerErrorException();
                     }
                     return { secret, signOptions: { expiresIn: '10 days' } };
                 },
             }),
         ],
-        providers: [auth_service_1.AuthService, auth_mail_service_1.AuthMailService, password_reset_service_1.PasswordResetService, jwt_strategy_1.JwtStrategy],
+        providers: [jwt_strategy_1.JwtStrategy, auth_service_1.AuthService, auth_mail_service_1.AuthMailService, password_reset_service_1.PasswordResetService],
         controllers: [auth_controller_1.AuthController, password_reset_controller_1.PasswordResetController],
     })
 ], AuthModule);
 exports.AuthModule = AuthModule;
+var passport_2 = require("@nestjs/passport");
+exports.AuthGuard = passport_2.AuthGuard;
 //# sourceMappingURL=auth.module.js.map

@@ -17,15 +17,18 @@ const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const roles_entity_1 = require("./roles.entity");
 const base_service_1 = require("../../base.service");
-let RoleService = class RoleService extends base_service_1.BaseService {
+let RolesService = class RolesService extends base_service_1.BaseService {
     constructor(repository) {
         super(repository);
     }
+    deleteMany(criteria) {
+        return this.repository.delete(criteria);
+    }
 };
-RoleService = __decorate([
+RolesService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(roles_entity_1.Role)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
-], RoleService);
-exports.RoleService = RoleService;
-//# sourceMappingURL=role.service.js.map
+], RolesService);
+exports.RolesService = RolesService;
+//# sourceMappingURL=roles.service.js.map

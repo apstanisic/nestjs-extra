@@ -17,42 +17,52 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var PermissionsGuard_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const core_1 = require("@nestjs/core");
 const access_control_service_1 = require("./access-control.service");
-const role_service_1 = require("./role/role.service");
-let PermissionsGuard = class PermissionsGuard {
-    constructor(acService, roleService, reflector = new core_1.Reflector()) {
+const roles_service_1 = require("./role/roles.service");
+let PermissionsGuard = PermissionsGuard_1 = class PermissionsGuard {
+    constructor(acService, roleService) {
         this.acService = acService;
         this.roleService = roleService;
-        this.reflector = reflector;
+        this.reflector = new core_1.Reflector();
+        this.logger = new common_1.Logger(PermissionsGuard_1.name);
     }
     canActivate(context) {
+        var _a, _b, _c, _d;
         return __awaiter(this, void 0, void 0, function* () {
             const accessOptions = this.reflector.get('access_control', context.getHandler());
-            const request = context.switchToHttp().getRequest();
-            const { method } = request;
-            const { user } = request;
-            if (!user)
-                throw new common_1.InternalServerErrorException('Must be logged in');
-            const defaultAction = method === 'GET' ? 'read' : 'write';
-            const action = accessOptions ? accessOptions.action : defaultAction;
-            const resource = accessOptions && accessOptions.resource
-                ? accessOptions.resource
-                : request.path;
+            const request = context
+                .switchToHttp()
+                .getRequest();
+            const { method, user, path } = request;
+            if (!user) {
+                this.logger.error('User not available in PermissionsGuard');
+                throw new common_1.ForbiddenException();
+            }
+            const lcMethod = `${method}`.toLowerCase();
+            let defaultRestAction = 'create';
+            if (lcMethod === 'get')
+                defaultRestAction = 'read';
+            if (lcMethod === 'put' || lcMethod === 'patch')
+                defaultRestAction = 'update';
+            if (lcMethod === 'delete')
+                defaultRestAction = 'delete';
+            const action = (_b = (_a = accessOptions) === null || _a === void 0 ? void 0 : _a.action, (_b !== null && _b !== void 0 ? _b : defaultRestAction));
+            const resource = (_d = (_c = accessOptions) === null || _c === void 0 ? void 0 : _c.resource, (_d !== null && _d !== void 0 ? _d : path));
             const roles = yield this.roleService.find({ userId: user.id });
             user.roles = roles;
-            const allowed = yield this.acService.isAllowed(roles, resource, action);
-            return allowed;
+            const isAllowed = yield this.acService.isAllowed(roles, resource, action);
+            return isAllowed;
         });
     }
 };
-PermissionsGuard = __decorate([
+PermissionsGuard = PermissionsGuard_1 = __decorate([
     common_1.Injectable(),
     __metadata("design:paramtypes", [access_control_service_1.AccessControlService,
-        role_service_1.RoleService,
-        core_1.Reflector])
+        roles_service_1.RolesService])
 ], PermissionsGuard);
 exports.PermissionsGuard = PermissionsGuard;
 //# sourceMappingURL=permissions.guard.js.map

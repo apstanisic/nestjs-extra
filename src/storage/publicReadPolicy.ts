@@ -1,3 +1,4 @@
+/** Not used currently */
 export function allowReadPolicy(bucketName: string): string {
   return JSON.stringify({
     Version: '2012-10-17',

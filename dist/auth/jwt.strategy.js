@@ -46,8 +46,7 @@ let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport
 };
 JwtStrategy = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [auth_service_1.AuthService,
-        config_1.ConfigService])
+    __metadata("design:paramtypes", [auth_service_1.AuthService, config_1.ConfigService])
 ], JwtStrategy);
 exports.JwtStrategy = JwtStrategy;
 //# sourceMappingURL=jwt.strategy.js.map

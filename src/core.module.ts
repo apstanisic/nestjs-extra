@@ -3,7 +3,7 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ConfigModuleOptions } from '@nestjs/config/dist/interfaces';
 import { ScheduleModule } from '@nestjs/schedule';
-import { AccessControlModule, AcOptions } from './access-control/access-control.module';
+import { AccessControlModule, AccessControlOptions } from './access-control/access-control.module';
 import { Role } from './access-control/role/roles.entity';
 import { AuthModule } from './auth/auth.module';
 import { REDIS_HOST, REDIS_PORT } from './consts';
@@ -14,11 +14,7 @@ import { MailerModule } from './mailer/mailer.module';
 import { Notification } from './notification/notification.entity';
 import { NotificationModule } from './notification/notification.module';
 import { StorageModule, StorageOptions } from './storage/storage.module';
-import { Struct } from './types';
 
-interface ConfigOptions {
-  data: string | Buffer | Struct<string>;
-}
 /**
  * Params for dynamic module
  * @Todo auth templates not available
@@ -28,7 +24,7 @@ export interface CoreModuleParams {
   config?: ConfigModuleOptions;
   storage: StorageOptions | false;
   db: DbOptions;
-  accessControl?: AcOptions;
+  accessControl?: AccessControlOptions;
   dbLog: boolean;
   notifications: boolean;
   mail: boolean;

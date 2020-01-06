@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var CoreModule_1;
 Object.defineProperty(exports, "__esModule", { value: true });
-const mailer_1 = require("@nest-modules/mailer");
+const bull_1 = require("@nestjs/bull");
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const schedule_1 = require("@nestjs/schedule");
@@ -18,6 +18,7 @@ const consts_1 = require("./consts");
 const db_module_1 = require("./db/db.module");
 const db_log_entity_1 = require("./logger/db-log.entity");
 const db_logger_module_1 = require("./logger/db-logger.module");
+const mailer_module_1 = require("./mailer/mailer.module");
 const notification_entity_1 = require("./notification/notification.entity");
 const notification_module_1 = require("./notification/notification.module");
 const storage_module_1 = require("./storage/storage.module");
@@ -32,27 +33,24 @@ let CoreModule = CoreModule_1 = class CoreModule {
             entities.push(db_log_entity_1.DbLog);
         const modules = [
             config_1.ConfigModule.forRoot(Object.assign(Object.assign({}, params.config), { isGlobal: true })),
+            bull_1.BullModule.registerQueueAsync({
+                inject: [config_1.ConfigService],
+                useFactory: (config) => {
+                    return {
+                        name: 'app',
+                        redis: {
+                            host: config.get(consts_1.REDIS_HOST),
+                            port: config.get(consts_1.REDIS_PORT),
+                        },
+                    };
+                },
+            }),
             schedule_1.ScheduleModule.forRoot(),
             db_module_1.DbModule.forRoot(params.db),
             auth_module_1.AuthModule,
         ];
         if (params.mail)
-            modules.push(mailer_1.MailerModule.forRootAsync({
-                inject: [config_1.ConfigService],
-                useFactory: (configService) => {
-                    return {
-                        transport: {
-                            host: configService.get(consts_1.EMAIL_HOST),
-                            secure: false,
-                            sender: configService.get(consts_1.EMAIL_USER),
-                            auth: {
-                                user: configService.get(consts_1.EMAIL_USER),
-                                pass: configService.get(consts_1.EMAIL_PASSWORD),
-                            },
-                        },
-                    };
-                },
-            }));
+            modules.push(mailer_module_1.MailerModule);
         if (params.storage)
             modules.push(storage_module_1.StorageModule.forRoot(params.storage));
         if (params.dbLog)

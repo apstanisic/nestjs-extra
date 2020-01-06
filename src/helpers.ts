@@ -121,6 +121,7 @@ export async function times(n: number, fn: Function): Promise<void> {
   }
 }
 
+/** Parse value if provided value is json string. If not string return same */
 export function parseIfJson(val: any): object | undefined {
   try {
     if (typeof val === 'string') {

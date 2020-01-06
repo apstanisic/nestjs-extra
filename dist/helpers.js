@@ -96,4 +96,16 @@ function times(n, fn) {
     });
 }
 exports.times = times;
+function parseIfJson(val) {
+    try {
+        if (typeof val === 'string') {
+            return JSON.parse(val);
+        }
+        return val;
+    }
+    catch (error) {
+        return undefined;
+    }
+}
+exports.parseIfJson = parseIfJson;
 //# sourceMappingURL=helpers.js.map

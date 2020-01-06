@@ -13,11 +13,8 @@ let ValidUUID = class ValidUUID {
         this.validator = new class_validator_1.Validator();
     }
     transform(value) {
-        if (!this.validator.isString(value)) {
-            throw new common_1.BadRequestException('Invalid type.');
-        }
         if (!this.validator.isUUID(value)) {
-            throw new common_1.BadRequestException('Invalid ID.');
+            throw new common_1.BadRequestException('Id is not valid.');
         }
         return value;
     }

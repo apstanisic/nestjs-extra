@@ -1,7 +1,10 @@
-/** Molter options */
+/**
+ * Multer options for valid jpeg.
+ * @param sizeInMb How big image can be in mb
+ */
 export function validJpeg(sizeInMb: number = 1): any {
   return {
-    limits: { fileSize: 1024 * 1024 * sizeInMb }, // 0.4 mb
+    limits: { fileSize: 1024 * 1024 * sizeInMb },
     fileFilter: (req: any, file: any, done: any): void => {
       if (file.mimetype !== 'image/jpeg' && file.mimetype !== 'image/jpg') {
         done(null, false);
