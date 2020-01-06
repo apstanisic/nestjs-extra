@@ -1,7 +1,7 @@
 import { JwtService } from '@nestjs/jwt';
-import { BaseUserService } from '../base-user.service';
-import { BaseUser } from '../entities/base-user.entity';
-import { BasicUserInfo } from '../entities/user.interface';
+import { BaseUserService } from '../users/base-user.service';
+import { BaseUser } from '../users/base-user.entity';
+import { BasicUserInfo } from '../users/user.interface';
 import { AuthMailService } from './auth-mail.service';
 import { RegisterUserDto, SignInResponse } from './auth.dto';
 import { JwtPayload } from './jwt.strategy';

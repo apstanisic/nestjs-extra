@@ -5,8 +5,8 @@ import { IsEmail, IsOptional, IsString, Length } from 'class-validator';
 import { random } from 'faker';
 import { Column, Index, Unique } from 'typeorm';
 import * as moment from 'moment';
-import { BaseEntity } from './base.entity';
-import { Image } from './image.entity';
+import { BaseEntity } from '../entities/base.entity';
+import { Image } from '../entities/image.entity';
 import { IUser } from './user.interface';
 
 @Unique(['email'])

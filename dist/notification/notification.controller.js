@@ -23,7 +23,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const notification_service_1 = require("./notification.service");
-const uuid_pipe_1 = require("../uuid.pipe");
+const uuid_pipe_1 = require("../pipes/uuid.pipe");
 const get_user_decorator_1 = require("../auth/get-user.decorator");
 let NotificationController = class NotificationController {
     constructor(notificationService) {

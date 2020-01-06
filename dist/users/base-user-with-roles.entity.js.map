@@ -1,0 +1,1 @@
+{"version":3,"file":"base-user-with-roles.entity.js","sourceRoot":"","sources":["../../src/users/base-user-with-roles.entity.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,yDAA4C;AAC5C,qCAAoC;AACpC,sEAA2D;AAC3D,yDAA8C;AAG9C,MAAa,iBAAkB,SAAQ,2BAAQ;CAQ9C;AADC;IALC,2BAAO,EAAE;IACT,mBAAS,CACR,IAAI,CAAC,EAAE,CAAC,mBAAI,EACZ,IAAI,CAAC,EAAE,CAAC,IAAI,CAAC,MAAM,CACpB;;gDACa;AAPhB,8CAQC"}

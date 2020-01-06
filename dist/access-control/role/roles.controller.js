@@ -16,7 +16,7 @@ const common_1 = require("@nestjs/common");
 const passport_1 = require("@nestjs/passport");
 const get_user_decorator_1 = require("../../auth/get-user.decorator");
 const roles_service_1 = require("./roles.service");
-const uuid_pipe_1 = require("../../uuid.pipe");
+const uuid_pipe_1 = require("../../pipes/uuid.pipe");
 let RolesController = class RolesController {
     constructor(rolesService) {
         this.rolesService = rolesService;

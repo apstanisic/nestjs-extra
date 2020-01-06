@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { Image } from './image.entity';
+import { Image } from '../entities/image.entity';
 
 /** User must always have this properties */
 export interface IUser {

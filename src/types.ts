@@ -1,7 +1,5 @@
 import { FindConditions, ObjectLiteral, FindOperator } from 'typeorm';
 
-/** @Todo see which types are never used and delete them */
-
 /** Types that can be passed as TypeOrm where param */
 export type OrmWhere<T = any> =
   | FindConditions<T>[]
@@ -27,32 +25,3 @@ export interface WithId {
 
 /** Shorthand for Record where key is string, and second param can be any */
 export type Struct<T = any> = Record<string, T>;
-
-/** When storing images, image should have this info.
- * xs, md, etc. are all defferent sizes of image.
- * In case there is only big image, save as lg.
- * Thumbnail is always xs.
- */
-// export interface Image {
-//   id: string; // uuid
-//   position: number; // In case of storing image in array. Zero index
-//   sizes: ImageSizes;
-//   prefix: string; // Part of images path that are common for all sizes
-// }
-
-/**
- * When entity accepts only one image, use this
- * If accepts array of images use Image
- */
-
-export interface ImageSizes {
-  xs?: string; // 168px
-  sm?: string; // 320px
-  md?: string; // 640px
-  lg?: string; // 1280px
-  xl?: string; // not used in most apps
-}
-
-export interface WithBuffer {
-  buffer: Buffer;
-}

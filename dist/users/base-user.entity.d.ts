@@ -1,6 +1,6 @@
 import * as moment from 'moment';
-import { BaseEntity } from './base.entity';
-import { Image } from './image.entity';
+import { BaseEntity } from '../entities/base.entity';
+import { Image } from '../entities/image.entity';
 import { IUser } from './user.interface';
 export declare class BaseUser extends BaseEntity implements IUser {
     email: string;

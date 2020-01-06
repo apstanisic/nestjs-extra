@@ -1,4 +1,4 @@
-import { Image } from './image.entity';
+import { Image } from '../entities/image.entity';
 export interface IUser {
     id: string;
     name: string;

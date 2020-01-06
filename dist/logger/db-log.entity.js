@@ -14,7 +14,7 @@ const class_transformer_1 = require("class-transformer");
 const deep_diff_1 = require("deep-diff");
 const typeorm_1 = require("typeorm");
 const base_entity_1 = require("../entities/base.entity");
-const user_interface_1 = require("../entities/user.interface");
+const user_interface_1 = require("../users/user.interface");
 let DbLog = class DbLog extends base_entity_1.BaseEntity {
     set newValue(value) {
         this.changes = deep_diff_1.diff(this.oldValue, value);

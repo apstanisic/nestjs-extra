@@ -1,6 +1,6 @@
 import { BullModuleAsyncOptions } from '@nestjs/bull';
 import { ConfigService } from '@nestjs/config';
-import { REDIS_HOST, REDIS_PORT } from './consts';
+import { REDIS_HOST, REDIS_PORT } from '../consts';
 
 /** Initialize queue. Removes boilerplate */
 export const initQueue = (queueName: string): BullModuleAsyncOptions => {

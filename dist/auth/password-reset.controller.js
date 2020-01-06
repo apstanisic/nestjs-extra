@@ -23,7 +23,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const base_service_1 = require("../base.service");
-const validate_email_pipe_1 = require("../validate-email.pipe");
+const validate_email_pipe_1 = require("../pipes/validate-email.pipe");
 const auth_mail_service_1 = require("./auth-mail.service");
 const auth_dto_1 = require("./auth.dto");
 const password_reset_service_1 = require("./password-reset.service");

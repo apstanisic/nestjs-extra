@@ -2,7 +2,7 @@ import { BadRequestException } from '@nestjs/common';
 import { validate } from 'class-validator';
 import { FindManyOptions, Repository } from 'typeorm';
 import * as queryString from 'query-string';
-import { convertToObject } from '../helpers';
+import { convertToObject } from '../utils/helpers';
 import { OrmWhere, WithId } from '../types';
 import { PaginationParams } from './pagination-options';
 import { PaginatorResponse, PgResult, cursorField } from './pagination.types';

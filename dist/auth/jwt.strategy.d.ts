@@ -1,6 +1,6 @@
 import { ConfigService } from '@nestjs/config';
 import { Strategy } from 'passport-jwt';
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 import { AuthService } from './auth.service';
 export interface JwtPayload {
     email: string;

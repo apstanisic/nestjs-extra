@@ -16,10 +16,10 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Validator } from 'class-validator';
-import { BaseUserService } from '../base-user.service';
+import { BaseUserService } from '../users/base-user.service';
 import { USER_SERVICE } from '../consts';
-import { BaseUser } from '../entities/base-user.entity';
-import { BasicUserInfo } from '../entities/user.interface';
+import { BaseUser } from '../users/base-user.entity';
+import { BasicUserInfo } from '../users/user.interface';
 import { validJpeg } from '../storage/valid-jpeg-image';
 import {
   ChangeEmailDto,

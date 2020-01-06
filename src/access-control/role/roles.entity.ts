@@ -1,6 +1,6 @@
 import { IsOptional, IsString, Length } from 'class-validator';
 import { Column, Entity, ManyToOne, Index } from 'typeorm';
-import { BaseUserWithRoles } from '../../entities/base-user-with-roles.entity';
+import { BaseUserWithRoles } from '../../users/base-user-with-roles.entity';
 // import { User } from "../../user/user.entity";
 import { BaseEntity } from '../../entities/base.entity';
 

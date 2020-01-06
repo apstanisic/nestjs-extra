@@ -1,5 +1,5 @@
 import { IsEmail, IsNotEmpty, Length, IsUUID } from 'class-validator';
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 
 /** Data provided for login */
 export class LoginUserDto {

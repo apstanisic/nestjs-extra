@@ -1,5 +1,5 @@
 import { BaseService } from '../base.service';
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 export declare class PasswordResetService<User extends BaseUser = BaseUser> {
     private usersService;
     constructor(usersService: BaseService<User>);

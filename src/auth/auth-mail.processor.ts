@@ -4,7 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { Job } from 'bull';
 import * as Handlebars from 'handlebars';
 import { join } from 'path';
-import { BaseUserService } from '../base-user.service';
+import { BaseUserService } from '../users/base-user.service';
 import { API_URL, APP_URL, QUEUE_AUTH_EMAIL, USER_SERVICE } from '../consts';
 import { MailerService } from '../mailer/mailer.service';
 import accountConfirmTemplate from './templates/account-confirm.hbs';

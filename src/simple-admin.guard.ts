@@ -8,7 +8,7 @@ import {
 import { ConfigService } from '@nestjs/config';
 import { Validator } from 'class-validator';
 import { SIMPLE_ADMIN_MAILS } from './consts';
-import { BaseUser } from './entities/base-user.entity';
+import { BaseUser } from './users/base-user.entity';
 
 /**
  * Simplest admin guard, accepts admins provided as env variable

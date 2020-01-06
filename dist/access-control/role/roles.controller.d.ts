@@ -1,4 +1,4 @@
-import { BaseUser } from '../../entities/base-user.entity';
+import { BaseUser } from '../../users/base-user.entity';
 import { Role } from './roles.entity';
 import { RolesService } from './roles.service';
 import { UUID } from '../../types';

@@ -1,7 +1,7 @@
 import { Validator } from 'class-validator';
-import { BaseUserService } from '../base-user.service';
-import { BaseUser } from '../entities/base-user.entity';
-import { BasicUserInfo } from '../entities/user.interface';
+import { BaseUserService } from '../users/base-user.service';
+import { BaseUser } from '../users/base-user.entity';
+import { BasicUserInfo } from '../users/user.interface';
 import { ChangeEmailDto, LoginUserDto, OnlyPasswordDto, RegisterUserDto, SignInResponse, UpdatePasswordDto } from './auth.dto';
 import { AuthService } from './auth.service';
 export declare class AuthController<User extends BaseUser = BaseUser> {

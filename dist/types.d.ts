@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { FindConditions, ObjectLiteral, FindOperator } from 'typeorm';
 export declare type OrmWhere<T = any> = FindConditions<T>[] | FindConditions<T> | ObjectLiteral | string | undefined;
 export interface ParsedOrmWhere<T = any> {
@@ -11,13 +10,3 @@ export interface WithId {
     [key: string]: any;
 }
 export declare type Struct<T = any> = Record<string, T>;
-export interface ImageSizes {
-    xs?: string;
-    sm?: string;
-    md?: string;
-    lg?: string;
-    xl?: string;
-}
-export interface WithBuffer {
-    buffer: Buffer;
-}

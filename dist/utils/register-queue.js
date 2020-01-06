@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const config_1 = require("@nestjs/config");
-const consts_1 = require("./consts");
+const consts_1 = require("../consts");
 exports.initQueue = (queueName) => {
     return {
         name: queueName,

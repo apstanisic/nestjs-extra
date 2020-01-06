@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const class_validator_1 = require("class-validator");
 const queryString = require("query-string");
-const helpers_1 = require("../helpers");
+const helpers_1 = require("../utils/helpers");
 const pagination_types_1 = require("./pagination.types");
 const _generate_cursor_1 = require("./_generate-cursor");
 const _parse_cursor_1 = require("./_parse-cursor");

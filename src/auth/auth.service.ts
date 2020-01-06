@@ -2,10 +2,10 @@ import { BadRequestException, ForbiddenException, Inject, Injectable } from '@ne
 import { JwtService } from '@nestjs/jwt';
 import { classToClass, plainToClass } from 'class-transformer';
 import { Validator } from 'class-validator';
-import { BaseUserService } from '../base-user.service';
+import { BaseUserService } from '../users/base-user.service';
 import { USER_SERVICE } from '../consts';
-import { BaseUser } from '../entities/base-user.entity';
-import { BasicUserInfo } from '../entities/user.interface';
+import { BaseUser } from '../users/base-user.entity';
+import { BasicUserInfo } from '../users/user.interface';
 import { AuthMailService } from './auth-mail.service';
 import { RegisterUserDto, SignInResponse } from './auth.dto';
 import { JwtPayload } from './jwt.strategy';

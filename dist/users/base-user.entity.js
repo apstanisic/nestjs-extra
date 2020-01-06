@@ -25,8 +25,8 @@ const class_validator_1 = require("class-validator");
 const faker_1 = require("faker");
 const typeorm_1 = require("typeorm");
 const moment = require("moment");
-const base_entity_1 = require("./base.entity");
-const image_entity_1 = require("./image.entity");
+const base_entity_1 = require("../entities/base.entity");
+const image_entity_1 = require("../entities/image.entity");
 let BaseUser = class BaseUser extends base_entity_1.BaseEntity {
     setPassword(newPassword) {
         return __awaiter(this, void 0, void 0, function* () {

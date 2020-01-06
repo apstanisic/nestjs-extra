@@ -1,6 +1,6 @@
 import { ConfigService } from '@nestjs/config';
 import { Job } from 'bull';
-import { BaseUserService } from '../base-user.service';
+import { BaseUserService } from '../users/base-user.service';
 import { MailerService } from '../mailer/mailer.service';
 export declare class AuthMailProcessor {
     private readonly usersService;

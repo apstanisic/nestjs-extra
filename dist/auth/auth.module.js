@@ -12,7 +12,7 @@ const config_1 = require("@nestjs/config");
 const jwt_1 = require("@nestjs/jwt");
 const passport_1 = require("@nestjs/passport");
 const consts_1 = require("../consts");
-const register_queue_1 = require("../register-queue");
+const register_queue_1 = require("../utils/register-queue");
 const auth_mail_service_1 = require("./auth-mail.service");
 const auth_controller_1 = require("./auth.controller");
 const auth_service_1 = require("./auth.service");
@@ -37,7 +37,7 @@ AuthModule = __decorate([
                     return { secret, signOptions: { expiresIn: '10 days' } };
                 },
             }),
-            bull_1.BullModule.registerQueueAsync(Object.assign({}, register_queue_1.initQueue(consts_1.QUEUE_AUTH_EMAIL))),
+            bull_1.BullModule.registerQueueAsync(register_queue_1.initQueue(consts_1.QUEUE_AUTH_EMAIL)),
         ],
         providers: [jwt_strategy_1.JwtStrategy, auth_service_1.AuthService, auth_mail_service_1.AuthMailService, password_reset_service_1.PasswordResetService],
         controllers: [auth_controller_1.AuthController, password_reset_controller_1.PasswordResetController],

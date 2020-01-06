@@ -1,10 +1,10 @@
 import { Controller, Get, UseGuards, Delete, Param } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { GetUser } from '../../auth/get-user.decorator';
-import { BaseUser } from '../../entities/base-user.entity';
+import { BaseUser } from '../../users/base-user.entity';
 import { Role } from './roles.entity';
 import { RolesService } from './roles.service';
-import { ValidUUID } from '../../uuid.pipe';
+import { ValidUUID } from '../../pipes/uuid.pipe';
 import { UUID } from '../../types';
 
 /**

@@ -7,12 +7,12 @@ import {
 import { Queue } from 'bull';
 import { duration } from 'moment';
 import { DeepPartial, Repository } from 'typeorm';
-import { RolesService } from './access-control/role/roles.service';
-import { Role } from './access-control/role/roles.entity';
-import { ChangeEmailDto, LoginUserDto, RegisterUserDto, UpdatePasswordDto } from './auth/auth.dto';
-import { BaseService } from './base.service';
-import { BaseUser } from './entities/base-user.entity';
-import { StorageImagesService } from './storage/storage-images.service';
+import { RolesService } from '../access-control/role/roles.service';
+import { Role } from '../access-control/role/roles.entity';
+import { ChangeEmailDto, LoginUserDto, RegisterUserDto, UpdatePasswordDto } from '../auth/auth.dto';
+import { BaseService } from '../base.service';
+import { BaseUser } from './base-user.entity';
+import { StorageImagesService } from '../storage/storage-images.service';
 
 interface BaseUserServiceOptions {
   useRoles: boolean;

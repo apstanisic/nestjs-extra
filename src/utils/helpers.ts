@@ -1,4 +1,4 @@
-import { Struct } from './types';
+import { Struct } from '../types';
 
 /**
  * Removes properties that are null, undefined or empty string

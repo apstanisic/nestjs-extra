@@ -1,9 +1,9 @@
 import { Body, Controller, Inject, Param, Post } from '@nestjs/common';
 import { BaseService } from '../base.service';
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 // import { User } from "../../user/user.entity";
 // import { UsersService } from "../../user/user.service";
-import { ValidEmail } from '../validate-email.pipe';
+import { ValidEmail } from '../pipes/validate-email.pipe';
 import { AuthMailService } from './auth-mail.service';
 import { ResetPasswordDto } from './auth.dto';
 import { PasswordResetService } from './password-reset.service';

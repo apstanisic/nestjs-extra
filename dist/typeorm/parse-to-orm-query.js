@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-const helpers_1 = require("../helpers");
+const helpers_1 = require("../utils/helpers");
 function parseQuery(query) {
     const queryObject = helpers_1.convertToObject(query);
     const typeOrmQuery = {};

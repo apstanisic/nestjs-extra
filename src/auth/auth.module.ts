@@ -4,7 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JWT_SECRET, QUEUE_AUTH_EMAIL } from '../consts';
-import { initQueue } from '../register-queue';
+import { initQueue } from '../utils/register-queue';
 import { AuthMailService } from './auth-mail.service';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
@@ -27,7 +27,7 @@ import { PasswordResetService } from './password-reset.service';
         return { secret, signOptions: { expiresIn: '10 days' } };
       },
     }),
-    BullModule.registerQueueAsync({ ...initQueue(QUEUE_AUTH_EMAIL) }),
+    BullModule.registerQueueAsync(initQueue(QUEUE_AUTH_EMAIL)),
   ],
   providers: [JwtStrategy, AuthService, AuthMailService, PasswordResetService],
   controllers: [AuthController, PasswordResetController],

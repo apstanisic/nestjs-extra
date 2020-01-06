@@ -1,4 +1,4 @@
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 export declare class LoginUserDto {
     email: string;
     password: string;

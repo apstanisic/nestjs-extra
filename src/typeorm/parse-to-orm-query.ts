@@ -9,7 +9,7 @@ import {
   In,
   FindOperator,
 } from 'typeorm';
-import { convertToObject, parseIfJson } from '../helpers';
+import { convertToObject, parseIfJson } from '../utils/helpers';
 import { ParsedOrmWhere, Struct } from '../types';
 
 /**

@@ -1,4 +1,4 @@
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 import { UUID } from '../types';
 import { BaseEntity } from '../entities/base.entity';
 export declare class Notification<User = BaseUser> extends BaseEntity {

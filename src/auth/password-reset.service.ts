@@ -2,7 +2,7 @@ import { BadRequestException, ForbiddenException, Inject, Injectable } from '@ne
 import * as moment from 'moment';
 import { BaseService } from '../base.service';
 import { USER_SERVICE } from '../consts';
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 
 @Injectable()
 export class PasswordResetService<User extends BaseUser = BaseUser> {

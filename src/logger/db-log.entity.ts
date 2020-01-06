@@ -3,9 +3,9 @@ import { classToClass, plainToClass, classToPlain } from 'class-transformer';
 import { diff } from 'deep-diff';
 import { Entity, BeforeInsert, BeforeUpdate, Column, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../entities/base.entity';
-import { BasicUserInfo, IUser } from '../entities/user.interface';
+import { BasicUserInfo, IUser } from '../users/user.interface';
 import { UUID, WithId } from '../types';
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 
 /**
  * This entity is using MongoDb. TypeOrm currently supports only this NoSql db.

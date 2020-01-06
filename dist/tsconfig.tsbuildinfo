@@ -109,14 +109,6 @@
         "version": "0c9ea8c2028047f39a3f66752682604f543c08be8806258c3d95c93e75a43255",
         "signature": "0c9ea8c2028047f39a3f66752682604f543c08be8806258c3d95c93e75a43255"
       },
-      "../node_modules/moment/moment.d.ts": {
-        "version": "d62fa6fe33566fa743b3d6715a1a2fe46e937ba9d2ba158563c5744315d438a7",
-        "signature": "d62fa6fe33566fa743b3d6715a1a2fe46e937ba9d2ba158563c5744315d438a7"
-      },
-      "../src/add-duration.ts": {
-        "version": "3f9637df5f60613015780c6bd92fa5fef0cda9bc8abebb5294f435340b71744b",
-        "signature": "7cacc6df91be9603b93cd10ccb9dbc2f2c9d4b424f348f83608d78103c3e6af6"
-      },
       "../node_modules/reflect-metadata/index.d.ts": {
         "version": "8d6d51a5118d000ed3bfe6e1dd1335bebfff3fef23cd2af2f84a24d30f90cc90",
         "signature": "8d6d51a5118d000ed3bfe6e1dd1335bebfff3fef23cd2af2f84a24d30f90cc90"
@@ -3138,14 +3130,14 @@
         "signature": "ad79064161a2f18b345d48533db469ba87afea85a9d7ad80292d72bd00acdb8c"
       },
       "../src/types.ts": {
-        "version": "b5b524a985d172a90d38cccd55b62ad0e8732dc5e1524aefc44b90fd5b2e66cc",
-        "signature": "5441a207db684c557375bafc24424ee234cfbca2f152df895e3c15a693dda715"
+        "version": "cad7ccf75b22174d8dc5ac54c9263a78b9c5a26a3283f568e88f286cddae6679",
+        "signature": "efb562f0d86eac0d38de0b5c983d7514996b5a33d8c1cfe37ecad6a014a3b65f"
       },
-      "../src/helpers.ts": {
-        "version": "4888a6c934fcdad411622e1b942fd58eadfdb20c9cb965eb36003c382027c099",
-        "signature": "c5aef4ebc5d38f6f608852cf0dbaf3aa7029d433d151943225e946c6e4fd2aa6"
+      "../src/utils/helpers.ts": {
+        "version": "d08ac28e94616cdd5cd9b7700635e78a2a70f06ade6c3e52a1cfbaa2231b1ccf",
+        "signature": "4e902aaf6330f708e03a37dc8c819ac790a26a473f75304b6aab6f220e5513ee"
       },
-      "../src/is-between.ts": {
+      "../src/utils/is-between.ts": {
         "version": "44bed162f78116a1638ba3171bfb88f4076c8e75fc140316d952b38a4a31badb",
         "signature": "fb672977808c85131a708eb4ffb670181aef9481e072a04e8a7e6e2cb8eb0287"
       },
@@ -3154,7 +3146,7 @@
         "signature": "6d5af49115189b181cd5ca1dcd668ac1276d882506b6887e836ab8fcc29c72d2"
       },
       "../src/pagination/pagination-options.ts": {
-        "version": "f179455821e226fc336666b9109e95e71cf7921e092d22a9255056be855b9a9f",
+        "version": "4214d514856355c69d7a01e067f5c12a22302fedf875d6ea47bdf844cd6412a0",
         "signature": "630b9ef92ee8245b63547053dc4127b975b07f61b13cc9afd4e597a706992d19"
       },
       "../node_modules/query-string/index.d.ts": {
@@ -3174,7 +3166,7 @@
         "signature": "173e2bb1420f0956f27d5b1949cbe07bb738715a9f07c1331c005fa4288692de"
       },
       "../src/pagination/_paginator.ts": {
-        "version": "2394c7fb6929dee8a4b7975f20567b47a1878c981d24d4c2b81f63cbdacc413e",
+        "version": "a7324f3c0d9187adf02ca88eecd0f5703f4ad97ec9083d1039e38af1a0c0b7c8",
         "signature": "7eda2c6299138e51d48ecf722bae2e2aa4a5f45e75a7ba4eeea17625efedb010"
       },
       "../src/pagination/_paginate.helper.ts": {
@@ -3182,20 +3174,84 @@
         "signature": "79aabb9144340792d9608ad32d6c34643b1a8dbdf5e2d1eea704bc51d8e8dd7f"
       },
       "../src/typeorm/parse-to-orm-query.ts": {
-        "version": "c6b853330a44e3e0869b5d2973882a3d69797092fa89217d90070270e07490c7",
+        "version": "6058d9fbeccc8dc13746782d6c9d421d3e0d7cee84cc4a3bbe51cef0ce5b8431",
         "signature": "dba7030620268aa2629e3557de2663d2f1fe9feffa18175cd0ddbe03fc9f637d"
       },
       "../src/base-find.service.ts": {
         "version": "1854930c8f38946d283f28fb3a1476fa3b082e6e2c49e73f87eea20347a1957d",
         "signature": "5da27cb58540eacd21455a545519a87e28c30b14c160a79ca806bff150640f2c"
       },
-      "../node_modules/@types/ioredis/index.d.ts": {
-        "version": "6269483450dae3ee7408be7f6275f5bb519417c2e919be8b332a68ddc6e2c64d",
-        "signature": "6269483450dae3ee7408be7f6275f5bb519417c2e919be8b332a68ddc6e2c64d"
+      "../src/consts.ts": {
+        "version": "4a28ac1f033067ddc8088533d8c5acb38a71e935a4b93920bca97c90dc56b474",
+        "signature": "b9df6e2fed9d3c5b271cc4b921e8b0bd1304627ff8d2fdc9344d575652841bcf"
       },
-      "../node_modules/@types/bull/index.d.ts": {
-        "version": "7164086bfd20c9b7978d4ec01390a9924543ef78dc044f354e1c84734537aff5",
-        "signature": "7164086bfd20c9b7978d4ec01390a9924543ef78dc044f354e1c84734537aff5"
+      "../node_modules/class-transformer/ClassTransformOptions.d.ts": {
+        "version": "d89af0c250e1424959162beae79f2c2745c729d6ab8028503d322395d96d3a2b",
+        "signature": "d89af0c250e1424959162beae79f2c2745c729d6ab8028503d322395d96d3a2b"
+      },
+      "../node_modules/class-transformer/ClassTransformer.d.ts": {
+        "version": "96589ead67dc132731ddb531c3c7de2e66156df7154b1136d1abd92bdaa27e79",
+        "signature": "96589ead67dc132731ddb531c3c7de2e66156df7154b1136d1abd92bdaa27e79"
+      },
+      "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts": {
+        "version": "1aed251ab92dfd0e4901b3b9ad5eccdeb4d3603d57af947ae5f1de967f5ffa6e",
+        "signature": "1aed251ab92dfd0e4901b3b9ad5eccdeb4d3603d57af947ae5f1de967f5ffa6e"
+      },
+      "../node_modules/class-transformer/metadata/TypeMetadata.d.ts": {
+        "version": "fc14f591b59444c787440f6d8d4df6d96a2eafd8dcb8f3d9773d2d52a88db64f",
+        "signature": "fc14f591b59444c787440f6d8d4df6d96a2eafd8dcb8f3d9773d2d52a88db64f"
+      },
+      "../node_modules/class-transformer/TransformOperationExecutor.d.ts": {
+        "version": "1fa98f06f8163fef61071f77e47ad2b7dd26064a43e219a4468df563e911caf3",
+        "signature": "1fa98f06f8163fef61071f77e47ad2b7dd26064a43e219a4468df563e911caf3"
+      },
+      "../node_modules/class-transformer/decorators.d.ts": {
+        "version": "cc8aa0870a0defda3818676ecb8123b2d8b15dc40cdc130834bc81b01a58f2e4",
+        "signature": "cc8aa0870a0defda3818676ecb8123b2d8b15dc40cdc130834bc81b01a58f2e4"
+      },
+      "../node_modules/class-transformer/index.d.ts": {
+        "version": "097d4bf3331df1e138ffdcf92e1117f6841bc8337170d927fd955d5ee8a1674b",
+        "signature": "097d4bf3331df1e138ffdcf92e1117f6841bc8337170d927fd955d5ee8a1674b"
+      },
+      "../src/entities/base.entity.ts": {
+        "version": "65d3cc65ec5fe253eab1d999dfd791fd5b5e0cc2f40a93954fda7dfdca820929",
+        "signature": "14bd440d5896011a025ae0be754c9e05600b03241bb83162edd87c21bbed75f7"
+      },
+      "../src/entities/image.entity.ts": {
+        "version": "23e98554ae061afb8ec2990fd1eacfc4ed12fc8917ad9869be998ac5e2485e44",
+        "signature": "d59e44eabffafb2bc0be09c284ca13bee1b868247b0cb0efb3a4b7a4f1f5c79b"
+      },
+      "../src/users/user.interface.ts": {
+        "version": "ed16b8c5d910b6695949207adafae8e9bf4ba843d967520c1d7998927fea9317",
+        "signature": "3fddda34d48609c0563e6ecb9fabe3f569ff84e7a18390a3cbe32a0a182a4be1"
+      },
+      "../src/logger/db-log-metadata.ts": {
+        "version": "ee382804621e3326b407f32091fbf7b490b5ff17c78a776f1c3c296a1d657725",
+        "signature": "b27da2ac2e084b2d4fa198ad5b65e7d9712b8087b1b40c53ef46637ea45c6021"
+      },
+      "../node_modules/@types/deep-diff/index.d.ts": {
+        "version": "fb6d2d4e6b93cd3b310ba286b1044d25e2c3f665f9eaac780bc41208d6e73616",
+        "signature": "fb6d2d4e6b93cd3b310ba286b1044d25e2c3f665f9eaac780bc41208d6e73616"
+      },
+      "../node_modules/@types/bcryptjs/index.d.ts": {
+        "version": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f",
+        "signature": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f"
+      },
+      "../node_modules/@types/faker/index.d.ts": {
+        "version": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10",
+        "signature": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10"
+      },
+      "../node_modules/moment/moment.d.ts": {
+        "version": "d62fa6fe33566fa743b3d6715a1a2fe46e937ba9d2ba158563c5744315d438a7",
+        "signature": "d62fa6fe33566fa743b3d6715a1a2fe46e937ba9d2ba158563c5744315d438a7"
+      },
+      "../src/users/base-user.entity.ts": {
+        "version": "62aa5202c7ba90e74176460a8c39d4b3dab7d46f552d7a3c1397f683907e8bee",
+        "signature": "2d395c72a1c8e42605eee8d0dca305421569494a0e9014f90acda235fa89dfa4"
+      },
+      "../src/logger/db-log.entity.ts": {
+        "version": "f207fabe2501eb32aa20a0f84c88d0184a7c0480be23234d42c37ccdda2a6b9a",
+        "signature": "4e7ba91e6d345edc2f4534f97e3fa1eac13243e9d0ce3d8001189ee993abb255"
       },
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.decorators.d.ts": {
         "version": "41070599270ea1295c8855556f36c89af04d02c41c50f602870fd55dd988c83d",
@@ -3229,82 +3285,6 @@
         "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
-      "../node_modules/class-transformer/ClassTransformOptions.d.ts": {
-        "version": "d89af0c250e1424959162beae79f2c2745c729d6ab8028503d322395d96d3a2b",
-        "signature": "d89af0c250e1424959162beae79f2c2745c729d6ab8028503d322395d96d3a2b"
-      },
-      "../node_modules/class-transformer/ClassTransformer.d.ts": {
-        "version": "96589ead67dc132731ddb531c3c7de2e66156df7154b1136d1abd92bdaa27e79",
-        "signature": "96589ead67dc132731ddb531c3c7de2e66156df7154b1136d1abd92bdaa27e79"
-      },
-      "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts": {
-        "version": "1aed251ab92dfd0e4901b3b9ad5eccdeb4d3603d57af947ae5f1de967f5ffa6e",
-        "signature": "1aed251ab92dfd0e4901b3b9ad5eccdeb4d3603d57af947ae5f1de967f5ffa6e"
-      },
-      "../node_modules/class-transformer/metadata/TypeMetadata.d.ts": {
-        "version": "fc14f591b59444c787440f6d8d4df6d96a2eafd8dcb8f3d9773d2d52a88db64f",
-        "signature": "fc14f591b59444c787440f6d8d4df6d96a2eafd8dcb8f3d9773d2d52a88db64f"
-      },
-      "../node_modules/class-transformer/TransformOperationExecutor.d.ts": {
-        "version": "1fa98f06f8163fef61071f77e47ad2b7dd26064a43e219a4468df563e911caf3",
-        "signature": "1fa98f06f8163fef61071f77e47ad2b7dd26064a43e219a4468df563e911caf3"
-      },
-      "../node_modules/class-transformer/decorators.d.ts": {
-        "version": "cc8aa0870a0defda3818676ecb8123b2d8b15dc40cdc130834bc81b01a58f2e4",
-        "signature": "cc8aa0870a0defda3818676ecb8123b2d8b15dc40cdc130834bc81b01a58f2e4"
-      },
-      "../node_modules/class-transformer/index.d.ts": {
-        "version": "097d4bf3331df1e138ffdcf92e1117f6841bc8337170d927fd955d5ee8a1674b",
-        "signature": "097d4bf3331df1e138ffdcf92e1117f6841bc8337170d927fd955d5ee8a1674b"
-      },
-      "../node_modules/@types/bcryptjs/index.d.ts": {
-        "version": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f",
-        "signature": "9dfe431ab1485e17a6055e186c49da9d23af74b965f2e99f8acc6c958778608f"
-      },
-      "../node_modules/@types/faker/index.d.ts": {
-        "version": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10",
-        "signature": "410db71ed41ff686b6cbcd292e7a09a985a87fb8381711a9dc79376d0f2d4a10"
-      },
-      "../src/entities/base.entity.ts": {
-        "version": "65d3cc65ec5fe253eab1d999dfd791fd5b5e0cc2f40a93954fda7dfdca820929",
-        "signature": "14bd440d5896011a025ae0be754c9e05600b03241bb83162edd87c21bbed75f7"
-      },
-      "../src/entities/image.entity.ts": {
-        "version": "23e98554ae061afb8ec2990fd1eacfc4ed12fc8917ad9869be998ac5e2485e44",
-        "signature": "d59e44eabffafb2bc0be09c284ca13bee1b868247b0cb0efb3a4b7a4f1f5c79b"
-      },
-      "../src/entities/user.interface.ts": {
-        "version": "88cb9af1deb61a4896d12afcba8339b65e27a1f58292b87286497aab238e9d44",
-        "signature": "bd665345948798d6bd20ae10d81fda927765e210e3cba281791a93818c6e2389"
-      },
-      "../src/entities/base-user.entity.ts": {
-        "version": "60626ad699f703d67568f6718bd11b486fa1226aab5470a44a95bbe0f5aea42e",
-        "signature": "58e26558d01d8243d7daa7db24fe67a3d730097a50731c847cd69b3465c197e1"
-      },
-      "../src/entities/base-user-with-roles.entity.ts": {
-        "version": "d0c6433f35678cd7c3b6af8d34b0af877cecae9a019c163f2d327cbd5f4c16d4",
-        "signature": "91e0108a0dee06bfb397a6b893632809333e19670620ed8a6ce29d77a1659310"
-      },
-      "../src/access-control/role/roles.entity.ts": {
-        "version": "74bfbccc15b0643d650c323874906269a5831394a3f8a6138cd97d59022038cf",
-        "signature": "4b1d8d14ce446833e3fd0599e1336856d736eb919b54d0c633635a4e327ffba6"
-      },
-      "../src/consts.ts": {
-        "version": "4a28ac1f033067ddc8088533d8c5acb38a71e935a4b93920bca97c90dc56b474",
-        "signature": "b9df6e2fed9d3c5b271cc4b921e8b0bd1304627ff8d2fdc9344d575652841bcf"
-      },
-      "../src/logger/db-log-metadata.ts": {
-        "version": "ab7c43b1a93928b8946887ec7de80291859ae45d912ea61a2156b4e7e3ff9bd8",
-        "signature": "7c5844c8e2d9e450657d641b574ebc615a8ba5d7ae4796383d0c03ee1d211e48"
-      },
-      "../node_modules/@types/deep-diff/index.d.ts": {
-        "version": "fb6d2d4e6b93cd3b310ba286b1044d25e2c3f665f9eaac780bc41208d6e73616",
-        "signature": "fb6d2d4e6b93cd3b310ba286b1044d25e2c3f665f9eaac780bc41208d6e73616"
-      },
-      "../src/logger/db-log.entity.ts": {
-        "version": "b584672e242aa31a1cdb205094e981683325e954bfb737809a4af5ce0c500962",
-        "signature": "c165e135da96044f978269226d4dc21e02aa9c0fbb46b19f3803f0a83cd6ed80"
-      },
       "../src/logger/db-logger.service.ts": {
         "version": "cd0489dc1a1ca9ccb2ea422848bffaf90b830e2e9e80e1d44e0188a5e74a960f",
         "signature": "b5e1fd064874966515f7fad25aca10156d76de06899166223b1659eb03e39996"
@@ -3313,145 +3293,13 @@
         "version": "ad4f5863b656ee77155fec549cb3125cc4beb70f3c192acae84824cf4e52a93b",
         "signature": "0f15242dc70644be2b002ddea36bdb324017c6a36d9adef78dccc4fc7762d7d9"
       },
-      "../src/access-control/role/roles.service.ts": {
-        "version": "7a76d187358a43cdc9d48eda584b611463e9768f5580c697ba7b8c02c3a358ae",
-        "signature": "51c52b5276b0863ffb4e6fc5fcf7ecbc580277def12266772b6f06ee4cc1609c"
+      "../node_modules/@types/ioredis/index.d.ts": {
+        "version": "6269483450dae3ee7408be7f6275f5bb519417c2e919be8b332a68ddc6e2c64d",
+        "signature": "6269483450dae3ee7408be7f6275f5bb519417c2e919be8b332a68ddc6e2c64d"
       },
-      "../src/auth/auth.dto.ts": {
-        "version": "47df8a068e778745cec4318393bc2721e7371ad14a07ace2db3dde7b1db7a299",
-        "signature": "97d28d260ce9b4efd676ad26e38039b64ce87a16d544066d065a3a03ef86210e"
-      },
-      "../node_modules/@types/sharp/index.d.ts": {
-        "version": "bcb6efb6cf1e38c660e6be8382eab89ff7ea52d459678397916268d0efdde071",
-        "signature": "bcb6efb6cf1e38c660e6be8382eab89ff7ea52d459678397916268d0efdde071"
-      },
-      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": {
-        "version": "3042824a7c5ce790bc53a1574694a210d9898c395e4bef5521fd41cc5ce64ca2",
-        "signature": "3042824a7c5ce790bc53a1574694a210d9898c395e4bef5521fd41cc5ce64ca2"
-      },
-      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": {
-        "version": "eb0bfd3b1c8c41750063a3dc2287a6d2a34d79c4a5d768ae502d83b9a5e7d95f",
-        "signature": "eb0bfd3b1c8c41750063a3dc2287a6d2a34d79c4a5d768ae502d83b9a5e7d95f"
-      },
-      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": {
-        "version": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a",
-        "signature": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a"
-      },
-      "../node_modules/@nestjs/config/dist/config.module.d.ts": {
-        "version": "4f725487552909e4b7fc71222e4787ca8f15464daa5b758e162b69ce902bb058",
-        "signature": "4f725487552909e4b7fc71222e4787ca8f15464daa5b758e162b69ce902bb058"
-      },
-      "../node_modules/@nestjs/config/dist/config.service.d.ts": {
-        "version": "e846d1d2f6782bea1b3e0921aefd1be7def87aeb602bc51aeb35362ee6cb4323",
-        "signature": "e846d1d2f6782bea1b3e0921aefd1be7def87aeb602bc51aeb35362ee6cb4323"
-      },
-      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": {
-        "version": "81504893883a1a3a58dfba050daec4e65bf65bd0702530aa9b75fc81e86c9856",
-        "signature": "81504893883a1a3a58dfba050daec4e65bf65bd0702530aa9b75fc81e86c9856"
-      },
-      "../node_modules/@nestjs/config/dist/utils/index.d.ts": {
-        "version": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6",
-        "signature": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6"
-      },
-      "../node_modules/@nestjs/config/dist/index.d.ts": {
-        "version": "519d44b8dc2c5dd8c4a3380b260608bfb6b0537cc3417e3bd9906524a3195072",
-        "signature": "519d44b8dc2c5dd8c4a3380b260608bfb6b0537cc3417e3bd9906524a3195072"
-      },
-      "../node_modules/@nestjs/config/index.d.ts": {
-        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
-        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
-      },
-      "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts": {
-        "version": "f575f1f4c48f490b4cd4d056e1ffc7d9e20519023ff8e39ae1bc1fe34c253a1c",
-        "signature": "f575f1f4c48f490b4cd4d056e1ffc7d9e20519023ff8e39ae1bc1fe34c253a1c"
-      },
-      "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts": {
-        "version": "afe2797397e320d4017b5152fd38d6ea619e5892ce821c7427d1810235f3fd6e",
-        "signature": "afe2797397e320d4017b5152fd38d6ea619e5892ce821c7427d1810235f3fd6e"
-      },
-      "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts": {
-        "version": "7adb78645ba8f24430364c5226e1615a2c13e7e6d2d48a067c6939bb850da6e6",
-        "signature": "7adb78645ba8f24430364c5226e1615a2c13e7e6d2d48a067c6939bb850da6e6"
-      },
-      "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts": {
-        "version": "5f69d31ea8be97f4602c625fdb1f3c8fd10360b2a5d85801f011877473cc8af7",
-        "signature": "5f69d31ea8be97f4602c625fdb1f3c8fd10360b2a5d85801f011877473cc8af7"
-      },
-      "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts": {
-        "version": "b1b51308012e53970978cbb58ba1f54ce2c50a1765917df465ffc130e8d0dc31",
-        "signature": "b1b51308012e53970978cbb58ba1f54ce2c50a1765917df465ffc130e8d0dc31"
-      },
-      "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts": {
-        "version": "006ccf3efd02c55e08d9403b4ccf394c37bda6708ef55e7b4609bb719c2af140",
-        "signature": "006ccf3efd02c55e08d9403b4ccf394c37bda6708ef55e7b4609bb719c2af140"
-      },
-      "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts": {
-        "version": "2fd047553c31d5ceadfd19e16fc00071ebdb5330fb68bbe96f49bae0f64861c4",
-        "signature": "2fd047553c31d5ceadfd19e16fc00071ebdb5330fb68bbe96f49bae0f64861c4"
-      },
-      "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts": {
-        "version": "d1c3317521d5b8e196cbfa3987e8d52c13adc56a3e08e08760aaadf802883a42",
-        "signature": "d1c3317521d5b8e196cbfa3987e8d52c13adc56a3e08e08760aaadf802883a42"
-      },
-      "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts": {
-        "version": "8352444993e063a2d824a240faeb04e2a559d62cea52f757c29177560f68ff71",
-        "signature": "8352444993e063a2d824a240faeb04e2a559d62cea52f757c29177560f68ff71"
-      },
-      "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts": {
-        "version": "5bfae0cac249cc343bd28c04fe5700e4db3d1afb762d199a17f7c0932c281666",
-        "signature": "5bfae0cac249cc343bd28c04fe5700e4db3d1afb762d199a17f7c0932c281666"
-      },
-      "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts": {
-        "version": "a436cba810e1adf4fe5275edfca53c68aacceab40ac6da782cfbc18695246d57",
-        "signature": "a436cba810e1adf4fe5275edfca53c68aacceab40ac6da782cfbc18695246d57"
-      },
-      "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts": {
-        "version": "502357d962757f8fc1fc4a68cc1243d65f2124c414ed122f88dc9798b9bdc244",
-        "signature": "502357d962757f8fc1fc4a68cc1243d65f2124c414ed122f88dc9798b9bdc244"
-      },
-      "../node_modules/aws-sdk/lib/event_listeners.d.ts": {
-        "version": "4195d770534c3a15117da3180d2bce91b71233f3d52aed8932b2cdc36ce142c4",
-        "signature": "4195d770534c3a15117da3180d2bce91b71233f3d52aed8932b2cdc36ce142c4"
-      },
-      "../node_modules/aws-sdk/lib/metadata_service.d.ts": {
-        "version": "666c5e34d9be51bef074c420aa2361911bb62a5723966f388f8b6d620cd979ff",
-        "signature": "666c5e34d9be51bef074c420aa2361911bb62a5723966f388f8b6d620cd979ff"
-      },
-      "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts": {
-        "version": "85b592557182286fbe78afc9f9dbf13da9abcb0777a08b1bc8469d8d79db0d14",
-        "signature": "85b592557182286fbe78afc9f9dbf13da9abcb0777a08b1bc8469d8d79db0d14"
-      },
-      "../node_modules/aws-sdk/lib/core.d.ts": {
-        "version": "3dce44afe396bf2f087ef26e48e3a74e5402d1d0fa1a95dbcb97b9481a87cf58",
-        "signature": "3dce44afe396bf2f087ef26e48e3a74e5402d1d0fa1a95dbcb97b9481a87cf58"
-      },
-      "../node_modules/aws-sdk/index.d.ts": {
-        "version": "1b8e2370aa2872687e7ab84dcf4c565ad5515b28c098b11d68a2d67d5e51095f",
-        "signature": "1b8e2370aa2872687e7ab84dcf4c565ad5515b28c098b11d68a2d67d5e51095f"
-      },
-      "../src/storage/storage.service.ts": {
-        "version": "252fba19cc73cfd5cc8fdedfb1524e74ddde3a24a3c7354f4bc869753de085db",
-        "signature": "2f112e481d67f37029c8e06e78aa14780bf84778310bfd46aaeaf3adef56f58b"
-      },
-      "../src/storage/storage-images-default-config.ts": {
-        "version": "ebafc38256ea80d47214a792d6ea1a254c0e9c24798c40e7ca26289c7d85fbe7",
-        "signature": "a5796310ed63d73e43966944ee4515c1a5b3fdd2a9dc230407c6f61963f94f75"
-      },
-      "../src/storage/storage.module.ts": {
-        "version": "7067455ed4567561ccaa36575071ad8c7a84ee9093d83ee9801480b1df9fd5c3",
-        "signature": "9fc4cb77445c11bebfa6fb647919389397eed271a0b2a370fe1d626360295538"
-      },
-      "../src/storage/sharp.ts": {
-        "version": "2f45d17c97f46950260209ee5e1083a97c835ec15febb9dbeeabc6fdf7d59d0c",
-        "signature": "84236729539b05413658d61ed1d3a0f2f4c4e8726ca60c0bd843f0a05938b2c8"
-      },
-      "../src/storage/storage-images.service.ts": {
-        "version": "99ed2b98ec6c779a4ba2cd8b0fd4e3aea67105ce6122b4a65fd81ada3e9ee99a",
-        "signature": "991ca8cbbbb927daf636da13e066a0e72e8c87b923a9b0d43551bb8c180af922"
-      },
-      "../src/base-user.service.ts": {
-        "version": "38a6b83ef32ac088c6b8065491a3f24153014c04b0120b2dfbc2495b4b2a5ea4",
-        "signature": "12b04c31072310c178f927f2a66233f400bd731db41930d25820a6767129b02f"
+      "../node_modules/@types/bull/index.d.ts": {
+        "version": "7164086bfd20c9b7978d4ec01390a9924543ef78dc044f354e1c84734537aff5",
+        "signature": "7164086bfd20c9b7978d4ec01390a9924543ef78dc044f354e1c84734537aff5"
       },
       "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts": {
         "version": "dbf1771bfa71180fb7da21cd4c0c456b531cb723a75c7dc1e8fcf6248be5803f",
@@ -3520,6 +3368,42 @@
       "../node_modules/@nestjs/bull/dist/index.d.ts": {
         "version": "1791898b5aa44a5e66e0239577712a045366d31b1dccf8c072d46b0034780dd0",
         "signature": "1791898b5aa44a5e66e0239577712a045366d31b1dccf8c072d46b0034780dd0"
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": {
+        "version": "3042824a7c5ce790bc53a1574694a210d9898c395e4bef5521fd41cc5ce64ca2",
+        "signature": "3042824a7c5ce790bc53a1574694a210d9898c395e4bef5521fd41cc5ce64ca2"
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": {
+        "version": "eb0bfd3b1c8c41750063a3dc2287a6d2a34d79c4a5d768ae502d83b9a5e7d95f",
+        "signature": "eb0bfd3b1c8c41750063a3dc2287a6d2a34d79c4a5d768ae502d83b9a5e7d95f"
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": {
+        "version": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a",
+        "signature": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a"
+      },
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": {
+        "version": "4f725487552909e4b7fc71222e4787ca8f15464daa5b758e162b69ce902bb058",
+        "signature": "4f725487552909e4b7fc71222e4787ca8f15464daa5b758e162b69ce902bb058"
+      },
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": {
+        "version": "e846d1d2f6782bea1b3e0921aefd1be7def87aeb602bc51aeb35362ee6cb4323",
+        "signature": "e846d1d2f6782bea1b3e0921aefd1be7def87aeb602bc51aeb35362ee6cb4323"
+      },
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": {
+        "version": "81504893883a1a3a58dfba050daec4e65bf65bd0702530aa9b75fc81e86c9856",
+        "signature": "81504893883a1a3a58dfba050daec4e65bf65bd0702530aa9b75fc81e86c9856"
+      },
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": {
+        "version": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6",
+        "signature": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6"
+      },
+      "../node_modules/@nestjs/config/dist/index.d.ts": {
+        "version": "519d44b8dc2c5dd8c4a3380b260608bfb6b0537cc3417e3bd9906524a3195072",
+        "signature": "519d44b8dc2c5dd8c4a3380b260608bfb6b0537cc3417e3bd9906524a3195072"
+      },
+      "../node_modules/@nestjs/config/index.d.ts": {
+        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
       "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts": {
         "version": "f5e11b3470c7c3c44c05ef445eb509e1d339df13cee0e882edbcc5c389294f6a",
@@ -3685,6 +3569,14 @@
         "version": "2d47e5ef9bfd2dbc2b55606399546e61480a3db3a4df58708320d31e8cf6e8bd",
         "signature": "e722efd804e816facbc8286b48f1b3c976f2e1d41ee2ee680b96ed8ed889777e"
       },
+      "../src/users/base-user-with-roles.entity.ts": {
+        "version": "d0c6433f35678cd7c3b6af8d34b0af877cecae9a019c163f2d327cbd5f4c16d4",
+        "signature": "91e0108a0dee06bfb397a6b893632809333e19670620ed8a6ce29d77a1659310"
+      },
+      "../src/access-control/role/roles.entity.ts": {
+        "version": "c16cb8e51bf2f74da03783a709a6f6024fa6966d68079ac97e35994689184c4d",
+        "signature": "7087c2cc9acb45b0904ff1cf054817355f68e44609aef0cc5607bb2a4a9e0534"
+      },
       "../src/access-control/access-control.service.ts": {
         "version": "c9bd47483960379e9962c481ccdef250d7556ff8e29eeebf2d7243045badf270",
         "signature": "b6644d41a0b07130fe0712f253f8b6305a3ef2316353938b8d7556c825a57518"
@@ -3829,12 +3721,16 @@
         "version": "6400917b161d3331bc82638ccc4aa149d755f501cfaba3d716fca1228c956171",
         "signature": "6400917b161d3331bc82638ccc4aa149d755f501cfaba3d716fca1228c956171"
       },
+      "../src/access-control/role/roles.service.ts": {
+        "version": "7a76d187358a43cdc9d48eda584b611463e9768f5580c697ba7b8c02c3a358ae",
+        "signature": "51c52b5276b0863ffb4e6fc5fcf7ecbc580277def12266772b6f06ee4cc1609c"
+      },
       "../src/access-control/set-required-access.decorator.ts": {
         "version": "c1beb90e9f9e5ff73567a0f930c157b5fe7f370a00302d875e6ce425bea88f2e",
         "signature": "fca2728bc65a4a46076092839fdd65bc78f2a30cac82e15b349b1497d64cd574"
       },
       "../src/access-control/permissions.guard.ts": {
-        "version": "ca4bbe40d14ff3443b575f33c69279d3eced5bd264651fb13659519f465f179b",
+        "version": "0e3981066e2135b7146a9217a6749249207d61d033082e06f5571c1d1df8ab7a",
         "signature": "9411756c1de327ea428f2e4e1bafaa3c28196b7db6ded7f22525a57ebbf0b071"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -3881,13 +3777,13 @@
         "version": "b25124898804fe0052a0f511b05a142d82806f1bc3b5d2b09890685c035a8053",
         "signature": "2edbd67ef5c8b5f94d7abaea90ab48657ff66e5277a1409c425ff253daa65751"
       },
-      "../src/uuid.pipe.ts": {
+      "../src/pipes/uuid.pipe.ts": {
         "version": "c4b4d649b8429a76b63c4b262935cafacf67be05bee44d6cc95586dc56853a2b",
         "signature": "3b1cc535e3d0770f2b3d1e2b5497ae73faa190a7a9bae302f090a3afd8883c7a"
       },
       "../src/access-control/role/roles.controller.ts": {
-        "version": "bd41c21f9bab79e9c05d157469a89caf928dc2e4aa29a07d4ebfb3d5841ea7d1",
-        "signature": "1704423cb88f13e4188ee0bb29035e7643542b1335f512f3fbe8efffa69f1b64"
+        "version": "1a4cbb7352b30a4717af0b95055c9b4fedb9cda1b8909e3a03c15be30c08fe5c",
+        "signature": "814de64ff2a068c2570dd74bf157f29d583739c22e1ebf3fa7d91163ea60207e"
       },
       "../src/access-control/role/roles.module.ts": {
         "version": "bfb79e463bb006f459be4a11ad81aca8511d7a8525fd7de2d6fe12b298ac30cf",
@@ -3929,8 +3825,8 @@
         "version": "a2b176f66f0b708241265fb3b417597c9c9d21912bbb7f5cc00d99af551c2078",
         "signature": "a2b176f66f0b708241265fb3b417597c9c9d21912bbb7f5cc00d99af551c2078"
       },
-      "../src/register-queue.ts": {
-        "version": "22afc8475423fa0ac3c5041d029f3c0d918f18310993cd1573a55ddaf6a67277",
+      "../src/utils/register-queue.ts": {
+        "version": "b7a745a84ee41be8c13eddbe1d89c0cad8b803d7df656697874cc03eedee32af",
         "signature": "20ff674de9320d123750d46e3f5400e5290d03e3d20f8914f76cf66f17f2fb8d"
       },
       "../src/auth/auth-mail.service.ts": {
@@ -4001,6 +3897,106 @@
         "version": "e3cd60be3c4f95c43420be67eaa21637585b7c1a8129f9b39983bbd294f9513c",
         "signature": "e3cd60be3c4f95c43420be67eaa21637585b7c1a8129f9b39983bbd294f9513c"
       },
+      "../src/auth/auth.dto.ts": {
+        "version": "016c46371b5b9d0313234c09d45d06f8bad29c87c741e63068f925031fd5693c",
+        "signature": "fc8d6fdade57cd2c567e3734b6ce81e3f48bb43ae106f996d049a615f7c39010"
+      },
+      "../node_modules/@types/sharp/index.d.ts": {
+        "version": "bcb6efb6cf1e38c660e6be8382eab89ff7ea52d459678397916268d0efdde071",
+        "signature": "bcb6efb6cf1e38c660e6be8382eab89ff7ea52d459678397916268d0efdde071"
+      },
+      "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts": {
+        "version": "f575f1f4c48f490b4cd4d056e1ffc7d9e20519023ff8e39ae1bc1fe34c253a1c",
+        "signature": "f575f1f4c48f490b4cd4d056e1ffc7d9e20519023ff8e39ae1bc1fe34c253a1c"
+      },
+      "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts": {
+        "version": "afe2797397e320d4017b5152fd38d6ea619e5892ce821c7427d1810235f3fd6e",
+        "signature": "afe2797397e320d4017b5152fd38d6ea619e5892ce821c7427d1810235f3fd6e"
+      },
+      "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts": {
+        "version": "7adb78645ba8f24430364c5226e1615a2c13e7e6d2d48a067c6939bb850da6e6",
+        "signature": "7adb78645ba8f24430364c5226e1615a2c13e7e6d2d48a067c6939bb850da6e6"
+      },
+      "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts": {
+        "version": "5f69d31ea8be97f4602c625fdb1f3c8fd10360b2a5d85801f011877473cc8af7",
+        "signature": "5f69d31ea8be97f4602c625fdb1f3c8fd10360b2a5d85801f011877473cc8af7"
+      },
+      "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts": {
+        "version": "b1b51308012e53970978cbb58ba1f54ce2c50a1765917df465ffc130e8d0dc31",
+        "signature": "b1b51308012e53970978cbb58ba1f54ce2c50a1765917df465ffc130e8d0dc31"
+      },
+      "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts": {
+        "version": "006ccf3efd02c55e08d9403b4ccf394c37bda6708ef55e7b4609bb719c2af140",
+        "signature": "006ccf3efd02c55e08d9403b4ccf394c37bda6708ef55e7b4609bb719c2af140"
+      },
+      "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts": {
+        "version": "2fd047553c31d5ceadfd19e16fc00071ebdb5330fb68bbe96f49bae0f64861c4",
+        "signature": "2fd047553c31d5ceadfd19e16fc00071ebdb5330fb68bbe96f49bae0f64861c4"
+      },
+      "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts": {
+        "version": "d1c3317521d5b8e196cbfa3987e8d52c13adc56a3e08e08760aaadf802883a42",
+        "signature": "d1c3317521d5b8e196cbfa3987e8d52c13adc56a3e08e08760aaadf802883a42"
+      },
+      "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts": {
+        "version": "8352444993e063a2d824a240faeb04e2a559d62cea52f757c29177560f68ff71",
+        "signature": "8352444993e063a2d824a240faeb04e2a559d62cea52f757c29177560f68ff71"
+      },
+      "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts": {
+        "version": "5bfae0cac249cc343bd28c04fe5700e4db3d1afb762d199a17f7c0932c281666",
+        "signature": "5bfae0cac249cc343bd28c04fe5700e4db3d1afb762d199a17f7c0932c281666"
+      },
+      "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts": {
+        "version": "a436cba810e1adf4fe5275edfca53c68aacceab40ac6da782cfbc18695246d57",
+        "signature": "a436cba810e1adf4fe5275edfca53c68aacceab40ac6da782cfbc18695246d57"
+      },
+      "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts": {
+        "version": "502357d962757f8fc1fc4a68cc1243d65f2124c414ed122f88dc9798b9bdc244",
+        "signature": "502357d962757f8fc1fc4a68cc1243d65f2124c414ed122f88dc9798b9bdc244"
+      },
+      "../node_modules/aws-sdk/lib/event_listeners.d.ts": {
+        "version": "4195d770534c3a15117da3180d2bce91b71233f3d52aed8932b2cdc36ce142c4",
+        "signature": "4195d770534c3a15117da3180d2bce91b71233f3d52aed8932b2cdc36ce142c4"
+      },
+      "../node_modules/aws-sdk/lib/metadata_service.d.ts": {
+        "version": "666c5e34d9be51bef074c420aa2361911bb62a5723966f388f8b6d620cd979ff",
+        "signature": "666c5e34d9be51bef074c420aa2361911bb62a5723966f388f8b6d620cd979ff"
+      },
+      "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts": {
+        "version": "85b592557182286fbe78afc9f9dbf13da9abcb0777a08b1bc8469d8d79db0d14",
+        "signature": "85b592557182286fbe78afc9f9dbf13da9abcb0777a08b1bc8469d8d79db0d14"
+      },
+      "../node_modules/aws-sdk/lib/core.d.ts": {
+        "version": "3dce44afe396bf2f087ef26e48e3a74e5402d1d0fa1a95dbcb97b9481a87cf58",
+        "signature": "3dce44afe396bf2f087ef26e48e3a74e5402d1d0fa1a95dbcb97b9481a87cf58"
+      },
+      "../node_modules/aws-sdk/index.d.ts": {
+        "version": "1b8e2370aa2872687e7ab84dcf4c565ad5515b28c098b11d68a2d67d5e51095f",
+        "signature": "1b8e2370aa2872687e7ab84dcf4c565ad5515b28c098b11d68a2d67d5e51095f"
+      },
+      "../src/storage/storage.service.ts": {
+        "version": "252fba19cc73cfd5cc8fdedfb1524e74ddde3a24a3c7354f4bc869753de085db",
+        "signature": "2f112e481d67f37029c8e06e78aa14780bf84778310bfd46aaeaf3adef56f58b"
+      },
+      "../src/storage/storage-images-default-config.ts": {
+        "version": "ebafc38256ea80d47214a792d6ea1a254c0e9c24798c40e7ca26289c7d85fbe7",
+        "signature": "a5796310ed63d73e43966944ee4515c1a5b3fdd2a9dc230407c6f61963f94f75"
+      },
+      "../src/storage/storage.module.ts": {
+        "version": "7067455ed4567561ccaa36575071ad8c7a84ee9093d83ee9801480b1df9fd5c3",
+        "signature": "9fc4cb77445c11bebfa6fb647919389397eed271a0b2a370fe1d626360295538"
+      },
+      "../src/storage/sharp.ts": {
+        "version": "2f45d17c97f46950260209ee5e1083a97c835ec15febb9dbeeabc6fdf7d59d0c",
+        "signature": "84236729539b05413658d61ed1d3a0f2f4c4e8726ca60c0bd843f0a05938b2c8"
+      },
+      "../src/storage/storage-images.service.ts": {
+        "version": "99ed2b98ec6c779a4ba2cd8b0fd4e3aea67105ce6122b4a65fd81ada3e9ee99a",
+        "signature": "991ca8cbbbb927daf636da13e066a0e72e8c87b923a9b0d43551bb8c180af922"
+      },
+      "../src/users/base-user.service.ts": {
+        "version": "09aee91b198e814168263ded991588d171a4ea6a1416f8af315fea75f9503c25",
+        "signature": "f2895409267f97d0c8ffee82d38d244b23f50d002aa387c45e1b6233c9fd7f43"
+      },
       "../src/storage/valid-jpeg-image.ts": {
         "version": "ffcfe8b7ecf2c2c2428c5c2c94266cd780b9ca2a3d28f0f65eda70d97e616482",
         "signature": "8918d9ef7252ecc06613db922a3f0e40ec8c2c8c82faf537b74e2156fe4d002f"
@@ -4050,31 +4046,31 @@
         "signature": "d306be26f96b4bd9b279cd7da9d1355d5ce4060a2bb254489c1b95c87057eb38"
       },
       "../src/auth/jwt.strategy.ts": {
-        "version": "8f860cfd03edee674ad12dfad2ddb87b5a41d8235f31895b183a4b0762224b6f",
-        "signature": "84532b003146a2efee655c36e712e45bcd8731c4c8b8e5f95d132fbf1578f41f"
+        "version": "3be783dfafc4501886b256faac33194bdd92b881f7f9a4f382c6666f7bb820db",
+        "signature": "91f3cca3e28fcfe46f0c07ffbc52f2556d3bc976c65a3b33dcab6d3d1805da7d"
       },
       "../src/auth/auth.service.ts": {
-        "version": "c18f441241047dba466bf52c3b1688bc8960abf82b755c7efa62dd3eb9dddd3c",
-        "signature": "afc66edcee9795e92b5f76c8ab3b81559ec1ee00087f21a66ba2f0213451a17e"
+        "version": "9b0a7fb19cd7d73b8948e6d0448b863625f2645738938942371fc7dad733a6ce",
+        "signature": "8da85ce38a211a7d491481add3527622b080b8afd5b23da821462320835f3eff"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "9b7019ceab0061178cb0872d88437124671fe276662b855de2404e924cdff9d2",
-        "signature": "f3acc0dadd98da48b97c99820020e818c1cc961fa0f791b139a0a317a11535e8"
+        "version": "e59fb47f4a2001f9b61f64ca4763dcd948380928b03fb4e3136f7873d4fc752b",
+        "signature": "bf3385f417e571d4a989b993aa90ae16c8e25ec7cd9d58ed5773dbe7db419673"
       },
-      "../src/validate-email.pipe.ts": {
+      "../src/pipes/validate-email.pipe.ts": {
         "version": "5fe7971e88a73299ec59a90e37f813afb823ca0b32047ec2d8f2608348b653a5",
         "signature": "75e971152ccdd523d850fac126813a055a66f7a5a2198c119f118236c67df5db"
       },
       "../src/auth/password-reset.service.ts": {
-        "version": "b0b2a55914981eedf73603b77bd280a05e323bdebbd08b4f1b1cdfa365ceda29",
-        "signature": "8729430402fba0ec6a037634b1a6544380e44047c043a091bde1d0cadc9b330f"
+        "version": "2c0b0ee59b6a2ed320cf540ab139789a98ea4b751027019da42e0465b8d2782e",
+        "signature": "a80582de94fe0f574a6f9d81da88535d8c1e73cca8e99182a6f8ac724ff841f8"
       },
       "../src/auth/password-reset.controller.ts": {
-        "version": "3989892401b905a4125f0719359fa3c22607789e2fb05f47f4ddca10b16d45a7",
-        "signature": "2b1492ccced436efb4a03a7d7a3d67faf115764ac8f5b76b61e0916acf89335b"
+        "version": "ec4e034edf2ad5e84462e585ec465bc221b6bc978f9a6945aea2d044b1813c6a",
+        "signature": "6fe4730b0a43286508f65c43302825b3dda98f6cca6442d344258fd3328a8afc"
       },
       "../src/auth/auth.module.ts": {
-        "version": "46b6cec373901b1065927af94f9f7b2a0030e67fab0ec48bf9e94e402daa8aa7",
+        "version": "44df9ec62475371126c37e1544fd32803324b63d9fd068f4770d6ebfcbd20c23",
         "signature": "70f5707ff4d3159b9d9de8b24561cce7e303975e8f689e1d622e3bfdd7d3e29a"
       },
       "../src/db/db.module.ts": {
@@ -4150,8 +4146,8 @@
         "signature": "ef2f9c69caf3fc97114a35b3c48d707b1c6300bc63bcedce30653c380d92e2e7"
       },
       "../src/notification/notification.entity.ts": {
-        "version": "10df5664bf0abbd5d11353a0b27cd1f6c3241dc07963a5b4f45ea4f135969a89",
-        "signature": "cd69b7d18c5b74e7454088a357605b7595138cbbcfa68c344a7dc8b75e10e63e"
+        "version": "ca92d9129ed3e565803373c17086d1800a0b174caf4f272daeffb6feb6e1ca12",
+        "signature": "253ff9eee8f5422072be3a556814007a2fcd8e5ebfa927e16bc90110ce1519a7"
       },
       "../src/notification/notification.service.ts": {
         "version": "91af87f1d3dd84f25b1fcdcc35f260b66e1f9a3a15002cc1dfe3ad6c61a7420a",
@@ -4162,8 +4158,8 @@
         "signature": "0c4129bd295993322ef18ba02d500a66928d45e7e2a93a6d396ae4a461738e97"
       },
       "../src/notification/notification.controller.ts": {
-        "version": "3f4e2ac8f0a531efc22c2f6e54e109adb592ea4f54ae449661fc5227a5b55096",
-        "signature": "cce14a486b156adcebbd01935f15501c177a1931f8c655c7e1030356ed11ca81"
+        "version": "75865f4f28afbf01fe60224dc6a926bf471b84d3dc9fcf553eef8f9b13c45d75",
+        "signature": "5971e958a7ebe018f56478491721a26e2c232f75dacfdce62827e5f3da638c9b"
       },
       "../src/notification/notification.module.ts": {
         "version": "2de275686128caca09a896d831452e5e945b776b15bd5b42b21ae8f1e404e31b",
@@ -4181,28 +4177,32 @@
         "version": "5ac4de636b19353a2619703048c4f34a203a9642b0f39793a059b61556bee6ef",
         "signature": "7e79ebe98af46c58d2cbb61db2468d46e6742ea65ab8b6f36f0e6ae9c1b97889"
       },
+      "../src/utils/add-duration.ts": {
+        "version": "3f9637df5f60613015780c6bd92fa5fef0cda9bc8abebb5294f435340b71744b",
+        "signature": "7cacc6df91be9603b93cd10ccb9dbc2f2c9d4b424f348f83608d78103c3e6af6"
+      },
       "../src/logger/valid-reason.pipe.ts": {
         "version": "7dde27bf3cc37697dc93d657f7e6d5232ae225075acf281313d4c8f4c8d01d6c",
         "signature": "421dc86dc769b6f2302b1d486eb7df9bbc530f8a608a123f8a435cd96441d5aa"
       },
-      "../src/many-uuid.pipe.ts": {
-        "version": "d62525d4b09ea54a79d2befc2d4652e7feb3f57c1a8b53dc20b462a894714fe4",
-        "signature": "bcb831b68000e11c0c729761c1d39812723bf4e04c0e6d692ea095e834f6e6be"
+      "../src/pipes/many-uuid.pipe.ts": {
+        "version": "7083a7377bcd95e52dff48690d46cebfb742e2da8c17208439f4f5250a305e29",
+        "signature": "d8dbff61edaa7b216c8c960bc5bfdf101bb0121e055080040c3e57b49c56c5a4"
       },
       "../src/pagination/pagination.decorator.ts": {
         "version": "bcfc7124f7db85c7d2a4b92920730f3e4255bc9646f6fdd1fe0ef3d4eed91ec0",
         "signature": "4fdbe117bf6019b6f2122eac280773bb707f4e40bdaa77ba1ca0c3d61b8607a4"
       },
       "../src/access-control/role/role.factory.ts": {
-        "version": "6907f1816d37277b7921edec2c5c925538cd6ed5aced46ebfed814fb466f7585",
-        "signature": "fcde001f190dd194a135a9d1c4fb48d022f584e29868599a5f20c533c4e6cfa1"
+        "version": "8f8d59e3b100e1b92b35b0400846701a51fdd5ebfa227c4af0cdeaf7c8d18c06",
+        "signature": "436d14b6cc4ba305592a1a308f0a0bf2b2d81a15100a7b13c34c199f583fe5f8"
       },
       "../src/access-control/role/roles.dto.ts": {
         "version": "2b1a3ad6429979bf4079735b4ddce5791ac4de8112a88a40ebc74afb371fadd7",
         "signature": "85190e2bcde98c85b2e953d7d83f1cfd0d6c009717fe9b286c03ac0e51a2caed"
       },
       "../src/simple-admin.guard.ts": {
-        "version": "8bfe6fe1839620921ba82308594e0a1092ebb96129773079d9be0d9004e0d84c",
+        "version": "6ae2bd8b429ee7de673cd7763c98babe24d49c90f54595388b6b4a7d973e0cab",
         "signature": "cb8e40dc1f25fd639e75ac2ae8f646ed73df9bb56929d773d858f8c49b3a4c4c"
       },
       "../src/storage/storage-images.helper.ts": {
@@ -4214,16 +4214,16 @@
         "signature": "0834fe76a789aef7b3bca8414785c9afce9be777c50ffdfdc74c312c937bb597"
       },
       "../src/index.ts": {
-        "version": "e2dc51d04592a12704501232d28faaacf39cda6dc90a4ff5e377353f2126168b",
-        "signature": "e2dc51d04592a12704501232d28faaacf39cda6dc90a4ff5e377353f2126168b"
+        "version": "9153843d25cdb02f259d8f3d6b0c9669b880305d8bd2bc87b4356276a94052c8",
+        "signature": "9153843d25cdb02f259d8f3d6b0c9669b880305d8bd2bc87b4356276a94052c8"
       },
       "../node_modules/handlebars/types/index.d.ts": {
         "version": "9e8b238f617655d62bb0eec199219e2b9627ff278f31255c3a3b1b617fc31011",
         "signature": "9e8b238f617655d62bb0eec199219e2b9627ff278f31255c3a3b1b617fc31011"
       },
       "../src/auth/auth-mail.processor.ts": {
-        "version": "9a2b52756a61d007920c8842325a30eb9433fa9e44badea5078ce12884f1736c",
-        "signature": "78997989d3ada50d4162046c417a39567702f2e00615b6f022b1491913acbf68"
+        "version": "916e1d6eb096ff3e89c9aa681fce383712ea18e5bbfbf9bc8791ab61ae4618f3",
+        "signature": "71ea59f556427cbd6914343478b26ccb7b740b13cf4d84c547f5cb096c21e12d"
       },
       "../src/storage/publicReadPolicy.ts": {
         "version": "09dc2d5ef9c2a6f8f592eef1ce60d24fbb0ac0a52f08ea93ffeba1034e881f15",
@@ -4489,19 +4489,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/typescript/lib/lib.esnext.bigint.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/moment/moment.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/add-duration.ts": [
-        "../node_modules/moment/moment.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -11701,14 +11688,14 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/helpers.ts": [
+      "../src/utils/helpers.ts": [
         "../src/types.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/is-between.ts": [
+      "../src/utils/is-between.ts": [
         "../node_modules/class-validator/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11723,8 +11710,8 @@
       ],
       "../src/pagination/pagination-options.ts": [
         "../node_modules/class-validator/index.d.ts",
-        "../src/helpers.ts",
-        "../src/is-between.ts",
+        "../src/utils/helpers.ts",
+        "../src/utils/is-between.ts",
         "../src/types.ts",
         "../src/pagination/pagination.types.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -11768,7 +11755,7 @@
         "../node_modules/class-validator/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../node_modules/query-string/index.d.ts",
-        "../src/helpers.ts",
+        "../src/utils/helpers.ts",
         "../src/types.ts",
         "../src/pagination/pagination-options.ts",
         "../src/pagination/pagination.types.ts",
@@ -11792,7 +11779,7 @@
       ],
       "../src/typeorm/parse-to-orm-query.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/helpers.ts",
+        "../src/utils/helpers.ts",
         "../src/types.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11814,19 +11801,149 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/ioredis/index.d.ts": [
-        "../node_modules/@types/node/tls.d.ts",
-        "../node_modules/@types/node/stream.d.ts",
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
+      "../src/consts.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/bull/index.d.ts": [
-        "../node_modules/@types/ioredis/index.d.ts",
-        "../node_modules/@types/node/events.d.ts",
+      "../node_modules/class-transformer/ClassTransformOptions.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/ClassTransformer.d.ts": [
+        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/metadata/TypeMetadata.d.ts": [
+        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/TransformOperationExecutor.d.ts": [
+        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
+        "../node_modules/class-transformer/metadata/TypeMetadata.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/decorators.d.ts": [
+        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
+        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
+        "../node_modules/class-transformer/TransformOperationExecutor.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/index.d.ts": [
+        "../node_modules/class-transformer/ClassTransformer.d.ts",
+        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
+        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
+        "../node_modules/class-transformer/decorators.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/entities/base.entity.ts": [
+        "../node_modules/class-transformer/index.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/types.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/entities/image.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/entities/base.entity.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/users/user.interface.ts": [
+        "../node_modules/class-transformer/index.d.ts",
+        "../src/entities/image.entity.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/logger/db-log-metadata.ts": [
+        "../src/types.ts",
+        "../src/users/user.interface.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/deep-diff/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/bcryptjs/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/faker/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/moment/moment.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/users/base-user.entity.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/bcryptjs/index.d.ts",
+        "../node_modules/class-transformer/index.d.ts",
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@types/faker/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../node_modules/moment/moment.d.ts",
+        "../src/entities/base.entity.ts",
+        "../src/entities/image.entity.ts",
+        "../src/users/user.interface.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/logger/db-log.entity.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/class-transformer/index.d.ts",
+        "../node_modules/@types/deep-diff/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/entities/base.entity.ts",
+        "../src/users/user.interface.ts",
+        "../src/types.ts",
+        "../src/users/base-user.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -11897,168 +12014,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/class-transformer/ClassTransformOptions.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/ClassTransformer.d.ts": [
-        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/metadata/TypeMetadata.d.ts": [
-        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/TransformOperationExecutor.d.ts": [
-        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
-        "../node_modules/class-transformer/metadata/TypeMetadata.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/decorators.d.ts": [
-        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
-        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
-        "../node_modules/class-transformer/TransformOperationExecutor.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/index.d.ts": [
-        "../node_modules/class-transformer/ClassTransformer.d.ts",
-        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
-        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
-        "../node_modules/class-transformer/decorators.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/bcryptjs/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/faker/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/entities/base.entity.ts": [
-        "../node_modules/class-transformer/index.d.ts",
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/class-validator/index.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/types.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/entities/image.entity.ts": [
-        "../node_modules/typeorm/index.d.ts",
-        "../src/entities/base.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/entities/user.interface.ts": [
-        "../node_modules/class-transformer/index.d.ts",
-        "../src/entities/image.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/entities/base-user.entity.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/bcryptjs/index.d.ts",
-        "../node_modules/class-transformer/index.d.ts",
-        "../node_modules/class-validator/index.d.ts",
-        "../node_modules/@types/faker/index.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../node_modules/moment/moment.d.ts",
-        "../src/entities/base.entity.ts",
-        "../src/entities/image.entity.ts",
-        "../src/entities/user.interface.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/entities/base-user-with-roles.entity.ts": [
-        "../node_modules/class-transformer/index.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/access-control/role/roles.entity.ts",
-        "../src/entities/base-user.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/access-control/role/roles.entity.ts": [
-        "../node_modules/class-validator/index.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/entities/base-user-with-roles.entity.ts",
-        "../src/entities/base.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/consts.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/logger/db-log-metadata.ts": [
-        "../src/types.ts",
-        "../src/entities/user.interface.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/deep-diff/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/logger/db-log.entity.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/class-transformer/index.d.ts",
-        "../node_modules/@types/deep-diff/index.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/entities/base.entity.ts",
-        "../src/entities/user.interface.ts",
-        "../src/types.ts",
-        "../src/entities/base-user.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/logger/db-logger.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
@@ -12086,318 +12041,19 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/access-control/role/roles.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/typeorm/index.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/access-control/role/roles.entity.ts",
-        "../src/base.service.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/auth/auth.dto.ts": [
-        "../node_modules/class-validator/index.d.ts",
-        "../src/entities/base-user.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/sharp/index.d.ts": [
+      "../node_modules/@types/ioredis/index.d.ts": [
+        "../node_modules/@types/node/tls.d.ts",
         "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/config.module.d.ts",
-        "../node_modules/@nestjs/config/dist/config.service.d.ts",
-        "../node_modules/@nestjs/config/dist/utils/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/aws-sdk/clients/cognitoidentity.d.ts",
-        "../node_modules/aws-sdk/clients/sts.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/clients/sts.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/clients/sts.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/aws-sdk/clients/sts.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/event_listeners.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/metadata_service.d.ts": [
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/core.d.ts": [
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/credential_provider_chain.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/endpoint.d.ts",
-        "../node_modules/aws-sdk/lib/event_listeners.d.ts",
-        "../node_modules/aws-sdk/lib/http_request.d.ts",
-        "../node_modules/aws-sdk/lib/http_response.d.ts",
-        "../node_modules/aws-sdk/lib/metadata_service.d.ts",
-        "../node_modules/aws-sdk/lib/request.d.ts",
-        "../node_modules/aws-sdk/lib/response.d.ts",
-        "../node_modules/aws-sdk/lib/service.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/index.d.ts": [
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/aws-sdk/lib/core.d.ts",
-        "../node_modules/aws-sdk/clients/all.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/storage/storage.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/config/index.d.ts",
-        "../node_modules/aws-sdk/index.d.ts",
-        "../src/consts.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/storage/storage-images-default-config.ts": [
-        "../src/storage/storage.module.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/storage/storage.module.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/storage/storage.service.ts",
-        "../src/storage/storage-images.service.ts",
-        "../src/consts.ts",
-        "../src/storage/storage-images-default-config.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/storage/sharp.ts": [
-        "../node_modules/@types/sharp/index.d.ts",
-        "../src/storage/storage.module.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/storage/storage-images.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/faker/index.d.ts",
-        "../node_modules/moment/moment.d.ts",
-        "../node_modules/class-transformer/index.d.ts",
-        "../src/consts.ts",
-        "../src/types.ts",
-        "../src/storage/sharp.ts",
-        "../src/storage/storage.module.ts",
-        "../src/storage/storage.service.ts",
-        "../src/entities/image.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/base-user.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/bull/index.d.ts",
-        "../node_modules/moment/moment.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/access-control/role/roles.service.ts",
-        "../src/access-control/role/roles.entity.ts",
-        "../src/auth/auth.dto.ts",
-        "../src/base.service.ts",
-        "../src/entities/base-user.entity.ts",
-        "../src/storage/storage-images.service.ts",
+      "../node_modules/@types/bull/index.d.ts": [
+        "../node_modules/@types/ioredis/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -12525,6 +12181,72 @@
         "../node_modules/@nestjs/bull/dist/enums/index.d.ts",
         "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts",
         "../node_modules/@nestjs/bull/dist/utils/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/config.module.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/utils/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -12839,6 +12561,26 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/access-control/casbin-valid-domain.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/users/base-user-with-roles.entity.ts": [
+        "../node_modules/class-transformer/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/access-control/role/roles.entity.ts",
+        "../src/users/base-user.entity.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/access-control/role/roles.entity.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/users/base-user-with-roles.entity.ts",
+        "../src/entities/base.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -13165,6 +12907,17 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/access-control/role/roles.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/access-control/role/roles.entity.ts",
+        "../src/base.service.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/access-control/set-required-access.decorator.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -13175,7 +12928,7 @@
       "../src/access-control/permissions.guard.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/core/index.d.ts",
-        "../src/entities/base-user-with-roles.entity.ts",
+        "../src/users/base-user-with-roles.entity.ts",
         "../src/access-control/access-control.service.ts",
         "../src/access-control/role/roles.service.ts",
         "../src/access-control/set-required-access.decorator.ts",
@@ -13266,7 +13019,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/uuid.pipe.ts": [
+      "../src/pipes/uuid.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/class-validator/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -13278,10 +13031,10 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
         "../src/auth/get-user.decorator.ts",
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../src/access-control/role/roles.entity.ts",
         "../src/access-control/role/roles.service.ts",
-        "../src/uuid.pipe.ts",
+        "../src/pipes/uuid.pipe.ts",
         "../src/types.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -13375,7 +13128,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/register-queue.ts": [
+      "../src/utils/register-queue.ts": [
         "../node_modules/@nestjs/bull/dist/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts",
         "../src/consts.ts",
@@ -13524,6 +13277,246 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/auth/auth.dto.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../src/users/base-user.entity.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/sharp/index.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/aws-sdk/clients/cognitoidentity.d.ts",
+        "../node_modules/aws-sdk/clients/sts.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/clients/sts.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/clients/sts.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/aws-sdk/clients/sts.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/event_listeners.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/metadata_service.d.ts": [
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/core.d.ts": [
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/credential_provider_chain.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/endpoint.d.ts",
+        "../node_modules/aws-sdk/lib/event_listeners.d.ts",
+        "../node_modules/aws-sdk/lib/http_request.d.ts",
+        "../node_modules/aws-sdk/lib/http_response.d.ts",
+        "../node_modules/aws-sdk/lib/metadata_service.d.ts",
+        "../node_modules/aws-sdk/lib/request.d.ts",
+        "../node_modules/aws-sdk/lib/response.d.ts",
+        "../node_modules/aws-sdk/lib/service.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/index.d.ts": [
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/aws-sdk/lib/core.d.ts",
+        "../node_modules/aws-sdk/clients/all.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/storage/storage.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/config/index.d.ts",
+        "../node_modules/aws-sdk/index.d.ts",
+        "../src/consts.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/storage/storage-images-default-config.ts": [
+        "../src/storage/storage.module.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/storage/storage.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/storage/storage.service.ts",
+        "../src/storage/storage-images.service.ts",
+        "../src/consts.ts",
+        "../src/storage/storage-images-default-config.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/storage/sharp.ts": [
+        "../node_modules/@types/sharp/index.d.ts",
+        "../src/storage/storage.module.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/storage/storage-images.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/faker/index.d.ts",
+        "../node_modules/moment/moment.d.ts",
+        "../node_modules/class-transformer/index.d.ts",
+        "../src/consts.ts",
+        "../src/types.ts",
+        "../src/storage/sharp.ts",
+        "../src/storage/storage.module.ts",
+        "../src/storage/storage.service.ts",
+        "../src/entities/image.entity.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/users/base-user.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/bull/index.d.ts",
+        "../node_modules/moment/moment.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/access-control/role/roles.service.ts",
+        "../src/access-control/role/roles.entity.ts",
+        "../src/auth/auth.dto.ts",
+        "../src/base.service.ts",
+        "../src/users/base-user.entity.ts",
+        "../src/storage/storage-images.service.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/storage/valid-jpeg-image.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -13623,7 +13616,7 @@
         "../node_modules/@nestjs/passport/index.d.ts",
         "../node_modules/@types/passport-jwt/index.d.ts",
         "../src/consts.ts",
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../src/auth/auth.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -13635,10 +13628,10 @@
         "../node_modules/@nestjs/jwt/index.d.ts",
         "../node_modules/class-transformer/index.d.ts",
         "../node_modules/class-validator/index.d.ts",
-        "../src/base-user.service.ts",
+        "../src/users/base-user.service.ts",
         "../src/consts.ts",
-        "../src/entities/base-user.entity.ts",
-        "../src/entities/user.interface.ts",
+        "../src/users/base-user.entity.ts",
+        "../src/users/user.interface.ts",
         "../src/auth/auth-mail.service.ts",
         "../src/auth/auth.dto.ts",
         "../src/auth/jwt.strategy.ts",
@@ -13652,10 +13645,10 @@
         "../node_modules/@nestjs/passport/index.d.ts",
         "../node_modules/@nestjs/platform-express/index.d.ts",
         "../node_modules/class-validator/index.d.ts",
-        "../src/base-user.service.ts",
+        "../src/users/base-user.service.ts",
         "../src/consts.ts",
-        "../src/entities/base-user.entity.ts",
-        "../src/entities/user.interface.ts",
+        "../src/users/base-user.entity.ts",
+        "../src/users/user.interface.ts",
         "../src/storage/valid-jpeg-image.ts",
         "../src/auth/auth.dto.ts",
         "../src/auth/auth.service.ts",
@@ -13665,7 +13658,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/validate-email.pipe.ts": [
+      "../src/pipes/validate-email.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/class-validator/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -13678,7 +13671,7 @@
         "../node_modules/moment/moment.d.ts",
         "../src/base.service.ts",
         "../src/consts.ts",
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -13687,8 +13680,8 @@
       "../src/auth/password-reset.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/base.service.ts",
-        "../src/entities/base-user.entity.ts",
-        "../src/validate-email.pipe.ts",
+        "../src/users/base-user.entity.ts",
+        "../src/pipes/validate-email.pipe.ts",
         "../src/auth/auth-mail.service.ts",
         "../src/auth/auth.dto.ts",
         "../src/auth/password-reset.service.ts",
@@ -13706,7 +13699,7 @@
         "../node_modules/@nestjs/jwt/index.d.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
         "../src/consts.ts",
-        "../src/register-queue.ts",
+        "../src/utils/register-queue.ts",
         "../src/auth/auth-mail.service.ts",
         "../src/auth/auth.controller.ts",
         "../src/auth/auth.service.ts",
@@ -13935,7 +13928,7 @@
       ],
       "../src/notification/notification.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../src/types.ts",
         "../src/entities/base.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -13969,11 +13962,11 @@
       "../src/notification/notification.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/notification/notification.service.ts",
-        "../src/uuid.pipe.ts",
+        "../src/pipes/uuid.pipe.ts",
         "../src/types.ts",
         "../src/notification/notification.entity.ts",
         "../src/auth/get-user.decorator.ts",
-        "../src/entities/user.interface.ts",
+        "../src/users/user.interface.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -14029,6 +14022,13 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/utils/add-duration.ts": [
+        "../node_modules/moment/moment.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/logger/valid-reason.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/class-validator/index.d.ts",
@@ -14037,7 +14037,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/many-uuid.pipe.ts": [
+      "../src/pipes/many-uuid.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/class-validator/index.d.ts",
         "../src/types.ts",
@@ -14057,7 +14057,7 @@
       ],
       "../src/access-control/role/role.factory.ts": [
         "../node_modules/@types/faker/index.d.ts",
-        "../src/entities/base-user-with-roles.entity.ts",
+        "../src/users/base-user-with-roles.entity.ts",
         "../src/types.ts",
         "../src/access-control/role/roles.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -14078,7 +14078,7 @@
         "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/class-validator/index.d.ts",
         "../src/consts.ts",
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -14110,7 +14110,7 @@
         "../src/access-control/set-required-access.decorator.ts",
         "../src/access-control/permissions.guard.ts",
         "../src/access-control/valid-role.pipe.ts",
-        "../src/add-duration.ts",
+        "../src/utils/add-duration.ts",
         "../src/auth/auth.controller.ts",
         "../src/auth/auth.dto.ts",
         "../src/auth/auth-mail.service.ts",
@@ -14121,24 +14121,24 @@
         "../src/auth/password-reset.controller.ts",
         "../src/auth/password-reset.service.ts",
         "../src/base-find.service.ts",
-        "../src/base-user.service.ts",
+        "../src/users/base-user.service.ts",
         "../src/base.service.ts",
         "../src/consts.ts",
         "../src/core.module.ts",
         "../src/entities/base.entity.ts",
-        "../src/entities/base-user.entity.ts",
-        "../src/entities/base-user-with-roles.entity.ts",
+        "../src/users/base-user.entity.ts",
+        "../src/users/base-user-with-roles.entity.ts",
         "../src/entities/image.entity.ts",
-        "../src/entities/user.interface.ts",
-        "../src/helpers.ts",
+        "../src/users/user.interface.ts",
+        "../src/utils/helpers.ts",
         "../src/id-array.dto.ts",
-        "../src/is-between.ts",
+        "../src/utils/is-between.ts",
         "../src/logger/db-logger.service.ts",
         "../src/logger/db-log.entity.ts",
         "../src/logger/db-logger.module.ts",
         "../src/logger/db-log-metadata.ts",
         "../src/logger/valid-reason.pipe.ts",
-        "../src/many-uuid.pipe.ts",
+        "../src/pipes/many-uuid.pipe.ts",
         "../src/notification/notification.controller.ts",
         "../src/notification/notifications.cron.service.ts",
         "../src/notification/notification.entity.ts",
@@ -14166,9 +14166,9 @@
         "../src/typeorm/orm-query.pipe.ts",
         "../src/typeorm/parse-to-orm-query.ts",
         "../src/types.ts",
-        "../src/uuid.pipe.ts",
-        "../src/validate-email.pipe.ts",
-        "../src/register-queue.ts",
+        "../src/pipes/uuid.pipe.ts",
+        "../src/pipes/validate-email.pipe.ts",
+        "../src/utils/register-queue.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -14187,7 +14187,7 @@
         "../node_modules/@types/bull/index.d.ts",
         "../node_modules/handlebars/types/index.d.ts",
         "../node_modules/@types/node/path.d.ts",
-        "../src/base-user.service.ts",
+        "../src/users/base-user.service.ts",
         "../src/consts.ts",
         "../src/mailer/mailer.service.ts",
         "../src/html.d.ts",
@@ -14499,15 +14499,6 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/moment/moment.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/add-duration.ts": [
-        "../node_modules/moment/moment.d.ts"
       ],
       "../node_modules/reflect-metadata/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -21699,10 +21690,10 @@
       "../src/types.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
-      "../src/helpers.ts": [
+      "../src/utils/helpers.ts": [
         "../src/types.ts"
       ],
-      "../src/is-between.ts": [
+      "../src/utils/is-between.ts": [
         "../node_modules/class-validator/index.d.ts"
       ],
       "../src/pagination/pagination-options.ts": [
@@ -21751,23 +21742,107 @@
         "../src/pagination/pagination.types.ts",
         "../node_modules/aws-sdk/clients/costexplorer.d.ts"
       ],
-      "../node_modules/@types/ioredis/index.d.ts": [
-        "../node_modules/@types/node/tls.d.ts",
-        "../node_modules/@types/node/stream.d.ts",
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
+      "../node_modules/class-transformer/ClassTransformOptions.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/bull/index.d.ts": [
-        "../node_modules/@types/ioredis/index.d.ts",
-        "../node_modules/@types/node/events.d.ts",
+      "../node_modules/class-transformer/ClassTransformer.d.ts": [
+        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/metadata/TypeMetadata.d.ts": [
+        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/TransformOperationExecutor.d.ts": [
+        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
+        "../node_modules/class-transformer/metadata/TypeMetadata.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/decorators.d.ts": [
+        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
+        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
+        "../node_modules/class-transformer/TransformOperationExecutor.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/class-transformer/index.d.ts": [
+        "../node_modules/class-transformer/ClassTransformer.d.ts",
+        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
+        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
+        "../node_modules/class-transformer/decorators.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/entities/base.entity.ts": [
+        "../src/types.ts"
+      ],
+      "../src/entities/image.entity.ts": [
+        "../src/entities/base.entity.ts"
+      ],
+      "../src/users/user.interface.ts": [
+        "../src/entities/image.entity.ts"
+      ],
+      "../src/logger/db-log-metadata.ts": [
+        "../src/users/user.interface.ts",
+        "../src/types.ts"
+      ],
+      "../node_modules/@types/deep-diff/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/bcryptjs/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/faker/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/moment/moment.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/users/base-user.entity.ts": [
+        "../src/entities/image.entity.ts",
+        "../node_modules/moment/moment.d.ts",
+        "../src/entities/base.entity.ts",
+        "../src/users/user.interface.ts"
+      ],
+      "../src/logger/db-log.entity.ts": [
+        "../src/types.ts",
+        "../src/users/base-user.entity.ts",
+        "../src/users/user.interface.ts",
+        "../src/entities/base.entity.ts"
       ],
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.decorators.d.ts": [
         "../node_modules/typeorm/index.d.ts",
@@ -21834,110 +21909,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/class-transformer/ClassTransformOptions.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/ClassTransformer.d.ts": [
-        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/metadata/TypeMetadata.d.ts": [
-        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/TransformOperationExecutor.d.ts": [
-        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
-        "../node_modules/class-transformer/metadata/TypeMetadata.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/decorators.d.ts": [
-        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
-        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
-        "../node_modules/class-transformer/TransformOperationExecutor.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/class-transformer/index.d.ts": [
-        "../node_modules/class-transformer/ClassTransformer.d.ts",
-        "../node_modules/class-transformer/ClassTransformOptions.d.ts",
-        "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
-        "../node_modules/class-transformer/decorators.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/bcryptjs/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/faker/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/entities/base.entity.ts": [
-        "../src/types.ts"
-      ],
-      "../src/entities/image.entity.ts": [
-        "../src/entities/base.entity.ts"
-      ],
-      "../src/entities/user.interface.ts": [
-        "../src/entities/image.entity.ts"
-      ],
-      "../src/entities/base-user.entity.ts": [
-        "../src/entities/image.entity.ts",
-        "../node_modules/moment/moment.d.ts",
-        "../src/entities/base.entity.ts",
-        "../src/entities/user.interface.ts"
-      ],
-      "../src/entities/base-user-with-roles.entity.ts": [
-        "../src/access-control/role/roles.entity.ts",
-        "../src/entities/base-user.entity.ts"
-      ],
-      "../src/access-control/role/roles.entity.ts": [
-        "../src/entities/base-user-with-roles.entity.ts",
-        "../src/entities/base.entity.ts"
-      ],
-      "../src/logger/db-log-metadata.ts": [
-        "../src/entities/user.interface.ts",
-        "../src/types.ts"
-      ],
-      "../node_modules/@types/deep-diff/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/logger/db-log.entity.ts": [
-        "../src/types.ts",
-        "../src/entities/base-user.entity.ts",
-        "../src/entities/user.interface.ts",
-        "../src/entities/base.entity.ts"
-      ],
       "../src/logger/db-logger.service.ts": [
         "../src/types.ts",
         "../node_modules/typeorm/index.d.ts",
@@ -21952,267 +21923,23 @@
         "../src/logger/db-log-metadata.ts",
         "../src/base-find.service.ts"
       ],
-      "../src/access-control/role/roles.service.ts": [
-        "../node_modules/typeorm/index.d.ts",
-        "../src/access-control/role/roles.entity.ts",
-        "../src/base.service.ts"
-      ],
-      "../src/auth/auth.dto.ts": [
-        "../src/entities/base-user.entity.ts"
-      ],
-      "../node_modules/@types/sharp/index.d.ts": [
+      "../node_modules/@types/ioredis/index.d.ts": [
+        "../node_modules/@types/node/tls.d.ts",
         "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
+      "../node_modules/@types/bull/index.d.ts": [
+        "../node_modules/@types/ioredis/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/config.module.d.ts",
-        "../node_modules/@nestjs/config/dist/config.service.d.ts",
-        "../node_modules/@nestjs/config/dist/utils/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/aws-sdk/clients/cognitoidentity.d.ts",
-        "../node_modules/aws-sdk/clients/sts.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/clients/sts.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/clients/sts.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts": [
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/aws-sdk/clients/sts.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/event_listeners.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/metadata_service.d.ts": [
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/lib/core.d.ts": [
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/aws-sdk/lib/credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/credential_provider_chain.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts",
-        "../node_modules/aws-sdk/lib/endpoint.d.ts",
-        "../node_modules/aws-sdk/lib/event_listeners.d.ts",
-        "../node_modules/aws-sdk/lib/http_request.d.ts",
-        "../node_modules/aws-sdk/lib/http_response.d.ts",
-        "../node_modules/aws-sdk/lib/metadata_service.d.ts",
-        "../node_modules/aws-sdk/lib/request.d.ts",
-        "../node_modules/aws-sdk/lib/response.d.ts",
-        "../node_modules/aws-sdk/lib/service.d.ts",
-        "../node_modules/aws-sdk/lib/error.d.ts",
-        "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/aws-sdk/index.d.ts": [
-        "../node_modules/aws-sdk/lib/config.d.ts",
-        "../node_modules/aws-sdk/lib/core.d.ts",
-        "../node_modules/aws-sdk/clients/all.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/storage/storage.service.ts": [
-        "../node_modules/@nestjs/config/index.d.ts"
-      ],
-      "../src/storage/storage-images-default-config.ts": [
-        "../src/storage/storage.module.ts"
-      ],
-      "../src/storage/storage.module.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
-      "../src/storage/sharp.ts": [
-        "../src/storage/storage.module.ts"
-      ],
-      "../src/storage/storage-images.service.ts": [
-        "../src/storage/storage.service.ts",
-        "../src/storage/storage.module.ts",
-        "../src/entities/image.entity.ts"
-      ],
-      "../src/base-user.service.ts": [
-        "../src/entities/base-user.entity.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../node_modules/@types/bull/index.d.ts",
-        "../src/auth/auth.dto.ts",
-        "../src/base.service.ts"
       ],
       "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts": [
         "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
@@ -22336,6 +22063,72 @@
         "../node_modules/@nestjs/bull/dist/enums/index.d.ts",
         "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts",
         "../node_modules/@nestjs/bull/dist/utils/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/config.module.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/utils/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -22648,6 +22441,14 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/users/base-user-with-roles.entity.ts": [
+        "../src/access-control/role/roles.entity.ts",
+        "../src/users/base-user.entity.ts"
+      ],
+      "../src/access-control/role/roles.entity.ts": [
+        "../src/users/base-user-with-roles.entity.ts",
+        "../src/entities/base.entity.ts"
       ],
       "../src/access-control/access-control.service.ts": [
         "../src/access-control/role/roles.entity.ts"
@@ -22962,6 +22763,11 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/access-control/role/roles.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/access-control/role/roles.entity.ts",
+        "../src/base.service.ts"
+      ],
       "../src/access-control/permissions.guard.ts": [
         "../src/access-control/access-control.service.ts",
         "../src/access-control/role/roles.service.ts",
@@ -23042,11 +22848,11 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/uuid.pipe.ts": [
+      "../src/pipes/uuid.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/access-control/role/roles.controller.ts": [
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../src/access-control/role/roles.service.ts",
         "../src/access-control/role/roles.entity.ts",
         "../src/types.ts"
@@ -23113,7 +22919,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/register-queue.ts": [
+      "../src/utils/register-queue.ts": [
         "../node_modules/@nestjs/bull/dist/index.d.ts"
       ],
       "../src/auth/auth-mail.service.ts": [
@@ -23249,6 +23055,197 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/auth/auth.dto.ts": [
+        "../src/users/base-user.entity.ts"
+      ],
+      "../node_modules/@types/sharp/index.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/aws-sdk/clients/cognitoidentity.d.ts",
+        "../node_modules/aws-sdk/clients/sts.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/clients/sts.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/clients/sts.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts": [
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/aws-sdk/clients/sts.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/event_listeners.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/metadata_service.d.ts": [
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/lib/core.d.ts": [
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/aws-sdk/lib/credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/credential_provider_chain.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts",
+        "../node_modules/aws-sdk/lib/endpoint.d.ts",
+        "../node_modules/aws-sdk/lib/event_listeners.d.ts",
+        "../node_modules/aws-sdk/lib/http_request.d.ts",
+        "../node_modules/aws-sdk/lib/http_response.d.ts",
+        "../node_modules/aws-sdk/lib/metadata_service.d.ts",
+        "../node_modules/aws-sdk/lib/request.d.ts",
+        "../node_modules/aws-sdk/lib/response.d.ts",
+        "../node_modules/aws-sdk/lib/service.d.ts",
+        "../node_modules/aws-sdk/lib/error.d.ts",
+        "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/aws-sdk/index.d.ts": [
+        "../node_modules/aws-sdk/lib/config.d.ts",
+        "../node_modules/aws-sdk/lib/core.d.ts",
+        "../node_modules/aws-sdk/clients/all.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/storage/storage.service.ts": [
+        "../node_modules/@nestjs/config/index.d.ts"
+      ],
+      "../src/storage/storage-images-default-config.ts": [
+        "../src/storage/storage.module.ts"
+      ],
+      "../src/storage/storage.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/storage/sharp.ts": [
+        "../src/storage/storage.module.ts"
+      ],
+      "../src/storage/storage-images.service.ts": [
+        "../src/storage/storage.service.ts",
+        "../src/storage/storage.module.ts",
+        "../src/entities/image.entity.ts"
+      ],
+      "../src/users/base-user.service.ts": [
+        "../src/users/base-user.entity.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../node_modules/@types/bull/index.d.ts",
+        "../src/auth/auth.dto.ts",
+        "../src/base.service.ts"
+      ],
       "../node_modules/@types/range-parser/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -23339,38 +23336,38 @@
       "../src/auth/jwt.strategy.ts": [
         "../node_modules/@nestjs/config/index.d.ts",
         "../src/auth/auth.service.ts",
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../node_modules/@types/passport-jwt/index.d.ts"
       ],
       "../src/auth/auth.service.ts": [
-        "../src/entities/base-user.entity.ts",
-        "../src/base-user.service.ts",
+        "../src/users/base-user.entity.ts",
+        "../src/users/base-user.service.ts",
         "../node_modules/@nestjs/jwt/index.d.ts",
         "../src/auth/auth-mail.service.ts",
         "../src/auth/auth.dto.ts",
         "../src/auth/jwt.strategy.ts",
-        "../src/entities/user.interface.ts"
+        "../src/users/user.interface.ts"
       ],
       "../src/auth/auth.controller.ts": [
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../node_modules/class-validator/index.d.ts",
         "../src/auth/auth.service.ts",
-        "../src/base-user.service.ts",
+        "../src/users/base-user.service.ts",
         "../src/auth/auth.dto.ts",
-        "../src/entities/user.interface.ts"
+        "../src/users/user.interface.ts"
       ],
-      "../src/validate-email.pipe.ts": [
+      "../src/pipes/validate-email.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/auth/password-reset.service.ts": [
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../src/base.service.ts"
       ],
       "../src/auth/password-reset.controller.ts": [
         "../src/auth/auth-mail.service.ts",
         "../src/auth/password-reset.service.ts",
         "../src/base.service.ts",
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../src/types.ts",
         "../src/auth/auth.dto.ts"
       ],
@@ -23561,7 +23558,7 @@
         "../node_modules/@types/nodemailer/index.d.ts"
       ],
       "../src/notification/notification.entity.ts": [
-        "../src/entities/base-user.entity.ts",
+        "../src/users/base-user.entity.ts",
         "../src/types.ts",
         "../src/entities/base.entity.ts"
       ],
@@ -23577,7 +23574,7 @@
       "../src/notification/notification.controller.ts": [
         "../src/notification/notification.service.ts",
         "../src/types.ts",
-        "../src/entities/user.interface.ts",
+        "../src/users/user.interface.ts",
         "../src/notification/notification.entity.ts"
       ],
       "../src/core.module.ts": [
@@ -23596,15 +23593,18 @@
       "../src/id-array.dto.ts": [
         "../src/types.ts"
       ],
+      "../src/utils/add-duration.ts": [
+        "../node_modules/moment/moment.d.ts"
+      ],
       "../src/logger/valid-reason.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
-      "../src/many-uuid.pipe.ts": [
+      "../src/pipes/many-uuid.pipe.ts": [
         "../src/types.ts",
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/access-control/role/role.factory.ts": [
-        "../src/entities/base-user-with-roles.entity.ts",
+        "../src/users/base-user-with-roles.entity.ts",
         "../src/types.ts",
         "../src/access-control/role/roles.entity.ts"
       ],
@@ -23631,7 +23631,7 @@
         "../src/access-control/set-required-access.decorator.ts",
         "../src/access-control/permissions.guard.ts",
         "../src/access-control/valid-role.pipe.ts",
-        "../src/add-duration.ts",
+        "../src/utils/add-duration.ts",
         "../src/auth/auth.controller.ts",
         "../src/auth/auth.dto.ts",
         "../src/auth/auth-mail.service.ts",
@@ -23642,24 +23642,24 @@
         "../src/auth/password-reset.controller.ts",
         "../src/auth/password-reset.service.ts",
         "../src/base-find.service.ts",
-        "../src/base-user.service.ts",
+        "../src/users/base-user.service.ts",
         "../src/base.service.ts",
         "../src/consts.ts",
         "../src/core.module.ts",
         "../src/entities/base.entity.ts",
-        "../src/entities/base-user.entity.ts",
-        "../src/entities/base-user-with-roles.entity.ts",
+        "../src/users/base-user.entity.ts",
+        "../src/users/base-user-with-roles.entity.ts",
         "../src/entities/image.entity.ts",
-        "../src/entities/user.interface.ts",
-        "../src/helpers.ts",
+        "../src/users/user.interface.ts",
+        "../src/utils/helpers.ts",
         "../src/id-array.dto.ts",
-        "../src/is-between.ts",
+        "../src/utils/is-between.ts",
         "../src/logger/db-logger.service.ts",
         "../src/logger/db-log.entity.ts",
         "../src/logger/db-logger.module.ts",
         "../src/logger/db-log-metadata.ts",
         "../src/logger/valid-reason.pipe.ts",
-        "../src/many-uuid.pipe.ts",
+        "../src/pipes/many-uuid.pipe.ts",
         "../src/notification/notification.controller.ts",
         "../src/notification/notifications.cron.service.ts",
         "../src/notification/notification.entity.ts",
@@ -23687,9 +23687,9 @@
         "../src/typeorm/orm-query.pipe.ts",
         "../src/typeorm/parse-to-orm-query.ts",
         "../src/types.ts",
-        "../src/uuid.pipe.ts",
-        "../src/validate-email.pipe.ts",
-        "../src/register-queue.ts"
+        "../src/pipes/uuid.pipe.ts",
+        "../src/pipes/validate-email.pipe.ts",
+        "../src/utils/register-queue.ts"
       ],
       "../node_modules/handlebars/types/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -23698,7 +23698,7 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/auth/auth-mail.processor.ts": [
-        "../src/base-user.service.ts",
+        "../src/users/base-user.service.ts",
         "../node_modules/@nestjs/config/index.d.ts",
         "../src/mailer/mailer.service.ts",
         "../node_modules/@types/bull/index.d.ts"
@@ -23866,8 +23866,6 @@
       "../node_modules/typescript/lib/lib.es2018.regexp.d.ts",
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../node_modules/typescript/lib/lib.esnext.bigint.d.ts",
-      "../node_modules/moment/moment.d.ts",
-      "../src/add-duration.ts",
       "../node_modules/reflect-metadata/index.d.ts",
       "../node_modules/@nestjs/common/cache/cache.constants.d.ts",
       "../node_modules/@nestjs/common/interfaces/abstract.interface.d.ts",
@@ -24624,8 +24622,8 @@
       "../node_modules/aws-sdk/lib/request.d.ts",
       "../node_modules/aws-sdk/clients/costexplorer.d.ts",
       "../src/types.ts",
-      "../src/helpers.ts",
-      "../src/is-between.ts",
+      "../src/utils/helpers.ts",
+      "../src/utils/is-between.ts",
       "../src/pagination/pagination.types.ts",
       "../src/pagination/pagination-options.ts",
       "../node_modules/query-string/index.d.ts",
@@ -24636,8 +24634,24 @@
       "../src/pagination/_paginate.helper.ts",
       "../src/typeorm/parse-to-orm-query.ts",
       "../src/base-find.service.ts",
-      "../node_modules/@types/ioredis/index.d.ts",
-      "../node_modules/@types/bull/index.d.ts",
+      "../src/consts.ts",
+      "../node_modules/class-transformer/ClassTransformOptions.d.ts",
+      "../node_modules/class-transformer/ClassTransformer.d.ts",
+      "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
+      "../node_modules/class-transformer/metadata/TypeMetadata.d.ts",
+      "../node_modules/class-transformer/TransformOperationExecutor.d.ts",
+      "../node_modules/class-transformer/decorators.d.ts",
+      "../node_modules/class-transformer/index.d.ts",
+      "../src/entities/base.entity.ts",
+      "../src/entities/image.entity.ts",
+      "../src/users/user.interface.ts",
+      "../src/logger/db-log-metadata.ts",
+      "../node_modules/@types/deep-diff/index.d.ts",
+      "../node_modules/@types/bcryptjs/index.d.ts",
+      "../node_modules/@types/faker/index.d.ts",
+      "../node_modules/moment/moment.d.ts",
+      "../src/users/base-user.entity.ts",
+      "../src/logger/db-log.entity.ts",
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.decorators.d.ts",
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.utils.d.ts",
       "../node_modules/@nestjs/typeorm/dist/common/index.d.ts",
@@ -24646,62 +24660,10 @@
       "../node_modules/@nestjs/typeorm/dist/typeorm.module.d.ts",
       "../node_modules/@nestjs/typeorm/dist/index.d.ts",
       "../node_modules/@nestjs/typeorm/index.d.ts",
-      "../node_modules/class-transformer/ClassTransformOptions.d.ts",
-      "../node_modules/class-transformer/ClassTransformer.d.ts",
-      "../node_modules/class-transformer/metadata/ExposeExcludeOptions.d.ts",
-      "../node_modules/class-transformer/metadata/TypeMetadata.d.ts",
-      "../node_modules/class-transformer/TransformOperationExecutor.d.ts",
-      "../node_modules/class-transformer/decorators.d.ts",
-      "../node_modules/class-transformer/index.d.ts",
-      "../node_modules/@types/bcryptjs/index.d.ts",
-      "../node_modules/@types/faker/index.d.ts",
-      "../src/entities/base.entity.ts",
-      "../src/entities/image.entity.ts",
-      "../src/entities/user.interface.ts",
-      "../src/entities/base-user.entity.ts",
-      "../src/entities/base-user-with-roles.entity.ts",
-      "../src/access-control/role/roles.entity.ts",
-      "../src/consts.ts",
-      "../src/logger/db-log-metadata.ts",
-      "../node_modules/@types/deep-diff/index.d.ts",
-      "../src/logger/db-log.entity.ts",
       "../src/logger/db-logger.service.ts",
       "../src/base.service.ts",
-      "../src/access-control/role/roles.service.ts",
-      "../src/auth/auth.dto.ts",
-      "../node_modules/@types/sharp/index.d.ts",
-      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
-      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-      "../node_modules/@nestjs/config/dist/config.module.d.ts",
-      "../node_modules/@nestjs/config/dist/config.service.d.ts",
-      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
-      "../node_modules/@nestjs/config/dist/utils/index.d.ts",
-      "../node_modules/@nestjs/config/dist/index.d.ts",
-      "../node_modules/@nestjs/config/index.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts",
-      "../node_modules/aws-sdk/lib/event_listeners.d.ts",
-      "../node_modules/aws-sdk/lib/metadata_service.d.ts",
-      "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts",
-      "../node_modules/aws-sdk/lib/core.d.ts",
-      "../node_modules/aws-sdk/index.d.ts",
-      "../src/storage/storage.service.ts",
-      "../src/storage/storage-images-default-config.ts",
-      "../src/storage/storage.module.ts",
-      "../src/storage/sharp.ts",
-      "../src/storage/storage-images.service.ts",
-      "../src/base-user.service.ts",
+      "../node_modules/@types/ioredis/index.d.ts",
+      "../node_modules/@types/bull/index.d.ts",
       "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
       "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
       "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
@@ -24719,6 +24681,15 @@
       "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts",
       "../node_modules/@nestjs/bull/dist/utils/index.d.ts",
       "../node_modules/@nestjs/bull/dist/index.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+      "../node_modules/@nestjs/config/dist/config.module.d.ts",
+      "../node_modules/@nestjs/config/dist/config.service.d.ts",
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts",
+      "../node_modules/@nestjs/config/dist/index.d.ts",
+      "../node_modules/@nestjs/config/index.d.ts",
       "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts",
       "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts",
       "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts",
@@ -24760,6 +24731,8 @@
       "../node_modules/casbin/lib/log/index.d.ts",
       "../node_modules/casbin/lib/index.d.ts",
       "../src/access-control/casbin-valid-domain.ts",
+      "../src/users/base-user-with-roles.entity.ts",
+      "../src/access-control/role/roles.entity.ts",
       "../src/access-control/access-control.service.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
@@ -24796,6 +24769,7 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
+      "../src/access-control/role/roles.service.ts",
       "../src/access-control/set-required-access.decorator.ts",
       "../src/access-control/permissions.guard.ts",
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
@@ -24809,7 +24783,7 @@
       "../node_modules/@nestjs/passport/dist/index.d.ts",
       "../node_modules/@nestjs/passport/index.d.ts",
       "../src/auth/get-user.decorator.ts",
-      "../src/uuid.pipe.ts",
+      "../src/pipes/uuid.pipe.ts",
       "../src/access-control/role/roles.controller.ts",
       "../src/access-control/role/roles.module.ts",
       "../src/access-control/valid-role.pipe.ts",
@@ -24821,7 +24795,7 @@
       "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts",
       "../node_modules/@nestjs/jwt/dist/index.d.ts",
       "../node_modules/@nestjs/jwt/index.d.ts",
-      "../src/register-queue.ts",
+      "../src/utils/register-queue.ts",
       "../src/auth/auth-mail.service.ts",
       "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts",
       "../node_modules/@nestjs/platform-express/adapters/express-adapter.d.ts",
@@ -24839,6 +24813,31 @@
       "../node_modules/@nestjs/platform-express/multer/multer.module.d.ts",
       "../node_modules/@nestjs/platform-express/multer/index.d.ts",
       "../node_modules/@nestjs/platform-express/index.d.ts",
+      "../src/auth/auth.dto.ts",
+      "../node_modules/@types/sharp/index.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/ecs_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/environment_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/file_system_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/saml_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/process_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/temporary_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/chainable_temporary_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/credentials/web_identity_credentials.d.ts",
+      "../node_modules/aws-sdk/lib/event_listeners.d.ts",
+      "../node_modules/aws-sdk/lib/metadata_service.d.ts",
+      "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts",
+      "../node_modules/aws-sdk/lib/core.d.ts",
+      "../node_modules/aws-sdk/index.d.ts",
+      "../src/storage/storage.service.ts",
+      "../src/storage/storage-images-default-config.ts",
+      "../src/storage/storage.module.ts",
+      "../src/storage/sharp.ts",
+      "../src/storage/storage-images.service.ts",
+      "../src/users/base-user.service.ts",
       "../src/storage/valid-jpeg-image.ts",
       "../node_modules/@types/range-parser/index.d.ts",
       "../node_modules/@types/express-serve-static-core/index.d.ts",
@@ -24854,10 +24853,9 @@
       "../src/auth/jwt.strategy.ts",
       "../src/auth/auth.service.ts",
       "../src/auth/auth.controller.ts",
-      "../src/validate-email.pipe.ts",
+      "../src/pipes/validate-email.pipe.ts",
       "../src/auth/password-reset.service.ts",
       "../src/auth/password-reset.controller.ts",
-      "../src/auth/auth.module.ts",
       "../src/db/db.module.ts",
       "../src/logger/db-logger.module.ts",
       "../node_modules/@types/nodemailer/lib/dkim/index.d.ts",
@@ -24884,8 +24882,9 @@
       "../src/core.module.ts",
       "../src/html.d.ts",
       "../src/id-array.dto.ts",
+      "../src/utils/add-duration.ts",
       "../src/logger/valid-reason.pipe.ts",
-      "../src/many-uuid.pipe.ts",
+      "../src/pipes/many-uuid.pipe.ts",
       "../src/pagination/pagination.decorator.ts",
       "../src/access-control/role/role.factory.ts",
       "../src/access-control/role/roles.dto.ts",
@@ -24894,6 +24893,7 @@
       "../src/typeorm/orm-query.pipe.ts",
       "../src/index.ts",
       "../node_modules/handlebars/types/index.d.ts",
+      "../src/auth/auth-mail.processor.ts",
       "../src/storage/publicReadPolicy.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
@@ -24914,7 +24914,7 @@
       "../node_modules/@types/stack-utils/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/auth/auth-mail.processor.ts"
+      "../src/auth/auth.module.ts"
     ]
   },
   "version": "3.7.4"

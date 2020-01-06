@@ -1,9 +1,9 @@
 /// <reference types="node" />
 import { Queue } from 'bull';
 import { Repository } from 'typeorm';
-import { ChangeEmailDto, LoginUserDto, RegisterUserDto, UpdatePasswordDto } from './auth/auth.dto';
-import { BaseService } from './base.service';
-import { BaseUser } from './entities/base-user.entity';
+import { ChangeEmailDto, LoginUserDto, RegisterUserDto, UpdatePasswordDto } from '../auth/auth.dto';
+import { BaseService } from '../base.service';
+import { BaseUser } from './base-user.entity';
 interface BaseUserServiceOptions {
     useRoles: boolean;
     useAvatar: boolean;

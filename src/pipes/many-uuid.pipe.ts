@@ -1,6 +1,6 @@
 import { PipeTransform, Injectable, BadRequestException } from '@nestjs/common';
 import { Validator } from 'class-validator';
-import { UUID } from './types';
+import { UUID } from '../types';
 
 /* */
 /**

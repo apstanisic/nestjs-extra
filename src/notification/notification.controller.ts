@@ -1,10 +1,10 @@
 import { Controller, Put, Param, Delete } from '@nestjs/common';
 import { NotificationService } from './notification.service';
-import { ValidUUID } from '../uuid.pipe';
+import { ValidUUID } from '../pipes/uuid.pipe';
 import { UUID } from '../types';
 import { Notification } from './notification.entity';
 import { GetUser } from '../auth/get-user.decorator';
-import { IUser } from '../entities/user.interface';
+import { IUser } from '../users/user.interface';
 
 @Controller('notifications')
 export class NotificationController {

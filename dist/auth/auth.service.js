@@ -25,9 +25,9 @@ const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
 const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
-const base_user_service_1 = require("../base-user.service");
+const base_user_service_1 = require("../users/base-user.service");
 const consts_1 = require("../consts");
-const user_interface_1 = require("../entities/user.interface");
+const user_interface_1 = require("../users/user.interface");
 const auth_mail_service_1 = require("./auth-mail.service");
 let AuthService = class AuthService {
     constructor(usersService, jwtService, authMailService) {

@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const class_validator_1 = require("class-validator");
-const helpers_1 = require("../helpers");
-const is_between_1 = require("../is-between");
+const helpers_1 = require("../utils/helpers");
+const is_between_1 = require("../utils/is-between");
 const pagination_types_1 = require("./pagination.types");
 class PaginationParams {
     constructor() {

@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 import { UUID } from '../types';
 import { BaseEntity } from '../entities/base.entity';
 // import { User } from '../../user/user.entity';

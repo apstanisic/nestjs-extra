@@ -21,10 +21,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const moment_1 = require("moment");
 const typeorm_1 = require("typeorm");
-const roles_service_1 = require("./access-control/role/roles.service");
-const roles_entity_1 = require("./access-control/role/roles.entity");
-const base_service_1 = require("./base.service");
-const storage_images_service_1 = require("./storage/storage-images.service");
+const roles_service_1 = require("../access-control/role/roles.service");
+const roles_entity_1 = require("../access-control/role/roles.entity");
+const base_service_1 = require("../base.service");
+const storage_images_service_1 = require("../storage/storage-images.service");
 let BaseUserService = class BaseUserService extends base_service_1.BaseService {
     constructor(repository, queue, options) {
         super(repository);
