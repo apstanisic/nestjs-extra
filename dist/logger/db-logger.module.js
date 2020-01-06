@@ -17,7 +17,7 @@ DbLoggerModule = __decorate([
     common_1.Global(),
     common_1.Module({
         imports: [typeorm_1.TypeOrmModule.forFeature([db_log_entity_1.DbLog])],
-        providers: [db_logger_service_1.DbLoggerService],
+        providers: [db_logger_service_1.DbLoggerService, { provide: consts_1.DB_LOGGER_SERVICE, useClass: db_logger_service_1.DbLoggerService }],
         exports: [db_logger_service_1.DbLoggerService, { provide: consts_1.DB_LOGGER_SERVICE, useClass: db_logger_service_1.DbLoggerService }],
     })
 ], DbLoggerModule);

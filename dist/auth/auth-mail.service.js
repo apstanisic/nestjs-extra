@@ -23,6 +23,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const bull_1 = require("@nestjs/bull");
 const common_1 = require("@nestjs/common");
+const consts_1 = require("../consts");
 let AuthMailService = class AuthMailService {
     constructor(queue) {
         this.queue = queue;
@@ -40,7 +41,7 @@ let AuthMailService = class AuthMailService {
 };
 AuthMailService = __decorate([
     common_1.Injectable(),
-    __param(0, bull_1.InjectQueue('auth-email')),
+    __param(0, bull_1.InjectQueue(consts_1.QUEUE_AUTH_EMAIL)),
     __metadata("design:paramtypes", [Object])
 ], AuthMailService);
 exports.AuthMailService = AuthMailService;

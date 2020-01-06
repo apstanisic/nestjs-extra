@@ -1,10 +1,11 @@
 import { InjectQueue } from '@nestjs/bull';
 import { Injectable } from '@nestjs/common';
 import { Queue } from 'bull';
+import { QUEUE_AUTH_EMAIL } from '../consts';
 
 @Injectable()
 export class AuthMailService {
-  constructor(@InjectQueue('auth-email') private readonly queue: Queue) {}
+  constructor(@InjectQueue(QUEUE_AUTH_EMAIL) private readonly queue: Queue) {}
 
   /** Send user email that enables them to reset password. */
   async sendResetPasswordEmail(email: string): Promise<void> {

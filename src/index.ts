@@ -63,3 +63,4 @@ export * from './typeorm/parse-to-orm-query';
 export * from './types';
 export * from './uuid.pipe';
 export * from './validate-email.pipe';
+export * from './register-queue';

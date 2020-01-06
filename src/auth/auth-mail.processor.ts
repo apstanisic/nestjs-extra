@@ -1,15 +1,14 @@
-import { join } from 'path';
 import { Process, Processor } from '@nestjs/bull';
 import { Inject } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Job } from 'bull';
 import * as Handlebars from 'handlebars';
+import { join } from 'path';
 import { BaseUserService } from '../base-user.service';
-import { USER_SERVICE, APP_URL, API_URL } from '../consts';
+import { API_URL, APP_URL, QUEUE_AUTH_EMAIL, USER_SERVICE } from '../consts';
 import { MailerService } from '../mailer/mailer.service';
 import accountConfirmTemplate from './templates/account-confirm.hbs';
 import passwordResetTemplate from './templates/password-reset.hbs';
-import changeEmailTemplate from './templates/change-email.hbs';
 
 interface CommonHandlebars {
   contactAddress?: string;
@@ -27,7 +26,7 @@ interface ConfirmTemplateParams extends CommonHandlebars {
   confirmUrl: string;
 }
 
-@Processor('auth-email')
+@Processor(QUEUE_AUTH_EMAIL)
 export class AuthMailProcessor {
   /** Password reset template */
   private passwordResetTemplate: HandlebarsTemplateDelegate<PasswordResetTemplateParams>;

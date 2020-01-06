@@ -21,11 +21,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const path_1 = require("path");
 const bull_1 = require("@nestjs/bull");
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const Handlebars = require("handlebars");
+const path_1 = require("path");
 const base_user_service_1 = require("../base-user.service");
 const consts_1 = require("../consts");
 const mailer_service_1 = require("../mailer/mailer.service");
@@ -115,7 +115,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AuthMailProcessor.prototype, "changeEmail", null);
 AuthMailProcessor = __decorate([
-    bull_1.Processor('auth-email'),
+    bull_1.Processor(consts_1.QUEUE_AUTH_EMAIL),
     __param(0, common_1.Inject(consts_1.USER_SERVICE)),
     __metadata("design:paramtypes", [base_user_service_1.BaseUserService,
         config_1.ConfigService,

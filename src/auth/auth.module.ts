@@ -1,9 +1,10 @@
+import { BullModule } from '@nestjs/bull';
 import { Global, InternalServerErrorException, Logger, Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { RoleModule } from '../access-control/role/roles.module';
-import { JWT_SECRET } from '../consts';
+import { JWT_SECRET, QUEUE_AUTH_EMAIL } from '../consts';
+import { initQueue } from '../register-queue';
 import { AuthMailService } from './auth-mail.service';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
@@ -26,6 +27,7 @@ import { PasswordResetService } from './password-reset.service';
         return { secret, signOptions: { expiresIn: '10 days' } };
       },
     }),
+    BullModule.registerQueueAsync({ ...initQueue(QUEUE_AUTH_EMAIL) }),
   ],
   providers: [JwtStrategy, AuthService, AuthMailService, PasswordResetService],
   controllers: [AuthController, PasswordResetController],
