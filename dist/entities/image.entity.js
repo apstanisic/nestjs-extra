@@ -22,6 +22,10 @@ __decorate([
     __metadata("design:type", String)
 ], Image.prototype, "prefix", void 0);
 __decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Image.prototype, "original", void 0);
+__decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Image.prototype, "xs", void 0);

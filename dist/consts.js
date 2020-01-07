@@ -32,4 +32,5 @@ exports.STORAGE_GATEWAY = 'STORAGE_GATEWAY';
 exports.JWT_SECRET = 'JWT_SECRET';
 exports.APP_URL = 'APP_URL';
 exports.API_URL = 'API_URL';
+exports.STORAGE_URL = 'STORAGE_URL';
 //# sourceMappingURL=consts.js.map

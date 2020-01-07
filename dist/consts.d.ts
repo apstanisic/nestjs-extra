@@ -30,3 +30,4 @@ export declare const STORAGE_GATEWAY = "STORAGE_GATEWAY";
 export declare const JWT_SECRET = "JWT_SECRET";
 export declare const APP_URL = "APP_URL";
 export declare const API_URL = "API_URL";
+export declare const STORAGE_URL = "STORAGE_URL";

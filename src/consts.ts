@@ -59,3 +59,4 @@ export const JWT_SECRET = 'JWT_SECRET';
 // Used when this app needs to tell user where to request something (eg, password reset).
 export const APP_URL = 'APP_URL';
 export const API_URL = 'API_URL';
+export const STORAGE_URL = 'STORAGE_URL';

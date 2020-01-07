@@ -50,6 +50,7 @@ export class StorageService {
   /**
    * Upload file to s3 compatible storage.
    * Path can't begin with a /. It should be folder1/folder2/name.ext
+   * Returns filename
    */
   async put(file: Buffer, name: string): Promise<string> {
     const filename = name.startsWith('/') ? name.substr(1) : name;
