@@ -94,15 +94,13 @@ export class BaseFindService<T extends WithId = any> {
    * Pagination has it's own error handling. Don't handle errors twice
    * You can pass where query in options object or as a second param.
    * It will merge both wheres, with newer where having presedance.
-   * @Todo check this
    */
   async paginate(options: PaginationParams<T>, where?: OrmWhere<T>): PgResult<T> {
     const { repository } = this;
-    const combinedOptions = { ...options };
 
-    combinedOptions.where = this.combineWheres(options.where, where);
+    options.where = this.combineWheres(options.where, where);
 
-    const paginated = await paginate({ repository, options: combinedOptions });
+    const paginated = await paginate({ repository, options });
     return paginated;
   }
 

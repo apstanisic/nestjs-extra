@@ -28,8 +28,7 @@ export class Role<User = BaseUserWithRoles> extends BaseEntity {
   /** Role name */
   @Column()
   @IsString()
-  @Length(1, 100)
-  // @IsIn([...availableRoles])
+  @Length(1, 60)
   name: string;
 
   /**

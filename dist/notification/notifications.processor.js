@@ -18,28 +18,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const common_1 = require("@nestjs/common");
-const schedule_1 = require("@nestjs/schedule");
+const bull_1 = require("@nestjs/bull");
+const consts_1 = require("../consts");
 const notification_service_1 = require("./notification.service");
-let NotificationsCronService = class NotificationsCronService {
+let NotificationsProcessor = class NotificationsProcessor {
     constructor(notificationService) {
         this.notificationService = notificationService;
     }
-    deleteOldNotifications() {
+    deleteOldNotifications(job) {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.notificationService.deleteOldNotifications();
         });
     }
 };
 __decorate([
-    schedule_1.Cron('0 5 * * *'),
+    bull_1.Process('delete-old'),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], NotificationsCronService.prototype, "deleteOldNotifications", null);
-NotificationsCronService = __decorate([
-    common_1.Injectable(),
+], NotificationsProcessor.prototype, "deleteOldNotifications", null);
+NotificationsProcessor = __decorate([
+    bull_1.Processor(consts_1.QUEUE_NOTIFICATIONS),
     __metadata("design:paramtypes", [notification_service_1.NotificationService])
-], NotificationsCronService);
-exports.NotificationsCronService = NotificationsCronService;
-//# sourceMappingURL=notifications.cron.service.js.map
+], NotificationsProcessor);
+exports.NotificationsProcessor = NotificationsProcessor;
+//# sourceMappingURL=notifications.processor.js.map

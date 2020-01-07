@@ -2,13 +2,12 @@ import { IsOptional, IsString, IsUUID } from 'class-validator';
 import { UUID } from '../../types';
 
 /** Domain is provided trough url param. */
-/** @TODO Do validation for role name */
 export class RoleDto {
   @IsString()
   @IsUUID()
   userId?: UUID;
 
-  /** @TODO There should be some validation */
+  /** @warning There must be runtime validation to see if role exists */
   @IsString()
   name?: string;
 

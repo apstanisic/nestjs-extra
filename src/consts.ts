@@ -4,6 +4,7 @@ export const DB_LOGGER_SERVICE = 'DB_LOGGER_SERVICE';
 
 // Queue names
 export const QUEUE_AUTH_EMAIL = 'QUEUE_AUTH_EMAIL';
+export const QUEUE_NOTIFICATIONS = 'QUEUE_NOTIFICATIONS';
 
 // Access Control config
 export const AC_ROLES_LIST = 'AC_ROLES_LIST';

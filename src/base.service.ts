@@ -4,7 +4,7 @@ import {
   InternalServerErrorException,
   Optional,
 } from '@nestjs/common';
-import { FindConditions, Repository } from 'typeorm';
+import { FindConditions, Repository, DeleteResult } from 'typeorm';
 import { BaseFindService } from './base-find.service';
 import { DB_LOGGER_SERVICE } from './consts';
 import { DbLogMetadata } from './logger/db-log-metadata';
@@ -59,7 +59,6 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
   /**
    * Update entity
    * @param usePassedEntity is used for updateWhere
-   * @Todo refactor this in the future, 4 params is to much
    */
   async update(
     entityOrId: T | string,
@@ -188,5 +187,10 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
     const entity = await this.findOne(where);
     const deleted = await this.delete(entity, logMetadata, { usePassedEntity: true });
     return deleted;
+  }
+
+  /** Delete many entities. Sometimes it's just easier */
+  async deleteMany(criteria: FindConditions<T>): Promise<DeleteResult> {
+    return this.repository.delete(criteria);
   }
 }

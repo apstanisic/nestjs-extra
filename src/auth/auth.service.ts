@@ -28,16 +28,13 @@ export class AuthService<User extends BaseUser = BaseUser> {
     return { token, user: classToClass(user) };
   }
 
-  /** Validate token on every request. From docs
-   * @TODO Check what to do with relations: ['roles']
-   */
+  /** Validate token on every request. From docs */
   async validateJwt(payload: JwtPayload): Promise<BaseUser> {
     if (!payload || !this.validator.isEmail(payload.email)) {
       throw new BadRequestException();
     }
     const { email } = payload;
     return this.usersService.findOne({ email });
-    // { relations: ['roles'] },
   }
 
   /** Generate new token when user logs in */

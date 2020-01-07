@@ -145,6 +145,11 @@ class BaseService extends base_find_service_1.BaseFindService {
             return deleted;
         });
     }
+    deleteMany(criteria) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.repository.delete(criteria);
+        });
+    }
 }
 __decorate([
     common_1.Optional(),

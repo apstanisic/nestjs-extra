@@ -4,9 +4,7 @@ import { DB_LOGGER_SERVICE } from '../consts';
 import { DbLog } from './db-log.entity';
 import { DbLoggerService } from './db-logger.service';
 
-/**
- * @Todo check if it works, or uncommet lines bellow
- */
+/** Log user actions in db */
 @Global()
 @Module({
   imports: [TypeOrmModule.forFeature([DbLog])],

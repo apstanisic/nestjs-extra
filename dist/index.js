@@ -29,6 +29,7 @@ __export(require("./entities/base.entity"));
 __export(require("./users/base-user.entity"));
 __export(require("./users/base-user-with-roles.entity"));
 __export(require("./entities/image.entity"));
+__export(require("./entities/image.factory"));
 __export(require("./users/user.interface"));
 __export(require("./utils/helpers"));
 __export(require("./id-array.dto"));

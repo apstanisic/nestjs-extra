@@ -21,14 +21,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const bull_1 = require("@nestjs/bull");
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
+const moment = require("moment");
 const typeorm_2 = require("typeorm");
 const base_service_1 = require("../base.service");
+const consts_1 = require("../consts");
 const notification_entity_1 = require("./notification.entity");
 let NotificationService = class NotificationService extends base_service_1.BaseService {
-    constructor(repository) {
+    constructor(repository, queue) {
         super(repository);
+        if (queue) {
+            queue.add('delete-old', null, { repeat: { cron: '0 */12 * * *' } });
+        }
     }
     deleteMany(criteria) {
         return this.repository.delete(criteria);
@@ -38,11 +44,22 @@ let NotificationService = class NotificationService extends base_service_1.BaseS
             return this.create({ body, title, userId });
         });
     }
+    deleteOldNotifications() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const sixMonthsBefore = moment()
+                .subtract(6, 'months')
+                .toDate();
+            yield this.deleteMany({
+                createdAt: typeorm_2.LessThan(sixMonthsBefore),
+            });
+        });
+    }
 };
 NotificationService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(notification_entity_1.Notification)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __param(1, common_1.Optional()), __param(1, bull_1.InjectQueue(consts_1.QUEUE_NOTIFICATIONS)),
+    __metadata("design:paramtypes", [typeorm_2.Repository, Object])
 ], NotificationService);
 exports.NotificationService = NotificationService;
 //# sourceMappingURL=notification.service.js.map

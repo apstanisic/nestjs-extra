@@ -70,9 +70,8 @@ class BaseFindService {
     paginate(options, where) {
         return __awaiter(this, void 0, void 0, function* () {
             const { repository } = this;
-            const combinedOptions = Object.assign({}, options);
-            combinedOptions.where = this.combineWheres(options.where, where);
-            const paginated = yield _paginate_helper_1.paginate({ repository, options: combinedOptions });
+            options.where = this.combineWheres(options.where, where);
+            const paginated = yield _paginate_helper_1.paginate({ repository, options });
             return paginated;
         });
     }

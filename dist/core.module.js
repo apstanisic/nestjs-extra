@@ -14,7 +14,6 @@ const schedule_1 = require("@nestjs/schedule");
 const access_control_module_1 = require("./access-control/access-control.module");
 const roles_entity_1 = require("./access-control/role/roles.entity");
 const auth_module_1 = require("./auth/auth.module");
-const consts_1 = require("./consts");
 const db_module_1 = require("./db/db.module");
 const db_log_entity_1 = require("./logger/db-log.entity");
 const db_logger_module_1 = require("./logger/db-logger.module");
@@ -22,6 +21,7 @@ const mailer_module_1 = require("./mailer/mailer.module");
 const notification_entity_1 = require("./notification/notification.entity");
 const notification_module_1 = require("./notification/notification.module");
 const storage_module_1 = require("./storage/storage.module");
+const register_queue_1 = require("./utils/register-queue");
 let CoreModule = CoreModule_1 = class CoreModule {
     static forRoot(params) {
         const { entities } = params.db;
@@ -33,18 +33,7 @@ let CoreModule = CoreModule_1 = class CoreModule {
             entities.push(db_log_entity_1.DbLog);
         const modules = [
             config_1.ConfigModule.forRoot(Object.assign(Object.assign({}, params.config), { isGlobal: true })),
-            bull_1.BullModule.registerQueueAsync({
-                inject: [config_1.ConfigService],
-                useFactory: (config) => {
-                    return {
-                        name: 'app',
-                        redis: {
-                            host: config.get(consts_1.REDIS_HOST),
-                            port: config.get(consts_1.REDIS_PORT),
-                        },
-                    };
-                },
-            }),
+            bull_1.BullModule.registerQueueAsync(register_queue_1.initQueue('app')),
             schedule_1.ScheduleModule.forRoot(),
             db_module_1.DbModule.forRoot(params.db),
             auth_module_1.AuthModule,
@@ -56,7 +45,7 @@ let CoreModule = CoreModule_1 = class CoreModule {
         if (params.dbLog)
             modules.push(db_logger_module_1.DbLoggerModule);
         if (params.notifications)
-            modules.push(notification_module_1.NotificationModule);
+            modules.push(notification_module_1.NotificationsModule.forRoot(params.useCron));
         if (params.accessControl) {
             modules.push(access_control_module_1.AccessControlModule.forRoot(params.accessControl));
         }

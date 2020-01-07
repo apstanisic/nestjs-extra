@@ -1,4 +1,4 @@
-import { FindConditions, Repository } from 'typeorm';
+import { FindConditions, Repository, DeleteResult } from 'typeorm';
 import { BaseFindService } from './base-find.service';
 import { DbLogMetadata } from './logger/db-log-metadata';
 import { DbLoggerService } from './logger/db-logger.service';
@@ -16,4 +16,5 @@ export declare class BaseService<T extends WithId = any> extends BaseFindService
         usePassedEntity: boolean;
     }): Promise<T>;
     deleteWhere(where: FindConditions<T>, logMetadata?: DbLogMetadata): Promise<T>;
+    deleteMany(criteria: FindConditions<T>): Promise<DeleteResult>;
 }

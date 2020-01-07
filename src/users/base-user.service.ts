@@ -47,7 +47,6 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
 
   /**
    * Create user and gives him basic roles.
-   * @todo Delete should remove personal info for GDPR
    */
   async createUser({ email, password, name }: RegisterUserDto): Promise<User> {
     const userExist = await this.repository.findOne({ where: { email } });
@@ -120,7 +119,7 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
     return this.update(user, { email } as any);
   }
 
-  /** @Todo what about deleting roles... */
+  /** Delete account */
   async deleteAccount({ email, password }: LoginUserDto): Promise<any> {
     const user = await this.findForLogin(email, password);
     if (user.avatar) await this.storageImagesService.removeImage(user.avatar);

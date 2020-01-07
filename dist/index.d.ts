@@ -24,6 +24,7 @@ export * from './entities/base.entity';
 export * from './users/base-user.entity';
 export * from './users/base-user-with-roles.entity';
 export * from './entities/image.entity';
+export * from './entities/image.factory';
 export * from './users/user.interface';
 export * from './utils/helpers';
 export * from './id-array.dto';

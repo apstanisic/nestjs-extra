@@ -12,15 +12,15 @@ import { DbLog } from './logger/db-log.entity';
 import { DbLoggerModule } from './logger/db-logger.module';
 import { MailerModule } from './mailer/mailer.module';
 import { Notification } from './notification/notification.entity';
-import { NotificationModule } from './notification/notification.module';
+import { NotificationsModule } from './notification/notification.module';
 import { StorageModule, StorageOptions } from './storage/storage.module';
+import { initQueue } from './utils/register-queue';
 
 /**
  * Params for dynamic module
  * @Todo auth templates not available
  */
 export interface CoreModuleParams {
-  // config?: ConfigOptions;
   config?: ConfigModuleOptions;
   storage: StorageOptions | false;
   db: DbOptions;
@@ -28,6 +28,7 @@ export interface CoreModuleParams {
   dbLog: boolean;
   notifications: boolean;
   mail: boolean;
+  useCron?: boolean;
   // auth?: { templates: Record<string, string> };
 }
 
@@ -47,18 +48,7 @@ export class CoreModule {
 
     const modules = [
       ConfigModule.forRoot({ ...params.config, isGlobal: true }),
-      BullModule.registerQueueAsync({
-        inject: [ConfigService],
-        useFactory: (config: ConfigService) => {
-          return {
-            name: 'app',
-            redis: {
-              host: config.get(REDIS_HOST),
-              port: config.get(REDIS_PORT),
-            },
-          };
-        },
-      }),
+      BullModule.registerQueueAsync(initQueue('app')),
       ScheduleModule.forRoot(),
       DbModule.forRoot(params.db),
       AuthModule,
@@ -67,7 +57,7 @@ export class CoreModule {
     if (params.mail) modules.push(MailerModule);
     if (params.storage) modules.push(StorageModule.forRoot(params.storage));
     if (params.dbLog) modules.push(DbLoggerModule);
-    if (params.notifications) modules.push(NotificationModule);
+    if (params.notifications) modules.push(NotificationsModule.forRoot(params.useCron));
     if (params.accessControl) {
       modules.push(AccessControlModule.forRoot(params.accessControl));
     }

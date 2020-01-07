@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.USER_SERVICE = 'USER_SERVICE';
 exports.DB_LOGGER_SERVICE = 'DB_LOGGER_SERVICE';
 exports.QUEUE_AUTH_EMAIL = 'QUEUE_AUTH_EMAIL';
+exports.QUEUE_NOTIFICATIONS = 'QUEUE_NOTIFICATIONS';
 exports.AC_ROLES_LIST = 'AC_ROLES_LIST';
 exports.AC_MODEL = 'AC_MODEL';
 exports.AC_POLICIES = 'AC_POLICIES';

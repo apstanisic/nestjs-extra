@@ -26,7 +26,7 @@ __decorate([
 __decorate([
     typeorm_1.Column(),
     class_validator_1.IsString(),
-    class_validator_1.Length(1, 100),
+    class_validator_1.Length(1, 60),
     __metadata("design:type", String)
 ], Role.prototype, "name", void 0);
 __decorate([
