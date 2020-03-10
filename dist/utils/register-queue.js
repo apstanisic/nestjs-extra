@@ -8,7 +8,7 @@ exports.initQueue = (queueName) => {
         inject: [config_1.ConfigService],
         useFactory: (config) => {
             return {
-                redis: { host: config.get(consts_1.REDIS_HOST), port: config.get(consts_1.REDIS_PORT) },
+                redis: { host: config.get(consts_1.REDIS_HOST), port: +config.get(consts_1.REDIS_PORT) },
             };
         },
     };

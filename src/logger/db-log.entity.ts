@@ -26,7 +26,7 @@ export class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> ext
   @Column({ type: 'jsonb' })
   executedByInfo: BasicUserInfo;
 
-  @ManyToOne('User', { onDelete: 'SET NULL' })
+  @ManyToOne('User', { onDelete: 'SET NULL', nullable: true })
   executedBy: User;
 
   @Column()

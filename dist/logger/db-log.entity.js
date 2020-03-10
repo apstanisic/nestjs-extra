@@ -55,7 +55,7 @@ __decorate([
     __metadata("design:type", user_interface_1.BasicUserInfo)
 ], DbLog.prototype, "executedByInfo", void 0);
 __decorate([
-    typeorm_1.ManyToOne('User', { onDelete: 'SET NULL' }),
+    typeorm_1.ManyToOne('User', { onDelete: 'SET NULL', nullable: true }),
     __metadata("design:type", Object)
 ], DbLog.prototype, "executedBy", void 0);
 __decorate([

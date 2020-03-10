@@ -22,7 +22,7 @@ let RolesController = class RolesController {
         this.rolesService = rolesService;
     }
     getUsersRoles(user) {
-        return this.rolesService.find({ user });
+        return this.rolesService.find({ userId: user.id });
     }
     deleteRole(id, user) {
         return this.rolesService.deleteWhere({ user, id });

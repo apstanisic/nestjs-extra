@@ -18,7 +18,7 @@ export class RolesController<User extends BaseUser = BaseUser> {
   @Get('')
   @UseGuards(AuthGuard('jwt'))
   getUsersRoles(@GetUser() user: User): Promise<Role[]> {
-    return this.rolesService.find({ user });
+    return this.rolesService.find({ userId: user.id });
   }
 
   /** Delete user role */

@@ -17,7 +17,7 @@ export function generateRole(users: BaseUserWithRoles[], domain: UUID[] = []): R
 export function generateUserRole(user: BaseUserWithRoles): Role {
   const role = new Role();
   role.userId = user.id;
-  role.name = random(['admin', 'user', 'guest', 'app_admin', 'app_owner']);
+  role.name = random(['admin', 'user', 'app_admin', 'app_owner']);
   role.domain = user.id;
 
   return role;

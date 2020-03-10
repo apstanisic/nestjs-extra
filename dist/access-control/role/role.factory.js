@@ -14,7 +14,7 @@ exports.generateRole = generateRole;
 function generateUserRole(user) {
     const role = new roles_entity_1.Role();
     role.userId = user.id;
-    role.name = random(['admin', 'user', 'guest', 'app_admin', 'app_owner']);
+    role.name = random(['admin', 'user', 'app_admin', 'app_owner']);
     role.domain = user.id;
     return role;
 }

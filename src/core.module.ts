@@ -19,6 +19,7 @@ import { initQueue } from './utils/register-queue';
 /**
  * Params for dynamic module
  * @Todo auth templates not available
+ * User should be able to pass handlebars templates
  */
 export interface CoreModuleParams {
   config?: ConfigModuleOptions;
@@ -28,7 +29,7 @@ export interface CoreModuleParams {
   dbLog: boolean;
   notifications: boolean;
   mail: boolean;
-  useCron?: boolean;
+  useMq?: boolean;
   // auth?: { templates: Record<string, string> };
 }
 
@@ -57,7 +58,7 @@ export class CoreModule {
     if (params.mail) modules.push(MailerModule);
     if (params.storage) modules.push(StorageModule.forRoot(params.storage));
     if (params.dbLog) modules.push(DbLoggerModule);
-    if (params.notifications) modules.push(NotificationsModule.forRoot(params.useCron));
+    if (params.notifications) modules.push(NotificationsModule.forRoot(params.useMq));
     if (params.accessControl) {
       modules.push(AccessControlModule.forRoot(params.accessControl));
     }

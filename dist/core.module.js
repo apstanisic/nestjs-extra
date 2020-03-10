@@ -45,7 +45,7 @@ let CoreModule = CoreModule_1 = class CoreModule {
         if (params.dbLog)
             modules.push(db_logger_module_1.DbLoggerModule);
         if (params.notifications)
-            modules.push(notification_module_1.NotificationsModule.forRoot(params.useCron));
+            modules.push(notification_module_1.NotificationsModule.forRoot(params.useMq));
         if (params.accessControl) {
             modules.push(access_control_module_1.AccessControlModule.forRoot(params.accessControl));
         }

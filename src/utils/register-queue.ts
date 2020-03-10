@@ -9,7 +9,7 @@ export const initQueue = (queueName: string): BullModuleAsyncOptions => {
     inject: [ConfigService],
     useFactory: (config: ConfigService) => {
       return {
-        redis: { host: config.get(REDIS_HOST), port: config.get(REDIS_PORT) },
+        redis: { host: config.get(REDIS_HOST), port: +config.get(REDIS_PORT) },
       };
     },
   };
