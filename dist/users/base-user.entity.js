@@ -27,7 +27,7 @@ const typeorm_1 = require("typeorm");
 const moment = require("moment");
 const base_entity_1 = require("../entities/base.entity");
 const image_entity_1 = require("../entities/image.entity");
-let BaseUser = class BaseUser extends base_entity_1.BaseEntity {
+class BaseUser extends base_entity_1.BaseEntity {
     setPassword(newPassword) {
         return __awaiter(this, void 0, void 0, function* () {
             if (newPassword.length > 50)
@@ -61,7 +61,7 @@ let BaseUser = class BaseUser extends base_entity_1.BaseEntity {
             return false;
         return true;
     }
-};
+}
 __decorate([
     typeorm_1.Column(),
     typeorm_1.Index({ unique: true }),
@@ -106,8 +106,5 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], BaseUser.prototype, "setPassword", null);
-BaseUser = __decorate([
-    typeorm_1.Unique(['email'])
-], BaseUser);
 exports.BaseUser = BaseUser;
 //# sourceMappingURL=base-user.entity.js.map

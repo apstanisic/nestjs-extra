@@ -9,7 +9,6 @@ import { BaseEntity } from '../entities/base.entity';
 import { Image } from '../entities/image.entity';
 import { IUser } from './user.interface';
 
-@Unique(['email'])
 export class BaseUser extends BaseEntity implements IUser {
   /** User Email, has to be unique and to be valid email */
   @Column()

@@ -54,6 +54,9 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
                 user.generateSecureToken();
                 const savedUser = yield this.repository.save(user);
                 if (this.options.useRoles) {
+                    if (this.roleService === undefined) {
+                        throw new common_1.InternalServerErrorException('RoleServicenot found');
+                    }
                     const defaultRole = new roles_entity_1.Role();
                     defaultRole.domain = savedUser.id;
                     defaultRole.name = 'user';
@@ -110,13 +113,17 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
     deleteAccount({ email, password }) {
         return __awaiter(this, void 0, void 0, function* () {
             const user = yield this.findForLogin(email, password);
-            if (user.avatar)
+            if (user.avatar && this.storageImagesService) {
                 yield this.storageImagesService.removeImage(user.avatar);
+            }
             return this.delete(user, { user });
         });
     }
     changeAvatar(user, newAvatar) {
         return __awaiter(this, void 0, void 0, function* () {
+            if (this.storageImagesService === undefined) {
+                throw new common_1.InternalServerErrorException('StorageService not found');
+            }
             if (!this.options.useAvatar) {
                 this.logger.error('Avatar is not used.', '', 'UserModule');
                 throw new common_1.InternalServerErrorException();
@@ -136,6 +143,9 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
     }
     removeAvatar(user) {
         return __awaiter(this, void 0, void 0, function* () {
+            if (this.storageImagesService === undefined) {
+                throw new common_1.InternalServerErrorException('StorageService not found');
+            }
             if (!this.options.useAvatar) {
                 this.logger.error('Avatar is not used.', '', 'UserModule');
                 throw new common_1.InternalServerErrorException();
@@ -154,10 +164,12 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
     }
 };
 __decorate([
+    common_1.Optional(),
     common_1.Inject(),
     __metadata("design:type", storage_images_service_1.StorageImagesService)
 ], BaseUserService.prototype, "storageImagesService", void 0);
 __decorate([
+    common_1.Optional(),
     common_1.Inject(),
     __metadata("design:type", roles_service_1.RolesService)
 ], BaseUserService.prototype, "roleService", void 0);

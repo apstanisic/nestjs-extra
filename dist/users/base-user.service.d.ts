@@ -12,8 +12,8 @@ export declare class BaseUserService<User extends BaseUser = BaseUser> extends B
     private readonly queue;
     constructor(repository: Repository<User>, queue: Queue, options?: Partial<BaseUserServiceOptions>);
     private options;
-    private readonly storageImagesService;
-    private readonly roleService;
+    private readonly storageImagesService?;
+    private readonly roleService?;
     createUser({ email, password, name }: RegisterUserDto): Promise<User>;
     findForLogin(email: string, password: string): Promise<User>;
     changePassword(data: UpdatePasswordDto): Promise<User>;

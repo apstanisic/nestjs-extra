@@ -3,6 +3,7 @@ import {
   Inject,
   Injectable,
   InternalServerErrorException,
+  Optional,
 } from '@nestjs/common';
 import { Queue } from 'bull';
 import { duration } from 'moment';
@@ -39,11 +40,13 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
     useRoles: true,
   };
 
+  @Optional()
   @Inject()
-  private readonly storageImagesService: StorageImagesService;
+  private readonly storageImagesService?: StorageImagesService;
 
+  @Optional()
   @Inject()
-  private readonly roleService: RolesService;
+  private readonly roleService?: RolesService;
 
   /**
    * Create user and gives him basic roles.
@@ -61,6 +64,9 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
       const savedUser = await this.repository.save(user as DeepPartial<User>);
 
       if (this.options.useRoles) {
+        if (this.roleService === undefined) {
+          throw new InternalServerErrorException('RoleServicenot found');
+        }
         const defaultRole = new Role();
         defaultRole.domain = savedUser.id;
         defaultRole.name = 'user';
@@ -122,12 +128,17 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
   /** Delete account */
   async deleteAccount({ email, password }: LoginUserDto): Promise<any> {
     const user = await this.findForLogin(email, password);
-    if (user.avatar) await this.storageImagesService.removeImage(user.avatar);
+    if (user.avatar && this.storageImagesService) {
+      await this.storageImagesService.removeImage(user.avatar);
+    }
     return this.delete(user, { user });
   }
 
   /** Add avatar to user entity and to storage. Delete old avatar if exists. */
   async changeAvatar(user: User, newAvatar: Buffer): Promise<User> {
+    if (this.storageImagesService === undefined) {
+      throw new InternalServerErrorException('StorageService not found');
+    }
     if (!this.options.useAvatar) {
       this.logger.error('Avatar is not used.', '', 'UserModule');
       throw new InternalServerErrorException();
@@ -151,6 +162,9 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
 
   /** Remove avatar image from storage and from entity */
   async removeAvatar(user: User): Promise<User> {
+    if (this.storageImagesService === undefined) {
+      throw new InternalServerErrorException('StorageService not found');
+    }
     if (!this.options.useAvatar) {
       this.logger.error('Avatar is not used.', '', 'UserModule');
       throw new InternalServerErrorException();
