@@ -30,7 +30,7 @@ export class BaseUser extends BaseEntity implements IUser {
   name: string;
 
   /** User's profile picture */
-  @Column({ nullable: true, type: 'jsonb' })
+  @Column({ nullable: true, type: 'simple-json' })
   @IsOptional()
   avatar?: Image;
 

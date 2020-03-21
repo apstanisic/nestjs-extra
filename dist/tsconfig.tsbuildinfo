@@ -3246,7 +3246,7 @@
         "signature": "d62fa6fe33566fa743b3d6715a1a2fe46e937ba9d2ba158563c5744315d438a7"
       },
       "../src/users/base-user.entity.ts": {
-        "version": "62aa5202c7ba90e74176460a8c39d4b3dab7d46f552d7a3c1397f683907e8bee",
+        "version": "733b46a8093e642e845daf356c2defe380d8b680b837a4a5a4f4ef0967671fe6",
         "signature": "2d395c72a1c8e42605eee8d0dca305421569494a0e9014f90acda235fa89dfa4"
       },
       "../src/logger/db-log.entity.ts": {

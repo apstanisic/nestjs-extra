@@ -81,7 +81,7 @@ __decorate([
     __metadata("design:type", String)
 ], BaseUser.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true, type: 'jsonb' }),
+    typeorm_1.Column({ nullable: true, type: 'simple-json' }),
     class_validator_1.IsOptional(),
     __metadata("design:type", image_entity_1.Image)
 ], BaseUser.prototype, "avatar", void 0);
