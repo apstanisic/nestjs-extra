@@ -20,7 +20,8 @@ let DbModule = DbModule_1 = class DbModule {
                     inject: [config_1.ConfigService],
                     useFactory: (config) => {
                         var _a, _b, _c;
-                        const shouldCache = config.get(consts_1.REDIS_HOST) !== undefined;
+                        const redisHost = config.get(consts_1.REDIS_HOST);
+                        const shouldCache = redisHost !== undefined || redisHost === '';
                         const isProduction = config.get(consts_1.NODE_ENV) === 'production';
                         const dbType = (_a = config.get(consts_1.DB_TYPE), (_a !== null && _a !== void 0 ? _a : 'postgres'));
                         const options = {
@@ -32,7 +33,7 @@ let DbModule = DbModule_1 = class DbModule {
                             password: config.get(consts_1.DB_PASSWORD),
                             port: Number((_b = config.get(consts_1.DB_PORT), (_b !== null && _b !== void 0 ? _b : 5432))),
                             maxQueryExecutionTime: 3000,
-                            synchronize: !isProduction,
+                            synchronize: !isProduction && config.get(consts_1.DB_SYNC) !== 'false',
                             logging: isProduction ? ['error'] : 'all',
                             cache: shouldCache && {
                                 type: 'redis',

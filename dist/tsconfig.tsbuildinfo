@@ -3182,8 +3182,8 @@
         "signature": "5da27cb58540eacd21455a545519a87e28c30b14c160a79ca806bff150640f2c"
       },
       "../src/consts.ts": {
-        "version": "1a8fa4d6e0cc493c6cf5ded0982bb48ed208fa283b6517cdeb6083ddd504253d",
-        "signature": "198c21e6c0c3fb25f134efee9629a27ccd230c8e8b511ced48bd0f6b50eab1a4"
+        "version": "b0c72172e972e26b260b90af6b169eb54b91c0fa153047c0bdf6fdc7162d06c8",
+        "signature": "c16d91bd2b1daa58c67023664cc8f04b22c039023bc249b659d126176fef55fe"
       },
       "../node_modules/class-transformer/ClassTransformOptions.d.ts": {
         "version": "d89af0c250e1424959162beae79f2c2745c729d6ab8028503d322395d96d3a2b",
@@ -4074,7 +4074,7 @@
         "signature": "70f5707ff4d3159b9d9de8b24561cce7e303975e8f689e1d622e3bfdd7d3e29a"
       },
       "../src/db/db.module.ts": {
-        "version": "e735009349a7691a7f435b9ccbc2f6ef9322f656daec3768aedb2747f576d070",
+        "version": "b23ed0d620c718a3fdd9ea334612e8f2941b03387d1055d7fd10d9931f255b87",
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/logger/db-logger.module.ts": {

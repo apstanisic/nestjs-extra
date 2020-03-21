@@ -16,6 +16,7 @@ exports.DB_PASSWORD = 'DB_PASSWORD';
 exports.DB_DATABASE = 'DB_DATABASE';
 exports.DB_PORT = 'DB_PORT';
 exports.DB_TYPE = 'DB_TYPE';
+exports.DB_SYNC = 'DB_SYNC';
 exports.EMAIL_HOST = 'EMAIL_HOST';
 exports.EMAIL_PORT = 'EMAIL_PORT';
 exports.EMAIL_PASSWORD = 'EMAIL_PASSWORD';

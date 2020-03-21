@@ -11,7 +11,7 @@ export const AC_ROLES_LIST = 'AC_ROLES_LIST';
 export const AC_MODEL = 'AC_MODEL';
 export const AC_POLICIES = 'AC_POLICIES';
 
-// Used for passing config for storing images (sizes, dimentions...)
+// Used for passing config for storing images (sizes, dimensions...)
 export const STORAGE_IMAGE_SIZES = 'STORAGE_IMAGE_SIZES';
 
 // Emails separated by ; for simple admin
@@ -31,6 +31,7 @@ export const DB_PASSWORD = 'DB_PASSWORD';
 export const DB_DATABASE = 'DB_DATABASE';
 export const DB_PORT = 'DB_PORT'; // Defaults to 5432 (standard postgres port)
 export const DB_TYPE = 'DB_TYPE'; // postgres, mysql...
+export const DB_SYNC = 'DB_SYNC'; // Should schema be synced
 
 //  Email SMTP
 export const EMAIL_HOST = 'EMAIL_HOST';

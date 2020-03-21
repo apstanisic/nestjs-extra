@@ -11,6 +11,7 @@ import {
   REDIS_HOST,
   REDIS_PORT,
   DB_TYPE,
+  DB_SYNC,
 } from '../consts';
 
 export interface DbOptions {
@@ -26,7 +27,8 @@ export class DbModule {
         TypeOrmModule.forRootAsync({
           inject: [ConfigService],
           useFactory: (config: ConfigService): TypeOrmModuleOptions => {
-            const shouldCache = config.get<boolean>(REDIS_HOST) !== undefined;
+            const redisHost = config.get(REDIS_HOST);
+            const shouldCache = redisHost !== undefined || redisHost === '';
             const isProduction = config.get(NODE_ENV) === 'production';
 
             const dbType = config.get(DB_TYPE) ?? 'postgres';
@@ -40,7 +42,7 @@ export class DbModule {
               password: config.get(DB_PASSWORD),
               port: Number(config.get(DB_PORT) ?? 5432),
               maxQueryExecutionTime: 3000,
-              synchronize: !isProduction,
+              synchronize: !isProduction && config.get(DB_SYNC) !== 'false',
               logging: isProduction ? ['error'] : 'all',
               cache: shouldCache && {
                 type: 'redis',
