@@ -3182,8 +3182,8 @@
         "signature": "5da27cb58540eacd21455a545519a87e28c30b14c160a79ca806bff150640f2c"
       },
       "../src/consts.ts": {
-        "version": "3c58316afd22616ea890e49412d37a9dc443812657c9504e867e161d307d7107",
-        "signature": "aa3b723083f10ca56b4d94a28d7ba53e0444dc9f27585499d3f260d8b5243f0c"
+        "version": "1a8fa4d6e0cc493c6cf5ded0982bb48ed208fa283b6517cdeb6083ddd504253d",
+        "signature": "198c21e6c0c3fb25f134efee9629a27ccd230c8e8b511ced48bd0f6b50eab1a4"
       },
       "../node_modules/class-transformer/ClassTransformOptions.d.ts": {
         "version": "d89af0c250e1424959162beae79f2c2745c729d6ab8028503d322395d96d3a2b",
@@ -3218,7 +3218,7 @@
         "signature": "14bd440d5896011a025ae0be754c9e05600b03241bb83162edd87c21bbed75f7"
       },
       "../src/entities/image.entity.ts": {
-        "version": "de118e556958bcb838350265ba2f8c8cc1c894735889546b31be905ac889de55",
+        "version": "548e8231f2f32f99934cdd347017c74001f0e2bb4ceedb7e22561b2dde5692d0",
         "signature": "1f83eaf3b628b0feefbd996f133c4407d6820b4f8b4b5551b21fca3ec794244a"
       },
       "../src/users/user.interface.ts": {
@@ -4074,7 +4074,7 @@
         "signature": "70f5707ff4d3159b9d9de8b24561cce7e303975e8f689e1d622e3bfdd7d3e29a"
       },
       "../src/db/db.module.ts": {
-        "version": "5e67f147017235281489c7c9e3ddf77894f786aa808b70a4378e6fce62007799",
+        "version": "e735009349a7691a7f435b9ccbc2f6ef9322f656daec3768aedb2747f576d070",
         "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
       },
       "../src/logger/db-logger.module.ts": {
@@ -4336,7 +4336,6 @@
       "allowUnreachableCode": false,
       "resolveJsonModule": true,
       "preserveConstEnums": true,
-      "watch": true,
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {

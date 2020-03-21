@@ -11,7 +11,7 @@ export class Image extends BaseEntity {
   prefix: string;
 
   /**
-   * Original file. Used temporarly until mq converts to different sizes
+   * Original file. Used temporarily until mq converts to different sizes
    * Then this file gets deleted
    */
   @Column({ nullable: true })

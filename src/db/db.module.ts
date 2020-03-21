@@ -10,6 +10,7 @@ import {
   NODE_ENV,
   REDIS_HOST,
   REDIS_PORT,
+  DB_TYPE,
 } from '../consts';
 
 export interface DbOptions {
@@ -28,11 +29,13 @@ export class DbModule {
             const shouldCache = config.get<boolean>(REDIS_HOST) !== undefined;
             const isProduction = config.get(NODE_ENV) === 'production';
 
+            const dbType = config.get(DB_TYPE) ?? 'postgres';
+
             const options: TypeOrmModuleOptions = {
               entities: params.entities,
-              type: 'postgres',
+              type: dbType,
               host: config.get(DB_HOST),
-              database: config.get(DB_DATABASE),
+              database: config.get<string>(DB_DATABASE),
               username: config.get(DB_USER),
               password: config.get(DB_PASSWORD),
               port: Number(config.get(DB_PORT) ?? 5432),

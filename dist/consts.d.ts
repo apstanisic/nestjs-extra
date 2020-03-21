@@ -13,6 +13,7 @@ export declare const DB_USER = "DB_USER";
 export declare const DB_PASSWORD = "DB_PASSWORD";
 export declare const DB_DATABASE = "DB_DATABASE";
 export declare const DB_PORT = "DB_PORT";
+export declare const DB_TYPE = "DB_TYPE";
 export declare const EMAIL_HOST = "EMAIL_HOST";
 export declare const EMAIL_PORT = "EMAIL_PORT";
 export declare const EMAIL_PASSWORD = "EMAIL_PASSWORD";

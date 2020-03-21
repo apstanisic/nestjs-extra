@@ -30,6 +30,7 @@ export const DB_USER = 'DB_USER';
 export const DB_PASSWORD = 'DB_PASSWORD';
 export const DB_DATABASE = 'DB_DATABASE';
 export const DB_PORT = 'DB_PORT'; // Defaults to 5432 (standard postgres port)
+export const DB_TYPE = 'DB_TYPE'; // postgres, mysql...
 
 //  Email SMTP
 export const EMAIL_HOST = 'EMAIL_HOST';
