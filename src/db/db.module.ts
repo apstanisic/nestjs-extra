@@ -16,6 +16,7 @@ import {
 
 export interface DbOptions {
   entities: any[];
+  config?: Record<string, any>;
 }
 
 @Module({})
@@ -34,6 +35,7 @@ export class DbModule {
             const dbType = config.get(DB_TYPE) ?? 'postgres';
 
             const options: TypeOrmModuleOptions = {
+              ...params.config,
               entities: params.entities,
               type: dbType,
               host: config.get(DB_HOST),

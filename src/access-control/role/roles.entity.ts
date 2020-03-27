@@ -35,7 +35,7 @@ export class Role<User = BaseUserWithRoles> extends BaseEntity {
    * Domain this role belongs to. In this app domain is company
    * In other domain can be city, or store. Domain limit the reach of user.
    * Keep domain as string so it can be portable and not app specific.
-   * @Example /companies/ojpdsoifjsdpoifjas/*
+   * @Example /companies/test-value/*
    */
   @Column()
   @IsString()

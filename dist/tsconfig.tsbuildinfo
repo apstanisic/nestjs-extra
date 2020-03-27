@@ -3574,7 +3574,7 @@
         "signature": "91e0108a0dee06bfb397a6b893632809333e19670620ed8a6ce29d77a1659310"
       },
       "../src/access-control/role/roles.entity.ts": {
-        "version": "abe08a5487ee03c4e5a1ce7c84134212b6281b2a5e1756cd15a7710de8a9f974",
+        "version": "7f0fb4c9097b763f1a4f30f53248c53771ef0c472d930d17a16a19f4db5605f3",
         "signature": "7087c2cc9acb45b0904ff1cf054817355f68e44609aef0cc5607bb2a4a9e0534"
       },
       "../src/access-control/access-control.service.ts": {
@@ -4074,8 +4074,8 @@
         "signature": "70f5707ff4d3159b9d9de8b24561cce7e303975e8f689e1d622e3bfdd7d3e29a"
       },
       "../src/db/db.module.ts": {
-        "version": "b23ed0d620c718a3fdd9ea334612e8f2941b03387d1055d7fd10d9931f255b87",
-        "signature": "1ab06da19a0a9c61f890d7ef4713d19d9648fc9af8fd43b9b0fe5076099c5b6c"
+        "version": "9053db8c0338455263b73566c48985a142014c12717a41aee631b8a798dd8a46",
+        "signature": "01cd82df2afed1ffe410d3a16eb33c2c10431929bc86f733e629b7f23954ce8c"
       },
       "../src/logger/db-logger.module.ts": {
         "version": "256841935e1d3ee2e5629643305b11ecd53f15a9a6ffca47172bec86355b0f59",

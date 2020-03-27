@@ -24,26 +24,14 @@ let DbModule = DbModule_1 = class DbModule {
                         const shouldCache = redisHost !== undefined || redisHost === '';
                         const isProduction = config.get(consts_1.NODE_ENV) === 'production';
                         const dbType = (_a = config.get(consts_1.DB_TYPE), (_a !== null && _a !== void 0 ? _a : 'postgres'));
-                        const options = {
-                            entities: params.entities,
-                            type: dbType,
-                            host: config.get(consts_1.DB_HOST),
-                            database: config.get(consts_1.DB_DATABASE),
-                            username: config.get(consts_1.DB_USER),
-                            password: config.get(consts_1.DB_PASSWORD),
-                            port: Number((_b = config.get(consts_1.DB_PORT), (_b !== null && _b !== void 0 ? _b : 5432))),
-                            maxQueryExecutionTime: 3000,
-                            synchronize: !isProduction && config.get(consts_1.DB_SYNC) !== 'false',
-                            logging: isProduction ? ['error'] : 'all',
-                            cache: shouldCache && {
+                        const options = Object.assign(Object.assign({}, params.config), { entities: params.entities, type: dbType, host: config.get(consts_1.DB_HOST), database: config.get(consts_1.DB_DATABASE), username: config.get(consts_1.DB_USER), password: config.get(consts_1.DB_PASSWORD), port: Number((_b = config.get(consts_1.DB_PORT), (_b !== null && _b !== void 0 ? _b : 5432))), maxQueryExecutionTime: 3000, synchronize: !isProduction && config.get(consts_1.DB_SYNC) !== 'false', logging: isProduction ? ['error'] : 'all', cache: shouldCache && {
                                 type: 'redis',
                                 options: {
                                     host: config.get(consts_1.REDIS_HOST),
                                     port: (_c = config.get(consts_1.REDIS_PORT), (_c !== null && _c !== void 0 ? _c : '6379')),
                                 },
                                 duration: 10000,
-                            },
-                        };
+                            } });
                         return options;
                     },
                 }),
