@@ -72,7 +72,11 @@ export class Paginator<T extends WithId> {
   async execute(filter?: OrmWhere<T>): PgResult<T> {
     let cursorQuery;
     if (this.cursor) {
-      const cursor = new ParseCursor(this.cursor, this.orderDirection);
+      const cursor = new ParseCursor(
+        this.cursor,
+        this.orderDirection,
+        this.repo.metadata.targetName,
+      );
       cursorQuery = cursor.query;
       this.direction = cursor.direction;
     } else {

@@ -3,6 +3,7 @@ import { WithId } from '../types';
 export declare class ParseCursor<T extends WithId = any> {
     private cursor;
     private order;
+    private table;
     query: {
         [key: string]: FindOperator<any>;
     };
@@ -11,7 +12,7 @@ export declare class ParseCursor<T extends WithId = any> {
     private id;
     private columnName;
     private columnValue;
-    constructor(cursor: string, order?: 'ASC' | 'DESC');
+    constructor(cursor: string, order: 'ASC' | 'DESC', table: string);
     private toTypeOrmQuery;
     private convertValueToCorrectType;
 }

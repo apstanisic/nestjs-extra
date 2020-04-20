@@ -32,9 +32,15 @@ export class ParseCursor<T extends WithId = any> {
   /**
    * @param cursor that needs to be parsed
    * @param order that db will use to sort.
+   * @param table Get from repository.metadata.targetName, it's needed for mysql
+   * because when there is join, mysql don't know which id to use.
    * It will use column from columnName property
    */
-  constructor(private cursor: string, private order: 'ASC' | 'DESC' = 'DESC') {
+  constructor(
+    private cursor: string,
+    private order: 'ASC' | 'DESC' = 'DESC',
+    private table: string,
+  ) {
     // Converts base64 to normal text
     // const decodedCursor = Buffer.from(this.cursor, 'base64').toString('ascii');
     const decodedCursor = this.cursor;
@@ -87,9 +93,9 @@ export class ParseCursor<T extends WithId = any> {
         if (!alias) {
           throw new InternalServerErrorException('Column name empty');
         }
-        const query = `( ${valueIsDiff(alias)} OR ( ${valueIsEqual(alias)} AND id ${sign} ${e(
-          this.id,
-        )}) )`;
+        const query = `( ${valueIsDiff(alias)} OR ( ${valueIsEqual(alias)} AND ${
+          this.table
+        }.id ${sign} ${e(this.id)}) )`;
 
         return query;
       }),

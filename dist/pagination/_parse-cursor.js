@@ -5,9 +5,10 @@ const class_validator_1 = require("class-validator");
 const typeorm_1 = require("typeorm");
 const sqlstring_1 = require("sqlstring");
 class ParseCursor {
-    constructor(cursor, order = 'DESC') {
+    constructor(cursor, order = 'DESC', table) {
         this.cursor = cursor;
         this.order = order;
+        this.table = table;
         this.validator = new class_validator_1.Validator();
         const decodedCursor = this.cursor;
         const [id, columnName, columnValue, direction] = decodedCursor.split(';');
@@ -39,7 +40,7 @@ class ParseCursor {
                 if (!alias) {
                     throw new common_1.InternalServerErrorException('Column name empty');
                 }
-                const query = `( ${valueIsDiff(alias)} OR ( ${valueIsEqual(alias)} AND id ${sign} ${sqlstring_1.escape(this.id)}) )`;
+                const query = `( ${valueIsDiff(alias)} OR ( ${valueIsEqual(alias)} AND ${this.table}.id ${sign} ${sqlstring_1.escape(this.id)}) )`;
                 return query;
             }),
         };

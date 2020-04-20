@@ -42,7 +42,7 @@ class Paginator {
         return __awaiter(this, void 0, void 0, function* () {
             let cursorQuery;
             if (this.cursor) {
-                const cursor = new _parse_cursor_1.ParseCursor(this.cursor, this.orderDirection);
+                const cursor = new _parse_cursor_1.ParseCursor(this.cursor, this.orderDirection, this.repo.metadata.targetName);
                 cursorQuery = cursor.query;
                 this.direction = cursor.direction;
             }
