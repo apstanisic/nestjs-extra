@@ -39,20 +39,20 @@ class BaseUser extends base_entity_1.BaseEntity {
         return bcrypt.compare(enteredPassword, this.password);
     }
     generateSecureToken(prepend = '') {
-        this.secureToken = `${prepend}___${faker_1.random.uuid()}`;
+        this.token = `${prepend}___${faker_1.random.uuid()}`;
         this.tokenCreatedAt = new Date();
-        return this.secureToken;
+        return this.token;
     }
     removeSecureToken() {
-        this.secureToken = undefined;
+        this.token = undefined;
         this.tokenCreatedAt = undefined;
     }
     validToken(token, duration = moment.duration(1, 'year')) {
-        if (!this.secureToken)
+        if (!this.token)
             return false;
         if (!this.tokenCreatedAt)
             return false;
-        if (this.secureToken !== token)
+        if (this.token !== token)
             return false;
         const expired = moment(this.createdAt)
             .add(duration)
@@ -94,7 +94,7 @@ __decorate([
     typeorm_1.Column({ nullable: true }),
     class_transformer_1.Exclude(),
     __metadata("design:type", String)
-], BaseUser.prototype, "secureToken", void 0);
+], BaseUser.prototype, "token", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true, precision: 3 }),
     class_transformer_1.Exclude(),

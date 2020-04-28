@@ -31,9 +31,6 @@ export class BaseFindService<T extends WithId = any> {
   /** Terminal logger */
   protected logger = new Logger();
 
-  /** Validator */
-  protected validator = new Validator();
-
   /** Use only when you must. If this method is used, that means api should be updated */
   public _getRepository(): Repository<T> {
     return this.repository;

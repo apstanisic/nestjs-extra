@@ -15,7 +15,7 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { Validator } from 'class-validator';
+import { isEmail } from 'class-validator';
 import { BaseUserService } from '../users/base-user.service';
 import { USER_SERVICE } from '../consts';
 import { BaseUser } from '../users/base-user.entity';
@@ -34,7 +34,6 @@ import { GetUser } from './get-user.decorator';
 
 @Controller('auth')
 export class AuthController<User extends BaseUser = BaseUser> {
-  validator = new Validator();
   constructor(
     private readonly authService: AuthService,
     @Inject(USER_SERVICE) private readonly userService: BaseUserService<User>,
@@ -108,7 +107,7 @@ export class AuthController<User extends BaseUser = BaseUser> {
     if (!user.validToken(token)) throw new BadRequestException('Invalid token');
 
     const [email] = token.split('___');
-    if (!this.validator.isEmail(email)) throw new BadRequestException('Invalid token');
+    if (!isEmail(email)) throw new BadRequestException('Invalid token');
 
     return this.userService.update(user, { email } as any);
   }

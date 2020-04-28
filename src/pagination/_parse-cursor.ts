@@ -1,5 +1,5 @@
 import { BadRequestException, InternalServerErrorException } from '@nestjs/common';
-import { Validator } from 'class-validator';
+import { Validator, isEmpty, isNotIn, isUUID, isNumberString } from 'class-validator';
 import { FindOperator, Raw } from 'typeorm';
 import { escape as e } from 'sqlstring';
 import { WithId, Struct } from '../types';
@@ -16,9 +16,6 @@ export class ParseCursor<T extends WithId = any> {
 
   /** Previous or next page. Different form order by desc | asc */
   direction: 'prev' | 'next';
-
-  /** Validate values */
-  private validator = new Validator();
 
   /** UUID from cursor (1st param). Id is used for starting point. > then id */
   private id: string;
@@ -48,11 +45,11 @@ export class ParseCursor<T extends WithId = any> {
     // Type is not currently used.
     const [id, columnName, columnValue, direction] = decodedCursor.split(';');
 
-    if (this.validator.isEmpty(columnValue)) {
+    if (isEmpty(columnValue)) {
       throw new BadRequestException('Invalid column');
     }
 
-    if (this.validator.isNotIn(direction, ['prev', 'next'])) {
+    if (isNotIn(direction, ['prev', 'next'])) {
       throw new BadRequestException('Bad direction');
     }
 
@@ -70,7 +67,7 @@ export class ParseCursor<T extends WithId = any> {
   /** Parse cursor to TypeOrm query item */
   private toTypeOrmQuery(): Struct<FindOperator<any>> {
     // Id must be valid UUID
-    if (!this.validator.isUUID(this.id)) {
+    if (!isUUID(this.id)) {
       throw new BadRequestException("Cursor's Id part not UUID");
     }
 
@@ -110,7 +107,7 @@ export class ParseCursor<T extends WithId = any> {
     let converted;
     if (this.columnName.endsWith('At')) {
       // If number check if value is timestamp or iso time
-      if (this.validator.isNumberString(this.columnValue)) {
+      if (isNumberString(this.columnValue)) {
         converted = new Date(Number(this.columnValue));
       } else {
         converted = new Date(this.columnValue);

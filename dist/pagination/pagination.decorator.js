@@ -22,9 +22,8 @@ function convert(query, url) {
         return options;
     });
 }
-exports.GetPagination = common_1.createParamDecorator((data, req) => __awaiter(void 0, void 0, void 0, function* () {
-    const { query, originalUrl } = req;
+exports.GetPagination = common_1.createParamDecorator((data, ctx) => __awaiter(void 0, void 0, void 0, function* () {
+    const { query, originalUrl } = ctx.switchToHttp().getRequest();
     return convert(query, originalUrl);
 }));
-exports.GqlPagination = common_1.createParamDecorator((data, [root, args, ctx, info]) => convert(ctx.req.query));
 //# sourceMappingURL=pagination.decorator.js.map

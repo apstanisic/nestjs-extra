@@ -81,7 +81,7 @@ let StorageService = class StorageService {
                 .promise()
                 .then(data => {
                 var _a, _b;
-                const allKeys = (_b = (_a = data.Contents) === null || _a === void 0 ? void 0 : _a.map(con => { var _a; return (_a = con) === null || _a === void 0 ? void 0 : _a.Key; }), (_b !== null && _b !== void 0 ? _b : []));
+                const allKeys = (_b = (_a = data.Contents) === null || _a === void 0 ? void 0 : _a.map(con => con === null || con === void 0 ? void 0 : con.Key)) !== null && _b !== void 0 ? _b : [];
                 return allKeys.filter(key => key !== undefined);
             });
         });

@@ -18,7 +18,6 @@ let SimpleAdminGuard = SimpleAdminGuard_1 = class SimpleAdminGuard {
     constructor(configService) {
         this.configService = configService;
         this.logger = new common_1.Logger(SimpleAdminGuard_1.name);
-        this.validator = new class_validator_1.Validator();
     }
     canActivate(context) {
         var _a;
@@ -30,7 +29,7 @@ let SimpleAdminGuard = SimpleAdminGuard_1 = class SimpleAdminGuard {
         const mails = combinedMails
             .split(';')
             .map(mail => mail.trim())
-            .filter(email => this.validator.isEmail(email));
+            .filter(email => class_validator_1.isEmail(email));
         const req = context.switchToHttp().getRequest();
         const userEmail = (_a = req.user) === null || _a === void 0 ? void 0 : _a.email;
         return mails.some(mail => mail === userEmail);

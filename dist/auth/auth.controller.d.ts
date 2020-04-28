@@ -1,4 +1,3 @@
-import { Validator } from 'class-validator';
 import { BaseUserService } from '../users/base-user.service';
 import { BaseUser } from '../users/base-user.entity';
 import { BasicUserInfo } from '../users/user.interface';
@@ -7,7 +6,6 @@ import { AuthService } from './auth.service';
 export declare class AuthController<User extends BaseUser = BaseUser> {
     private readonly authService;
     private readonly userService;
-    validator: Validator;
     constructor(authService: AuthService, userService: BaseUserService<User>);
     login(params: LoginUserDto): Promise<SignInResponse>;
     register(data: RegisterUserDto): Promise<SignInResponse>;

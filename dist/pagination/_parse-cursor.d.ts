@@ -8,7 +8,6 @@ export declare class ParseCursor<T extends WithId = any> {
         [key: string]: FindOperator<any>;
     };
     direction: 'prev' | 'next';
-    private validator;
     private id;
     private columnName;
     private columnValue;

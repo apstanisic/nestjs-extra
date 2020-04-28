@@ -2,11 +2,11 @@ import {
   CanActivate,
   ExecutionContext,
   Injectable,
-  NotImplementedException,
   Logger,
+  NotImplementedException,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Validator } from 'class-validator';
+import { isEmail } from 'class-validator';
 import { SIMPLE_ADMIN_MAILS } from './consts';
 import { BaseUser } from './users/base-user.entity';
 
@@ -18,7 +18,6 @@ import { BaseUser } from './users/base-user.entity';
 @Injectable()
 export class SimpleAdminGuard implements CanActivate {
   private logger = new Logger(SimpleAdminGuard.name);
-  private validator = new Validator();
 
   constructor(private readonly configService: ConfigService) {}
 
@@ -31,7 +30,7 @@ export class SimpleAdminGuard implements CanActivate {
     const mails: string[] = combinedMails
       .split(';')
       .map(mail => mail.trim())
-      .filter(email => this.validator.isEmail(email));
+      .filter(email => isEmail(email));
 
     const req = context.switchToHttp().getRequest();
     const userEmail = (req.user as BaseUser)?.email;

@@ -1,5 +1,4 @@
 import { InternalServerErrorException, Logger } from '@nestjs/common';
-import { Validator } from 'class-validator';
 import { FindManyOptions, Repository, FindOneOptions, FindConditions, ObjectLiteral } from 'typeorm';
 import { Entity } from 'aws-sdk/clients/costexplorer';
 import { PaginationParams } from './pagination/pagination-options';
@@ -12,7 +11,6 @@ export declare class BaseFindService<T extends WithId = any> {
     protected readonly repository: Repository<T>;
     constructor(repository: Repository<T>);
     protected logger: Logger;
-    protected validator: Validator;
     _getRepository(): Repository<T>;
     findOne(filter: OrmWhere<T> | number, searchOptions?: FindManyOptions<T>): Promise<T>;
     findByIds(ids: (string | number)[], searchOptions?: FindManyOptions<T>): Promise<T[]>;

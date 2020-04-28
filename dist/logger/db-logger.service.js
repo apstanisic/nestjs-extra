@@ -31,14 +31,13 @@ let DbLoggerService = class DbLoggerService extends base_find_service_1.BaseFind
         super(repository);
     }
     generateLog({ oldValue, meta }) {
-        var _a;
         const { domain, user, reason } = meta;
         const log = new db_log_entity_1.DbLog();
         log.domainId = typeof domain === 'object' ? domain.id : domain;
         log.executedByInfo = user;
         log.reason = reason;
-        log.oldValue = (oldValue !== null && oldValue !== void 0 ? oldValue : {});
-        if ((_a = oldValue) === null || _a === void 0 ? void 0 : _a.id) {
+        log.oldValue = oldValue !== null && oldValue !== void 0 ? oldValue : {};
+        if (oldValue === null || oldValue === void 0 ? void 0 : oldValue.id) {
             log.entityId = oldValue.id;
         }
         return log;

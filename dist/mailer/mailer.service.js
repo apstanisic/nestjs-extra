@@ -21,7 +21,7 @@ let MailerService = MailerService_1 = class MailerService {
         this.logger = new common_1.Logger(MailerService_1.name);
         this.transporter = nodemailer_1.createTransport({
             host: configService.get(consts_1.EMAIL_HOST),
-            port: +(_a = this.configService.get(consts_1.EMAIL_PORT), (_a !== null && _a !== void 0 ? _a : '587')),
+            port: +((_a = this.configService.get(consts_1.EMAIL_PORT)) !== null && _a !== void 0 ? _a : '587'),
             secure: false,
             auth: {
                 user: configService.get(consts_1.EMAIL_USER),

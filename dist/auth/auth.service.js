@@ -25,8 +25,8 @@ const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
 const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
-const base_user_service_1 = require("../users/base-user.service");
 const consts_1 = require("../consts");
+const base_user_service_1 = require("../users/base-user.service");
 const user_interface_1 = require("../users/user.interface");
 const auth_mail_service_1 = require("./auth-mail.service");
 let AuthService = class AuthService {
@@ -34,7 +34,6 @@ let AuthService = class AuthService {
         this.usersService = usersService;
         this.jwtService = jwtService;
         this.authMailService = authMailService;
-        this.validator = new class_validator_1.Validator();
     }
     attemptLogin(email, password) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -45,7 +44,7 @@ let AuthService = class AuthService {
     }
     validateJwt(payload) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (!payload || !this.validator.isEmail(payload.email)) {
+            if (!payload || !class_validator_1.isEmail(payload.email)) {
                 throw new common_1.BadRequestException();
             }
             const { email } = payload;
@@ -59,9 +58,9 @@ let AuthService = class AuthService {
         return __awaiter(this, void 0, void 0, function* () {
             const user = yield this.usersService.createUser(data);
             const token = this.createJwt(data.email);
-            if (!user.secureToken)
+            if (!user.token)
                 throw new common_1.ForbiddenException();
-            yield this.authMailService.sendConfirmationEmail(user.email, user.secureToken);
+            yield this.authMailService.sendConfirmationEmail(user.email, user.token);
             return { token, user: class_transformer_1.classToClass(user) };
         });
     }

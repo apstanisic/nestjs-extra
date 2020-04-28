@@ -27,7 +27,7 @@ let DbLog = class DbLog extends base_entity_1.BaseEntity {
             excludeExtraneousValues: true,
         });
         this.executedById = this.executedBy.id;
-        this.oldValue = (_a = class_transformer_1.classToClass(this.oldValue), (_a !== null && _a !== void 0 ? _a : {}));
+        this.oldValue = (_a = class_transformer_1.classToClass(this.oldValue)) !== null && _a !== void 0 ? _a : {};
         if ((_b = this.oldValue) === null || _b === void 0 ? void 0 : _b.id) {
             this.entityId = this.oldValue.id;
         }

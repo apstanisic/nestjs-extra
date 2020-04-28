@@ -9,11 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const class_validator_1 = require("class-validator");
 let ValidUUID = class ValidUUID {
-    constructor() {
-        this.validator = new class_validator_1.Validator();
-    }
     transform(value) {
-        if (!this.validator.isUUID(value)) {
+        if (!class_validator_1.isUUID(value)) {
             throw new common_1.BadRequestException('Id is not valid.');
         }
         return value;

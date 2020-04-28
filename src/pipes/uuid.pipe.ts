@@ -1,5 +1,5 @@
 import { PipeTransform, Injectable, BadRequestException } from '@nestjs/common';
-import { Validator } from 'class-validator';
+import { Validator, isUUID } from 'class-validator';
 
 /**
  * Pipe to get page for pagination
@@ -8,10 +8,8 @@ import { Validator } from 'class-validator';
  */
 @Injectable()
 export class ValidUUID implements PipeTransform<string, string> {
-  private validator = new Validator();
-
   transform(value?: any): string {
-    if (!this.validator.isUUID(value)) {
+    if (!isUUID(value)) {
       throw new BadRequestException('Id is not valid.');
     }
     return value;

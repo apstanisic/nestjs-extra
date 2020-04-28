@@ -6,14 +6,15 @@ import {
   Optional,
 } from '@nestjs/common';
 import { Queue } from 'bull';
+import { isEmail } from 'class-validator';
 import { duration } from 'moment';
 import { DeepPartial, Repository } from 'typeorm';
-import { RolesService } from '../access-control/role/roles.service';
 import { Role } from '../access-control/role/roles.entity';
+import { RolesService } from '../access-control/role/roles.service';
 import { ChangeEmailDto, LoginUserDto, RegisterUserDto, UpdatePasswordDto } from '../auth/auth.dto';
 import { BaseService } from '../base.service';
-import { BaseUser } from './base-user.entity';
 import { StorageImagesService } from '../storage/storage-images.service';
+import { BaseUser } from './base-user.entity';
 
 interface BaseUserServiceOptions {
   useRoles: boolean;
@@ -120,7 +121,7 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
       throw new BadRequestException('Invalid token');
 
     const [email] = token.split('___');
-    if (!this.validator.isEmail(email)) throw new BadRequestException('Invalid token');
+    if (!isEmail(email)) throw new BadRequestException('Invalid token');
 
     return this.update(user, { email } as any);
   }

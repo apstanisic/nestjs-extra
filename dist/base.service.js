@@ -44,11 +44,10 @@ class BaseService extends base_find_service_1.BaseFindService {
         });
     }
     update(entityOrId, updatedData = {}, meta, options) {
-        var _a;
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let entity;
-                if ((_a = options) === null || _a === void 0 ? void 0 : _a.usePassedEntity) {
+                if (options === null || options === void 0 ? void 0 : options.usePassedEntity) {
                     if (typeof entityOrId === 'string') {
                         this.logger.error('Passed entity is string');
                         throw new common_1.InternalServerErrorException();
@@ -106,11 +105,10 @@ class BaseService extends base_find_service_1.BaseFindService {
         });
     }
     delete(entityOrId, meta, options) {
-        var _a;
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let entity;
-                if ((_a = options) === null || _a === void 0 ? void 0 : _a.usePassedEntity) {
+                if (options === null || options === void 0 ? void 0 : options.usePassedEntity) {
                     if (typeof entityOrId === 'string') {
                         throw new common_1.InternalServerErrorException();
                     }

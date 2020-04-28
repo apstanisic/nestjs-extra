@@ -1,10 +1,9 @@
 import * as Faker from 'faker';
-import { Validator } from 'class-validator';
+import { Validator, isBase64 } from 'class-validator';
 import { GenerateCursor } from './_generate-cursor';
 
 describe('Propertly generating pagination cursor', () => {
   const uuid = Faker.random.uuid();
-  const validator = new Validator();
 
   it('Should generate valid base64 cursor', () => {
     const entity = {
@@ -12,7 +11,7 @@ describe('Propertly generating pagination cursor', () => {
       createdAt: new Date(),
     };
     const generator = new GenerateCursor(entity, 'next', 'createdAt');
-    expect(validator.isBase64(generator.cursor)).toBe(true);
+    expect(isBase64(generator.cursor)).toBe(true);
     const parsed = Buffer.from(generator.cursor, 'base64').toString('ascii');
     const splited = parsed.split(';');
 
@@ -41,7 +40,7 @@ describe('Propertly generating pagination cursor', () => {
 
   it('Should use string without trying to convert to date', () => {
     const { cursor } = new GenerateCursor({ id: uuid, price: 41 }, 'next', 'price');
-    expect(validator.isBase64(cursor)).toBe(true);
+    expect(isBase64(cursor)).toBe(true);
   });
 
   it('Should should throw if value undefined', () => {

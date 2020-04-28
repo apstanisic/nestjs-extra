@@ -1,6 +1,6 @@
 import { JwtService } from '@nestjs/jwt';
-import { BaseUserService } from '../users/base-user.service';
 import { BaseUser } from '../users/base-user.entity';
+import { BaseUserService } from '../users/base-user.service';
 import { BasicUserInfo } from '../users/user.interface';
 import { AuthMailService } from './auth-mail.service';
 import { RegisterUserDto, SignInResponse } from './auth.dto';
@@ -9,7 +9,6 @@ export declare class AuthService<User extends BaseUser = BaseUser> {
     private usersService;
     private readonly jwtService;
     private readonly authMailService;
-    private validator;
     constructor(usersService: BaseUserService<User>, jwtService: JwtService, authMailService: AuthMailService);
     attemptLogin(email: string, password: string): Promise<SignInResponse>;
     validateJwt(payload: JwtPayload): Promise<BaseUser>;

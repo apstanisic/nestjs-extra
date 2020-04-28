@@ -9,13 +9,12 @@ class ParseCursor {
         this.cursor = cursor;
         this.order = order;
         this.table = table;
-        this.validator = new class_validator_1.Validator();
         const decodedCursor = this.cursor;
         const [id, columnName, columnValue, direction] = decodedCursor.split(';');
-        if (this.validator.isEmpty(columnValue)) {
+        if (class_validator_1.isEmpty(columnValue)) {
             throw new common_1.BadRequestException('Invalid column');
         }
-        if (this.validator.isNotIn(direction, ['prev', 'next'])) {
+        if (class_validator_1.isNotIn(direction, ['prev', 'next'])) {
             throw new common_1.BadRequestException('Bad direction');
         }
         this.id = id;
@@ -26,7 +25,7 @@ class ParseCursor {
         this.query = this.toTypeOrmQuery();
     }
     toTypeOrmQuery() {
-        if (!this.validator.isUUID(this.id)) {
+        if (!class_validator_1.isUUID(this.id)) {
             throw new common_1.BadRequestException("Cursor's Id part not UUID");
         }
         let sign = this.order === 'ASC' ? '>' : '<';
@@ -48,7 +47,7 @@ class ParseCursor {
     convertValueToCorrectType() {
         let converted;
         if (this.columnName.endsWith('At')) {
-            if (this.validator.isNumberString(this.columnValue)) {
+            if (class_validator_1.isNumberString(this.columnValue)) {
                 converted = new Date(Number(this.columnValue));
             }
             else {

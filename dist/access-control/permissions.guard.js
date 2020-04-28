@@ -31,7 +31,7 @@ let PermissionsGuard = PermissionsGuard_1 = class PermissionsGuard {
         this.logger = new common_1.Logger(PermissionsGuard_1.name);
     }
     canActivate(context) {
-        var _a, _b, _c, _d;
+        var _a, _b;
         return __awaiter(this, void 0, void 0, function* () {
             const accessOptions = this.reflector.get('access_control', context.getHandler());
             const request = context
@@ -50,8 +50,8 @@ let PermissionsGuard = PermissionsGuard_1 = class PermissionsGuard {
                 defaultRestAction = 'update';
             if (lcMethod === 'delete')
                 defaultRestAction = 'delete';
-            const action = (_b = (_a = accessOptions) === null || _a === void 0 ? void 0 : _a.action, (_b !== null && _b !== void 0 ? _b : defaultRestAction));
-            const resource = (_d = (_c = accessOptions) === null || _c === void 0 ? void 0 : _c.resource, (_d !== null && _d !== void 0 ? _d : path));
+            const action = (_a = accessOptions === null || accessOptions === void 0 ? void 0 : accessOptions.action) !== null && _a !== void 0 ? _a : defaultRestAction;
+            const resource = (_b = accessOptions === null || accessOptions === void 0 ? void 0 : accessOptions.resource) !== null && _b !== void 0 ? _b : path;
             const roles = yield this.roleService.find({ userId: user.id });
             user.roles = roles;
             const isAllowed = yield this.acService.isAllowed(roles, resource, action);

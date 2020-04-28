@@ -41,7 +41,7 @@ export class BaseUser extends BaseEntity implements IUser {
   /** Can be used to confirm user, reset password, change email, etc... */
   @Column({ nullable: true })
   @Exclude()
-  secureToken?: string;
+  token?: string;
 
   /** Time when secureToken was created. Duration depends on action, and is not stored in db */
   @Column({ nullable: true, precision: 3 })
@@ -66,22 +66,22 @@ export class BaseUser extends BaseEntity implements IUser {
    * Can be used to carry small amount of data.
    */
   generateSecureToken(prepend: string = ''): string {
-    this.secureToken = `${prepend}___${random.uuid()}`;
+    this.token = `${prepend}___${random.uuid()}`;
     this.tokenCreatedAt = new Date();
-    return this.secureToken;
+    return this.token;
   }
 
   /** Call this method after token is used */
   removeSecureToken(): void {
-    this.secureToken = undefined;
+    this.token = undefined;
     this.tokenCreatedAt = undefined;
   }
 
   /** Check if provided token is valid. Max duration is 1 year */
   validToken(token: string, duration: moment.Duration = moment.duration(1, 'year')): boolean {
-    if (!this.secureToken) return false;
+    if (!this.token) return false;
     if (!this.tokenCreatedAt) return false;
-    if (this.secureToken !== token) return false;
+    if (this.token !== token) return false;
 
     const expired = moment(this.createdAt)
       .add(duration)

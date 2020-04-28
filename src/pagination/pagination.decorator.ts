@@ -1,5 +1,5 @@
 import { validate } from 'class-validator';
-import { createParamDecorator, BadRequestException } from '@nestjs/common';
+import { createParamDecorator, BadRequestException, ExecutionContext } from '@nestjs/common';
 import { PaginationParams } from './pagination-options';
 
 /**
@@ -23,13 +23,8 @@ async function convert(query: any, url?: string): Promise<PaginationParams> {
  *  someMethod(@GetPagination() pg: PaginationParams)
  */
 export const GetPagination = createParamDecorator(
-  async (data, req): Promise<PaginationParams> => {
-    const { query, originalUrl } = req;
+  async (data, ctx: ExecutionContext): Promise<PaginationParams> => {
+    const { query, originalUrl } = ctx.switchToHttp().getRequest();
     return convert(query, originalUrl);
   },
-);
-
-/** Pagination decorator for Gql */
-export const GqlPagination = createParamDecorator(
-  (data, [root, args, ctx, info]): Promise<PaginationParams> => convert(ctx.req.query),
 );

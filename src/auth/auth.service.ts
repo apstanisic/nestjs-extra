@@ -1,10 +1,10 @@
 import { BadRequestException, ForbiddenException, Inject, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { classToClass, plainToClass } from 'class-transformer';
-import { Validator } from 'class-validator';
-import { BaseUserService } from '../users/base-user.service';
+import { isEmail } from 'class-validator';
 import { USER_SERVICE } from '../consts';
 import { BaseUser } from '../users/base-user.entity';
+import { BaseUserService } from '../users/base-user.service';
 import { BasicUserInfo } from '../users/user.interface';
 import { AuthMailService } from './auth-mail.service';
 import { RegisterUserDto, SignInResponse } from './auth.dto';
@@ -12,8 +12,6 @@ import { JwtPayload } from './jwt.strategy';
 
 @Injectable()
 export class AuthService<User extends BaseUser = BaseUser> {
-  private validator = new Validator();
-
   constructor(
     // private readonly usersService: UsersService,
     @Inject(USER_SERVICE) private usersService: BaseUserService<User>,
@@ -30,7 +28,7 @@ export class AuthService<User extends BaseUser = BaseUser> {
 
   /** Validate token on every request. From docs */
   async validateJwt(payload: JwtPayload): Promise<BaseUser> {
-    if (!payload || !this.validator.isEmail(payload.email)) {
+    if (!payload || !isEmail(payload.email)) {
       throw new BadRequestException();
     }
     const { email } = payload;
@@ -47,8 +45,8 @@ export class AuthService<User extends BaseUser = BaseUser> {
     const user = await this.usersService.createUser(data);
     const token = this.createJwt(data.email);
 
-    if (!user.secureToken) throw new ForbiddenException();
-    await this.authMailService.sendConfirmationEmail(user.email, user.secureToken);
+    if (!user.token) throw new ForbiddenException();
+    await this.authMailService.sendConfirmationEmail(user.email, user.token);
 
     // For some reason user is not transformed without class to class
     return { token, user: classToClass(user) };

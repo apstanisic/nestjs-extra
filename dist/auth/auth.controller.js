@@ -35,7 +35,6 @@ let AuthController = class AuthController {
     constructor(authService, userService) {
         this.authService = authService;
         this.userService = userService;
-        this.validator = new class_validator_1.Validator();
     }
     login(params) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -87,7 +86,7 @@ let AuthController = class AuthController {
         if (!user.validToken(token))
             throw new common_1.BadRequestException('Invalid token');
         const [email] = token.split('___');
-        if (!this.validator.isEmail(email))
+        if (!class_validator_1.isEmail(email))
             throw new common_1.BadRequestException('Invalid token');
         return this.userService.update(user, { email });
     }

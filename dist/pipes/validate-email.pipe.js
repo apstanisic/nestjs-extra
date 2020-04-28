@@ -9,11 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const class_validator_1 = require("class-validator");
 let ValidEmail = class ValidEmail {
-    constructor() {
-        this.validator = new class_validator_1.Validator();
-    }
     transform(value) {
-        if (!this.validator.isEmail(value)) {
+        if (!class_validator_1.isEmail(value)) {
             throw new common_1.BadRequestException('Invalid email.');
         }
         return value;

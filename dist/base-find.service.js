@@ -10,14 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const class_validator_1 = require("class-validator");
 const _paginate_helper_1 = require("./pagination/_paginate.helper");
 const parse_to_orm_query_1 = require("./typeorm/parse-to-orm-query");
 class BaseFindService {
     constructor(repository) {
         this.repository = repository;
         this.logger = new common_1.Logger();
-        this.validator = new class_validator_1.Validator();
     }
     _getRepository() {
         return this.repository;

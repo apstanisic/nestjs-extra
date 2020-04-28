@@ -19,10 +19,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const class_validator_1 = require("class-validator");
 const moment_1 = require("moment");
 const typeorm_1 = require("typeorm");
-const roles_service_1 = require("../access-control/role/roles.service");
 const roles_entity_1 = require("../access-control/role/roles.entity");
+const roles_service_1 = require("../access-control/role/roles.service");
 const base_service_1 = require("../base.service");
 const storage_images_service_1 = require("../storage/storage-images.service");
 let BaseUserService = class BaseUserService extends base_service_1.BaseService {
@@ -105,7 +106,7 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
             if (!user.validToken(token, moment_1.duration(2, 'hour')))
                 throw new common_1.BadRequestException('Invalid token');
             const [email] = token.split('___');
-            if (!this.validator.isEmail(email))
+            if (!class_validator_1.isEmail(email))
                 throw new common_1.BadRequestException('Invalid token');
             return this.update(user, { email });
         });

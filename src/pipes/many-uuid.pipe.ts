@@ -1,5 +1,5 @@
 import { PipeTransform, Injectable, BadRequestException } from '@nestjs/common';
-import { Validator } from 'class-validator';
+import { Validator, isUUID } from 'class-validator';
 import { UUID } from '../types';
 
 /* */
@@ -10,8 +10,6 @@ import { UUID } from '../types';
  */
 @Injectable()
 export class ManyUUID implements PipeTransform<string, UUID[]> {
-  private validator = new Validator();
-
   transform(value: any): UUID[] {
     let ids;
     try {
@@ -22,7 +20,7 @@ export class ManyUUID implements PipeTransform<string, UUID[]> {
 
     if (!Array.isArray(ids)) throw new BadRequestException();
 
-    const valid = ids.every(id => this.validator.isUUID(id));
+    const valid = ids.every(id => isUUID(id));
     if (!valid) throw new BadRequestException('Invalid ids');
 
     return ids;
