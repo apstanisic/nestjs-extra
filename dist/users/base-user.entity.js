@@ -54,9 +54,7 @@ class BaseUser extends base_entity_1.BaseEntity {
             return false;
         if (this.token !== token)
             return false;
-        const expired = moment(this.createdAt)
-            .add(duration)
-            .isBefore(moment());
+        const expired = moment(this.createdAt).add(duration).isBefore(moment());
         if (expired)
             return false;
         return true;

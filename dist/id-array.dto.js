@@ -15,13 +15,14 @@ const class_validator_1 = require("class-validator");
 class IdArrayDto {
 }
 __decorate([
-    class_transformer_1.Transform(value => {
+    class_transformer_1.Transform((value) => {
+        if (Array.isArray(value))
+            return value;
         if (typeof value !== 'string')
-            throw new common_1.BadRequestException();
-        return value.split(',');
+            throw new common_1.BadRequestException('Ids are not valid');
+        return value.split(',').filter((v) => v !== '');
     }),
     class_validator_1.IsArray(),
-    class_validator_1.ArrayNotEmpty(),
     class_validator_1.ArrayMaxSize(50),
     class_validator_1.ArrayUnique(),
     class_validator_1.IsUUID('4', { each: true }),

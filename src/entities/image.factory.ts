@@ -3,7 +3,10 @@ import { Image } from './image.entity';
 
 const random = Faker.random.arrayElement;
 
-/** @todo Not working currently */
+/**
+ * Return placeholder data
+ * @todo Not working currently for real images
+ */
 export function generateImage(position: number): Image {
   const image = new Image();
   image.position = position;
@@ -12,7 +15,6 @@ export function generateImage(position: number): Image {
   image.md = `https://via.placeholder.com/640.png`;
   image.lg = `https://via.placeholder.com/1280.png`;
   image.prefix = `https://via.placeholder.com`;
-  // image.xl = `https://via.placeholder.com/168.png?text=${image.company.name ?? 'basic image'}`;
 
   return image;
 }

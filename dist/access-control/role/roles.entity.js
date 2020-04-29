@@ -21,7 +21,7 @@ __decorate([
 __decorate([
     typeorm_1.Column(),
     typeorm_1.Index(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], Role.prototype, "userId", void 0);
 __decorate([
     typeorm_1.Column(),
@@ -30,9 +30,8 @@ __decorate([
     __metadata("design:type", String)
 ], Role.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column(),
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", Object)
 ], Role.prototype, "domain", void 0);
 __decorate([
     typeorm_1.Column({ type: 'text', nullable: true }),

@@ -16,30 +16,29 @@ const typeorm_1 = require("typeorm");
 const base_entity_1 = require("../entities/base.entity");
 const user_interface_1 = require("../users/user.interface");
 let DbLog = class DbLog extends base_entity_1.BaseEntity {
-    set newValue(value) {
-        this.changes = deep_diff_1.diff(this.oldValue, value);
-        this._newValue = value;
+    constructor(oldValue) {
+        super();
+        this.oldValue = oldValue;
     }
     _prepare() {
-        var _a, _b, _c;
+        var _a, _b;
         const user = class_transformer_1.classToPlain(this.executedBy);
-        this.executedByInfo = class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, user, {
-            excludeExtraneousValues: true,
-        });
+        this.executedByInfo = class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, user, { excludeExtraneousValues: true });
         this.executedById = this.executedBy.id;
-        this.oldValue = (_a = class_transformer_1.classToClass(this.oldValue)) !== null && _a !== void 0 ? _a : {};
-        if ((_b = this.oldValue) === null || _b === void 0 ? void 0 : _b.id) {
+        this.newValue = class_transformer_1.classToClass(this.newValue);
+        this.delta = deep_diff_1.diff(this.oldValue, this.newValue);
+        if ((_a = this.oldValue) === null || _a === void 0 ? void 0 : _a.id) {
             this.entityId = this.oldValue.id;
         }
-        else if ((_c = this._newValue) === null || _c === void 0 ? void 0 : _c.id) {
-            this.entityId = this._newValue.id;
+        else if ((_b = this.newValue) === null || _b === void 0 ? void 0 : _b.id) {
+            this.entityId = this.newValue.id;
         }
         else {
             throw new common_1.InternalServerErrorException();
         }
     }
     preventUpdate() {
-        throw new common_1.InternalServerErrorException();
+        throw new common_1.InternalServerErrorException('Log update forbidden');
     }
 };
 __decorate([
@@ -47,11 +46,19 @@ __decorate([
     __metadata("design:type", String)
 ], DbLog.prototype, "action", void 0);
 __decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", Object)
+], DbLog.prototype, "entityId", void 0);
+__decorate([
     typeorm_1.Column({ nullable: true }),
     __metadata("design:type", String)
 ], DbLog.prototype, "reason", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'jsonb' }),
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], DbLog.prototype, "collection", void 0);
+__decorate([
+    typeorm_1.Column({ type: 'simple-json' }),
     __metadata("design:type", user_interface_1.BasicUserInfo)
 ], DbLog.prototype, "executedByInfo", void 0);
 __decorate([
@@ -60,23 +67,19 @@ __decorate([
 ], DbLog.prototype, "executedBy", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], DbLog.prototype, "executedById", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'jsonb', default: {} }),
+    typeorm_1.Column({ type: 'simple-json' }),
     __metadata("design:type", Object)
-], DbLog.prototype, "oldValue", void 0);
+], DbLog.prototype, "newValue", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'jsonb' }),
+    typeorm_1.Column({ type: 'simple-json' }),
     __metadata("design:type", Object)
-], DbLog.prototype, "changes", void 0);
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", String)
-], DbLog.prototype, "entityId", void 0);
+], DbLog.prototype, "delta", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true }),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], DbLog.prototype, "domainId", void 0);
 __decorate([
     typeorm_1.BeforeInsert(),
@@ -91,7 +94,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], DbLog.prototype, "preventUpdate", null);
 DbLog = __decorate([
-    typeorm_1.Entity('logs')
+    typeorm_1.Entity('activity_logs'),
+    __metadata("design:paramtypes", [Object])
 ], DbLog);
 exports.DbLog = DbLog;
 //# sourceMappingURL=db-log.entity.js.map

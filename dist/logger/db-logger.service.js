@@ -32,14 +32,10 @@ let DbLoggerService = class DbLoggerService extends base_find_service_1.BaseFind
     }
     generateLog({ oldValue, meta }) {
         const { domain, user, reason } = meta;
-        const log = new db_log_entity_1.DbLog();
+        const log = new db_log_entity_1.DbLog(oldValue);
         log.domainId = typeof domain === 'object' ? domain.id : domain;
-        log.executedByInfo = user;
+        log.executedBy = user;
         log.reason = reason;
-        log.oldValue = oldValue !== null && oldValue !== void 0 ? oldValue : {};
-        if (oldValue === null || oldValue === void 0 ? void 0 : oldValue.id) {
-            log.entityId = oldValue.id;
-        }
         return log;
     }
     store(log, action, newValue) {

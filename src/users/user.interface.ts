@@ -3,7 +3,7 @@ import { Image } from '../entities/image.entity';
 
 /** User must always have this properties */
 export interface IUser {
-  id: string;
+  id: string | number;
   name: string;
   email: string;
   phoneNumber?: string;

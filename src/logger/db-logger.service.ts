@@ -21,17 +21,14 @@ export class DbLoggerService<Entity extends WithId = any> extends BaseFindServic
    * Initialize log. This will create log entity, and fill some fields.
    * @warning This will not save log in database. This only creates instance.
    * You must use store for persisting in db.
+   * @TODO Check if user as any is okay
    */
   generateLog({ oldValue, meta }: GenerateLogParams<Entity>): DbLog<Entity> {
     const { domain, user, reason } = meta;
-    const log = new DbLog<Entity>();
+    const log = new DbLog<Entity>(oldValue);
     log.domainId = typeof domain === 'object' ? domain.id : domain;
-    log.executedByInfo = user;
+    log.executedBy = user as any;
     log.reason = reason;
-    log.oldValue = oldValue ?? {};
-    if (oldValue?.id) {
-      log.entityId = oldValue.id;
-    }
 
     return log;
   }

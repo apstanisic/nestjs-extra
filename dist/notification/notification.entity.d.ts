@@ -5,6 +5,6 @@ export declare class Notification<User = BaseUser> extends BaseEntity {
     title: string;
     body?: string;
     user: User;
-    userId: UUID;
+    userId: UUID | number;
     seenAt?: Date;
 }

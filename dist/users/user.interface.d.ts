@@ -1,6 +1,6 @@
 import { Image } from '../entities/image.entity';
 export interface IUser {
-    id: string;
+    id: string | number;
     name: string;
     email: string;
     phoneNumber?: string;

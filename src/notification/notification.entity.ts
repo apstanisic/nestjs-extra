@@ -16,7 +16,7 @@ export class Notification<User = BaseUser> extends BaseEntity {
   user: User;
 
   @Column()
-  userId: UUID;
+  userId: UUID | number;
 
   @Column({ precision: 3 })
   seenAt?: Date;

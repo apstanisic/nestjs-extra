@@ -3,6 +3,7 @@ import { Column, Entity, ManyToOne, Index } from 'typeorm';
 import { BaseUserWithRoles } from '../../users/base-user-with-roles.entity';
 // import { User } from "../../user/user.entity";
 import { BaseEntity } from '../../entities/base.entity';
+import { UUID } from '../../types';
 
 /**
  * To add admin for company f32 to user
@@ -23,7 +24,7 @@ export class Role<User = BaseUserWithRoles> extends BaseEntity {
   /** User's id */
   @Column()
   @Index()
-  userId: string;
+  userId: number | UUID;
 
   /** Role name */
   @Column()
@@ -36,10 +37,10 @@ export class Role<User = BaseUserWithRoles> extends BaseEntity {
    * In other domain can be city, or store. Domain limit the reach of user.
    * Keep domain as string so it can be portable and not app specific.
    * @Example /companies/test-value/*
+   * Null if there is no domain
    */
-  @Column()
-  @IsString()
-  domain: string;
+  @Column({ nullable: true })
+  domain: UUID | number;
 
   /**
    * Description for this specific role to this user.

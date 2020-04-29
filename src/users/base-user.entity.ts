@@ -83,9 +83,7 @@ export class BaseUser extends BaseEntity implements IUser {
     if (!this.tokenCreatedAt) return false;
     if (this.token !== token) return false;
 
-    const expired = moment(this.createdAt)
-      .add(duration)
-      .isBefore(moment());
+    const expired = moment(this.createdAt).add(duration).isBefore(moment());
     if (expired) return false;
 
     return true;

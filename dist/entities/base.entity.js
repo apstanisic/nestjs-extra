@@ -53,7 +53,7 @@ let BaseEntity = class BaseEntity {
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn('uuid'),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], BaseEntity.prototype, "id", void 0);
 __decorate([
     typeorm_1.UpdateDateColumn({ precision: 3 }),
@@ -74,7 +74,7 @@ __decorate([
 ], BaseEntity.prototype, "validate", null);
 BaseEntity = __decorate([
     typeorm_1.Index(['createdAt', 'id']),
-    __metadata("design:paramtypes", [String])
+    __metadata("design:paramtypes", [Object])
 ], BaseEntity);
 exports.BaseEntity = BaseEntity;
 //# sourceMappingURL=base.entity.js.map

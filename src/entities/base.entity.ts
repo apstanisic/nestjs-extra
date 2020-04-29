@@ -19,13 +19,13 @@ import { WithId } from '../types';
 @Index(['createdAt', 'id'])
 export abstract class BaseEntity implements WithId {
   /** Id can only be set in constructor, or by TypeOrm */
-  constructor(id?: string) {
+  constructor(id?: string | number) {
     if (id) this.id = id;
   }
 
   /** Unique Id */
   @PrimaryGeneratedColumn('uuid')
-  readonly id: string;
+  readonly id: string | number;
 
   /** Date when entity was updated */
   @UpdateDateColumn({ precision: 3 })

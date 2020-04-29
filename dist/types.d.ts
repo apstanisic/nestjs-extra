@@ -6,7 +6,7 @@ export interface ParsedOrmWhere<T = any> {
 export declare type UUID = string;
 export declare type Email = string;
 export interface WithId {
-    id: string;
+    id: string | number;
     [key: string]: any;
 }
 export declare type Struct<T = any> = Record<string, T>;

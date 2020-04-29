@@ -19,7 +19,7 @@ export type Email = string;
 
 /** Provided object must have Id and can have any other fields */
 export interface WithId {
-  id: string;
+  id: string | number;
   [key: string]: any;
 }
 

@@ -27,7 +27,7 @@ __decorate([
 ], Notification.prototype, "user", void 0);
 __decorate([
     typeorm_1.Column(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], Notification.prototype, "userId", void 0);
 __decorate([
     typeorm_1.Column({ precision: 3 }),

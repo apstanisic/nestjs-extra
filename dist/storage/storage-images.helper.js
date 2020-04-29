@@ -11,11 +11,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 function reorderImages(images, newOrder) {
     return __awaiter(this, void 0, void 0, function* () {
-        images.forEach(img => {
+        images.forEach((img) => {
             img.position = newOrder.indexOf(img.id);
         });
         images
-            .filter(img => img.position === -1 || img.position === undefined)
+            .filter((img) => img.position === -1 || img.position === undefined)
             .forEach((img, i) => {
             img.position = newOrder.length + i;
         });
