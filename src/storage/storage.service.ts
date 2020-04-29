@@ -63,7 +63,7 @@ export class StorageService {
         ACL: 'public-read',
       })
       .promise()
-      .then(res => filename);
+      .then((res) => filename);
   }
 
   /** Remove one file */
@@ -76,7 +76,7 @@ export class StorageService {
    * If all images sizes are 2019/05/22/qwer12.xs.jpeg, prefixfor them is 2019/05/22/qwer12.
    */
   async deleteWherePrefix(prefix: string): Promise<string[]> {
-    const filenames = (await this.listFiles(prefix)).map(Key => ({ Key }));
+    const filenames = (await this.listFiles(prefix)).map((Key) => ({ Key }));
 
     return this.s3
       .deleteObjects({
@@ -84,7 +84,7 @@ export class StorageService {
         Delete: { Objects: filenames },
       })
       .promise()
-      .then(data => filenames.map(f => f.Key));
+      .then((data) => filenames.map((f) => f.Key));
   }
 
   /** Lists all files with given path (prefix) */
@@ -92,9 +92,9 @@ export class StorageService {
     return this.s3
       .listObjectsV2({ Bucket: this.bucketName, Prefix: prefix })
       .promise()
-      .then(data => {
-        const allKeys = data.Contents?.map(con => con?.Key) ?? [];
-        return allKeys.filter(key => key !== undefined) as string[];
+      .then((data) => {
+        const allKeys = data.Contents?.map((con) => con?.Key) ?? [];
+        return allKeys.filter((key) => key !== undefined) as string[];
       });
   }
 }

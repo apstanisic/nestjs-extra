@@ -6,6 +6,6 @@ export declare class StorageImagesService {
     private readonly storageService;
     private readonly sizes;
     constructor(storageService: StorageService, sizes: ImageSizeOptions[]);
-    storeImage(image: Buffer): Promise<Image>;
+    storeImage(image: Buffer, id?: string | number): Promise<Partial<Image>>;
     removeImage(image: Image): Promise<string[]>;
 }

@@ -21,13 +21,12 @@ export class StorageImagesService {
   ) {}
 
   /** Add new image. Name is quasi random number by default. */
-  async storeImage(image: Buffer): Promise<Image> {
-    const id = random.uuid();
-    const now = moment().format('YYYY/MM/DD');
-    const folder = `${now}/${id}`;
+  async storeImage(image: Buffer, id: string | number = random.uuid()): Promise<Partial<Image>> {
+    const today = moment().format('YYYY/MM/DD');
+    const folder = `${today}/${id}`;
     const filePrefix = `${folder}/image_${id}`;
     const buffersAndSizes = await generateAllImageSizes(image, this.sizes);
-    const toStore = buffersAndSizes.map(img =>
+    const toStore = buffersAndSizes.map((img) =>
       this.storageService.put(img.image, `${filePrefix}_${img.size}.jpeg`),
     );
 
@@ -38,8 +37,8 @@ export class StorageImagesService {
       storedImages[buffersAndSizes[i].size] = filename;
     });
 
-    const imageObject = { ...storedImages, id, prefix: folder, position: 0 };
-    return plainToClass(Image, imageObject);
+    const imageObject = { ...storedImages, id, prefix: folder };
+    return imageObject;
   }
 
   /**

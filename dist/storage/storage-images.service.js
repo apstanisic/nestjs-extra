@@ -24,31 +24,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const faker_1 = require("faker");
 const moment = require("moment");
-const class_transformer_1 = require("class-transformer");
 const consts_1 = require("../consts");
 const sharp_1 = require("./sharp");
 const storage_service_1 = require("./storage.service");
-const image_entity_1 = require("../entities/image.entity");
 let StorageImagesService = class StorageImagesService {
     constructor(storageService, sizes) {
         this.storageService = storageService;
         this.sizes = sizes;
     }
-    storeImage(image) {
+    storeImage(image, id = faker_1.random.uuid()) {
         return __awaiter(this, void 0, void 0, function* () {
-            const id = faker_1.random.uuid();
-            const now = moment().format('YYYY/MM/DD');
-            const folder = `${now}/${id}`;
+            const today = moment().format('YYYY/MM/DD');
+            const folder = `${today}/${id}`;
             const filePrefix = `${folder}/image_${id}`;
             const buffersAndSizes = yield sharp_1.generateAllImageSizes(image, this.sizes);
-            const toStore = buffersAndSizes.map(img => this.storageService.put(img.image, `${filePrefix}_${img.size}.jpeg`));
+            const toStore = buffersAndSizes.map((img) => this.storageService.put(img.image, `${filePrefix}_${img.size}.jpeg`));
             const storedImagesArray = yield Promise.all(toStore);
             const storedImages = {};
             storedImagesArray.forEach((filename, i) => {
                 storedImages[buffersAndSizes[i].size] = filename;
             });
-            const imageObject = Object.assign(Object.assign({}, storedImages), { id, prefix: folder, position: 0 });
-            return class_transformer_1.plainToClass(image_entity_1.Image, imageObject);
+            const imageObject = Object.assign(Object.assign({}, storedImages), { id, prefix: folder });
+            return imageObject;
         });
     }
     removeImage(image) {

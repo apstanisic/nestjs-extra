@@ -4450,7 +4450,7 @@
         "signature": "1b8e2370aa2872687e7ab84dcf4c565ad5515b28c098b11d68a2d67d5e51095f"
       },
       "../src/storage/storage.service.ts": {
-        "version": "1fd9ca2f6b8c747029026ae25bf23045720a1fbf8bdf7d8da0270094da262b8a",
+        "version": "0c9c7ee5940b27eaf50f6532e07fd3088f59c65b8616c54d0abfc38117218c4a",
         "signature": "2f112e481d67f37029c8e06e78aa14780bf84778310bfd46aaeaf3adef56f58b"
       },
       "../src/storage/storage-images-default-config.ts": {
@@ -4466,11 +4466,11 @@
         "signature": "84236729539b05413658d61ed1d3a0f2f4c4e8726ca60c0bd843f0a05938b2c8"
       },
       "../src/storage/storage-images.service.ts": {
-        "version": "99ed2b98ec6c779a4ba2cd8b0fd4e3aea67105ce6122b4a65fd81ada3e9ee99a",
-        "signature": "991ca8cbbbb927daf636da13e066a0e72e8c87b923a9b0d43551bb8c180af922"
+        "version": "d02296cebfd403d73707e25f8e89c358c7ffaca1549dd158e553529d8c74c6a3",
+        "signature": "eef8886ff2e7e46879742c13dd96a6bd812b202f2abfb744659e8aabb5696166"
       },
       "../src/users/base-user.service.ts": {
-        "version": "609bfb05735575f4a2d9874db775c782df422a3f8ff3f098afe79edf3e803cee",
+        "version": "9e8a61f4a306defc248175eb8eee1c1e483f6b4c819b99cfaa652eb5a785847b",
         "signature": "572c04206ec4121ab76c913fd992e8903ae6755a6e32c5d374e87f214da37172"
       },
       "../src/storage/valid-jpeg-image.ts": {

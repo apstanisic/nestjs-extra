@@ -54,7 +54,7 @@ let StorageService = class StorageService {
                 ACL: 'public-read',
             })
                 .promise()
-                .then(res => filename);
+                .then((res) => filename);
         });
     }
     delete(file) {
@@ -64,14 +64,14 @@ let StorageService = class StorageService {
     }
     deleteWherePrefix(prefix) {
         return __awaiter(this, void 0, void 0, function* () {
-            const filenames = (yield this.listFiles(prefix)).map(Key => ({ Key }));
+            const filenames = (yield this.listFiles(prefix)).map((Key) => ({ Key }));
             return this.s3
                 .deleteObjects({
                 Bucket: this.bucketName,
                 Delete: { Objects: filenames },
             })
                 .promise()
-                .then(data => filenames.map(f => f.Key));
+                .then((data) => filenames.map((f) => f.Key));
         });
     }
     listFiles(prefix) {
@@ -79,10 +79,10 @@ let StorageService = class StorageService {
             return this.s3
                 .listObjectsV2({ Bucket: this.bucketName, Prefix: prefix })
                 .promise()
-                .then(data => {
+                .then((data) => {
                 var _a, _b;
-                const allKeys = (_b = (_a = data.Contents) === null || _a === void 0 ? void 0 : _a.map(con => con === null || con === void 0 ? void 0 : con.Key)) !== null && _b !== void 0 ? _b : [];
-                return allKeys.filter(key => key !== undefined);
+                const allKeys = (_b = (_a = data.Contents) === null || _a === void 0 ? void 0 : _a.map((con) => con === null || con === void 0 ? void 0 : con.Key)) !== null && _b !== void 0 ? _b : [];
+                return allKeys.filter((key) => key !== undefined);
             });
         });
     }

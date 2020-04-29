@@ -150,7 +150,7 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
 
     // const name = `avatars/${user.id}`;
     const avatar = await this.storageImagesService.storeImage(newAvatar);
-    user.avatar = avatar;
+    user.avatar = avatar as any;
 
     const updatedUser = await this.mutate(user, {
       user,
