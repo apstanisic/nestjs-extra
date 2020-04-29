@@ -43,6 +43,22 @@ let StorageService = class StorageService {
             endpoint: endPoint,
         });
     }
+    getFile(key) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const file = yield this.s3
+                .getObject({
+                Key: key,
+                Bucket: this.bucketName,
+            })
+                .promise()
+                .then((res) => res.Body)
+                .catch((e) => {
+                console.error(e);
+                throw new common_1.InternalServerErrorException('Image fetch failed');
+            });
+            return file;
+        });
+    }
     put(file, name) {
         return __awaiter(this, void 0, void 0, function* () {
             const filename = name.startsWith('/') ? name.substr(1) : name;

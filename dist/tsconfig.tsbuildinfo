@@ -4450,8 +4450,8 @@
         "signature": "1b8e2370aa2872687e7ab84dcf4c565ad5515b28c098b11d68a2d67d5e51095f"
       },
       "../src/storage/storage.service.ts": {
-        "version": "0c9c7ee5940b27eaf50f6532e07fd3088f59c65b8616c54d0abfc38117218c4a",
-        "signature": "2f112e481d67f37029c8e06e78aa14780bf84778310bfd46aaeaf3adef56f58b"
+        "version": "8d3e1ccca5d19fb9dd3429cfe89b7ac520a79028e4d796eb34eb6a5486b92710",
+        "signature": "49a78a1d23bc40935659cae48e062b96a5970f878e8806f40d73ef93f946240d"
       },
       "../src/storage/storage-images-default-config.ts": {
         "version": "ebafc38256ea80d47214a792d6ea1a254c0e9c24798c40e7ca26289c7d85fbe7",

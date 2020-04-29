@@ -47,6 +47,22 @@ export class StorageService {
     });
   }
 
+  /** Get file buffer from s3 bucket */
+  async getFile(key: string): Promise<Buffer> {
+    const file = await this.s3
+      .getObject({
+        Key: key,
+        Bucket: this.bucketName,
+      })
+      .promise()
+      .then((res) => res.Body as Buffer)
+      .catch((e) => {
+        console.error(e);
+        throw new InternalServerErrorException('Image fetch failed');
+      });
+    return file;
+  }
+
   /**
    * Upload file to s3 compatible storage.
    * Path can't begin with a /. It should be folder1/folder2/name.ext
