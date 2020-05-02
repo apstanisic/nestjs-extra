@@ -23,11 +23,11 @@ const bcrypt = require("bcryptjs");
 const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
 const faker_1 = require("faker");
-const typeorm_1 = require("typeorm");
 const moment = require("moment");
-const base_entity_1 = require("../entities/base.entity");
+const typeorm_1 = require("typeorm");
+const base_uuid_entity_1 = require("../entities/base-uuid.entity");
 const image_entity_1 = require("../entities/image.entity");
-class BaseUser extends base_entity_1.BaseEntity {
+class BaseUser extends base_uuid_entity_1.UuidEntity {
     setPassword(newPassword) {
         return __awaiter(this, void 0, void 0, function* () {
             if (newPassword.length > 50)

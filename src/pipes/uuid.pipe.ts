@@ -4,7 +4,7 @@ import { Validator, isUUID } from 'class-validator';
 /**
  * Pipe to get page for pagination
  * @example
- *   method(@Param('id', ValidUUID) id: string) {}
+ * method(@Param('id', ValidUUID) id: string) {}
  */
 @Injectable()
 export class ValidUUID implements PipeTransform<string, string> {

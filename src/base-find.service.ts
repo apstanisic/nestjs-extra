@@ -40,7 +40,7 @@ export class BaseFindService<T extends WithId = any> {
    * Find companies that match criteria
    * If filter is string or number it will search for Id
    * @example Left is passed value, right is parsed
-   *  ({ price__lt: 5 } => { price: LessThan(5) })
+   * ({ price__lt: 5 } => { price: LessThan(5) })
    */
   async findOne(filter: OrmWhere<T> | number, searchOptions: FindManyOptions<T> = {}): Promise<T> {
     let entity: T | undefined;
@@ -112,6 +112,7 @@ export class BaseFindService<T extends WithId = any> {
     }
   }
 
+  /** Helper to throw internal error */
   protected internalError(message: string, error?: any): InternalServerErrorException {
     this.logger.error(message, error);
     return new InternalServerErrorException();

@@ -1,9 +1,10 @@
 import { Expose } from 'class-transformer';
 import { Image } from '../entities/image.entity';
+import { IdType } from '../types';
 
 /** User must always have this properties */
-export interface IUser {
-  id: string | number;
+export interface IUser extends BasicUserInfo {
+  id: IdType;
   name: string;
   email: string;
   phoneNumber?: string;
@@ -18,7 +19,7 @@ export interface IUser {
 /** User will always have this fields when returned. Avatar is optional */
 export class BasicUserInfo {
   @Expose()
-  id: string;
+  id: IdType;
   @Expose()
   name: string;
   @Expose()

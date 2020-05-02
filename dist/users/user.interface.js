@@ -14,7 +14,7 @@ class BasicUserInfo {
 }
 __decorate([
     class_transformer_1.Expose(),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], BasicUserInfo.prototype, "id", void 0);
 __decorate([
     class_transformer_1.Expose(),

@@ -8,6 +8,7 @@ import { BaseService } from '../base.service';
 import { QUEUE_NOTIFICATIONS } from '../consts';
 import { UUID } from '../types';
 import { Notification } from './notification.entity';
+import { DELETE_OLD_NOTIFICATION_JOB } from './notifications.consts';
 
 interface AddNotificationParams {
   title: string;
@@ -23,10 +24,11 @@ export class NotificationService extends BaseService<Notification> {
   ) {
     super(repository);
 
-    // If using mq register job
-    if (queue) {
-      queue.add('delete-old', null, { repeat: { cron: '0 */12 * * *' } });
-    }
+    // If using mq register job to delete every 12 hours
+    queue?.add(DELETE_OLD_NOTIFICATION_JOB, null, {
+      repeat: { cron: '0 */12 * * *' },
+      attempts: 2,
+    });
   }
 
   /** Delete many notifications. Expose deleteMany because of cron job */
@@ -41,12 +43,8 @@ export class NotificationService extends BaseService<Notification> {
 
   /** Used for cron or mq to delete old notifications */
   async deleteOldNotifications(): Promise<void> {
-    const sixMonthsBefore = moment()
-      .subtract(6, 'months')
-      .toDate();
+    const sixMonthsBefore = moment().subtract(6, 'months').toDate();
 
-    await this.deleteMany({
-      createdAt: LessThan(sixMonthsBefore),
-    });
+    await this.deleteMany({ createdAt: LessThan(sixMonthsBefore) });
   }
 }

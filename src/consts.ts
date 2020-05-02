@@ -15,7 +15,7 @@ export const AC_POLICIES = 'AC_POLICIES';
 export const STORAGE_IMAGE_SIZES = 'STORAGE_IMAGE_SIZES';
 
 // Emails separated by ; for simple admin
-export const SIMPLE_ADMIN_MAILS = 'SIMPLE_ADMIN_MAILS';
+export const SIMPLE_ADMIN_EMAILS = 'SIMPLE_ADMIN_EMAILS';
 
 // Node enviroment
 export const NODE_ENV = 'NODE_ENV';
@@ -25,11 +25,11 @@ export const NODE_ENV = 'NODE_ENV';
 //
 
 // Database
-export const DB_HOST = 'DB_HOST';
-export const DB_USER = 'DB_USER';
-export const DB_PASSWORD = 'DB_PASSWORD';
-export const DB_DATABASE = 'DB_DATABASE';
-export const DB_PORT = 'DB_PORT'; // Defaults to 5432 (standard postgres port)
+export const DB_HOST = 'DB_HOST'; // localhost, 192.168.0.10...
+export const DB_USER = 'DB_USER'; // root, myuser
+export const DB_PASSWORD = 'DB_PASSWORD'; // random_password
+export const DB_DATABASE = 'DB_DATABASE'; // my_database_name
+export const DB_PORT = 'DB_PORT'; // 5432...
 export const DB_TYPE = 'DB_TYPE'; // postgres, mysql...
 export const DB_SYNC = 'DB_SYNC'; // Should schema be synced
 
@@ -41,13 +41,13 @@ export const EMAIL_USER = 'EMAIL_USER';
 export const EMAIL_SECURE = 'EMAIL_SECURE';
 
 // Redis
-export const REDIS_HOST = 'REDIS_HOST';
-export const REDIS_PORT = 'REDIS_PORT';
+export const REDIS_HOST = 'REDIS_HOST'; // localhost
+export const REDIS_PORT = 'REDIS_PORT'; // 6379, default value 6379
 
 // Common for all s3 storage
-export const STORAGE_BUCKET_NAME = 'STORAGE_BUCKET_NAME';
-export const STORAGE_ACCESS_KEY = 'STORAGE_ACCESS_KEY';
-export const STORAGE_SECRET_KEY = 'STORAGE_SECRET_KEY';
+export const STORAGE_BUCKET_NAME = 'STORAGE_BUCKET_NAME'; // my-bucket-name
+export const STORAGE_ACCESS_KEY = 'STORAGE_ACCESS_KEY'; // randomaccesskey
+export const STORAGE_SECRET_KEY = 'STORAGE_SECRET_KEY'; // supersecretkey
 // Used for aws s3
 export const STORAGE_ENDPOINT = 'STORAGE_ENDPOINT';
 export const STORAGE_REGION = 'STORAGE_REGION';
@@ -56,7 +56,7 @@ export const STORAGE_HOST = 'STORAGE_HOST';
 export const STORAGE_GATEWAY = 'STORAGE_GATEWAY';
 
 // JWT secret token
-export const JWT_SECRET = 'JWT_SECRET';
+export const JWT_SECRET = 'JWT_SECRET'; // random-secret-token-for-jwt
 
 // Used when this app needs to tell user where to request something (eg, password reset).
 export const APP_URL = 'APP_URL';

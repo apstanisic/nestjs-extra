@@ -14,9 +14,10 @@ function checkIsBetween(value: any, min: number, max: number): boolean {
  * Eslint is desabled because this is example from docs, and we
  * Want to keep it as close as posible as original
  * @Todo there is a problem here. I don't know why
+ * @deprecated Not working correctly
  */
 export function IsBetween(min: number, max: number, validationOptions?: ValidationOptions) {
-  return function(object: Object, propertyName: string) {
+  return function (object: Object, propertyName: string) {
     registerDecorator({
       name: 'isBetween',
       target: object.constructor,

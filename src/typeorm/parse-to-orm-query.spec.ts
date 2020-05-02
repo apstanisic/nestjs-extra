@@ -1,3 +1,6 @@
+// Disable camel case because values must use camel case with 2 underscores
+// so parser knows that second part is typeorm comparison
+/* eslint-disable @typescript-eslint/camelcase */
 import { parseQuery } from './parse-to-orm-query';
 import { Struct } from '../types';
 

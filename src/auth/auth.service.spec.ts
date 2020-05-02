@@ -3,7 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import { BadRequestException, NotFoundException } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthMailService } from './auth-mail.service';
-import { BaseUser } from '../entities/base-user.entity';
+import { BaseUser } from '../users/base-user.entity';
 
 const testUser = new BaseUser();
 testUser.email = 'testemail@email.com';

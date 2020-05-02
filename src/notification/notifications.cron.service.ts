@@ -8,8 +8,8 @@ import { NotificationService } from './notification.service';
 export class NotificationsCronService {
   constructor(private readonly notificationService: NotificationService) {}
 
-  /** Deletes old notifications after six months */
-  @Cron('0 5 * * *')
+  /** Deletes old notifications after six months every 12 hours */
+  @Cron('0 */12 * * *')
   async deleteOldNotifications(): Promise<void> {
     await this.notificationService.deleteOldNotifications();
   }

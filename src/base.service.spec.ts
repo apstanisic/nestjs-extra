@@ -1,6 +1,6 @@
 import { InternalServerErrorException, Logger, BadRequestException } from '@nestjs/common';
 import { BaseService } from './base.service';
-import { BasicUserInfo } from './entities/user.interface';
+import { BasicUserInfo } from './users/user.interface';
 
 const LogUser: BasicUserInfo = {
   email: 'test@ts.ts',

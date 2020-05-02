@@ -31,15 +31,13 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
     super(repository);
     if (options) {
       const { useAvatar, useRoles } = options;
-      if (useAvatar !== undefined) this.options.useAvatar = useAvatar;
-      if (useRoles !== undefined) this.options.useRoles = useRoles;
+      if (useAvatar !== undefined) this.useAvatar = useAvatar;
+      if (useRoles !== undefined) this.useRoles = useRoles;
     }
   }
 
-  private options: BaseUserServiceOptions = {
-    useAvatar: true,
-    useRoles: true,
-  };
+  private useAvatar = true;
+  private useRoles = true;
 
   @Optional()
   @Inject()
@@ -64,7 +62,7 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
       user.generateSecureToken();
       const savedUser = await this.repository.save(user as DeepPartial<User>);
 
-      if (this.options.useRoles) {
+      if (this.useRoles) {
         if (this.roleService === undefined) {
           throw new InternalServerErrorException('RoleServicenot found');
         }
@@ -140,7 +138,7 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
     if (this.storageImagesService === undefined) {
       throw new InternalServerErrorException('StorageService not found');
     }
-    if (!this.options.useAvatar) {
+    if (!this.useAvatar) {
       this.logger.error('Avatar is not used.', '', 'UserModule');
       throw new InternalServerErrorException();
     }
@@ -166,7 +164,7 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
     if (this.storageImagesService === undefined) {
       throw new InternalServerErrorException('StorageService not found');
     }
-    if (!this.options.useAvatar) {
+    if (!this.useAvatar) {
       this.logger.error('Avatar is not used.', '', 'UserModule');
       throw new InternalServerErrorException();
     }

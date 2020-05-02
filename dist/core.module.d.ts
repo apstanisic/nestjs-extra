@@ -5,12 +5,11 @@ import { DbOptions } from './db/db.module';
 import { StorageOptions } from './storage/storage.module';
 export interface CoreModuleParams {
     config?: ConfigModuleOptions;
-    storage: StorageOptions | false;
+    storage?: StorageOptions | false;
     db: DbOptions;
     accessControl?: AccessControlOptions;
-    dbLog: boolean;
-    notifications: boolean;
-    mail: boolean;
+    dbLog?: boolean;
+    notifications?: boolean;
     useMq?: boolean;
 }
 export declare class CoreModule {

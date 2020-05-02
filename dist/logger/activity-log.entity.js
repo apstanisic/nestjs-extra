@@ -13,9 +13,9 @@ const common_1 = require("@nestjs/common");
 const class_transformer_1 = require("class-transformer");
 const deep_diff_1 = require("deep-diff");
 const typeorm_1 = require("typeorm");
-const base_entity_1 = require("../entities/base.entity");
 const user_interface_1 = require("../users/user.interface");
-let DbLog = class DbLog extends base_entity_1.BaseEntity {
+const base_uuid_entity_1 = require("../entities/base-uuid.entity");
+let ActivityLog = class ActivityLog extends base_uuid_entity_1.UuidEntity {
     constructor(oldValue) {
         super();
         this.oldValue = oldValue;
@@ -44,58 +44,58 @@ let DbLog = class DbLog extends base_entity_1.BaseEntity {
 __decorate([
     typeorm_1.Column({ default: 'update' }),
     __metadata("design:type", String)
-], DbLog.prototype, "action", void 0);
+], ActivityLog.prototype, "action", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Object)
-], DbLog.prototype, "entityId", void 0);
+], ActivityLog.prototype, "entityId", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true }),
     __metadata("design:type", String)
-], DbLog.prototype, "reason", void 0);
+], ActivityLog.prototype, "reason", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], DbLog.prototype, "collection", void 0);
+], ActivityLog.prototype, "collection", void 0);
 __decorate([
     typeorm_1.Column({ type: 'simple-json' }),
     __metadata("design:type", user_interface_1.BasicUserInfo)
-], DbLog.prototype, "executedByInfo", void 0);
+], ActivityLog.prototype, "executedByInfo", void 0);
 __decorate([
     typeorm_1.ManyToOne('User', { onDelete: 'SET NULL', nullable: true }),
     __metadata("design:type", Object)
-], DbLog.prototype, "executedBy", void 0);
+], ActivityLog.prototype, "executedBy", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Object)
-], DbLog.prototype, "executedById", void 0);
+], ActivityLog.prototype, "executedById", void 0);
 __decorate([
     typeorm_1.Column({ type: 'simple-json' }),
     __metadata("design:type", Object)
-], DbLog.prototype, "newValue", void 0);
+], ActivityLog.prototype, "newValue", void 0);
 __decorate([
     typeorm_1.Column({ type: 'simple-json' }),
     __metadata("design:type", Object)
-], DbLog.prototype, "delta", void 0);
+], ActivityLog.prototype, "delta", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true }),
     __metadata("design:type", Object)
-], DbLog.prototype, "domainId", void 0);
+], ActivityLog.prototype, "domainId", void 0);
 __decorate([
     typeorm_1.BeforeInsert(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], DbLog.prototype, "_prepare", null);
+], ActivityLog.prototype, "_prepare", null);
 __decorate([
     typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], DbLog.prototype, "preventUpdate", null);
-DbLog = __decorate([
+], ActivityLog.prototype, "preventUpdate", null);
+ActivityLog = __decorate([
     typeorm_1.Entity('activity_logs'),
     __metadata("design:paramtypes", [Object])
-], DbLog);
-exports.DbLog = DbLog;
-//# sourceMappingURL=db-log.entity.js.map
+], ActivityLog);
+exports.ActivityLog = ActivityLog;
+//# sourceMappingURL=activity-log.entity.js.map

@@ -10,7 +10,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
+const typeorm_naming_strategies_1 = require("typeorm-naming-strategies");
 const consts_1 = require("../consts");
+const notification_entity_1 = require("../notification/notification.entity");
 let DbModule = DbModule_1 = class DbModule {
     static forRoot(params) {
         return {
@@ -19,16 +21,14 @@ let DbModule = DbModule_1 = class DbModule {
                 typeorm_1.TypeOrmModule.forRootAsync({
                     inject: [config_1.ConfigService],
                     useFactory: (config) => {
-                        var _a, _b, _c;
+                        var _a, _b;
                         const redisHost = config.get(consts_1.REDIS_HOST);
-                        const shouldCache = redisHost !== undefined || redisHost === '';
                         const isProduction = config.get(consts_1.NODE_ENV) === 'production';
-                        const dbType = (_a = config.get(consts_1.DB_TYPE)) !== null && _a !== void 0 ? _a : 'postgres';
-                        const options = Object.assign({ entities: params.entities, type: dbType, host: config.get(consts_1.DB_HOST), database: config.get(consts_1.DB_DATABASE), username: config.get(consts_1.DB_USER), password: config.get(consts_1.DB_PASSWORD), port: Number((_b = config.get(consts_1.DB_PORT)) !== null && _b !== void 0 ? _b : 5432), maxQueryExecutionTime: 3000, synchronize: !isProduction && config.get(consts_1.DB_SYNC) !== 'false', logging: isProduction ? ['error'] : 'all', cache: shouldCache && {
+                        const options = Object.assign({ entities: params.entities, type: (_a = config.get(consts_1.DB_TYPE)) !== null && _a !== void 0 ? _a : 'postgres', host: config.get(consts_1.DB_HOST), database: config.get(consts_1.DB_DATABASE), username: config.get(consts_1.DB_USER), password: config.get(consts_1.DB_PASSWORD), port: Number(config.get(consts_1.DB_PORT)), maxQueryExecutionTime: 3000, synchronize: !isProduction && config.get(consts_1.DB_SYNC) !== 'false', logging: isProduction ? ['error'] : 'all', namingStrategy: new typeorm_naming_strategies_1.SnakeNamingStrategy(), cache: redisHost !== undefined && {
                                 type: 'redis',
                                 options: {
-                                    host: config.get(consts_1.REDIS_HOST),
-                                    port: (_c = config.get(consts_1.REDIS_PORT)) !== null && _c !== void 0 ? _c : '6379',
+                                    host: redisHost,
+                                    port: (_b = config.get(consts_1.REDIS_PORT)) !== null && _b !== void 0 ? _b : '6379',
                                 },
                                 duration: 10000,
                             } }, params.config);
@@ -43,4 +43,5 @@ DbModule = DbModule_1 = __decorate([
     common_1.Module({})
 ], DbModule);
 exports.DbModule = DbModule;
+DbModule.forRoot({ entities: [notification_entity_1.Notification] });
 //# sourceMappingURL=db.module.js.map

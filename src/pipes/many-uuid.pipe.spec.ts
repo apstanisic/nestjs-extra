@@ -1,5 +1,5 @@
+import { isUUID } from 'class-validator';
 import * as Faker from 'faker';
-import { Validator, isUUID } from 'class-validator';
 import { ManyUUID } from './many-uuid.pipe';
 
 describe('Many UUID pipe', () => {
@@ -11,7 +11,7 @@ describe('Many UUID pipe', () => {
     expect(pipe.transform(`["${uuid}", "${uuid}"]`).length).toBe(2);
 
     const ids = pipe.transform(`["${uuid}", "${uuid}"]`);
-    expect(ids.every(id => isUUID(id))).toBe(true);
+    expect(ids.every((id) => isUUID(id))).toBe(true);
   });
 
   it('throws on invalid values', () => {

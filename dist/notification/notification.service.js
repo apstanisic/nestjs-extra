@@ -29,12 +29,14 @@ const typeorm_2 = require("typeorm");
 const base_service_1 = require("../base.service");
 const consts_1 = require("../consts");
 const notification_entity_1 = require("./notification.entity");
+const notifications_consts_1 = require("./notifications.consts");
 let NotificationService = class NotificationService extends base_service_1.BaseService {
     constructor(repository, queue) {
         super(repository);
-        if (queue) {
-            queue.add('delete-old', null, { repeat: { cron: '0 */12 * * *' } });
-        }
+        queue === null || queue === void 0 ? void 0 : queue.add(notifications_consts_1.DELETE_OLD_NOTIFICATION_JOB, null, {
+            repeat: { cron: '0 */12 * * *' },
+            attempts: 2,
+        });
     }
     deleteMany(criteria) {
         return this.repository.delete(criteria);
@@ -46,12 +48,8 @@ let NotificationService = class NotificationService extends base_service_1.BaseS
     }
     deleteOldNotifications() {
         return __awaiter(this, void 0, void 0, function* () {
-            const sixMonthsBefore = moment()
-                .subtract(6, 'months')
-                .toDate();
-            yield this.deleteMany({
-                createdAt: typeorm_2.LessThan(sixMonthsBefore),
-            });
+            const sixMonthsBefore = moment().subtract(6, 'months').toDate();
+            yield this.deleteMany({ createdAt: typeorm_2.LessThan(sixMonthsBefore) });
         });
     }
 };

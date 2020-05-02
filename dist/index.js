@@ -35,7 +35,7 @@ __export(require("./utils/helpers"));
 __export(require("./id-array.dto"));
 __export(require("./utils/is-between"));
 __export(require("./logger/db-logger.service"));
-__export(require("./logger/db-log.entity"));
+__export(require("./logger/activity-log.entity"));
 __export(require("./logger/db-logger.module"));
 __export(require("./logger/valid-reason.pipe"));
 __export(require("./pipes/many-uuid.pipe"));

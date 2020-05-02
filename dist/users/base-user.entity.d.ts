@@ -1,8 +1,8 @@
 import * as moment from 'moment';
-import { BaseEntity } from '../entities/base.entity';
+import { UuidEntity } from '../entities/base-uuid.entity';
 import { Image } from '../entities/image.entity';
 import { IUser } from './user.interface';
-export declare class BaseUser extends BaseEntity implements IUser {
+export declare class BaseUser extends UuidEntity implements IUser {
     email: string;
     password: string;
     name: string;

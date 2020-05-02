@@ -1,18 +1,21 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { DbLoggerService } from './db-logger.service';
-import { DbLog } from './db-log.entity';
+import { ActivityLoggerService } from './db-logger.service';
+import { ActivityLog } from './activity-log.entity';
 
-describe('DbLoggerService', () => {
-  let service: DbLoggerService;
+describe('ActivityLoggerService', () => {
+  let service: ActivityLoggerService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [DbLoggerService, { provide: getRepositoryToken(DbLog), useValue: jest.fn() }],
+      providers: [
+        ActivityLoggerService,
+        { provide: getRepositoryToken(ActivityLog), useValue: jest.fn() },
+      ],
     }).compile();
 
-    service = module.get<DbLoggerService>(DbLoggerService);
+    service = module.get<ActivityLoggerService>(ActivityLoggerService);
   });
 
   it('should be defined', () => {

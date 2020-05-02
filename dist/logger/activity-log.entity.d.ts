@@ -1,20 +1,20 @@
-import { BaseEntity } from '../entities/base.entity';
 import { BasicUserInfo } from '../users/user.interface';
-import { UUID, WithId } from '../types';
+import { WithId, IdType } from '../types';
 import { BaseUser } from '../users/base-user.entity';
-export declare class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> extends BaseEntity {
+import { UuidEntity } from '../entities/base-uuid.entity';
+export declare class ActivityLog<T extends WithId = any, User extends BaseUser = BaseUser> extends UuidEntity {
     private readonly oldValue;
     constructor(oldValue: any);
     action: 'create' | 'update' | 'delete' | string;
-    entityId: UUID | number;
+    entityId: IdType;
     reason?: string;
     collection: string;
     executedByInfo: BasicUserInfo;
     executedBy: User;
-    executedById: UUID | number;
+    executedById: IdType;
     newValue: T | Record<string, any>;
     delta: any;
-    domainId?: UUID | number;
+    domainId?: IdType;
     _prepare(): void;
     preventUpdate(): void;
 }

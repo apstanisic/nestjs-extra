@@ -1,11 +1,11 @@
-import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne } from 'typeorm';
+import { UuidEntity } from '../entities/base-uuid.entity';
+import { UUID, IdType } from '../types';
 import { BaseUser } from '../users/base-user.entity';
-import { UUID } from '../types';
-import { BaseEntity } from '../entities/base.entity';
 // import { User } from '../../user/user.entity';
 
 @Entity('notifications')
-export class Notification<User = BaseUser> extends BaseEntity {
+export class Notification<User = BaseUser> extends UuidEntity {
   @Column()
   title: string;
 
@@ -16,7 +16,7 @@ export class Notification<User = BaseUser> extends BaseEntity {
   user: User;
 
   @Column()
-  userId: UUID | number;
+  userId: IdType;
 
   @Column({ precision: 3 })
   seenAt?: Date;

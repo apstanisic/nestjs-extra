@@ -56,7 +56,8 @@
     "redis": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "sharp": "^0.25.2",
-    "sqlstring": "^2.3.2"
+    "sqlstring": "^2.3.2",
+    "typeorm-naming-strategies": "^1.1.0"
   },
   "peerDependencies": {
     "@nestjs/common": "^7.0.9",
@@ -69,8 +70,8 @@
     "@nestjs/common": "^7.0.9",
     "@nestjs/core": "^7.0.9",
     "@nestjs/platform-express": "^7.0.9",
-    "@nestjs/typeorm": "^7.0.0",
     "@nestjs/testing": "^7.0.9",
+    "@nestjs/typeorm": "^7.0.0",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "eslint": "^6.8.0",

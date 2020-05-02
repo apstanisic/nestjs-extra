@@ -9,11 +9,14 @@ import { NotificationService } from './notification.service';
 import { NotificationsCronService } from './notifications.cron.service';
 import { NotificationsProcessor } from './notifications.processor';
 
-/** Can use either cron or bullmq. Use cron by default cause it's simplier */
+/**
+ * Can use either cron or bullmq.
+ * Use cron by default cause it's simplier and does not require redis
+ */
 @Global()
 @Module({})
 export class NotificationsModule {
-  static forRoot(useMq: boolean = false): DynamicModule {
+  static forRoot(useMq = false): DynamicModule {
     const imports = [TypeOrmModule.forFeature([Notification])];
     const providers: any[] = [NotificationService];
 

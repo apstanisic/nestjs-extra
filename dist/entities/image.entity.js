@@ -10,17 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-const base_entity_1 = require("./base.entity");
-class Image extends base_entity_1.BaseEntity {
+const base_uuid_entity_1 = require("./base-uuid.entity");
+class Image extends base_uuid_entity_1.UuidEntity {
 }
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", String)
-], Image.prototype, "prefix", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true }),
     __metadata("design:type", String)
 ], Image.prototype, "original", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], Image.prototype, "prefix", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)

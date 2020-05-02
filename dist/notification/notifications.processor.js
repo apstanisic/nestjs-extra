@@ -21,6 +21,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const bull_1 = require("@nestjs/bull");
 const consts_1 = require("../consts");
 const notification_service_1 = require("./notification.service");
+const notifications_consts_1 = require("./notifications.consts");
 let NotificationsProcessor = class NotificationsProcessor {
     constructor(notificationService) {
         this.notificationService = notificationService;
@@ -32,7 +33,7 @@ let NotificationsProcessor = class NotificationsProcessor {
     }
 };
 __decorate([
-    bull_1.Process('delete-old'),
+    bull_1.Process(notifications_consts_1.DELETE_OLD_NOTIFICATION_JOB),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)

@@ -1,2 +1,2 @@
-export declare class DbLoggerModule {
+export declare class ActivityLoggerModule {
 }

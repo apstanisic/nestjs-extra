@@ -5,7 +5,7 @@ import { length } from 'class-validator';
 /**
  * Get reason for action from request.
  * @example
- *   method(@Body('id', ValidReason) reason: string) {}
+ * method(@Body('id', ValidReason) reason: string) {}
  */
 @Injectable()
 export class ValidReason implements PipeTransform<any, string | undefined> {

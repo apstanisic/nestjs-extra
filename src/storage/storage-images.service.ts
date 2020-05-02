@@ -1,13 +1,12 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { random } from 'faker';
 import * as moment from 'moment';
-import { plainToClass } from 'class-transformer';
 import { STORAGE_IMAGE_SIZES } from '../consts';
-import { Struct, UUID } from '../types';
+import { Image } from '../entities/image.entity';
+import { IdType, Struct } from '../types';
 import { generateAllImageSizes } from './sharp';
 import { ImageSizeOptions } from './storage.module';
 import { StorageService } from './storage.service';
-import { Image } from '../entities/image.entity';
 
 /**
  * Storage service in charge of storing images.
@@ -21,7 +20,7 @@ export class StorageImagesService {
   ) {}
 
   /** Add new image. Name is quasi random number by default. */
-  async storeImage(image: Buffer, id: string | number = random.uuid()): Promise<Partial<Image>> {
+  async storeImage(image: Buffer, id: string = random.uuid()): Promise<Partial<Image>> {
     const today = moment().format('YYYY/MM/DD');
     const folder = `${today}/${id}`;
     const filePrefix = `${folder}/image_${id}`;

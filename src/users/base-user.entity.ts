@@ -3,13 +3,13 @@ import * as bcrypt from 'bcryptjs';
 import { Exclude } from 'class-transformer';
 import { IsEmail, IsOptional, IsString, Length } from 'class-validator';
 import { random } from 'faker';
-import { Column, Index, Unique } from 'typeorm';
 import * as moment from 'moment';
-import { BaseEntity } from '../entities/base.entity';
+import { Column, Index } from 'typeorm';
+import { UuidEntity } from '../entities/base-uuid.entity';
 import { Image } from '../entities/image.entity';
 import { IUser } from './user.interface';
 
-export class BaseUser extends BaseEntity implements IUser {
+export class BaseUser extends UuidEntity implements IUser {
   /** User Email, has to be unique and to be valid email */
   @Column()
   @Index({ unique: true })
@@ -65,7 +65,7 @@ export class BaseUser extends BaseEntity implements IUser {
    * @param prepend String to be prepended to random UUID.
    * Can be used to carry small amount of data.
    */
-  generateSecureToken(prepend: string = ''): string {
+  generateSecureToken(prepend = ''): string {
     this.token = `${prepend}___${random.uuid()}`;
     this.tokenCreatedAt = new Date();
     return this.token;

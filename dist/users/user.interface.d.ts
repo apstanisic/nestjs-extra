@@ -1,6 +1,7 @@
 import { Image } from '../entities/image.entity';
-export interface IUser {
-    id: string | number;
+import { IdType } from '../types';
+export interface IUser extends BasicUserInfo {
+    id: IdType;
     name: string;
     email: string;
     phoneNumber?: string;
@@ -12,7 +13,7 @@ export interface IUser {
     checkPassword: (password: string) => Promise<boolean> | boolean;
 }
 export declare class BasicUserInfo {
-    id: string;
+    id: IdType;
     name: string;
     email: string;
     phoneNumber?: string;

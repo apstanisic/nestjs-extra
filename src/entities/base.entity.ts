@@ -17,15 +17,9 @@ import { WithId } from '../types';
  * It has combined index for createdAt and id to improve pagination
  */
 @Index(['createdAt', 'id'])
-export abstract class BaseEntity implements WithId {
-  /** Id can only be set in constructor, or by TypeOrm */
-  constructor(id?: string | number) {
-    if (id) this.id = id;
-  }
-
+export abstract class CoreEntity implements WithId {
   /** Unique Id */
-  @PrimaryGeneratedColumn('uuid')
-  readonly id: string | number;
+  id: string | number;
 
   /** Date when entity was updated */
   @UpdateDateColumn({ precision: 3 })

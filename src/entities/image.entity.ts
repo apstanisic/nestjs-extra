@@ -1,17 +1,17 @@
 import { Column } from 'typeorm';
-import { BaseEntity } from './base.entity';
+import { UuidEntity } from './base-uuid.entity';
 
-export class Image extends BaseEntity {
-  /** Part of path all sizes have in common. Usefull for deleting. */
-  @Column()
-  prefix: string;
-
+export class Image extends UuidEntity {
   /**
-   * Original file. Used temporarily until mq converts to different sizes
+   * Original file. Used temporarily until app generates  different sizes
    * Then this file gets deleted
    */
   @Column({ nullable: true })
   original?: string;
+
+  /** Part of path all sizes have in common. Used for deleting. */
+  @Column()
+  prefix: string;
 
   /** Thumbnail (non nullable) */
   @Column()
@@ -19,17 +19,17 @@ export class Image extends BaseEntity {
 
   /** Small */
   @Column({ nullable: true })
-  sm?: string; // 320px
+  sm: string; // 320px
 
   /** Medium */
   @Column({ nullable: true })
-  md?: string; // 640px
+  md: string; // 640px
 
   /** Large  */
   @Column({ nullable: true })
-  lg?: string; // 1280px
+  lg: string; // 1280px
 
   /** Extra large */
   @Column({ nullable: true })
-  xl?: string; // not used in most apps
+  xl: string; // not used in most apps
 }

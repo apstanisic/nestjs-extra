@@ -17,9 +17,10 @@ export interface ParsedOrmWhere<T = any> {
 export type UUID = string;
 export type Email = string;
 
+export type IdType = UUID | number;
 /** Provided object must have Id and can have any other fields */
-export interface WithId {
-  id: string | number;
+export interface WithId<T extends IdType = IdType> {
+  id: T;
   [key: string]: any;
 }
 

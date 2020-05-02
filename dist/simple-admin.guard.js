@@ -21,18 +21,18 @@ let SimpleAdminGuard = SimpleAdminGuard_1 = class SimpleAdminGuard {
     }
     canActivate(context) {
         var _a;
-        const combinedMails = this.configService.get(consts_1.SIMPLE_ADMIN_MAILS);
+        const combinedMails = this.configService.get(consts_1.SIMPLE_ADMIN_EMAILS);
         if (!combinedMails) {
             this.logger.error('Not implemented.');
             throw new common_1.NotImplementedException();
         }
         const mails = combinedMails
-            .split(';')
-            .map(mail => mail.trim())
-            .filter(email => class_validator_1.isEmail(email));
+            .split(',')
+            .map((mail) => mail.trim())
+            .filter((email) => class_validator_1.isEmail(email));
         const req = context.switchToHttp().getRequest();
         const userEmail = (_a = req.user) === null || _a === void 0 ? void 0 : _a.email;
-        return mails.some(mail => mail === userEmail);
+        return mails.some((mail) => mail === userEmail);
     }
 };
 SimpleAdminGuard = SimpleAdminGuard_1 = __decorate([

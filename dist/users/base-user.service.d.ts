@@ -11,7 +11,8 @@ interface BaseUserServiceOptions {
 export declare class BaseUserService<User extends BaseUser = BaseUser> extends BaseService<User> {
     private readonly queue;
     constructor(repository: Repository<User>, queue: Queue, options?: Partial<BaseUserServiceOptions>);
-    private options;
+    private useAvatar;
+    private useRoles;
     private readonly storageImagesService?;
     private readonly roleService?;
     createUser({ email, password, name }: RegisterUserDto): Promise<User>;

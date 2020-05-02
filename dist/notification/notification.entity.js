@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-const base_entity_1 = require("../entities/base.entity");
-let Notification = class Notification extends base_entity_1.BaseEntity {
+const base_uuid_entity_1 = require("../entities/base-uuid.entity");
+let Notification = class Notification extends base_uuid_entity_1.UuidEntity {
 };
 __decorate([
     typeorm_1.Column(),

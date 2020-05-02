@@ -2,7 +2,7 @@ import { IsOptional, IsString, Length } from 'class-validator';
 import { Column, Entity, ManyToOne, Index } from 'typeorm';
 import { BaseUserWithRoles } from '../../users/base-user-with-roles.entity';
 // import { User } from "../../user/user.entity";
-import { BaseEntity } from '../../entities/base.entity';
+import { CoreEntity } from '../../entities/base.entity';
 import { UUID } from '../../types';
 
 /**
@@ -16,7 +16,7 @@ import { UUID } from '../../types';
  * repo.save(role);
  */
 @Entity('roles')
-export class Role<User = BaseUserWithRoles> extends BaseEntity {
+export class Role<User = BaseUserWithRoles> extends CoreEntity {
   /** User that have this role */
   @ManyToOne('User', { onDelete: 'CASCADE' })
   user: User;

@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const class_validator_1 = require("class-validator");
 const typeorm_1 = require("typeorm");
 const base_entity_1 = require("../../entities/base.entity");
-let Role = class Role extends base_entity_1.BaseEntity {
+let Role = class Role extends base_entity_1.CoreEntity {
 };
 __decorate([
     typeorm_1.ManyToOne('User', { onDelete: 'CASCADE' }),

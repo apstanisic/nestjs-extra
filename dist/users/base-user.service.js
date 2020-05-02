@@ -30,16 +30,14 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
     constructor(repository, queue, options) {
         super(repository);
         this.queue = queue;
-        this.options = {
-            useAvatar: true,
-            useRoles: true,
-        };
+        this.useAvatar = true;
+        this.useRoles = true;
         if (options) {
             const { useAvatar, useRoles } = options;
             if (useAvatar !== undefined)
-                this.options.useAvatar = useAvatar;
+                this.useAvatar = useAvatar;
             if (useRoles !== undefined)
-                this.options.useRoles = useRoles;
+                this.useRoles = useRoles;
         }
     }
     createUser({ email, password, name }) {
@@ -54,7 +52,7 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
                 yield user.setPassword(password);
                 user.generateSecureToken();
                 const savedUser = yield this.repository.save(user);
-                if (this.options.useRoles) {
+                if (this.useRoles) {
                     if (this.roleService === undefined) {
                         throw new common_1.InternalServerErrorException('RoleServicenot found');
                     }
@@ -125,7 +123,7 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
             if (this.storageImagesService === undefined) {
                 throw new common_1.InternalServerErrorException('StorageService not found');
             }
-            if (!this.options.useAvatar) {
+            if (!this.useAvatar) {
                 this.logger.error('Avatar is not used.', '', 'UserModule');
                 throw new common_1.InternalServerErrorException();
             }
@@ -147,7 +145,7 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
             if (this.storageImagesService === undefined) {
                 throw new common_1.InternalServerErrorException('StorageService not found');
             }
-            if (!this.options.useAvatar) {
+            if (!this.useAvatar) {
                 this.logger.error('Avatar is not used.', '', 'UserModule');
                 throw new common_1.InternalServerErrorException();
             }

@@ -33,11 +33,7 @@ const class_transformer_1 = require("class-transformer");
 const common_1 = require("@nestjs/common");
 const class_validator_1 = require("class-validator");
 const typeorm_1 = require("typeorm");
-let BaseEntity = class BaseEntity {
-    constructor(id) {
-        if (id)
-            this.id = id;
-    }
+let CoreEntity = class CoreEntity {
     validate() {
         return __awaiter(this, void 0, void 0, function* () {
             let errors = yield class_validator_1.validate(this);
@@ -52,29 +48,24 @@ let BaseEntity = class BaseEntity {
     }
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn('uuid'),
-    __metadata("design:type", Object)
-], BaseEntity.prototype, "id", void 0);
-__decorate([
     typeorm_1.UpdateDateColumn({ precision: 3 }),
     class_transformer_1.Exclude(),
     __metadata("design:type", Date)
-], BaseEntity.prototype, "updatedAt", void 0);
+], CoreEntity.prototype, "updatedAt", void 0);
 __decorate([
     typeorm_1.CreateDateColumn({ precision: 3 }),
     typeorm_1.Index(),
     __metadata("design:type", Date)
-], BaseEntity.prototype, "createdAt", void 0);
+], CoreEntity.prototype, "createdAt", void 0);
 __decorate([
     typeorm_1.BeforeInsert(),
     typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], BaseEntity.prototype, "validate", null);
-BaseEntity = __decorate([
-    typeorm_1.Index(['createdAt', 'id']),
-    __metadata("design:paramtypes", [Object])
-], BaseEntity);
-exports.BaseEntity = BaseEntity;
+], CoreEntity.prototype, "validate", null);
+CoreEntity = __decorate([
+    typeorm_1.Index(['createdAt', 'id'])
+], CoreEntity);
+exports.CoreEntity = CoreEntity;
 //# sourceMappingURL=base.entity.js.map

@@ -152,7 +152,7 @@ class BaseService extends base_find_service_1.BaseFindService {
 __decorate([
     common_1.Optional(),
     common_1.Inject(consts_1.DB_LOGGER_SERVICE),
-    __metadata("design:type", db_logger_service_1.DbLoggerService)
+    __metadata("design:type", db_logger_service_1.ActivityLoggerService)
 ], BaseService.prototype, "dbLoggerService", void 0);
 exports.BaseService = BaseService;
 //# sourceMappingURL=base.service.js.map

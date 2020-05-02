@@ -15,7 +15,7 @@ const access_control_module_1 = require("./access-control/access-control.module"
 const roles_entity_1 = require("./access-control/role/roles.entity");
 const auth_module_1 = require("./auth/auth.module");
 const db_module_1 = require("./db/db.module");
-const db_log_entity_1 = require("./logger/db-log.entity");
+const activity_log_entity_1 = require("./logger/activity-log.entity");
 const db_logger_module_1 = require("./logger/db-logger.module");
 const mailer_module_1 = require("./mailer/mailer.module");
 const notification_entity_1 = require("./notification/notification.entity");
@@ -30,20 +30,19 @@ let CoreModule = CoreModule_1 = class CoreModule {
         if (params.accessControl)
             entities.push(roles_entity_1.Role);
         if (params.dbLog)
-            entities.push(db_log_entity_1.DbLog);
+            entities.push(activity_log_entity_1.ActivityLog);
         const modules = [
             config_1.ConfigModule.forRoot(Object.assign(Object.assign({}, params.config), { isGlobal: true })),
             bull_1.BullModule.registerQueueAsync(register_queue_1.initQueue('app')),
             schedule_1.ScheduleModule.forRoot(),
             db_module_1.DbModule.forRoot(params.db),
             auth_module_1.AuthModule,
+            mailer_module_1.MailerModule,
         ];
-        if (params.mail)
-            modules.push(mailer_module_1.MailerModule);
-        if (params.storage)
+        if (params.storage !== false)
             modules.push(storage_module_1.StorageModule.forRoot(params.storage));
         if (params.dbLog)
-            modules.push(db_logger_module_1.DbLoggerModule);
+            modules.push(db_logger_module_1.ActivityLoggerModule);
         if (params.notifications)
             modules.push(notification_module_1.NotificationsModule.forRoot(params.useMq));
         if (params.accessControl) {

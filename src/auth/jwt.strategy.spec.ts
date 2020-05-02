@@ -1,9 +1,9 @@
 import { UnauthorizedException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Test } from '@nestjs/testing';
-import { BaseUser } from '../entities/base-user.entity';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
+import { BaseUser } from '../users/base-user.entity';
 
 // import { User } from '../../user/user.entity';
 

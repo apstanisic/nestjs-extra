@@ -1,8 +1,8 @@
 import { InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common';
 import { Equal } from 'typeorm';
 import { BaseFindService } from './base-find.service';
-import { BasicUserInfo } from './entities/user.interface';
 import { PaginationParams } from './pagination/pagination-options';
+import { BasicUserInfo } from './users/user.interface';
 
 const LogUser: BasicUserInfo = {
   email: 'test@ts.ts',

@@ -32,7 +32,7 @@ let NotificationsCronService = class NotificationsCronService {
     }
 };
 __decorate([
-    schedule_1.Cron('0 5 * * *'),
+    schedule_1.Cron('0 */12 * * *'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)

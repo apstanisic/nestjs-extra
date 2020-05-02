@@ -2,10 +2,11 @@ import { InternalServerErrorException } from '@nestjs/common';
 import { classToClass, plainToClass, classToPlain } from 'class-transformer';
 import { diff } from 'deep-diff';
 import { Entity, BeforeInsert, BeforeUpdate, Column, ManyToOne } from 'typeorm';
-import { BaseEntity } from '../entities/base.entity';
+import { CoreEntity } from '../entities/base.entity';
 import { BasicUserInfo, IUser } from '../users/user.interface';
-import { UUID, WithId } from '../types';
+import { UUID, WithId, IdType } from '../types';
 import { BaseUser } from '../users/base-user.entity';
+import { UuidEntity } from '../entities/base-uuid.entity';
 
 /**
  * This entity is using MongoDb. TypeOrm currently supports only this NoSql db.
@@ -13,7 +14,10 @@ import { BaseUser } from '../users/base-user.entity';
  * it does not have primary field.
  */
 @Entity('activity_logs')
-export class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> extends BaseEntity {
+export class ActivityLog<
+  T extends WithId = any,
+  User extends BaseUser = BaseUser
+> extends UuidEntity {
   constructor(private readonly oldValue: any) {
     super();
   }
@@ -29,7 +33,7 @@ export class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> ext
    * If action is create, use id after creating.
    */
   @Column()
-  entityId: UUID | number;
+  entityId: IdType;
 
   /**
    * Why is this action executed.
@@ -61,7 +65,7 @@ export class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> ext
    * Id of user who executed action. For executedBy: User field in db.
    */
   @Column()
-  executedById: UUID | number;
+  executedById: IdType;
 
   /**
    * Value before changes. Default is {} for easier comparison.
@@ -83,7 +87,7 @@ export class DbLog<T extends WithId = any, User extends BaseUser = BaseUser> ext
    * It can be company, web store, school, group.
    */
   @Column({ nullable: true })
-  domainId?: UUID | number;
+  domainId?: IdType;
 
   /** Transform data */
   @BeforeInsert()
