@@ -14,10 +14,6 @@ const base_entity_1 = require("./base.entity");
 class Image extends base_entity_1.BaseEntity {
 }
 __decorate([
-    typeorm_1.Column({ nullable: true }),
-    __metadata("design:type", Number)
-], Image.prototype, "position", void 0);
-__decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Image.prototype, "prefix", void 0);

@@ -7,7 +7,7 @@ export declare class BaseService<T extends WithId = any> extends BaseFindService
     constructor(repository: Repository<T>);
     protected readonly dbLoggerService?: DbLoggerService<T>;
     create(data: Partial<T>, meta?: DbLogMetadata): Promise<T>;
-    update(entityOrId: T | string, updatedData?: Partial<T>, meta?: DbLogMetadata, options?: {
+    update(entityOrId: T | string | number, updatedData?: Partial<T>, meta?: DbLogMetadata, options?: {
         usePassedEntity: boolean;
     }): Promise<T>;
     mutate(entity: T, meta?: DbLogMetadata): Promise<T>;

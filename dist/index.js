@@ -59,7 +59,6 @@ __export(require("./access-control/role/roles.service"));
 __export(require("./simple-admin.guard"));
 __export(require("./storage/sharp"));
 __export(require("./storage/storage-images.service"));
-__export(require("./storage/storage-images.helper"));
 __export(require("./storage/storage.module"));
 __export(require("./storage/storage.service"));
 __export(require("./storage/valid-jpeg-image"));

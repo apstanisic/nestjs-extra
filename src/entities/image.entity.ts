@@ -2,10 +2,6 @@ import { Column } from 'typeorm';
 import { BaseEntity } from './base.entity';
 
 export class Image extends BaseEntity {
-  /** If some entity have multiple images, this is images position in array. Starts at 0 */
-  @Column({ nullable: true })
-  position?: number;
-
   /** Part of path all sizes have in common. Usefull for deleting. */
   @Column()
   prefix: string;

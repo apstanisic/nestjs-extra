@@ -48,13 +48,13 @@ class BaseService extends base_find_service_1.BaseFindService {
             try {
                 let entity;
                 if (options === null || options === void 0 ? void 0 : options.usePassedEntity) {
-                    if (typeof entityOrId === 'string') {
+                    if (typeof entityOrId === 'string' || typeof entityOrId === 'number') {
                         this.logger.error('Passed entity is string');
                         throw new common_1.InternalServerErrorException();
                     }
                     entity = entityOrId;
                 }
-                else if (typeof entityOrId === 'string') {
+                else if (typeof entityOrId === 'string' || typeof entityOrId === 'number') {
                     entity = yield this.findOne(entityOrId);
                 }
                 else {

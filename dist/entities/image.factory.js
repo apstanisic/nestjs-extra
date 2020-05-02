@@ -5,7 +5,6 @@ const image_entity_1 = require("./image.entity");
 const random = Faker.random.arrayElement;
 function generateImage(position) {
     const image = new image_entity_1.Image();
-    image.position = position;
     image.xs = `https://via.placeholder.com/168.png`;
     image.sm = `https://via.placeholder.com/320.png`;
     image.md = `https://via.placeholder.com/640.png`;

@@ -61,7 +61,7 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
    * @param usePassedEntity is used for updateWhere
    */
   async update(
-    entityOrId: T | string,
+    entityOrId: T | string | number,
     updatedData: Partial<T> = {},
     meta?: DbLogMetadata,
     options?: {
@@ -72,12 +72,12 @@ export class BaseService<T extends WithId = any> extends BaseFindService<T> {
       // if entity is passed just update it, if id, find and update
       let entity: T;
       if (options?.usePassedEntity) {
-        if (typeof entityOrId === 'string') {
+        if (typeof entityOrId === 'string' || typeof entityOrId === 'number') {
           this.logger.error('Passed entity is string');
           throw new InternalServerErrorException();
         }
         entity = entityOrId;
-      } else if (typeof entityOrId === 'string') {
+      } else if (typeof entityOrId === 'string' || typeof entityOrId === 'number') {
         entity = await this.findOne(entityOrId);
       } else {
         // Always find latest entity for update (log should have up to date info)

@@ -9,7 +9,6 @@ const random = Faker.random.arrayElement;
  */
 export function generateImage(position: number): Image {
   const image = new Image();
-  image.position = position;
   image.xs = `https://via.placeholder.com/168.png`;
   image.sm = `https://via.placeholder.com/320.png`;
   image.md = `https://via.placeholder.com/640.png`;

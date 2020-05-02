@@ -55,7 +55,6 @@ export * from './access-control/role/roles.service';
 export * from './simple-admin.guard';
 export * from './storage/sharp';
 export * from './storage/storage-images.service';
-export * from './storage/storage-images.helper';
 export * from './storage/storage.module';
 export * from './storage/storage.service';
 export * from './storage/valid-jpeg-image';
