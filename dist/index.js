@@ -26,6 +26,8 @@ __export(require("./base.service"));
 __export(require("./consts"));
 __export(require("./core.module"));
 __export(require("./entities/base.entity"));
+__export(require("./entities/base-uuid.entity"));
+__export(require("./entities/base-increment.entity"));
 __export(require("./users/base-user.entity"));
 __export(require("./users/base-user-with-roles.entity"));
 __export(require("./entities/image.entity"));

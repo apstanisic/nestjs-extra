@@ -4653,6 +4653,10 @@
         "version": "3f9637df5f60613015780c6bd92fa5fef0cda9bc8abebb5294f435340b71744b",
         "signature": "7cacc6df91be9603b93cd10ccb9dbc2f2c9d4b424f348f83608d78103c3e6af6"
       },
+      "../src/entities/base-increment.entity.ts": {
+        "version": "56adabebeb693a0471079974289414de24fb5d38df5280a7c694ec7bb009cdfe",
+        "signature": "3b2a7c5057feefbd9299b96cd821d6c4f19c0e2280c67b32cbf9f7b78d949cec"
+      },
       "../src/entities/image.factory.ts": {
         "version": "b5942edd4b2a6b3254f4fa6024f2618dff1e8fadd37e07c3472fa2c064b3d0b8",
         "signature": "25cebc672111050845a947aab646e48630f1ef5a2be177101fe32d62f6fef938"
@@ -4686,8 +4690,8 @@
         "signature": "0834fe76a789aef7b3bca8414785c9afce9be777c50ffdfdc74c312c937bb597"
       },
       "../src/index.ts": {
-        "version": "8cae5f26edd34a67ef2f075a0c7a27216d8626d5a4f35df3e96147ba3f01b017",
-        "signature": "8cae5f26edd34a67ef2f075a0c7a27216d8626d5a4f35df3e96147ba3f01b017"
+        "version": "b563efc305f02f40c9abddeb1d4aa4e66ba752ad9b2f1d5111c4973757a3501a",
+        "signature": "b563efc305f02f40c9abddeb1d4aa4e66ba752ad9b2f1d5111c4973757a3501a"
       },
       "../src/__mocks__/fs.ts": {
         "version": "8604ad06fbdd6c8f6aed5766a8e66e2039628a476f41ccfdcce6bf6154a1893c",
@@ -4740,10 +4744,6 @@
       "../src/auth/jwt.strategy.spec.ts": {
         "version": "ea1261dc0539487fd497bba2720e77aa961bbc57e3e5c5dd093fc59231839c33",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
-      },
-      "../src/entities/base-increment.entity.ts": {
-        "version": "56adabebeb693a0471079974289414de24fb5d38df5280a7c694ec7bb009cdfe",
-        "signature": "3b2a7c5057feefbd9299b96cd821d6c4f19c0e2280c67b32cbf9f7b78d949cec"
       },
       "../src/logger/db-logger.service.spec.ts": {
         "version": "3e5d3b0d329904393f2b0c9b0c3ff169136a900165c2b903fe2830f1eb5c861f",
@@ -15652,6 +15652,14 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/entities/base-increment.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/entities/base.entity.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/entities/image.factory.ts": [
         "../src/entities/image.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -15748,6 +15756,8 @@
         "../src/consts.ts",
         "../src/core.module.ts",
         "../src/entities/base.entity.ts",
+        "../src/entities/base-uuid.entity.ts",
+        "../src/entities/base-increment.entity.ts",
         "../src/users/base-user.entity.ts",
         "../src/users/base-user-with-roles.entity.ts",
         "../src/entities/image.entity.ts",
@@ -15914,14 +15924,6 @@
         "../src/auth/auth.service.ts",
         "../src/auth/jwt.strategy.ts",
         "../src/users/base-user.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/entities/base-increment.entity.ts": [
-        "../node_modules/typeorm/index.d.ts",
-        "../src/entities/base.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -16567,6 +16569,8 @@
         "../src/consts.ts",
         "../src/core.module.ts",
         "../src/entities/base.entity.ts",
+        "../src/entities/base-uuid.entity.ts",
+        "../src/entities/base-increment.entity.ts",
         "../src/users/base-user.entity.ts",
         "../src/users/base-user-with-roles.entity.ts",
         "../src/entities/image.entity.ts",
@@ -28006,6 +28010,7 @@
       "../src/html.d.ts",
       "../src/id-array.dto.ts",
       "../src/utils/add-duration.ts",
+      "../src/entities/base-increment.entity.ts",
       "../src/entities/image.factory.ts",
       "../src/logger/valid-reason.pipe.ts",
       "../src/pipes/many-uuid.pipe.ts",
@@ -28028,7 +28033,6 @@
       "../node_modules/@nestjs/testing/index.d.ts",
       "../src/auth/auth.service.spec.ts",
       "../src/auth/jwt.strategy.spec.ts",
-      "../src/entities/base-increment.entity.ts",
       "../src/logger/db-logger.service.spec.ts",
       "../src/notification/notification.controller.spec.ts",
       "../src/notification/notification.service.spec.ts",

@@ -21,6 +21,8 @@ export * from './base.service';
 export * from './consts';
 export * from './core.module';
 export * from './entities/base.entity';
+export * from './entities/base-uuid.entity';
+export * from './entities/base-increment.entity';
 export * from './users/base-user.entity';
 export * from './users/base-user-with-roles.entity';
 export * from './entities/image.entity';
