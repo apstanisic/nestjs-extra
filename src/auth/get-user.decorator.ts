@@ -3,7 +3,7 @@ import { createParamDecorator, UnauthorizedException, ExecutionContext } from '@
 /**
  * Get logged user from request. Will throw if user not logged
  * @example
- *  someMethod(@GetUser() user: User) {}
+ * someMethod(@GetUser() user: User) {}
  */
 export const GetUser = createParamDecorator((data: string, ctx: ExecutionContext) => {
   const request = ctx.switchToHttp().getRequest();
