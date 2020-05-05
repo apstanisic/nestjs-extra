@@ -8,17 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const bull_1 = require("@nestjs/bull");
 const common_1 = require("@nestjs/common");
-const config_1 = require("@nestjs/config");
-const jwt_1 = require("@nestjs/jwt");
 const passport_1 = require("@nestjs/passport");
+const auth_email_module_1 = require("../auth-email/auth-email.module");
+const password_reset_module_1 = require("../auth-password-reset/password-reset.module");
+const auth_sessions_module_1 = require("../auth-sessions/auth-sessions.module");
+const auth_users_module_1 = require("../auth-users/auth-users.module");
 const consts_1 = require("../consts");
 const register_queue_1 = require("../utils/register-queue");
-const auth_mail_service_1 = require("./auth-mail.service");
-const auth_controller_1 = require("./auth.controller");
-const auth_service_1 = require("./auth.service");
+const init_jwt_module_1 = require("./init-jwt-module");
 const jwt_strategy_1 = require("./jwt.strategy");
-const password_reset_controller_1 = require("./password-reset.controller");
-const password_reset_service_1 = require("./password-reset.service");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
@@ -26,21 +24,14 @@ AuthModule = __decorate([
     common_1.Module({
         imports: [
             passport_1.PassportModule.register({ defaultStrategy: 'jwt' }),
-            jwt_1.JwtModule.registerAsync({
-                inject: [config_1.ConfigService],
-                useFactory: (configService) => {
-                    const secret = configService.get(consts_1.JWT_SECRET);
-                    if (!secret) {
-                        new common_1.Logger(jwt_1.JwtModule.name).error('JWT_SECRET not defined');
-                        throw new common_1.InternalServerErrorException();
-                    }
-                    return { secret, signOptions: { expiresIn: '10 days' } };
-                },
-            }),
+            init_jwt_module_1.initJwtModule(),
             bull_1.BullModule.registerQueueAsync(register_queue_1.initQueue(consts_1.QUEUE_AUTH_EMAIL)),
+            auth_sessions_module_1.AuthSessionsModule,
+            auth_email_module_1.AuthEmailModule,
+            password_reset_module_1.AuthPasswordResetModule,
+            auth_users_module_1.AuthUsersModule,
         ],
-        providers: [jwt_strategy_1.JwtStrategy, auth_service_1.AuthService, auth_mail_service_1.AuthMailService, password_reset_service_1.PasswordResetService],
-        controllers: [auth_controller_1.AuthController, password_reset_controller_1.PasswordResetController],
+        providers: [jwt_strategy_1.JwtStrategy],
     })
 ], AuthModule);
 exports.AuthModule = AuthModule;

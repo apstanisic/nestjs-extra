@@ -91,14 +91,6 @@ let BaseUserService = class BaseUserService extends base_service_1.BaseService {
             });
         });
     }
-    requestEmailChange(oldEmail, data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const user = yield this.findForLogin(oldEmail, data.password);
-            const token = user.generateSecureToken(data.newEmail);
-            yield this.mutate(user);
-            this.queue.add('change-email', { token, email: data.newEmail });
-        });
-    }
     changeEmail(user, token) {
         return __awaiter(this, void 0, void 0, function* () {
             if (!user.validToken(token, moment_1.duration(2, 'hour')))

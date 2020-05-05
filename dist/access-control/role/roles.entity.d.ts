@@ -1,10 +1,10 @@
 import { BaseUserWithRoles } from '../../users/base-user-with-roles.entity';
-import { CoreEntity } from '../../entities/base.entity';
-import { UUID } from '../../types';
-export declare class Role<User = BaseUserWithRoles> extends CoreEntity {
+import { IdType } from '../../types';
+import { UuidEntity } from '../../entities/base-uuid.entity';
+export declare class Role<User = BaseUserWithRoles> extends UuidEntity {
     user: User;
-    userId: number | UUID;
+    userId: IdType;
     name: string;
-    domain: UUID | number;
+    domain: IdType;
     description?: string;
 }

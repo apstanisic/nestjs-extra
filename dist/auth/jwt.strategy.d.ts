@@ -1,15 +1,16 @@
 import { ConfigService } from '@nestjs/config';
 import { Strategy } from 'passport-jwt';
-import { BaseUser } from '../users/base-user.entity';
-import { AuthService } from './auth.service';
+import { IdType } from '../types';
+import { AuthUser } from '../users/user.interface';
 export interface JwtPayload {
     email: string;
+    id: IdType;
+    name: string;
 }
 declare const JwtStrategy_base: new (...args: any[]) => Strategy;
 export declare class JwtStrategy extends JwtStrategy_base {
-    private readonly authService;
     readonly configService: ConfigService;
-    constructor(authService: AuthService, configService: ConfigService);
-    validate(payload: JwtPayload): Promise<BaseUser>;
+    constructor(configService: ConfigService);
+    validate(payload: JwtPayload): Promise<AuthUser>;
 }
 export {};

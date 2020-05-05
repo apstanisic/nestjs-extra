@@ -1,6 +1,8 @@
 export declare const USER_SERVICE = "USER_SERVICE";
 export declare const DB_LOGGER_SERVICE = "DB_LOGGER_SERVICE";
 export declare const QUEUE_AUTH_EMAIL = "QUEUE_AUTH_EMAIL";
+export declare const QUEUE_RESET_PASSWORD = "AUTH_RESET_PASSWORD_QUEUE";
+export declare const QUEUE_CONFIRM_ACCOUNT = "AUTH_CONFIRM_ACCOUNT_QUEUE";
 export declare const QUEUE_NOTIFICATIONS = "QUEUE_NOTIFICATIONS";
 export declare const AC_ROLES_LIST = "AC_ROLES_LIST";
 export declare const AC_MODEL = "AC_MODEL";

@@ -11,10 +11,11 @@ import { duration } from 'moment';
 import { DeepPartial, Repository } from 'typeorm';
 import { Role } from '../access-control/role/roles.entity';
 import { RolesService } from '../access-control/role/roles.service';
-import { ChangeEmailDto, LoginUserDto, RegisterUserDto, UpdatePasswordDto } from '../auth/auth.dto';
 import { BaseService } from '../base.service';
 import { StorageImagesService } from '../storage/storage-images.service';
 import { BaseUser } from './base-user.entity';
+import { RegisterUserDto, UpdatePasswordDto } from '../auth-users/auth-users.dto';
+import { LoginUserDto } from '../auth-sessions/auth-sessions.dto';
 
 interface BaseUserServiceOptions {
   useRoles: boolean;
@@ -100,14 +101,6 @@ export class BaseUserService<User extends BaseUser = BaseUser> extends BaseServi
       domain: user.id,
       reason: 'Change password.',
     });
-  }
-
-  /** Send email to confirm email change */
-  async requestEmailChange(oldEmail: string, data: ChangeEmailDto): Promise<void> {
-    const user = await this.findForLogin(oldEmail, data.password);
-    const token = user.generateSecureToken(data.newEmail);
-    await this.mutate(user);
-    this.queue.add('change-email', { token, email: data.newEmail });
   }
 
   /**

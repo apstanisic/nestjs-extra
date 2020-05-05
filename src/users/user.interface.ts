@@ -27,3 +27,10 @@ export class BasicUserInfo {
   @Expose()
   phoneNumber?: string;
 }
+
+export class AuthUser {
+  id: IdType;
+  email: string;
+  name: string;
+  phoneNumber?: string;
+}

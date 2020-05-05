@@ -1,36 +1,27 @@
 import { BullModule } from '@nestjs/bull';
-import { Global, InternalServerErrorException, Logger, Module } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
+import { Global, Module } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
-import { JWT_SECRET, QUEUE_AUTH_EMAIL } from '../consts';
+import { AuthEmailModule } from '../auth-email/auth-email.module';
+import { AuthPasswordResetModule } from '../auth-password-reset/password-reset.module';
+import { AuthSessionsModule } from '../auth-sessions/auth-sessions.module';
+import { AuthUsersModule } from '../auth-users/auth-users.module';
+import { QUEUE_AUTH_EMAIL } from '../consts';
 import { initQueue } from '../utils/register-queue';
-import { AuthMailService } from './auth-mail.service';
-import { AuthController } from './auth.controller';
-import { AuthService } from './auth.service';
+import { initJwtModule } from './init-jwt-module';
 import { JwtStrategy } from './jwt.strategy';
-import { PasswordResetController } from './password-reset.controller';
-import { PasswordResetService } from './password-reset.service';
 
 @Global()
 @Module({
   imports: [
     PassportModule.register({ defaultStrategy: 'jwt' }),
-    JwtModule.registerAsync({
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService): JwtModuleOptions => {
-        const secret = configService.get(JWT_SECRET);
-        if (!secret) {
-          new Logger(JwtModule.name).error('JWT_SECRET not defined');
-          throw new InternalServerErrorException();
-        }
-        return { secret, signOptions: { expiresIn: '10 days' } };
-      },
-    }),
+    initJwtModule(),
     BullModule.registerQueueAsync(initQueue(QUEUE_AUTH_EMAIL)),
+    AuthSessionsModule,
+    AuthEmailModule,
+    AuthPasswordResetModule,
+    AuthUsersModule,
   ],
-  providers: [JwtStrategy, AuthService, AuthMailService, PasswordResetService],
-  controllers: [AuthController, PasswordResetController],
+  providers: [JwtStrategy],
 })
 export class AuthModule {}
 

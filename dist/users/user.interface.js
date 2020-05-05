@@ -29,4 +29,7 @@ __decorate([
     __metadata("design:type", String)
 ], BasicUserInfo.prototype, "phoneNumber", void 0);
 exports.BasicUserInfo = BasicUserInfo;
+class AuthUser {
+}
+exports.AuthUser = AuthUser;
 //# sourceMappingURL=user.interface.js.map

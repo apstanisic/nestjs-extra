@@ -18,3 +18,9 @@ export declare class BasicUserInfo {
     email: string;
     phoneNumber?: string;
 }
+export declare class AuthUser {
+    id: IdType;
+    email: string;
+    name: string;
+    phoneNumber?: string;
+}

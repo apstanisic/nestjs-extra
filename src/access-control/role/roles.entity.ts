@@ -3,7 +3,8 @@ import { Column, Entity, ManyToOne, Index } from 'typeorm';
 import { BaseUserWithRoles } from '../../users/base-user-with-roles.entity';
 // import { User } from "../../user/user.entity";
 import { CoreEntity } from '../../entities/base.entity';
-import { UUID } from '../../types';
+import { UUID, IdType } from '../../types';
+import { UuidEntity } from '../../entities/base-uuid.entity';
 
 /**
  * To add admin for company f32 to user
@@ -16,7 +17,7 @@ import { UUID } from '../../types';
  * repo.save(role);
  */
 @Entity('roles')
-export class Role<User = BaseUserWithRoles> extends CoreEntity {
+export class Role<User = BaseUserWithRoles> extends UuidEntity {
   /** User that have this role */
   @ManyToOne('User', { onDelete: 'CASCADE' })
   user: User;
@@ -24,7 +25,7 @@ export class Role<User = BaseUserWithRoles> extends CoreEntity {
   /** User's id */
   @Column()
   @Index()
-  userId: number | UUID;
+  userId: IdType;
 
   /** Role name */
   @Column()
@@ -40,7 +41,7 @@ export class Role<User = BaseUserWithRoles> extends CoreEntity {
    * Null if there is no domain
    */
   @Column({ nullable: true })
-  domain: UUID | number;
+  domain: IdType;
 
   /**
    * Description for this specific role to this user.
