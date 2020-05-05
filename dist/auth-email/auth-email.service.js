@@ -31,15 +31,15 @@ const mailer_templates_helper_1 = require("../mailer/mailer-templates.helper");
 const mailer_service_1 = require("../mailer/mailer.service");
 const base_user_service_1 = require("../users/base-user.service");
 const user_interface_1 = require("../users/user.interface");
-const account_confirm_hbs_1 = require("./account-confirm.hbs");
-const change_email_hbs_1 = require("./change-email.hbs");
+const accountConfirmTemplate = require("./account-confirm.hbs");
+const changeEmailTemplate = require("./change-email.hbs");
 let AuthEmailService = class AuthEmailService {
     constructor(usersService, configService, mailerService) {
         this.usersService = usersService;
         this.configService = configService;
         this.mailerService = mailerService;
-        this.accountConfirmTemplate = Handlebars.compile(account_confirm_hbs_1.default);
-        this.changeEmailTemplate = Handlebars.compile(change_email_hbs_1.default);
+        this.accountConfirmTemplate = Handlebars.compile(accountConfirmTemplate);
+        this.changeEmailTemplate = Handlebars.compile(changeEmailTemplate);
     }
     requestEmailChange(oldEmail, data) {
         return __awaiter(this, void 0, void 0, function* () {

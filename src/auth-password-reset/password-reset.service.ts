@@ -1,15 +1,13 @@
-import { InjectQueue } from '@nestjs/bull';
 import { BadRequestException, ForbiddenException, Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Queue } from 'bull';
+import * as Handlebars from 'handlebars';
 import * as moment from 'moment';
 import { join } from 'path';
 import { AuthSessionsService } from '../auth-sessions/auth-sessions.service';
 import { BaseService } from '../base.service';
-import { APP_URL, QUEUE_RESET_PASSWORD, USER_SERVICE } from '../consts';
+import { APP_URL, USER_SERVICE } from '../consts';
 import { CommonHandlebars, getCommonTemplateValues } from '../mailer/mailer-templates.helper';
 import { MailerService } from '../mailer/mailer.service';
-import * as Handlebars from 'handlebars';
 import { BaseUser } from '../users/base-user.entity';
 /** Handlebars template */
 import passwordResetTemplate from './password-reset.hbs';
@@ -22,7 +20,6 @@ interface PasswordResetTemplateParams extends CommonHandlebars {
 export class PasswordResetService<User extends BaseUser = BaseUser> {
   constructor(
     @Inject(USER_SERVICE) private usersService: BaseService<User>,
-    @InjectQueue(QUEUE_RESET_PASSWORD) private readonly queue: Queue,
     private readonly authSessionsService: AuthSessionsService,
     private readonly configService: ConfigService,
     private readonly mailerService: MailerService,

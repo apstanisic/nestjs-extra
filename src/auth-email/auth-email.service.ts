@@ -9,9 +9,9 @@ import { MailerService } from '../mailer/mailer.service';
 import { BaseUser } from '../users/base-user.entity';
 import { BaseUserService } from '../users/base-user.service';
 import { BasicUserInfo } from '../users/user.interface';
-import accountConfirmTemplate from './account-confirm.hbs';
+import * as accountConfirmTemplate from './account-confirm.hbs';
 import { ChangeEmailDto } from './auth-email.dto';
-import changeEmailTemplate from './change-email.hbs';
+import * as changeEmailTemplate from './change-email.hbs';
 
 interface ConfirmTemplateParams extends CommonHandlebars {
   confirmUrl: string;

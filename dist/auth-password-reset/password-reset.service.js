@@ -21,9 +21,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const bull_1 = require("@nestjs/bull");
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
+const Handlebars = require("handlebars");
 const moment = require("moment");
 const path_1 = require("path");
 const auth_sessions_service_1 = require("../auth-sessions/auth-sessions.service");
@@ -31,12 +31,10 @@ const base_service_1 = require("../base.service");
 const consts_1 = require("../consts");
 const mailer_templates_helper_1 = require("../mailer/mailer-templates.helper");
 const mailer_service_1 = require("../mailer/mailer.service");
-const Handlebars = require("handlebars");
 const password_reset_hbs_1 = require("./password-reset.hbs");
 let PasswordResetService = class PasswordResetService {
-    constructor(usersService, queue, authSessionsService, configService, mailerService) {
+    constructor(usersService, authSessionsService, configService, mailerService) {
         this.usersService = usersService;
-        this.queue = queue;
         this.authSessionsService = authSessionsService;
         this.configService = configService;
         this.mailerService = mailerService;
@@ -80,8 +78,8 @@ let PasswordResetService = class PasswordResetService {
 PasswordResetService = __decorate([
     common_1.Injectable(),
     __param(0, common_1.Inject(consts_1.USER_SERVICE)),
-    __param(1, bull_1.InjectQueue(consts_1.QUEUE_RESET_PASSWORD)),
-    __metadata("design:paramtypes", [base_service_1.BaseService, Object, auth_sessions_service_1.AuthSessionsService,
+    __metadata("design:paramtypes", [base_service_1.BaseService,
+        auth_sessions_service_1.AuthSessionsService,
         config_1.ConfigService,
         mailer_service_1.MailerService])
 ], PasswordResetService);
