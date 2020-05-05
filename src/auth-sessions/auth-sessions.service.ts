@@ -3,6 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { classToClass } from 'class-transformer';
 import * as Faker from 'faker';
+import * as moment from 'moment';
 import { Repository } from 'typeorm';
 import { BaseService } from '../base.service';
 import { USER_SERVICE } from '../consts';
@@ -10,7 +11,6 @@ import { BaseUser } from '../users/base-user.entity';
 import { BaseUserService } from '../users/base-user.service';
 import { AuthSession } from './auth-session.entity';
 import { SignInResponse } from './auth-sessions.dto';
-import moment = require('moment');
 
 /**
  * Auth session service

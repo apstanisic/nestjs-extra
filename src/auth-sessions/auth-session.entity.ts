@@ -2,7 +2,7 @@ import { Column, Index, ManyToOne } from 'typeorm';
 import { UuidEntity } from '../entities/base-uuid.entity';
 import { IdType } from '../types';
 import { BaseUser } from '../users/base-user.entity';
-import moment = require('moment');
+import * as moment from 'moment';
 
 export class AuthSession<User extends BaseUser> extends UuidEntity {
   /** User that have this role */
