@@ -15,7 +15,6 @@ const auth_sessions_module_1 = require("../auth-sessions/auth-sessions.module");
 const auth_users_module_1 = require("../auth-users/auth-users.module");
 const consts_1 = require("../consts");
 const register_queue_1 = require("../utils/register-queue");
-const init_jwt_module_1 = require("./init-jwt-module");
 const jwt_strategy_1 = require("./jwt.strategy");
 let AuthModule = class AuthModule {
 };
@@ -24,7 +23,6 @@ AuthModule = __decorate([
     common_1.Module({
         imports: [
             passport_1.PassportModule.register({ defaultStrategy: 'jwt' }),
-            init_jwt_module_1.initJwtModule(),
             bull_1.BullModule.registerQueueAsync(register_queue_1.initQueue(consts_1.QUEUE_AUTH_EMAIL)),
             auth_sessions_module_1.AuthSessionsModule,
             auth_email_module_1.AuthEmailModule,

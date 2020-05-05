@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const base_uuid_entity_1 = require("../entities/base-uuid.entity");
 const moment = require("moment");
-class AuthSession extends base_uuid_entity_1.UuidEntity {
-}
+let AuthSession = class AuthSession extends base_uuid_entity_1.UuidEntity {
+};
 __decorate([
     typeorm_1.ManyToOne('User', { onDelete: 'CASCADE' }),
     __metadata("design:type", Object)
@@ -23,6 +23,10 @@ __decorate([
     typeorm_1.Index(),
     __metadata("design:type", Object)
 ], AuthSession.prototype, "userId", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], AuthSession.prototype, "name", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
@@ -34,18 +38,29 @@ __decorate([
 __decorate([
     typeorm_1.Column({ nullable: true }),
     __metadata("design:type", String)
-], AuthSession.prototype, "location", void 0);
+], AuthSession.prototype, "ip", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], AuthSession.prototype, "browser", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], AuthSession.prototype, "os", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Date)
 ], AuthSession.prototype, "lastUsed", void 0);
 __decorate([
-    typeorm_1.Column({ default: moment().add(1, 'year').toDate() }),
+    typeorm_1.Column({ default: moment().add(6, 'months').toDate() }),
     __metadata("design:type", Date)
 ], AuthSession.prototype, "validUntil", void 0);
 __decorate([
     typeorm_1.Column({ default: true }),
     __metadata("design:type", Boolean)
 ], AuthSession.prototype, "valid", void 0);
+AuthSession = __decorate([
+    typeorm_1.Entity('auth_sessions')
+], AuthSession);
 exports.AuthSession = AuthSession;
 //# sourceMappingURL=auth-session.entity.js.map

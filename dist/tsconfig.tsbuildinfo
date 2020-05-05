@@ -4462,15 +4462,15 @@
         "signature": "8ed90261a62f0fd885a047c5642a46d8a5bfd3463c24dacebae48d7a81114173"
       },
       "../src/auth-email/account-confirm.hbs.ts": {
-        "version": "cd6a574a6d818ef865f782bcd7eb8124ec60f92e8d8dfa26635809cdc052fc78",
-        "signature": "5ac929b84a54a2073ec3047f067d331db41ad1c14d0998e1c41c2125e42cc394"
+        "version": "0984b9e01afa2a4509d14e93e8c5f720de6f3b8737742c5a10eb3f94c3a9d602",
+        "signature": "12985f0b6496bacf0f282518a21003fa211d0f0d961e66547f7243f10c6657aa"
       },
       "../src/auth-email/change-email.hbs.ts": {
-        "version": "c089b7cf87e7266bebc60e782dc2ffde68091a8cf0056c9cfebc4062072dcf57",
-        "signature": "9eaf321bd49bc84f4eecbc077ee93eb4d3094e5625613409839d095823114203"
+        "version": "894649854c6155a03e8471b70cc640865f673b1547c94fa61d5d958375c05d73",
+        "signature": "c8348597cfee529b6d52b9ba38b5736aecb2bc0200f82c9f1719fc3c67f99a14"
       },
       "../src/auth-email/auth-email.service.ts": {
-        "version": "918b603cb87e3e38ea4527a0759702972ed1ff84255adfe62f62c6cb085ee02a",
+        "version": "9122797699892810ca5a6e355e8013f527d2300c49a69b8bb2bfa40e97e3098d",
         "signature": "333b406c77eed43b501a4e11816bbf6f6b28fcaf92e64dbe23a60468fccd0f81"
       },
       "../src/auth-email/auth-email.controller.ts": {
@@ -4514,19 +4514,23 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
       "../src/auth-sessions/auth-session.entity.ts": {
-        "version": "dbf97eeeafb65d8698fdbfeba41acd3a9181b04872789944cb90dab732f97457",
-        "signature": "4d316462c63fc352fdb8d0d0b74f7b47e10f395b9b0f112623f6cb1ef762b6be"
+        "version": "8ec86a6240aeceb3de6767efcc7054dd3b885ccf8510d27eb7989796c920ff57",
+        "signature": "1af13c3b12550e0a57525715505c4c755f424eee5d2ffb1d2fa85053423c5af0"
+      },
+      "../node_modules/@types/useragent/index.d.ts": {
+        "version": "06555ed52f8ec00eea07d5eb0c4f7eea63a3c7b3dc4b3f0a970685642ad9dc64",
+        "signature": "06555ed52f8ec00eea07d5eb0c4f7eea63a3c7b3dc4b3f0a970685642ad9dc64"
       },
       "../src/auth-sessions/auth-sessions.service.ts": {
-        "version": "a366bcdb767f65c9f2a92e27c5ead0200b4545c164295360c484ad499383a8cf",
-        "signature": "8301ca2da98f56446488d700421263d8af1e6da3b76afca1c78885cb9fdb0ae5"
+        "version": "b9f7f4c20813f1dd55910485e54da10d691373af7eb858992c28f839cdae57b0",
+        "signature": "439d78abbf98424e833675f814184d9801c91879de7865e8deffc53bf0472a21"
       },
       "../src/auth-password-reset/password-reset.hbs.ts": {
-        "version": "61778fec7b68e9d7cacdced9f9a389b09c602173703a2d7292bfd39da020f2fc",
-        "signature": "6d11b23e45847d104eaeb4e782873290da6156976b7d7a338a4c8b9590e27d16"
+        "version": "f69d51b26d8cebd52ac2713ed9b6adb6a02c18b8828665c4d9d78489d2c0a6c0",
+        "signature": "587e207c154b44b4e919b1757b81eb37c1aeb0bd1eff57e016c15bc638effc26"
       },
       "../src/auth-password-reset/password-reset.service.ts": {
-        "version": "6278d5382b5063a3d27c491add110a602ac9bb368578aefad7634a0b6b6b6da4",
+        "version": "2a32ad496b16646c791d60890bdf71642dc252c46a368c469f20f1dc164f3d1e",
         "signature": "69bb0a618133194fc6aef1fc03006a261fe83718d2ef067ecb93c08c280adfd1"
       },
       "../src/auth-password-reset/password-reset.controller.ts": {
@@ -4538,11 +4542,15 @@
         "signature": "5f76d47c1e80852cf951f65ea1423f10c68eab9c52f728bb8c6e792992e81a64"
       },
       "../src/auth-sessions/auth-sessions.controller.ts": {
-        "version": "957720cb5a1f98b3cc7eca1e5e384cb27d61e9d858e0df0d49dbace70410807d",
-        "signature": "14365ac3857846c8da2407faee2906f44e50e5b130b8bb370e745dc80a0c8648"
+        "version": "b6632e9f18677e99d94498356d451d13a521ca2bedb99ef3a256251d6727c1c0",
+        "signature": "288164c1b9cd9d9d4c4ad25ad824c9444ddc66fcca96cfb739e48e20041575c0"
+      },
+      "../src/auth-sessions/init-jwt-module.ts": {
+        "version": "6f6d459f91290a68248014609c83fac712b46668cf21442fdfb232d092cb441a",
+        "signature": "1369968836abb07731a638f0dd48b7ac140e15c7963b641824c59f6337a9c523"
       },
       "../src/auth-sessions/auth-sessions.module.ts": {
-        "version": "ce8c975250265818e996f40ee41d862aff5393f09a2d7db04250cc68dc6a21d9",
+        "version": "a6655390432a395bb490201db886e8febe5af16eabb79b049914d8d52047e9ea",
         "signature": "8e6d0a4b875934175a6a47b4baa37104f3d52ab42c3674ca5763bea696568092"
       },
       "../src/auth-users/auth-users.service.ts": {
@@ -4633,10 +4641,6 @@
         "version": "7f2163dc9b2b6276ebe14981235cc65f8b6b4c4ea7ed6a738e9f411a22d8ad72",
         "signature": "20ff674de9320d123750d46e3f5400e5290d03e3d20f8914f76cf66f17f2fb8d"
       },
-      "../src/auth/init-jwt-module.ts": {
-        "version": "6f6d459f91290a68248014609c83fac712b46668cf21442fdfb232d092cb441a",
-        "signature": "1369968836abb07731a638f0dd48b7ac140e15c7963b641824c59f6337a9c523"
-      },
       "../node_modules/@types/passport-strategy/index.d.ts": {
         "version": "29d59e921bc723594bbfc98230d24f38f0d5a669f28fcf989b7468f4f95b7c52",
         "signature": "29d59e921bc723594bbfc98230d24f38f0d5a669f28fcf989b7468f4f95b7c52"
@@ -4654,7 +4658,7 @@
         "signature": "a6b158ba291ca8c38a5a1974404d6da1c2be1108af3b8c8bf634488e4c0e3a39"
       },
       "../src/auth/auth.module.ts": {
-        "version": "16e98446124801cf630ebcbdd76c2ce724613c7b9c1fe3a6831a18d7973d5907",
+        "version": "1eaa247af4989491a045ddc366664ea8e94cee8b9e21d79562a6eb532b05c810",
         "signature": "70f5707ff4d3159b9d9de8b24561cce7e303975e8f689e1d622e3bfdd7d3e29a"
       },
       "../node_modules/typeorm-naming-strategies/snake-naming.strategy.d.ts": {
@@ -4710,8 +4714,8 @@
         "signature": "6308a41b2dcb2902796326cc175d9e4b2ff11ca54cda4c962acd7a2f4b10170d"
       },
       "../src/html.d.ts": {
-        "version": "d3142922cf9ad39b8a6df2ed517f589e81894f74a62413452ed28d5946c0d62a",
-        "signature": "d3142922cf9ad39b8a6df2ed517f589e81894f74a62413452ed28d5946c0d62a"
+        "version": "dc7539bc4c5ce5913b2e1d7df86c0aac0ec0567bf8b03bb45b564ac0be879711",
+        "signature": "dc7539bc4c5ce5913b2e1d7df86c0aac0ec0567bf8b03bb45b564ac0be879711"
       },
       "../src/id-array.dto.ts": {
         "version": "ea7266b614c23cc97bbb020d4adc0fefe69c31352bcc55f7a3414a9c7b50b893",
@@ -16264,8 +16268,8 @@
         "../src/users/base-user.service.ts",
         "../src/users/user.interface.ts",
         "../src/auth-email/account-confirm.hbs.ts",
-        "../src/auth-email/auth-email.dto.ts",
         "../src/auth-email/change-email.hbs.ts",
+        "../src/auth-email/auth-email.dto.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -16382,6 +16386,13 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@types/useragent/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/auth-sessions/auth-sessions.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/jwt/index.d.ts",
@@ -16396,6 +16407,7 @@
         "../src/users/base-user.service.ts",
         "../src/auth-sessions/auth-session.entity.ts",
         "../src/auth-sessions/auth-sessions.dto.ts",
+        "../node_modules/@types/useragent/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -16455,13 +16467,11 @@
       ],
       "../src/auth-sessions/auth-sessions.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/jwt/index.d.ts",
-        "../node_modules/class-transformer/index.d.ts",
         "../src/auth/get-user.decorator.ts",
         "../src/pipes/uuid.pipe.ts",
         "../src/types.ts",
+        "../node_modules/@types/express/index.d.ts",
         "../src/users/base-user.entity.ts",
-        "../src/users/base-user.service.ts",
         "../src/auth-sessions/auth-session.entity.ts",
         "../src/auth-sessions/auth-sessions.dto.ts",
         "../src/auth-sessions/auth-sessions.service.ts",
@@ -16471,10 +16481,24 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/auth-sessions/init-jwt-module.ts": [
+        "../node_modules/@nestjs/jwt/index.d.ts",
+        "../node_modules/@nestjs/config/index.d.ts",
+        "../src/consts.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/auth-sessions/auth-sessions.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/auth-sessions/auth-session.entity.ts",
         "../src/auth-sessions/auth-sessions.controller.ts",
         "../src/auth-sessions/auth-sessions.service.ts",
+        "../src/auth-sessions/init-jwt-module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -16697,17 +16721,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/auth/init-jwt-module.ts": [
-        "../node_modules/@nestjs/jwt/index.d.ts",
-        "../node_modules/@nestjs/config/index.d.ts",
-        "../src/consts.ts",
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../node_modules/@types/passport-strategy/index.d.ts": [
         "../node_modules/@types/passport/index.d.ts",
         "../node_modules/@types/express/index.d.ts",
@@ -16759,7 +16772,6 @@
         "../src/auth-users/auth-users.module.ts",
         "../src/consts.ts",
         "../src/utils/register-queue.ts",
-        "../src/auth/init-jwt-module.ts",
         "../src/auth/jwt.strategy.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -17734,9 +17746,6 @@
         "../src/users/user.interface.ts",
         "../node_modules/@types/passport-jwt/index.d.ts"
       ],
-      "../src/auth/init-jwt-module.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
       "../src/auth-users/auth-users.controller.ts": [
         "../src/users/base-user.entity.ts",
         "../src/users/base-user.service.ts",
@@ -17881,12 +17890,14 @@
         "../src/auth-email/auth-email.service.ts",
         "../src/auth-users/auth-users.dto.ts"
       ],
+      "../src/auth-sessions/init-jwt-module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
       "../src/auth-sessions/auth-sessions.controller.ts": [
         "../src/users/base-user.entity.ts",
         "../src/auth-sessions/auth-sessions.service.ts",
-        "../node_modules/@nestjs/jwt/index.d.ts",
-        "../src/users/base-user.service.ts",
         "../src/auth-sessions/auth-sessions.dto.ts",
+        "../node_modules/@types/express/index.d.ts",
         "../src/auth-sessions/auth-session.entity.ts",
         "../src/types.ts"
       ],
@@ -27824,6 +27835,13 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@types/useragent/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@nestjs/jwt/node_modules/@types/jsonwebtoken/index.d.ts": [
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -30171,12 +30189,14 @@
       "../node_modules/@nestjs/jwt/dist/index.d.ts",
       "../node_modules/@nestjs/jwt/index.d.ts",
       "../src/auth-sessions/auth-session.entity.ts",
+      "../node_modules/@types/useragent/index.d.ts",
       "../src/auth-sessions/auth-sessions.service.ts",
       "../src/auth-password-reset/password-reset.hbs.ts",
       "../src/auth-password-reset/password-reset.service.ts",
       "../src/auth-password-reset/password-reset.controller.ts",
       "../src/auth-password-reset/password-reset.module.ts",
       "../src/auth-sessions/auth-sessions.controller.ts",
+      "../src/auth-sessions/init-jwt-module.ts",
       "../src/auth-sessions/auth-sessions.module.ts",
       "../src/auth-users/auth-users.service.ts",
       "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts",
@@ -30200,7 +30220,6 @@
       "../src/auth-users/auth-users.controller.ts",
       "../src/auth-users/auth-users.module.ts",
       "../src/utils/register-queue.ts",
-      "../src/auth/init-jwt-module.ts",
       "../node_modules/@types/passport-strategy/index.d.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@types/passport-jwt/index.d.ts",

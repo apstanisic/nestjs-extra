@@ -22,21 +22,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const jwt_1 = require("@nestjs/jwt");
 const get_user_decorator_1 = require("../auth/get-user.decorator");
 const uuid_pipe_1 = require("../pipes/uuid.pipe");
-const base_user_service_1 = require("../users/base-user.service");
 const auth_sessions_dto_1 = require("./auth-sessions.dto");
 const auth_sessions_service_1 = require("./auth-sessions.service");
 let AuthSessionsController = class AuthSessionsController {
-    constructor(service, jwtService, usersService) {
+    constructor(service) {
         this.service = service;
-        this.jwtService = jwtService;
-        this.usersService = usersService;
     }
-    login(params) {
+    login(params, req) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.service.attemptLogin(params.email, params.password);
+            return this.service.attemptLogin(params.email, params.password, req.headers['user-agent']);
         });
     }
     getAll(user) {
@@ -50,17 +46,18 @@ let AuthSessionsController = class AuthSessionsController {
             return this.service.deleteWhere({ id, userId: user.id });
         });
     }
-    getNewAccessToken(refreshToken) {
+    getNewAccessToken(refreshToken, req) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.service.getNewAccessToken(refreshToken);
+            const userAgent = req.headers['user-agent'];
+            return this.service.getNewAccessToken(refreshToken, { userAgent });
         });
     }
 };
 __decorate([
     common_1.Post('login'),
-    __param(0, common_1.Body()),
+    __param(0, common_1.Body()), __param(1, common_1.Req()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [auth_sessions_dto_1.LoginUserDto]),
+    __metadata("design:paramtypes", [auth_sessions_dto_1.LoginUserDto, Object]),
     __metadata("design:returntype", Promise)
 ], AuthSessionsController.prototype, "login", null);
 __decorate([
@@ -81,15 +78,14 @@ __decorate([
 __decorate([
     common_1.Post('sessions/new-token'),
     __param(0, common_1.Body('token')),
+    __param(1, common_1.Req()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], AuthSessionsController.prototype, "getNewAccessToken", null);
 AuthSessionsController = __decorate([
     common_1.Controller('auth'),
-    __metadata("design:paramtypes", [auth_sessions_service_1.AuthSessionsService,
-        jwt_1.JwtService,
-        base_user_service_1.BaseUserService])
+    __metadata("design:paramtypes", [auth_sessions_service_1.AuthSessionsService])
 ], AuthSessionsController);
 exports.AuthSessionsController = AuthSessionsController;
 //# sourceMappingURL=auth-sessions.controller.js.map

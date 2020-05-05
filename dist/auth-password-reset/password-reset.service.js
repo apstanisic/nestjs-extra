@@ -38,7 +38,7 @@ let PasswordResetService = class PasswordResetService {
         this.authSessionsService = authSessionsService;
         this.configService = configService;
         this.mailerService = mailerService;
-        this.passwordResetTemplate = Handlebars.compile(password_reset_hbs_1.default);
+        this.passwordResetTemplate = Handlebars.compile(password_reset_hbs_1.template);
     }
     sendResetPasswordEmail(email) {
         return __awaiter(this, void 0, void 0, function* () {

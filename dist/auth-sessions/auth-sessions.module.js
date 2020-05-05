@@ -7,14 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const typeorm_1 = require("@nestjs/typeorm");
+const auth_session_entity_1 = require("./auth-session.entity");
 const auth_sessions_controller_1 = require("./auth-sessions.controller");
 const auth_sessions_service_1 = require("./auth-sessions.service");
+const init_jwt_module_1 = require("./init-jwt-module");
 let AuthSessionsModule = class AuthSessionsModule {
 };
 AuthSessionsModule = __decorate([
     common_1.Global(),
     common_1.Module({
-        imports: [],
+        imports: [typeorm_1.TypeOrmModule.forFeature([auth_session_entity_1.AuthSession]), init_jwt_module_1.initJwtModule()],
         providers: [auth_sessions_service_1.AuthSessionsService],
         controllers: [auth_sessions_controller_1.AuthSessionsController],
         exports: [auth_sessions_service_1.AuthSessionsService],

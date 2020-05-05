@@ -1,30 +1,24 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
-import { classToClass } from 'class-transformer';
+import { Body, Controller, Delete, Get, Param, Post, Req } from '@nestjs/common';
 import { GetUser } from '../auth/get-user.decorator';
 import { ValidUUID } from '../pipes/uuid.pipe';
 import { UUID } from '../types';
+import { Request } from 'express';
 import { BaseUser } from '../users/base-user.entity';
-import { BaseUserService } from '../users/base-user.service';
 import { AuthSession } from './auth-session.entity';
 import { LoginUserDto, SignInResponse } from './auth-sessions.dto';
 import { AuthSessionsService } from './auth-sessions.service';
 
 @Controller('auth')
 export class AuthSessionsController<User extends BaseUser = BaseUser> {
-  constructor(
-    private readonly service: AuthSessionsService,
-    private readonly jwtService: JwtService,
-    private readonly usersService: BaseUserService<User>,
-  ) {}
+  constructor(private readonly service: AuthSessionsService) {}
 
   /**
    * Attempt to login user
    * @TODO should return user, refresh and access token
    */
   @Post('login')
-  async login(@Body() params: LoginUserDto): Promise<SignInResponse> {
-    return this.service.attemptLogin(params.email, params.password);
+  async login(@Body() params: LoginUserDto, @Req() req: Request): Promise<SignInResponse> {
+    return this.service.attemptLogin(params.email, params.password, req.headers['user-agent']);
   }
 
   /** Get all active sessions */
@@ -47,7 +41,11 @@ export class AuthSessionsController<User extends BaseUser = BaseUser> {
    * Get access token
    */
   @Post('sessions/new-token')
-  async getNewAccessToken(@Body('token') refreshToken: string): Promise<SignInResponse> {
-    return this.service.getNewAccessToken(refreshToken);
+  async getNewAccessToken(
+    @Body('token') refreshToken: string,
+    @Req() req: Request,
+  ): Promise<SignInResponse> {
+    const userAgent = req.headers['user-agent'];
+    return this.service.getNewAccessToken(refreshToken, { userAgent });
   }
 }

@@ -10,7 +10,7 @@ import { CommonHandlebars, getCommonTemplateValues } from '../mailer/mailer-temp
 import { MailerService } from '../mailer/mailer.service';
 import { BaseUser } from '../users/base-user.entity';
 /** Handlebars template */
-import passwordResetTemplate from './password-reset.hbs';
+import { template as passwordResetTemplate } from './password-reset.hbs';
 
 interface PasswordResetTemplateParams extends CommonHandlebars {
   resetUrl: string;
