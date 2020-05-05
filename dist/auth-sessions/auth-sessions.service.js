@@ -26,12 +26,12 @@ const jwt_1 = require("@nestjs/jwt");
 const typeorm_1 = require("@nestjs/typeorm");
 const class_transformer_1 = require("class-transformer");
 const Faker = require("faker");
+const moment = require("moment");
 const typeorm_2 = require("typeorm");
 const base_service_1 = require("../base.service");
 const consts_1 = require("../consts");
 const base_user_service_1 = require("../users/base-user.service");
 const auth_session_entity_1 = require("./auth-session.entity");
-const moment = require("moment");
 let AuthSessionsService = class AuthSessionsService extends base_service_1.BaseService {
     constructor(repository, usersService, jwtService) {
         super(repository);
