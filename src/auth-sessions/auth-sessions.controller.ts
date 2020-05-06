@@ -1,12 +1,13 @@
-import { Body, Controller, Delete, Get, Param, Post, Req } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Req, Res } from '@nestjs/common';
 import { GetUser } from '../auth/get-user.decorator';
 import { ValidUUID } from '../pipes/uuid.pipe';
 import { UUID } from '../types';
-import { Request } from 'express';
+import { Request, Response } from 'express';
 import { BaseUser } from '../users/base-user.entity';
 import { AuthSession } from './auth-session.entity';
 import { LoginUserDto, SignInResponse } from './auth-sessions.dto';
 import { AuthSessionsService } from './auth-sessions.service';
+import * as moment from 'moment';
 
 @Controller('auth')
 export class AuthSessionsController<User extends BaseUser = BaseUser> {
@@ -14,11 +15,27 @@ export class AuthSessionsController<User extends BaseUser = BaseUser> {
 
   /**
    * Attempt to login user
-   * @TODO should return user, refresh and access token
+   * Send response manually because we're setting cookies, and we can't just return value
    */
   @Post('login')
-  async login(@Body() params: LoginUserDto, @Req() req: Request): Promise<SignInResponse> {
-    return this.service.attemptLogin(params.email, params.password, req.headers['user-agent']);
+  async login(
+    @Body() params: LoginUserDto,
+    @Req() req: Request,
+    @Res() res: Response<SignInResponse>,
+  ): Promise<void> {
+    const result = await this.service.attemptLogin(
+      params.email,
+      params.password,
+      req.headers['user-agent'],
+    );
+
+    res.cookie('refresh-token', result.refreshToken, {
+      httpOnly: true,
+      expires: moment().add(6, 'months').toDate(),
+    });
+
+    res.cookie('access-token', result.token, { httpOnly: true });
+    res.send({ user: result.user, token: result.token });
   }
 
   /** Get all active sessions */
@@ -39,13 +56,23 @@ export class AuthSessionsController<User extends BaseUser = BaseUser> {
 
   /**
    * Get access token
+   * Send response manually because we're setting cookies, and we can't just return value
    */
   @Post('sessions/new-token')
   async getNewAccessToken(
-    @Body('token') refreshToken: string,
     @Req() req: Request,
-  ): Promise<SignInResponse> {
+    @Res() res: Response<SignInResponse>,
+  ): Promise<void> {
+    const isProduction = process.env.NODE_ENV === 'production';
     const userAgent = req.headers['user-agent'];
-    return this.service.getNewAccessToken(refreshToken, { userAgent });
+    const refreshToken = req.cookies['refresh-token'];
+    const result = await this.service.getNewAccessToken(refreshToken, { userAgent });
+    res.cookie('refresh-token', result.refreshToken, {
+      httpOnly: true,
+      secure: isProduction,
+      expires: moment().add(6, 'months').toDate(),
+    });
+    res.cookie('access-token', result.token, { httpOnly: true });
+    res.send({ user: result.user, token: result.token });
   }
 }

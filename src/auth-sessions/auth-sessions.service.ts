@@ -31,7 +31,11 @@ export class AuthSessionsService<User extends BaseUser = BaseUser> extends BaseS
   /**
    * Attempt to sign in user
    */
-  async attemptLogin(email: string, password: string, userAgent?: string): Promise<SignInResponse> {
+  async attemptLogin(
+    email: string,
+    password: string,
+    userAgent?: string,
+  ): Promise<SignInResponse & { refreshToken: string }> {
     const user = await this.usersService.findOne({ email });
     const validPassword = await user.checkPassword(password);
     if (!validPassword) throw new BadRequestException('Invalid parameters.');
@@ -60,7 +64,7 @@ export class AuthSessionsService<User extends BaseUser = BaseUser> extends BaseS
   async getNewAccessToken(
     refreshToken: string,
     options: { userAgent?: string },
-  ): Promise<SignInResponse> {
+  ): Promise<SignInResponse & { refreshToken: string }> {
     const session = await this.findOne({ refreshToken, valid: true });
     const user = await this.usersService.findOne(session.userId);
     const { email, name, id } = user;

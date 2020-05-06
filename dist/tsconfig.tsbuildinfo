@@ -4382,8 +4382,8 @@
         "signature": "837a9f6785dfad0735acdffe0270881f9ec23ea91a3be3f50730b8b18dc0f04f"
       },
       "../src/auth-sessions/auth-sessions.dto.ts": {
-        "version": "f2a224095caaae11edff551e13bbec6483381f23ed7417369675f311abb1b034",
-        "signature": "5ec8b3318371a7067d12206356c71f620c880439321fe754fa17c56552d10b73"
+        "version": "5ee6bb8b133d42b017319e44731dfd435d45669eca22ea10ec976a15da9d4e0f",
+        "signature": "50a02295590bd74dcc3954368d9d4fe43efcae05ac4c26293a2779f8be3dab15"
       },
       "../src/users/base-user.service.ts": {
         "version": "9fe34c534a2c98a6d13b9adaa5676d6b8e27f1091a91da1534e5fcb5a7c782fc",
@@ -4514,7 +4514,7 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
       "../src/auth-sessions/auth-session.entity.ts": {
-        "version": "8ec86a6240aeceb3de6767efcc7054dd3b885ccf8510d27eb7989796c920ff57",
+        "version": "b1b9392c0a46b82b2696bd2e729befed924f6c9800936b13d252a48a48e45c13",
         "signature": "1af13c3b12550e0a57525715505c4c755f424eee5d2ffb1d2fa85053423c5af0"
       },
       "../node_modules/@types/useragent/index.d.ts": {
@@ -4522,8 +4522,8 @@
         "signature": "06555ed52f8ec00eea07d5eb0c4f7eea63a3c7b3dc4b3f0a970685642ad9dc64"
       },
       "../src/auth-sessions/auth-sessions.service.ts": {
-        "version": "b9f7f4c20813f1dd55910485e54da10d691373af7eb858992c28f839cdae57b0",
-        "signature": "439d78abbf98424e833675f814184d9801c91879de7865e8deffc53bf0472a21"
+        "version": "f047fffa033e6ad6488de2e67056368266f28e85178755e86a03c19c8752a5a7",
+        "signature": "9edf8e15bad4ac48579f02e755b57e813fd3a82536f7c0e51aee900f7d8c5381"
       },
       "../src/auth-password-reset/password-reset.hbs.ts": {
         "version": "f69d51b26d8cebd52ac2713ed9b6adb6a02c18b8828665c4d9d78489d2c0a6c0",
@@ -4542,8 +4542,8 @@
         "signature": "5f76d47c1e80852cf951f65ea1423f10c68eab9c52f728bb8c6e792992e81a64"
       },
       "../src/auth-sessions/auth-sessions.controller.ts": {
-        "version": "b6632e9f18677e99d94498356d451d13a521ca2bedb99ef3a256251d6727c1c0",
-        "signature": "288164c1b9cd9d9d4c4ad25ad824c9444ddc66fcca96cfb739e48e20041575c0"
+        "version": "73dd5c8d5f1e436f186bda369e6349d587ad8b92f1d8d652c95ee2c96d4fe8cd",
+        "signature": "66f1778320b425d9a7085ed82848bf987964bac25361c54c6d33fc5506095fa7"
       },
       "../src/auth-sessions/init-jwt-module.ts": {
         "version": "6f6d459f91290a68248014609c83fac712b46668cf21442fdfb232d092cb441a",
@@ -16475,6 +16475,7 @@
         "../src/auth-sessions/auth-session.entity.ts",
         "../src/auth-sessions/auth-sessions.dto.ts",
         "../src/auth-sessions/auth-sessions.service.ts",
+        "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",

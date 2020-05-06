@@ -43,7 +43,7 @@ export class AuthSession<User extends BaseUser> extends UuidEntity {
   os?: string;
 
   /** When was last time new access token was generated */
-  @Column()
+  @Column({ default: new Date() })
   lastUsed: Date;
 
   @Column({ default: moment().add(6, 'months').toDate() })

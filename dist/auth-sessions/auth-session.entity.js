@@ -48,7 +48,7 @@ __decorate([
     __metadata("design:type", String)
 ], AuthSession.prototype, "os", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: new Date() }),
     __metadata("design:type", Date)
 ], AuthSession.prototype, "lastUsed", void 0);
 __decorate([

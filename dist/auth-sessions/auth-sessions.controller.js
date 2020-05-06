@@ -26,13 +26,20 @@ const get_user_decorator_1 = require("../auth/get-user.decorator");
 const uuid_pipe_1 = require("../pipes/uuid.pipe");
 const auth_sessions_dto_1 = require("./auth-sessions.dto");
 const auth_sessions_service_1 = require("./auth-sessions.service");
+const moment = require("moment");
 let AuthSessionsController = class AuthSessionsController {
     constructor(service) {
         this.service = service;
     }
-    login(params, req) {
+    login(params, req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.service.attemptLogin(params.email, params.password, req.headers['user-agent']);
+            const result = yield this.service.attemptLogin(params.email, params.password, req.headers['user-agent']);
+            res.cookie('refresh-token', result.refreshToken, {
+                httpOnly: true,
+                expires: moment().add(6, 'months').toDate(),
+            });
+            res.cookie('access-token', result.token, { httpOnly: true });
+            res.send({ user: result.user, token: result.token });
         });
     }
     getAll(user) {
@@ -46,18 +53,29 @@ let AuthSessionsController = class AuthSessionsController {
             return this.service.deleteWhere({ id, userId: user.id });
         });
     }
-    getNewAccessToken(refreshToken, req) {
+    getNewAccessToken(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const isProduction = process.env.NODE_ENV === 'production';
             const userAgent = req.headers['user-agent'];
-            return this.service.getNewAccessToken(refreshToken, { userAgent });
+            const refreshToken = req.cookies['refresh-token'];
+            const result = yield this.service.getNewAccessToken(refreshToken, { userAgent });
+            res.cookie('refresh-token', result.refreshToken, {
+                httpOnly: true,
+                secure: isProduction,
+                expires: moment().add(6, 'months').toDate(),
+            });
+            res.cookie('access-token', result.token, { httpOnly: true });
+            res.send({ user: result.user, token: result.token });
         });
     }
 };
 __decorate([
     common_1.Post('login'),
-    __param(0, common_1.Body()), __param(1, common_1.Req()),
+    __param(0, common_1.Body()),
+    __param(1, common_1.Req()),
+    __param(2, common_1.Res()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [auth_sessions_dto_1.LoginUserDto, Object]),
+    __metadata("design:paramtypes", [auth_sessions_dto_1.LoginUserDto, Object, Object]),
     __metadata("design:returntype", Promise)
 ], AuthSessionsController.prototype, "login", null);
 __decorate([
@@ -77,10 +95,10 @@ __decorate([
 ], AuthSessionsController.prototype, "revoke", null);
 __decorate([
     common_1.Post('sessions/new-token'),
-    __param(0, common_1.Body('token')),
-    __param(1, common_1.Req()),
+    __param(0, common_1.Req()),
+    __param(1, common_1.Res()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], AuthSessionsController.prototype, "getNewAccessToken", null);
 AuthSessionsController = __decorate([

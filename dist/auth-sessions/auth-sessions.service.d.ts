@@ -9,8 +9,12 @@ export declare class AuthSessionsService<User extends BaseUser = BaseUser> exten
     private readonly usersService;
     private readonly jwtService;
     constructor(repository: Repository<AuthSession<User>>, usersService: BaseUserService<User>, jwtService: JwtService);
-    attemptLogin(email: string, password: string, userAgent?: string): Promise<SignInResponse>;
+    attemptLogin(email: string, password: string, userAgent?: string): Promise<SignInResponse & {
+        refreshToken: string;
+    }>;
     getNewAccessToken(refreshToken: string, options: {
         userAgent?: string;
-    }): Promise<SignInResponse>;
+    }): Promise<SignInResponse & {
+        refreshToken: string;
+    }>;
 }

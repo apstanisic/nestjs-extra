@@ -6,5 +6,4 @@ export declare class LoginUserDto {
 export declare class SignInResponse {
     token: string;
     user: BaseUser;
-    refreshToken: string;
 }

@@ -16,5 +16,4 @@ export class LoginUserDto {
 export class SignInResponse {
   token: string;
   user: BaseUser;
-  refreshToken: string;
 }
