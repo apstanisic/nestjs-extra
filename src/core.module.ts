@@ -28,6 +28,7 @@ export interface CoreModuleParams {
   dbLog?: boolean;
   notifications?: boolean;
   useMq?: boolean;
+  useMail?: boolean;
   // auth?: { templates: Record<string, string> };
 }
 
@@ -56,6 +57,7 @@ export class CoreModule {
 
     if (params.storage !== false) modules.push(StorageModule.forRoot(params.storage));
     if (params.dbLog) modules.push(ActivityLoggerModule);
+    if (params.useMail) modules.push(MailerModule);
     if (params.notifications) modules.push(NotificationsModule.forRoot(params.useMq));
     if (params.accessControl) {
       modules.push(AccessControlModule.forRoot(params.accessControl));
