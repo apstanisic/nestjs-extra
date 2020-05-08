@@ -17,33 +17,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const class_transformer_1 = require("class-transformer");
-const common_1 = require("@nestjs/common");
-const class_validator_1 = require("class-validator");
 const typeorm_1 = require("typeorm");
+const validate_entity_1 = require("./validate-entity");
 let CoreEntity = class CoreEntity {
     validate() {
         return __awaiter(this, void 0, void 0, function* () {
-            let errors = yield class_validator_1.validate(this);
-            if (errors.length > 0) {
-                errors = errors.map((_a) => {
-                    var { target } = _a, other = __rest(_a, ["target"]);
-                    return (Object.assign(Object.assign({}, other), { target: class_transformer_1.classToClass(target) }));
-                });
-                throw new common_1.BadRequestException(errors);
-            }
+            yield validate_entity_1.validateEntity(this);
         });
     }
 };
@@ -57,13 +38,6 @@ __decorate([
     typeorm_1.Index(),
     __metadata("design:type", Date)
 ], CoreEntity.prototype, "createdAt", void 0);
-__decorate([
-    typeorm_1.BeforeInsert(),
-    typeorm_1.BeforeUpdate(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], CoreEntity.prototype, "validate", null);
 CoreEntity = __decorate([
     typeorm_1.Index(['createdAt', 'id'])
 ], CoreEntity);

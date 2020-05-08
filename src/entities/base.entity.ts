@@ -9,7 +9,8 @@ import {
   BeforeUpdate,
   Index,
 } from 'typeorm';
-import { WithId } from '../types';
+import { WithId, IdType } from '../types';
+import { validateEntity } from './validate-entity';
 
 /**
  * All entities should extend this class. It has basic properties
@@ -19,7 +20,7 @@ import { WithId } from '../types';
 @Index(['createdAt', 'id'])
 export abstract class CoreEntity implements WithId {
   /** Unique Id */
-  id: string | number;
+  id: IdType;
 
   /** Date when entity was updated */
   @UpdateDateColumn({ precision: 3 })
@@ -35,14 +36,9 @@ export abstract class CoreEntity implements WithId {
    * All entities will be auto validated before inserting or updating.
    * Exclude private fields when returning errors.
    */
-  @BeforeInsert()
-  @BeforeUpdate()
+  // @BeforeInsert()
+  // @BeforeUpdate()
   async validate(): Promise<void> {
-    let errors = await validate(this);
-
-    if (errors.length > 0) {
-      errors = errors.map(({ target, ...other }) => ({ ...other, target: classToClass(target) }));
-      throw new BadRequestException(errors);
-    }
+    await validateEntity(this);
   }
 }

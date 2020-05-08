@@ -12,12 +12,18 @@ import { PaginationParams } from './pagination/pagination-options';
 import { PgResult } from './pagination/pagination.types';
 import { paginate } from './pagination/_paginate.helper';
 import { parseQuery } from './typeorm/parse-to-orm-query';
-import { OrmWhere, WithId, ParsedOrmWhere } from './types';
+import { OrmWhere, WithId, ParsedOrmWhere, IdType } from './types';
 
 export type FindOneParams<T> = Omit<FindOneOptions<T>, 'where'>;
 export type FindManyParams<T> = Omit<FindManyOptions<T>, 'where'>;
 
-type Where = FindConditions<Entity>[] | FindConditions<Entity> | ObjectLiteral | string;
+type Where =
+  | FindConditions<Entity>[]
+  | FindConditions<Entity>
+  | ObjectLiteral
+  | string
+  | null
+  | undefined;
 
 /**
  * Base service for finding entities.
@@ -25,14 +31,14 @@ type Where = FindConditions<Entity>[] | FindConditions<Entity> | ObjectLiteral |
  * This is separated because LoggerService can extend this class,
  * but not BaseService class. It's because it's used in main class.
  */
-export class BaseFindService<T extends WithId = any> {
-  constructor(protected readonly repository: Repository<T>) {}
+export class BaseFindService<Entity extends WithId = any> {
+  constructor(protected readonly repository: Repository<Entity>) {}
 
   /** Terminal logger */
-  protected logger = new Logger();
+  protected logger = new Logger(BaseFindService.name);
 
   /** Use only when you must. If this method is used, that means api should be updated */
-  public _getRepository(): Repository<T> {
+  public _getRepository(): Repository<Entity> {
     return this.repository;
   }
 
@@ -42,17 +48,18 @@ export class BaseFindService<T extends WithId = any> {
    * @example Left is passed value, right is parsed
    * ({ price__lt: 5 } => { price: LessThan(5) })
    */
-  async findOne(filter: OrmWhere<T> | number, searchOptions: FindManyOptions<T> = {}): Promise<T> {
-    let entity: T | undefined;
+  async findOne(
+    filter: OrmWhere<Entity> | IdType,
+    searchOptions: FindManyOptions<Entity> = {},
+  ): Promise<Entity> {
+    let entity: Entity | undefined;
     let where;
 
     // If string or number, then search by id
-    if (typeof filter === 'string' || typeof filter === 'number') {
-      where = { id: filter };
-    } else {
-      where = filter;
-    }
+    // If filter is string convert to IdObject, othervise use filter
+    where = typeof filter === 'string' || typeof filter === 'number' ? { id: filter } : filter;
 
+    // searchOptions.where is additional filter that server can pass manually
     where = this.combineWheres(where, searchOptions.where);
 
     try {
@@ -65,8 +72,10 @@ export class BaseFindService<T extends WithId = any> {
     return entity;
   }
 
-  /** Find entities by multiple ids */
-  async findByIds(ids: (string | number)[], searchOptions: FindManyOptions<T> = {}): Promise<T[]> {
+  /**
+   * Find entities by multiple ids
+   */
+  async findByIds(ids: IdType[], searchOptions: FindManyOptions<Entity> = {}): Promise<Entity[]> {
     try {
       const entities = await this.repository.findByIds(ids, searchOptions);
       return entities;
@@ -75,8 +84,13 @@ export class BaseFindService<T extends WithId = any> {
     }
   }
 
-  /** Find all entities that match criteria */
-  async find(filter: OrmWhere<T> = {}, searchOptions: FindManyOptions<T> = {}): Promise<T[]> {
+  /**
+   * Find all entities that match criteria
+   */
+  async find(
+    filter: OrmWhere<Entity> = {},
+    searchOptions: FindManyOptions<Entity> = {},
+  ): Promise<Entity[]> {
     const where = this.combineWheres(filter, searchOptions.where);
     try {
       const res = await this.repository.find({ ...searchOptions, where });
@@ -92,17 +106,20 @@ export class BaseFindService<T extends WithId = any> {
    * You can pass where query in options object or as a second param.
    * It will merge both wheres, with newer where having presedance.
    */
-  async paginate(options: PaginationParams<T>, where?: OrmWhere<T>): PgResult<T> {
-    const { repository } = this;
-
+  async paginate(options: PaginationParams<Entity>, where?: OrmWhere<Entity>): PgResult<Entity> {
     options.where = this.combineWheres(options.where, where);
 
-    const paginated = await paginate({ repository, options });
+    const paginated = await paginate({ repository: this.repository, options });
     return paginated;
   }
 
-  /** Count result of a query */
-  async count(filter: OrmWhere<T>, searchOptions: FindManyOptions<T> = {}): Promise<number> {
+  /**
+   * Count result of a query
+   */
+  async count(
+    filter: OrmWhere<Entity>,
+    searchOptions: FindManyOptions<Entity> = {},
+  ): Promise<number> {
     const where = this.combineWheres(filter, searchOptions.where);
     try {
       const count = await this.repository.count({ ...searchOptions, where });
@@ -112,14 +129,18 @@ export class BaseFindService<T extends WithId = any> {
     }
   }
 
-  /** Helper to throw internal error */
+  /**
+   * Helper to throw internal error
+   */
   protected internalError(message: string, error?: any): InternalServerErrorException {
     this.logger.error(message, error);
     return new InternalServerErrorException();
   }
 
-  /** Combine 2 where. If both aren't objects take 1 that is. If neither are take 1st */
-  protected combineWheres(where1: Where = {}, where2: Where = {}): ParsedOrmWhere<T> {
+  /**
+   * Combine 2 where. If both aren't objects take 1 that is. If neither are take 1st
+   */
+  protected combineWheres(where1: Where = {}, where2: Where = {}): ParsedOrmWhere<Entity> {
     let combined;
     if (typeof where1 === 'object' && typeof where2 === 'object') {
       combined = { ...where1, ...where2 };

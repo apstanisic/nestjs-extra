@@ -22,6 +22,7 @@ const common_1 = require("@nestjs/common");
 const base_find_service_1 = require("./base-find.service");
 const consts_1 = require("./consts");
 const db_logger_service_1 = require("./logger/db-logger.service");
+const validate_entity_1 = require("./entities/validate-entity");
 class BaseService extends base_find_service_1.BaseFindService {
     constructor(repository) {
         super(repository);
@@ -29,72 +30,41 @@ class BaseService extends base_find_service_1.BaseFindService {
     }
     create(data, meta) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const entity = this.repository.create(data);
-                const savedEntity = yield this.repository.save(entity);
-                if (this.dbLoggerService && meta) {
-                    const log = this.dbLoggerService.generateLog({ meta });
-                    yield this.dbLoggerService.store(log, 'create', savedEntity);
-                }
-                return savedEntity;
+            const entity = this.repository.create(data);
+            yield validate_entity_1.validateEntity(entity);
+            const savedEntity = yield this.repository.save(entity);
+            if (this.dbLoggerService && meta) {
+                const log = this.dbLoggerService.generateLog({ meta });
+                yield this.dbLoggerService.store(log, 'create', savedEntity);
             }
-            catch (error) {
-                throw new common_1.BadRequestException(error);
-            }
+            return savedEntity;
         });
     }
     update(entityOrId, updatedData = {}, meta, options) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                let entity;
-                if (options === null || options === void 0 ? void 0 : options.usePassedEntity) {
-                    if (typeof entityOrId === 'string' || typeof entityOrId === 'number') {
-                        this.logger.error('Passed entity is string');
-                        throw new common_1.InternalServerErrorException();
-                    }
-                    entity = entityOrId;
-                }
-                else if (typeof entityOrId === 'string' || typeof entityOrId === 'number') {
-                    entity = yield this.findOne(entityOrId);
-                }
-                else {
-                    entity = yield this.findOne(entityOrId.id);
-                }
-                let log;
-                if (this.dbLoggerService && meta) {
-                    log = this.dbLoggerService.generateLog({ meta, oldValue: entity });
-                }
-                this.repository.merge(entity, updatedData);
-                const updatedEntity = yield this.repository.save(entity);
-                if (this.dbLoggerService && log) {
-                    yield this.dbLoggerService.store(log, 'update', updatedEntity);
-                }
-                return updatedEntity;
+            let entity;
+            if (typeof entityOrId === 'string' || typeof entityOrId === 'number') {
+                entity = yield this.findOne(entityOrId);
             }
-            catch (error) {
-                this.logger.error('Error updating', error);
-                throw new common_1.BadRequestException();
+            else if (options === null || options === void 0 ? void 0 : options.usePassedEntity) {
+                if (!entityOrId.id)
+                    throw this.internalError('Entity id is null od update');
+                entity = entityOrId;
             }
-        });
-    }
-    mutate(entity, meta) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                let log;
-                if (this.dbLoggerService && meta) {
-                    const oldValue = yield this.findOne(entity.id);
-                    log = this.dbLoggerService.generateLog({ meta, oldValue });
-                }
-                const mutatedEntity = yield this.repository.save(entity);
-                if (this.dbLoggerService && log) {
-                    yield this.dbLoggerService.store(log, 'update', mutatedEntity);
-                }
-                return mutatedEntity;
+            else {
+                entity = yield this.findOne(entityOrId);
             }
-            catch (error) {
-                this.logger.error('Error mutation', error);
-                throw new common_1.BadRequestException();
+            let log;
+            if (this.dbLoggerService && meta) {
+                log = this.dbLoggerService.generateLog({ meta, oldValue: entity });
             }
+            const merged = this.repository.merge(entity, updatedData);
+            yield validate_entity_1.validateEntity(merged);
+            const updatedEntity = yield this.repository.save(merged);
+            if (this.dbLoggerService && log) {
+                yield this.dbLoggerService.store(log, 'update', updatedEntity);
+            }
+            return updatedEntity;
         });
     }
     updateWhere(where, data, meta) {
@@ -104,36 +74,44 @@ class BaseService extends base_find_service_1.BaseFindService {
             return updated;
         });
     }
+    mutate(entity, meta) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let log;
+            if (this.dbLoggerService && meta) {
+                const oldValue = yield this.findOne(entity.id);
+                log = this.dbLoggerService.generateLog({ meta, oldValue });
+            }
+            yield validate_entity_1.validateEntity(entity);
+            const mutatedEntity = yield this.repository.save(entity);
+            if (this.dbLoggerService && log) {
+                yield this.dbLoggerService.store(log, 'update', mutatedEntity);
+            }
+            return mutatedEntity;
+        });
+    }
     delete(entityOrId, meta, options) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                let entity;
-                if (options === null || options === void 0 ? void 0 : options.usePassedEntity) {
-                    if (typeof entityOrId === 'string') {
-                        throw new common_1.InternalServerErrorException();
-                    }
-                    entity = entityOrId;
-                }
-                else if (typeof entityOrId === 'string') {
-                    entity = yield this.findOne(entityOrId);
-                }
-                else {
-                    entity = yield this.findOne(entityOrId.id);
-                }
-                let log;
-                if (this.dbLoggerService && meta) {
-                    log = this.dbLoggerService.generateLog({ oldValue: entity, meta });
-                }
-                const deleted = yield this.repository.remove(entity);
-                if (this.dbLoggerService && log !== undefined) {
-                    yield this.dbLoggerService.store(log, 'delete');
-                }
-                return deleted;
+            let entity;
+            if (typeof entityOrId === 'string' || typeof entityOrId === 'number') {
+                entity = yield this.findOne(entityOrId);
             }
-            catch (error) {
-                this.logger.error('Problem deleting', error);
-                throw new common_1.InternalServerErrorException();
+            else if (options === null || options === void 0 ? void 0 : options.usePassedEntity) {
+                entity = entityOrId;
             }
+            else {
+                entity = yield this.findOne(entityOrId);
+            }
+            if (!entity.id)
+                throw this.internalError('Entity for deletion does not have id');
+            let log;
+            if (this.dbLoggerService && meta) {
+                log = this.dbLoggerService.generateLog({ oldValue: entity, meta });
+            }
+            const deleted = yield this.repository.remove(entity);
+            if (this.dbLoggerService && log !== undefined) {
+                yield this.dbLoggerService.store(log, 'delete');
+            }
+            return deleted;
         });
     }
     deleteWhere(where, logMetadata) {

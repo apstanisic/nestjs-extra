@@ -15,7 +15,7 @@ const parse_to_orm_query_1 = require("./typeorm/parse-to-orm-query");
 class BaseFindService {
     constructor(repository) {
         this.repository = repository;
-        this.logger = new common_1.Logger();
+        this.logger = new common_1.Logger(BaseFindService.name);
     }
     _getRepository() {
         return this.repository;
@@ -24,12 +24,7 @@ class BaseFindService {
         return __awaiter(this, void 0, void 0, function* () {
             let entity;
             let where;
-            if (typeof filter === 'string' || typeof filter === 'number') {
-                where = { id: filter };
-            }
-            else {
-                where = filter;
-            }
+            where = typeof filter === 'string' || typeof filter === 'number' ? { id: filter } : filter;
             where = this.combineWheres(where, searchOptions.where);
             try {
                 entity = yield this.repository.findOne(Object.assign(Object.assign({}, searchOptions), { where }));
@@ -67,9 +62,8 @@ class BaseFindService {
     }
     paginate(options, where) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { repository } = this;
             options.where = this.combineWheres(options.where, where);
-            const paginated = yield _paginate_helper_1.paginate({ repository, options });
+            const paginated = yield _paginate_helper_1.paginate({ repository: this.repository, options });
             return paginated;
         });
     }

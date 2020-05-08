@@ -3410,8 +3410,8 @@
         "signature": "dba7030620268aa2629e3557de2663d2f1fe9feffa18175cd0ddbe03fc9f637d"
       },
       "../src/base-find.service.ts": {
-        "version": "e18cefece32006ab23789be560942390ab87b21ccb35579b26555c4aed57d774",
-        "signature": "a3f6ba2e9a87a19ece2806753ac4c8b2572c9bfaf6754ad823d83b4d6075f1f1"
+        "version": "253a6b34e5dfc9dd44e8284e92376318a10ff9884e338341e7bd500fb277da6e",
+        "signature": "ad17fcee39faed13fb3fba8b8be2d092a7f8391c4b0e234ce366c61ab81802d6"
       },
       "../src/consts.ts": {
         "version": "79a5c6c74fdb1400f5059c60a7e6a499ec31210d80dd7db5770637504db3b255",
@@ -3445,9 +3445,13 @@
         "version": "097d4bf3331df1e138ffdcf92e1117f6841bc8337170d927fd955d5ee8a1674b",
         "signature": "097d4bf3331df1e138ffdcf92e1117f6841bc8337170d927fd955d5ee8a1674b"
       },
+      "../src/entities/validate-entity.ts": {
+        "version": "a7945f3d3d0435b4cdb60caa45ea4c39da939ac8d16c91c8c3135cfe548f3467",
+        "signature": "c33af110f1580dffb5820dd74517d15ae9e66823fa4201228b774d842914b6d0"
+      },
       "../src/entities/base.entity.ts": {
-        "version": "6f93f1993ad608332ca003cd800c6947960c5ac0c22ac9f805b92283af231bde",
-        "signature": "26bd751b7c083e3f609a04eb22bbe9920369e082a998d123b13a5f6895f3014e"
+        "version": "f0a7eab84a0a5258cadcb5ecbb1f077d6ed91cd7f26306cb640890b64dbf1701",
+        "signature": "07afb075f22c68223bc15c598005be48d774a03e037e57ce10f18563b8a5fca5"
       },
       "../src/entities/base-uuid.entity.ts": {
         "version": "31fb9e71ef60d5b62d9507a04014ae9a22631b8483143b6d691bf6ce990e5c84",
@@ -3526,8 +3530,8 @@
         "signature": "5c471b3120de5e5cd455acc7195cec44c435615fe0a772449bdafa1fcaee4a9b"
       },
       "../src/base.service.ts": {
-        "version": "22fe1c2fd5ea536c2dcd170a9c1d81280de6a4c10dd1cf1f96ea07069724a9ef",
-        "signature": "d0f22cd29f82a72f317d3c9f2b55754603436f764e495906a4a2a94a0ead9cc1"
+        "version": "33325486857e218cfbcf78a9b7a1e869cc2611cd23573ed60cce96ee9707d3e4",
+        "signature": "3fe9febbf851679151d55874a95cd8e2d087666b53c05faf2688439999374261"
       },
       "../node_modules/@types/node/globals.d.ts": {
         "version": "9d0b32c595a2e0d320a56b3d0e8f0a317e4149239ec913aa8f11eeb73edc92be",
@@ -13800,12 +13804,24 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/entities/validate-entity.ts": [
+        "../node_modules/class-validator/types/index.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/class-transformer/index.d.ts",
+        "../src/types.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/entities/base.entity.ts": [
         "../node_modules/class-transformer/index.d.ts",
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/class-validator/types/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/types.ts",
+        "../src/entities/validate-entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -14006,6 +14022,8 @@
         "../src/logger/activity-log.entity.ts",
         "../src/logger/db-logger.service.ts",
         "../src/types.ts",
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/entities/validate-entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -18562,6 +18580,9 @@
       ],
       "../src/logger/activity-log-metadata.ts": [
         "../src/users/user.interface.ts",
+        "../src/types.ts"
+      ],
+      "../src/entities/validate-entity.ts": [
         "../src/types.ts"
       ],
       "../src/base-find.service.ts": [
@@ -29892,6 +29913,7 @@
       "../node_modules/class-transformer/TransformOperationExecutor.d.ts",
       "../node_modules/class-transformer/decorators.d.ts",
       "../node_modules/class-transformer/index.d.ts",
+      "../src/entities/validate-entity.ts",
       "../src/entities/base.entity.ts",
       "../src/entities/base-uuid.entity.ts",
       "../src/entities/image.entity.ts",
