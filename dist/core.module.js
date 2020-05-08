@@ -43,6 +43,8 @@ let CoreModule = CoreModule_1 = class CoreModule {
             modules.push(storage_module_1.StorageModule.forRoot(params.storage));
         if (params.dbLog)
             modules.push(db_logger_module_1.ActivityLoggerModule);
+        if (params.useMail)
+            modules.push(mailer_module_1.MailerModule);
         if (params.notifications)
             modules.push(notification_module_1.NotificationsModule.forRoot(params.useMq));
         if (params.accessControl) {

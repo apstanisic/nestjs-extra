@@ -11,6 +11,7 @@ export interface CoreModuleParams {
     dbLog?: boolean;
     notifications?: boolean;
     useMq?: boolean;
+    useMail?: boolean;
 }
 export declare class CoreModule {
     static forRoot(params: CoreModuleParams): DynamicModule;

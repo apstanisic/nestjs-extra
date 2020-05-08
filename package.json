@@ -23,14 +23,11 @@
   },
   "dependencies": {
     "@nestjs/bull": "^0.1.1",
-    "@nestjs/common": "7.0.0",
     "@nestjs/config": "^0.4.0",
     "@nestjs/core": "7.0.0",
     "@nestjs/jwt": "^7.0.0",
     "@nestjs/passport": "^7.0.0",
-    "@nestjs/platform-express": "7.0.9",
     "@nestjs/schedule": "^0.3.1",
-    "@nestjs/typeorm": "7.0.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/bull": "^3.12.2",
     "@types/cron": "^1.7.2",
@@ -63,7 +60,6 @@
     "rxjs": "^6.0.0",
     "sharp": "^0.25.2",
     "sqlstring": "^2.3.2",
-    "typeorm": "^0.2.7",
     "typeorm-naming-strategies": "^1.1.0",
     "useragent": "^2.3.0"
   },
