@@ -20,7 +20,11 @@ export interface StorageImageOptions {
   imageSizes?: ImageSize[];
 }
 
-/** Even though StorageModule is global, it's imported here just in case */
+/**
+ * Storage Images module
+ * Requires StorageModule
+ * This is "add-on" for storing images
+ */
 @Global()
 @Module({})
 export class StorageImagesModule {

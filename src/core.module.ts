@@ -25,7 +25,6 @@ export interface CoreModuleParams {
   useStorage?: boolean;
   useActivityLogger?: boolean;
   useNotifications?: boolean;
-  useMq?: boolean;
   useMail?: boolean;
   storageImagesOptions?: StorageImageOptions;
   accessControl?: AccessControlOptions;
