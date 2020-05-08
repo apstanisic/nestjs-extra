@@ -21,7 +21,7 @@ class PaginationParams {
         const params = new PaginationParams();
         if (typeof queryOrBody !== 'object')
             return params;
-        const query = Object.assign({}, queryOrBody);
+        const query = { ...queryOrBody };
         params.where = query;
         let order = query[pagination_types_1.orderByField];
         if (typeof order === 'string') {

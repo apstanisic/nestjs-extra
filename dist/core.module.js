@@ -32,7 +32,7 @@ let CoreModule = CoreModule_1 = class CoreModule {
         if (params.dbLog)
             entities.push(activity_log_entity_1.ActivityLog);
         const modules = [
-            config_1.ConfigModule.forRoot(Object.assign(Object.assign({}, params.config), { isGlobal: true })),
+            config_1.ConfigModule.forRoot({ ...params.config, isGlobal: true }),
             bull_1.BullModule.registerQueueAsync(register_queue_1.initQueue('app')),
             schedule_1.ScheduleModule.forRoot(),
             db_module_1.DbModule.forRoot(params.db),

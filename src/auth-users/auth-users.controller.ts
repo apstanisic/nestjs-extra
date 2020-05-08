@@ -24,7 +24,7 @@ import { AuthUsersService } from './auth-users.service';
 import { JwtGuard } from '../auth/jwt-guard';
 import { GetUser } from '../auth/get-user.decorator';
 
-@Controller('auth')
+@Controller()
 export class AuthUsersController<User extends BaseUser = BaseUser> {
   constructor(
     @Inject(USER_SERVICE) private readonly userService: BaseUserService<User>,
@@ -39,7 +39,7 @@ export class AuthUsersController<User extends BaseUser = BaseUser> {
 
   /** Update user password */
   @UseGuards(JwtGuard)
-  @Put('password')
+  @Put('account/password')
   async changePassword(@Body() data: UpdatePasswordDto, @GetUser() user: AuthUser): Promise<User> {
     if (user.email !== data.email) throw new ForbiddenException();
     return this.userService.changePassword(data);

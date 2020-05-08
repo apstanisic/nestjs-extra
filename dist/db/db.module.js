@@ -24,14 +24,28 @@ let DbModule = DbModule_1 = class DbModule {
                         var _a, _b;
                         const redisHost = config.get(consts_1.REDIS_HOST);
                         const isProduction = config.get(consts_1.NODE_ENV) === 'production';
-                        const options = Object.assign({ entities: params.entities, type: (_a = config.get(consts_1.DB_TYPE)) !== null && _a !== void 0 ? _a : 'postgres', host: config.get(consts_1.DB_HOST), database: config.get(consts_1.DB_DATABASE), username: config.get(consts_1.DB_USER), password: config.get(consts_1.DB_PASSWORD), port: Number(config.get(consts_1.DB_PORT)), maxQueryExecutionTime: 3000, synchronize: !isProduction && config.get(consts_1.DB_SYNC) !== 'false', logging: isProduction ? ['error'] : 'all', namingStrategy: new typeorm_naming_strategies_1.SnakeNamingStrategy(), cache: redisHost !== undefined && {
+                        const options = {
+                            entities: params.entities,
+                            type: (_a = config.get(consts_1.DB_TYPE)) !== null && _a !== void 0 ? _a : 'postgres',
+                            host: config.get(consts_1.DB_HOST),
+                            database: config.get(consts_1.DB_DATABASE),
+                            username: config.get(consts_1.DB_USER),
+                            password: config.get(consts_1.DB_PASSWORD),
+                            port: Number(config.get(consts_1.DB_PORT)),
+                            maxQueryExecutionTime: 3000,
+                            synchronize: !isProduction && config.get(consts_1.DB_SYNC) !== 'false',
+                            logging: isProduction ? ['error'] : 'all',
+                            namingStrategy: new typeorm_naming_strategies_1.SnakeNamingStrategy(),
+                            cache: redisHost !== undefined && {
                                 type: 'redis',
                                 options: {
                                     host: redisHost,
                                     port: (_b = config.get(consts_1.REDIS_PORT)) !== null && _b !== void 0 ? _b : '6379',
                                 },
                                 duration: 10000,
-                            } }, params.config);
+                            },
+                            ...params.config,
+                        };
                         return options;
                     },
                 }),

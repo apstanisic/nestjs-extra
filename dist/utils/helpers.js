@@ -1,13 +1,4 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 function removeEmptyItems(obj) {
     const validItems = {};
@@ -27,7 +18,7 @@ function wait(time) {
 exports.wait = wait;
 function convertToObject(query) {
     if (typeof query === 'object')
-        return Object.assign({}, query);
+        return { ...query };
     if (query === null || query === undefined)
         return {};
     if (typeof query === 'string') {
@@ -81,19 +72,17 @@ function now() {
     return new Date();
 }
 exports.now = now;
-function times(n, fn) {
-    return __awaiter(this, void 0, void 0, function* () {
-        let success = false;
-        let i = 0;
-        while (!success && i < n) {
-            i += 1;
-            yield fn();
-            try {
-                success = true;
-            }
-            catch (error) { }
+async function times(n, fn) {
+    let success = false;
+    let i = 0;
+    while (!success && i < n) {
+        i += 1;
+        await fn();
+        try {
+            success = true;
         }
-    });
+        catch (error) { }
+    }
 }
 exports.times = times;
 function parseIfJson(val) {

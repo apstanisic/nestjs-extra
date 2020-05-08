@@ -11,15 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const notification_service_1 = require("./notification.service");
@@ -29,15 +20,11 @@ let NotificationController = class NotificationController {
     constructor(notificationService) {
         this.notificationService = notificationService;
     }
-    seeNotification(id, user) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.notificationService.updateWhere({ id, userId: user.id }, { seenAt: new Date() });
-        });
+    async seeNotification(id, user) {
+        return this.notificationService.updateWhere({ id, userId: user.id }, { seenAt: new Date() });
     }
-    deleteNotification(id, user) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.notificationService.deleteWhere({ id, userId: user.id });
-        });
+    async deleteNotification(id, user) {
+        return this.notificationService.deleteWhere({ id, userId: user.id });
     }
 };
 __decorate([

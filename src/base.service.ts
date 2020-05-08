@@ -82,7 +82,7 @@ export class BaseService<Entity extends WithId = any> extends BaseFindService<En
       if (!entityOrId.id) throw this.internalError('Entity id is null od update');
       entity = entityOrId;
     } else {
-      entity = await this.findOne(entityOrId);
+      entity = await this.findOne(entityOrId.id);
     }
 
     let log: ActivityLog | undefined;
@@ -150,7 +150,7 @@ export class BaseService<Entity extends WithId = any> extends BaseFindService<En
     } else if (options?.usePassedEntity) {
       entity = entityOrId;
     } else {
-      entity = await this.findOne(entityOrId);
+      entity = await this.findOne(entityOrId.id);
     }
 
     if (!entity.id) throw this.internalError('Entity for deletion does not have id');

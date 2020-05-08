@@ -1,4 +1,15 @@
-import { Body, Controller, Delete, Get, Param, Post, Req, Res } from '@nestjs/common';
+import {
+  UnauthorizedException,
+  UseGuards,
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Req,
+  Res,
+} from '@nestjs/common';
 import { GetUser } from '../auth/get-user.decorator';
 import { ValidUUID } from '../pipes/uuid.pipe';
 import { UUID } from '../types';
@@ -8,8 +19,9 @@ import { AuthSession } from './auth-session.entity';
 import { LoginUserDto, SignInResponse } from './auth-sessions.dto';
 import { AuthSessionsService } from './auth-sessions.service';
 import * as moment from 'moment';
+import { JwtGuard } from '../auth/jwt-guard';
 
-@Controller('auth')
+@Controller()
 export class AuthSessionsController<User extends BaseUser = BaseUser> {
   constructor(private readonly service: AuthSessionsService) {}
 
@@ -40,6 +52,7 @@ export class AuthSessionsController<User extends BaseUser = BaseUser> {
 
   /** Get all active sessions */
   @Get('sessions')
+  @UseGuards(JwtGuard)
   async getAll(@GetUser() user: User): Promise<{ data: AuthSession<BaseUser>[] }> {
     const data = await this.service.find({ userId: user.id });
     return { data };
@@ -47,6 +60,7 @@ export class AuthSessionsController<User extends BaseUser = BaseUser> {
 
   /** Delete session */
   @Delete('sessions/:id')
+  @UseGuards(JwtGuard)
   async revoke(
     @Param('id', ValidUUID) id: UUID,
     @GetUser() user: User,
@@ -66,6 +80,9 @@ export class AuthSessionsController<User extends BaseUser = BaseUser> {
     const isProduction = process.env.NODE_ENV === 'production';
     const userAgent = req.headers['user-agent'];
     const refreshToken = req.cookies['refresh-token'];
+
+    if (!refreshToken) throw new UnauthorizedException();
+
     const result = await this.service.getNewAccessToken(refreshToken, { userAgent });
     res.cookie('refresh-token', result.refreshToken, {
       httpOnly: true,

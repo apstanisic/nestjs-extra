@@ -11,15 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const consts_1 = require("../consts");
@@ -35,28 +26,20 @@ let AuthUsersController = class AuthUsersController {
         this.userService = userService;
         this.authUsersService = authUsersService;
     }
-    register(data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.authUsersService.registerNewUser(data);
-        });
+    async register(data) {
+        return this.authUsersService.registerNewUser(data);
     }
-    changePassword(data, user) {
-        return __awaiter(this, void 0, void 0, function* () {
-            if (user.email !== data.email)
-                throw new common_1.ForbiddenException();
-            return this.userService.changePassword(data);
-        });
+    async changePassword(data, user) {
+        if (user.email !== data.email)
+            throw new common_1.ForbiddenException();
+        return this.userService.changePassword(data);
     }
-    deleteUser(user, data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.userService.deleteAccount({ email: user.email, password: data.password });
-        });
+    async deleteUser(user, data) {
+        return this.userService.deleteAccount({ email: user.email, password: data.password });
     }
-    getAccount(user) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const fetchedUser = yield this.userService.findOne(user.id);
-            return class_transformer_1.classToClass(fetchedUser);
-        });
+    async getAccount(user) {
+        const fetchedUser = await this.userService.findOne(user.id);
+        return class_transformer_1.classToClass(fetchedUser);
     }
 };
 __decorate([
@@ -68,7 +51,7 @@ __decorate([
 ], AuthUsersController.prototype, "register", null);
 __decorate([
     common_1.UseGuards(jwt_guard_1.JwtGuard),
-    common_1.Put('password'),
+    common_1.Put('account/password'),
     __param(0, common_1.Body()), __param(1, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [auth_users_dto_1.UpdatePasswordDto, user_interface_1.AuthUser]),
@@ -90,7 +73,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AuthUsersController.prototype, "getAccount", null);
 AuthUsersController = __decorate([
-    common_1.Controller('auth'),
+    common_1.Controller(),
     __param(0, common_1.Inject(consts_1.USER_SERVICE)),
     __metadata("design:paramtypes", [base_user_service_1.BaseUserService,
         auth_users_service_1.AuthUsersService])

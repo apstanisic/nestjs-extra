@@ -11,15 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
@@ -39,46 +30,42 @@ let AuthSessionsService = class AuthSessionsService extends base_service_1.BaseS
         this.usersService = usersService;
         this.jwtService = jwtService;
     }
-    attemptLogin(email, password, userAgent) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const user = yield this.usersService.findOne({ email });
-            const validPassword = yield user.checkPassword(password);
-            if (!validPassword)
-                throw new common_1.BadRequestException('Invalid parameters.');
-            const ua = useragent.lookup(userAgent);
-            const session = new auth_session_entity_1.AuthSession();
-            session.email = user.email;
-            session.userId = user.id;
-            session.validUntil = moment().add(1, 'year').toDate();
-            session.refreshToken = Faker.random.uuid();
-            session.browser = ua.family;
-            session.os = ua.os.family;
-            const savedSession = yield this.create(session);
-            const accessToken = this.jwtService.sign({ email: user.email, name: user.name, id: user.id });
-            return {
-                token: accessToken,
-                user: class_transformer_1.classToClass(user),
-                refreshToken: savedSession.refreshToken,
-            };
-        });
+    async attemptLogin(email, password, userAgent) {
+        const user = await this.usersService.findOne({ email });
+        const validPassword = await user.checkPassword(password);
+        if (!validPassword)
+            throw new common_1.BadRequestException('Invalid parameters.');
+        const ua = useragent.lookup(userAgent);
+        const session = new auth_session_entity_1.AuthSession();
+        session.email = user.email;
+        session.userId = user.id;
+        session.validUntil = moment().add(1, 'year').toDate();
+        session.refreshToken = Faker.random.uuid();
+        session.browser = ua.family;
+        session.os = ua.os.family;
+        const savedSession = await this.create(session);
+        const accessToken = this.jwtService.sign({ email: user.email, name: user.name, id: user.id });
+        return {
+            token: accessToken,
+            user: class_transformer_1.classToClass(user),
+            refreshToken: savedSession.refreshToken,
+        };
     }
-    getNewAccessToken(refreshToken, options) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const session = yield this.findOne({ refreshToken, valid: true });
-            const user = yield this.usersService.findOne(session.userId);
-            const { email, name, id } = user;
-            const ua = useragent.lookup(options.userAgent);
-            const browser = ua.family;
-            const os = ua.os.family;
-            yield this.update(session, {
-                browser,
-                os,
-                lastUsed: new Date(),
-                validUntil: moment().add(6, 'months').toDate(),
-            });
-            const accessToken = this.jwtService.sign({ email, name, id });
-            return { token: accessToken, user: class_transformer_1.classToClass(user), refreshToken };
+    async getNewAccessToken(refreshToken, options) {
+        const session = await this.findOne({ refreshToken, valid: true });
+        const user = await this.usersService.findOne(session.userId);
+        const { email, name, id } = user;
+        const ua = useragent.lookup(options.userAgent);
+        const browser = ua.family;
+        const os = ua.os.family;
+        await this.update(session, {
+            browser,
+            os,
+            lastUsed: new Date(),
+            validUntil: moment().add(6, 'months').toDate(),
         });
+        const accessToken = this.jwtService.sign({ email, name, id });
+        return { token: accessToken, user: class_transformer_1.classToClass(user), refreshToken };
     }
 };
 AuthSessionsService = __decorate([

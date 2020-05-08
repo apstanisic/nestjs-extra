@@ -11,15 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
@@ -40,39 +31,35 @@ let PasswordResetService = class PasswordResetService {
         this.mailerService = mailerService;
         this.passwordResetTemplate = Handlebars.compile(password_reset_hbs_1.template);
     }
-    sendResetPasswordEmail(email) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const user = yield this.usersService.findOne({ email });
-            const token = user.generateSecureToken();
-            yield this.usersService.mutate(user);
-            const appUrl = this.configService.get(consts_1.APP_URL);
-            const resetUrl = path_1.join(appUrl, 'auth/reset-password', email, token);
-            const commonValues = mailer_templates_helper_1.getCommonTemplateValues(this.configService);
-            yield this.mailerService.sendMail({
-                to: user.email,
-                subject: `Resetovanje lozinke - ${commonValues.firmName}`,
-                html: this.passwordResetTemplate(Object.assign(Object.assign({}, commonValues), { resetUrl })),
-            });
+    async sendResetPasswordEmail(email) {
+        const user = await this.usersService.findOne({ email });
+        const token = user.generateSecureToken();
+        await this.usersService.mutate(user);
+        const appUrl = this.configService.get(consts_1.APP_URL);
+        const resetUrl = path_1.join(appUrl, 'auth/reset-password', email, token);
+        const commonValues = mailer_templates_helper_1.getCommonTemplateValues(this.configService);
+        await this.mailerService.sendMail({
+            to: user.email,
+            subject: `Resetovanje lozinke - ${commonValues.firmName}`,
+            html: this.passwordResetTemplate({ ...commonValues, resetUrl }),
         });
     }
-    resetPassword({ user, token, password, }) {
-        return __awaiter(this, void 0, void 0, function* () {
-            if (!user.validToken(token))
-                throw new common_1.ForbiddenException();
-            const expired = moment(user.tokenCreatedAt).add(2, 'hours').isBefore(moment());
-            if (expired) {
-                throw new common_1.BadRequestException('Invalid link. Link is valid for 2 hours.');
-            }
-            yield user.setPassword(password);
-            user.removeSecureToken();
-            user = yield this.usersService.mutate(user, {
-                user,
-                reason: 'Password reset',
-                domain: user.id,
-            });
-            yield this.authSessionsService.deleteWhere({ userId: user.id });
-            return user;
+    async resetPassword({ user, token, password, }) {
+        if (!user.validToken(token))
+            throw new common_1.ForbiddenException();
+        const expired = moment(user.tokenCreatedAt).add(2, 'hours').isBefore(moment());
+        if (expired) {
+            throw new common_1.BadRequestException('Invalid link. Link is valid for 2 hours.');
+        }
+        await user.setPassword(password);
+        user.removeSecureToken();
+        user = await this.usersService.mutate(user, {
+            user,
+            reason: 'Password reset',
+            domain: user.id,
         });
+        await this.authSessionsService.deleteWhere({ userId: user.id });
+        return user;
     }
 };
 PasswordResetService = __decorate([

@@ -11,15 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const faker_1 = require("faker");
@@ -32,26 +23,22 @@ let StorageImagesService = class StorageImagesService {
         this.storageService = storageService;
         this.sizes = sizes;
     }
-    storeImage(image, id = faker_1.random.uuid()) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const today = moment().format('YYYY/MM/DD');
-            const folder = `${today}/${id}`;
-            const filePrefix = `${folder}/image_${id}`;
-            const buffersAndSizes = yield sharp_1.generateAllImageSizes(image, this.sizes);
-            const toStore = buffersAndSizes.map((img) => this.storageService.put(img.image, `${filePrefix}_${img.size}.jpeg`));
-            const storedImagesArray = yield Promise.all(toStore);
-            const storedImages = {};
-            storedImagesArray.forEach((filename, i) => {
-                storedImages[buffersAndSizes[i].size] = filename;
-            });
-            const imageObject = Object.assign(Object.assign({}, storedImages), { id, prefix: folder });
-            return imageObject;
+    async storeImage(image, id = faker_1.random.uuid()) {
+        const today = moment().format('YYYY/MM/DD');
+        const folder = `${today}/${id}`;
+        const filePrefix = `${folder}/image_${id}`;
+        const buffersAndSizes = await sharp_1.generateAllImageSizes(image, this.sizes);
+        const toStore = buffersAndSizes.map((img) => this.storageService.put(img.image, `${filePrefix}_${img.size}.jpeg`));
+        const storedImagesArray = await Promise.all(toStore);
+        const storedImages = {};
+        storedImagesArray.forEach((filename, i) => {
+            storedImages[buffersAndSizes[i].size] = filename;
         });
+        const imageObject = { ...storedImages, id, prefix: folder };
+        return imageObject;
     }
-    removeImage(image) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.storageService.deleteWherePrefix(image.prefix);
-        });
+    async removeImage(image) {
+        return this.storageService.deleteWherePrefix(image.prefix);
     }
 };
 StorageImagesService = __decorate([

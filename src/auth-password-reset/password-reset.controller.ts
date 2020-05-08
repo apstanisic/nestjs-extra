@@ -16,7 +16,7 @@ export class ResetPasswordDto {
 }
 
 /** Controller for password reseting */
-@Controller('auth/forgot-password')
+@Controller('forgot-password')
 export class PasswordResetController {
   constructor(
     @Inject(USER_SERVICE) private readonly usersService: BaseService<BaseUser>,

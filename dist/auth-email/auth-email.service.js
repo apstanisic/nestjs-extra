@@ -11,15 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
@@ -41,47 +32,41 @@ let AuthEmailService = class AuthEmailService {
         this.accountConfirmTemplate = Handlebars.compile(account_confirm_hbs_1.template);
         this.changeEmailTemplate = Handlebars.compile(change_email_hbs_1.template);
     }
-    requestEmailChange(oldEmail, data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const user = yield this.usersService.findForLogin(oldEmail, data.password);
-            const token = user.generateSecureToken(data.newEmail);
-            yield this.usersService.mutate(user);
-            const appUrl = this.configService.get(consts_1.API_URL);
-            const changeEmailUrl = path_1.join(appUrl, 'auth/change-email', token);
-            const commonValues = mailer_templates_helper_1.getCommonTemplateValues(this.configService);
-            yield this.mailerService.sendMail({
-                to: user.email,
-                subject: `Promena emaila - ${commonValues.firmName}`,
-                html: this.changeEmailTemplate(Object.assign(Object.assign({}, commonValues), { confirmUrl: changeEmailUrl })),
-            });
+    async requestEmailChange(oldEmail, data) {
+        const user = await this.usersService.findForLogin(oldEmail, data.password);
+        const token = user.generateSecureToken(data.newEmail);
+        await this.usersService.mutate(user);
+        const appUrl = this.configService.get(consts_1.API_URL);
+        const changeEmailUrl = path_1.join(appUrl, 'auth/change-email', token);
+        const commonValues = mailer_templates_helper_1.getCommonTemplateValues(this.configService);
+        await this.mailerService.sendMail({
+            to: user.email,
+            subject: `Promena emaila - ${commonValues.firmName}`,
+            html: this.changeEmailTemplate({ ...commonValues, confirmUrl: changeEmailUrl }),
         });
     }
-    sendConfirmEmail(email, token) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const appUrl = this.configService.get(consts_1.API_URL);
-            const confirmUrl = path_1.join(appUrl, 'auth/confirm-account', email, token);
-            const commonValues = mailer_templates_helper_1.getCommonTemplateValues(this.configService);
-            yield this.mailerService.sendMail({
-                to: email,
-                subject: `Potvrda naloga - ${commonValues.firmName}`,
-                html: this.accountConfirmTemplate(Object.assign(Object.assign({}, commonValues), { confirmUrl })),
-            });
+    async sendConfirmEmail(email, token) {
+        const appUrl = this.configService.get(consts_1.API_URL);
+        const confirmUrl = path_1.join(appUrl, 'auth/confirm-account', email, token);
+        const commonValues = mailer_templates_helper_1.getCommonTemplateValues(this.configService);
+        await this.mailerService.sendMail({
+            to: email,
+            subject: `Potvrda naloga - ${commonValues.firmName}`,
+            html: this.accountConfirmTemplate({ ...commonValues, confirmUrl }),
         });
     }
-    confirmAccount(email, token) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const user = yield this.usersService.findOne({ email });
-            if (!user.validToken(token))
-                throw new common_1.BadRequestException();
-            user.confirmed = true;
-            user.removeSecureToken();
-            yield this.usersService.mutate(user, {
-                user,
-                domain: user.id,
-                reason: 'Email address confirmed.',
-            });
-            return class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, user);
+    async confirmAccount(email, token) {
+        const user = await this.usersService.findOne({ email });
+        if (!user.validToken(token))
+            throw new common_1.BadRequestException();
+        user.confirmed = true;
+        user.removeSecureToken();
+        await this.usersService.mutate(user, {
+            user,
+            domain: user.id,
+            reason: 'Email address confirmed.',
         });
+        return class_transformer_1.plainToClass(user_interface_1.BasicUserInfo, user);
     }
 };
 AuthEmailService = __decorate([

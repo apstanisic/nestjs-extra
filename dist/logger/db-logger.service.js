@@ -11,15 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
@@ -38,12 +29,10 @@ let ActivityLoggerService = class ActivityLoggerService extends base_find_servic
         log.reason = reason;
         return log;
     }
-    store(log, action, newValue) {
-        return __awaiter(this, void 0, void 0, function* () {
-            log.action = action;
-            log.newValue = newValue;
-            return this.repository.save(log);
-        });
+    async store(log, action, newValue) {
+        log.action = action;
+        log.newValue = newValue;
+        return this.repository.save(log);
     }
 };
 ActivityLoggerService = __decorate([

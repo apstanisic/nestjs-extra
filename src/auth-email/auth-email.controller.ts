@@ -8,7 +8,7 @@ import { AuthUser, BasicUserInfo } from '../users/user.interface';
 import { ChangeEmailDto } from './auth-email.dto';
 import { AuthEmailService } from './auth-email.service';
 
-@Controller('auth')
+@Controller()
 export class AuthEmailController<User extends BaseUser = BaseUser> {
   constructor(
     private readonly service: AuthEmailService,
@@ -25,7 +25,7 @@ export class AuthEmailController<User extends BaseUser = BaseUser> {
   }
 
   /** Request change of email */
-  @Put('/email')
+  @Put('change-email')
   async requestEmailChange(@Body() data: ChangeEmailDto, @GetUser() user: AuthUser): Promise<any> {
     /** Send email to confirm email change */
     await this.service.requestEmailChange(user.email, data);
