@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var CoreModule_1;
 Object.defineProperty(exports, "__esModule", { value: true });
-const bull_1 = require("@nestjs/bull");
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const schedule_1 = require("@nestjs/schedule");
@@ -18,37 +17,35 @@ const db_module_1 = require("./db/db.module");
 const activity_log_entity_1 = require("./logger/activity-log.entity");
 const db_logger_module_1 = require("./logger/db-logger.module");
 const mailer_module_1 = require("./mailer/mailer.module");
-const notification_entity_1 = require("./notification/notification.entity");
-const notification_module_1 = require("./notification/notification.module");
+const notification_entity_1 = require("./notifications/notification.entity");
+const notifications_module_1 = require("./notifications/notifications.module");
+const storage_images_module_1 = require("./storage-images/storage-images.module");
 const storage_module_1 = require("./storage/storage.module");
-const register_queue_1 = require("./utils/register-queue");
 let CoreModule = CoreModule_1 = class CoreModule {
     static forRoot(params) {
         const { entities } = params.db;
-        if (params.notifications)
+        if (params.useNotifications)
             entities.push(notification_entity_1.Notification);
         if (params.accessControl)
             entities.push(roles_entity_1.Role);
-        if (params.dbLog)
+        if (params.useActivityLogger)
             entities.push(activity_log_entity_1.ActivityLog);
         const modules = [
             config_1.ConfigModule.forRoot({ ...params.config, isGlobal: true }),
-            bull_1.BullModule.registerQueueAsync(register_queue_1.initQueue('app')),
             schedule_1.ScheduleModule.forRoot(),
             db_module_1.DbModule.forRoot(params.db),
             auth_module_1.AuthModule,
-            mailer_module_1.MailerModule,
         ];
-        if (params.storage !== false)
-            modules.push(storage_module_1.StorageModule.forRoot(params.storage));
-        if (params.dbLog)
+        if (params.useActivityLogger)
             modules.push(db_logger_module_1.ActivityLoggerModule);
         if (params.useMail)
             modules.push(mailer_module_1.MailerModule);
-        if (params.notifications)
-            modules.push(notification_module_1.NotificationsModule.forRoot(params.useMq));
-        if (params.accessControl) {
+        if (params.useNotifications)
+            modules.push(notifications_module_1.NotificationsModule.forRoot());
+        if (params.accessControl)
             modules.push(access_control_module_1.AccessControlModule.forRoot(params.accessControl));
+        if (params.useStorage) {
+            modules.push(storage_module_1.StorageModule.forRoot(), storage_images_module_1.StorageImagesModule.forRoot(params.storageImagesOptions));
         }
         return {
             imports: modules,

@@ -1,35 +1,18 @@
-import { Module, Global, DynamicModule } from '@nestjs/common';
+import { DynamicModule, Global, Module } from '@nestjs/common';
 import { StorageService } from './storage.service';
-import { StorageImagesService } from './storage-images.service';
-import { STORAGE_IMAGE_SIZES } from '../consts';
-import { defaultStorageImagesSizes } from './storage-images-default-config';
 
-export interface ImageSizeOptions {
-  name: string;
-  height: number;
-  width: number;
-  fit: 'cover' | 'contain' | 'fill' | 'inside' | 'outside';
-  quality?: number;
-}
-
-export interface StorageOptions {
-  imageSizes?: ImageSizeOptions[];
-}
-
-/** Even though StorageModule is global, it's imported here just in case */
+/**
+ * Storage module
+ * Provides wrapper around s3 methods
+ */
 @Global()
 @Module({})
 export class StorageModule {
-  static forRoot(options?: StorageOptions): DynamicModule {
-    const sizes = options?.imageSizes ?? defaultStorageImagesSizes;
+  static forRoot(): DynamicModule {
     return {
       module: StorageModule,
-      providers: [
-        { provide: STORAGE_IMAGE_SIZES, useValue: sizes },
-        StorageService,
-        StorageImagesService,
-      ],
-      exports: [StorageService, StorageImagesService],
+      providers: [StorageService],
+      exports: [StorageService],
     };
   }
 }

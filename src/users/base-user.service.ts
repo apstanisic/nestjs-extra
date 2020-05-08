@@ -5,17 +5,16 @@ import {
   InternalServerErrorException,
   Optional,
 } from '@nestjs/common';
-import { Queue } from 'bull';
 import { isEmail } from 'class-validator';
 import { duration } from 'moment';
 import { DeepPartial, Repository } from 'typeorm';
 import { Role } from '../access-control/role/roles.entity';
 import { RolesService } from '../access-control/role/roles.service';
-import { BaseService } from '../base.service';
-import { StorageImagesService } from '../storage/storage-images.service';
-import { BaseUser } from './base-user.entity';
-import { RegisterUserDto, UpdatePasswordDto } from '../auth-users/auth-users.dto';
 import { LoginUserDto } from '../auth-sessions/auth-sessions.dto';
+import { RegisterUserDto, UpdatePasswordDto } from '../auth-users/auth-users.dto';
+import { BaseService } from '../base.service';
+import { BaseUser } from './base-user.entity';
+import { StorageImagesService } from '../storage-images/storage-images.service';
 
 interface BaseUserServiceOptions {
   useRoles: boolean;
@@ -24,11 +23,7 @@ interface BaseUserServiceOptions {
 
 @Injectable()
 export class BaseUserService<User extends BaseUser = BaseUser> extends BaseService<User> {
-  constructor(
-    repository: Repository<User>,
-    private readonly queue: Queue,
-    options?: Partial<BaseUserServiceOptions>,
-  ) {
+  constructor(repository: Repository<User>, options?: Partial<BaseUserServiceOptions>) {
     super(repository);
     if (options) {
       const { useAvatar, useRoles } = options;

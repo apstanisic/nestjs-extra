@@ -16,11 +16,10 @@ const typeorm_1 = require("typeorm");
 const roles_entity_1 = require("../access-control/role/roles.entity");
 const roles_service_1 = require("../access-control/role/roles.service");
 const base_service_1 = require("../base.service");
-const storage_images_service_1 = require("../storage/storage-images.service");
+const storage_images_service_1 = require("../storage-images/storage-images.service");
 let BaseUserService = class BaseUserService extends base_service_1.BaseService {
-    constructor(repository, queue, options) {
+    constructor(repository, options) {
         super(repository);
-        this.queue = queue;
         this.useAvatar = true;
         this.useRoles = true;
         if (options) {
@@ -143,7 +142,7 @@ __decorate([
 ], BaseUserService.prototype, "roleService", void 0);
 BaseUserService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [typeorm_1.Repository, Object, Object])
+    __metadata("design:paramtypes", [typeorm_1.Repository, Object])
 ], BaseUserService);
 exports.BaseUserService = BaseUserService;
 //# sourceMappingURL=base-user.service.js.map

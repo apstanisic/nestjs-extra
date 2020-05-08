@@ -2,16 +2,17 @@ import { DynamicModule } from '@nestjs/common';
 import { ConfigModuleOptions } from '@nestjs/config/dist/interfaces';
 import { AccessControlOptions } from './access-control/access-control.module';
 import { DbOptions } from './db/db.module';
-import { StorageOptions } from './storage/storage.module';
+import { StorageImageOptions } from './storage-images/storage-images.module';
 export interface CoreModuleParams {
     config?: ConfigModuleOptions;
-    storage?: StorageOptions | false;
     db: DbOptions;
-    accessControl?: AccessControlOptions;
-    dbLog?: boolean;
-    notifications?: boolean;
+    useStorage?: boolean;
+    useActivityLogger?: boolean;
+    useNotifications?: boolean;
     useMq?: boolean;
     useMail?: boolean;
+    storageImagesOptions?: StorageImageOptions;
+    accessControl?: AccessControlOptions;
 }
 export declare class CoreModule {
     static forRoot(params: CoreModuleParams): DynamicModule;

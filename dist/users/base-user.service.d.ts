@@ -1,17 +1,15 @@
 /// <reference types="node" />
-import { Queue } from 'bull';
 import { Repository } from 'typeorm';
+import { LoginUserDto } from '../auth-sessions/auth-sessions.dto';
+import { RegisterUserDto, UpdatePasswordDto } from '../auth-users/auth-users.dto';
 import { BaseService } from '../base.service';
 import { BaseUser } from './base-user.entity';
-import { RegisterUserDto, UpdatePasswordDto } from '../auth-users/auth-users.dto';
-import { LoginUserDto } from '../auth-sessions/auth-sessions.dto';
 interface BaseUserServiceOptions {
     useRoles: boolean;
     useAvatar: boolean;
 }
 export declare class BaseUserService<User extends BaseUser = BaseUser> extends BaseService<User> {
-    private readonly queue;
-    constructor(repository: Repository<User>, queue: Queue, options?: Partial<BaseUserServiceOptions>);
+    constructor(repository: Repository<User>, options?: Partial<BaseUserServiceOptions>);
     private useAvatar;
     private useRoles;
     private readonly storageImagesService?;

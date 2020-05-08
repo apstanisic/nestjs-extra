@@ -7,22 +7,17 @@ import {
   Inject,
   Post,
   Put,
-  UploadedFile,
   UseGuards,
-  UseInterceptors,
 } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
-import { FileInterceptor } from '@nestjs/platform-express';
+import { classToClass } from 'class-transformer';
+import { GetUser } from '../auth/get-user.decorator';
+import { JwtGuard } from '../auth/jwt-guard';
 import { USER_SERVICE } from '../consts';
-import { validJpeg } from '../storage/valid-jpeg-image';
 import { BaseUser } from '../users/base-user.entity';
 import { BaseUserService } from '../users/base-user.service';
-import { classToClass } from 'class-transformer';
 import { AuthUser } from '../users/user.interface';
-import { RegisterUserDto, UpdatePasswordDto, OnlyPasswordDto } from './auth-users.dto';
+import { OnlyPasswordDto, RegisterUserDto, UpdatePasswordDto } from './auth-users.dto';
 import { AuthUsersService } from './auth-users.service';
-import { JwtGuard } from '../auth/jwt-guard';
-import { GetUser } from '../auth/get-user.decorator';
 
 @Controller()
 export class AuthUsersController<User extends BaseUser = BaseUser> {

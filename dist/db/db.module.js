@@ -12,7 +12,7 @@ const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_naming_strategies_1 = require("typeorm-naming-strategies");
 const consts_1 = require("../consts");
-const notification_entity_1 = require("../notification/notification.entity");
+const notification_entity_1 = require("../notifications/notification.entity");
 let DbModule = DbModule_1 = class DbModule {
     static forRoot(params) {
         return {

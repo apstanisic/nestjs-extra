@@ -9,21 +9,12 @@ var StorageModule_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const storage_service_1 = require("./storage.service");
-const storage_images_service_1 = require("./storage-images.service");
-const consts_1 = require("../consts");
-const storage_images_default_config_1 = require("./storage-images-default-config");
 let StorageModule = StorageModule_1 = class StorageModule {
-    static forRoot(options) {
-        var _a;
-        const sizes = (_a = options === null || options === void 0 ? void 0 : options.imageSizes) !== null && _a !== void 0 ? _a : storage_images_default_config_1.defaultStorageImagesSizes;
+    static forRoot() {
         return {
             module: StorageModule_1,
-            providers: [
-                { provide: consts_1.STORAGE_IMAGE_SIZES, useValue: sizes },
-                storage_service_1.StorageService,
-                storage_images_service_1.StorageImagesService,
-            ],
-            exports: [storage_service_1.StorageService, storage_images_service_1.StorageImagesService],
+            providers: [storage_service_1.StorageService],
+            exports: [storage_service_1.StorageService],
         };
     }
 };

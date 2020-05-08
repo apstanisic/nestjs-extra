@@ -8,23 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var StorageService_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const aws_sdk_1 = require("aws-sdk");
 const consts_1 = require("../consts");
-let StorageService = class StorageService {
+let StorageService = StorageService_1 = class StorageService {
     constructor(config) {
         this.config = config;
-        this.logger = new common_1.Logger();
+        this.logger = new common_1.Logger(StorageService_1.name);
         const endPoint = this.config.get(consts_1.STORAGE_ENDPOINT);
         const region = this.config.get(consts_1.STORAGE_REGION);
         const accessKey = this.config.get(consts_1.STORAGE_ACCESS_KEY);
         const secretKey = this.config.get(consts_1.STORAGE_SECRET_KEY);
         const bucket = this.config.get(consts_1.STORAGE_BUCKET_NAME);
         if (!bucket || !endPoint || !accessKey || !secretKey || !region) {
-            this.logger.error('Storage mounted, but storage keys are undefined.');
-            throw new common_1.InternalServerErrorException();
+            this.logger.error('Not all required values are provided.');
+            throw new common_1.InternalServerErrorException('Storage is not working');
         }
         this.bucketName = bucket;
         this.s3 = new aws_sdk_1.S3({
@@ -34,34 +35,37 @@ let StorageService = class StorageService {
             endpoint: endPoint,
         });
     }
-    async getFile(key) {
+    _getS3() {
+        return this.s3;
+    }
+    async getFile(path) {
         const file = await this.s3
             .getObject({
-            Key: key,
+            Key: path,
             Bucket: this.bucketName,
         })
             .promise()
             .then((res) => res.Body)
             .catch((e) => {
-            console.error(e);
-            throw new common_1.InternalServerErrorException('Image fetch failed');
+            this.logger.error(e);
+            throw new common_1.InternalServerErrorException('Error getting file');
         });
         return file;
     }
-    async put(file, name) {
-        const filename = name.startsWith('/') ? name.substr(1) : name;
+    async put(file, path) {
+        const validPath = path.startsWith('/') ? path.substr(1) : path;
         return this.s3
             .putObject({
             Bucket: this.bucketName,
-            Key: filename,
+            Key: validPath,
             Body: file,
             ACL: 'public-read',
         })
             .promise()
-            .then((res) => filename);
+            .then((res) => validPath);
     }
-    async delete(file) {
-        return this.s3.deleteObject({ Bucket: this.bucketName, Key: file }).promise();
+    async delete(path) {
+        return this.s3.deleteObject({ Bucket: this.bucketName, Key: path }).promise();
     }
     async deleteWherePrefix(prefix) {
         const filenames = (await this.listFiles(prefix)).map((Key) => ({ Key }));
@@ -84,7 +88,7 @@ let StorageService = class StorageService {
         });
     }
 };
-StorageService = __decorate([
+StorageService = StorageService_1 = __decorate([
     common_1.Injectable(),
     __metadata("design:paramtypes", [config_1.ConfigService])
 ], StorageService);

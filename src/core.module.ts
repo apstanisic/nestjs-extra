@@ -1,4 +1,3 @@
-import { BullModule } from '@nestjs/bull';
 import { DynamicModule, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ConfigModuleOptions } from '@nestjs/config/dist/interfaces';
@@ -10,10 +9,10 @@ import { DbModule, DbOptions } from './db/db.module';
 import { ActivityLog } from './logger/activity-log.entity';
 import { ActivityLoggerModule } from './logger/db-logger.module';
 import { MailerModule } from './mailer/mailer.module';
-import { Notification } from './notification/notification.entity';
-import { NotificationsModule } from './notification/notification.module';
-import { StorageModule, StorageOptions } from './storage/storage.module';
-import { initQueue } from './utils/register-queue';
+import { Notification } from './notifications/notification.entity';
+import { NotificationsModule } from './notifications/notifications.module';
+import { StorageImageOptions, StorageImagesModule } from './storage-images/storage-images.module';
+import { StorageModule } from './storage/storage.module';
 
 /**
  * Params for dynamic module
@@ -22,13 +21,14 @@ import { initQueue } from './utils/register-queue';
  */
 export interface CoreModuleParams {
   config?: ConfigModuleOptions;
-  storage?: StorageOptions | false;
   db: DbOptions;
-  accessControl?: AccessControlOptions;
-  dbLog?: boolean;
-  notifications?: boolean;
+  useStorage?: boolean;
+  useActivityLogger?: boolean;
+  useNotifications?: boolean;
   useMq?: boolean;
   useMail?: boolean;
+  storageImagesOptions?: StorageImageOptions;
+  accessControl?: AccessControlOptions;
   // auth?: { templates: Record<string, string> };
 }
 
@@ -42,25 +42,30 @@ export class CoreModule {
   static forRoot(params: CoreModuleParams): DynamicModule {
     const { entities } = params.db;
 
-    if (params.notifications) entities.push(Notification);
+    if (params.useNotifications) entities.push(Notification);
     if (params.accessControl) entities.push(Role);
-    if (params.dbLog) entities.push(ActivityLog);
+    if (params.useActivityLogger) entities.push(ActivityLog);
 
     const modules = [
+      // Access env config
       ConfigModule.forRoot({ ...params.config, isGlobal: true }),
-      BullModule.registerQueueAsync(initQueue('app')),
+      // Cron jobs
       ScheduleModule.forRoot(),
+      // Initialize db
       DbModule.forRoot(params.db),
+      // Auth
       AuthModule,
-      MailerModule,
     ];
 
-    if (params.storage !== false) modules.push(StorageModule.forRoot(params.storage));
-    if (params.dbLog) modules.push(ActivityLoggerModule);
+    if (params.useActivityLogger) modules.push(ActivityLoggerModule);
     if (params.useMail) modules.push(MailerModule);
-    if (params.notifications) modules.push(NotificationsModule.forRoot(params.useMq));
-    if (params.accessControl) {
-      modules.push(AccessControlModule.forRoot(params.accessControl));
+    if (params.useNotifications) modules.push(NotificationsModule.forRoot());
+    if (params.accessControl) modules.push(AccessControlModule.forRoot(params.accessControl));
+    if (params.useStorage) {
+      modules.push(
+        StorageModule.forRoot(),
+        StorageImagesModule.forRoot(params.storageImagesOptions),
+      );
     }
 
     return {

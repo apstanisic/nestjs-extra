@@ -13,14 +13,14 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const class_transformer_1 = require("class-transformer");
+const get_user_decorator_1 = require("../auth/get-user.decorator");
+const jwt_guard_1 = require("../auth/jwt-guard");
 const consts_1 = require("../consts");
 const base_user_service_1 = require("../users/base-user.service");
-const class_transformer_1 = require("class-transformer");
 const user_interface_1 = require("../users/user.interface");
 const auth_users_dto_1 = require("./auth-users.dto");
 const auth_users_service_1 = require("./auth-users.service");
-const jwt_guard_1 = require("../auth/jwt-guard");
-const get_user_decorator_1 = require("../auth/get-user.decorator");
 let AuthUsersController = class AuthUsersController {
     constructor(userService, authUsersService) {
         this.userService = userService;

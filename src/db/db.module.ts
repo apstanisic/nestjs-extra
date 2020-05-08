@@ -16,7 +16,7 @@ import {
   DB_TYPE,
   DB_SYNC,
 } from '../consts';
-import { Notification } from '../notification/notification.entity';
+import { Notification } from '../notifications/notification.entity';
 
 export interface DbOptions {
   /** All entities in this app.  */

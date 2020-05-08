@@ -1,7 +1,7 @@
 import { BaseUser } from '../users/base-user.entity';
 import { BaseUserService } from '../users/base-user.service';
 import { AuthUser } from '../users/user.interface';
-import { RegisterUserDto, UpdatePasswordDto, OnlyPasswordDto } from './auth-users.dto';
+import { OnlyPasswordDto, RegisterUserDto, UpdatePasswordDto } from './auth-users.dto';
 import { AuthUsersService } from './auth-users.service';
 export declare class AuthUsersController<User extends BaseUser = BaseUser> {
     private readonly userService;

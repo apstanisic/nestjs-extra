@@ -3537,6 +3537,78 @@
         "version": "aa46a487ededc74b942741687739c5c95d3e4cd86085149203fb351ac9c6e132",
         "signature": "3fe9febbf851679151d55874a95cd8e2d087666b53c05faf2688439999374261"
       },
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": {
+        "version": "22d6c266337a240cae9f6d837927706afd1f2ca66318e95bfae92d0830bdb68c",
+        "signature": "22d6c266337a240cae9f6d837927706afd1f2ca66318e95bfae92d0830bdb68c"
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": {
+        "version": "c216ce81e0306d4d666bf06375f5c2693e7c6b2bc920d1939d956ab01656f744",
+        "signature": "c216ce81e0306d4d666bf06375f5c2693e7c6b2bc920d1939d956ab01656f744"
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": {
+        "version": "a7184b8922290d1917d520ecc9418f65b06673cacbbddd96192f4e9bca3c3fcb",
+        "signature": "a7184b8922290d1917d520ecc9418f65b06673cacbbddd96192f4e9bca3c3fcb"
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": {
+        "version": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a",
+        "signature": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a"
+      },
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": {
+        "version": "0992d2bd4d9502b04ba7e544dcd293e021f9c0cb9d612c85eaf30d68b0f8a162",
+        "signature": "0992d2bd4d9502b04ba7e544dcd293e021f9c0cb9d612c85eaf30d68b0f8a162"
+      },
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": {
+        "version": "839d15098cc51d756b67acda281788779645cbf8e95571897951afb52ea6535a",
+        "signature": "839d15098cc51d756b67acda281788779645cbf8e95571897951afb52ea6535a"
+      },
+      "../node_modules/@nestjs/config/dist/types/index.d.ts": {
+        "version": "77f4173f78dac7a2c4aca60a34ebd340251ee225b2865c7e85a4e5785aa3f5e8",
+        "signature": "77f4173f78dac7a2c4aca60a34ebd340251ee225b2865c7e85a4e5785aa3f5e8"
+      },
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": {
+        "version": "1d2254ab5fdfd1f346a6e8d03ec698954dd330fdafc2942b77366a052571eab7",
+        "signature": "1d2254ab5fdfd1f346a6e8d03ec698954dd330fdafc2942b77366a052571eab7"
+      },
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": {
+        "version": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6",
+        "signature": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6"
+      },
+      "../node_modules/@nestjs/config/dist/index.d.ts": {
+        "version": "e3e43b2ee33a384c872f243e52aa8faa1ccd69a7c0bb44eb878d4ff662cd1991",
+        "signature": "e3e43b2ee33a384c872f243e52aa8faa1ccd69a7c0bb44eb878d4ff662cd1991"
+      },
+      "../node_modules/@nestjs/config/index.d.ts": {
+        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
+      },
+      "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts": {
+        "version": "715764c8ed9aa683f5ca3ccd5ecdb169451b085afe078dfc2d15f6c1c3aacb3e",
+        "signature": "715764c8ed9aa683f5ca3ccd5ecdb169451b085afe078dfc2d15f6c1c3aacb3e"
+      },
+      "../node_modules/@nestjs/schedule/dist/enums/index.d.ts": {
+        "version": "68065ce3af3ef8599af8338068cf336be35249eff281ee393186a0ef40db3abf",
+        "signature": "68065ce3af3ef8599af8338068cf336be35249eff281ee393186a0ef40db3abf"
+      },
+      "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts": {
+        "version": "f5e11b3470c7c3c44c05ef445eb509e1d339df13cee0e882edbcc5c389294f6a",
+        "signature": "f5e11b3470c7c3c44c05ef445eb509e1d339df13cee0e882edbcc5c389294f6a"
+      },
+      "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts": {
+        "version": "d1fd6ff6e0d1cee69f853c805f3842924425f68edc108283a0bb1628c78d1a51",
+        "signature": "d1fd6ff6e0d1cee69f853c805f3842924425f68edc108283a0bb1628c78d1a51"
+      },
+      "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts": {
+        "version": "6d3eb6a1c83878770cc946e7b8d59c51e1649aee979f4a11356a74613c52c649",
+        "signature": "6d3eb6a1c83878770cc946e7b8d59c51e1649aee979f4a11356a74613c52c649"
+      },
+      "../node_modules/@nestjs/schedule/dist/decorators/index.d.ts": {
+        "version": "4e5f1234308de112f09920e0a0b99f35a9780b3abbc13a84445f32a490d0bb87",
+        "signature": "4e5f1234308de112f09920e0a0b99f35a9780b3abbc13a84445f32a490d0bb87"
+      },
+      "../node_modules/@nestjs/schedule/dist/schedule.module.d.ts": {
+        "version": "a8a3b336f10078fb021c597d024a5526f2e72d81a349667db1a5cb5e9db8832c",
+        "signature": "a8a3b336f10078fb021c597d024a5526f2e72d81a349667db1a5cb5e9db8832c"
+      },
       "../node_modules/@types/node/globals.d.ts": {
         "version": "9d0b32c595a2e0d320a56b3d0e8f0a317e4149239ec913aa8f11eeb73edc92be",
         "signature": "9d0b32c595a2e0d320a56b3d0e8f0a317e4149239ec913aa8f11eeb73edc92be"
@@ -3720,154 +3792,6 @@
       "../node_modules/@types/node/ts3.2/index.d.ts": {
         "version": "9522f3e35b412f2f17974b1431a1b18d06e0a8f614a0700c37220a4afb04afa8",
         "signature": "9522f3e35b412f2f17974b1431a1b18d06e0a8f614a0700c37220a4afb04afa8"
-      },
-      "../node_modules/@types/ioredis/index.d.ts": {
-        "version": "67bdf1c76ff86a664ff1bfbaed2faa053817844d252aade7a6798efb5dcffad7",
-        "signature": "67bdf1c76ff86a664ff1bfbaed2faa053817844d252aade7a6798efb5dcffad7"
-      },
-      "../node_modules/@types/bull/index.d.ts": {
-        "version": "a61bf1a7e1177ab2e61533a6492939839238be485330d60d022bf69ff9b128d2",
-        "signature": "a61bf1a7e1177ab2e61533a6492939839238be485330d60d022bf69ff9b128d2"
-      },
-      "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts": {
-        "version": "dbf1771bfa71180fb7da21cd4c0c456b531cb723a75c7dc1e8fcf6248be5803f",
-        "signature": "dbf1771bfa71180fb7da21cd4c0c456b531cb723a75c7dc1e8fcf6248be5803f"
-      },
-      "../node_modules/@nestjs/bull/dist/bull.types.d.ts": {
-        "version": "462bd54b16068cd2109b564e30f2197769576c6843ac2a0c57696437b0b75b18",
-        "signature": "462bd54b16068cd2109b564e30f2197769576c6843ac2a0c57696437b0b75b18"
-      },
-      "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts": {
-        "version": "d54d959282ef2683989faae781d0ab1b4e634e97e0cdc656677ad85867fb7f07",
-        "signature": "d54d959282ef2683989faae781d0ab1b4e634e97e0cdc656677ad85867fb7f07"
-      },
-      "../node_modules/@nestjs/bull/dist/bull.module.d.ts": {
-        "version": "5470f28f7cf16f41b05e8091274bc32e5814b20a0fc20bdef476c00d3440ef3f",
-        "signature": "5470f28f7cf16f41b05e8091274bc32e5814b20a0fc20bdef476c00d3440ef3f"
-      },
-      "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts": {
-        "version": "2efdb0b1205c25359227906fe77f648191b03b775c358e2d869e30f9859ac255",
-        "signature": "2efdb0b1205c25359227906fe77f648191b03b775c358e2d869e30f9859ac255"
-      },
-      "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts": {
-        "version": "becf478324ec62bbd81e51526169e00dc61bc00f2b4c2818ab50ffbd25778967",
-        "signature": "becf478324ec62bbd81e51526169e00dc61bc00f2b4c2818ab50ffbd25778967"
-      },
-      "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts": {
-        "version": "bc893a45cd21a23a21b301fb9234866919d6e6ff4319576d8c062c2f916b5a11",
-        "signature": "bc893a45cd21a23a21b301fb9234866919d6e6ff4319576d8c062c2f916b5a11"
-      },
-      "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts": {
-        "version": "166f70cb8d18a554307e9d6e5b393a5cb74d412fa1229c0d9abb137d95545739",
-        "signature": "166f70cb8d18a554307e9d6e5b393a5cb74d412fa1229c0d9abb137d95545739"
-      },
-      "../node_modules/@nestjs/bull/dist/decorators/index.d.ts": {
-        "version": "9ca2b093001037c017169b747ec9616b26b42ac9d8fd60aa2b0d9eb6b8c1cf95",
-        "signature": "9ca2b093001037c017169b747ec9616b26b42ac9d8fd60aa2b0d9eb6b8c1cf95"
-      },
-      "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts": {
-        "version": "5e8f7bf17b0f8382eff0d93f1ffaafc4f7fd15293b4a90edd517dca2a3ff6020",
-        "signature": "5e8f7bf17b0f8382eff0d93f1ffaafc4f7fd15293b4a90edd517dca2a3ff6020"
-      },
-      "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts": {
-        "version": "e7705224440c17c183317a861a0f1392a9c0746c3a06549c09e2d511a8c0c32a",
-        "signature": "e7705224440c17c183317a861a0f1392a9c0746c3a06549c09e2d511a8c0c32a"
-      },
-      "../node_modules/@nestjs/bull/dist/enums/index.d.ts": {
-        "version": "eaccaaec4001b7c7e672f371d466e96fcbe3782cdbb7eb8ecbd132060515573f",
-        "signature": "eaccaaec4001b7c7e672f371d466e96fcbe3782cdbb7eb8ecbd132060515573f"
-      },
-      "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts": {
-        "version": "3eab7021df5e70f82b8ab7fb80bf8cbcc481523755fa7c7b93d5c3d59f968b00",
-        "signature": "3eab7021df5e70f82b8ab7fb80bf8cbcc481523755fa7c7b93d5c3d59f968b00"
-      },
-      "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts": {
-        "version": "f3eca6b9a668c7872bb132fafe6750c582771c40a66606745c2c01dbec8d4c5d",
-        "signature": "f3eca6b9a668c7872bb132fafe6750c582771c40a66606745c2c01dbec8d4c5d"
-      },
-      "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts": {
-        "version": "bdbe3e5d1f1f3dd035c551b6f94883212ccdbe9b3610f65f49138980e0efc0d7",
-        "signature": "bdbe3e5d1f1f3dd035c551b6f94883212ccdbe9b3610f65f49138980e0efc0d7"
-      },
-      "../node_modules/@nestjs/bull/dist/utils/index.d.ts": {
-        "version": "b59d41de06e6f8bdb18a1f1177c8ba5c2bdc552c031614efe856c3a8f084bb19",
-        "signature": "b59d41de06e6f8bdb18a1f1177c8ba5c2bdc552c031614efe856c3a8f084bb19"
-      },
-      "../node_modules/@nestjs/bull/dist/index.d.ts": {
-        "version": "1791898b5aa44a5e66e0239577712a045366d31b1dccf8c072d46b0034780dd0",
-        "signature": "1791898b5aa44a5e66e0239577712a045366d31b1dccf8c072d46b0034780dd0"
-      },
-      "../node_modules/@nestjs/config/dist/config.service.d.ts": {
-        "version": "22d6c266337a240cae9f6d837927706afd1f2ca66318e95bfae92d0830bdb68c",
-        "signature": "22d6c266337a240cae9f6d837927706afd1f2ca66318e95bfae92d0830bdb68c"
-      },
-      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": {
-        "version": "c216ce81e0306d4d666bf06375f5c2693e7c6b2bc920d1939d956ab01656f744",
-        "signature": "c216ce81e0306d4d666bf06375f5c2693e7c6b2bc920d1939d956ab01656f744"
-      },
-      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": {
-        "version": "a7184b8922290d1917d520ecc9418f65b06673cacbbddd96192f4e9bca3c3fcb",
-        "signature": "a7184b8922290d1917d520ecc9418f65b06673cacbbddd96192f4e9bca3c3fcb"
-      },
-      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": {
-        "version": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a",
-        "signature": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a"
-      },
-      "../node_modules/@nestjs/config/dist/config.module.d.ts": {
-        "version": "0992d2bd4d9502b04ba7e544dcd293e021f9c0cb9d612c85eaf30d68b0f8a162",
-        "signature": "0992d2bd4d9502b04ba7e544dcd293e021f9c0cb9d612c85eaf30d68b0f8a162"
-      },
-      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": {
-        "version": "839d15098cc51d756b67acda281788779645cbf8e95571897951afb52ea6535a",
-        "signature": "839d15098cc51d756b67acda281788779645cbf8e95571897951afb52ea6535a"
-      },
-      "../node_modules/@nestjs/config/dist/types/index.d.ts": {
-        "version": "77f4173f78dac7a2c4aca60a34ebd340251ee225b2865c7e85a4e5785aa3f5e8",
-        "signature": "77f4173f78dac7a2c4aca60a34ebd340251ee225b2865c7e85a4e5785aa3f5e8"
-      },
-      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": {
-        "version": "1d2254ab5fdfd1f346a6e8d03ec698954dd330fdafc2942b77366a052571eab7",
-        "signature": "1d2254ab5fdfd1f346a6e8d03ec698954dd330fdafc2942b77366a052571eab7"
-      },
-      "../node_modules/@nestjs/config/dist/utils/index.d.ts": {
-        "version": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6",
-        "signature": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6"
-      },
-      "../node_modules/@nestjs/config/dist/index.d.ts": {
-        "version": "e3e43b2ee33a384c872f243e52aa8faa1ccd69a7c0bb44eb878d4ff662cd1991",
-        "signature": "e3e43b2ee33a384c872f243e52aa8faa1ccd69a7c0bb44eb878d4ff662cd1991"
-      },
-      "../node_modules/@nestjs/config/index.d.ts": {
-        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
-        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
-      },
-      "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts": {
-        "version": "715764c8ed9aa683f5ca3ccd5ecdb169451b085afe078dfc2d15f6c1c3aacb3e",
-        "signature": "715764c8ed9aa683f5ca3ccd5ecdb169451b085afe078dfc2d15f6c1c3aacb3e"
-      },
-      "../node_modules/@nestjs/schedule/dist/enums/index.d.ts": {
-        "version": "68065ce3af3ef8599af8338068cf336be35249eff281ee393186a0ef40db3abf",
-        "signature": "68065ce3af3ef8599af8338068cf336be35249eff281ee393186a0ef40db3abf"
-      },
-      "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts": {
-        "version": "f5e11b3470c7c3c44c05ef445eb509e1d339df13cee0e882edbcc5c389294f6a",
-        "signature": "f5e11b3470c7c3c44c05ef445eb509e1d339df13cee0e882edbcc5c389294f6a"
-      },
-      "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts": {
-        "version": "d1fd6ff6e0d1cee69f853c805f3842924425f68edc108283a0bb1628c78d1a51",
-        "signature": "d1fd6ff6e0d1cee69f853c805f3842924425f68edc108283a0bb1628c78d1a51"
-      },
-      "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts": {
-        "version": "6d3eb6a1c83878770cc946e7b8d59c51e1649aee979f4a11356a74613c52c649",
-        "signature": "6d3eb6a1c83878770cc946e7b8d59c51e1649aee979f4a11356a74613c52c649"
-      },
-      "../node_modules/@nestjs/schedule/dist/decorators/index.d.ts": {
-        "version": "4e5f1234308de112f09920e0a0b99f35a9780b3abbc13a84445f32a490d0bb87",
-        "signature": "4e5f1234308de112f09920e0a0b99f35a9780b3abbc13a84445f32a490d0bb87"
-      },
-      "../node_modules/@nestjs/schedule/dist/schedule.module.d.ts": {
-        "version": "a8a3b336f10078fb021c597d024a5526f2e72d81a349667db1a5cb5e9db8832c",
-        "signature": "a8a3b336f10078fb021c597d024a5526f2e72d81a349667db1a5cb5e9db8832c"
       },
       "../node_modules/@types/cron/index.d.ts": {
         "version": "a88aa41ef28a1c632437f648c7f432da9e075567f4cbe35dbf6611bc76b86093",
@@ -4289,9 +4213,89 @@
         "version": "510cd3aca0a87128cef4b24abcd5c346fd697c7f94e2d9e593620afce69b5f39",
         "signature": "6087c7510d350feb68ecee3df76a1cd0ff5b614cbfe6c44318350143f6f1b04c"
       },
-      "../node_modules/@types/sharp/index.d.ts": {
-        "version": "be094b51e6c3da8174be5e7df12b909dc35949132775ab1dc8a1ac17d5f9ee7f",
-        "signature": "be094b51e6c3da8174be5e7df12b909dc35949132775ab1dc8a1ac17d5f9ee7f"
+      "../node_modules/@types/ioredis/index.d.ts": {
+        "version": "67bdf1c76ff86a664ff1bfbaed2faa053817844d252aade7a6798efb5dcffad7",
+        "signature": "67bdf1c76ff86a664ff1bfbaed2faa053817844d252aade7a6798efb5dcffad7"
+      },
+      "../node_modules/@types/bull/index.d.ts": {
+        "version": "a61bf1a7e1177ab2e61533a6492939839238be485330d60d022bf69ff9b128d2",
+        "signature": "a61bf1a7e1177ab2e61533a6492939839238be485330d60d022bf69ff9b128d2"
+      },
+      "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts": {
+        "version": "dbf1771bfa71180fb7da21cd4c0c456b531cb723a75c7dc1e8fcf6248be5803f",
+        "signature": "dbf1771bfa71180fb7da21cd4c0c456b531cb723a75c7dc1e8fcf6248be5803f"
+      },
+      "../node_modules/@nestjs/bull/dist/bull.types.d.ts": {
+        "version": "462bd54b16068cd2109b564e30f2197769576c6843ac2a0c57696437b0b75b18",
+        "signature": "462bd54b16068cd2109b564e30f2197769576c6843ac2a0c57696437b0b75b18"
+      },
+      "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts": {
+        "version": "d54d959282ef2683989faae781d0ab1b4e634e97e0cdc656677ad85867fb7f07",
+        "signature": "d54d959282ef2683989faae781d0ab1b4e634e97e0cdc656677ad85867fb7f07"
+      },
+      "../node_modules/@nestjs/bull/dist/bull.module.d.ts": {
+        "version": "5470f28f7cf16f41b05e8091274bc32e5814b20a0fc20bdef476c00d3440ef3f",
+        "signature": "5470f28f7cf16f41b05e8091274bc32e5814b20a0fc20bdef476c00d3440ef3f"
+      },
+      "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts": {
+        "version": "2efdb0b1205c25359227906fe77f648191b03b775c358e2d869e30f9859ac255",
+        "signature": "2efdb0b1205c25359227906fe77f648191b03b775c358e2d869e30f9859ac255"
+      },
+      "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts": {
+        "version": "becf478324ec62bbd81e51526169e00dc61bc00f2b4c2818ab50ffbd25778967",
+        "signature": "becf478324ec62bbd81e51526169e00dc61bc00f2b4c2818ab50ffbd25778967"
+      },
+      "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts": {
+        "version": "bc893a45cd21a23a21b301fb9234866919d6e6ff4319576d8c062c2f916b5a11",
+        "signature": "bc893a45cd21a23a21b301fb9234866919d6e6ff4319576d8c062c2f916b5a11"
+      },
+      "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts": {
+        "version": "166f70cb8d18a554307e9d6e5b393a5cb74d412fa1229c0d9abb137d95545739",
+        "signature": "166f70cb8d18a554307e9d6e5b393a5cb74d412fa1229c0d9abb137d95545739"
+      },
+      "../node_modules/@nestjs/bull/dist/decorators/index.d.ts": {
+        "version": "9ca2b093001037c017169b747ec9616b26b42ac9d8fd60aa2b0d9eb6b8c1cf95",
+        "signature": "9ca2b093001037c017169b747ec9616b26b42ac9d8fd60aa2b0d9eb6b8c1cf95"
+      },
+      "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts": {
+        "version": "5e8f7bf17b0f8382eff0d93f1ffaafc4f7fd15293b4a90edd517dca2a3ff6020",
+        "signature": "5e8f7bf17b0f8382eff0d93f1ffaafc4f7fd15293b4a90edd517dca2a3ff6020"
+      },
+      "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts": {
+        "version": "e7705224440c17c183317a861a0f1392a9c0746c3a06549c09e2d511a8c0c32a",
+        "signature": "e7705224440c17c183317a861a0f1392a9c0746c3a06549c09e2d511a8c0c32a"
+      },
+      "../node_modules/@nestjs/bull/dist/enums/index.d.ts": {
+        "version": "eaccaaec4001b7c7e672f371d466e96fcbe3782cdbb7eb8ecbd132060515573f",
+        "signature": "eaccaaec4001b7c7e672f371d466e96fcbe3782cdbb7eb8ecbd132060515573f"
+      },
+      "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts": {
+        "version": "3eab7021df5e70f82b8ab7fb80bf8cbcc481523755fa7c7b93d5c3d59f968b00",
+        "signature": "3eab7021df5e70f82b8ab7fb80bf8cbcc481523755fa7c7b93d5c3d59f968b00"
+      },
+      "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts": {
+        "version": "f3eca6b9a668c7872bb132fafe6750c582771c40a66606745c2c01dbec8d4c5d",
+        "signature": "f3eca6b9a668c7872bb132fafe6750c582771c40a66606745c2c01dbec8d4c5d"
+      },
+      "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts": {
+        "version": "bdbe3e5d1f1f3dd035c551b6f94883212ccdbe9b3610f65f49138980e0efc0d7",
+        "signature": "bdbe3e5d1f1f3dd035c551b6f94883212ccdbe9b3610f65f49138980e0efc0d7"
+      },
+      "../node_modules/@nestjs/bull/dist/utils/index.d.ts": {
+        "version": "b59d41de06e6f8bdb18a1f1177c8ba5c2bdc552c031614efe856c3a8f084bb19",
+        "signature": "b59d41de06e6f8bdb18a1f1177c8ba5c2bdc552c031614efe856c3a8f084bb19"
+      },
+      "../node_modules/@nestjs/bull/dist/index.d.ts": {
+        "version": "1791898b5aa44a5e66e0239577712a045366d31b1dccf8c072d46b0034780dd0",
+        "signature": "1791898b5aa44a5e66e0239577712a045366d31b1dccf8c072d46b0034780dd0"
+      },
+      "../src/auth-sessions/auth-sessions.dto.ts": {
+        "version": "5ee6bb8b133d42b017319e44731dfd435d45669eca22ea10ec976a15da9d4e0f",
+        "signature": "50a02295590bd74dcc3954368d9d4fe43efcae05ac4c26293a2779f8be3dab15"
+      },
+      "../src/auth-users/auth-users.dto.ts": {
+        "version": "e73057872e1c208e3388a2bd1f385372543fb0a26e76bd84a8e6074e97da6244",
+        "signature": "837a9f6785dfad0735acdffe0270881f9ec23ea91a3be3f50730b8b18dc0f04f"
       },
       "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts": {
         "version": "f575f1f4c48f490b4cd4d056e1ffc7d9e20519023ff8e39ae1bc1fe34c253a1c",
@@ -4362,36 +4366,32 @@
         "signature": "1b8e2370aa2872687e7ab84dcf4c565ad5515b28c098b11d68a2d67d5e51095f"
       },
       "../src/storage/storage.service.ts": {
-        "version": "8d3e1ccca5d19fb9dd3429cfe89b7ac520a79028e4d796eb34eb6a5486b92710",
-        "signature": "49a78a1d23bc40935659cae48e062b96a5970f878e8806f40d73ef93f946240d"
+        "version": "35d375dd909bc2cbe5c0901f20acde020052520106928b9355ea9092369c6182",
+        "signature": "683451fb0fcc38ea35d99ade4b7817cd9224b7aeb871e0e625636d29eea2ac75"
       },
-      "../src/storage/storage-images-default-config.ts": {
-        "version": "ebafc38256ea80d47214a792d6ea1a254c0e9c24798c40e7ca26289c7d85fbe7",
-        "signature": "a5796310ed63d73e43966944ee4515c1a5b3fdd2a9dc230407c6f61963f94f75"
+      "../node_modules/@types/sharp/index.d.ts": {
+        "version": "be094b51e6c3da8174be5e7df12b909dc35949132775ab1dc8a1ac17d5f9ee7f",
+        "signature": "be094b51e6c3da8174be5e7df12b909dc35949132775ab1dc8a1ac17d5f9ee7f"
       },
-      "../src/storage/storage.module.ts": {
-        "version": "ca4526439b57cf188fe445ea32170428ef619e8899824b6c0b61c6c9f0db98f6",
-        "signature": "f5807fdaf2407391ac5fe93a98ee2b5769936ae77f19e542aee56cb2ed56e02b"
+      "../src/storage-images/storage-images-default-config.ts": {
+        "version": "16ecef4887f29016b373b384d8e1d52359b33c29ef8803ff244d1fc28c2ae17f",
+        "signature": "acede50e682571a7f47f538bfcc2594dac223c612c8eefbc7151b9b8cb9f0d04"
       },
-      "../src/storage/sharp.ts": {
-        "version": "2f45d17c97f46950260209ee5e1083a97c835ec15febb9dbeeabc6fdf7d59d0c",
-        "signature": "84236729539b05413658d61ed1d3a0f2f4c4e8726ca60c0bd843f0a05938b2c8"
+      "../src/storage-images/storage-images.module.ts": {
+        "version": "2534c87e00c8c7173bada22c4de3219cc6ed37103b702f535317a2053269c3fd",
+        "signature": "9225176e6c382098d29dd8ff95caefc3531d81f608b1fe8b982a6be2b0974eb2"
       },
-      "../src/storage/storage-images.service.ts": {
-        "version": "b0fa59f439961fdf6327b4fe8f77cef5bed11e411fb481712049fda6673ddb2f",
-        "signature": "f590ddb49686126419b687cd3fb94366f88ab31d3210c4ad31d3669c0ffb338b"
+      "../src/storage-images/sharp.ts": {
+        "version": "21b7857bce42dbb161806e763fc0a085659c84222f25ffe712e1c7d9cdd95d26",
+        "signature": "7c047ed6aea3efdda7259c5fe8331a0ea541df4d969e1f66f2346396bbee1527"
       },
-      "../src/auth-users/auth-users.dto.ts": {
-        "version": "e73057872e1c208e3388a2bd1f385372543fb0a26e76bd84a8e6074e97da6244",
-        "signature": "837a9f6785dfad0735acdffe0270881f9ec23ea91a3be3f50730b8b18dc0f04f"
-      },
-      "../src/auth-sessions/auth-sessions.dto.ts": {
-        "version": "5ee6bb8b133d42b017319e44731dfd435d45669eca22ea10ec976a15da9d4e0f",
-        "signature": "50a02295590bd74dcc3954368d9d4fe43efcae05ac4c26293a2779f8be3dab15"
+      "../src/storage-images/storage-images.service.ts": {
+        "version": "e570f307e9f5b045d842ea426e93d24d2449fee9cb1457710866b51c2c3f17bd",
+        "signature": "ca1156de13c5c09d5de68da5919e0016d0209467d2456a0da03053dcbda85305"
       },
       "../src/users/base-user.service.ts": {
-        "version": "9fe34c534a2c98a6d13b9adaa5676d6b8e27f1091a91da1534e5fcb5a7c782fc",
-        "signature": "3c38254e75bb5361331debae86a2fdd34811be2ee05cd22bbfdda336a9934f16"
+        "version": "fce622501b48155cb8285d07d1636d2248cecdbd22ec5321bd99a2f0507955ff",
+        "signature": "88c297794082ff5e1430c65a5628054b56261a915d4887ec76f3af7577023584"
       },
       "../src/auth-email/auth-email.dto.ts": {
         "version": "0e012215bc6c08312db9027013547e50ea678d364b57192043e72d66081e7a30",
@@ -4565,85 +4565,13 @@
         "version": "ce4470629ecb50ffd063f8381a8281e39fbcd2b5eb3ee8453e41e3e2f58885d4",
         "signature": "022ccf34e8f239908d34172f8ee6b9859ed91299763f526c12aafcb2fa34d4f0"
       },
-      "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts": {
-        "version": "b87682ddc9e2c3714ca66991cdd86ff7e18cae6fd010742a93bd612a07d19697",
-        "signature": "b87682ddc9e2c3714ca66991cdd86ff7e18cae6fd010742a93bd612a07d19697"
-      },
-      "../node_modules/@nestjs/platform-express/adapters/express-adapter.d.ts": {
-        "version": "7c9fb139cfddf0c42ca4a839f30bb78f13908774e48dbbbfbf69387af2ef6c13",
-        "signature": "7c9fb139cfddf0c42ca4a839f30bb78f13908774e48dbbbfbf69387af2ef6c13"
-      },
-      "../node_modules/@nestjs/platform-express/adapters/index.d.ts": {
-        "version": "86bf2bfe29d0bc3fbc68e64c25ea6eab9bcb3c518ae941012ed75b1e87d391ae",
-        "signature": "86bf2bfe29d0bc3fbc68e64c25ea6eab9bcb3c518ae941012ed75b1e87d391ae"
-      },
-      "../node_modules/@nestjs/platform-express/interfaces/nest-express-application.interface.d.ts": {
-        "version": "8b584341b20cfcdaf8e47f5b91b1d5bfae1cc1be94941b4ccec6cf07f1017950",
-        "signature": "8b584341b20cfcdaf8e47f5b91b1d5bfae1cc1be94941b4ccec6cf07f1017950"
-      },
-      "../node_modules/@nestjs/platform-express/interfaces/index.d.ts": {
-        "version": "68a330d1246e3f0ed055b931ab6f4f9505d7c2db0560515f68c722c06541dc0d",
-        "signature": "68a330d1246e3f0ed055b931ab6f4f9505d7c2db0560515f68c722c06541dc0d"
-      },
-      "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts": {
-        "version": "8ae337fcd337d5ca179611dae780e7dbb45b3c0cbc6debc5067a4215e95cd873",
-        "signature": "8ae337fcd337d5ca179611dae780e7dbb45b3c0cbc6debc5067a4215e95cd873"
-      },
-      "../node_modules/@nestjs/platform-express/multer/interceptors/any-files.interceptor.d.ts": {
-        "version": "00427e68be5cbfd0694c650ebf27dc9d5cb8ec62254ca5af0cd3e412595f8d09",
-        "signature": "00427e68be5cbfd0694c650ebf27dc9d5cb8ec62254ca5af0cd3e412595f8d09"
-      },
-      "../node_modules/@nestjs/platform-express/multer/interceptors/file-fields.interceptor.d.ts": {
-        "version": "6a013828e3333e21fde3a4d1c7da0c41e8ce0218a98ad8e71025c2d437a2458b",
-        "signature": "6a013828e3333e21fde3a4d1c7da0c41e8ce0218a98ad8e71025c2d437a2458b"
-      },
-      "../node_modules/@nestjs/platform-express/multer/interceptors/file.interceptor.d.ts": {
-        "version": "fc1a967ceb559957a8fd153d364596d7c906440c401e9a1f0ef9cda62a92a937",
-        "signature": "fc1a967ceb559957a8fd153d364596d7c906440c401e9a1f0ef9cda62a92a937"
-      },
-      "../node_modules/@nestjs/platform-express/multer/interceptors/files.interceptor.d.ts": {
-        "version": "fd09f594933708040bbab2ad98fdfd1f076209ff0d514cbc8ab50bc39f462619",
-        "signature": "fd09f594933708040bbab2ad98fdfd1f076209ff0d514cbc8ab50bc39f462619"
-      },
-      "../node_modules/@nestjs/platform-express/multer/interceptors/index.d.ts": {
-        "version": "6db46ed9adeb732a2c46b05dd64a3fe85b2789065f1ef7668f583c61f1046a14",
-        "signature": "6db46ed9adeb732a2c46b05dd64a3fe85b2789065f1ef7668f583c61f1046a14"
-      },
-      "../node_modules/@nestjs/platform-express/multer/interfaces/files-upload-module.interface.d.ts": {
-        "version": "7bb8a371f7790a421606678b50a943955bfc182beca2c42f8d1473cc2973fa12",
-        "signature": "7bb8a371f7790a421606678b50a943955bfc182beca2c42f8d1473cc2973fa12"
-      },
-      "../node_modules/@nestjs/platform-express/multer/interfaces/index.d.ts": {
-        "version": "d8c1697db4bb3234ff3f8481545284992f1516bc712421b81ee3ef3f226ae112",
-        "signature": "d8c1697db4bb3234ff3f8481545284992f1516bc712421b81ee3ef3f226ae112"
-      },
-      "../node_modules/@nestjs/platform-express/multer/multer.module.d.ts": {
-        "version": "549adfb8fb51148eeb2c0659941b3a508988ee0b00f325fbaae7e96bc4b3e4c9",
-        "signature": "549adfb8fb51148eeb2c0659941b3a508988ee0b00f325fbaae7e96bc4b3e4c9"
-      },
-      "../node_modules/@nestjs/platform-express/multer/index.d.ts": {
-        "version": "e2c3c3ca3818d610599392a9431e60ec021c5d59262ecd616538484990f6e331",
-        "signature": "e2c3c3ca3818d610599392a9431e60ec021c5d59262ecd616538484990f6e331"
-      },
-      "../node_modules/@nestjs/platform-express/index.d.ts": {
-        "version": "e3cd60be3c4f95c43420be67eaa21637585b7c1a8129f9b39983bbd294f9513c",
-        "signature": "e3cd60be3c4f95c43420be67eaa21637585b7c1a8129f9b39983bbd294f9513c"
-      },
-      "../src/storage/valid-jpeg-image.ts": {
-        "version": "ffcfe8b7ecf2c2c2428c5c2c94266cd780b9ca2a3d28f0f65eda70d97e616482",
-        "signature": "8918d9ef7252ecc06613db922a3f0e40ec8c2c8c82faf537b74e2156fe4d002f"
-      },
       "../src/auth-users/auth-users.controller.ts": {
-        "version": "7b645528ace2c470bdf0221dadbf20dc44ff638ac52b5c078eef8be4376232eb",
-        "signature": "6450aa61ff330edfc9e55a5f229ab5c78574232bb0b31cade3990fcb3433252c"
+        "version": "5727c70c4efa59bece4452fdf11f1713efe8133df5f43fb1a555235d308f962c",
+        "signature": "817001817714e8420545d5894a6fd5507835aab40523009995f4c78552041d88"
       },
       "../src/auth-users/auth-users.module.ts": {
         "version": "fc5208ff71ff7488af611d499b972c37160bedfbc360b8b10a51eae478577927",
         "signature": "2e06bb9b35807c6cad2d627058ed724f985bf7638662820dd6bc77a244ef3202"
-      },
-      "../src/utils/register-queue.ts": {
-        "version": "7f2163dc9b2b6276ebe14981235cc65f8b6b4c4ea7ed6a738e9f411a22d8ad72",
-        "signature": "20ff674de9320d123750d46e3f5400e5290d03e3d20f8914f76cf66f17f2fb8d"
       },
       "../node_modules/@types/passport-strategy/index.d.ts": {
         "version": "29d59e921bc723594bbfc98230d24f38f0d5a669f28fcf989b7468f4f95b7c52",
@@ -4662,7 +4590,7 @@
         "signature": "a6b158ba291ca8c38a5a1974404d6da1c2be1108af3b8c8bf634488e4c0e3a39"
       },
       "../src/auth/auth.module.ts": {
-        "version": "1eaa247af4989491a045ddc366664ea8e94cee8b9e21d79562a6eb532b05c810",
+        "version": "0d5083a3f088b3c492d765cf849fe29b7464ed67c53f83c55aa70251446f609d",
         "signature": "70f5707ff4d3159b9d9de8b24561cce7e303975e8f689e1d622e3bfdd7d3e29a"
       },
       "../node_modules/typeorm-naming-strategies/snake-naming.strategy.d.ts": {
@@ -4673,12 +4601,12 @@
         "version": "902e677c4f9c4ea45c5c7abc03badffe8fc5a881a1476bd50c86538508fa088b",
         "signature": "902e677c4f9c4ea45c5c7abc03badffe8fc5a881a1476bd50c86538508fa088b"
       },
-      "../src/notification/notification.entity.ts": {
+      "../src/notifications/notification.entity.ts": {
         "version": "12853cc1fa413e1a701bcbd38102a0994b0199d30ccc46e1f12c753b27335784",
         "signature": "c9fb7b0e9629c8ada44ee17c28eb603e3378c221efc0f314076fa39397eea79b"
       },
       "../src/db/db.module.ts": {
-        "version": "0a036a6eae1ff23eda53040eba0bc0c43ae16ad23b059ee8c6977d4c9bb85ed1",
+        "version": "51045860b5328974588e95b3084de008dc32864e45f07dd6114f7858a5b779ba",
         "signature": "8f35b7dc2c52b4ea940a2f825c34d2ac1aefeb2c451fa2a698bb801534ef0c2f"
       },
       "../src/logger/db-logger.module.ts": {
@@ -4689,37 +4617,33 @@
         "version": "ed3587d953b6454747c3f682b0f38dcc05edc43b5fdbcdfcca9b092908833312",
         "signature": "ef2f9c69caf3fc97114a35b3c48d707b1c6300bc63bcedce30653c380d92e2e7"
       },
-      "../src/notification/notifications.consts.ts": {
-        "version": "013ce706178a1d863d97558673bba379e5767bc8befe8173511c35897a1e083c",
-        "signature": "2a8a6ee890355a588e36dc9559feed9a9b3caaedce90a9471886c99ed191ffb0"
+      "../src/pagination/pagination.decorator.ts": {
+        "version": "6fb4b8846646fbe21cecb54c1af54f7b487e3f43c298c9dd22dd46a8fca5f0e5",
+        "signature": "8a30b75e886417ee04515eedd643dfa3b7ba011e3155b525c9d174ad1589f278"
       },
-      "../src/notification/notification.service.ts": {
-        "version": "08c2d326e6e265d2b8178f01b1375a19278debb2301ea0b1f67fea7bfcb48262",
-        "signature": "dedcd71ef8990ee51c1464c7b53be4935937b54786def5938d66e6195a6f3329"
+      "../src/notifications/notifications.service.ts": {
+        "version": "75e868bea30825567c62a351462c37c2b2e778a77c9f46fd4ed92e4a83ce0b55",
+        "signature": "e8b2ca43b04f47c68117861acf159540646c5a664e74d0b8d96bee7bceeedf8b"
       },
-      "../src/notification/notification.controller.ts": {
-        "version": "75865f4f28afbf01fe60224dc6a926bf471b84d3dc9fcf553eef8f9b13c45d75",
-        "signature": "5971e958a7ebe018f56478491721a26e2c232f75dacfdce62827e5f3da638c9b"
+      "../src/notifications/notifications.controller.ts": {
+        "version": "b9455fbf377f6002e414bf7b3d0eae3db266cf3b251f72ea646f9e257a904b67",
+        "signature": "5f21dbb2db6576dcf24415f4e13baf68e0905f40808d0959de31443859ebded6"
       },
-      "../src/notification/notifications.cron.service.ts": {
-        "version": "62eecc91077cc6770ca3bd246f6eeb07a7d8cde98846767115bd50adf449b2c3",
-        "signature": "0c4129bd295993322ef18ba02d500a66928d45e7e2a93a6d396ae4a461738e97"
+      "../src/notifications/notifications.cron.ts": {
+        "version": "e56161dda4428a71f3ddcafca120038772662b3588824fa2a8500bf5348ad9ed",
+        "signature": "9185a4a8e1c1bb78c559c0c3d58e746263a76bf31ec0a02728c2a2796a410ce8"
       },
-      "../src/notification/notifications.processor.ts": {
-        "version": "9cf44cb8259d28d5923a3755dd3504a2999bed1a88f75276166d279f04731dad",
-        "signature": "571492c4c22aec985009c538122a8e677cded97a90aa06bdda39bede7f6ee5b5"
+      "../src/notifications/notifications.module.ts": {
+        "version": "cd7eec544595e6f28e8db2fea07ae81a08c152321ed67aac507bc9b6ccd31514",
+        "signature": "d809868ad7ff9b45d9a61bbb049b827f0153b6390680b3e34032d5a8e064c41f"
       },
-      "../src/notification/notification.module.ts": {
-        "version": "f06cebaad1f83a7b6d1048be70f4d5bb91658980cca2884c3425a6af987b9ec3",
-        "signature": "f00f09afd3673be53396e657b60082a125f21773b3ea04cffd2ff703327fb5bd"
+      "../src/storage/storage.module.ts": {
+        "version": "53464813f7d8c6d17690517359ab6c742c5231efbe22a6365f7e9f08fe398f10",
+        "signature": "dd4e84055ea74d7e5c266cef0db05ee69d9065bdd3782995c1630827c15da741"
       },
       "../src/core.module.ts": {
-        "version": "1e5c0bf4ad5df7d4c7706d0a95d1e9c28d096dc6e66d1f02c539fdf3caa3cfef",
-        "signature": "a457e67b0bb4eeeaa2f9d10fffe4be58c702b0677b3a3c987d4496d167bb4fb4"
-      },
-      "../src/html.d.ts": {
-        "version": "dc7539bc4c5ce5913b2e1d7df86c0aac0ec0567bf8b03bb45b564ac0be879711",
-        "signature": "dc7539bc4c5ce5913b2e1d7df86c0aac0ec0567bf8b03bb45b564ac0be879711"
+        "version": "ca9e325250967c49fbc037ed19701d03ecba768c3edc6e0793d17cec926e4ec8",
+        "signature": "8292dcab23cab719f233d7b5486b6cbce76005ef1832537e475a476a0e492551"
       },
       "../src/id-array.dto.ts": {
         "version": "ea7266b614c23cc97bbb020d4adc0fefe69c31352bcc55f7a3414a9c7b50b893",
@@ -4745,10 +4669,6 @@
         "version": "103f437904a08555eea0f3e2102b622bdc3f5ddf081f5c5a83361a0c4c412a1e",
         "signature": "0f37145d2db17187969d34794082c0553204451a7167f97cc679687360dde057"
       },
-      "../src/pagination/pagination.decorator.ts": {
-        "version": "6fb4b8846646fbe21cecb54c1af54f7b487e3f43c298c9dd22dd46a8fca5f0e5",
-        "signature": "8a30b75e886417ee04515eedd643dfa3b7ba011e3155b525c9d174ad1589f278"
-      },
       "../src/pipes/many-uuid.pipe.ts": {
         "version": "29df218f40f116cec7cb2b38b41e26175b47992cbe90a116705faa3f2753b7a2",
         "signature": "ee327e6b6e5490fb132da44f4319b165389cc14cf59080ccebec48febdb18a1c"
@@ -4756,6 +4676,10 @@
       "../src/simple-admin.guard.ts": {
         "version": "69852fb70f28564434ae6decdbad160d66e5d6909c03772daed9a3544ff46fdf",
         "signature": "fcadbfa0b3a79d3614dd19924bf4dbe52c1b509ff44ded6a61e1155890cbd60a"
+      },
+      "../src/storage-images/valid-jpeg.ts": {
+        "version": "7a1d3354296c8aa8d3d3c3f0261949b3fd3d02ab22cf4901d24f6cb02ff5d82f",
+        "signature": "8918d9ef7252ecc06613db922a3f0e40ec8c2c8c82faf537b74e2156fe4d002f"
       },
       "../src/typeorm/orm-query.pipe.ts": {
         "version": "e174d745a595083f6b89f86773b142174aa66d6efed4df9e92457cac81173f2e",
@@ -4765,9 +4689,13 @@
         "version": "3f9637df5f60613015780c6bd92fa5fef0cda9bc8abebb5294f435340b71744b",
         "signature": "7cacc6df91be9603b93cd10ccb9dbc2f2c9d4b424f348f83608d78103c3e6af6"
       },
+      "../src/utils/register-queue.ts": {
+        "version": "7f2163dc9b2b6276ebe14981235cc65f8b6b4c4ea7ed6a738e9f411a22d8ad72",
+        "signature": "20ff674de9320d123750d46e3f5400e5290d03e3d20f8914f76cf66f17f2fb8d"
+      },
       "../src/index.ts": {
-        "version": "55190a763520eeaff09cf237df59a8971a1e1571a6ba9f8529b3ac1bffff41f0",
-        "signature": "55190a763520eeaff09cf237df59a8971a1e1571a6ba9f8529b3ac1bffff41f0"
+        "version": "aacbe2f817b945b01e6cf422e15732fa895563c01369394a473ebfbd84700c2d",
+        "signature": "aacbe2f817b945b01e6cf422e15732fa895563c01369394a473ebfbd84700c2d"
       },
       "../src/__mocks__/fs.ts": {
         "version": "8604ad06fbdd6c8f6aed5766a8e66e2039628a476f41ccfdcce6bf6154a1893c",
@@ -4776,10 +4704,6 @@
       "../src/__mocks__/minio.ts": {
         "version": "dee69f170fffeb34323d1c60ede874924cca390a975ed5b77797ffd6507e9600",
         "signature": "5dbff0081319d44fff723b2e502ead6d5e96f1e8a89e1cac3fbe6b9b64396f67"
-      },
-      "../src/storage/publicReadPolicy.ts": {
-        "version": "09dc2d5ef9c2a6f8f592eef1ce60d24fbb0ac0a52f08ea93ffeba1034e881f15",
-        "signature": "97735f509b02b8ef2eb5807d3a910a08574112618297f83c9ee7e3d4b513d493"
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
         "version": "59706a76a49e1a9ed521cf6e1a1fd1496be0b5cddcaf6be71837cfe39017b0d6",
@@ -4804,6 +4728,10 @@
       "../node_modules/@types/babel__core/index.d.ts": {
         "version": "af523cd24a11e1feadface05a9ac4f692a99bcb65c020b96061c63ac593824ad",
         "signature": "af523cd24a11e1feadface05a9ac4f692a99bcb65c020b96061c63ac593824ad"
+      },
+      "../node_modules/@types/bull-board/index.d.ts": {
+        "version": "cd427812690499208e68b180d90f5902b638a1c5fbc341c54ae9288864772ec6",
+        "signature": "cd427812690499208e68b180d90f5902b638a1c5fbc341c54ae9288864772ec6"
       },
       "../node_modules/@types/color-name/index.d.ts": {
         "version": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
@@ -14047,6 +13975,152 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/config.module.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/types/index.d.ts",
+        "../node_modules/@nestjs/config/dist/utils/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/enums/index.d.ts": [
+        "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/decorators/index.d.ts": [
+        "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts",
+        "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts",
+        "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/schedule.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@types/node/globals.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -14455,316 +14529,6 @@
       "../node_modules/@types/node/ts3.2/index.d.ts": [
         "../node_modules/@types/node/ts3.2/base.d.ts",
         "../node_modules/@types/node/assert.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/ioredis/index.d.ts": [
-        "../node_modules/@types/node/tls.d.ts",
-        "../node_modules/@types/node/stream.d.ts",
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/bull/index.d.ts": [
-        "../node_modules/@types/ioredis/index.d.ts",
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts": [
-        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/bull.types.d.ts": [
-        "../node_modules/@types/bull/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts": [
-        "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/@types/bull/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/bull.module.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts": [
-        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts",
-        "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts",
-        "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts",
-        "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/enums/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts",
-        "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
-        "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/utils/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts",
-        "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/bull.module.d.ts",
-        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
-        "../node_modules/@nestjs/bull/dist/decorators/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/enums/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/utils/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/@nestjs/config/dist/config.service.d.ts",
-        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/types/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/config.module.d.ts",
-        "../node_modules/@nestjs/config/dist/config.service.d.ts",
-        "../node_modules/@nestjs/config/dist/types/index.d.ts",
-        "../node_modules/@nestjs/config/dist/utils/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/enums/index.d.ts": [
-        "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/decorators/index.d.ts": [
-        "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts",
-        "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts",
-        "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/schedule.module.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -15760,9 +15524,182 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/sharp/index.d.ts": [
+      "../node_modules/@types/ioredis/index.d.ts": [
+        "../node_modules/@types/node/tls.d.ts",
         "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/bull/index.d.ts": [
+        "../node_modules/@types/ioredis/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts": [
+        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/bull.types.d.ts": [
+        "../node_modules/@types/bull/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@types/bull/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/bull.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts": [
+        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts",
+        "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts",
+        "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts",
+        "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/enums/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts",
+        "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
+        "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts",
+        "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/bull.module.d.ts",
+        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
+        "../node_modules/@nestjs/bull/dist/decorators/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/enums/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/utils/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/auth-sessions/auth-sessions.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/users/base-user.entity.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/auth-users/auth-users.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/users/base-user.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -15953,63 +15890,53 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/storage/storage-images-default-config.ts": [
-        "../src/storage/storage.module.ts",
+      "../node_modules/@types/sharp/index.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/storage/storage.module.ts": [
+      "../src/storage-images/storage-images-default-config.ts": [
+        "../src/storage-images/storage-images.module.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/storage-images/storage-images.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/storage/storage.service.ts",
-        "../src/storage/storage-images.service.ts",
         "../src/consts.ts",
-        "../src/storage/storage-images-default-config.ts",
+        "../src/storage-images/storage-images-default-config.ts",
+        "../src/storage-images/storage-images.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/storage/sharp.ts": [
+      "../src/storage-images/sharp.ts": [
         "../node_modules/@types/sharp/index.d.ts",
-        "../src/storage/storage.module.ts",
+        "../src/storage-images/storage-images.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/storage/storage-images.service.ts": [
+      "../src/storage-images/storage-images.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/faker/index.d.ts",
         "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../src/consts.ts",
         "../src/entities/image.entity.ts",
-        "../src/types.ts",
-        "../src/storage/sharp.ts",
-        "../src/storage/storage.module.ts",
         "../src/storage/storage.service.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/auth-users/auth-users.dto.ts": [
-        "../node_modules/class-validator/types/index.d.ts",
-        "../src/users/base-user.entity.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/auth-sessions/auth-sessions.dto.ts": [
-        "../node_modules/class-validator/types/index.d.ts",
-        "../src/users/base-user.entity.ts",
+        "../src/types.ts",
+        "../src/storage-images/sharp.ts",
+        "../src/storage-images/storage-images.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -16018,17 +15945,16 @@
       ],
       "../src/users/base-user.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/bull/index.d.ts",
         "../node_modules/class-validator/types/index.d.ts",
         "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/access-control/role/roles.entity.ts",
         "../src/access-control/role/roles.service.ts",
-        "../src/base.service.ts",
-        "../src/storage/storage-images.service.ts",
-        "../src/users/base-user.entity.ts",
-        "../src/auth-users/auth-users.dto.ts",
         "../src/auth-sessions/auth-sessions.dto.ts",
+        "../src/auth-users/auth-users.dto.ts",
+        "../src/base.service.ts",
+        "../src/users/base-user.entity.ts",
+        "../src/storage-images/storage-images.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -16547,173 +16473,17 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/adapters/express-adapter.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/common/interfaces/external/cors-options.interface.d.ts",
-        "../node_modules/@nestjs/common/interfaces/nest-application-options.interface.d.ts",
-        "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
-        "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/adapters/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/adapters/express-adapter.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/interfaces/nest-express-application.interface.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/interfaces/nest-express-application.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts": [
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/any-files.interceptor.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/file-fields.interceptor.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/file.interceptor.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/files.interceptor.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/multer/interceptors/any-files.interceptor.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interceptors/file-fields.interceptor.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interceptors/file.interceptor.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interceptors/files.interceptor.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interfaces/files-upload-module.interface.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/multer/interfaces/files-upload-module.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/multer.module.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/files-upload-module.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/multer/interceptors/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/multer.module.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/adapters/index.d.ts",
-        "../node_modules/@nestjs/platform-express/interfaces/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/storage/valid-jpeg-image.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/auth-users/auth-users.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/passport/index.d.ts",
-        "../node_modules/@nestjs/platform-express/index.d.ts",
+        "../node_modules/class-transformer/index.d.ts",
+        "../src/auth/get-user.decorator.ts",
+        "../src/auth/jwt-guard.ts",
         "../src/consts.ts",
-        "../src/storage/valid-jpeg-image.ts",
         "../src/users/base-user.entity.ts",
         "../src/users/base-user.service.ts",
-        "../node_modules/class-transformer/index.d.ts",
         "../src/users/user.interface.ts",
         "../src/auth-users/auth-users.dto.ts",
         "../src/auth-users/auth-users.service.ts",
-        "../src/auth/jwt-guard.ts",
-        "../src/auth/get-user.decorator.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -16725,16 +16495,6 @@
         "../src/auth-users/auth-users.service.ts",
         "../src/auth-users/auth-users.controller.ts",
         "../src/auth-email/auth-email.module.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/utils/register-queue.ts": [
-        "../node_modules/@nestjs/bull/dist/index.d.ts",
-        "../node_modules/@nestjs/config/index.d.ts",
-        "../src/consts.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -16790,8 +16550,6 @@
         "../src/auth-password-reset/password-reset.module.ts",
         "../src/auth-sessions/auth-sessions.module.ts",
         "../src/auth-users/auth-users.module.ts",
-        "../src/consts.ts",
-        "../src/utils/register-queue.ts",
         "../src/auth/jwt.strategy.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -16815,7 +16573,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/notification/notification.entity.ts": [
+      "../src/notifications/notification.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/entities/base-uuid.entity.ts",
         "../src/types.ts",
@@ -16834,7 +16592,7 @@
         "../node_modules/typeorm/index.d.ts",
         "../node_modules/typeorm/connection/BaseConnectionOptions.d.ts",
         "../src/consts.ts",
-        "../src/notification/notification.entity.ts",
+        "../src/notifications/notification.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -16862,80 +16620,74 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/notification/notifications.consts.ts": [
+      "../src/pagination/pagination.decorator.ts": [
+        "../node_modules/class-validator/types/index.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/pagination/pagination-options.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/notification/notification.service.ts": [
-        "../node_modules/@nestjs/bull/dist/index.d.ts",
+      "../src/notifications/notifications.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
-        "../node_modules/@types/bull/index.d.ts",
         "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/base.service.ts",
-        "../src/consts.ts",
         "../src/types.ts",
-        "../src/notification/notification.entity.ts",
-        "../src/notification/notifications.consts.ts",
+        "../src/notifications/notification.entity.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/notification/notification.controller.ts": [
+      "../src/notifications/notifications.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/notification/notification.service.ts",
+        "../src/auth/get-user.decorator.ts",
+        "../src/auth/jwt-guard.ts",
+        "../src/pagination/pagination-options.ts",
+        "../src/pagination/pagination.decorator.ts",
+        "../src/pagination/pagination.types.ts",
         "../src/pipes/uuid.pipe.ts",
         "../src/types.ts",
-        "../src/notification/notification.entity.ts",
-        "../src/auth/get-user.decorator.ts",
         "../src/users/user.interface.ts",
+        "../src/notifications/notification.entity.ts",
+        "../src/notifications/notifications.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/notification/notifications.cron.service.ts": [
+      "../src/notifications/notifications.cron.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/schedule/index.d.ts",
-        "../node_modules/moment/ts3.1-typings/moment.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/notification/notification.service.ts",
+        "../src/notifications/notifications.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/notification/notifications.processor.ts": [
-        "../node_modules/@nestjs/bull/dist/index.d.ts",
-        "../node_modules/@types/bull/index.d.ts",
-        "../src/consts.ts",
-        "../src/notification/notification.service.ts",
-        "../src/notification/notifications.consts.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/notification/notification.module.ts": [
-        "../node_modules/@nestjs/bull/dist/index.d.ts",
+      "../src/notifications/notifications.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
-        "../src/consts.ts",
-        "../src/utils/register-queue.ts",
-        "../src/notification/notification.controller.ts",
-        "../src/notification/notification.entity.ts",
-        "../src/notification/notification.service.ts",
-        "../src/notification/notifications.cron.service.ts",
-        "../src/notification/notifications.processor.ts",
+        "../src/notifications/notifications.controller.ts",
+        "../src/notifications/notification.entity.ts",
+        "../src/notifications/notifications.service.ts",
+        "../src/notifications/notifications.cron.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/storage/storage.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/storage/storage.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -16943,7 +16695,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/core.module.ts": [
-        "../node_modules/@nestjs/bull/dist/index.d.ts",
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
@@ -16955,17 +16706,10 @@
         "../src/logger/activity-log.entity.ts",
         "../src/logger/db-logger.module.ts",
         "../src/mailer/mailer.module.ts",
-        "../src/notification/notification.entity.ts",
-        "../src/notification/notification.module.ts",
+        "../src/notifications/notification.entity.ts",
+        "../src/notifications/notifications.module.ts",
+        "../src/storage-images/storage-images.module.ts",
         "../src/storage/storage.module.ts",
-        "../src/utils/register-queue.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/html.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -17029,16 +16773,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/pagination/pagination.decorator.ts": [
-        "../node_modules/class-validator/types/index.d.ts",
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/pagination/pagination-options.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/pipes/many-uuid.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/class-validator/types/index.d.ts",
@@ -17061,6 +16795,13 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/storage-images/valid-jpeg.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/typeorm/orm-query.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
@@ -17074,6 +16815,16 @@
       ],
       "../src/utils/add-duration.ts": [
         "../node_modules/moment/ts3.1-typings/moment.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/utils/register-queue.ts": [
+        "../node_modules/@nestjs/bull/dist/index.d.ts",
+        "../node_modules/@nestjs/config/index.d.ts",
+        "../src/consts.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -17119,11 +16870,11 @@
         "../src/mailer/mailer-templates.helper.ts",
         "../src/mailer/mailer.module.ts",
         "../src/mailer/mailer.service.ts",
-        "../src/notification/notification.controller.ts",
-        "../src/notification/notification.entity.ts",
-        "../src/notification/notification.module.ts",
-        "../src/notification/notification.service.ts",
-        "../src/notification/notifications.cron.service.ts",
+        "../src/notifications/notifications.controller.ts",
+        "../src/notifications/notification.entity.ts",
+        "../src/notifications/notifications.module.ts",
+        "../src/notifications/notifications.service.ts",
+        "../src/notifications/notifications.cron.ts",
         "../src/pagination/pagination-options.ts",
         "../src/pagination/pagination.decorator.ts",
         "../src/pagination/pagination.types.ts",
@@ -17135,11 +16886,11 @@
         "../src/pipes/uuid.pipe.ts",
         "../src/pipes/validate-email.pipe.ts",
         "../src/simple-admin.guard.ts",
-        "../src/storage/sharp.ts",
-        "../src/storage/storage-images.service.ts",
+        "../src/storage-images/sharp.ts",
+        "../src/storage-images/storage-images.service.ts",
         "../src/storage/storage.module.ts",
         "../src/storage/storage.service.ts",
-        "../src/storage/valid-jpeg-image.ts",
+        "../src/storage-images/valid-jpeg.ts",
         "../src/typeorm/orm-query.pipe.ts",
         "../src/typeorm/parse-to-orm-query.ts",
         "../src/types.ts",
@@ -17166,13 +16917,6 @@
       ],
       "../src/__mocks__/minio.ts": [
         "../node_modules/@types/node/stream.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/storage/publicReadPolicy.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -17225,6 +16969,15 @@
         "../node_modules/@types/babel__template/index.d.ts",
         "../node_modules/@babel/types/lib/index.d.ts",
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/bull-board/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/bull/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -17675,11 +17428,11 @@
         "../src/mailer/mailer-templates.helper.ts",
         "../src/mailer/mailer.module.ts",
         "../src/mailer/mailer.service.ts",
-        "../src/notification/notification.controller.ts",
-        "../src/notification/notification.entity.ts",
-        "../src/notification/notification.module.ts",
-        "../src/notification/notification.service.ts",
-        "../src/notification/notifications.cron.service.ts",
+        "../src/notifications/notifications.controller.ts",
+        "../src/notifications/notification.entity.ts",
+        "../src/notifications/notifications.module.ts",
+        "../src/notifications/notifications.service.ts",
+        "../src/notifications/notifications.cron.ts",
         "../src/pagination/pagination-options.ts",
         "../src/pagination/pagination.decorator.ts",
         "../src/pagination/pagination.types.ts",
@@ -17691,11 +17444,11 @@
         "../src/pipes/uuid.pipe.ts",
         "../src/pipes/validate-email.pipe.ts",
         "../src/simple-admin.guard.ts",
-        "../src/storage/sharp.ts",
-        "../src/storage/storage-images.service.ts",
+        "../src/storage-images/sharp.ts",
+        "../src/storage-images/storage-images.service.ts",
         "../src/storage/storage.module.ts",
         "../src/storage/storage.service.ts",
-        "../src/storage/valid-jpeg-image.ts",
+        "../src/storage-images/valid-jpeg.ts",
         "../src/typeorm/orm-query.pipe.ts",
         "../src/typeorm/parse-to-orm-query.ts",
         "../src/types.ts",
@@ -17724,33 +17477,33 @@
       ],
       "../src/core.module.ts": [
         "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-        "../src/storage/storage.module.ts",
         "../src/db/db.module.ts",
+        "../src/storage-images/storage-images.module.ts",
         "../src/access-control/access-control.module.ts",
         "../node_modules/@nestjs/common/index.d.ts"
       ],
-      "../src/notification/notification.module.ts": [
+      "../src/storage/storage.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
-      "../src/notification/notifications.cron.service.ts": [
-        "../src/notification/notification.service.ts"
+      "../src/notifications/notifications.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
       ],
-      "../src/notification/notification.controller.ts": [
-        "../src/notification/notification.service.ts",
+      "../src/notifications/notifications.cron.ts": [
+        "../src/notifications/notifications.service.ts"
+      ],
+      "../src/notifications/notifications.controller.ts": [
+        "../src/notifications/notifications.service.ts",
+        "../src/pagination/pagination-options.ts",
+        "../src/pagination/pagination.types.ts",
+        "../src/notifications/notification.entity.ts",
         "../src/types.ts",
-        "../src/users/user.interface.ts",
-        "../src/notification/notification.entity.ts"
+        "../src/users/user.interface.ts"
       ],
-      "../src/notification/notification.service.ts": [
+      "../src/notifications/notifications.service.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/notification/notification.entity.ts",
-        "../node_modules/@types/bull/index.d.ts",
+        "../src/notifications/notification.entity.ts",
         "../src/base.service.ts",
         "../src/types.ts"
-      ],
-      "../src/notification/notifications.processor.ts": [
-        "../src/notification/notification.service.ts",
-        "../node_modules/@types/bull/index.d.ts"
       ],
       "../src/db/db.module.ts": [
         "../node_modules/typeorm/index.d.ts",
@@ -17772,137 +17525,6 @@
         "../src/auth-users/auth-users.service.ts",
         "../src/auth-users/auth-users.dto.ts",
         "../src/users/user.interface.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/multer.module.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/files-upload-module.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/multer/interceptors/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/multer.module.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/adapters/index.d.ts",
-        "../node_modules/@nestjs/platform-express/interfaces/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interfaces/files-upload-module.interface.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/multer/interfaces/files-upload-module.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/files.interceptor.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/multer/interceptors/any-files.interceptor.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interceptors/file-fields.interceptor.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interceptors/file.interceptor.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interceptors/files.interceptor.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/file.interceptor.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/file-fields.interceptor.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interceptors/any-files.interceptor.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/interfaces/nest-express-application.interface.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/interfaces/nest-express-application.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/adapters/express-adapter.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/common/interfaces/external/cors-options.interface.d.ts",
-        "../node_modules/@nestjs/common/interfaces/nest-application-options.interface.d.ts",
-        "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
-        "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/adapters/index.d.ts": [
-        "../node_modules/@nestjs/platform-express/adapters/express-adapter.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/auth-users/auth-users.service.ts": [
         "../src/users/base-user.entity.ts",
@@ -17995,27 +17617,52 @@
       "../src/users/base-user.service.ts": [
         "../src/users/base-user.entity.ts",
         "../node_modules/typeorm/index.d.ts",
-        "../node_modules/@types/bull/index.d.ts",
         "../src/auth-users/auth-users.dto.ts",
         "../src/auth-sessions/auth-sessions.dto.ts",
         "../src/base.service.ts"
       ],
-      "../src/storage/storage-images.service.ts": [
+      "../src/storage-images/storage-images.service.ts": [
         "../src/storage/storage.service.ts",
-        "../src/storage/storage.module.ts",
+        "../src/storage-images/storage-images.module.ts",
         "../src/entities/image.entity.ts"
       ],
-      "../src/storage/storage.module.ts": [
+      "../src/storage-images/storage-images.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
-      "../src/storage/sharp.ts": [
-        "../src/storage/storage.module.ts"
+      "../src/storage-images/sharp.ts": [
+        "../src/storage-images/storage-images.module.ts"
       ],
-      "../src/storage/storage-images-default-config.ts": [
-        "../src/storage/storage.module.ts"
+      "../src/storage-images/storage-images-default-config.ts": [
+        "../src/storage-images/storage-images.module.ts"
       ],
       "../src/storage/storage.service.ts": [
+        "../node_modules/aws-sdk/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/bull.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/bull.module.d.ts",
+        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
+        "../node_modules/@nestjs/bull/dist/decorators/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/enums/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/utils/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/utils/register-queue.ts": [
+        "../node_modules/@nestjs/bull/dist/index.d.ts"
       ],
       "../src/access-control/access-control.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -18431,33 +18078,8 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/utils/register-queue.ts": [
-        "../node_modules/@nestjs/bull/dist/index.d.ts"
-      ],
       "../src/mailer/mailer-templates.helper.ts": [
         "../node_modules/@nestjs/config/index.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/bull.module.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/bull.module.d.ts",
-        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
-        "../node_modules/@nestjs/bull/dist/decorators/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/enums/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/utils/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/base.service.ts": [
         "../src/types.ts",
@@ -18550,7 +18172,7 @@
         "../src/entities/base-uuid.entity.ts",
         "../src/users/user.interface.ts"
       ],
-      "../src/notification/notification.entity.ts": [
+      "../src/notifications/notification.entity.ts": [
         "../src/users/base-user.entity.ts",
         "../src/types.ts",
         "../src/entities/base-uuid.entity.ts"
@@ -18889,6 +18511,25 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@types/bull/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
+        "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts": [
         "../node_modules/@nestjs/common/interfaces/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -18908,25 +18549,6 @@
       ],
       "../node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts": [
         "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts": [
-        "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/@types/bull/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
-        "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -27515,6 +27137,114 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/enums/index.d.ts": [
+        "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/decorators/index.d.ts": [
+        "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts",
+        "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts",
+        "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@types/node/globals.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -27757,6 +27487,15 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@types/bull-board/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/bull/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@types/babel__core/index.d.ts": [
         "../node_modules/@types/babel__generator/index.d.ts",
         "../node_modules/@types/babel__traverse/index.d.ts",
@@ -27809,13 +27548,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/html.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../node_modules/@types/passport-jwt/index.d.ts": [
         "../node_modules/@types/passport-strategy/index.d.ts",
         "../node_modules/@types/express/index.d.ts",
@@ -27837,21 +27569,6 @@
       "../node_modules/@types/passport-strategy/index.d.ts": [
         "../node_modules/@types/passport/index.d.ts",
         "../node_modules/@types/express/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts": [
-        "../node_modules/@types/node/ts3.2/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -28070,6 +27787,15 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@types/sharp/index.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/aws-sdk/lib/shared-ini/ini-loader.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -28084,8 +27810,122 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/sharp/index.d.ts": [
+      "../node_modules/@nestjs/bull/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts",
+        "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/enums/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts",
+        "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/index.d.ts": [
+        "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts",
+        "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts",
+        "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts",
+        "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts": [
+        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/bull.types.d.ts": [
+        "../node_modules/@types/bull/index.d.ts",
+        "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts": [
+        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/bull/index.d.ts": [
+        "../node_modules/@types/ioredis/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/ioredis/index.d.ts": [
+        "../node_modules/@types/node/tls.d.ts",
         "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -28533,237 +28373,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../node_modules/casbin/lib/rbac/roleManager.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/decorators/index.d.ts": [
-        "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts",
-        "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts",
-        "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/enums/index.d.ts": [
-        "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/types/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
-        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/utils/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts",
-        "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/enums/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts",
-        "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/index.d.ts": [
-        "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts",
-        "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts",
-        "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts",
-        "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts": [
-        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/bull.types.d.ts": [
-        "../node_modules/@types/bull/index.d.ts",
-        "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts": [
-        "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/bull/index.d.ts": [
-        "../node_modules/@types/ioredis/index.d.ts",
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/@types/ioredis/index.d.ts": [
-        "../node_modules/@types/node/tls.d.ts",
-        "../node_modules/@types/node/stream.d.ts",
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/ts3.2/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -29967,6 +29576,24 @@
       "../node_modules/@nestjs/typeorm/index.d.ts",
       "../src/logger/db-logger.service.ts",
       "../src/base.service.ts",
+      "../node_modules/@nestjs/config/dist/config.service.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+      "../node_modules/@nestjs/config/dist/config.module.d.ts",
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
+      "../node_modules/@nestjs/config/dist/types/index.d.ts",
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts",
+      "../node_modules/@nestjs/config/dist/index.d.ts",
+      "../node_modules/@nestjs/config/index.d.ts",
+      "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts",
+      "../node_modules/@nestjs/schedule/dist/enums/index.d.ts",
+      "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts",
+      "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts",
+      "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts",
+      "../node_modules/@nestjs/schedule/dist/decorators/index.d.ts",
+      "../node_modules/@nestjs/schedule/dist/schedule.module.d.ts",
       "../node_modules/@types/node/globals.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
       "../node_modules/@types/node/buffer.d.ts",
@@ -30013,43 +29640,6 @@
       "../node_modules/@types/node/ts3.2/base.d.ts",
       "../node_modules/@types/node/assert.d.ts",
       "../node_modules/@types/node/ts3.2/index.d.ts",
-      "../node_modules/@types/ioredis/index.d.ts",
-      "../node_modules/@types/bull/index.d.ts",
-      "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
-      "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
-      "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
-      "../node_modules/@nestjs/bull/dist/bull.module.d.ts",
-      "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts",
-      "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts",
-      "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts",
-      "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts",
-      "../node_modules/@nestjs/bull/dist/decorators/index.d.ts",
-      "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts",
-      "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts",
-      "../node_modules/@nestjs/bull/dist/enums/index.d.ts",
-      "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts",
-      "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts",
-      "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts",
-      "../node_modules/@nestjs/bull/dist/utils/index.d.ts",
-      "../node_modules/@nestjs/bull/dist/index.d.ts",
-      "../node_modules/@nestjs/config/dist/config.service.d.ts",
-      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
-      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
-      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
-      "../node_modules/@nestjs/config/dist/config.module.d.ts",
-      "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
-      "../node_modules/@nestjs/config/dist/types/index.d.ts",
-      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
-      "../node_modules/@nestjs/config/dist/utils/index.d.ts",
-      "../node_modules/@nestjs/config/dist/index.d.ts",
-      "../node_modules/@nestjs/config/index.d.ts",
-      "../node_modules/@nestjs/schedule/dist/enums/cron-expression.enum.d.ts",
-      "../node_modules/@nestjs/schedule/dist/enums/index.d.ts",
-      "../node_modules/@nestjs/schedule/dist/decorators/cron.decorator.d.ts",
-      "../node_modules/@nestjs/schedule/dist/decorators/interval.decorator.d.ts",
-      "../node_modules/@nestjs/schedule/dist/decorators/timeout.decorator.d.ts",
-      "../node_modules/@nestjs/schedule/dist/decorators/index.d.ts",
-      "../node_modules/@nestjs/schedule/dist/schedule.module.d.ts",
       "../node_modules/@types/cron/index.d.ts",
       "../node_modules/@nestjs/schedule/dist/scheduler.registry.d.ts",
       "../node_modules/@nestjs/schedule/dist/index.d.ts",
@@ -30155,7 +29745,27 @@
       "../src/access-control/role/roles.module.ts",
       "../src/access-control/valid-role.pipe.ts",
       "../src/access-control/access-control.module.ts",
-      "../node_modules/@types/sharp/index.d.ts",
+      "../node_modules/@types/ioredis/index.d.ts",
+      "../node_modules/@types/bull/index.d.ts",
+      "../node_modules/@nestjs/bull/dist/interfaces/bull.interfaces.d.ts",
+      "../node_modules/@nestjs/bull/dist/bull.types.d.ts",
+      "../node_modules/@nestjs/bull/dist/interfaces/bull-module-options.interface.d.ts",
+      "../node_modules/@nestjs/bull/dist/bull.module.d.ts",
+      "../node_modules/@nestjs/bull/dist/decorators/inject-queue.decorator.d.ts",
+      "../node_modules/@nestjs/bull/dist/decorators/process.decorator.d.ts",
+      "../node_modules/@nestjs/bull/dist/decorators/processor.decorator.d.ts",
+      "../node_modules/@nestjs/bull/dist/decorators/queue-hooks.decorators.d.ts",
+      "../node_modules/@nestjs/bull/dist/decorators/index.d.ts",
+      "../node_modules/@nestjs/bull/dist/enums/bull-queue-events.enum.d.ts",
+      "../node_modules/@nestjs/bull/dist/enums/bull-queue-global-events.enum.d.ts",
+      "../node_modules/@nestjs/bull/dist/enums/index.d.ts",
+      "../node_modules/@nestjs/bull/dist/interfaces/index.d.ts",
+      "../node_modules/@nestjs/bull/dist/utils/get-queue-options-token.util.d.ts",
+      "../node_modules/@nestjs/bull/dist/utils/get-queue-token.util.d.ts",
+      "../node_modules/@nestjs/bull/dist/utils/index.d.ts",
+      "../node_modules/@nestjs/bull/dist/index.d.ts",
+      "../src/auth-sessions/auth-sessions.dto.ts",
+      "../src/auth-users/auth-users.dto.ts",
       "../node_modules/aws-sdk/lib/credentials/cognito_identity_credentials.d.ts",
       "../node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.d.ts",
       "../node_modules/aws-sdk/lib/credentials/remote_credentials.d.ts",
@@ -30174,12 +29784,11 @@
       "../node_modules/aws-sdk/lib/core.d.ts",
       "../node_modules/aws-sdk/index.d.ts",
       "../src/storage/storage.service.ts",
-      "../src/storage/storage-images-default-config.ts",
-      "../src/storage/storage.module.ts",
-      "../src/storage/sharp.ts",
-      "../src/storage/storage-images.service.ts",
-      "../src/auth-users/auth-users.dto.ts",
-      "../src/auth-sessions/auth-sessions.dto.ts",
+      "../node_modules/@types/sharp/index.d.ts",
+      "../src/storage-images/storage-images-default-config.ts",
+      "../src/storage-images/storage-images.module.ts",
+      "../src/storage-images/sharp.ts",
+      "../src/storage-images/storage-images.service.ts",
       "../src/users/base-user.service.ts",
       "../src/auth-email/auth-email.dto.ts",
       "../node_modules/handlebars/types/index.d.ts",
@@ -30224,26 +29833,8 @@
       "../src/auth-sessions/init-jwt-module.ts",
       "../src/auth-sessions/auth-sessions.module.ts",
       "../src/auth-users/auth-users.service.ts",
-      "../node_modules/@nestjs/platform-express/interfaces/serve-static-options.interface.d.ts",
-      "../node_modules/@nestjs/platform-express/adapters/express-adapter.d.ts",
-      "../node_modules/@nestjs/platform-express/adapters/index.d.ts",
-      "../node_modules/@nestjs/platform-express/interfaces/nest-express-application.interface.d.ts",
-      "../node_modules/@nestjs/platform-express/interfaces/index.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/interfaces/multer-options.interface.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/interceptors/any-files.interceptor.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/interceptors/file-fields.interceptor.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/interceptors/file.interceptor.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/interceptors/files.interceptor.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/interceptors/index.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/interfaces/files-upload-module.interface.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/interfaces/index.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/multer.module.d.ts",
-      "../node_modules/@nestjs/platform-express/multer/index.d.ts",
-      "../node_modules/@nestjs/platform-express/index.d.ts",
-      "../src/storage/valid-jpeg-image.ts",
       "../src/auth-users/auth-users.controller.ts",
       "../src/auth-users/auth-users.module.ts",
-      "../src/utils/register-queue.ts",
       "../node_modules/@types/passport-strategy/index.d.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@types/passport-jwt/index.d.ts",
@@ -30251,39 +29842,39 @@
       "../src/auth/auth.module.ts",
       "../node_modules/typeorm-naming-strategies/snake-naming.strategy.d.ts",
       "../node_modules/typeorm-naming-strategies/index.d.ts",
-      "../src/notification/notification.entity.ts",
+      "../src/notifications/notification.entity.ts",
       "../src/db/db.module.ts",
       "../src/logger/db-logger.module.ts",
       "../src/mailer/mailer.module.ts",
-      "../src/notification/notifications.consts.ts",
-      "../src/notification/notification.service.ts",
-      "../src/notification/notification.controller.ts",
-      "../src/notification/notifications.cron.service.ts",
-      "../src/notification/notifications.processor.ts",
-      "../src/notification/notification.module.ts",
+      "../src/pagination/pagination.decorator.ts",
+      "../src/notifications/notifications.service.ts",
+      "../src/notifications/notifications.controller.ts",
+      "../src/notifications/notifications.cron.ts",
+      "../src/notifications/notifications.module.ts",
+      "../src/storage/storage.module.ts",
       "../src/core.module.ts",
-      "../src/html.d.ts",
       "../src/id-array.dto.ts",
       "../src/access-control/role/role.factory.ts",
       "../src/access-control/role/roles.dto.ts",
       "../src/entities/base-increment.entity.ts",
       "../src/entities/image.factory.ts",
       "../src/logger/valid-reason.pipe.ts",
-      "../src/pagination/pagination.decorator.ts",
       "../src/pipes/many-uuid.pipe.ts",
       "../src/simple-admin.guard.ts",
+      "../src/storage-images/valid-jpeg.ts",
       "../src/typeorm/orm-query.pipe.ts",
       "../src/utils/add-duration.ts",
+      "../src/utils/register-queue.ts",
       "../src/index.ts",
       "../src/__mocks__/fs.ts",
       "../src/__mocks__/minio.ts",
-      "../src/storage/publicReadPolicy.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
       "../node_modules/@types/babel__traverse/index.d.ts",
       "../node_modules/@babel/parser/typings/babel-parser.d.ts",
       "../node_modules/@types/babel__template/index.d.ts",
       "../node_modules/@types/babel__core/index.d.ts",
+      "../node_modules/@types/bull-board/index.d.ts",
       "../node_modules/@types/color-name/index.d.ts",
       "../node_modules/@types/eslint-visitor-keys/index.d.ts",
       "../node_modules/@types/graceful-fs/index.d.ts",
