@@ -50,7 +50,7 @@
     "deep-diff": "^1.0.2",
     "faker": "^4.1.0",
     "handlebars": "^4.7.6",
-    "moment": "^2.25.1",
+    "moment": "^2.29.2",
     "nodemailer": "^6.4.6",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
