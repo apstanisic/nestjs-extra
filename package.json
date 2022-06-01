@@ -59,7 +59,7 @@
     "redis": "^3.0.2",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0",
-    "sharp": "^0.25.2",
+    "sharp": "^0.30.5",
     "sqlstring": "^2.3.2",
     "typeorm-naming-strategies": "^1.1.0",
     "useragent": "^2.3.0"
