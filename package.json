@@ -46,7 +46,7 @@
     "bull-board": "^0.7.0",
     "casbin": "^4.7.0",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.12.2",
+    "class-validator": "^0.14.0",
     "deep-diff": "^1.0.2",
     "faker": "^4.1.0",
     "handlebars": "^4.7.6",
